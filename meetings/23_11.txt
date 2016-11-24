@@ -1,0 +1,16 @@
+falar com o ladeira: 
+    -> 1. Definir o periodo de tempo como sendo de 1 ano.
+    -> 2. alguns cursos foram criados depois. Minha sugestão: incluir outros para
+compensar. Proponho trabalhar com: computação, matemática, estatística, química e 
+física.
+    -> 3. o fluxo do curso foi modificado com o passar do tempo e os fluxos antigos
+            não estão mais disponíveis na Internet. Será que consigo junto a UnB
+            esses dados?
+    -> 4. pus novos indicadores. 
+    -> 5. 3671 valores, para 15 anos (cic, mat e estatistica).
+    -> 6. muitos valores como nao declarados para tipo da escola.
+    -> 7. o número de cotas foi alterado, de 2000 até 2010. ex: em 2000 só tinha
+            universal 
+
+sobre a base de dados: 
+    * campo uf tem missing values.

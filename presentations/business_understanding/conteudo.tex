@@ -1,0 +1,133 @@
+\section{Entendimento do Negócio}
+
+\begin{frame}{Motivação e Definição do Problema}
+    \begin{itemize}[itemsep=3ex]
+        % custos da evasao 
+        \item A evasão nas universidades já foi estudada por muitos autores, tratando-se de
+        um grande problema que traz desperdícios acadêmicos, sociais e econômicos.
+        % variedade do conceito de evasao
+        \item O conceito de evasão varia, podendo-se considerar evasão do curso,
+            evasão da instituição, evasão do sistema.
+        \item No entender de especialistas, o conceito de evasão adotado depende da
+            pesquisa \cite{mec_conceito_evasao}.
+    \end{itemize}
+\end{frame}
+
+% causas da evasao 
+\begin{frame}{Conceito de Evasão Adotado e Diversas Causas da Evasão}
+    \begin{itemize}[itemsep=3ex]
+        \item Para a pesquisa, considera-se evasão a saída do aluno do curso, não
+            se faz distinção entre as causas da evasão
+        \item Várias causas para a evasão são possíveis: desempenho acadêmico,
+            mudança de cidade/região, mudança de curso, desligamento voluntário,
+            problemas sociais, necessidade econômica de entrar no mercado de
+            trabalho.
+    \end{itemize}
+\end{frame}
+
+% Abordagem da UnB e seus problemas
+\begin{frame}{Abordagem da UnB 
+        \footnote{A UnB teve um prejuízo com evasão estimado em 95,6
+        milhões, segundo o Correio Brasiliense}}
+    \begin{itemize}[itemsep=3ex]
+        \item De acordo com as normas internas da UnB, alunos em condição (definido
+            mais adiante) devem procurar o orientador acadêmico.
+        \item Assim, o esforço atual da UnB de evitar evasão consiste de separar os
+            alunos em dois grupos (em condição ou não) e ter os alunos em condição
+            orientados.
+        \item Problema 1: Essa abordagem classifica alunos (uma amostra muito diversificada) em
+            apenas dois grupos.
+        \item Problema 2: Agir quando o aluno se encontra em condição pode ser tarde
+            demais. Afinal, se o aluno não cumpre condição ele é desligado. 
+    \end{itemize}
+\end{frame}
+
+% condicao na UnB
+\begin{frame}{Critérios Para Condição na UnB}
+    \begin{itemize}[itemsep=3ex]
+        \item Ter duas reprovações na mesma disciplina obrigatória.
+        \item Não ser aprovado em quatro disciplinas do curso em dois períodos
+            regulares consecutivos.
+        \item Chegar ao último período letivo no projeto pedagógico do curso sem a
+            possibilidade de concluir.
+    \end{itemize}
+\end{frame}
+
+% desligamento da unb
+\begin{frame}{Critérios Para Desligamento na UnB}
+    \begin{itemize}[itemsep=3ex]
+        \item Durante dois semestres consecutivos não efetuar matrícula em disciplina. 
+        \item Durante dois semestres consecutivos ser reprovado com SR em todas as
+   disciplinas. 
+        \item Não cumprir condição (detalhado mais adiante).
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Cumprir Condição}
+    \begin{itemize}[itemsep=3ex]
+         \item Ser aprovado nas disciplinas obrigatórias anteriormente cursadas com
+             duas reprovações. 
+         \item Ser aprovado no mínimo de créditos do curso nos próximos dois períodos
+             letivos subsequentes.
+         \item Cumprir plano de estudo aprovado pela Comissão de Acompanhamento e
+             Orientação (CAO).
+    \end{itemize}
+\end{frame}
+
+
+% Minha proposta e benefícios
+\begin{frame}{Apresentação da Proposta}
+    \begin{itemize}[itemsep=3ex]
+        \item Utilizar dados passados para criação de um sistema previsor de modo a 
+            identificar alunos em risco de serem desligados. 
+        \item Utilização de vários modelos de aprendizagem de máquina diferentes.
+    \end{itemize}
+\end{frame}
+
+% adicionei dados passados
+\begin{frame}{Dados disponíveis}
+    \begin{itemize}[itemsep=3ex]
+        \item Dados descaracterizados dos alunos de graduação da UnB, contendo tanto 
+            informações de perfil dos alunos quanto forma de ingresso e menções nas
+            matérias da UnB. 
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Utilidade da Proposta}
+    \begin{itemize}[itemsep=3ex]
+        \item Permitir a universidade agir antes de um aluno entrar em condição. 
+        \item Permitir a universidade agir com mais flexibilidade, 
+            de maneira diferenciada de acordo com o risco apresentado por um aluno. 
+            % alunos com maior risco recebem mais atencao, sem entretanto
+            % negligenciar alunos com risco moderado
+    \end{itemize}
+\end{frame}
+
+% Como avaliar a performance do sistema classificador 
+\begin{frame}{Medindo o Desempenho}
+    \begin{itemize}[itemsep=3ex]
+        \item Separação dos dados em conjunto de treino e de teste, medição do
+            desempenho do modelo em conjunto de teste.
+        \item O modelo, para um estudante particular, ``acerta'' quando:
+        \begin{itemize}[itemsep=1.5ex]
+        \item Avalia o risco de um estudante ser desligado como sendo baixo 
+            e o estudante não seja jubilado.
+        \item Avalia o risco de um estudante ser desligado como sendo
+            alto e o estudante termina sendo jubilado.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ponderando Tipos de Erro}
+    \begin{itemize}[itemsep=3ex]
+        \item Falso negativo - Sistema julga que o risco de um aluno ser jubilado é baixo, e
+            o aluno acaba sendo jubilado
+        \item Falso positivo - Sistema julga que o risco de um aluno ser jubilado é alto, e
+            o aluno acaba não sendo jubilado
+        \item Falsos negativos são mais graves que falsos positivos. 
+            Logo, deve haver uma ponderação de modo a refletir isso.
+        \item Escolher fator de ponderação me parece uma escolha a ser guiada pelo
+            bom senso. Para a pesquisa, sugiro $$w = 3$$
+    \end{itemize}
+\end{frame}

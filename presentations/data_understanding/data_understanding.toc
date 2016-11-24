@@ -1,0 +1,3 @@
+\beamer@endinputifotherversion {3.24pt}
+\select@language {brazil}
+\beamer@sectionintoc {1}{Entendimento dos Dados}{2}{0}{1}

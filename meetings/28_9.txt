@@ -1,0 +1,36 @@
+## comentarios antes da reuniao
+-> eh melhor um sistema previsor que classifique aluno em vai ser jubilado e não vai
+ser jubilidado (possibilidade 1)
+ou um sistema que forneça a chance de cada aluno ser jubilado (possibilidade 2)?
+
+possibilidade 1 - sistema classificador 
+-> explorar a porcentagem de acerto do sistema. O problema é que isso não distingue
+entre os dois tipos de erro possíveis de serem cometidos. 
+Outro problema é que isso não dá tanta margem para ação por parte da universidade: 
+agir em todos os alunos com mais de 50% de chance? e se os orientadores acadêmicos
+estiverem muito sobrecarregados? ou muito livres. 
+
+possibilidade 2 - sistema regressor 
+
+-> quando devo decidir isso? 
+
+-> como medir a efetividade do sistema previsor? 
+
+-> pergunta interessante: havera muitos casos de alunos que ainda nao estao em
+condicao com maior risco de nao formar do que alunos que estao em condicao
+
+comentário do Ladeira: avançou pouco no entendimento do negócio 
+-> chance != probabilidade != risco 
+-> Detalhar as causas de evasão: mudar de curso, transferir de universidade.. 
+-> não descartar sistema classificador (pode ser multiclasse) 
+-> Como UnB atua
+-> Saber vender minha proposta: UnB já atua quando o aluno está com muito risco de
+ser jubilado. 
+-> Paulo Jorge Adeodato
+
+# para a próxima reunião 
+1. Conceituar evasão 
+2. Detalhar melhor como a UnB atua
+3. Falar de todas as causas (não precisa ser só acadêmica, pode ser mudar de curso,
+transferir universidade) 
+4. Abordar como vou validar o meu modelo 

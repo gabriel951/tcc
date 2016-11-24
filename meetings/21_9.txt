@@ -1,0 +1,13 @@
+## comentários
+--> pegou quais artigos que tenho que ler
+--> Usar a separação entre as 8 grande áreas
+--> jubilamento != evasão
+--> Separar EAD de ensino presencial
+--> Considerar CIC-licenciatura como dentro da área de computação
+--> Cuidado com conferências caça níquel
+
+## para a próxima reunião
+1. Ler artigo do Rafael que ficou faltando 
+2. Enviar pdf do livro ao Ladeira - ok
+3. Terminar as fases do entendimento do negócio e entendimento dos dados. 
+4. Acabar capítulos 2 e 3 do livro de ML

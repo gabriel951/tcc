@@ -1,0 +1,15 @@
+comentário do Ladeira: avançou pouco no entendimento do negócio 
+-> chance != probabilidade != risco 
+-> Detalhar as causas de evasão: mudar de curso, transferir de universidade.. 
+-> não descartar sistema classificador (pode ser multiclasse) 
+-> Como UnB atua
+-> Saber vender minha proposta: UnB já atua quando o aluno está com muito risco de
+ser jubilado. 
+-> Paulo Jorge Adeodato
+
+# para a próxima reunião 
+1. Conceituar evasão 
+2. Detalhar melhor como a UnB atua
+3. Falar de todas as causas (não precisa ser só acadêmica, pode ser mudar de curso,
+transferir universidade) 
+4. Abordar como vou validar o meu modelo 

@@ -1,0 +1,18 @@
+--> ident_causes_dropout: artigo que fala que deixou de lado atividades de extensão, pesquisa ou 
+monitoria, pois era difícil conseguir.
+--> dropout_public_university: não parece trazer informações muito relevantes 
+--> kaplan_meier vs actuarial: discute terminologia a ser utilizado na hora de se 
+realizar análise exploratória dos dados
+--> survival_analysis_physics_graduation: Descreve o uso da técnica de análise de
+sobrevivência no contexto da evasão, para a disciplina de física. 
+--> Why_Students_Drop_out_CS1_courses: analisa porque estudantes da universidade de
+Helsinki desistiram do curso de computação básica. Conclui dizendo que as causas
+variam. 
+
+# rafael
+--> Abstract_Knowledge_and_Data: Aborda a relação entre abstração algorítmica de um
+curso e a capacidade do candidato de concluí-lo, mas não somente isso. Parecido com
+cic_unb_student 1 e 2
+--> cic_unb_student_survival: artigo do Rafael, parece interessante já que é 
+aplicado à UnB, tem a mesma divisão dos dados que eu irei usar. 
+--> cic_unb_student_survival_2: mto parecido ao outro artigo do Rafael

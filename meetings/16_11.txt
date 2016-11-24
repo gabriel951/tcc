@@ -1,0 +1,6 @@
+Não teve reunião, o ladeira tinha compromisso no CNPQ.
+
+modificações: 
+    1. Comecei a verificar a consistência dos dados na base. 
+    2. coluna do degree contem apenas 5 informações: Doutorado, Mestrado, Graduacao, Aluno
+        especial graduacao e residência

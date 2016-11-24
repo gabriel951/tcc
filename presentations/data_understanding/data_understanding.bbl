@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{adeodato}
+{\sc da~Silva, H. R.~B., and Adeodato, P. J.~L.}
+\newblock A data mining approach for preventing undergraduate students
+  retention.
+\newblock In {\em The 2012 International Joint Conference on Neural Networks
+  (IJCNN)\/} (2012), IEEE, pp.~1--8.
+
+\bibitem{predict_retention}
+{\sc Yu, C.~H., DiGangi, S., Jannasch-Pennell, A., and Kaprolet, C.}
+\newblock A data mining approach for identifying predictors of student
+  retention from sophomore to junior year.
+\newblock {\em Journal of Data Science 8}, 2 (2010), 307--325.
+
+\end{thebibliography}

@@ -1,0 +1,95 @@
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+\documentclass{beamer}
+
+\usepackage{enumitem}
+%encoding for portuguese
+%--------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+%--------------------------------------
+
+% para incluir imagens
+\usepackage{graphicx}
+\graphicspath{{images/}}
+%%%%%%%%%%%%%%%%%%%%%
+
+%
+% There are many different themes available for Beamer. A comprehensive
+% list with examples is given here:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+% You can uncomment the themes below if you would like to use a different
+% one:
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{default}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+\title{Banco de Dados Disponível}
+
+
+\date{\today}
+
+% apenas inserido no pdf - opcional
+%\subject{{por_titulo}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each section:
+%\AtBeginSection[]
+%{
+%  \begin{frame}<beamer>{Conteúdo}
+%    \tableofcontents[currentsection, currentsubsection, subsectionstyle=show/show/hide]
+%  \end{frame}
+%}
+
+% for the number of the page appear
+\setbeamerfont{page number in head/foot}{size=\large}
+\setbeamertemplate{footline}[frame number]
+
+% get started
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+% core text 
+\include{conteudo}
+
+\end{document}
+

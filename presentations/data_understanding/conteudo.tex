@@ -1,0 +1,60 @@
+\section{Entendimento dos Dados}
+
+% coletando dados iniciais
+\begin{frame}{Coleta de Dados}
+    \begin{itemize}[itemsep=3ex]
+        \item Dados do SIGRA (Sistema de Graduação), obtidos em parceria com a UnB.
+        \item Pesquisas prévias utilizaram o desempenho acadêmico do aluno
+            \cite{adeodato}.
+        \item Outros estudos apontam a necessidade de considerar também dados sociais
+            \cite{predict_retention}.
+        \item Como os dados contém tais informações, devem ser suficientes.
+    \end{itemize}
+\end{frame}
+
+% divisao dos dados
+\begin{frame}{Divisão dos Dados}
+    \begin{itemize}[itemsep=3ex]
+        \item Utilizar dados de 2000 até 2015. 
+        \item Dados de treino: alunos que entraram depois de 2000 e saíram antes de
+            2010.
+        \item Dados de teste: alunos que entraram depois de 2010 e se formaram até
+            2015.
+    \end{itemize}
+\end{frame}
+
+% dados disponiveis a serem utilizados
+\begin{frame}{Dados Brutos a Serem Utilizados}
+    \begin{itemize}[itemsep=3ex]
+        \item Dados sociais: sexo, idade, residente do local, cotista,
+            tipo da escola, raça, curso, forma de ingresso.
+        \item Desempenho acadêmico: IRA.
+    \end{itemize}
+\end{frame}
+
+% dados derivados a serem utilizados
+\begin{frame}{Dados Derivados a Serem Utilizados}
+    \begin{itemize}[itemsep=3ex]
+        \item coeficiente de melhora acadêmica (razão entre notas do primeiro semestre
+            e notas do segundo semestre) 
+        \item razão entre número de disciplinas reprovadas por semestre, trancadas
+            por semestre e aprovadas por semestre frente ao total de disciplinas do
+            semestre
+        \item razão entre disciplinas cursadas por semestre e quantidade 
+            de disciplinas do curso 
+        \item razão entre disciplinas obrigatórias cursadas por semestre e quantidade 
+            de disciplinas obrigatórias do curso (*)
+        \item flag indicando aprovação ou não na disciplina mais difícil do semestre.
+    \end{itemize}
+\end{frame}
+
+% propriedades gerais dos dados
+\begin{frame}{Propriedades Gerais dos Dados}
+    \begin{itemize}[itemsep=3ex]
+        \item São 7 features relacionados às condições sociais dos estudantes e 11
+            features relacionados ao desempenho acadêmico
+        \item São x entradas na base de dados 
+    \end{itemize}
+\end{frame}
+
+

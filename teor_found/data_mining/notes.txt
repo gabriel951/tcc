@@ -1,0 +1,55 @@
+## artigo do adeodato:
+ideia: avaliar o risco de retenção, até o fim do segundo semestre.
+dados
+    -> desempenho dos estudantes em cursos passados
+    -> focou-se em apenas 6 cursos
+    -> dado legal: fluxo que o estudante cursou a materia
+    -> outro dado legal: desempenho do estudante nas matérias mais complicadas do
+        curso
+    -> primeiro ele decidiu quais dados usar, depois penerou os dados
+    -> 1998 a 2008 foi o período, 5973 estudantes tinha a base de dados
+
+"out of sample" division of the data, 2/3 of the division
+
+* utilização da técnica logistic regression -> não precisa se preocupar com
+* o validation set, apresenta o conhecimento extraído dos dados de uma maneira
+* interessante
+
+* utilização de rules induction 
+    -> podem ser usadas tanto no começo (descobrir novas relações entre os dados) ou
+    no fim (para explicar resultados).
+    -> utilização da métrica lift (razão entre a confiança da regra e a confiança de
+    toda amosta)
+
+* resultados:
+    -> conceitos importantes: key performance indicator, kolmogorov-smirnov curva,
+    ROC curva. Aparentemente alguns são indicadores aceitos para medir desempenho de
+    classificadores binários.
+
+* estimativa da economia de acordo com a taxa de sucesso - ideia interessante
+## 
+
+
+## a data mining approach for identifying predictors of student retention from
+sophomore to junior year
+
+* o quanto um aluno esta integrado pode vir a ser um fator importante
+    -> tinto | bean and eaton
+* utilização de redes neurais, MARS e árvores de classificação
+* cross-validation eh uma forma de resampling? o que isso significa?
+* utilização das técnicas MARS, arvore de classificação e NN
+##
+
+## educational data mining
+* não fala nada que fosse de interesse, exceto (talvez) que as pesquisas em data
+* mining vem mudando de foco, e mais foco vem sendo dado a parte de previsão.
+
+## estimate student retention time
+* métodos de data mining oferecem desempenho melhor que estatística tradicional 
+* neural networks usually work better with larger dataset
+
+* poe as variaveis utilizadas na analise no apendice B e se refere ao seu outro
+    estudo sobre elas
+##
+
+

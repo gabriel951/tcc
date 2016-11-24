@@ -1,0 +1,34 @@
+comentários:
+    -> Não tentar estimar o custo do aluno para a universidade
+    -> missing value e distribuição dos dados já nessa fase
+
+    -> por idade
+    -> o cara trabalha? ele está no fluxo?
+    -> usar os cursos que o rafael estudou
+
+# falar sobre: 
+apresentação do pibic: 
+    notas
+    apresentação melhor que o relatório
+
+artigo do adeodato: 
+    bem na linha do que quero fazer
+    métrica para avaliar qualidade
+    dados utilizados
+    partes que não entendi
+    nao faz referencia a outros artigos
+
+artigo do data mining approach:
+    fatores sociais também podem ser importantes
+
+apresentacao:
+    
+    -> como medir o desempenho do sistema: fazer simulação considerando a eficiência
+    da capacidade de recuperação para alunos da universidade
+    
+    -> considerar apenas os cursos que o Rafael considerou
+    -> colocar a análise de missing values e a distribuição dos dados na terceira
+    parte: preparação dos dados
+
+vida/semestre:
+

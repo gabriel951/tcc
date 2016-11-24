@@ -1,0 +1,7 @@
+# rafael usou estatística não paramétrica
+
+# como foi feita a limpeza dos dados? Alguma ferramenta especializada? 
+foi no olho?
+
+# A quantidade de grupos tem a ver com a quantidade de grandes áreas e com a
+# quantidade de anos analisados!

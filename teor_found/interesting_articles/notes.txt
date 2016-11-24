@@ -1,0 +1,7 @@
+## artigo do adeodato:
+ideia: avaliar o risco de retenção, até o fim do segundo semestre.
+dados
+    -> desempenho dos estudantes em cursos passados
+    -> focou-se em apenas 6 cursos
+    -> dado legal: fluxo que o estudante cursou a materia
+    -> tem a tabela 

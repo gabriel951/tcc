@@ -1,0 +1,19 @@
+# use 9 big areas of OCDE
+# Predict wheter student will conclude or not
+# study - descriptive Statistics
+# crips-dm : framework for data mining
+# steps of crisp-dm: in which step i am? 
+# separate between presencial education 
+
+### next week 
+-> read articles
+-> study crisp-dm 
+-> find good articles
+
+### Questions
+-> A pesquisa do Rafael está mais voltada em evasão ou em retenção? 
+-> A análise de sobrevivência estuda o tempo até que um certo evento ocorra. No 
+caso é o tempo até que um aluno seja evadido? O que ocorre se o aluno não for evadido, 
+i.e, ele completar a universidade?  
+-> A análise do Rafael não está levando em conta o desempenho dos alunos em seus
+primeiros semestres na universidade, está?  

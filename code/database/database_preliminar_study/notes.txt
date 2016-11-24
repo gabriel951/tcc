@@ -1,0 +1,84 @@
+# possible inconsistencies
+1. don't know what columns AH and AJ mean
+1. columns AF, AG and AP for the number of credits
+
+# information regarding the columns of database
+A -> Student ID
+B -> Sex
+C -> Degree
+D -> Nationality
+E -> Date of Birth
+F -> Country
+F -> UF
+G -> Quota
+H -> PNE
+J -> School Type
+K -> Race
+M -> Option Code 
+N -> Priority of Option
+O -> Year of Admission
+P -> Semester of Admission
+Q -> Via of Entrance
+R -> Departure Year
+S -> Departure Semester
+T -> Type of Departure                       ** same as column AB?
+U -> Year of option admission                ** very similar to column O!
+V -> Semester of option admission            ** very similar to column P!
+W -> Via of Entrance (Option)                ** very similar to column Q!
+X -> Year  -> appears to be incomplete
+Y -> Month of option admission 
+Z -> Departure Year for the option           ** very similar to R
+AA -> Departure Semester for the option      ** very similar to S
+AB -> Type of Departure                      ** 
+AC -> Registered student 
+AD -> Período Curricular
+AE -> Credits                                ** how many credits the student got
+AF -> Number of Credits                      ** credits for the course
+AG -> Judge Questions                        ** don't know what this is 
+AH -> Student polo                           ** don't know what this is     ** BLANK COLUMN
+AI -> IRA 
+AJ -> Bigger Period to Form                  ** don't know what this is     ** BLANK COLUMN
+AK -> Option Name                             
+AL -> Beggining Year for the option          ** data possibly corrupted since some
+                                         ** options are more recent then the time
+                                         ** the file itself   
+
+AM -> Beggining Semester for the option
+AN -> Year of end for the option 
+AO -> Semester of end for the option
+AP -> Credits to Form in a code              ** how does it relate to credits or number 
+                                             ** of credits
+                                             ** this one is the correct :)
+
+AQ -> Course Code 
+AR -> Degree of the option 
+AS -> Minimum Time 
+AT -> Maximum Time
+AU -> Time length                                ** O que é Duração Plena
+AV -> Date of Resolution 
+AW -> Hours in Extension
+AX -> Year of the beggining of the course 
+AY -> Semester of the beggining of the course
+AZ -> Year of the end of the course
+BA -> Semester of the end of the course
+BB -> Course Name
+BC -> Institute Code                         ** It's a name
+BD -> Department Code                        ** It's a name
+BE -> Knowledge Area
+BF -> Course Level
+BG -> Course Duration
+BH -> Course Shift
+BI -> Course Format
+BJ -> Enade
+BK -> Enade Code
+BL -> Type of degree                         ** Bachelor or "licenciatura"
+BM -> Presencial/Remote
+BN -> Name of the course
+BO -> Normal Duration Time
+BP -> Course Shift                           ** Very similar to BH but contain whether 
+BQ -> Course Campus
+BR -> Anuary Name                            ** like the course name 
+BS -> Unity Code
+BT -> Unity Name                             ** like FACE, FT, ... 
+BU -> Subject Code                           ** 
+BV -> Name of the Subject

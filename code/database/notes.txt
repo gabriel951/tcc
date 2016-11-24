@@ -1,0 +1,30 @@
+# para 2000/1
+    -> 87 000 entradas
+    -> 81 000 graduação
+
+# tipo de curso: 
+-> graduação, mestrado, doutorado, residência, aluno especial
+
+# sexo
+-> feminino ou masculino
+
+# curso
+-> 
+
+# uf
+-> normal, mas tem missing values
+
+# cota
+-> em 2000, soh tinha universal!
+-> em alguns anos seguintes, tinha indigena, universal e negro
+-> a partir de 2013, tinha também escola pública (ou não), alta renda (ou não) e se
+era PPI ou não. 
+
+# escola
+-> nao declarado, particular ou público
+
+# raça
+-> 0, 000, amarela, branca, indigena, nao cadastrada, nao dispoe de informação,
+parda, preta
+
+#
