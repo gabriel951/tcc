@@ -92,17 +92,24 @@ def test_column_values(time_periods, index):
         print("lines: %s valid_lines: %s" %(lines_read, valid_lines))
 
 # test to see if it can insert in the database
-def test_insertion():
-    # for quick test, use this
-    insert_database(2000, 1)
-    exit("finished tests")
+def test_insertion(mode = 'quick'):
+    """
+    mode can be quick or normal
+    if quick, only insert for one semester
+    if norma insert for all time period considered
+    """
+    if mode == 'quick':
+        insert_database(2000, 1)
 
-    print("starting insertion")
-    time_periods = get_time_periods()
-    for (year, semester) in time_periods:
-        print("starting for (%d %d)" %(year, semester))
-        insert_database(year, semester)
-    print("finishing insertion")
+    elif mode == 'normal':
+        print("starting insertion")
+        time_periods = get_time_periods()
+        for (year, semester) in time_periods:
+            print("starting for (%d %d)" %(year, semester))
+            insert_database(year, semester)
+        print("finishing insertion")
+    else:
+        exit("error in mode passed")
 
 # test values for some columns in the database
 def test_database():
@@ -132,4 +139,4 @@ def test_database():
         test_column_values(test_time, ind)
 
 #test_database()
-#test_insertion()
+#test_insertion('normal')

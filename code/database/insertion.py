@@ -10,12 +10,24 @@ from basic import *
 
 from aux import *
 
-# constants
-
 # lines read, valid lines, insertions done so far
 lines_read = 0
 valid_lines = 0
 insertions = 0
+
+def execute_query(query, cur, conn):
+    """
+    try to execute query, rolling back if there's already an entry
+    """
+    global insertions
+
+    try:
+        cur.execute(query)
+        insertions += 1
+    except psycopg2.IntegrityError:
+        conn.rollback()
+
+    conn.commit()
 
 def insert_database(year, semester):
     """
@@ -41,6 +53,69 @@ def insert_database(year, semester):
     close_conn(conn)
 
     print("insertions: %d" % (insertions))
+
+def insert_student(info, cur, conn, year):
+    """
+    receives a list with the information, the cursor and a connection
+    insert students on database
+    """
+    global insertions
+
+    # get student information #[1:-1] to remove quotes
+    code = int(info[CODE_IND])
+    sex = info[SEX_IND][1:-1].lower()
+    age = get_age(info[BDAY_IND][1:-1], year)
+    quota = info[QUOTA_IND][1:-1].lower()
+    school_type = info[SCHOOL_IND][1:-1].lower()
+    race = info[RACE_IND][1:-1].lower()
+    local = get_local(info[LOCAL_IND][1:-1].lower())
+    course = info[COURSE_IND].lower()
+    year_in = int(info[YEAR_IN_IND][1:-1])
+    year_end = int(info[YEAR_END_IND][1:-1])
+
+    # insert in the database, in case not present
+    query = "insert into %s.student (cod_mat, sex, age, quota, school_type, race, \
+            local, course, year_in, year_end) values (%d, '%s', %d, '%s', '%s', \
+            '%s', %d, '%s', %d, %d)" \
+                % (MY_DATABASE, code, sex, age, quota, school_type, race, local, \
+                    course, year_in, year_end)
+
+    execute_query(query, cur, conn)
+
+def insert_subject(info, cur, conn):
+    """
+    receives a list with the information, the cursor and a connection
+    insert subject on database
+    """
+    global insertions
+
+    # get subject information #[1:-1] to remove quotes
+    code = int(info[SUB_CODE_IND])
+    name = info[SUB_NAME_IND][1:-1].lower()
+
+    # insert in the database, in case not present
+    query = "insert into %s.subject (code, name) values (%d, '%s')" \
+                % (MY_DATABASE, code, name) 
+
+    execute_query(query, cur, conn)
+
+def insert_subject_student(info, cur, conn, year, semester):
+    """
+    insert a relation of student and subject he has coursed
+    """
+    global insertions
+
+    # get student and subject information #[1:-1] to remove quotes
+    code_stu = int(info[CODE_IND])
+    code_sub = int(info[SUB_CODE_IND])
+    grade = info[GRADE_IND][1:-1]
+
+    # insert in the database, in case not present
+    query = "insert into %s.student_subject (code_stu, code_sub, grade, semester, \
+    year) values (%d, %d, '%s', %d, %d)" \
+                % (MY_DATABASE, code_stu, code_sub, grade, semester, year) 
+
+    execute_query(query, cur, conn)
 
 def parse_insert(row, cur, conn, year, semester):
     """
@@ -82,80 +157,3 @@ def parse_insert(row, cur, conn, year, semester):
     insert_subject(info, cur, conn)
     insert_subject_student(info, cur, conn, year, semester)
 
-def insert_student(info, cur, conn, year):
-    """
-    receives a list with the information, the cursor and a connection
-    insert students on database
-    """
-    global insertions
-
-    # get student information #[1:-1] to remove quotes
-    code = int(info[CODE_IND])
-    sex = info[SEX_IND][1:-1].lower()
-    age = get_age(info[BDAY_IND][1:-1], year)
-    quota = info[QUOTA_IND][1:-1].lower()
-    school_type = info[SCHOOL_IND][1:-1].lower()
-    race = info[RACE_IND][1:-1].lower()
-    local = get_local(info[LOCAL_IND][1:-1].lower())
-    course = info[COURSE_IND].lower()
-    year_in = int(info[YEAR_IN_IND][1:-1])
-    year_end = int(info[YEAR_END_IND][1:-1])
-
-    # insert in the database, in case not present
-    query = "insert into %s.student (cod_mat, sex, age, quota, school_type, race, \
-            local, course, year_in, year_end) values (%d, '%s', %d, '%s', '%s', \
-            '%s', %d, '%s', %d, %d)" \
-                % (MY_DATABASE, code, sex, age, quota, school_type, race, local, \
-                    course, year_in, year_end)
-    try:
-        cur.execute(query)
-        insertions += 1
-    except psycopg2.IntegrityError:
-        conn.rollback()
-
-    conn.commit()
-
-def insert_subject(info, cur, conn):
-    """
-    receives a list with the information, the cursor and a connection
-    insert subject on database
-    """
-    global insertions
-
-    # get subject information #[1:-1] to remove quotes
-    code = int(info[SUB_CODE_IND])
-    name = info[SUB_NAME_IND][1:-1].lower()
-
-    # insert in the database, in case not present
-    query = "insert into %s.subject (code, name) values (%d, '%s')" \
-                % (MY_DATABASE, code, name) 
-    try:
-        cur.execute(query)
-        insertions += 1
-    except psycopg2.IntegrityError:
-        conn.rollback()
-
-    conn.commit()
-
-def insert_subject_student(info, cur, conn, year, semester):
-    """
-    insert a relation of student and subject he has coursed
-    """
-    global insertions
-
-    # get student and subject information #[1:-1] to remove quotes
-    code_stu = int(info[CODE_IND])
-    code_sub = int(info[SUB_CODE_IND])
-    grade = info[GRADE_IND][1:-1]
-
-    # insert in the database, in case not present
-    query = "insert into %s.student_subject (code_stu, code_sub, grade, semester, \
-    year) values (%d, %d, '%s', %d, %d)" \
-                % (MY_DATABASE, code_stu, code_sub, grade, semester, year) 
-    #try:
-    cur.execute(query)
-    insertions += 1
-    #except psycopg2.IntegrityError:
-    #    conn.rollback()
-
-    conn.commit()

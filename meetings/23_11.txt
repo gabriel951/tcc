@@ -11,6 +11,18 @@ física.
     -> 6. muitos valores como nao declarados para tipo da escola.
     -> 7. o número de cotas foi alterado, de 2000 até 2010. ex: em 2000 só tinha
             universal 
+    -> 8. histogramas e gráficos tem como objetivo verificar a qualidade dos dados. Como a
+            consistência dos dados derivados depende da consistência dos dados
+            brutos, não foi necessário analisar a consistência destes por meio de
+            gráficos
 
 sobre a base de dados: 
     * campo uf tem missing values.
+
+comentários do ladeira: 
+    -> não tem problema uma eventual inconsistência entre dados de treino e teste
+    (ex: cota para dados de treino)
+    -> não fazer para um ano, ao invés disso, fazer um modelo que atualize previsão.
+E se a cada fim de semestre fosse atualizada a probabilidade do aluno ser jubilado?
+    -> para esse semestre, fazer 3 primeiras fases do crips-dm
+    -> pegar cursos de computação, pegar redes e mecatrônica
