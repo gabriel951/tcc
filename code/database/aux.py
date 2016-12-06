@@ -18,6 +18,50 @@ def get_age(birth_date, year):
 
     return age
 
+def get_course(std_inf):
+    """
+    receives a student tuple
+    returns a string containing the course of a student in proper format
+    """
+    COURSE_IND_TUPLE = 8
+    course = std_inf[COURSE_IND_TUPLE]
+    if course == 'ciência da computação':
+        return 'CIC'
+    elif course == 'engenharia mecatrônica':
+        return 'mecatrônica'
+    elif course == 'engenharia de redes de comunicação':
+        return 'redes'
+    elif course == 'engenharia de computação':
+        return 'computação'
+    elif course == 'engenharia de software':
+        return 'eng_softw'
+    else:
+        print(std_inf, course)
+        exit('course not identified')
+
+def get_race(std_inf):
+    """
+    receives a student tuple
+    return a string containing the race of a student in proper format
+    """
+    RACE_IND_TUPLE = 6
+    race = std_inf[RACE_IND_TUPLE]
+    # remove first and last whitespaces
+    race = race.strip()
+    if race == '0':
+        return 'indisponível'
+    elif race == '000':
+        return 'indisponível'
+    elif race == 'nao cadastrada':
+        return 'indisponível'
+    elif race == 'nao dispoe de informacao':
+        return 'indisponível'
+    elif race in ['amarela', 'branca', 'parda', 'preta', 'indigena']:
+        return race
+    else:
+        print(race)
+        exit('race not identified')
+
 def get_local(uf):
     """ 
     receives a string containing the uf of the person
@@ -25,11 +69,11 @@ def get_local(uf):
     there is a missing value
     """
     if uf == "df":
-        return 1
+        return "df"
     elif len(uf) >= 1:
-        return 2
+        return "outros"
     else:
-        return 3
+        return "indisponível"
 
 def get_time_periods():
     """ 

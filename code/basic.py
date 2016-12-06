@@ -5,8 +5,8 @@ import psycopg2
 YEAR_START = 2000
 YEAR_END = 2015
 YEAR_START_TRA = 2000 
-YEAR_END_TRA = 2010
-YEAR_START_TEST = 2011
+YEAR_END_TRA = 2009
+YEAR_START_TEST = 2010
 YEAR_END_TEST = 2015
 
 # file extension
@@ -33,14 +33,19 @@ QUOTA_IND = 7
 SCHOOL_IND = 9
 RACE_IND = 10
 YEAR_IN_IND = 14
+SEM_IN_IND = 15 # semester
 YEAR_END_IND = 17
+SEM_END_IND = 18 
+WAY_OUT_IND = 19
 COURSE_IND = 53
 SUB_CODE_IND = 72
 GRADE_IND = 73
 SUB_NAME_IND = 74
 
 # courses being considered
-COURSES_CONSIDERED = ["ciência da computação", "estatística", "matemática"]
+COURSES_CONSIDERED = ["ciência da computação", "engenharia de computação", \
+"engenharia de redes de comunicação", "engenharia de software", \
+"engenharia mecatrônica"]
 
 def close_conn(conn):
     """

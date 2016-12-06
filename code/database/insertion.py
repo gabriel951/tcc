@@ -15,17 +15,38 @@ lines_read = 0
 valid_lines = 0
 insertions = 0
 
+def clean_database():
+    """
+    after the database is built, substitute appropriate values to increase
+    consistency
+    """
+    # get connection and cursor
+    conn = get_conn()
+    cur = conn.cursor()
+
+    # get list of all student
+    table = 'student'
+    query = 'select * from %s.%s;' % (MY_DATABASE, table)
+    cur.execute(query)
+    rows = cur.fetchall()
+
+    # update student info, one by one
+    for row in rows:
+        update_student_info(conn, cur, row)
+
+    close_conn(conn)
+
 def execute_query(query, cur, conn):
     """
     try to execute query, rolling back if there's already an entry
     """
     global insertions
 
-    try:
-        cur.execute(query)
-        insertions += 1
-    except psycopg2.IntegrityError:
-        conn.rollback()
+    #try:
+    cur.execute(query)
+    insertions += 1
+    #except psycopg2.IntegrityError:
+    #    conn.rollback()
 
     conn.commit()
 
@@ -70,15 +91,28 @@ def insert_student(info, cur, conn, year):
     race = info[RACE_IND][1:-1].lower()
     local = get_local(info[LOCAL_IND][1:-1].lower())
     course = info[COURSE_IND].lower()
-    year_in = int(info[YEAR_IN_IND][1:-1])
-    year_end = int(info[YEAR_END_IND][1:-1])
+    year_in = int(info[YEAR_IN_IND])
+    semester_in = int(info[SEM_IN_IND])
+    year_end = int(info[YEAR_END_IND])
+    semester_end = int(info[SEM_END_IND])
+    way_out = info[WAY_OUT_IND][1:-1]
+
+    # asserts
+    #try:
+    assert (semester_in == 1 or semester_in == 2)
+    assert (semester_end == 0 or semester_end == 1 or semester_end == 2)
+    assert (year_in >= YEAR_START and year_end <= year_end)
+    #except AssertionError:
+    #    print(semester_in, semester_end)
+    #    print(year_in, year_end)
+
 
     # insert in the database, in case not present
     query = "insert into %s.student (cod_mat, sex, age, quota, school_type, race, \
-            local, course, year_in, year_end) values (%d, '%s', %d, '%s', '%s', \
-            '%s', %d, '%s', %d, %d)" \
+            local, course, year_in, semester_in, year_end, semester_end, way_out) values \
+            (%d, '%s', %d, '%s', '%s', '%s', '%s', '%s', %d, %d, %d, %d, '%s')" \
                 % (MY_DATABASE, code, sex, age, quota, school_type, race, local, \
-                    course, year_in, year_end)
+                    course, year_in, semester_in, year_end, semester_end, way_out)
 
     execute_query(query, cur, conn)
 
@@ -157,3 +191,16 @@ def parse_insert(row, cur, conn, year, semester):
     insert_subject(info, cur, conn)
     insert_subject_student(info, cur, conn, year, semester)
 
+def update_student_info(conn, cur, row):
+    """
+    receives a connection, a cursor and a tuple, updates the student information
+    """
+    CODE_IND_TUPLE = 1
+    # get query
+    new_course = get_course(row)
+    new_race = get_race(row)
+    query = "update %s.student set course = '%s', race = '%s' where cod_mat = %d;" \
+            % (MY_DATABASE, new_course, new_race, row[CODE_IND_TUPLE])
+
+    # execute
+    execute_query(query, cur, conn)

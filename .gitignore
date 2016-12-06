@@ -1,0 +1,21 @@
+# csv files will be ignored #
+*.csv
+
+# python cache files
+*.pyc
+
+# images
+*.png
+
+# tex files
+*.aux
+*.bbl
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+
+# directories
+teor_found/
+plano_trabalho/

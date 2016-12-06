@@ -12,10 +12,13 @@ CREATE TABLE BD_UNB.STUDENT
     QUOTA           VARCHAR(100),
     SCHOOL_TYPE     VARCHAR(100),
     RACE            VARCHAR(100),
-    LOCAL           INT, 
+    LOCAL           VARCHAR(100), 
     COURSE          VARCHAR(100),
-    YEAR_IN         INT, 
+    YEAR_IN         INT,
+    SEMESTER_IN     INT,
     YEAR_END        INT, 
+    SEMESTER_END    INT,
+    WAY_OUT         VARCHAR(100),
 PRIMARY KEY(ID));
 
 -- SUBJECT

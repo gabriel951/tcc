@@ -20,13 +20,16 @@
             2010.
         \item Dados de teste: alunos que entraram depois de 2010 e se formaram até
             2015.
+        \item Cursos sendo considerados: Ciência da Computação (bacharelado e
+            licenciatura), Engenharia de Computação, Engenharia Mecatrônica e
+            Engenharia de Redes de Computação. 
     \end{itemize}
 \end{frame}
 
 % dados disponiveis a serem utilizados
 \begin{frame}{Dados Brutos a Serem Utilizados}
     \begin{itemize}[itemsep=3ex]
-        \item Dados sociais: sexo, idade, residente do local, cotista,
+        \item Dados sociais: sexo, idade, UF, cotista,
             tipo da escola, raça, curso, forma de ingresso.
         \item Desempenho acadêmico: IRA.
     \end{itemize}
@@ -35,15 +38,14 @@
 % dados derivados a serem utilizados
 \begin{frame}{Dados Derivados a Serem Utilizados}
     \begin{itemize}[itemsep=3ex]
-        \item coeficiente de melhora acadêmica (razão entre notas do primeiro semestre
-            e notas do segundo semestre) 
-        \item razão entre número de disciplinas reprovadas por semestre, trancadas
-            por semestre e aprovadas por semestre frente ao total de disciplinas do
-            semestre
+        \item coeficiente de melhora acadêmica (razão entre notas do semestre
+            anterior e e notas do semestre anterior ao anterior) 
+        \item razão entre número de disciplinas reprovadas, trancadas e 
+            aprovadas frente ao total de disciplinas já feitas. 
         \item razão entre disciplinas cursadas por semestre e quantidade 
             de disciplinas do curso 
         \item razão entre disciplinas obrigatórias cursadas por semestre e quantidade 
-            de disciplinas obrigatórias do curso (*)
+            de disciplinas do curso (*)
         \item flag indicando aprovação ou não na disciplina mais difícil do semestre.
     \end{itemize}
 \end{frame}
@@ -51,9 +53,9 @@
 % propriedades gerais dos dados
 \begin{frame}{Propriedades Gerais dos Dados}
     \begin{itemize}[itemsep=3ex]
-        \item São 7 features relacionados às condições sociais dos estudantes e 11
-            features relacionados ao desempenho acadêmico
-        \item São x entradas na base de dados 
+        \item São 8 features relacionados às condições sociais dos estudantes e pelo
+            menos 6 features relacionados ao desempenho acadêmico
+        \item São 2959 alunos.  
     \end{itemize}
 \end{frame}
 

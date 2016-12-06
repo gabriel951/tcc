@@ -6,11 +6,15 @@ from insertion import *
 # maximum number of values a column possess
 MAX_DIFF_VALUES = 100000
 
-def study_row(row, index, diff_values):
+def study_row(row, index, diff_values, mode = 'selected_courses'):
     """
-    receives a row, an index and a list of different values found so far
+    receives a row, an index, a list of different values found so far
+    mode is an optional, and determine whether we should consider only the courses on
+    our list or all courses. 
+
     analyses if the column with given index in the row passed presents a value 
     different from diff_values
+
     if it presents, append to diff_values
     """
     global lines_read, valid_lines
@@ -37,9 +41,10 @@ def study_row(row, index, diff_values):
     if info[DEGREE_IND].lower() != "graduacao":
         return
     
-    # skip if not from an interesting course
-    if info[COURSE_IND].lower() not in COURSES_CONSIDERED:
-        return
+    # skip if not from an interesting course 
+    if mode == 'selected_courses':
+        if info[COURSE_IND].lower() not in COURSES_CONSIDERED:
+            return
     
     valid_lines += 1
 
@@ -47,7 +52,7 @@ def study_row(row, index, diff_values):
         diff_values.append(info[index])
 
 # shows how many different values a column has for a given year and semester
-def test_column_values(time_periods, index):
+def test_column_values(time_periods, index, mode = 'selected_courses'):
     """
     receives a time period list of the form [(year, semester), ...]
     an index for the column to be analysed
@@ -78,7 +83,7 @@ def test_column_values(time_periods, index):
 
             # iterate through the rows, inserting in the table
             for row in reader:
-                study_row(row, index, diff_values)
+                study_row(row, index, diff_values, mode)
                 if len(diff_values) > MAX_DIFF_VALUES: 
                     print("too much diff_values")
                 
@@ -105,7 +110,7 @@ def test_insertion(mode = 'quick'):
         print("starting insertion")
         time_periods = get_time_periods()
         for (year, semester) in time_periods:
-            print("starting for (%d %d)" %(year, semester))
+            print("starting for (%d %d)" % (year, semester))
             insert_database(year, semester)
         print("finishing insertion")
     else:
@@ -131,12 +136,16 @@ def test_database():
     #ind_list.append(SCHOOL_IND)
     #ind_list.append(RACE_IND)
     #ind_list.append(YEAR_IN_IND)
+    #ind_list.append(SEM_IN_IND)
+    #ind_list.append(YEAR_END_IND)
     #ind_list.append(YEAR_END_IND)
     #ind_list.append(SUB_CODE_IND)
     #ind_list.append(SUB_NAME_IND)
+    #ind_list.append(WAY_OUT_IND)
 
     for ind in ind_list:
-        test_column_values(test_time, ind)
+        test_column_values(time_periods, ind, mode = 'selected_courses')
 
 #test_database()
 #test_insertion('normal')
+clean_database()

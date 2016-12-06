@@ -1,0 +1,23 @@
+starting study for: ../mencoes/C20151.csv
+['Administração', 'Administração Pública', 'Agronomia', 'Arquitetura e Urbanismo',
+'Arquivologia', 'Artes Cênicas', 'Artes Plásticas', 'Artes Visuais',
+'Biblioteconomia', 'Biotecnologia', 'Ciência Política', 'Ciência da Computação',
+'Ciências Ambientais', 'Ciências Biológicas', 'Ciências Contábeis', 'Ciências
+Econômicas', 'Ciências Naturais', 'Ciências Sociais', 'Computação', 'Comunicação
+Social', 'Design', 'Direito', 'Educação Artística', 'Educação Física', 'Educação do
+Campo', 'Enfermagem', 'Engenharia', 'Engenharia Aeroespacial', 'Engenharia
+Ambiental', 'Engenharia Automotiva', 'Engenharia Civil', 'Engenharia Eletrônica',
+'Engenharia Elétrica', 'Engenharia Florestal', 'Engenharia Mecatrônica', 'Engenharia
+Mecânica', 'Engenharia Química', 'Engenharia de Computação', 'Engenharia de Energia',
+'Engenharia de Produção', 'Engenharia de Redes de Comunicação', 'Engenharia de
+Software', 'Estatística', 'Farmácia', 'Filosofia', 'Fisioterapia', 'Fonoaudiologia',
+'Física', 'Geofísica', 'Geografia', 'Geologia', 'Gestão Ambiental', 'Gestão de
+Agronegócios', 'Gestão de Políticas Públicas', 'Gestão do Agronegócio', 'Gestão em
+Saúde Coletiva', 'História', 'Letras', 'Letras-Tradução', 'Letras-Tradução Espanhol',
+'Língua de Sinais Brasileira/Português como Segunda Língua', 'Línguas Estrangeiras
+Aplicadas - MSI', 'Matemática', 'Matemática - Segunda Licenciatura', 'Medicina',
+'Medicina Veterinária', 'Museologia', 'Música', 'Nutrição', 'Odontologia',
+'Pedagogia', 'Pedagogia - 1ª Licenciatura', 'Psicologia', 'Química', 'Química
+Tecnológica', 'Relações Internacionais', 'Saúde Coletiva', 'Serviço Social',
+'Teatro', 'Teoria Crítica e História da Arte', 'Terapia Ocupacional', 'Turismo']
+lines: 185595 valid_lines: 174163

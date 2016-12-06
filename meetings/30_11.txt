@@ -1,0 +1,22 @@
+falar com o ladeira:
+    0. Atualização no que está sendo proposto: modelo que, para um aluno de um
+determinado semestre tenta prever se ele está será jubilado ou não. Atualiza a
+previsão a cada semestre. 
+        ideia: fazer desde o primeiro semestre até o terceiro ano de faculdade
+    2. possíveis formas de saída - quais dessas considerar?
+        Desligamento - Abandono,
+        Deslig - Nao Cumpriu condicao,
+        desligamento - força de convênio
+        desligamento - decisão judicial
+        anulação de registro
+        Formatura,
+        Novo Vestibular,
+        Rep 3 vezes na mesma Disc Obrig,
+        falecimento
+        transferência
+    3. Com isso termino a parte de entendimento dos dados, vou para a parte de
+preparação dos dados
+    4. tirar raça  
+    5. data da apresentação
+
+para proxima reunião:
