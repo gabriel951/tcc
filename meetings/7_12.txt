@@ -1,0 +1,15 @@
+reuniao: 
+    1. ladeira está de férias do dia 26 ao dia 8
+    2. crisp-dm é um modelo de referência
+    3. colocar justificativa da pesquisa/definição do problema como seções da
+monografia. 
+    4. modificar de continuação da pesquisa para proposta/planejamento. 
+    5. deixar claro hipóteses e premissas
+    6. na seção de metodologia:
+        -> levantamento do estado da arte
+        -> indução de modelos de predição com aplicação crisp-dm
+        -> acompanhamento do desempenho dos discentes
+        -> revisão dos modelos induzidos
+
+para a proxima reunião:
+    -> combinar calendário acadêmico após reunião do CEPE

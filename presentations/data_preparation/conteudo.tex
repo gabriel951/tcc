@@ -1,30 +1,68 @@
+% imputação
+% limpeza dos dados
+% histograma dos valores
+% matriz de correlação
+
 \section{Preparação dos Dados}
 \begin{frame}{Seleção dos Dados}
 \begin{itemize}[itemsep=3ex]
     \item Utilização dos dados de 2000 até 2009 como treino e de 2010 até 2015 para
         testes. 
     \item Atributos que serão levados em consideração foram explicados na fase de
-        entendimento dos dados < a fazer >
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Limpeza dos Dados}
-\begin{itemize}[itemsep=3ex]
-    \item <a fazer> foram encontrados/ não foram encontrados barulhos nos dados
+        entendimento dos dados: sexo, idade, UF, cotista, tipo da escola, raça,
+        curso, forma de ingresso, IRA.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Construção dos Atributos Derivados}
 \begin{itemize}[itemsep=3ex]
-    \item Os atributos derivados são: 
+    \item Atributos derivados que serão construídos já foram definidos na fase
+        anterior.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Histograma da Distribuição dos Atributos Derivados - Coeficiente de
+    Melhora Acadêmica}
+\begin{itemize}[itemsep=3ex]
+        \item <Por histograma aqui>
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Matriz de Correlação}
+\begin{itemize}[itemsep=3ex]
+    \item <Por matriz de correlação aqui>
+    \item Qual valor de covariância é indicado de modo a eliminar feature
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Limpeza dos Dados}
+\begin{itemize}[itemsep=3ex]
+    \item Optou-se por não considerar features nos quais mais de 60\% das entradas
+        fossem missing values.
+    \item Descartou-se assim o feature raça.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Limpeza dos Dados}
+\begin{itemize}[itemsep=3ex]
+    \item Para o caso de atributos que podem apresentar missing values, foi feita
+        imputação (exemplo: coeficiente de melhora acadêmica).
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Integração dos Dados}
 \begin{itemize}[itemsep=3ex]
     \item Dados originais da SIGRA foram integrados com a informação dos currículos
-        antigos dos cursos.
+        antigos e novos dos cursos, de modo a saber quais matérias são de quais
+        semestres.
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Transformação dos dados}
+\begin{itemize}[itemsep=3ex]
+    \item Dados textuais serão transformados em dados numéricos.
+    \item IRA foi normalizado para 0 a 1, assim como o coeficiente de melhora
+        acadêmica.
+\end{itemize}
+\end{frame}
 

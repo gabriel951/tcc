@@ -3,16 +3,17 @@ falar com o ladeira:
 determinado semestre tenta prever se ele está será jubilado ou não. Atualiza a
 previsão a cada semestre. 
         ideia: fazer desde o primeiro semestre até o terceiro ano de faculdade
+        pegar o índice de erro, mostrando os falsos positivos e falsos negativos 
     2. possíveis formas de saída - quais dessas considerar?
-        Desligamento - Abandono,
-        Deslig - Nao Cumpriu condicao,
-        desligamento - força de convênio
-        desligamento - decisão judicial
-        anulação de registro
+        Desligamento - Abandono -> 
+        Deslig - Nao Cumpriu condicao, -> 
+        desligamento - força de convênio -> retira
+        desligamento - decisão judicial -> retira
+        anulação de registro -> retira
         Formatura,
-        Novo Vestibular,
-        Rep 3 vezes na mesma Disc Obrig,
-        falecimento
+        Novo Vestibular, -> mantem
+        Rep 3 vezes na mesma Disc Obrig, -> mantem
+        falecimento -> retira
         transferência
     3. Com isso termino a parte de entendimento dos dados, vou para a parte de
 preparação dos dados
@@ -20,3 +21,6 @@ preparação dos dados
     5. data da apresentação
 
 para proxima reunião:
+    * fica registrado que o rafael tem banca no dia 16/12, as 14h30. 
+    * trazer um esboço do que será feito até o fim do semetre. 
+    * questão do calendário fica pendente. 
