@@ -148,4 +148,4 @@ def test_database():
 
 #test_database()
 #test_insertion('normal')
-clean_database()
+#clean_database()

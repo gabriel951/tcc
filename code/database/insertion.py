@@ -3,11 +3,10 @@
 import csv
 import psycopg2 
 
-# import basic
+# import basic and aux
 import sys
 sys.path.append('..')
 from basic import *
-
 from aux import *
 
 # lines read, valid lines, insertions done so far
