@@ -23,7 +23,7 @@ PASSWORD = 'amesma'
 HOST = 'localhost'
 PORT = '5432'
 
-# index of the fields in the file
+# index of the fields in the csv file
 CODE_IND = 0
 SEX_IND = 1
 DEGREE_IND = 2
@@ -33,10 +33,11 @@ QUOTA_IND = 7
 SCHOOL_IND = 9
 RACE_IND = 10
 YEAR_IN_IND = 14
-SEM_IN_IND = 15 # semester
+SEM_IN_IND = 15
 YEAR_END_IND = 17
 SEM_END_IND = 18 
 WAY_OUT_IND = 19
+IRA_IND = 34
 COURSE_IND = 53
 SUB_CODE_IND = 72
 GRADE_IND = 73

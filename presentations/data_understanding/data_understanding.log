@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.15)  30 NOV 2016 09:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.15)  16 JAN 2017 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1099,11 +1099,13 @@ LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <4> not available
 
 ] [6
 
+] [7
+
 ])
 \openout2 = `dados_brutos.aux'.
 
  (./dados_brutos.tex
-<images/sex.png, id=178, 505.89pt x 505.89pt>
+<images/sex.png, id=204, 505.89pt x 505.89pt>
 File: images/sex.png Graphic file (type png)
  <use images/sex.png>
 Package pdftex.def Info: images/sex.png used on input line 6.
@@ -1112,12 +1114,12 @@ Package pdftex.def Info: images/sex.png used on input line 6.
 Overfull \vbox (8.65044pt too high) detected at line 6
  []
 
-[7
+[8
 
 
 
  <./images/sex.png (PNG copy)>]
-<images/age.png, id=205, 505.89pt x 505.89pt>
+<images/age.png, id=230, 505.89pt x 505.89pt>
 File: images/age.png Graphic file (type png)
  <use images/age.png>
 Package pdftex.def Info: images/age.png used on input line 13.
@@ -1126,10 +1128,10 @@ Package pdftex.def Info: images/age.png used on input line 13.
 Overfull \vbox (8.65044pt too high) detected at line 13
  []
 
-[8
+[9
 
  <./images/age.png (PNG copy)>]
-<images/local.png, id=231, 505.89pt x 505.89pt>
+<images/local.png, id=257, 505.89pt x 505.89pt>
 File: images/local.png Graphic file (type png)
  <use images/local.png>
 Package pdftex.def Info: images/local.png used on input line 20.
@@ -1138,10 +1140,10 @@ Package pdftex.def Info: images/local.png used on input line 20.
 Overfull \vbox (8.65044pt too high) detected at line 20
  []
 
-[9
+[10
 
  <./images/local.png (PNG copy)>]
-<images/quota.png, id=258, 505.89pt x 505.89pt>
+<images/quota.png, id=283, 505.89pt x 505.89pt>
 File: images/quota.png Graphic file (type png)
  <use images/quota.png>
 Package pdftex.def Info: images/quota.png used on input line 27.
@@ -1150,10 +1152,10 @@ Package pdftex.def Info: images/quota.png used on input line 27.
 Overfull \vbox (8.65044pt too high) detected at line 27
  []
 
-[10
+[11
 
  <./images/quota.png (PNG copy)>]
-<images/school_type.png, id=284, 505.89pt x 505.89pt>
+<images/school_type.png, id=309, 505.89pt x 505.89pt>
 File: images/school_type.png Graphic file (type png)
 
 <use images/school_type.png>
@@ -1163,10 +1165,10 @@ Package pdftex.def Info: images/school_type.png used on input line 34.
 Overfull \vbox (8.65044pt too high) detected at line 34
  []
 
-[11
+[12
 
  <./images/school_type.png (PNG copy)>]
-<images/race.png, id=310, 505.89pt x 505.89pt>
+<images/race.png, id=335, 505.89pt x 505.89pt>
 File: images/race.png Graphic file (type png)
  <use images/race.png>
 Package pdftex.def Info: images/race.png used on input line 41.
@@ -1175,10 +1177,10 @@ Package pdftex.def Info: images/race.png used on input line 41.
 Overfull \vbox (8.65044pt too high) detected at line 41
  []
 
-[12
+[13
 
  <./images/race.png (PNG copy)>]
-<images/course.png, id=336, 505.89pt x 505.89pt>
+<images/course.png, id=363, 505.89pt x 505.89pt>
 File: images/course.png Graphic file (type png)
  <use images/course.png>
 Package pdftex.def Info: images/course.png used on input line 48.
@@ -1187,12 +1189,12 @@ Package pdftex.def Info: images/course.png used on input line 48.
 Overfull \vbox (8.65044pt too high) detected at line 48
  []
 
-[13
+[14
 
- <./images/course.png (PNG copy)>] [14
+ <./images/course.png (PNG copy)>] [15
 
 ]
-<images/grade.png, id=389, 505.89pt x 505.89pt>
+<images/grade.png, id=414, 505.89pt x 505.89pt>
 File: images/grade.png Graphic file (type png)
  <use images/grade.png>
 Package pdftex.def Info: images/grade.png used on input line 61.
@@ -1201,14 +1203,14 @@ Package pdftex.def Info: images/grade.png used on input line 61.
 Overfull \vbox (8.65044pt too high) detected at line 61
  []
 
-[15
+[16
 
  <./images/grade.png (PNG copy)>]) (./data_understanding.bbl
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' undefined
 (Font)              using `T1/cmss/m/n' instead on input line 4.
 
-) [16
+) [17
 
 
  </usr/share/texmf/tex/latex/beamer/base/art/beamericonarticle.pdf>]
@@ -1240,10 +1242,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
  ) 
 Here is how much of TeX's memory you used:
- 16602 strings out of 493304
- 300648 string characters out of 6139870
+ 16606 strings out of 493304
+ 300683 string characters out of 6139870
  383378 words of memory out of 5000000
- 19615 multiletter control sequences out of 15000+600000
+ 19617 multiletter control sequences out of 15000+600000
  9690 words of font info for 23 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,14n,53p,407b,547s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1251,10 +1253,10 @@ Here is how much of TeX's memory you used:
 fonts/type1/public/cm-super/sfsi1095.pfb></usr/share/texmf/fonts/type1/public/c
 m-super/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1200.pfb
 ></usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on data_understanding.pdf (16 pages, 443169 bytes).
+Output written on data_understanding.pdf (17 pages, 444826 bytes).
 PDF statistics:
- 472 PDF objects out of 1000 (max. 8388607)
- 428 compressed objects within 5 object streams
- 36 named destinations out of 1000 (max. 500000)
+ 500 PDF objects out of 1000 (max. 8388607)
+ 455 compressed objects within 5 object streams
+ 38 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

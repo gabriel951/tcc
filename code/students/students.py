@@ -1,11 +1,19 @@
 #!/usr/bin/python3.4
 # student file, contain information about the students
 import pickle
+import csv
 
-# import basic
+# import basic and aux
 import sys
 sys.path.append('..')
 from basic import *
+from aux import *
+
+# name of the structure that will contain the students information
+NAME_STU_STRUCTURE = 'students_info'
+
+# global variables
+ira_filled = 0 # number of students with ira calculated
 
 class Student(): 
     """
@@ -49,12 +57,39 @@ class Student():
         self.pass_rate = None 
         # reason between subjects coursed and subjects dropped
         self.drop_rate = None 
-        # reason between approvation in mandatory disciplines and number of
-        # discipline taken
-        self.mand_rate = None
+        # reason between credits in disciplines per semester and number of credits in
+        # the course
+        self.credit_rate = None
+        # reason between credits in mandatory disciplines per semester and number of
+        # credits in the course
+        self.mand_credit_rate = None
         # rate of approvation in the most hard disciplines of the semester
         self.hard_rate = None
+        # boolean that indicates whether a student is in condition or not
+        self.in_condition = None
+        # position of the student relative to the semester he is in 
+        self.position = None
     
+    def get_num_semesters(self):
+        """
+        receives a student with correct information regarding the year and semester
+        the student left. 
+        Returns the number of semesters the student was in the university
+        """
+        num_semesters = (self.year_out - self.year_in) * 2 + \
+                (self.sem_out - self.sem_in)
+        # necessary to account for the current semester
+        num_semesters += 1
+        return num_semesters
+
+    def get_semester(self, year, semester):
+        """
+        receives a student, an year and a semester. 
+        returns the semester the student is in
+        """
+        current_semester = (year - self.year_in) * 2 + (semester - self.sem_in)
+        return current_semester
+
     def show_student(self):
         """
         print a student info 
@@ -89,6 +124,27 @@ class Student():
         self.year_out = tup[11]
         self.sem_out = tup[12]
         self.way_out = tup[13]
+
+    def set_ira(self, ira, year, semester):
+        """
+        receives a tuple containing student information (no derived attributes) and
+        the year and semester of the information. 
+        insert in the student the IRA correctly
+        """
+        if self.ira == None:
+            # student ira should be a list containing iras for each semester
+            self.ira = []
+            num_semesters = self.get_num_semesters()
+            for i in range(num_semesters):
+                self.ira.append('not known')
+            
+        # insert ira in the right position
+        # we don't need a -1 in the position
+        pos = self.get_semester(year, semester) 
+        try: 
+            self.ira[pos] = ira
+        except IndexError: 
+            print(pos, num_semesters) 
 
 def fill_grades(stu_info, mode = 'normal'):
     """
@@ -182,28 +238,35 @@ def get_derived_info(stu_info):
     attributes   
     """
     # fill student grades
-    fill_grades(stu_info)
+    #fill_grades(stu_info)
 
-    # calculate student ira for the semesters
-    #set_ira(stu_info)
+    # calculate student ira for the semesters - TODO (can be done)
+    set_ira(stu_info)
 
-    # calculate improvement rate
+    # calculate improvement rate - TODO (can be done)
     #set_impr_rate(stu_info)
 
-    # calculate fail rate
+    # calculate fail rate - ok
     #set_fail_rate(stu_info)
 
-    # calculate pass rate
+    # calculate pass rate - ok
     #set_pass_rate(stu_info)
 
-    # calculate drop rate
+    # calculate drop rate - ok
     #set_drop_rate(stu_info)
 
-    # calculate mandatory rate
+    # calculate mandatory rate - TODO (can be done)
     #set_mand_rate(stu_info)
 
-    # calculate hard rate
+    # calculate hard rate - TODO (can be done)
     #set_hard_rate(stu_info)
+
+    # calculate if student is in condition - TODO (can be done)
+    #set_condition(stu_info)
+
+    # calculate position of the student for the semester he is in 
+    #- TODO (can be done)
+    #set_condition(stu_info)
 
 def get_students_info(): 
     """
@@ -211,7 +274,7 @@ def get_students_info():
     saves the information as a dictionary of students and serializes it using
     pickle
 
-    * the dictionary of students accept as a key the student id in database and has
+    * the dictionary of students accept as a key the student cod_mat in database and has
     * as value the corresponding student object
     """
     # obtain info for the students contained in database
@@ -221,7 +284,7 @@ def get_students_info():
     get_derived_info(stu_dict)
 
     # saves object
-    save_students('students_info', stu_dict)
+    save_students(NAME_STU_STRUCTURE, stu_dict)
 
 def load_students(name, path = 'data/'): 
     """
@@ -231,6 +294,48 @@ def load_students(name, path = 'data/'):
     stu_info = pickle.load(open(path + name, 'rb'))
     return stu_info
 
+def parse_insert_ira(stu_info, row, year, semester): 
+    """
+    receives a row, containing the ira information. 
+    put that info in the student ira
+    """
+    global ira_filled
+
+    # return case of empty row
+    if len(row) == 0:
+        return 
+
+    # get row content - the row is a list with only one entry
+    content = row[0]
+    for i in range(1, len(row)):
+        content += row[i]
+
+    # split content in list 
+    info = content.split(';')
+
+    # skip if not from graduation 
+    # you dont need to understand this, but this code fragment is essential because
+    # the first line of the csv file is a header information, that must be skipped
+    info[DEGREE_IND] = info[DEGREE_IND][1:-1]
+    if info[DEGREE_IND].lower() != "graduacao":
+        return
+
+    # get student code and return case not a student of interest
+    code = int(info[CODE_IND])
+    if code not in stu_info: 
+        return
+
+    # get ira information - in the csv file, the ira is between 0 and 50 000
+    ira = int(info[IRA_IND])
+    ira = ira / float(10000)
+    assert (ira >= 0 and ira <= 5.0)
+
+    # put ira in the student info
+    stu_info[code].set_ira(ira, year, semester)
+
+    # increment the number of ira filleds
+    ira_filled += 1
+
 def save_students(name, stu_info, path = 'data/'): 
     """
     receives a name and a dictionary containing student info. 
@@ -239,7 +344,107 @@ def save_students(name, stu_info, path = 'data/'):
     file_target = open(path + name, 'wb')
     pickle.dump(stu_info, file_target)
 
+def set_drop_rate(stu_info): 
+    """
+    receives a dictionary containing all student information
+    set correctly the IRA of every student
+    """
+    for key in stu_info: 
+        # get current student grades
+        cur_stu_grades = stu_info[key].grades
+
+        # iterate through every subject
+        subjects_coursed = 0
+        subjects_dropped = 0 
+        for sub_name, info in cur_stu_grades.items():
+            subjects_coursed += 1
+            grade = info[2] # grade is third information on the list
+            if grade not in ['II', 'MI', 'MM', 'MS', 'SS', 'CC']: 
+                subjects_dropped += 1
+                 
+        # set attribute correctly 
+        stu_info[key].drop_rate = float(subjects_dropped) / subjects_coursed  
+
+def set_fail_rate(stu_info):
+    """
+    receives a dictionary
+    set correctly the fail rate of every student
+    """
+    for key in stu_info: 
+        # get current student grades
+        cur_stu_grades = stu_info[key].grades
+
+        # iterate through every subject
+        subjects_coursed = 0
+        subjects_failed = 0 
+        for sub_name, info in cur_stu_grades.items():
+            subjects_coursed += 1
+            grade = info[2] # grade is third information on the list
+            if grade == 'MI' or grade == 'II': 
+                subjects_failed += 1
+                 
+        # set attribute correctly 
+        stu_info[key].fail_rate = float(subjects_failed) / subjects_coursed  
+
+def set_ira(stu_info, mode = 'normal'):
+    """
+    receives a dictionary containing all students. 
+    read the csv file for the student IRA and put the student IRA as an information
+    """
+    # get all years and semesters to be considered
+    if mode == 'quick': 
+        set_ira_year_semester(stu_info, 2000, 1)
+    elif mode == 'normal': 
+        print('starting insertion')
+        time_periods = get_time_periods()
+        for (year, semester) in time_periods:
+            print("starting for (%d %d)" % (year, semester))
+            set_ira_year_semester(stu_info, year, semester)
+        print('ending insertion')
+    else:
+        exit('mode option incorrect')
+
+def set_ira_year_semester(stu_info, year, semester):
+    """
+    receives a dictionary containing all students. 
+    read the csv file for the student IRA and put the student IRA as an information
+    """
+    global ira_filled
+    file_name = CSV_PATH + FILE_NAME + str(year) + str(semester) + EXTENSION
+
+    # read line by line, parsing the results and putting on database
+    with open(file_name, newline = '', encoding = ENCODING) as fp:
+        reader = csv.reader(fp)
+
+        # iterate through the rows, inserting in the table
+        for row in reader:
+            parse_insert_ira(stu_info, row, year, semester)
+            
+    print("number of iras added: %s" % (ira_filled))
+
+def set_pass_rate(stu_info):
+    """
+    receives a dictionary
+    set correctly the pass rate of every student
+    """
+    for key in stu_info: 
+        # get current student grades
+        cur_stu_grades = stu_info[key].grades
+
+        # iterate through every subject
+        subjects_coursed = 0
+        subjects_passed = 0 
+        for sub_name, info in cur_stu_grades.items():
+            subjects_coursed += 1
+            grade = info[2] # grade is third information on the list
+            if grade == 'MM' or grade == 'MS' or grade == 'SS': 
+                subjects_passed += 1
+                 
+        # set attribute correctly 
+        stu_info[key].pass_rate = float(subjects_passed) / subjects_coursed  
+
 # get all student relevant information and saves it as an object
-#get_students_info()
+get_students_info()
+
 # load student info, just a test
-load_students('students_info')
+#load_students('students_info')

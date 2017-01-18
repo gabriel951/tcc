@@ -13,7 +13,8 @@ names(data) <- c("valores")
 
 # my plot
 my_plot <-  ggplot(data, aes(valores)) + 
-            geom_histogram(binwidth = 0.1, fill = "darkblue") + 
+            geom_histogram(binwidth = 0.05, fill = "darkblue") + 
+            #geom_histogram(fill = "darkblue") + 
             ylab("quantidade") + 
             theme_bw()
 
