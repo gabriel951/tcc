@@ -48,6 +48,12 @@ COURSES_CONSIDERED = ["ciência da computação", "engenharia de computação", 
 "engenharia de redes de comunicação", "engenharia de software", \
 "engenharia mecatrônica"]
 
+# official names for all the courses, this must be used in all the code
+CIC_BACHELOR = 'cic_bacharelado'
+CIC_NON_BACHELOR = 'cic_licenciatura'
+COMPUTER_ENGINEERING = 'engenharia_computacao'
+
+
 def close_conn(conn):
     """
     close connection from database
