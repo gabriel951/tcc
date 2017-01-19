@@ -52,6 +52,9 @@ COURSES_CONSIDERED = ["ciência da computação", "engenharia de computação", 
 CIC_BACHELOR = 'cic_bacharelado'
 CIC_NON_BACHELOR = 'cic_licenciatura'
 COMPUTER_ENGINEERING = 'engenharia_computacao'
+SOFTWARE_ENGINEERING = 'engenharia_software'
+MECHATRONICS_ENGINEERING = 'engenharia_mecatronica'
+NETWORK_ENGINEERING = 'engenharia_redes'
 
 
 def close_conn(conn):

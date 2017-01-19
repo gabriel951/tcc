@@ -10,6 +10,7 @@ from basic import *
 from aux import *
 
 from grades import *
+from courses import *
 
 # name of the structure that will contain the students information
 NAME_STU_STRUCTURE = 'students_info'
@@ -123,7 +124,8 @@ class Student():
 
             # if the student dropped
             if student_dropped():
-                if mand_discipline(data[code_pos], self.course, self.year_in,
+                # if the discipline is mandatory
+                if is_mand_sub(data[code_pos], self.course, self.year_in,
                         self.sem_out):
                     drop_mand_sub += 1
                 else:
@@ -310,7 +312,7 @@ def fill_grades(stu_info, mode = 'normal'):
 
         student.set_grades(row)
 
-def fill_improvement_rate(stu_info):
+def fill_impr_rate(stu_info):
     """
     receives a dictionary containing all students. 
     fill the student objects with information regarding the improvement rate
@@ -399,7 +401,7 @@ def get_derived_info(stu_info):
     #fill_grades(stu_info)
 
     # calculate student ira for the semesters - TODO (can be done)
-    fill_ira(stu_info)
+    #fill_ira(stu_info)
 
     # calculate improvement rate - TODO (can be done)
     fill_impr_rate(stu_info)
@@ -444,7 +446,7 @@ def get_students_info():
     # saves object
     save_students(NAME_STU_STRUCTURE, stu_dict)
 
-def load_students(name, path = 'data/'): 
+def load_students(name, path = PATH): 
     """
     receives a name
     loads the student array saved as a pickle serialized object
@@ -494,7 +496,7 @@ def parse_insert_ira(stu_info, row, year, semester):
     # increment the number of ira filleds
     ira_filled += 1
 
-def save_students(name, stu_info, path = 'data/'): 
+def save_students(name, stu_info, path = PATH): 
     """
     receives a name and a dictionary containing student info. 
     saves the student dictionary as a pickle object with a given name
