@@ -9,8 +9,13 @@ sys.path.append('..')
 from basic import *
 from aux import *
 
+from grades import *
+
 # name of the structure that will contain the students information
 NAME_STU_STRUCTURE = 'students_info'
+
+# value to indicate we haven't filled a given field yet
+NOT_KNOWN = 'not know'
 
 # global variables
 ira_filled = 0 # number of students with ira calculated
@@ -85,10 +90,62 @@ class Student():
     def get_semester(self, year, semester):
         """
         receives a student, an year and a semester. 
-        returns the semester the student is in
+        returns the semester the student is in.
+
+        * the count start in semester 0 
         """
         current_semester = (year - self.year_in) * 2 + (semester - self.sem_in)
         return current_semester
+
+    def get_sem_grade(self, year, semester):
+        """
+        receives a student
+        calculates and return the IRA of the given semester for that student 
+        """
+        # position in the list of data
+        code_pos = 0 
+        name_pos = 1 
+        grade_pos = 2 
+        year_pos = 3 
+        sem_pos = 4 
+
+        # variables necessary for ira calculation
+        drop_mand_sub = 0
+        drop_opt_sub = 0 
+        num_sub = 0 
+        sum_weights = 0
+
+        # iterate through every grade
+        for subject, data in self.grades.items(): 
+            # only proceed if data coursed in the year and semester
+            if data[year_pos] != year or data[sem_pos] != semester:
+                pass                
+
+            # if the student dropped
+            if student_dropped():
+                if mand_discipline(data[code_pos], self.course, self.year_in,
+                        self.sem_out):
+                    drop_mand_sub += 1
+                else:
+                    drop_opt_sub += 1
+
+            # weight of the grade
+            grade_weight = get_grade_weight(grade)
+            if grade_weight == None: 
+                # dont consider
+                pass
+            else:
+                # increment the number of subjects coursed
+                num_sub += 1
+                sum_weights += grade_weight
+        
+        # calculate ira
+        penalty_factor = 1 - ((0.6 * drop_mand_sub + 0.4 * drop_opt_sub) / num_sub)
+        grade_factor = float(sum_weights) / num_sub
+        ira_semester = penalty_factor * grade_factor
+
+        assert (ira_semester >= 0 and ira_semester <= 5.0)
+        return ira_semester
 
     def show_student(self):
         """
@@ -125,26 +182,90 @@ class Student():
         self.sem_out = tup[12]
         self.way_out = tup[13]
 
+    def set_grades(self, row):
+        """
+        receives a row of the csv file containing student info
+        extracts the grades of the student and put it in the 
+        """
+        # get subject name, grade, year and semester coursed
+        data = []
+        data.append(row[CODE_SUB_RIND])
+        data.append(row[NAME_RIND])
+        data.append(row[GRADE_RIND])
+        data.append(row[YEAR_RIND])
+        data.append(row[SEMESTER_RIND])
+
+        # add grade of student to the dictionary
+        self.grades[row[NAME_RIND]] = data
+
     def set_ira(self, ira, year, semester):
         """
         receives a tuple containing student information (no derived attributes) and
         the year and semester of the information. 
         insert in the student the IRA correctly
         """
+        # student ira should be a list containing iras for each semester
+        # build that list in case value is None
         if self.ira == None:
-            # student ira should be a list containing iras for each semester
             self.ira = []
             num_semesters = self.get_num_semesters()
             for i in range(num_semesters):
-                self.ira.append('not known')
+                self.ira.append(NOT_KNOWN)
             
         # insert ira in the right position
-        # we don't need a -1 in the position
         pos = self.get_semester(year, semester) 
         try: 
             self.ira[pos] = ira
         except IndexError: 
             print(pos, num_semesters) 
+
+    def set_improvement_rate(self):
+        """
+        calculates the improvement rate for every student
+        """
+        # build list of values, case not already built
+        if self.improvement_rate == None:
+            self.improvement_rate = []
+            num_semesters = self.get_num_semesters()
+            for i in range(num_semesters):
+                self.improvement_rate.append(NOT_KNOWN)
+        
+        # iterate through every year, setting position
+        cur_year = year_in
+        cur_semester = semester_in
+        for i in range(num_semesters):
+            self.set_improvement_rate_semester(cur_year, cur_semester)
+
+            # update current year/semester
+            if cur_semester == 1: 
+                cur_semester = 2 
+            else:
+                cur_year += 1
+                cur_semester = 1
+
+    def set_improvement_rate_semester(self, year, semester):
+        """
+        calculates the improvement rate for a given year and semester
+        """
+        # get position in the list that the value will be inserted
+        pos = self.get_semester(year, semester)
+
+        # if position equals 0, missing value
+        if pos == 0:
+            return
+        
+        # get year and semester of the past semester
+        if semester == 2: 
+            past_semester = 1
+            past_year = year
+        else: 
+            past_semester = 2
+            past_year = year - 1
+
+        # calculates grade for past semester and for current semester
+        past_sem_grade = self.get_sem_grade(past_year, past_semester)
+        cur_sem_grade = self.get_sem_grade(year, semester)
+        self.improvement_rate = cur_sem_grade / past_sem_grade
 
 def fill_grades(stu_info, mode = 'normal'):
     """
@@ -187,16 +308,53 @@ def fill_grades(stu_info, mode = 'normal'):
         student_id = row[CODE_STU_RIND]
         student = stu_info[student_id]
 
-        # get subject name, grade, year and semester coursed
-        data = []
-        data.append(row[CODE_SUB_RIND])
-        data.append(row[NAME_RIND])
-        data.append(row[GRADE_RIND])
-        data.append(row[YEAR_RIND])
-        data.append(row[SEMESTER_RIND])
+        student.set_grades(row)
 
-        # add grade of student to the dictionary
-        student.grades[row[NAME_RIND]] = data
+def fill_improvement_rate(stu_info):
+    """
+    receives a dictionary containing all students. 
+    fill the student objects with information regarding the improvement rate
+    """
+    # iterate through every student
+    for key in stu_info:
+        # fill the student improvement rate
+        stu_info[key].set_improvement_rate()
+
+def fill_ira(stu_info, mode = 'normal'):
+    """
+    receives a dictionary containing all students. 
+    read the csv file for the student IRA and put the student IRA as an information
+    """
+    # get all years and semesters to be considered
+    if mode == 'quick': 
+        set_ira_year_semester(stu_info, 2000, 1)
+    elif mode == 'normal': 
+        print('starting insertion')
+        time_periods = get_time_periods()
+        for (year, semester) in time_periods:
+            print("starting for (%d %d)" % (year, semester))
+            fill_ira_year_semester(stu_info, year, semester)
+        print('ending insertion')
+    else:
+        exit('mode option incorrect')
+
+def fill_ira_year_semester(stu_info, year, semester):
+    """
+    receives a dictionary containing all students. 
+    read the csv file for the student IRA and put the student IRA as an information
+    """
+    global ira_filled
+    file_name = CSV_PATH + FILE_NAME + str(year) + str(semester) + EXTENSION
+
+    # read line by line, parsing the results and putting on database
+    with open(file_name, newline = '', encoding = ENCODING) as fp:
+        reader = csv.reader(fp)
+
+        # iterate through the rows, inserting in the table
+        for row in reader:
+            parse_insert_ira(stu_info, row, year, semester)
+            
+    print("number of iras added: %s" % (ira_filled))
 
 def get_database_info():
     """
@@ -241,10 +399,10 @@ def get_derived_info(stu_info):
     #fill_grades(stu_info)
 
     # calculate student ira for the semesters - TODO (can be done)
-    set_ira(stu_info)
+    fill_ira(stu_info)
 
     # calculate improvement rate - TODO (can be done)
-    #set_impr_rate(stu_info)
+    fill_impr_rate(stu_info)
 
     # calculate fail rate - ok
     #set_fail_rate(stu_info)
@@ -359,7 +517,7 @@ def set_drop_rate(stu_info):
         for sub_name, info in cur_stu_grades.items():
             subjects_coursed += 1
             grade = info[2] # grade is third information on the list
-            if grade not in ['II', 'MI', 'MM', 'MS', 'SS', 'CC']: 
+            if student_dropped(grade): 
                 subjects_dropped += 1
                  
         # set attribute correctly 
@@ -380,47 +538,11 @@ def set_fail_rate(stu_info):
         for sub_name, info in cur_stu_grades.items():
             subjects_coursed += 1
             grade = info[2] # grade is third information on the list
-            if grade == 'MI' or grade == 'II': 
+            if student_failed(grade): 
                 subjects_failed += 1
                  
         # set attribute correctly 
         stu_info[key].fail_rate = float(subjects_failed) / subjects_coursed  
-
-def set_ira(stu_info, mode = 'normal'):
-    """
-    receives a dictionary containing all students. 
-    read the csv file for the student IRA and put the student IRA as an information
-    """
-    # get all years and semesters to be considered
-    if mode == 'quick': 
-        set_ira_year_semester(stu_info, 2000, 1)
-    elif mode == 'normal': 
-        print('starting insertion')
-        time_periods = get_time_periods()
-        for (year, semester) in time_periods:
-            print("starting for (%d %d)" % (year, semester))
-            set_ira_year_semester(stu_info, year, semester)
-        print('ending insertion')
-    else:
-        exit('mode option incorrect')
-
-def set_ira_year_semester(stu_info, year, semester):
-    """
-    receives a dictionary containing all students. 
-    read the csv file for the student IRA and put the student IRA as an information
-    """
-    global ira_filled
-    file_name = CSV_PATH + FILE_NAME + str(year) + str(semester) + EXTENSION
-
-    # read line by line, parsing the results and putting on database
-    with open(file_name, newline = '', encoding = ENCODING) as fp:
-        reader = csv.reader(fp)
-
-        # iterate through the rows, inserting in the table
-        for row in reader:
-            parse_insert_ira(stu_info, row, year, semester)
-            
-    print("number of iras added: %s" % (ira_filled))
 
 def set_pass_rate(stu_info):
     """
@@ -437,7 +559,7 @@ def set_pass_rate(stu_info):
         for sub_name, info in cur_stu_grades.items():
             subjects_coursed += 1
             grade = info[2] # grade is third information on the list
-            if grade == 'MM' or grade == 'MS' or grade == 'SS': 
+            if student_passed(grade): 
                 subjects_passed += 1
                  
         # set attribute correctly 
