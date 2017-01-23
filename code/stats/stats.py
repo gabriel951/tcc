@@ -34,10 +34,9 @@ def generate_graphs():
 
     ## derived features
     #get_graph('ira', stu_info, data_type = 'continuous')
-    get_graph('pass_rate', stu_info, data_type = 'continuous')
+    #get_graph('pass_rate', stu_info, data_type = 'continuous')
     #get_graph('fail_rate', stu_info, data_type = 'continuous')
-    #get_graph('drop_rate', stu_info, 'continuous')
-
+    get_graph('drop_rate', stu_info, 'continuous')
 
 def get_graph(feature, stu_info, data_type = 'discrete'):
     """
