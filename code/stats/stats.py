@@ -9,7 +9,7 @@ from basic import *
 import psycopg2
 from subprocess import call
 
-sys.path.append('../students/')
+sys.path.append('../core/')
 from students import *
 
 # generate graphs for the database
@@ -18,27 +18,26 @@ def generate_graphs():
     generate the graphs for the primitive and derived attributes
     """
     # load student info
-    stu_info = load_students(NAME_STU_STRUCTURE, path = '../students/data/')
+    stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
 
-    ## students
+    ## primitive features
     #get_graph('sex', stu_info)
-    #get_graph('age')
+    #get_graph('age', stu_info)
+    #get_graph('local', stu_info)
+    #get_graph('quota', stu_info)
+    #get_graph('school_type', stu_info)
+    #get_graph('race', stu_info)
+    #get_graph('course', stu_info)
+    #get_graph('way_in', stu_info)
+    #get_graph('grades', stu_info)
+    #get_graph('way_out', stu_info)
 
-    #get_graph('student', 'age', student_restriction)
-    #get_graph('student', 'local', student_restriction)
-    #get_graph('student', 'school_type', student_restriction)
-    #get_graph('student', 'quota', student_restriction)
-    #get_graph('student', 'race', student_restriction)
-    #get_graph('student', 'course', student_restriction)
-    #get_graph('student', 'way_out', student_restriction)
+    ## derived features
     #get_graph('ira', stu_info, data_type = 'continuous')
+    get_graph('pass_rate', stu_info, data_type = 'continuous')
+    #get_graph('fail_rate', stu_info, data_type = 'continuous')
+    #get_graph('drop_rate', stu_info, 'continuous')
 
-    #get_graph('pass_rate', stu_info, 'continuous')
-    #get_graph('fail_rate', stu_info, 'continuous')
-    get_graph('drop_rate', stu_info, 'continuous')
-
-    # subject grades
-    #get_graph('student_subject', 'grade')
 
 def get_graph(feature, stu_info, data_type = 'discrete'):
     """
@@ -47,6 +46,7 @@ def get_graph(feature, stu_info, data_type = 'discrete'):
     generate a bar graph (discrete data) or a histogram graph (continuous data) for 
     the feature distribution
     """
+    print('getting graph for feature %s' % (feature))
     rows_list = []
 
     # iterate through every student

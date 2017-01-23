@@ -60,6 +60,10 @@ def test_column_values(time_periods, index, mode = 'selected_courses'):
     """
     global lines_read, valid_lines
 
+    # file for writing the different values encontered
+    log = open('../logs/dif_values_index_' + str(index) + '.txt', 'w')
+    log.write("different values encountered for the csv file\n")
+
     # for every time period
     for time_period in time_periods:
         lines_read = 0
@@ -89,10 +93,13 @@ def test_column_values(time_periods, index, mode = 'selected_courses'):
                 
             # show diff values
             diff_values.sort()
-            print(diff_values)
+            log.write(str(diff_values))
 
         # close connection
         close_conn(conn)
+
+        # close file pointer
+        fp.close()
 
         print("lines: %s valid_lines: %s" %(lines_read, valid_lines))
 
@@ -101,7 +108,7 @@ def test_insertion(mode = 'quick'):
     """
     mode can be quick or normal
     if quick, only insert for one semester
-    if norma insert for all time period considered
+    if normal insert for all time period considered
     """
     if mode == 'quick':
         insert_database(2000, 1)
@@ -141,11 +148,13 @@ def test_database():
     #ind_list.append(YEAR_END_IND)
     #ind_list.append(SUB_CODE_IND)
     #ind_list.append(SUB_NAME_IND)
+    ind_list.append(WAY_IN_IND)
     #ind_list.append(WAY_OUT_IND)
 
     for ind in ind_list:
-        test_column_values(time_periods, ind, mode = 'selected_courses')
+        test_column_values(test_time, ind, mode = 'selected_courses')
 
 #test_database()
-#test_insertion('normal')
+#test_insertion()
+test_insertion('normal')
 #clean_database()

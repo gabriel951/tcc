@@ -34,6 +34,7 @@ SCHOOL_IND = 9
 RACE_IND = 10
 YEAR_IN_IND = 14
 SEM_IN_IND = 15
+WAY_IN_IND = 16
 YEAR_END_IND = 17
 SEM_END_IND = 18 
 WAY_OUT_IND = 19
@@ -43,10 +44,10 @@ SUB_CODE_IND = 72
 GRADE_IND = 73
 SUB_NAME_IND = 74
 
-# courses being considered
+# courses being considered - the names are the ones that appear on the database
 COURSES_CONSIDERED = ["ciência da computação", "engenharia de computação", \
 "engenharia de redes de comunicação", "engenharia de software", \
-"engenharia mecatrônica"]
+"engenharia mecatrônica", "computação"]
 
 # official names for all the courses, this must be used in all the code
 CIC_BACHELOR = 'cic_bacharelado'
@@ -55,6 +56,15 @@ COMPUTER_ENGINEERING = 'engenharia_computacao'
 SOFTWARE_ENGINEERING = 'engenharia_software'
 MECHATRONICS_ENGINEERING = 'engenharia_mecatronica'
 NETWORK_ENGINEERING = 'engenharia_redes'
+
+# courses official name list
+COURSES_OFF_NAME = [] 
+COURSES_OFF_NAME.append(CIC_BACHELOR)
+COURSES_OFF_NAME.append(CIC_NON_BACHELOR)
+COURSES_OFF_NAME.append(COMPUTER_ENGINEERING)
+COURSES_OFF_NAME.append(SOFTWARE_ENGINEERING)
+COURSES_OFF_NAME.append(MECHATRONICS_ENGINEERING)
+COURSES_OFF_NAME.append(NETWORK_ENGINEERING)
 
 
 def close_conn(conn):

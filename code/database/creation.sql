@@ -18,6 +18,7 @@ CREATE TABLE BD_UNB.STUDENT
     SEMESTER_IN     INT,
     YEAR_END        INT, 
     SEMESTER_END    INT,
+    WAY_IN          VARCHAR(100),
     WAY_OUT         VARCHAR(100),
 PRIMARY KEY(ID));
 
@@ -38,7 +39,9 @@ CREATE TABLE BD_UNB.STUDENT_SUBJECT
     SEMESTER        INT             NOT NULL,
     YEAR            INT             NOT NULL,
     GRADE           VARCHAR(10),
-PRIMARY KEY (CODE_STU, CODE_SUB), 
+-- the primary key needs to account for the possibility that a student takes a
+-- discipline many times
+PRIMARY KEY (CODE_STU, CODE_SUB, YEAR, SEMESTER), 
 FOREIGN KEY (CODE_STU) REFERENCES BD_UNB.STUDENT (COD_MAT)
     ON DELETE CASCADE, 
 FOREIGN KEY (CODE_SUB) REFERENCES BD_UNB.SUBJECT (CODE)

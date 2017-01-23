@@ -41,11 +41,18 @@ def execute_query(query, cur, conn):
     """
     global insertions
 
-    #try:
-    cur.execute(query)
-    insertions += 1
-    #except psycopg2.IntegrityError:
-    #    conn.rollback()
+    try:
+        cur.execute(query)
+        insertions += 1
+        # just to show work being done
+        if insertions % 100 == 0: 
+            print("\tinsertions: %d" % (insertions))
+
+    except psycopg2.IntegrityError:
+        conn.rollback()
+    except psycopg2.ProgrammingError:
+        print(query)
+        exit()
 
     conn.commit()
 
@@ -61,6 +68,8 @@ def insert_database(year, semester):
     conn = get_conn()
     cur = conn.cursor()
 
+    print("insertions: %d" % (insertions))
+
     # read line by line, parsing the results and putting on database
     with open(file_name, newline = '', encoding = ENCODING) as fp:
         reader = csv.reader(fp)
@@ -68,6 +77,8 @@ def insert_database(year, semester):
         # iterate through the rows, inserting in the table
         for row in reader:
             parse_insert(row, cur, conn, year, semester)
+
+            
             
     # close connection
     close_conn(conn)
@@ -94,6 +105,7 @@ def insert_student(info, cur, conn, year):
     semester_in = int(info[SEM_IN_IND])
     year_end = int(info[YEAR_END_IND])
     semester_end = int(info[SEM_END_IND])
+    way_in = info[WAY_IN_IND][1:-1]
     way_out = info[WAY_OUT_IND][1:-1]
 
     # asserts
@@ -108,10 +120,10 @@ def insert_student(info, cur, conn, year):
 
     # insert in the database, in case not present
     query = "insert into %s.student (cod_mat, sex, age, quota, school_type, race, \
-            local, course, year_in, semester_in, year_end, semester_end, way_out) values \
-            (%d, '%s', %d, '%s', '%s', '%s', '%s', '%s', %d, %d, %d, %d, '%s')" \
+            local, course, year_in, semester_in, year_end, semester_end, way_in, way_out) values \
+            (%d, '%s', %d, '%s', '%s', '%s', '%s', '%s', %d, %d, %d, %d, '%s', '%s')" \
                 % (MY_DATABASE, code, sex, age, quota, school_type, race, local, \
-                    course, year_in, semester_in, year_end, semester_end, way_out)
+                    course, year_in, semester_in, year_end, semester_end, way_in, way_out)
 
     execute_query(query, cur, conn)
 
@@ -125,6 +137,9 @@ def insert_subject(info, cur, conn):
     # get subject information #[1:-1] to remove quotes
     code = int(info[SUB_CODE_IND])
     name = info[SUB_NAME_IND][1:-1].lower()
+
+    # fix in case name has the '
+    name = name.replace("'", "") 
 
     # insert in the database, in case not present
     query = "insert into %s.subject (code, name) values (%d, '%s')" \
