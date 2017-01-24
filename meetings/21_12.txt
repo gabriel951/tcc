@@ -1,0 +1,18 @@
+##reunião:
+    0. Mostrar apresentações.
+    1. Pq não descartar o feature raça? Tenho informação semelhante através do
+feature cota (só que mais completa)
+    2. Seria bom obter a informação relativa aos fluxos antigos/novo do curso e em
+relação a quais disciplinas são obrigatórias ou não. Tenho que falar com o pessoal do
+DEG? ou é melhor o ladeira falar?
+    3. Gerar projeções para os alunos, com base nos semestres que estão (do 1
+semestre até o sexto semestre).
+    4. Estou pensando em fazer feature selection na quarta fase do projeto (modeling)
+    5. Pensei em mais features, coloquei valores na parte de entendimento dos dados.
+
+##pós-reunião:
+    0. Para verificar se atributos estão ou não relacionados, usar PCA.
+(possivelmente depois pode-se utilizar regressão stepwise)
+    1. Tentar usar dados do SIGRA. Ladeira tem uma senha. 
+    2. Ladeira realmente quer ver os histogramas feitos.
+    3. Colocar na apresentação a parte de dummy variables.  

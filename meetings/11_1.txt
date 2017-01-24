@@ -1,0 +1,16 @@
+# pre-reunião
+    1. Não fiz os histogramas para os atributos derivados ainda
+    2. Não tenho certeza como PCA pode ser aplicados aos atributos
+        -> Basicamente: se meu modelo tem n features, após aplicar PCA ele terá k
+features, onde k <= n. O valor de k pode ser determinado pela sklearn. Uso então para
+as fases posteriores esses k features. 
+        -> Como faço para features categóricos? Dummy variables?
+    3. Dados do SIGRA?
+    4. Não avancei na monografia
+
+# pos-reunião
+1. ler + sobre PCA e correlação para variáveis discretas
+2. consegui o fluxo dos cursos no sigra
+3. terminar de fazer os histogramas
+4. Decidir se quero um índice entre 0 e 1 ou uma classificação discreta. 
+5. focar em terminar a monografia

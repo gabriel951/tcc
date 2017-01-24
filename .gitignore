@@ -7,6 +7,9 @@
 # images
 *.png
 
+# swp files - vim
+*.swp
+
 # tex files
 *.aux
 *.bbl
@@ -16,6 +19,22 @@
 *.snm
 *.toc
 
+# more tex files
+*.acn
+*.acl
+*.alg
+*.blg
+*.brf
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.lof
+*.lot
+*.pdf
+
 # directories
 teor_found/
 plano_trabalho/
+presentations/monografia/monografia

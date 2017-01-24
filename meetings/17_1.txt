@@ -1,0 +1,20 @@
+# pre-reunião
+    1. PCA só funciona para features contínuous, e eu tenho alguns features que são
+categóricos. Verificar relacionamento entre variáveis envolveria 3 casos: 
+        * categóricos x categóricos
+        * contínuo x continuo
+        * continuo x categóricos
+        Pensei em usar variáveis dummy para transformar o discre
+    2. Fiz 3 histogramas: mostrar apresentação
+    3. Ainda não fiz a monografia
+    4. Sistema previsor do risco do aluno ser jubilado, fornecendo valor entre 0 e 1
+conforme o risco. Sistema começa a funcionar a partir do primeiro semestre e atualiza
+a projeção a cada semestre. 
+
+# pos-reuniao
+    0. Não haverá ninguém na minha banca
+    1. Pode ser a ideia do sistema previsor com indice entre 0 e 1
+    2. Investigar pq os 3 histogramas estão com os valores que estão. Tentar separar
+por curso
+    3. Dar uma olhada no método de Kendall 
+

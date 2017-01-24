@@ -1,0 +1,15 @@
+#pre-reuniao
+    1. coloquei obrigatórias seletivas como obrigatórias. Só aparecem algumas OBS no
+fluxo, pode deixar como está?
+    2. sistema previsor do 1 semestre em diante
+    3. tinha esquecido de colocar alunos da licenciatura em computação. Por isso,
+refiz alguns histogramas...
+    4. Olhei o histograma de pass_rate. Comecei a contar CC como aprovação. Ficou do
+mesmo jeito! Mas salvei resultados em um arquivo de log. Ocorreu o mesmo para
+histogramas de fail_rate e drop_rate
+    5. O teste de Kendall é baseado na ideia de pares concordantes e discordantes.
+Ele não se aplica diretamente para algumas variáveis que são discretas, como a forma
+de entrada na universidade, se é residente do local ou não ou o curso do aluno. O que
+fazer? Achei uma resposta no stackoverflow...
+
+# pos-reunião

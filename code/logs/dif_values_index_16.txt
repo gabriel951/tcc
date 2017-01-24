@@ -1,0 +1,2 @@
+different values encountered for the csv file
+['"Acordo Cultural-PEC"', '"Matricula Cortesia"', '"PAS"', '"Transferencia Obrigatoria"', '"Vestibular"']

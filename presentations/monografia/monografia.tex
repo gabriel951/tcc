@@ -1,0 +1,52 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Classe do documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Opções:
+%  - Graduação: bacharelado|engenharia|licenciatura
+%  - Pós-graduação: [qualificacao], mestrado|doutorado, ppca|ppginf
+
+\documentclass[bacharelado]{UnB-CIC}%
+%\documentclass[qualificacao,mestrado,ppca]{UnB-CIC}%
+
+\usepackage{pdfpages}% incluir PDFs, usado no apêndice
+
+%black magic to break urls
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Informações do Trabalho
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\orientador{\prof \dr Marcelo Ladeira}{CIC/UnB}%
+%\coorientador{\prof \dr José Ralha}{CIC/UnB}
+\coordenador{\prof \dr Rodrigo Bonifácio}{Universidade de Brasília}%
+\diamesano{6}{dezembro}{2016}%
+
+% TODO: quais serão os membros da Banca
+\membrobanca{\prof \dr Guilherme Novaes Ramos}{Universidade de Brasília}%
+\membrobanca{\prof \dr Alguém}{Universidade de Brasília}%
+
+\autor{Gabriel F.}{Silva}%
+
+\titulo{Análise Preditiva para Identificação de Alunos em Risco de
+Evasão}%
+
+\palavraschave{análise preditiva, CRISP-DM, evasão, UnB}%
+\keywords{predictive analysis, CRISP-DM, evasion, UnB}%
+
+\newcommand{\unbcic}{\texttt{UnB-CIC}}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Texto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}%
+    \capitulo{introducao}{Introdução}%
+    \capitulo{metodologia}{Metodologia}%
+    \capitulo{resultados}{Resultados}%
+    \capitulo{continuacao}{Planejamento das Próximas Etapas}%
+    \capitulo{conclusao}{Conclusão}%
+    \apendice{apendice_dados}{Distribuição dos Dados}%
+\end{document}%
