@@ -3,6 +3,7 @@
 import pickle
 import csv
 
+# TODO: does my database contain students who have not graduated yet? 
 # import basic and aux
 import sys
 sys.path.append('..')

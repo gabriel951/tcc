@@ -4382,7 +4382,7 @@ student info
 		fisica 1:   [[118001, 'fisica 1', 'II', 2010, 1], [118001, 'fisica 1', 'SR', 2010, 2]]
 		computacao basica:   [[116301, 'computacao basica', 'SR', 2010, 1], [116301, 'computacao basica', 'II', 2010, 2]]
 	 ------------------ 
-------------
+-----------
 ------------
 student info
 	age:   18
