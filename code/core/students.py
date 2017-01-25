@@ -77,6 +77,16 @@ class Student():
         # position of the student relative to the semester he is in 
         self.position = None
     
+    def calculate_ira(self, pos):
+        """
+        receives a position in the ira list
+        calculate and update the student ira for the passed position
+        """
+        # discover year and semester correspondent to the passed position
+        (cur_year, cur_sem) = self.get_yearsem_from_pos(pos)
+
+        #  
+
     def get_sub_info(self, key, pos, info):
         """
         receives a key to access the grades dictionary correct item, the position in
@@ -169,6 +179,16 @@ class Student():
 
         assert (ira_semester >= 0 and ira_semester <= 5.0)
         return ira_semester
+
+    def get_yearsem_from_pos(self, pos):
+        """
+        receives the position in the list for a given student 
+        returns a tuple (year, sem) containing the year and the semester, based on
+        the information of when the student arrived and in what position he is in
+
+        * pos start at 0 (meaning its the year and semester the student got in unb)
+        """
+        # TODO
 
     def log_info(self, fp):
         """
@@ -457,6 +477,28 @@ def fill_drop_rate(stu_info):
     fp.close()
     print('finished filling drop rate')
 
+def fill_empty_iras(stu_info):
+    """
+    receives the dictionary of students. Search every student list of iras, and
+    fill the ira for the semester that we didnt have the information in the database
+    """
+    # number of student with missing iras
+    miss_ira = 0 
+
+    for key, stu in stu_info.items():
+
+        # whether current student has one or more ira missed
+        missed_ira = 0
+
+        # calculate missed iras
+        for i in range(len(stu.ira)): 
+            if stu.ira[i] == NOT_KNOWN: 
+                stu.calculate_ira(i)
+                missed_ira = 1
+
+        # update miss_ira
+        miss_ira += missed_ira
+
 def fill_fail_rate(stu_info):
     """
     receives a dictionary
@@ -560,9 +602,13 @@ def fill_ira(stu_info, mode = 'normal'):
             print('\tstarting for (%d %d)' % (year, semester))
             fill_ira_year_semester(stu_info, year, semester)
         print('ending insertion')
+        print('filling remaining iras')
+        fill_empty_iras(stu_info)
+        print('finishing filling remaining iras')
     else:
         exit('mode option incorrect')
 
+    
     print('finished filling ira')
 
 def fill_ira_year_semester(stu_info, year, semester):

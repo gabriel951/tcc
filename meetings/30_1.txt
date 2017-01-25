@@ -1,0 +1,11 @@
+# antes
+    1. Eliminei alunos que saíram por anulação de registro
+    2. Considerei Novo Vestibular como outlier
+    3. Pensei em eliminar desligamento por falta de documentação (ex: 201142445)
+    4. olhei outliers, um a um 
+        -> de modo geral, a maioria tinha reprovado em tudo com SR ou trancado tudo, 
+então realmente eram outliers
+        -> Alunos com mais de dois II's não foram considerados outliers. Entretanto,
+os II's podem ter sido causados por professores que não passam 
+
+# depois
