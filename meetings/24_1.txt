@@ -13,3 +13,9 @@ de entrada na universidade, se é residente do local ou não ou o curso do aluno
 fazer? Achei uma resposta no stackoverflow...
 
 # pos-reunião
+    1. ladeira ficou de conseguir obrigatórias seletivas, de modo a fazer do jeito certo.
+    2. Separar histogramas por curso!
+    3. Tratar casos de AP -> Aprovação e DP -> Dispensado (nesse caso não conta a
+matéria). 
+        AP -> aluno aprovado, pode acontecer caso disciplina do mestrado. 
+    4. analisar outliers, um a um.

@@ -77,7 +77,8 @@ class Student():
         # position of the student relative to the semester he is in 
         self.position = None
     
-    def calculate_ira_yearsem(self, year, sem):
+
+    def get_sub_info(self, key, pos, info):
         """
         receives an year and a semester, calculates the ira the student will have in
         the passed ira and semester
@@ -536,6 +537,28 @@ def fill_drop_rate(stu_info):
     fp.close()
     print('finished filling drop rate')
 
+def fill_empty_iras(stu_info):
+    """
+    receives the dictionary of students. Search every student list of iras, and
+    fill the ira for the semester that we didnt have the information in the database
+    """
+    # number of student with missing iras
+    miss_ira = 0 
+
+    for key, stu in stu_info.items():
+
+        # whether current student has one or more ira missed
+        missed_ira = 0
+
+        # calculate missed iras
+        for i in range(len(stu.ira)): 
+            if stu.ira[i] == NOT_KNOWN: 
+                stu.calculate_ira(i)
+                missed_ira = 1
+
+        # update miss_ira
+        miss_ira += missed_ira
+
 def fill_fail_rate(stu_info):
     """
     receives a dictionary
@@ -645,6 +668,7 @@ def fill_ira(stu_info, mode = 'normal'):
     else:
         exit('mode option incorrect')
 
+    
     print('finished filling ira')
 
 def fill_ira_year_semester(stu_info, year, semester):
