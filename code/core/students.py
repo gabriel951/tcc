@@ -77,21 +77,46 @@ class Student():
         # position of the student relative to the semester he is in 
         self.position = None
     
-    def get_sub_info(self, key, pos, info):
+    def calculate_ira_yearsem(self, year, sem):
         """
-        receives a key to access the grades dictionary correct item, the position in
-        the list we are in and the information we want
-        return the information
+        receives an year and a semester, calculates the ira the student will have in
+        the passed ira and semester
 
-        * possible values include: code, grade, 
+        * similar calculations found in method get_sem_grade
         """
-        if info == 'code':
-            return self.grades[key][pos][0] # grade is the third item
-        elif info == 'grade':
-            return self.grades[key][pos][2] # grade is the third item
-        else: 
-            exit('value passed to get_sub_info is incorrect')
-    
+        assert (sem == 1 or sem == 2)
+
+        # special case counter
+        spc_counter = 0
+
+        # variables for ira calculation
+        ira_sum = 0
+        drop_mand_sub = 0
+        drop_opt_sub = 0 
+        num_sub = 0 
+
+        # iterate through all the subjects student coursed
+        for subject, data_list in self.grades.items(): 
+            for pos in range(len(data_list)): 
+                # pass if subject not coursed yet
+                code_sub = self.get_sub_info(subject, pos, 'code')
+                year_sub = self.get_sub_info(subject, pos, 'year')
+                sem_sub = self.get_sub_info(subject, pos, 'sem')
+                grade_sub = self.get_sub_info(subject, pos, 'grade')
+                if year_coursed > year or \
+                    (year_coursed == year and sem_coursed >= sem): 
+                        pass
+
+                
+                # student dropped case
+                if student_dropped(grade):
+                    num_sub += 1
+                    if is_mand_sub(code_sub, self.course, self.year_in, self.sem_in):
+
+
+
+                 
+
     def get_num_semesters(self):
         """
         receives a student with correct information regarding the year and semester
@@ -170,6 +195,27 @@ class Student():
         assert (ira_semester >= 0 and ira_semester <= 5.0)
         return ira_semester
 
+    def get_sub_info(self, key, pos, info):
+        """
+        receives a key to access the grades dictionary correct item, the position in
+        the list we are in and the information we want
+        return the information
+
+        * possible values include: code, grade, 
+        """
+        if info == 'code':
+            return self.grades[key][pos][0] # code is the first item
+        elif info == 'name':
+            return self.grades[key][pos][1] # name is the second item
+        elif info == 'grade':
+            return self.grades[key][pos][2] # grade is the third item
+        elif info == 'year':
+            return self.grades[key][pos][3] # year is the fourth item
+        elif info == 'sem':
+            return self.grades[key][pos][4] # semester is the fifth item
+        else: 
+            exit('value passed to get_sub_info is incorrect')
+    
     def log_info(self, fp):
         """
         receives a file object
@@ -203,6 +249,25 @@ class Student():
         fp.write('\t ------------------ \n')
 
         fp.write("------------\n")
+
+    def pos_2_yearsem(self, pos, year, sem):
+        """
+        receives a position the student is in, a year and a semester
+        returns the year and semester correspondent
+
+        * pos = 0 means the year and semester the student got in unb
+        """
+        if pos == 0:
+            return (year, sem)
+        else:
+            pos -= 1
+            if sem == 1:
+                new_year = year
+                new_sem = 2
+            else:
+                new_year = year + 1
+                new_sem = 1
+            return self.pos_2_yearsem(pos, new_year, new_sem)
 
     def set_attrib(self, tup):
         """
@@ -333,6 +398,20 @@ class Student():
         cur_sem_grade = self.get_sem_grade(year, semester)
         self.improvement_rate[pos] = cur_sem_grade / past_sem_grade
 
+    def set_miss_iras(self):
+        """
+        fills the ira of students that couldnt be obtained by database
+        """
+        for pos in range(len(self.ira)):
+            # if the ira is missing
+            if self.ira[pos] == NOT_KNOWN:
+                # get correspondent year and semester
+                (cur_year, cur_sem) = self.pos_2_yearsem(pos, self.year_in, \
+                        self.sem_in)
+                
+                # calculate ira for the year and semester passed
+                self.calculate_ira_yearsem(pos, year, sem)
+            
     def set_ira(self, ira, year, semester):
         """
         receives a tuple containing student information (no derived attributes) and
@@ -560,6 +639,9 @@ def fill_ira(stu_info, mode = 'normal'):
             print('\tstarting for (%d %d)' % (year, semester))
             fill_ira_year_semester(stu_info, year, semester)
         print('ending insertion')
+        print('will start filling info for iras that are not known')
+        handle_miss_ira(stu_info)
+        print('finished filling missing iras')
     else:
         exit('mode option incorrect')
 
@@ -720,6 +802,8 @@ def get_derived_info(stu_info):
     #- TODO (can be done)
     #set_condition(stu_info)
 
+    print('\nfinished constructing derived info\n\n')
+
 def get_students_info(): 
     """
     extracts from database all the students information
@@ -735,7 +819,6 @@ def get_students_info():
     
     # construct info for the derived attributes of a student
     get_derived_info(stu_dict)
-    #print('\nfinished constructing derived info\n\n')
 
     # saves object
     save_students(NAME_STU_STRUCTURE, stu_dict)
@@ -759,6 +842,14 @@ def handle_special_stu(stu_info):
     #        pass
 
     #print('eliminated %d special cases students' % (spc_cases))
+
+def handle_miss_ira(stu_info):
+    """
+    receives the student dictionary
+    fills the missing iras
+    """
+    for key, stu in stu_info.items():
+        stu.set_miss_iras()
 
 def load_students(name, path = PATH): 
     """
