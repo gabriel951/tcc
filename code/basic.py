@@ -66,6 +66,8 @@ COURSES_OFF_NAME.append(SOFTWARE_ENGINEERING)
 COURSES_OFF_NAME.append(MECHATRONICS_ENGINEERING)
 COURSES_OFF_NAME.append(NETWORK_ENGINEERING)
 
+# path for serialized objects
+PATH = 'data/'
 
 def close_conn(conn):
     """

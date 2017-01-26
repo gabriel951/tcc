@@ -5,6 +5,9 @@ import csv
 
 # TODO: does my database contain students who have not graduated yet? 
 # import basic and aux
+
+# TODO: fix code to take into account the subjectives that are elective
+
 import sys
 sys.path.append('..')
 from basic import *
@@ -12,6 +15,7 @@ from aux import *
 
 from grades import *
 from courses import *
+import subjects as sub
 
 # name of the structure that will contain the students information
 NAME_STU_STRUCTURE = 'students_info'
@@ -78,46 +82,72 @@ class Student():
         # position of the student relative to the semester he is in 
         self.position = None
     
+    def get_course(self, course_lst):
+        """
+        receives a course list
+        returns the course with curriculum the student is in
+        """
+        for course in course_lst:
+            if course.is_valid(self.course, self.year_in, self.sem_in):
+                return course
+        exit('could not load course %s for the year %d and semester %d' % (course_name,
+            year, sem))
 
     def get_sub_info(self, key, pos, info):
+        """
+        receives a key to access a given subject, the position in the list of
+        information for that subject and the info we want
+        return the information we want
+        """
+        if info == 'code':
+            return self.grades[key][pos][0] # code is the first information
+        elif info == 'name':
+            return self.grades[key][pos][1] # name is the second information
+        elif info == 'grade':
+            return self.grades[key][pos][2] # grade is the third information
+        elif info == 'year':
+            return self.grades[key][pos][3] # year is the fourth information
+        elif info == 'sem':
+            return self.grades[key][pos][4] # semester is the fifth information
+
+    def calculate_ira_yearsem(self, year, sem):
         """
         receives an year and a semester, calculates the ira the student will have in
         the passed ira and semester
 
         * similar calculations found in method get_sem_grade
         """
-        assert (sem == 1 or sem == 2)
+        # TODO: code not complete because i don't have the number of credits the
+        # student has taken
+        pass
+        #assert (sem == 1 or sem == 2)
 
-        # special case counter
-        spc_counter = 0
+        ## special case counter
+        #spc_counter = 0
 
-        # variables for ira calculation
-        ira_sum = 0
-        drop_mand_sub = 0
-        drop_opt_sub = 0 
-        num_sub = 0 
+        ## variables for ira calculation
+        #ira_sum = 0
+        #drop_mand_sub = 0
+        #drop_opt_sub = 0 
+        #num_sub = 0 
 
-        # iterate through all the subjects student coursed
-        for subject, data_list in self.grades.items(): 
-            for pos in range(len(data_list)): 
-                # pass if subject not coursed yet
-                code_sub = self.get_sub_info(subject, pos, 'code')
-                year_sub = self.get_sub_info(subject, pos, 'year')
-                sem_sub = self.get_sub_info(subject, pos, 'sem')
-                grade_sub = self.get_sub_info(subject, pos, 'grade')
-                if year_coursed > year or \
-                    (year_coursed == year and sem_coursed >= sem): 
-                        pass
+        ## iterate through all the subjects student coursed
+        #for subject, data_list in self.grades.items(): 
+        #    for pos in range(len(data_list)): 
+        #        # pass if subject not coursed yet
+        #        code_sub = self.get_sub_info(subject, pos, 'code')
+        #        year_sub = self.get_sub_info(subject, pos, 'year')
+        #        sem_sub = self.get_sub_info(subject, pos, 'sem')
+        #        grade_sub = self.get_sub_info(subject, pos, 'grade')
+        #        if year_coursed > year or \
+        #            (year_coursed == year and sem_coursed >= sem): 
+        #                pass
 
-                
-                # student dropped case
-                if student_dropped(grade):
-                    num_sub += 1
-                    if is_mand_sub(code_sub, self.course, self.year_in, self.sem_in):
-
-
-
-                 
+        #        
+        #        # student dropped case
+        #        if student_dropped(grade):
+        #            num_sub += 1
+        #            if is_mand_sub(code_sub, self.course, self.year_in, self.sem_in):
 
     def get_num_semesters(self):
         """
@@ -141,9 +171,9 @@ class Student():
         current_semester = (year - self.year_in) * 2 + (semester - self.sem_in)
         return current_semester
 
-    def get_sem_grade(self, year, semester):
+    def get_sem_grade(self, year, semester, course, fp):
         """
-        receives a student
+        receives a student, the year and semester we are considering, the course
         calculates and return the IRA of the given semester for that student 
         """
         # make sure no semester equal 0 is received
@@ -173,11 +203,11 @@ class Student():
                 # if the student dropped
                 if student_dropped(data[grade_pos]):
                     # if the discipline is mandatory
-                    if is_mand_sub(data[code_pos], self.course, self.year_in,
-                            self.sem_out):
+                    if course.is_mandatory(data[code_pos]):
                         drop_mand_sub += 1
                     else:
                         drop_opt_sub += 1
+                    num_sub += 1
 
                 # weight of the grade
                 grade_weight = get_grade_weight(data[grade_pos])
@@ -189,13 +219,21 @@ class Student():
                     num_sub += 1
                     sum_weights += grade_weight
         
-        # calculate ira
-        penalty_factor = 1 - ((0.6 * drop_mand_sub + 0.4 * drop_opt_sub) / num_sub)
-        grade_factor = float(sum_weights) / num_sub
-        ira_semester = penalty_factor * grade_factor
-
-        assert (ira_semester >= 0 and ira_semester <= 5.0)
-        return ira_semester
+        # there are cases where the number of subjects taken is zero (for instance,
+        # when all the student got is CC
+        try: 
+            penalty_factor = 1 - ((0.6 * drop_mand_sub + 0.4 * drop_opt_sub) / num_sub)
+            grade_factor = float(sum_weights) / num_sub
+            ira_semester = penalty_factor * grade_factor
+            assert (ira_semester >= 0 and ira_semester <= 5.0)
+            return ira_semester
+        except ZeroDivisionError:
+            self.log_info(fp)
+            return NOT_KNOWN
+        except AssertionError:
+            print(penalty_factor)
+            print(grade_factor)
+            print(ira_semester)
 
     def get_sub_info(self, key, pos, info):
         """
@@ -352,12 +390,72 @@ class Student():
                 return
         self.grades[row[NAME_RIND]].append(data)
         
-    def set_improvement_rate(self):
+    def set_hard_rate(self, subj_dic):
+        """
+        receives a subject dic
+        set the hard rate for the given student, by consulting the subject list
+        """
+        # need to update the hard rate in case it's value is None
+        if self.hard_rate == None:
+            self.hard_rate = []
+            num_semesters = self.get_num_semesters()
+            for i in range(num_semesters):
+                self.hard_rate.append(NOT_KNOWN)
+
+        # obtain list of tuples of the form: 
+        # [(code, grade, appr_rate), ...]
+        # this list measure the performance on hard disciplines
+        CODE_POS_IND = 0
+        GRADE_POS_IND = 1
+        APPR_RATE_IND = 2
+
+        # initially, list is just a copy of the hard rate list
+        perf_hard = self.hard_rate[:]
+
+        for key_grades, grades_lst in self.grades: 
+            for pos in grades_lst:
+                # get student information
+                code_sub = self.get_sub_info(key_grades, pos, 'code')
+                grade_sub = self.get_sub_info(key_grades, pos, 'grade')
+                year_sub = self.get_sub_info(key_grades, pos, 'year')
+                sem_sub = self.get_sub_info(key_grades, pos, 'sem')
+                appr_rate = subj_dic[code].get_appr_rate()
+
+                # need to obtain the index on the list to perform comparison
+                index = self.yearsem_2_pos(year_sub, sem_sub)
+
+                if perf_hard[index] == NOT_KNOWN or \
+                    appr_rate < perf_hard[index][APPR_RATE_IND]:
+                    perf_hard[index] = (code_sub, grade_sub, appr_rate) 
+                
+
+        # TODO: should consider only subjects that have been coursed for more than 5
+        # students
+
+        # get hard rate
+        hard_coursed = 0.0
+        hard_apprv = 0.0
+
+        for sem in range(len(self.hard_rate)):
+            # to check if its still not know
+            if type(perf_hard[index]) == tuple:
+                hard_coursed += 1
+            if student_passed(perf_hard[sem][GRADE_IND]):
+                hard_apprv += 1 
+            self.hard_rate[sem] = hard_coursed / hard_apprv
+            assert (self.hard_rate[sem] < 1.1)
+
+        
+
+    def set_improvement_rate(self, fp, course_lst):
         """
         calculates the improvement rate for every student
         """
+        # get student course
+        course = self.get_course(course_lst)
+
         # build list of values, case not already built
-        if self.improvement_rate == None:
+        if self.improvemen_rate == None:
             self.improvement_rate = []
             num_semesters = self.get_num_semesters()
             for i in range(num_semesters):
@@ -367,7 +465,8 @@ class Student():
         cur_year = self.year_in
         cur_semester = self.sem_in
         for pos in range(num_semesters):
-            self.set_improvement_rate_semester(cur_year, cur_semester, pos)
+            self.set_improvement_rate_semester(cur_year, cur_semester, pos, fp,\
+                    course)
 
             # update current year/semester
             if cur_semester == 1: 
@@ -376,9 +475,10 @@ class Student():
                 cur_year += 1
                 cur_semester = 1
 
-    def set_improvement_rate_semester(self, year, semester, pos):
+    def set_improvement_rate_semester(self, year, semester, pos, fp, course):
         """
-        receives a year, a semester and the position to insert in a list
+        receives a year, a semester, the position to insert in a list and a file
+        pointer
         calculates the improvement rate for a given year and semester
         insert in the list self.improvement_rate, in the position indicated
         """
@@ -396,24 +496,21 @@ class Student():
             past_year = year - 1
 
         # calculates grade for past semester and for current semester
-        past_sem_grade = self.get_sem_grade(past_year, past_semester)
-        cur_sem_grade = self.get_sem_grade(year, semester)
-        self.improvement_rate[pos] = cur_sem_grade / past_sem_grade
+        past_sem_grade = self.get_sem_grade(past_year, past_semester, course, fp)
+        cur_sem_grade = self.get_sem_grade(year, semester, course, fp)
 
-    def set_miss_iras(self):
-        """
-        fills the ira of students that couldnt be obtained by database
-        """
-        for pos in range(len(self.ira)):
-            # if the ira is missing
-            if self.ira[pos] == NOT_KNOWN:
-                # get correspondent year and semester
-                (cur_year, cur_sem) = self.pos_2_yearsem(pos, self.year_in, \
-                        self.sem_in)
-                
-                # calculate ira for the year and semester passed
-                self.calculate_ira_yearsem(pos, year, sem)
-            
+        # handle cases where we don't know the grades by imputation 
+        if past_sem_grade == NOT_KNOWN or cur_sem_grade == NOT_KNOWN:
+            # TODO: use imputation and set it equal to one
+            self.improvement_rate[pos] = NOT_KNOWN
+        else:
+            try:
+                self.improvement_rate[pos] = cur_sem_grade / past_sem_grade
+            except ZeroDivisionError:
+                self.log_info(fp)
+                # TODO: use imputation and set it equal to one
+                self.improvement_rate[pos] = NOT_KNOWN
+        
     def set_ira(self, ira, year, semester):
         """
         receives a tuple containing student information (no derived attributes) and
@@ -443,24 +540,40 @@ class Student():
 
     def set_mand_rate(self, course_lst):
         """
+        receives the course list
         set the mandatory rate for a given student
         """
         num_sub = 0
         mand_sub = 0
 
         # get course student is in 
-        
+        course = self.get_course(course_lst)
+
         # count all subjects coursed and how many are mandatory
         for (grade, data_list) in self.grades.items():
             # iterate through all the data in the data list
             for pos in range(len(data_list)):
                 num_sub += 1
                 code_sub = self.get_sub_info(grade, pos, 'code')
-                if is_mand_sub(code_sub, self.course, self.year_in, self.sem_in):
+                if course.is_mandatory(code_sub):
                     mand_sub += 1
         
         self.mand_credit_rate = float(mand_sub) / num_sub
 
+    def set_miss_iras(self):
+        """
+        fills the ira of students that couldnt be obtained by database
+        """
+        for pos in range(len(self.ira)):
+            # if the ira is missing
+            if self.ira[pos] == NOT_KNOWN:
+                # get correspondent year and semester
+                (cur_year, cur_sem) = self.pos_2_yearsem(pos, self.year_in, \
+                        self.sem_in)
+                
+                # calculate ira for the year and semester passed
+                self.calculate_ira_yearsem(pos, year, sem)
+            
     def show_student(self):
         """
         print a student info 
@@ -502,6 +615,40 @@ class Student():
                 % (self.id_num, self.year_in, self.sem_in))
         print('\tstudent  %d left in year: %d and semester: %d' \
                 % (self.id_num, self.year_out, self.sem_out))
+
+    def yearsem_2_pos(self, year, sem):
+        """
+        receives an year and a semester
+        calculates for that time what is the position the student is in
+
+        * pos = 0 means the year and semester the student got in unb. 
+        * pos = 1 means the semester just after pos = 0, and so on
+        """
+        pos = 0 
+        cur_year = self.year_in 
+        cur_sem = self.sem_in 
+
+        while cur_year != year and cur_sem != sem: 
+            pos += 1
+            if cur_sem == 1:
+                cur_sem += 1
+            else: 
+                cur_sem = 1
+                cur_year += 1
+
+        # a student should not be 20 semesters or more in unb
+        assert (pos <= 20)
+        return pos
+
+def fill_credit_rate(stu_info):
+    """
+    receives a dictionary containing all student information
+    set correctly the credit rate of every student
+
+    * credit rate is the number of credits a student took each semester
+    """
+    # TODO: I cant fill the credit rate unless i know how many credits each subject
+    # has
 
 def fill_drop_rate(stu_info): 
     """
@@ -635,15 +782,43 @@ def fill_grades(stu_info, mode = 'normal'):
 
     print('finished filling grades')
 
+def fill_hard_rate(stu_info):
+    """
+    receives the student dictionary, 
+    fills every student hard rate - the ration of approvation in the most difficult
+    subject the student has coursed 
+    """
+    # pointer to register patological cases
+    fp = open('../logs/hard_rate_patological_cases.txt', 'w')
+
+    # load dictionary of subjects
+    subj_dic = sub.load_subjects(stu_info)
+
+    # iterate through all students, filling the hard rate
+    for key, stu in stu_info.items():
+        stu.set_hard_rate(subj_dic)
+    
+    fp.close()
+
 def fill_impr_rate(stu_info):
     """
     receives a dictionary containing all students. 
     fill the student objects with information regarding the improvement rate
     """
+    # file logger
+    fp = open('../logs/impr_rate_patological_cases.txt', 'w')
+
+    # list of all courses
+    course_lst = load_all_courses()
+
     # iterate through every student
     for key in stu_info:
         # fill the student improvement rate
-        stu_info[key].set_improvement_rate()
+        stu_info[key].set_improvement_rate(fp, course_lst)
+
+    fp.close()
+
+    # TODO: update values that could not be calculated - use imputation
 
     print('finished_calculating improvement rate')
 
@@ -693,7 +868,7 @@ def fill_ira_year_semester(stu_info, year, semester):
 def fill_mand_rate(stu_info):
     """
     receives dictionary containing student info
-    set correctly the mandatory rate for a given student
+    set correctly the mandatory rate for a given student and the credit rate
 
     * the mandatory rate is the reason between the number of mandatory subjects taken 
     so far and the number of subjects taken so far
@@ -707,7 +882,7 @@ def fill_mand_rate(stu_info):
 
     # for each student, put the course 
     for key, student in stu_info.items():
-        student.set_mand_rate(course)
+        student.set_mand_rate(courses)
 
     print('finished filling mandatory rate')
 
@@ -799,20 +974,24 @@ def get_derived_info(stu_info):
     # fill student grades
     fill_grades(stu_info)
 
-    # calculate student ira for the semesters 
-    fill_ira(stu_info)
+    # calculate student ira for the semesters - TODO: handle case of empty iras
+    #fill_ira(stu_info)
 
-    # calculate improvement rate 
-    #fill_impr_rate(stu_info)
+    # calculate improvement rate - TODO: handle case of improvement rate
+    fill_impr_rate(stu_info)
 
-    # calculate fail rate
+    # calculate fail rate - ok
     #fill_fail_rate(stu_info)
 
-    # calculate pass rate
+    # calculate pass rate - ok
     #fill_pass_rate(stu_info)
 
-    # calculate drop rate
+    # calculate drop rate - ok
     #fill_drop_rate(stu_info)
+
+    # calculate credit rate and mandatory rate - TODO: need the credit amount for the
+    # disciplines
+    #fill_credit_rate(stu_info)
 
     # calculate mandatory rate
     #fill_mand_rate(stu_info)
@@ -821,11 +1000,11 @@ def get_derived_info(stu_info):
     #fill_hard_rate(stu_info)
 
     # calculate if student is in condition - TODO (can be done)
-    #set_condition(stu_info)
+    #fil_condition(stu_info)
 
     # calculate position of the student for the semester he is in 
     #- TODO (can be done)
-    #set_condition(stu_info)
+    #fill_position(stu_info)
 
     print('\nfinished constructing derived info\n\n')
 

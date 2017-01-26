@@ -4,8 +4,6 @@
 from basic import *
 import pickle
 
-# path for serialized objects
-PATH = 'data/'
 
 # name for the course pickle object
 NAME_COURSE_PCK = 'course_info'
@@ -96,15 +94,11 @@ class Course():
             return True
         return False
 
-def is_mand_sub(code_sub, course, stu_year, stu_sem):
+def is_mand_sub(code_sub, course):
     """
-    receives the code for a given subject, the course of a student and the year and
-    semester the student entered the course
+    receives a course and the code of a subject
     returns true case the given subject is mandatory, false otherwise
     """
-    # load correct course 
-    course = load_course(course, stu_year, stu_sem)
-
     # query course to see if the subject is mandatory and return
     return course.is_mandatory(code_sub)
 
