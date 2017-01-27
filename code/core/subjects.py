@@ -45,7 +45,7 @@ class Subject():
         else:
             pass
 
-def build_all_subjects(stu_info)
+def build_all_subjects(stu_info):
     """
     from the dictionary of students, obtain all subjects the students have coursed so
     far

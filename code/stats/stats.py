@@ -10,9 +10,39 @@ import psycopg2
 from subprocess import call
 
 sys.path.append('../core/')
-from students import *
+from students_methods import *
 
-# generate graphs for the database
+def apply_kendall():
+    """
+    apply the kendall test for all the students we got 
+    """
+    # file pointer
+    FILE_NAME = '../logs/kendall.txt'
+    fp = open(FILE_NAME, 'w')
+
+    # load student info 
+    stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
+
+    # write student info
+    for key, stu in stu_info.items():
+         social = '%d,%s,%d,%s,%s,%s,%s,%s,' \
+                 % (stu.reg, stu.sex, stu.age, stu.quota, stu.school_type, \
+                 stu.course, stu.local, stu.way_in)
+    #     perf = '%f\t%f\t%f\t%f\t%f\t%f\t%f\t%f\t%f\t%d\t' \
+    #             % (stu.ira, stu.improvement_rate, stu.fail_rate, stu.pass_rate, \
+    #             stu.drop_rate, stu.credit_rate, stu.mand_credit_rate, stu.hard_rate, \
+    #                stu.in_condition, stu.position)
+         way_out = '%s\n' % (stu.way_out)
+        
+         #fp.write(social + perf + way_out)
+         # TODO: code above should be the one
+         fp.write(social + way_out)
+
+    fp.close()
+
+    # apply kendal tao test 
+    call("Rscript kendall.r " + FILE_NAME, shell = True)
+
 def generate_graphs():
     """
     generate the graphs for the primitive and derived attributes
@@ -231,4 +261,6 @@ def write_execute_delete(rows, function, *args):
     # exclude temp file
     #call('rm temp.txt', shell = True)
 
-generate_graphs()
+#generate_graphs()
+
+apply_kendall()

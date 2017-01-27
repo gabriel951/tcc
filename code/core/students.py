@@ -30,6 +30,7 @@ class Student():
     """
     class that represents the student
     """
+
     def __init__(self, id_num): 
         """
         initializes a student, does not put any information

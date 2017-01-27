@@ -20,7 +20,8 @@ def fill_condition(stu_info):
     for key, stu in stu_info: 
         num_semesters = stu.get_num_semesters()
         for i in range(num_semesters):
-            stu.in_condition_sem(i):
+            pass
+            #stu.in_condition_sem(i):
 
         # TODO: handle list transformation
 
@@ -368,6 +369,7 @@ def get_database_info():
     # try to load student from pickle object
     try: 
         stu_info = load_students(NAME_STU_STRUCTURE)
+        print('finished loading the students dictionary')
         return stu_info
     except FileNotFoundError:
         print('could not load student info, so will build structure from database')
@@ -401,6 +403,7 @@ def get_database_info():
         # handle cases of students that left by ways unrelated to grades
         #handle_special_stu(stu_info)
         
+        print('finished loading the students dictionary')
         return stu_info
 
 def get_derived_info(stu_info):
@@ -457,13 +460,15 @@ def get_students_info():
     """
     # obtain info for the students contained in database
     stu_dict = get_database_info()
-    print('finished loading the students dictionary')
     
     # construct info for the derived attributes of a student
     get_derived_info(stu_dict)
 
     # saves object
     save_students(NAME_STU_STRUCTURE, stu_dict)
+
+    # TODO: check missing values
+    check_missing_values(stu_dict)
     exit()
 
 def handle_special_stu(stu_info):
