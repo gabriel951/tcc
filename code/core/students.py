@@ -3,9 +3,10 @@ import pickle
 import csv
 
 # TODO: does my database contain students who have not graduated yet? 
-# import basic and aux
-
 # TODO: fix code to take into account the subjectives that are elective
+# TODO: in the IRA case, i can fill every subject, one by one
+# TODO: update drop_rate, pass_rate and fail_rate to be lists, so we can take it by
+# semester
 
 import sys
 sys.path.append('..')
@@ -90,6 +91,74 @@ class Student():
         # position of the student relative to the semester he is in 
         self.position = lst_unknown[:]
 
+    def calculate_ira_yearsem(self, year, sem):
+        """
+        receives an year and a semester, calculates the ira the student will have in
+        the passed ira and semester
+
+        * similar calculations found in method get_sem_grade
+        """
+        # TODO: code not complete because i don't have the number of credits the
+        # student has taken
+        #assert (sem == 1 or sem == 2)
+        
+        ## special case counter
+        #spc_counter = 0
+
+        ## variables for ira calculation
+        #ira_sum = 0
+        #drop_mand_sub = 0
+        #drop_opt_sub = 0 
+        #num_sub = 0 
+
+        ## iterate through all the subjects student coursed
+        #for subject, data_list in self.grades.items(): 
+        #    for pos in range(len(data_list)): 
+        #        # pass if subject not coursed yet
+        #        code_sub = self.get_sub_info(subject, pos, 'code')
+        #        year_sub = self.get_sub_info(subject, pos, 'year')
+        #        sem_sub = self.get_sub_info(subject, pos, 'sem')
+        #        grade_sub = self.get_sub_info(subject, pos, 'grade')
+        #        if year_coursed > year or \
+        #            (year_coursed == year and sem_coursed >= sem): 
+        #                pass
+
+        #        
+        #        # student dropped case
+        #        if student_dropped(grade):
+        #            num_sub += 1
+        #            if is_mand_sub(code_sub, self.course, self.year_in, self.sem_in):
+        pass
+
+    def few_pass(self, pos):
+        """
+        returns True case for the semester with position pos and the previous one 
+        the student didnt pass in four disciplines of the course
+        """
+        # TODO: can't know what are the disciplines of the course
+
+    def check_2repr(self, pos):
+        """
+        receives a position
+        returns true case the student has two reprovations in a given subject for 
+        all the semesters he has already coursed
+        
+        * pos = 0 means the year and semester the student got in unb 
+        """
+        (cur_year, cur_sem) = self.pos_2_yearsem(pos, self.year_in, self.sem_in)
+    
+        for key_grd, grd_lst in self.grades: 
+            num_fails = 0 
+            for pos in range(len(grd_lst)):
+                (code, name, grade, year, sem) = self.get_sub_info(key_grd, pos, 'all') 
+                if student_dropped(grade):
+                    if year < cur_year or (year == cur_year and sem <= cur_sem):
+                        num_fails += 1
+            if num_fails >= 2: 
+                return True
+
+        return False
+
     def get_course(self, course_lst):
         """
         receives a course list
@@ -117,45 +186,11 @@ class Student():
             return self.grades[key][pos][3] # year is the fourth information
         elif info == 'sem':
             return self.grades[key][pos][4] # semester is the fifth information
-
-    def calculate_ira_yearsem(self, year, sem):
-        """
-        receives an year and a semester, calculates the ira the student will have in
-        the passed ira and semester
-
-        * similar calculations found in method get_sem_grade
-        """
-        # TODO: code not complete because i don't have the number of credits the
-        # student has taken
-        pass
-        #assert (sem == 1 or sem == 2)
-
-        ## special case counter
-        #spc_counter = 0
-
-        ## variables for ira calculation
-        #ira_sum = 0
-        #drop_mand_sub = 0
-        #drop_opt_sub = 0 
-        #num_sub = 0 
-
-        ## iterate through all the subjects student coursed
-        #for subject, data_list in self.grades.items(): 
-        #    for pos in range(len(data_list)): 
-        #        # pass if subject not coursed yet
-        #        code_sub = self.get_sub_info(subject, pos, 'code')
-        #        year_sub = self.get_sub_info(subject, pos, 'year')
-        #        sem_sub = self.get_sub_info(subject, pos, 'sem')
-        #        grade_sub = self.get_sub_info(subject, pos, 'grade')
-        #        if year_coursed > year or \
-        #            (year_coursed == year and sem_coursed >= sem): 
-        #                pass
-
-        #        
-        #        # student dropped case
-        #        if student_dropped(grade):
-        #            num_sub += 1
-        #            if is_mand_sub(code_sub, self.course, self.year_in, self.sem_in):
+        elif info == 'all':
+            tup = tuple(self.grades[key][pos])
+            return tup # tuple returned in the same order
+        else:
+            exit('value passed to get_sub_info not valid')
 
     def get_num_semesters(self):
         """
@@ -264,6 +299,65 @@ class Student():
         else: 
             exit('value passed to get_sub_info is incorrect')
     
+    def in_condition_sem(self, sem):
+        """
+        receives a semester
+        returns whether the student is in condition for that semester or not
+        also, fills the list with right information
+
+        * semester count start at zero
+        return: 
+            NO_CONDITION - case the student is not in condition
+            TWICE_FAIL - case the student is in condition because of twice failing in the same
+            subject
+            FEW_PASS - case the student is in condition because of not being approved in
+            four disciplines of the course for the two periods
+        """
+        # avoid magic numbers ;)
+        NO_CONDITION = 0
+        TWICE_FAIL = 1
+        FEW_PASS = 2
+        
+        # no student at the end of the first semester is in condition
+        if sem == 0: 
+            self.in_condition[sem] = NO_CONDITION
+            return NO_CONDITION
+
+        # return if student that is in condition for twice failing a subject is not
+        # better
+        if self.in_condition_sem(sem - 1) == TWO_FAIL_COND:
+            # check if there's any reprovation in two subjects 
+            if self.check_2repr(sem):
+                self.in_condition[sem] = TWO_FAIL_COND
+                return TWO_FAIL_COND
+
+        # check if student that was in condition for few approvations is now better
+        # this problem can't happen if student is in the first semester 
+        if self.is_condition_sem(sem - 1) == FEW_PASS:
+            if not self.min_pass(sem):
+                self.in_condition[sem] = FEW_PASS
+                return FEW_PASS
+
+        # we need to check if student has two reprovations in the same subject
+        if self.check_2repr(sem):
+            self.in_condition[sem] = TWO_FAIL_COND
+            return TWO_FAIL_COND
+
+        # check if student has not been approved in four disciplines of the course
+        # for the past 2 semesters
+        if self.few_pass(sem):
+            self.in_condition[sem] = FEW_PASS
+            return FEW_PASS
+
+        # TODO: evaluate whether the student is in the last semester of the course
+        # and has the possibility to conclude seems rather hard 
+        # TODO: evaluate whether the student has fullfilled his student plan that
+        # was approved by the CAO is impossible!
+
+        # else, student not in condition
+        self.in_condition[sem] = NO_CONDITION
+        return NO_CONDITION
+
     def log_info(self, fp):
         """
         receives a file object
@@ -298,6 +392,14 @@ class Student():
 
         fp.write("------------\n")
 
+    def min_pass(self, pos):
+        """
+        returns True case in the given semester and the previous one the student 
+        was approved in the minimum amount of credits for the course
+        """
+        # TODO: need to know the amount of credit each subject take
+        # TODO: need to know the minimum number of credits per subject
+        
     def pos_2_yearsem(self, pos, year, sem):
         """
         receives a position the student is in, a year and a semester

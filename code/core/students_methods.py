@@ -12,6 +12,18 @@ def fill_credit_rate(stu_info):
     # TODO: I cant fill the credit rate unless i know how many credits each subject
     # has
 
+def fill_condition(stu_info):
+    """
+    receives a dictionary containing the student information
+    fills the condition list for every student
+    """
+    for key, stu in stu_info: 
+        num_semesters = stu.get_num_semesters()
+        for i in range(num_semesters):
+            stu.in_condition_sem(i):
+
+        # TODO: handle list transformation
+
 def fill_drop_rate(stu_info): 
     """
     receives a dictionary containing all student information
@@ -201,6 +213,8 @@ def fill_ira(stu_info, mode = 'normal'):
             fill_ira_year_semester(stu_info, year, semester)
         print('ending insertion')
         print('will start filling info for iras that are not known')
+        # TODO: can't handle missing iras because i don't have information 
+        # regarding the credit 
         handle_miss_ira(stu_info)
         print('finished filling missing iras')
     else:
@@ -282,6 +296,68 @@ def fill_pass_rate(stu_info):
 
     # close file
     fp.close()
+
+def fill_position(stu_info):
+    """
+    receives a student dictionary
+    put the information regarding the position the student is in (compared to every
+    other student on the same course and semester) 
+    """
+    # avoid magic ;)
+    NOT_FOUND = -1 
+    IRA_POS = 0 
+    REG_POS = 1
+
+    # get maximum number of semesters 
+    max_sem = NOT_FOUND
+    for key, stu in stu_info.items():
+        cur_sem = stu.get_num_semesters()
+        if cur_sem > max_sem: 
+            max_sem = cur_sem
+    assert (max_sem != NOT_FOUND)
+
+    # determine position for every semester
+    for cur_sem in range(max_sem):
+        # dictionary contain as key a tuple: (code_key, year_in, sem_in)
+        # and as value a list of tuples: [(ira, registration), ...] 
+        # dictionary of performance for students
+        perf = {}
+
+        # add every student IRA to the performance dict
+        for key, stu in stu_info.items():
+            sem_in_unb = stu.get_num_semesters()
+
+            # case the student has already graduated, ira is the one for the last
+            # semester
+            if cur_sem > sem_in_unb:
+                ira = stu.ira[sem_in_unb]
+            else: 
+                ira = stu.ira[cur_sem]
+
+            # add to dict
+            if not ((stu.course, stu.year_in, stu.sem_in) in perf):
+                perf[(stu.course, stu.year_in, stu.sem_in)] = [] 
+            perf[(stu.course, stu.year_in, stu.sem_in)].append((ira, stu.reg))
+
+        # sort every list in dictionary - by first element
+        for key, val in perf.items(): 
+            val.sort(key = lambda tup: tup[IRA_POS])
+
+        # for every student, fill his position on the list
+        for key, stu in stu_info.items():
+            sem_in_unb = stu.get_num_semesters()
+            if cur_sem > sem_in_unb: 
+                pass
+
+            perf_lst = perf[(stu.course, stu.year_in, stu.sem_in)]
+            position = NOT_FOUND 
+            for i in range(len(perf_lst)):
+                if perf_lst[i][REG_POS] == stu.reg:
+                    position = i 
+                    break
+            assert (position != NOT_FOUND)
+
+            stu.position[cur_sem] = position
 
 def get_database_info():
     """
