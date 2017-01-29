@@ -1,11 +1,19 @@
 # antes
+    # outliers
     1. Eliminei alunos que saíram por anulação de registro
     2. Considerei Novo Vestibular como outlier
     3. Pensei em eliminar desligamento por falta de documentação (ex: 201142445)
-    4. olhei outliers, um a um 
+    4. Pensei em não considerar desligamento por abandono como outlier
+    5. olhei outliers, um a um 
         -> de modo geral, a maioria tinha reprovado em tudo com SR ou trancado tudo, 
 então realmente eram outliers
         -> Alunos com mais de dois II's não foram considerados outliers. Entretanto,
-os II's podem ter sido causados por professores que não passam 
+os II's podem ter sido causados por professores que não passam chamada
+    
+    # features
+    0. O feature IRA está incompleto na base de dados?
+    1. Taxa de melhora apresenta missing values
+    2. Calcular o feature em_condição tem alguns problemas: 
+        -> 
 
 # depois
