@@ -1,54 +1,19 @@
 ------------
 student info
-	age:   18
-	course:   cic_licenciatura
-	credit_rate:   None
-	drop_rate:   1.0
-	fail_rate:   0.0
-	hard_rate:   None
-	id_num:   115924
-	improvement_rate:   None
-	in_condition:   None
-	ira:   None
-	local:   outros
-	mand_credit_rate:   None
-	pass_rate:   0.0
-	position:   None
-	quota:   universal
-	race:   branca
-	reg:   201122981
-	school_type:   publica
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Novo Vestibular
-	year_in:   2012
-	year_out:   2012
-	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2012, 1]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'TR', 2012, 1]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'TR', 2012, 1]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'TR', 2012, 1]]
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'TR', 2012, 1]]
-	 ------------------ 
-------------
-------------
-student info
 	age:   29
 	course:   cic_bacharelado
-	credit_rate:   None
-	drop_rate:   1.0
-	fail_rate:   0.0
-	hard_rate:   None
+	credit_rate:   ['not know']
+	drop_rate:   [1.0]
+	fail_rate:   [0.0]
+	hard_rate:   ['not know']
 	id_num:   53935
-	improvement_rate:   None
-	in_condition:   None
-	ira:   None
+	improvement_rate:   ['not know']
+	in_condition:   ['not know']
+	ira:   ['not know']
 	local:   outros
-	mand_credit_rate:   None
-	pass_rate:   0.0
-	position:   None
+	mand_credit_rate:   ['not know']
+	pass_rate:   [0.0]
+	position:   ['not know']
 	quota:   universal
 	race:   000
 	reg:   200697346
@@ -61,179 +26,11 @@ student info
 	year_in:   2006
 	year_out:   2006
 	 printing grades --- 
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2006, 2]]
 		algebra 1:   [[113107, 'algebra 1', 'TR', 2006, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'TR', 2006, 2]]
 		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2006, 2]]
 		sistemas de informacao:   [[116416, 'sistemas de informacao', 'TR', 2006, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'TR', 2006, 2]]
 		linguagens de programacao:   [[116343, 'linguagens de programacao', 'TR', 2006, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2006, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   18
-	course:   engenharia_mecatronica
-	credit_rate:   None
-	drop_rate:   1.0
-	fail_rate:   0.0
-	hard_rate:   None
-	id_num:   76131
-	improvement_rate:   None
-	in_condition:   None
-	ira:   None
-	local:   outros
-	mand_credit_rate:   None
-	pass_rate:   0.0
-	position:   None
-	quota:   universal
-	race:   000
-	reg:   200992771
-	school_type:   nao declarado
-	sem_in:   2
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Desligamento Voluntario
-	year_in:   2008
-	year_out:   2009
-	 printing grades --- 
-		quimica geral experimental:   [[114634, 'quimica geral experimental', 'TR', 2008, 2]]
-		introducao a engenharia mecatronica:   [[168891, 'introducao a engenharia mecatronica', 'TR', 2008, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'TR', 2008, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'TR', 2008, 2]]
-		fisica 1:   [[118001, 'fisica 1', 'TR', 2008, 2]]
-		quimica geral teorica:   [[114626, 'quimica geral teorica', 'TR', 2008, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   26
-	course:   cic_bacharelado
-	credit_rate:   None
-	drop_rate:   1.0
-	fail_rate:   0.0
-	hard_rate:   None
-	id_num:   133395
-	improvement_rate:   None
-	in_condition:   None
-	ira:   None
-	local:   outros
-	mand_credit_rate:   None
-	pass_rate:   0.0
-	position:   None
-	quota:   universal
-	race:   000
-	reg:   201164928
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Portador Diploma Curso Superior
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2014
-	year_out:   2015
-	 printing grades --- 
-		fisica 2:   [[118028, 'fisica 2', 'TR', 2014, 1]]
-		fisica 2 experimental:   [[118036, 'fisica 2 experimental', 'TR', 2014, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'TR', 2014, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2014, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   42
-	course:   cic_licenciatura
-	credit_rate:   None
-	drop_rate:   1.0
-	fail_rate:   0.0
-	hard_rate:   None
-	id_num:   133539
-	improvement_rate:   None
-	in_condition:   None
-	ira:   None
-	local:   outros
-	mand_credit_rate:   None
-	pass_rate:   0.0
-	position:   None
-	quota:   universal
-	race:   branca
-	reg:   201161268
-	school_type:   publica
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   SISU
-	way_out:   Novo Vestibular
-	year_in:   2014
-	year_out:   2014
-	 printing grades --- 
-		algebra 1:   [[113107, 'algebra 1', 'TR', 2014, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   24
-	course:   cic_licenciatura
-	credit_rate:   None
-	drop_rate:   1.0
-	fail_rate:   0.0
-	hard_rate:   None
-	id_num:   125306
-	improvement_rate:   None
-	in_condition:   None
-	ira:   None
-	local:   df
-	mand_credit_rate:   None
-	pass_rate:   0.0
-	position:   None
-	quota:   universal
-	race:   branca
-	reg:   201145857
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   ENEM
-	way_out:   Novo Vestibular
-	year_in:   2013
-	year_out:   2013
-	 printing grades --- 
-		algebra 1:   [[113107, 'algebra 1', 'TR', 2013, 1]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'TR', 2013, 1]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'TR', 2013, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'TR', 2013, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   24
-	course:   engenharia_redes
-	credit_rate:   None
-	drop_rate:   1.0
-	fail_rate:   0.0
-	hard_rate:   None
-	id_num:   133492
-	improvement_rate:   None
-	in_condition:   None
-	ira:   None
-	local:   outros
-	mand_credit_rate:   None
-	pass_rate:   0.0
-	position:   None
-	quota:   universal
-	race:   nao dispoe de informacao
-	reg:   201162735
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   SISU
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2014
-	year_out:   2015
-	 printing grades --- 
-		projeto de estradas:   [[166723, 'projeto de estradas', 'TR', 2014, 1]]
-		teoria das estruturas 1:   [[166049, 'teoria das estruturas 1', 'TR', 2014, 1]]
-		eletricidade básica:   [[100986, 'eletricidade básica', 'TR', 2014, 2]]
 	 ------------------ 
 ------------

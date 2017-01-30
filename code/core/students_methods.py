@@ -1,6 +1,7 @@
 #!/usr/bin/python3.4
 # this file contain the methods mainly related to the students
 from students import *
+from outliers import *
 
 def fill_credit_rate(stu_info):
     """
@@ -25,40 +26,90 @@ def fill_condition(stu_info):
 
         # TODO: handle list transformation
 
-def fill_drop_rate(stu_info): 
+def fill_drop_pass_fail_rate_sem(stu, pos, mode):
     """
-    receives a dictionary containing all student information
-    set correctly the IRA of every student
+    fill the drop/pass/fail rate for a given student, for the semester passed
+    receives: 
+        1. the student
+        2. the position for which we want to know the rate
+        3. mode informing whether we want the pass rate, the fail rate or the drop
+        rate. Should be 'drop', 'pass' or 'fail'
+    returns: 
+        nothing
+    """
+    # obtain function to apply and variable of interes
+    if mode == 'drop':
+        func_apply = student_dropped
+        var_interest = stu.drop_rate
+    elif mode == 'fail':
+        func_apply = student_failed
+        var_interest = stu.fail_rate
+    elif mode == 'pass':
+        func_apply = student_passed
+        var_interest = stu.pass_rate
+
+    # iterate through every subject
+    sub_coursed = 0
+    sub_ok = 0 
+    for sub_name, info_list in stu.grades.items():
+        for index in range(len(info_list)):
+            # make sure the subject was coursed in the period we are considering
+            (code, name, grade, year, sem) = stu.get_sub_info(sub_name, index, 'all')
+            cur_pos = stu.yearsem_2_pos(year, sem)
+            if cur_pos > pos: 
+                pass
+
+            # compute statistics
+            sub_coursed += 1
+            if func_apply(grade): 
+                sub_ok += 1
+             
+    # set attribute correctly 
+    var_interest[pos] = float(sub_ok) / sub_coursed
+
+def fill_drop_pass_fail_rate(stu_info, mode): 
+    """
+    set correctly the drop_rate or fail_rate or pass_rate for every student
+    receives: 
+        1. a dictionary containing all student information
+        2. mode informing whether we want the pass rate, the fail rate or the drop
+        rate. Should be 'drop', 'pass' or 'fail'
+    returns: 
+        nothing
     """
     # open file that report patological cases
-    fp = open('../logs/drop_rate_patological_cases.txt', 'w')
+    if mode == 'drop':
+        fp = open('../logs/drop_rate_patological_cases.txt', 'w')
+    elif mode == 'fail':
+        fp = open('../logs/fail_rate_patological_cases.txt', 'w')
+    elif mode == 'pass':
+        fp = open('../logs/pass_rate_patological_cases.txt', 'w')
+    else:
+        exit('function fill_drop_pass_fail_rate called with wrong arguments')
 
-    for key in stu_info: 
+    for key, stu in stu_info.items(): 
         # get current student grades
-        stu = stu_info[key]
         cur_stu_grades = stu.grades
 
-        # iterate through every subject
-        subjects_coursed = 0
-        subjects_dropped = 0 
-        for sub_name, info_list in cur_stu_grades.items():
-            for index in range(len(info_list)):
-                subjects_coursed += 1
-                grade = stu.get_sub_info(sub_name, index, 'grade')
-                if student_dropped(grade): 
-                    subjects_dropped += 1
-                 
-        # set attribute correctly 
-        stu_info[key].drop_rate = float(subjects_dropped) / subjects_coursed  
+        # for all positions the student is in 
+        num_semesters = stu.get_num_semesters()
+        for pos in range(num_semesters):
+            fill_drop_pass_fail_rate_sem(stu, pos, mode) 
 
-        # if drop rate is problematic, register patological case
-        if stu_info[key].drop_rate > 0.99: 
+
+        # TODO: if rate is problematic (when the student left), 
+        # register patological case
+        LAST_ELEM = -1 
+        if mode == 'drop' and stu.drop_rate[LAST_ELEM] > 0.99: 
             stu.log_info(fp)
-            #stu.show_student()
+        if mode == 'fail' and stu.fail_rate[LAST_ELEM] > 0.99: 
+            stu.log_info(fp)
+        elif mode == 'pass' and stu.pass_rate[LAST_ELEM] < 0.01:
+            stu.log_info(fp)
 
     # close file
     fp.close()
-    print('finished filling drop rate')
+    print('finished filling %s rate' % (mode))
 
 def fill_empty_iras(stu_info):
     """
@@ -81,41 +132,6 @@ def fill_empty_iras(stu_info):
 
         # update miss_ira
         miss_ira += missed_ira
-
-def fill_fail_rate(stu_info):
-    """
-    receives a dictionary
-    set correctly the fail rate of every student
-    """
-    # open file that report patological cases
-    fp = open('../logs/fail_rate_patological_cases.txt', 'w')
-
-    for key in stu_info: 
-        # get current student grades
-        stu = stu_info[key]
-        cur_stu_grades = stu.grades
-
-        # iterate through every subject
-        subjects_coursed = 0
-        subjects_failed = 0 
-        for sub_name, info_list in cur_stu_grades.items():
-            for index in range(len(info_list)):
-                subjects_coursed += 1
-                grade = stu.get_sub_info(sub_name, index, 'grade')
-                if student_failed(grade): 
-                    subjects_failed += 1
-                 
-        # set attribute correctly 
-        stu_info[key].fail_rate = float(subjects_failed) / subjects_coursed  
-
-        # if fail rate is problematic, register patological case
-        if stu_info[key].fail_rate > 0.99: 
-            stu.log_info(fp)
-            #stu.show_student()
-
-    # close file
-    fp.close()
-    print('finished filling the fail rate')
 
 def fill_grades(stu_info, mode = 'normal'):
     """
@@ -149,11 +165,15 @@ def fill_grades(stu_info, mode = 'normal'):
 
     # for every row in database
     for row in rows:
-        # get student id and corresponding student
+        # get student id and corresponding student - it may have been deleted as an
+        # outlier, so watch key error
         student_id = row[CODE_STU_RIND]
-        student = stu_info[student_id]
+        try: 
+            student = stu_info[student_id]
+            student.set_grades(row)
+        except KeyError:
+            pass
 
-        student.set_grades(row)
 
     print('finished filling grades')
 
@@ -263,41 +283,6 @@ def fill_mand_rate(stu_info):
 
     print('finished filling mandatory rate')
 
-def fill_pass_rate(stu_info):
-    """
-    receives a dictionary
-    set correctly the pass rate of every student
-    """
-    # open file that report patological cases
-    fp = open('../logs/pass_rate_patological_cases.txt', 'w')
-    
-    for key in stu_info: 
-        # get current student grades
-        stu = stu_info[key]
-        cur_stu_grades = stu.grades
-
-        # iterate through every subject
-        subjects_coursed = 0
-        subjects_passed = 0 
-        for sub_name, info_list in cur_stu_grades.items():
-            for index in range(len(info_list)):
-                subjects_coursed += 1
-                grade = stu.get_sub_info(sub_name, index, 'grade')
-            if student_passed(grade): 
-                subjects_passed += 1
-                 
-        # set attribute correctly 
-        pass_rate = float(subjects_passed) / subjects_coursed  
-        stu.pass_rate = pass_rate
-
-        # if pass rate is problematic, register patological case
-        if pass_rate < 0.01: 
-            stu.log_info(fp)
-            #stu.show_student()
-
-    # close file
-    fp.close()
-
 def fill_position(stu_info):
     """
     receives a student dictionary
@@ -396,8 +381,8 @@ def get_database_info():
             if not key in stu_info: 
                 # add student, case the registration is a new one
                 student_id = row[STU_ID_IND]
-                stu_info[key] = Student(student_id)
-                stu_info[key].set_attrib(row)
+                stu_info[key] = Student(student_id, row)
+                #stu_info[key].set_attrib(row)
 
 
         # handle cases of students that left by ways unrelated to grades
@@ -413,7 +398,7 @@ def get_derived_info(stu_info):
     attributes   
     """
     # fill student grades
-    fill_grades(stu_info)
+    #fill_grades(stu_info)
 
     # calculate student ira for the semesters - TODO: handle case of empty iras
     #fill_ira(stu_info)
@@ -422,13 +407,13 @@ def get_derived_info(stu_info):
     #fill_impr_rate(stu_info)
 
     # calculate fail rate - ok
-    #fill_fail_rate(stu_info)
+    #fill_drop_pass_fail_rate(stu_info, 'fail')
 
     # calculate pass rate - ok
-    #fill_pass_rate(stu_info)
+    fill_drop_pass_fail_rate(stu_info, 'pass')
 
     # calculate drop rate - ok
-    #fill_drop_rate(stu_info)
+    fill_drop_pass_fail_rate(stu_info, 'drop')
 
     # calculate credit rate and mandatory rate - TODO: need the credit amount for the
     # disciplines
@@ -461,6 +446,9 @@ def get_students_info():
     # obtain info for the students contained in database
     stu_dict = get_database_info()
     
+    # TODO: handle outliers
+    handle_outliers(stu_dict)
+
     # construct info for the derived attributes of a student
     get_derived_info(stu_dict)
 
@@ -468,8 +456,7 @@ def get_students_info():
     save_students(NAME_STU_STRUCTURE, stu_dict)
 
     # TODO: check missing values
-    check_missing_values(stu_dict)
-    exit()
+    #check_missing_values(stu_dict)
 
 def handle_special_stu(stu_info):
     """
@@ -558,8 +545,9 @@ def save_students(name, stu_info, path = PATH):
 
     print('saving student on %s/%s' % (name, path))
 
-# get all student relevant information and saves it as an object
-#get_students_info()
+if __name__ == "__main__":
+    # get all student relevant information and saves it as an object
+    get_students_info()
 
-# load student info, just a test
-#load_students('NAME_STU_STRUCTURE')
+    # load student info, just a test
+    #load_students('NAME_STU_STRUCTURE')

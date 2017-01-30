@@ -19,6 +19,9 @@
 *.snm
 *.toc
 
+# R files
+*.R*
+
 # more tex files
 *.acn
 *.acl

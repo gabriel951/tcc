@@ -64,18 +64,24 @@ def generate_graphs():
 
     ## derived features
     #get_graph('ira', stu_info, data_type = 'continuous')
-    get_graph('improvement_rate', stu_info, data_type = 'continuous')
+    #get_graph('improvement_rate', stu_info, data_type = 'continuous')
     #get_graph('pass_rate', stu_info, data_type = 'continuous')
-    #get_graph('fail_rate', stu_info, data_type = 'continuous')
+    #get_graph('fail_rate', stu_info, data_type = 'continuous', index = -1)
     #get_graph('drop_rate', stu_info, data_type = 'continuous')
     #get_graph('mand_rate', stu_info, data_type = 'continuous')
 
-def get_graph(feature, stu_info, data_type = 'discrete'):
+def get_graph(feature, stu_info, data_type = 'discrete', index = None):
     """
-    receives a feature name and a dictionary of students. 
-    Optionally receives whether the datatype is discrete or continuous.
     generate a bar graph (discrete data) or a histogram graph (continuous data) for 
     the feature distribution
+    receives:
+        1. a feature name
+        2. a dictionary of students. 
+        3. (optional) whether the datatype is discrete or continuous.
+        4. (optional) an index. If passed its because the feature is a list (one for
+        each semester) and its the position for the list
+    returns: 
+        nothing
     """
     print('getting graph for feature %s' % (feature))
     rows_list = []
@@ -86,14 +92,13 @@ def get_graph(feature, stu_info, data_type = 'discrete'):
         # iterate through the students attributes, printing them
         for attr, value in cur_stu.__dict__.items():
             if attr == feature: 
-                rows_list.append(value)
+                if index == None:
+                    rows_list.append(value)
+                else:
+                    rows_list.append(value[index])
 
     # handle feature, if necessary
     rows_list = handle_feature(stu_info, rows_list, feature)
-
-    # handle feature, case feature is grade
-    if feature == 'grades':
-        rows_list = handle_grade(stu_info)
 
     # write query in file, call r program to plot pie chart and delete
     if data_type == 'discrete':
@@ -209,6 +214,8 @@ def handle_feature(stu_info, rows_list, feature):
         print('substituting vest para mesmo Curso for vmc')
         
         return rows_list
+    elif feature == 'grades':
+        rows_list = handle_grade(stu_info)
     else:
         return rows_list
 
@@ -258,9 +265,9 @@ def write_execute_delete(rows, function, *args):
     # execute function
     function(*args)
 
-    # exclude temp file
+    # exclude temp file - useful as log
     #call('rm temp.txt', shell = True)
 
-#generate_graphs()
+generate_graphs()
 
-apply_kendall()
+#apply_kendall()

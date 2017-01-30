@@ -7,6 +7,7 @@ import csv
 # TODO: in the IRA case, i can fill every subject, one by one
 # TODO: update drop_rate, pass_rate and fail_rate to be lists, so we can take it by
 # semester
+# TODO: there appears to be iras missing
 
 import sys
 sys.path.append('..')
@@ -31,8 +32,9 @@ class Student():
     class that represents the student
     """
 
-    def __init__(self, id_num): 
+    def __init__(self, id_num, row): 
         """
+        receives a row containing student info
         initializes a student, does not put any information
         """
         # id number
@@ -59,6 +61,9 @@ class Student():
         self.way_in = None
         self.way_out = None
 
+        # set attributes
+        self.set_attrib(row)
+
         ## performance data follows
 
         # obtain list with size equal to the number of semesters a student stayed in
@@ -66,7 +71,7 @@ class Student():
         lst_unknown = []
         num_semesters = self.get_num_semesters()
         for i in range(num_semesters):
-            lst_unknown(NOT_KNOWN)
+            lst_unknown.append(NOT_KNOWN)
 
         # ira of the student - 
         self.ira = lst_unknown[:] 
@@ -173,9 +178,14 @@ class Student():
 
     def get_sub_info(self, key, pos, info):
         """
-        receives a key to access a given subject, the position in the list of
-        information for that subject and the info we want
-        return the information we want
+        obtain information of a given student in a given subject
+        receives: 
+            1. a key to access a given subject
+            2. the position in the list of information for that subject
+            3. a string describing the info we want - 'code', 'name', 'grade', 'sem'
+            or 'all'
+        return: 
+            the information we want
         """
         if info == 'code':
             return self.grades[key][pos][0] # code is the first information
@@ -278,27 +288,6 @@ class Student():
             print(penalty_factor)
             print(grade_factor)
             print(ira_semester)
-
-    def get_sub_info(self, key, pos, info):
-        """
-        receives a key to access the grades dictionary correct item, the position in
-        the list we are in and the information we want
-        return the information
-
-        * possible values include: code, grade, 
-        """
-        if info == 'code':
-            return self.grades[key][pos][0] # code is the first item
-        elif info == 'name':
-            return self.grades[key][pos][1] # name is the second item
-        elif info == 'grade':
-            return self.grades[key][pos][2] # grade is the third item
-        elif info == 'year':
-            return self.grades[key][pos][3] # year is the fourth item
-        elif info == 'sem':
-            return self.grades[key][pos][4] # semester is the fifth item
-        else: 
-            exit('value passed to get_sub_info is incorrect')
     
     def in_condition_sem(self, sem):
         """
@@ -706,9 +695,12 @@ class Student():
 
     def yearsem_2_pos(self, year, sem):
         """
-        receives an year and a semester
-        calculates for that time what is the position the student is in
-
+        calculates for the position student is in, from year and semester
+        receives: 
+            1. year
+            2. semester
+        returns: 
+            the position the student is in 
         * pos = 0 means the year and semester the student got in unb. 
         * pos = 1 means the semester just after pos = 0, and so on
         """
