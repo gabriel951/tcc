@@ -154,7 +154,8 @@ def test_database():
     for ind in ind_list:
         test_column_values(test_time, ind, mode = 'selected_courses')
 
-#test_database()
-#test_insertion()
-test_insertion('normal')
-#clean_database()
+if __name__ == "__main__":
+    #test_database()
+    #test_insertion()
+    test_insertion('normal')
+    #clean_database()
