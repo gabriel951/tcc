@@ -1,0 +1,65 @@
+\begin{frame}{Histograma - Razão entre disciplinas cursadas por semestre e
+    disciplinas do curso}
+\begin{itemize}[itemsep=3ex]
+        \item <Por histograma aqui>
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Histograma - Razão entre aprovações em disciplinas obrigatórias cursadas 
+        por semestre e disciplinas do curso}
+\begin{itemize}[itemsep=3ex]
+        \item <Por histograma aqui>
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Taxa de Aprovação nas Disciplinas mais difíceis do Semestre}
+\begin{itemize}[itemsep=3ex]
+        \item <Por histograma aqui>
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Demais Atributos Derivados}
+\begin{itemize}[itemsep=3ex]
+        \item Demais atributos derivados incluem: booleano que indica se um aluno
+            está ou não em condição e 
+            a posição em relação ao semestre (0 caso seja o pior aluno, 1 caso seja o
+            melhor).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{PCA}
+\begin{itemize}[itemsep=3ex]
+    \item Utilização da técnica PCA (Principal Component Analysis) para verificar se
+        features estão demasiadamente relacionados. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Limpeza dos Dados}
+\begin{itemize}[itemsep=3ex]
+    \item Optou-se por não considerar features nos quais mais de 60\% das entradas
+        fossem missing values.
+    \item Descartou-se assim o feature raça.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Limpeza dos Dados}
+\begin{itemize}[itemsep=3ex]
+    \item Para o caso de atributos que podem apresentar missing values, foi feita
+        imputação (exemplo: coeficiente de melhora acadêmica).
+    \item Assim, caso haja missing value coloca-se a média do feature. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Integração dos Dados}
+\begin{itemize}[itemsep=3ex]
+    \item Dados originais da SIGRA foram integrados com a informação dos currículos
+        antigos e novos dos cursos, de modo a saber quais matérias são obrigatórias. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Transformação dos dados}
+\begin{itemize}[itemsep=3ex]
+    \item Utilização de dummy variables para representar dados categóricos.  
+\end{itemize}
+\end{frame}
+

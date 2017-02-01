@@ -1,20 +1,25 @@
 # antes
     # outliers
     1. Eliminei alunos que saíram por anulação de registro
-    2. Eliminei Considerei Novo Vestibular como outlier
-    3. Pensei em eliminar desligamento por falta de documentação (ex: 201142445)
-    4. Pensei em não considerar desligamento por abandono como outlier
-    5. olhei outliers, um a um 
+    2. Pensei em eliminar desligamento por falta de documentação (ex: 201142445)
+    3. Eliminei 203 outliers, da base que contém 3954 (+- 5%)
+    4. olhei outliers, um a um 
         -> de modo geral, a maioria tinha reprovado em tudo com SR ou trancado tudo, 
 então realmente eram outliers
         -> Alunos com mais de dois II's não foram considerados outliers. Entretanto,
 os II's podem ter sido causados por professores que não passam chamada
     
-    ## TODO: dividir por curso
     # features
-    0. O feature IRA está incompleto na base de dados?
-    1. Taxa de melhora apresenta missing values
-    2. Calcular o feature em_condição tem alguns problemas: 
-        -> 
+    1. Refiz os histogramas de aprovação, reprovação e trancamentos, dividindo por
+curso e após eliminar os outliers
+    2. O feature IRA está com missing values na base de dados. Além disso, parece que
+só tenho acesso ao IRA final do aluno. Então vou preciso calcular os IRA's manualmente.
+Calcular o IRA manualmente tem um problema: não sei quantos créditos cada matéria
+ocupa (fazer manualmente seria um problema para matérias que não são optativas).
+Pensei em estimar o IRA (considerando cada matéria como sendo 4 créditos). 
+    3. Demais features dependem de saber o número de créditos de cada matéria 
+
+    # teste de Kendall 
+    1. Testei o script em R para o teste de Kendall, acho que vai dar certo
 
 # depois

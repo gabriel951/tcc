@@ -39,6 +39,6 @@ def student_passed(grade):
     """
     receives a grade, returns true if it means the student passed, false otherwise
     """
-    if grade.lower() in ['mm', 'ms', 'ss', 'cc']:
+    if grade.lower() in ['mm', 'ms', 'ss', 'cc', 'ap']:
         return True
     return False

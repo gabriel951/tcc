@@ -7,7 +7,9 @@ import csv
 # TODO: in the IRA case, i can fill every subject, one by one
 # TODO: update drop_rate, pass_rate and fail_rate to be lists, so we can take it by
 # semester
-# TODO: there appears to be iras missing
+# TODO: there appears to be iras missing. And the iras i have are only for the last
+# year
+# TODO: check students that passed in everything
 
 import sys
 sys.path.append('..')
@@ -252,7 +254,7 @@ class Student():
             for data in data_list: 
                 # only proceed if data coursed in the year and semester
                 if data[year_pos] != year or data[sem_pos] != semester:
-                    pass                
+                    continue                
 
                 # if the student dropped
                 if student_dropped(data[grade_pos]):
@@ -267,7 +269,7 @@ class Student():
                 grade_weight = get_grade_weight(data[grade_pos])
                 if grade_weight == None: 
                     # dont consider
-                    pass
+                    continue
                 else:
                     # increment the number of subjects coursed
                     num_sub += 1
@@ -442,7 +444,7 @@ class Student():
         """
         # if name is in the official name list, nothing to do 
         if self.course in COURSES_OFF_NAME:
-            pass
+            return
         elif self.course.lower() in ['ciência da computação']: 
             self.course = CIC_BACHELOR
         elif self.course.lower() in ['computação']:
@@ -604,7 +606,7 @@ class Student():
         """
         # does not consider summer school
         if semester == 0: 
-            pass
+            return
 
         # insert ira in the right position
         pos = self.get_semester(year, semester) 

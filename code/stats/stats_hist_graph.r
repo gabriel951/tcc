@@ -1,5 +1,6 @@
 # r program to draw a pie chart in the screen
 library (ggplot2)
+library(scales)
 library (png)
 
 cat("entered r program to plot stats\n")
@@ -14,7 +15,7 @@ names(data) <- c("valores")
 # my plot
 my_plot <-  ggplot(data, aes(valores)) + 
             geom_histogram(binwidth = 0.05, fill = "darkblue") + 
-            #geom_histogram(fill = "darkblue") + 
+            scale_y_continuous(labels = percent) + 
             ylab("quantidade") + 
             theme_bw()
 

@@ -47,6 +47,9 @@ def generate_graphs():
     """
     generate the graphs for the primitive and derived attributes
     """
+    # avoid magic number - last element on a list
+    LAST_ELEM = -1
+
     # load student info
     stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
 
@@ -63,50 +66,72 @@ def generate_graphs():
     #get_graph('way_out', stu_info)
 
     ## derived features
-    #get_graph('ira', stu_info, data_type = 'continuous')
+    #get_graph('ira', stu_info, True, data_type = 'continuous')
     #get_graph('improvement_rate', stu_info, data_type = 'continuous')
-    #get_graph('pass_rate', stu_info, data_type = 'continuous')
-    #get_graph('fail_rate', stu_info, data_type = 'continuous', index = -1)
-    #get_graph('drop_rate', stu_info, data_type = 'continuous')
+    #get_graph('pass_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
+    get_graph('pass_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
+    #get_graph('fail_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
+    ##get_graph('fail_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
+    #get_graph('drop_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
+    #get_graph('drop_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
     #get_graph('mand_rate', stu_info, data_type = 'continuous')
 
-def get_graph(feature, stu_info, data_type = 'discrete', index = None):
+def get_graph(feature, stu_info, sep_course, data_type = 'discrete', index = None):
     """
     generate a bar graph (discrete data) or a histogram graph (continuous data) for 
-    the feature distribution
+    the feature distribution. No separation by course
     receives:
         1. a feature name
         2. a dictionary of students. 
+        3. a boolean to indicate if we need to separate the courses or not
         3. (optional) whether the datatype is discrete or continuous.
         4. (optional) an index. If passed its because the feature is a list (one for
         each semester) and its the position for the list
     returns: 
         nothing
     """
-    print('getting graph for feature %s' % (feature))
-    rows_list = []
+    assert (sep_course == True or sep_course == False)
 
-    # iterate through every student
-    for key in stu_info: 
-        cur_stu = stu_info[key]
-        # iterate through the students attributes, printing them
-        for attr, value in cur_stu.__dict__.items():
-            if attr == feature: 
-                if index == None:
-                    rows_list.append(value)
-                else:
-                    rows_list.append(value[index])
+    # iterate through every course of interest
+    for course in COURSES_OFF_NAME:
+        # inform user whats going on and set name of graph
+        if sep_course == False:
+            print('getting graph for feature %s' % (feature))
+            name = feature + '.png'
+        else:
+            print('getting graph for feature %s and course %s' % (feature, course))
+            name = feature + '_' + course + '.png'
 
-    # handle feature, if necessary
-    rows_list = handle_feature(stu_info, rows_list, feature)
+        # iterate through every student - keeping record of feature value
+        rows_list = []
+        for key, cur_stu in stu_info.items(): 
 
-    # write query in file, call r program to plot pie chart and delete
-    if data_type == 'discrete':
-        write_execute_delete(rows_list, r_get_bar_graph, feature)
-    elif data_type == 'continuous':
-        write_execute_delete(rows_list, r_get_hist_graph, feature)
-    else:
-        exit("misinformed value")
+            # it may be necessary to skip the student
+            if sep_course == True and cur_stu.course != course:
+                continue
+
+            # keep record
+            for attr, value in cur_stu.__dict__.items():
+                if attr == feature: 
+                    if index == None:
+                        rows_list.append(value)
+                    else:
+                        rows_list.append(value[index])
+
+        # handle feature, if necessary
+        rows_list = handle_feature(stu_info, rows_list, feature)
+
+        # write query in file, call r program to plot chart and delete
+        if data_type == 'discrete':
+            write_execute_delete(rows_list, r_get_bar_graph, name)
+        elif data_type == 'continuous':
+            write_execute_delete(rows_list, r_get_hist_graph, name)
+        else:
+            exit("misinformed value")
+
+        # if we don't want to separate course, end function
+        if sep_course == False: 
+            return
 
 def handle_feature(stu_info, rows_list, feature):
     """
@@ -236,25 +261,38 @@ def handle_grade(stu_info):
 
     return rows_list
 
-def r_get_bar_graph(feature):
+def r_get_bar_graph(name):
     """
     call r program to plot a bar graph
+    receives: 
+        1. the name for the graph
+    returns:
+        nothing
     """
     call("Rscript stats_bar_graph.r", shell = True)
-    call("mv temp.png " + feature + ".png", shell = True)
+    call("mv temp.png " + name, shell = True)
 
-def r_get_hist_graph(feature):
+def r_get_hist_graph(name):
     """
-    call r program to plot a bar graph
+    call r program to plot a histogram graph
+    receives: 
+        1. the name for the graph
+    returns: 
+        nothing
     """
     call("Rscript stats_hist_graph.r", shell = True)
-    call("mv temp.png " + feature + ".png", shell = True)
+    call("mv temp.png " + name, shell = True)
 
 def write_execute_delete(rows, function, *args):
     """
-    receives a row, function to execute and arguments to the function
-    write each entry of the row on a temporary file, execute function given and delete
-    the temporary file
+    write each entry of the row on a temporary file, execute function given (for all
+    courses together or for each of them separately) and delete the temporary file
+    receives:
+        1. a row
+        2. function to execute 
+        3. additional arguments to the function
+    returns: 
+        nothing
     """
     # write to temp file
     with open('temp.txt', 'w') as temp_file:

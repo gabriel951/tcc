@@ -1,3 +1,5 @@
+student 201088187 has not coursed any subject in pos: 0
+student 200318141 has not coursed any subject in pos: 0
 ------------
 student info
 	age:   29
@@ -26,11 +28,20 @@ student info
 	year_in:   2006
 	year_out:   2006
 	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2006, 2]]
 		algebra 1:   [[113107, 'algebra 1', 'TR', 2006, 2]]
 		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2006, 2]]
-		sistemas de informacao:   [[116416, 'sistemas de informacao', 'TR', 2006, 2]]
 		computacao basica:   [[116301, 'computacao basica', 'TR', 2006, 2]]
+		sistemas de informacao:   [[116416, 'sistemas de informacao', 'TR', 2006, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2006, 2]]
 		linguagens de programacao:   [[116343, 'linguagens de programacao', 'TR', 2006, 2]]
 	 ------------------ 
 ------------
+student 201090968 has not coursed any subject in pos: 0
+student 201125171 has not coursed any subject in pos: 0
+student 201069598 has not coursed any subject in pos: 0
+student 201069648 has not coursed any subject in pos: 0
+student 201070189 has not coursed any subject in pos: 0
+student 201087044 has not coursed any subject in pos: 0
+student 201070772 has not coursed any subject in pos: 0
+student 201112507 has not coursed any subject in pos: 0
+student 201080249 has not coursed any subject in pos: 0

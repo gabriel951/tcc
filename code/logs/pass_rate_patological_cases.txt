@@ -1,3 +1,4 @@
+student 201088187 has not coursed any subject in pos: 0
 ------------
 student info
 	age:   23
@@ -26,14 +27,256 @@ student info
 	year_in:   2013
 	year_out:   2014
 	 printing grades --- 
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2013, 2], [113093, 'introducao a algebra linear', 'SR', 2014, 1]]
-		teoria dos numeros:   [[113115, 'teoria dos numeros', 'SR', 2014, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
-		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2014, 1]]
 		fisica 1:   [[118001, 'fisica 1', 'SR', 2013, 2], [118001, 'fisica 1', 'SR', 2014, 1]]
-		introdução a economia:   [[132012, 'introdução a economia', 'SR', 2014, 1]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2], [118010, 'fisica 1 experimental', 'SR', 2014, 1]]
 		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2013, 2], [167959, 'fundamentos de redes', 'SR', 2014, 1]]
+		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2014, 1]]
+		introdução a economia:   [[132012, 'introdução a economia', 'SR', 2014, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
+		teoria dos numeros:   [[113115, 'teoria dos numeros', 'SR', 2014, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2013, 2], [113093, 'introducao a algebra linear', 'SR', 2014, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   23
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   110659
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   negro
+	race:   preta 
+	reg:   201113979
+	school_type:   publica
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2011
+	year_out:   2012
+	 printing grades --- 
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2011, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2011, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2011, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   20
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   48109
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   200638889
+	school_type:   nao declarado
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2006
+	year_out:   2007
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'II', 2006, 1], [118001, 'fisica 1', 'SR', 2006, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2006, 1], [113034, 'calculo 1', 'SR', 2006, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2006, 1], [140481, 'leitura e produção de textos', 'SR', 2006, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'MI', 2006, 1], [116301, 'computacao basica', 'SR', 2006, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2006, 1], [145971, 'inglês instrumental 1', 'SR', 2006, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2006, 1], [118010, 'fisica 1 experimental', 'II', 2006, 2]]
+	 ------------------ 
+------------
+student 200318141 has not coursed any subject in pos: 0
+------------
+student info
+	age:   26
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   136566
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   preta 
+	reg:   201171816
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2014
+	year_out:   2015
+	 printing grades --- 
+		organizacao de arquivos:   [[116327, 'organizacao de arquivos', 'II', 2014, 2], [116327, 'organizacao de arquivos', 'SR', 2015, 1]]
+		linguagens de programacao:   [[116343, 'linguagens de programacao', 'II', 2014, 2], [116343, 'linguagens de programacao', 'SR', 2015, 1]]
+		algebra 1:   [[113107, 'algebra 1', 'SR', 2014, 2], [113107, 'algebra 1', 'SR', 2015, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   34
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   110613
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   201114486
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2011
+	year_out:   2012
+	 printing grades --- 
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2011, 2], [145971, 'inglês instrumental 1', 'SR', 2012, 2]]
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2011, 2], [116793, 'introducao a microinformatica', 'SR', 2012, 2]]
+		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'MI', 2011, 2], [147389, 'portugues instrumental 1', 'SR', 2012, 2]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2011, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 2]]
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2011, 2], [117366, 'lógica computacional 1', 'SR', 2012, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   32
+	course:   engenharia_redes
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   92635
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   negro
+	race:   preta 
+	reg:   201089911
+	school_type:   publica
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Rep 3 vezes na mesma Disc Obrig
+	year_in:   2010
+	year_out:   2011
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'MI', 2010, 1], [118001, 'fisica 1', 'SR', 2010, 2], [118001, 'fisica 1', 'II', 2011, 1]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2010, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2010, 1], [113034, 'calculo 1', 'MI', 2010, 2], [113034, 'calculo 1', 'SR', 2011, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2010, 1], [118010, 'fisica 1 experimental', 'II', 2011, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2010, 1], [113093, 'introducao a algebra linear', 'II', 2010, 2], [113093, 'introducao a algebra linear', 'II', 2011, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   39
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   98349
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   201098233
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2010
+	year_out:   2011
+	 printing grades --- 
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2010, 2]]
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'MI', 2010, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   18
+	course:   engenharia_computacao
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   125583
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   escola publica baixa renda-ppi
+	race:   parda
+	reg:   201142445
+	school_type:   publica
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Desligamento Falta Documentacao
+	year_in:   2013
+	year_out:   2014
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 1], [118001, 'fisica 1', 'SR', 2013, 2], [118001, 'fisica 1', 'SR', 2014, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 1], [116301, 'computacao basica', 'SR', 2013, 2], [116301, 'computacao basica', 'SR', 2014, 1]]
+		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2013, 1], [117528, 'introdução à engenharia de computação', 'SR', 2013, 2], [117528, 'introdução à engenharia de computação', 'SR', 2014, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 1], [113034, 'calculo 1', 'SR', 2013, 2], [113034, 'calculo 1', 'SR', 2014, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2013, 1], [118010, 'fisica 1 experimental', 'II', 2013, 2], [118010, 'fisica 1 experimental', 'SR', 2014, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2013, 1], [113093, 'introducao a algebra linear', 'SR', 2013, 2], [113093, 'introducao a algebra linear', 'SR', 2014, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -69,211 +312,6 @@ student info
 ------------
 ------------
 student info
-	age:   23
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   110659
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   negro
-	race:   preta 
-	reg:   201113979
-	school_type:   publica
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2011
-	year_out:   2012
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2011, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2011, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2011, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   20
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   48109
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   200638889
-	school_type:   nao declarado
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2006
-	year_out:   2007
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2006, 1], [118001, 'fisica 1', 'SR', 2006, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2006, 1], [140481, 'leitura e produção de textos', 'SR', 2006, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2006, 1], [145971, 'inglês instrumental 1', 'SR', 2006, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2006, 1], [118010, 'fisica 1 experimental', 'II', 2006, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2006, 1], [113034, 'calculo 1', 'SR', 2006, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'MI', 2006, 1], [116301, 'computacao basica', 'SR', 2006, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   26
-	course:   cic_licenciatura
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   136566
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   preta 
-	reg:   201171816
-	school_type:   particular
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2014
-	year_out:   2015
-	 printing grades --- 
-		linguagens de programacao:   [[116343, 'linguagens de programacao', 'II', 2014, 2], [116343, 'linguagens de programacao', 'SR', 2015, 1]]
-		algebra 1:   [[113107, 'algebra 1', 'SR', 2014, 2], [113107, 'algebra 1', 'SR', 2015, 1]]
-		organizacao de arquivos:   [[116327, 'organizacao de arquivos', 'II', 2014, 2], [116327, 'organizacao de arquivos', 'SR', 2015, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   34
-	course:   cic_licenciatura
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   110613
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   201114486
-	school_type:   particular
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2011
-	year_out:   2012
-	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2011, 2], [145971, 'inglês instrumental 1', 'SR', 2012, 2]]
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'MI', 2011, 2], [147389, 'portugues instrumental 1', 'SR', 2012, 2]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2011, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 2]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2011, 2], [116793, 'introducao a microinformatica', 'SR', 2012, 2]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2011, 2], [117366, 'lógica computacional 1', 'SR', 2012, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   32
-	course:   engenharia_redes
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   92635
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   negro
-	race:   preta 
-	reg:   201089911
-	school_type:   publica
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Rep 3 vezes na mesma Disc Obrig
-	year_in:   2010
-	year_out:   2011
-	 printing grades --- 
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2010, 1]]
-		fisica 1:   [[118001, 'fisica 1', 'MI', 2010, 1], [118001, 'fisica 1', 'SR', 2010, 2], [118001, 'fisica 1', 'II', 2011, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2010, 1], [113034, 'calculo 1', 'MI', 2010, 2], [113034, 'calculo 1', 'SR', 2011, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2010, 1], [118010, 'fisica 1 experimental', 'II', 2011, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2010, 1], [113093, 'introducao a algebra linear', 'II', 2010, 2], [113093, 'introducao a algebra linear', 'II', 2011, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   39
-	course:   cic_licenciatura
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   98349
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   201098233
-	school_type:   particular
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2010
-	year_out:   2011
-	 printing grades --- 
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'MI', 2010, 2]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2010, 2]]
-	 ------------------ 
-------------
-------------
-student info
 	age:   18
 	course:   cic_licenciatura
 	credit_rate:   ['not know', 'not know', 'not know']
@@ -300,9 +338,9 @@ student info
 	year_in:   2009
 	year_out:   2010
 	 printing grades --- 
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'MI', 2009, 1], [116793, 'introducao a microinformatica', 'SR', 2009, 2], [116793, 'introducao a microinformatica', 'SR', 2010, 1]]
 		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2009, 1], [147389, 'portugues instrumental 1', 'SR', 2009, 2], [147389, 'portugues instrumental 1', 'SR', 2010, 1]]
 		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2009, 1], [194221, 'organizacao da educacao brasileira', 'SR', 2009, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2010, 1]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'MI', 2009, 1], [116793, 'introducao a microinformatica', 'SR', 2009, 2], [116793, 'introducao a microinformatica', 'SR', 2010, 1]]
 		lógica computacional 1:   [[117366, 'lógica computacional 1', 'MI', 2009, 1]]
 	 ------------------ 
 ------------
@@ -334,10 +372,10 @@ student info
 	year_in:   2006
 	year_out:   2007
 	 printing grades --- 
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2006, 2]]
 		computacao basica:   [[116301, 'computacao basica', 'SR', 2007, 1]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2006, 2]]
 		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2006, 2], [116793, 'introducao a microinformatica', 'SR', 2007, 1]]
+		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2006, 2]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2006, 2]]
 		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2006, 2]]
 	 ------------------ 
 ------------
@@ -371,10 +409,46 @@ student info
 	 printing grades --- 
 		fisica 1:   [[118001, 'fisica 1', 'SR', 2012, 2]]
 		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2012, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2012, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2012, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 2]]
 		computacao basica:   [[116301, 'computacao basica', 'II', 2012, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2012, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2012, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   29
+	course:   cic_bacharelado
+	credit_rate:   ['not know']
+	drop_rate:   [1.0]
+	fail_rate:   [0.0]
+	hard_rate:   ['not know']
+	id_num:   53935
+	improvement_rate:   ['not know']
+	in_condition:   ['not know']
+	ira:   ['not know']
+	local:   outros
+	mand_credit_rate:   ['not know']
+	pass_rate:   [0.0]
+	position:   ['not know']
+	quota:   universal
+	race:   000
+	reg:   200697346
+	school_type:   nao declarado
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Desligamento Voluntario
+	year_in:   2006
+	year_out:   2006
+	 printing grades --- 
+		algebra 1:   [[113107, 'algebra 1', 'TR', 2006, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2006, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'TR', 2006, 2]]
+		sistemas de informacao:   [[116416, 'sistemas de informacao', 'TR', 2006, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2006, 2]]
+		linguagens de programacao:   [[116343, 'linguagens de programacao', 'TR', 2006, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -406,48 +480,12 @@ student info
 	year_out:   2011
 	 printing grades --- 
 		fisica 1:   [[118001, 'fisica 1', 'SR', 2010, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2010, 2], [113034, 'calculo 1', 'SR', 2011, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2010, 2]]
-		introdução a economia:   [[132012, 'introdução a economia', 'II', 2011, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2010, 2]]
-		introdução à ciência política:   [[185035, 'introdução à ciência política', 'SR', 2011, 1]]
 		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2010, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   29
-	course:   cic_bacharelado
-	credit_rate:   ['not know']
-	drop_rate:   [1.0]
-	fail_rate:   [0.0]
-	hard_rate:   ['not know']
-	id_num:   53935
-	improvement_rate:   ['not know']
-	in_condition:   ['not know']
-	ira:   ['not know']
-	local:   outros
-	mand_credit_rate:   ['not know']
-	pass_rate:   [0.0]
-	position:   ['not know']
-	quota:   universal
-	race:   000
-	reg:   200697346
-	school_type:   nao declarado
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Desligamento Voluntario
-	year_in:   2006
-	year_out:   2006
-	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2006, 2]]
-		algebra 1:   [[113107, 'algebra 1', 'TR', 2006, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2006, 2]]
-		sistemas de informacao:   [[116416, 'sistemas de informacao', 'TR', 2006, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'TR', 2006, 2]]
-		linguagens de programacao:   [[116343, 'linguagens de programacao', 'TR', 2006, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2010, 2]]
+		introdução à ciência política:   [[185035, 'introdução à ciência política', 'SR', 2011, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2010, 2], [113034, 'calculo 1', 'SR', 2011, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2010, 2]]
+		introdução a economia:   [[132012, 'introdução a economia', 'II', 2011, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -478,49 +516,11 @@ student info
 	year_in:   2008
 	year_out:   2009
 	 printing grades --- 
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2008, 2]]
 		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'MI', 2008, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2008, 2]]
 	 ------------------ 
 ------------
-------------
-student info
-	age:   23
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.25, 0.25, 0.25]
-	fail_rate:   [0.75, 0.75, 0.75]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   125449
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   branca
-	reg:   201143617
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2013
-	year_out:   2014
-	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2013, 1]]
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 1], [118001, 'fisica 1', 'SR', 2013, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2013, 1]]
-		prática desportiva 1:   [[175013, 'prática desportiva 1', 'SR', 2013, 2]]
-		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'SR', 2013, 2], [115045, 'probabilidade e estatistica', 'SR', 2014, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2013, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'TR', 2013, 1], [116301, 'computacao basica', 'SR', 2014, 1]]
-		calculo 3:   [[113051, 'calculo 3', 'SR', 2013, 2]]
-		topicos avancados em computadores:   [[116297, 'topicos avancados em computadores', 'SR', 2014, 1]]
-	 ------------------ 
-------------
+student 201090968 has not coursed any subject in pos: 0
 ------------
 student info
 	age:   17
@@ -549,8 +549,8 @@ student info
 	year_in:   2013
 	year_out:   2014
 	 printing grades --- 
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'MI', 2013, 1]]
 		fisica 1:   [[118001, 'fisica 1', 'MI', 2013, 1]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'MI', 2013, 1]]
 		calculo 1:   [[113034, 'calculo 1', 'MI', 2013, 1]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'TR', 2013, 1]]
 		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2013, 1]]
@@ -558,13 +558,13 @@ student info
 ------------
 ------------
 student info
-	age:   16
-	course:   engenharia_computacao
+	age:   17
+	course:   engenharia_redes
 	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
+	drop_rate:   [0.0, 0.1111111111111111, 0.1111111111111111]
+	fail_rate:   [1.0, 0.8888888888888888, 0.8888888888888888]
 	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   120967
+	id_num:   120962
 	improvement_rate:   ['not know', 'not know', 'not know']
 	in_condition:   ['not know', 'not know', 'not know']
 	ira:   ['not know', 'not know', 'not know']
@@ -573,23 +573,23 @@ student info
 	pass_rate:   [0.0, 0.0, 0.0]
 	position:   ['not know', 'not know', 'not know']
 	quota:   universal
-	race:   preta 
-	reg:   201132163
+	race:   branca
+	reg:   201132312
 	school_type:   particular
 	sem_in:   2
 	sem_out:   2
 	sex:   masculino
 	way_in:   Vestibular
-	way_out:   Desligamento Voluntario
+	way_out:   Deslig - Nao Cumpriu condicao
 	year_in:   2012
 	year_out:   2013
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'MI', 2012, 2], [118001, 'fisica 1', 'SR', 2013, 1]]
-		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'II', 2012, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2012, 2], [118010, 'fisica 1 experimental', 'SR', 2013, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2012, 2], [113093, 'introducao a algebra linear', 'SR', 2013, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2012, 2], [116301, 'computacao basica', 'SR', 2013, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2012, 2]]
+		introdução a psicologia:   [[124010, 'introdução a psicologia', 'SR', 2013, 1]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2012, 2], [167959, 'fundamentos de redes', 'TR', 2013, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2012, 2], [113034, 'calculo 1', 'MI', 2013, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2012, 2], [113093, 'introducao a algebra linear', 'II', 2013, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -620,784 +620,11 @@ student info
 	year_in:   2004
 	year_out:   2005
 	 printing grades --- 
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2004, 2]]
-		lógica 1:   [[137481, 'lógica 1', 'SR', 2004, 2]]
 		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2004, 2]]
 		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2004, 2]]
+		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2004, 2]]
 		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2004, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   19
-	course:   engenharia_computacao
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.11764705882352941, 0.11764705882352941, 0.11764705882352941]
-	fail_rate:   [0.8823529411764706, 0.8823529411764706, 0.8823529411764706]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   115842
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   branca
-	reg:   201124394
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Novo Vestibular
-	year_in:   2012
-	year_out:   2013
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'TJ', 2012, 1], [118001, 'fisica 1', 'SR', 2012, 2], [118001, 'fisica 1', 'SR', 2013, 1]]
-		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2012, 1], [117528, 'introdução à engenharia de computação', 'SR', 2013, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2], [118010, 'fisica 1 experimental', 'SR', 2013, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2012, 1], [113093, 'introducao a algebra linear', 'SR', 2012, 2], [113093, 'introducao a algebra linear', 'SR', 2013, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'MI', 2012, 1], [113034, 'calculo 1', 'SR', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'TJ', 2012, 1], [116301, 'computacao basica', 'SR', 2012, 2], [116301, 'computacao basica', 'SR', 2013, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   18
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know']
-	drop_rate:   [0.0, 0.0]
-	fail_rate:   [1.0, 1.0]
-	hard_rate:   ['not know', 'not know']
-	id_num:   133335
-	improvement_rate:   ['not know', 'not know']
-	in_condition:   ['not know', 'not know']
-	ira:   ['not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know']
-	pass_rate:   [0.0, 0.0]
-	position:   ['not know', 'not know']
-	quota:   escola publica baixa renda-ppi
-	race:   parda
-	reg:   201165511
-	school_type:   publica
-	sem_in:   1
-	sem_out:   2
-	sex:   masculino
-	way_in:   SISU
-	way_out:   Desligamento Voluntario
-	year_in:   2014
-	year_out:   2014
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2014, 1]]
-		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'II', 2014, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2014, 1], [145971, 'inglês instrumental 1', 'SR', 2014, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2014, 1], [118010, 'fisica 1 experimental', 'SR', 2014, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2014, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2014, 1], [116301, 'computacao basica', 'SR', 2014, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   19
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know', 'not know', 'not know']
-	drop_rate:   [0.1, 0.1, 0.1, 0.1]
-	fail_rate:   [0.9, 0.9, 0.9, 0.9]
-	hard_rate:   ['not know', 'not know', 'not know', 'not know']
-	id_num:   120894
-	improvement_rate:   ['not know', 'not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   201132800
-	school_type:   particular
-	sem_in:   2
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Desligamento - Abandono
-	year_in:   2012
-	year_out:   2014
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'TR', 2012, 2], [118001, 'fisica 1', 'SR', 2013, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2013, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2013, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 2], [118010, 'fisica 1 experimental', 'SR', 2013, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'II', 2012, 2], [116301, 'computacao basica', 'SR', 2013, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   18
-	course:   engenharia_computacao
-	credit_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	drop_rate:   [0.09090909090909091, 0.09090909090909091, 0.09090909090909091, 0.09090909090909091, 0.09090909090909091]
-	fail_rate:   [0.9090909090909091, 0.9090909090909091, 0.9090909090909091, 0.9090909090909091, 0.9090909090909091]
-	hard_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	id_num:   110225
-	improvement_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	quota:   universal
-	race:   branca
-	reg:   201116444
-	school_type:   particular
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2011
-	year_out:   2013
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'SR', 2011, 2]]
-		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2011, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2011, 2], [113093, 'introducao a algebra linear', 'SR', 2012, 1]]
-		introdução a economia:   [[132012, 'introdução a economia', 'II', 2012, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2011, 2], [118010, 'fisica 1 experimental', 'II', 2012, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 2], [113034, 'calculo 1', 'SR', 2013, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2011, 2], [116301, 'computacao basica', 'TJ', 2012, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   19
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know', 'not know']
-	id_num:   55116
-	improvement_rate:   ['not know', 'not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know', 'not know']
-	local:   indisponível
-	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   200608548
-	school_type:   nao declarado
-	sem_in:   2
-	sem_out:   1
-	sex:   masculino
-	way_in:   Matricula Cortesia
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2005
-	year_out:   2007
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2006, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2006, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2006, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2006, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   22
-	course:   engenharia_computacao
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.07142857142857142, 0.07142857142857142, 0.07142857142857142]
-	fail_rate:   [0.9285714285714286, 0.9285714285714286, 0.9285714285714286]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   133467
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   escola publica baixa renda-ppi
-	race:   parda
-	reg:   201163379
-	school_type:   publica
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   SISU
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2014
-	year_out:   2015
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1], [118001, 'fisica 1', 'SR', 2014, 2]]
-		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2014, 1], [117528, 'introdução à engenharia de computação', 'SR', 2015, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2014, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2014, 1], [113093, 'introducao a algebra linear', 'SR', 2014, 2], [113093, 'introducao a algebra linear', 'SR', 2015, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2014, 1]]
-		introducao a atividade empresarial:   [[170054, 'introducao a atividade empresarial', 'SR', 2015, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2014, 1], [116301, 'computacao basica', 'SR', 2014, 2], [116301, 'computacao basica', 'SR', 2015, 1]]
-		noções de direito:   [[184802, 'noções de direito', 'SR', 2014, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   24
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.2, 0.2, 0.2]
-	fail_rate:   [0.7333333333333333, 0.7333333333333333, 0.7333333333333333]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   104472
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   201108419
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Rep 3 vezes na mesma Disc Obrig
-	year_in:   2011
-	year_out:   2012
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'SR', 2011, 1], [118001, 'fisica 1', 'II', 2011, 2], [118001, 'fisica 1', 'TJ', 2012, 1]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'MI', 2011, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'MI', 2011, 1], [116301, 'computacao basica', 'MI', 2011, 2], [116301, 'computacao basica', 'II', 2012, 1]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2011, 1], [145971, 'inglês instrumental 1', 'AP', 2012, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2011, 1], [118010, 'fisica 1 experimental', 'MI', 2011, 2], [118010, 'fisica 1 experimental', 'TJ', 2012, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 1], [113034, 'calculo 1', 'TJ', 2012, 1]]
-		informatica e sociedade:   [[116726, 'informatica e sociedade', 'SR', 2011, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   26
-	course:   engenharia_computacao
-	credit_rate:   ['not know', 'not know']
-	drop_rate:   [0.0, 0.0]
-	fail_rate:   [1.0, 1.0]
-	hard_rate:   ['not know', 'not know']
-	id_num:   104457
-	improvement_rate:   ['not know', 'not know']
-	in_condition:   ['not know', 'not know']
-	ira:   ['not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know']
-	pass_rate:   [0.0, 0.0]
-	position:   ['not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   201108443
-	school_type:   particular
-	sem_in:   1
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Desligamento - Abandono
-	year_in:   2011
-	year_out:   2011
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'SR', 2011, 1]]
-		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2011, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2011, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2011, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   30
-	course:   cic_licenciatura
-	credit_rate:   ['not know']
-	drop_rate:   [0.0]
-	fail_rate:   [1.0]
-	hard_rate:   ['not know']
-	id_num:   129904
-	improvement_rate:   ['not know']
-	in_condition:   ['not know']
-	ira:   ['not know']
-	local:   df
-	mand_credit_rate:   ['not know']
-	pass_rate:   [0.0]
-	position:   ['not know']
-	quota:   universal
-	race:   branca
-	reg:   201149606
-	school_type:   particular
-	sem_in:   2
-	sem_out:   0
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Formatura
-	year_in:   2013
-	year_out:   2014
-	 printing grades --- 
-		projeto de licenciatura 2:   [[116904, 'projeto de licenciatura 2', 'MI', 2013, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   19
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.16666666666666666, 0.16666666666666666, 0.16666666666666666]
-	fail_rate:   [0.8333333333333334, 0.8333333333333334, 0.8333333333333334]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   133317
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   negro
-	race:   parda
-	reg:   201165755
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   SISU
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2014
-	year_out:   2015
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1], [118001, 'fisica 1', 'TR', 2014, 2], [118001, 'fisica 1', 'SR', 2015, 1]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2014, 1]]
-		quimica geral teorica:   [[114626, 'quimica geral teorica', 'SR', 2015, 1]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2014, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2014, 1], [118010, 'fisica 1 experimental', 'SR', 2015, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2014, 1], [113034, 'calculo 1', 'TR', 2014, 2], [113034, 'calculo 1', 'SR', 2015, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2014, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   41
-	course:   cic_licenciatura
-	credit_rate:   ['not know', 'not know']
-	drop_rate:   [0.0, 0.0]
-	fail_rate:   [1.0, 1.0]
-	hard_rate:   ['not know', 'not know']
-	id_num:   104773
-	improvement_rate:   ['not know', 'not know']
-	in_condition:   ['not know', 'not know']
-	ira:   ['not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know']
-	pass_rate:   [0.0, 0.0]
-	position:   ['not know', 'not know']
-	quota:   universal
-	race:   branca
-	reg:   201104654
-	school_type:   publica
-	sem_in:   1
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Desligamento - Abandono
-	year_in:   2011
-	year_out:   2011
-	 printing grades --- 
-		projeto de licenciatura 2:   [[116904, 'projeto de licenciatura 2', 'SR', 2011, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   22
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   65794
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   200819883
-	school_type:   nao declarado
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Transferencia Obrigatoria
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2007
-	year_out:   2008
-	 printing grades --- 
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2007, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'MI', 2007, 2], [116301, 'computacao basica', 'SR', 2008, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   22
-	course:   engenharia_mecatronica
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.1, 0.1, 0.1]
-	fail_rate:   [0.9, 0.9, 0.9]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   115764
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   201125445
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2012
-	year_out:   2013
-	 printing grades --- 
-		circuitos eletricos 1:   [[167011, 'circuitos eletricos 1', 'SR', 2012, 1], [167011, 'circuitos eletricos 1', 'SR', 2012, 2], [167011, 'circuitos eletricos 1', 'SR', 2013, 1]]
-		mecanica 2:   [[168777, 'mecanica 2', 'TJ', 2012, 1], [168777, 'mecanica 2', 'II', 2012, 2], [168777, 'mecanica 2', 'SR', 2013, 1]]
-		introducao ciencia dos materiais:   [[168823, 'introducao ciencia dos materiais', 'MI', 2012, 2]]
-		variavel complexa 1:   [[113069, 'variavel complexa 1', 'SR', 2012, 1], [113069, 'variavel complexa 1', 'SR', 2012, 2], [113069, 'variavel complexa 1', 'SR', 2013, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   22
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.2, 0.2, 0.2]
-	fail_rate:   [0.8, 0.8, 0.8]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   2486
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   200035939
-	school_type:   nao declarado
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Transferencia Obrigatoria
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2000
-	year_out:   2001
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'TR', 2000, 2]]
-		lógica 1:   [[137481, 'lógica 1', 'II', 2000, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'II', 2000, 2]]
-		evolucao do pensamento filosofico e cientifico:   [[137413, 'evolucao do pensamento filosofico e cientifico', 'MI', 2000, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2000, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   28
-	course:   cic_licenciatura
-	credit_rate:   ['not know', 'not know']
-	drop_rate:   [0.0, 0.0]
-	fail_rate:   [1.0, 1.0]
-	hard_rate:   ['not know', 'not know']
-	id_num:   6298
-	improvement_rate:   ['not know', 'not know']
-	in_condition:   ['not know', 'not know']
-	ira:   ['not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know']
-	pass_rate:   [0.0, 0.0]
-	position:   ['not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   200191698
-	school_type:   nao declarado
-	sem_in:   2
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Desligamento - Abandono
-	year_in:   2001
-	year_out:   2002
-	 printing grades --- 
-		lógica 1:   [[137481, 'lógica 1', 'SR', 2001, 2]]
-		introducao a educacao:   [[191019, 'introducao a educacao', 'SR', 2001, 2]]
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2001, 2]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2001, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   22
-	course:   engenharia_mecatronica
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   120720
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   201133890
-	school_type:   particular
-	sem_in:   2
-	sem_out:   2
-	sex:   feminino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2012
-	year_out:   2013
-	 printing grades --- 
-		equacoes diferenciais 1:   [[113301, 'equacoes diferenciais 1', 'SR', 2012, 2], [113301, 'equacoes diferenciais 1', 'SR', 2013, 1], [113301, 'equacoes diferenciais 1', 'SR', 2013, 2]]
-		mecanica 1:   [[168769, 'mecanica 1', 'SR', 2012, 2], [168769, 'mecanica 1', 'SR', 2013, 1], [168769, 'mecanica 1', 'MI', 2013, 2]]
-		fisica 2:   [[118028, 'fisica 2', 'II', 2012, 2], [118028, 'fisica 2', 'SR', 2013, 1], [118028, 'fisica 2', 'SR', 2013, 2]]
-		calculo 3:   [[113051, 'calculo 3', 'SR', 2013, 1], [113051, 'calculo 3', 'SR', 2013, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   36
-	course:   cic_licenciatura
-	credit_rate:   ['not know', 'not know']
-	drop_rate:   [0.0, 0.0]
-	fail_rate:   [1.0, 1.0]
-	hard_rate:   ['not know', 'not know']
-	id_num:   54353
-	improvement_rate:   ['not know', 'not know']
-	in_condition:   ['not know', 'not know']
-	ira:   ['not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know']
-	pass_rate:   [0.0, 0.0]
-	position:   ['not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   200683361
-	school_type:   nao declarado
-	sem_in:   2
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Desligamento - Abandono
-	year_in:   2006
-	year_out:   2007
-	 printing grades --- 
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2006, 2]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2006, 2]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2006, 2]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2006, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   28
-	course:   engenharia_redes
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   115742
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   branca
-	reg:   201125751
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Portador Diploma Curso Superior
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2012
-	year_out:   2013
-	 printing grades --- 
-		sistemas de programacao:   [[169749, 'sistemas de programacao', 'II', 2012, 2]]
-		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'II', 2012, 1], [115045, 'probabilidade e estatistica', 'SR', 2012, 2]]
-		introdução a economia:   [[132012, 'introdução a economia', 'SR', 2012, 1]]
-		ciencias do ambiente:   [[122408, 'ciencias do ambiente', 'MI', 2012, 1]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2012, 1], [167959, 'fundamentos de redes', 'MI', 2012, 2]]
-		noções de direito:   [[184802, 'noções de direito', 'SR', 2012, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   18
-	course:   engenharia_redes
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   136490
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   escola publica alta renda-nao ppi
-	race:   parda
-	reg:   201174353
-	school_type:   publica
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2014
-	year_out:   2015
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 2], [118001, 'fisica 1', 'II', 2015, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2014, 2]]
-		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2015, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2014, 2], [118010, 'fisica 1 experimental', 'II', 2015, 1], [118010, 'fisica 1 experimental', 'SR', 2015, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2014, 2], [113093, 'introducao a algebra linear', 'MI', 2015, 1]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'MI', 2014, 2], [167959, 'fundamentos de redes', 'II', 2015, 1], [167959, 'fundamentos de redes', 'II', 2015, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   18
-	course:   engenharia_computacao
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   125583
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   escola publica baixa renda-ppi
-	race:   parda
-	reg:   201142445
-	school_type:   publica
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Desligamento Falta Documentacao
-	year_in:   2013
-	year_out:   2014
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 1], [118001, 'fisica 1', 'SR', 2013, 2], [118001, 'fisica 1', 'SR', 2014, 1]]
-		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2013, 1], [117528, 'introdução à engenharia de computação', 'SR', 2013, 2], [117528, 'introdução à engenharia de computação', 'SR', 2014, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2013, 1], [118010, 'fisica 1 experimental', 'II', 2013, 2], [118010, 'fisica 1 experimental', 'SR', 2014, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2013, 1], [113093, 'introducao a algebra linear', 'SR', 2013, 2], [113093, 'introducao a algebra linear', 'SR', 2014, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 1], [113034, 'calculo 1', 'SR', 2013, 2], [113034, 'calculo 1', 'SR', 2014, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 1], [116301, 'computacao basica', 'SR', 2013, 2], [116301, 'computacao basica', 'SR', 2014, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   23
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.125, 0.125, 0.125]
-	fail_rate:   [0.875, 0.875, 0.875]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   48228
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   200634557
-	school_type:   nao declarado
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2006
-	year_out:   2007
-	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2006, 1], [145971, 'inglês instrumental 1', 'SR', 2007, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2006, 1], [116301, 'computacao basica', 'SR', 2007, 1]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2006, 1]]
-		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'SR', 2006, 1]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'TR', 2006, 1], [117366, 'lógica computacional 1', 'SR', 2006, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   20
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	drop_rate:   [0.29411764705882354, 0.29411764705882354, 0.29411764705882354, 0.29411764705882354, 0.29411764705882354]
-	fail_rate:   [0.7058823529411765, 0.7058823529411765, 0.7058823529411765, 0.7058823529411765, 0.7058823529411765]
-	hard_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	id_num:   129774
-	improvement_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know', 'not know', 'not know']
-	quota:   negro
-	race:   preta 
-	reg:   201150885
-	school_type:   particular
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2013
-	year_out:   2015
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2], [118001, 'fisica 1', 'TR', 2014, 2], [118001, 'fisica 1', 'II', 2015, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'MI', 2013, 2], [140481, 'leitura e produção de textos', 'SR', 2015, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2013, 2], [145971, 'inglês instrumental 1', 'SR', 2015, 1], [145971, 'inglês instrumental 1', 'SR', 2015, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2], [118010, 'fisica 1 experimental', 'TR', 2014, 2], [118010, 'fisica 1 experimental', 'SR', 2015, 1]]
-		introducao a atividade empresarial:   [[170054, 'introducao a atividade empresarial', 'TR', 2014, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 2], [116301, 'computacao basica', 'SR', 2014, 2], [116301, 'computacao basica', 'TR', 2015, 1]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'TR', 2014, 2]]
+		lógica 1:   [[137481, 'lógica 1', 'SR', 2004, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1435,51 +662,13 @@ student info
 ------------
 ------------
 student info
-	age:   20
-	course:   engenharia_mecatronica
+	age:   19
+	course:   engenharia_computacao
 	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
+	drop_rate:   [0.11764705882352941, 0.11764705882352941, 0.11764705882352941]
+	fail_rate:   [0.8823529411764706, 0.8823529411764706, 0.8823529411764706]
 	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   133650
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   escola publica alta renda-ppi
-	race:   parda
-	reg:   201159088
-	school_type:   publica
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   PAS
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2014
-	year_out:   2015
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1], [118001, 'fisica 1', 'SR', 2014, 2], [118001, 'fisica 1', 'SR', 2015, 1]]
-		quimica geral experimental:   [[114634, 'quimica geral experimental', 'II', 2014, 1], [114634, 'quimica geral experimental', 'SR', 2014, 2], [114634, 'quimica geral experimental', 'SR', 2015, 1]]
-		quimica geral teorica:   [[114626, 'quimica geral teorica', 'II', 2014, 1], [114626, 'quimica geral teorica', 'SR', 2015, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2014, 1], [118010, 'fisica 1 experimental', 'SR', 2014, 2], [118010, 'fisica 1 experimental', 'SR', 2015, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2014, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'II', 2014, 1], [116301, 'computacao basica', 'SR', 2014, 2], [116301, 'computacao basica', 'SR', 2015, 1]]
-		introducao a engenharia mecatronica:   [[168891, 'introducao a engenharia mecatronica', 'SR', 2014, 1]]
-		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2015, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   24
-	course:   engenharia_redes
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.5, 0.5, 0.5]
-	fail_rate:   [0.5, 0.5, 0.5]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   129756
+	id_num:   115842
 	improvement_rate:   ['not know', 'not know', 'not know']
 	in_condition:   ['not know', 'not know', 'not know']
 	ira:   ['not know', 'not know', 'not know']
@@ -1489,277 +678,215 @@ student info
 	position:   ['not know', 'not know', 'not know']
 	quota:   universal
 	race:   branca
-	reg:   201150993
+	reg:   201124394
 	school_type:   particular
-	sem_in:   2
-	sem_out:   2
+	sem_in:   1
+	sem_out:   1
 	sex:   masculino
 	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2013
-	year_out:   2014
+	way_out:   Novo Vestibular
+	year_in:   2012
+	year_out:   2013
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2], [113034, 'calculo 1', 'TR', 2014, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2014, 1]]
-		introdução a economia:   [[132012, 'introdução a economia', 'TR', 2014, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2013, 2]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2013, 2], [167959, 'fundamentos de redes', 'TR', 2014, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'TJ', 2012, 1], [118001, 'fisica 1', 'SR', 2012, 2], [118001, 'fisica 1', 'SR', 2013, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'TJ', 2012, 1], [116301, 'computacao basica', 'SR', 2012, 2], [116301, 'computacao basica', 'SR', 2013, 1]]
+		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2012, 1], [117528, 'introdução à engenharia de computação', 'SR', 2013, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'MI', 2012, 1], [113034, 'calculo 1', 'SR', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2], [118010, 'fisica 1 experimental', 'SR', 2013, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2012, 1], [113093, 'introducao a algebra linear', 'SR', 2012, 2], [113093, 'introducao a algebra linear', 'SR', 2013, 1]]
 	 ------------------ 
 ------------
 ------------
 student info
 	age:   18
-	course:   engenharia_redes
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   43069
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   200585793
-	school_type:   nao declarado
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2005
-	year_out:   2006
-	 printing grades --- 
-		introducao a ciencia da computacao:   [[113913, 'introducao a ciencia da computacao', 'SR', 2005, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2005, 2]]
-		fisica 1:   [[118001, 'fisica 1', 'MI', 2005, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2005, 2]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2005, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2005, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   33
-	course:   cic_licenciatura
+	course:   cic_bacharelado
 	credit_rate:   ['not know', 'not know']
 	drop_rate:   [0.0, 0.0]
 	fail_rate:   [1.0, 1.0]
 	hard_rate:   ['not know', 'not know']
-	id_num:   16651
+	id_num:   133335
 	improvement_rate:   ['not know', 'not know']
 	in_condition:   ['not know', 'not know']
 	ira:   ['not know', 'not know']
-	local:   outros
+	local:   df
 	mand_credit_rate:   ['not know', 'not know']
 	pass_rate:   [0.0, 0.0]
 	position:   ['not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   200340065
-	school_type:   nao declarado
+	quota:   escola publica baixa renda-ppi
+	race:   parda
+	reg:   201165511
+	school_type:   publica
 	sem_in:   1
 	sem_out:   2
 	sex:   masculino
+	way_in:   SISU
+	way_out:   Desligamento Voluntario
+	year_in:   2014
+	year_out:   2014
+	 printing grades --- 
+		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'II', 2014, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2014, 1]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2014, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2014, 1], [116301, 'computacao basica', 'SR', 2014, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2014, 1], [145971, 'inglês instrumental 1', 'SR', 2014, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2014, 1], [118010, 'fisica 1 experimental', 'SR', 2014, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   19
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know', 'not know', 'not know']
+	drop_rate:   [0.1, 0.1, 0.1, 0.1]
+	fail_rate:   [0.9, 0.9, 0.9, 0.9]
+	hard_rate:   ['not know', 'not know', 'not know', 'not know']
+	id_num:   120894
+	improvement_rate:   ['not know', 'not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   201132800
+	school_type:   particular
+	sem_in:   2
+	sem_out:   1
+	sex:   masculino
 	way_in:   Vestibular
 	way_out:   Desligamento - Abandono
-	year_in:   2003
-	year_out:   2003
+	year_in:   2012
+	year_out:   2014
 	 printing grades --- 
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2003, 1], [116301, 'computacao basica', 'SR', 2003, 2]]
-		linguagens de programacao:   [[116343, 'linguagens de programacao', 'SR', 2003, 1], [116343, 'linguagens de programacao', 'SR', 2003, 2]]
-		informatica e sociedade:   [[116726, 'informatica e sociedade', 'SR', 2003, 1], [116726, 'informatica e sociedade', 'SR', 2003, 2]]
-		aprendizagem no ensino:   [[125172, 'aprendizagem no ensino', 'SR', 2003, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'TR', 2012, 2], [118001, 'fisica 1', 'SR', 2013, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2013, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'II', 2012, 2], [116301, 'computacao basica', 'SR', 2013, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 2], [118010, 'fisica 1 experimental', 'SR', 2013, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2013, 2]]
 	 ------------------ 
 ------------
 ------------
 student info
 	age:   18
-	course:   engenharia_redes
-	credit_rate:   ['not know']
-	drop_rate:   [0.2]
-	fail_rate:   [0.8]
-	hard_rate:   ['not know']
-	id_num:   133622
-	improvement_rate:   ['not know']
-	in_condition:   ['not know']
-	ira:   ['not know']
+	course:   engenharia_computacao
+	credit_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.09090909090909091, 0.09090909090909091, 0.09090909090909091, 0.09090909090909091]
+	fail_rate:   [1.0, 0.9090909090909091, 0.9090909090909091, 0.9090909090909091, 0.9090909090909091]
+	hard_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
+	id_num:   110225
+	improvement_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know', 'not know', 'not know']
 	local:   df
-	mand_credit_rate:   ['not know']
-	pass_rate:   [0.0]
-	position:   ['not know']
-	quota:   escola publica alta renda-ppi
-	race:   preta 
-	reg:   201159334
-	school_type:   publica
-	sem_in:   1
-	sem_out:   1
+	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know', 'not know', 'not know']
+	quota:   universal
+	race:   branca
+	reg:   201116444
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
 	sex:   masculino
-	way_in:   PAS
-	way_out:   Novo Vestibular
-	year_in:   2014
-	year_out:   2014
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2011
+	year_out:   2013
 	 printing grades --- 
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2014, 1]]
-		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2014, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2014, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2014, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'SR', 2011, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2011, 2], [116301, 'computacao basica', 'TJ', 2012, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2011, 2], [113093, 'introducao a algebra linear', 'SR', 2012, 1]]
+		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2011, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 2], [113034, 'calculo 1', 'SR', 2013, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2011, 2], [118010, 'fisica 1 experimental', 'II', 2012, 1]]
+		introdução a economia:   [[132012, 'introdução a economia', 'II', 2012, 1]]
 	 ------------------ 
 ------------
 ------------
 student info
-	age:   20
-	course:   cic_licenciatura
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.125, 0.125, 0.125]
-	fail_rate:   [0.875, 0.875, 0.875]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   125506
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
+	age:   19
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know', 'not know']
+	id_num:   55116
+	improvement_rate:   ['not know', 'not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know', 'not know']
+	local:   indisponível
+	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know', 'not know']
 	quota:   universal
-	race:   branca
-	reg:   201143098
-	school_type:   particular
-	sem_in:   1
+	race:   000
+	reg:   200608548
+	school_type:   nao declarado
+	sem_in:   2
 	sem_out:   1
 	sex:   masculino
-	way_in:   Vestibular
+	way_in:   Matricula Cortesia
 	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2013
-	year_out:   2014
+	year_in:   2005
+	year_out:   2007
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2013, 1]]
-		psicologia da educação:   [[191027, 'psicologia da educação', 'TR', 2013, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 2]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2013, 1]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'MI', 2013, 1]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2006, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2006, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2006, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2006, 2]]
 	 ------------------ 
 ------------
 ------------
 student info
 	age:   22
 	course:   engenharia_computacao
-	credit_rate:   ['not know', 'not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know', 'not know']
-	id_num:   136726
-	improvement_rate:   ['not know', 'not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know', 'not know']
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.07142857142857142, 0.07142857142857142, 0.07142857142857142]
+	fail_rate:   [0.9285714285714286, 0.9285714285714286, 0.9285714285714286]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   133467
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
 	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   201167697
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   escola publica baixa renda-ppi
+	race:   parda
+	reg:   201163379
 	school_type:   publica
 	sem_in:   1
-	sem_out:   2
+	sem_out:   1
 	sex:   masculino
-	way_in:   Transferencia Obrigatoria
+	way_in:   SISU
 	way_out:   Deslig - Nao Cumpriu condicao
 	year_in:   2014
 	year_out:   2015
 	 printing grades --- 
-		fisica 2:   [[118028, 'fisica 2', 'II', 2014, 2]]
-		estruturas de dados:   [[116319, 'estruturas de dados', 'SR', 2014, 2]]
-		fisica 2 experimental:   [[118036, 'fisica 2 experimental', 'MI', 2014, 2]]
-		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'SR', 2014, 2]]
-		calculo 2:   [[113042, 'calculo 2', 'MI', 2014, 2]]
+		introducao a atividade empresarial:   [[170054, 'introducao a atividade empresarial', 'SR', 2015, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1], [118001, 'fisica 1', 'SR', 2014, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2014, 1], [116301, 'computacao basica', 'SR', 2014, 2], [116301, 'computacao basica', 'SR', 2015, 1]]
+		noções de direito:   [[184802, 'noções de direito', 'SR', 2014, 2]]
+		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2014, 1], [117528, 'introdução à engenharia de computação', 'SR', 2015, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2014, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2014, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2014, 1], [113093, 'introducao a algebra linear', 'SR', 2014, 2], [113093, 'introducao a algebra linear', 'SR', 2015, 1]]
 	 ------------------ 
 ------------
 ------------
 student info
-	age:   49
-	course:   cic_licenciatura
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.16666666666666666, 0.16666666666666666, 0.16666666666666666]
-	fail_rate:   [0.8333333333333334, 0.8333333333333334, 0.8333333333333334]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   22031
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   200332178
-	school_type:   nao declarado
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Desligamento Voluntario
-	year_in:   2003
-	year_out:   2004
-	 printing grades --- 
-		lógica 1:   [[137481, 'lógica 1', 'MI', 2003, 2]]
-		algebra 1:   [[113107, 'algebra 1', 'TR', 2003, 2], [113107, 'algebra 1', 'SR', 2004, 1]]
-		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'MI', 2004, 1], [115045, 'probabilidade e estatistica', 'II', 2004, 2]]
-		calculo 2:   [[113042, 'calculo 2', 'SR', 2004, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   29
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   54318
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   200684635
-	school_type:   nao declarado
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2006
-	year_out:   2007
-	 printing grades --- 
-		processamento em tempo real:   [[116599, 'processamento em tempo real', 'MI', 2006, 2]]
-		trabalho de graduacao:   [[116475, 'trabalho de graduacao', 'MI', 2006, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   30
-	course:   cic_bacharelado
+	age:   26
+	course:   engenharia_computacao
 	credit_rate:   ['not know', 'not know']
 	drop_rate:   [0.0, 0.0]
 	fail_rate:   [1.0, 1.0]
 	hard_rate:   ['not know', 'not know']
-	id_num:   139094
+	id_num:   104457
 	improvement_rate:   ['not know', 'not know']
 	in_condition:   ['not know', 'not know']
 	ira:   ['not know', 'not know']
@@ -1767,108 +894,34 @@ student info
 	mand_credit_rate:   ['not know', 'not know']
 	pass_rate:   [0.0, 0.0]
 	position:   ['not know', 'not know']
-	quota:   escola publica alta renda-ppi
-	race:   parda
-	reg:   201185475
-	school_type:   publica
+	quota:   universal
+	race:   000
+	reg:   201108443
+	school_type:   particular
 	sem_in:   1
 	sem_out:   2
 	sex:   masculino
-	way_in:   SISU
-	way_out:   Novo Vestibular
-	year_in:   2015
-	year_out:   2015
-	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2015, 1]]
-		fisica 1:   [[118001, 'fisica 1', 'II', 2015, 1]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2015, 1]]
-		algoritmos e programação de computadores:   [[113476, 'algoritmos e programação de computadores', 'MI', 2015, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2015, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2015, 1], [113034, 'calculo 1', 'MI', 2015, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'MI', 2015, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   19
-	course:   engenharia_computacao
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.4, 0.4, 0.4]
-	fail_rate:   [0.6, 0.6, 0.6]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   120636
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   branca
-	reg:   201135308
-	school_type:   particular
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
 	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2012
-	year_out:   2013
+	way_out:   Desligamento - Abandono
+	year_in:   2011
+	year_out:   2011
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2012, 2], [118001, 'fisica 1', 'TR', 2013, 1]]
-		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2012, 2], [117528, 'introdução à engenharia de computação', 'TR', 2013, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 2], [118010, 'fisica 1 experimental', 'TR', 2013, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2012, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2012, 2], [116301, 'computacao basica', 'TR', 2013, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2011, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'SR', 2011, 1]]
+		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2011, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2011, 1]]
 	 ------------------ 
 ------------
 ------------
 student info
-	age:   18
-	course:   engenharia_redes
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   120631
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   branca
-	reg:   201135340
-	school_type:   publica
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2012
-	year_out:   2013
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2012, 2], [118001, 'fisica 1', 'II', 2013, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 1], [113034, 'calculo 1', 'SR', 2013, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2012, 2], [118010, 'fisica 1 experimental', 'MI', 2013, 1], [118010, 'fisica 1 experimental', 'MI', 2013, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2012, 2], [113093, 'introducao a algebra linear', 'II', 2013, 1], [113093, 'introducao a algebra linear', 'SR', 2013, 2]]
-		desenho tecnico:   [[162019, 'desenho tecnico', 'SR', 2013, 1]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2012, 2], [167959, 'fundamentos de redes', 'II', 2013, 1], [167959, 'fundamentos de redes', 'MI', 2013, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   17
-	course:   engenharia_computacao
+	age:   30
+	course:   cic_licenciatura
 	credit_rate:   ['not know']
 	drop_rate:   [0.0]
 	fail_rate:   [1.0]
 	hard_rate:   ['not know']
-	id_num:   129662
+	id_num:   129904
 	improvement_rate:   ['not know']
 	in_condition:   ['not know']
 	ira:   ['not know']
@@ -1876,594 +929,19 @@ student info
 	mand_credit_rate:   ['not know']
 	pass_rate:   [0.0]
 	position:   ['not know']
-	quota:   escola publica alta renda-ppi
-	race:   parda
-	reg:   201151952
-	school_type:   publica
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Novo Vestibular
-	year_in:   2013
-	year_out:   2013
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
-		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2013, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2013, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   19
-	course:   engenharia_redes
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   115608
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   parda
-	reg:   201127446
-	school_type:   publica
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2012
-	year_out:   2013
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'MI', 2012, 1], [118001, 'fisica 1', 'II', 2012, 2], [118001, 'fisica 1', 'II', 2013, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2012, 1], [113034, 'calculo 1', 'SR', 2012, 2]]
-		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2013, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2], [118010, 'fisica 1 experimental', 'MI', 2013, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2012, 1], [113093, 'introducao a algebra linear', 'SR', 2012, 2]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2012, 1], [167959, 'fundamentos de redes', 'SR', 2012, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   19
-	course:   engenharia_software
-	credit_rate:   ['not know', 'not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know', 'not know']
-	id_num:   101523
-	improvement_rate:   ['not know', 'not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   201070189
-	school_type:   
-	sem_in:   1
-	sem_out:   2
-	sex:   masculino
-	way_in:   PAS
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2009
-	year_out:   2010
-	 printing grades --- 
-		engenharia de segurança do trabalho:   [[193712, 'engenharia de segurança do trabalho', 'SR', 2010, 2]]
-		desenho industrial assistido por computador:   [[199176, 'desenho industrial assistido por computador', 'II', 2010, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2010, 2]]
-		engenharia econômica:   [[193321, 'engenharia econômica', 'II', 2010, 2]]
-		fontes de energia e tecnologias de conversão:   [[199184, 'fontes de energia e tecnologias de conversão', 'SR', 2010, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   17
-	course:   engenharia_redes
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.1111111111111111, 0.1111111111111111, 0.1111111111111111]
-	fail_rate:   [0.8888888888888888, 0.8888888888888888, 0.8888888888888888]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   120962
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
 	quota:   universal
 	race:   branca
-	reg:   201132312
+	reg:   201149606
 	school_type:   particular
 	sem_in:   2
-	sem_out:   2
+	sem_out:   0
 	sex:   masculino
 	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2012
-	year_out:   2013
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2012, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2012, 2], [113034, 'calculo 1', 'MI', 2013, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2012, 2], [113093, 'introducao a algebra linear', 'II', 2013, 1]]
-		introdução a psicologia:   [[124010, 'introdução a psicologia', 'SR', 2013, 1]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2012, 2], [167959, 'fundamentos de redes', 'TR', 2013, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   18
-	course:   engenharia_computacao
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   129611
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   parda
-	reg:   201152183
-	school_type:   particular
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
+	way_out:   Formatura
 	year_in:   2013
 	year_out:   2014
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
-		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2013, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2013, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2013, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   24
-	course:   engenharia_computacao
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   98920
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   negro
-	race:   000
-	reg:   201095024
-	school_type:   publica
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2010
-	year_out:   2011
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'SR', 2010, 2], [118001, 'fisica 1', 'SR', 2011, 1], [118001, 'fisica 1', 'SR', 2011, 2]]
-		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2010, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2010, 2], [113034, 'calculo 1', 'SR', 2011, 1], [113034, 'calculo 1', 'SR', 2011, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2010, 2], [116301, 'computacao basica', 'SR', 2011, 1], [116301, 'computacao basica', 'SR', 2011, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2010, 2], [118010, 'fisica 1 experimental', 'SR', 2011, 1], [118010, 'fisica 1 experimental', 'MI', 2011, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   19
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   17379
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   200316814
-	school_type:   nao declarado
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2003
-	year_out:   2004
-	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2003, 2]]
-		fisica 1:   [[118001, 'fisica 1', 'SR', 2003, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'MI', 2003, 1], [140481, 'leitura e produção de textos', 'SR', 2003, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2003, 2]]
-		prática desportiva 1:   [[175013, 'prática desportiva 1', 'SR', 2003, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2003, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'II', 2003, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   18
-	course:   cic_licenciatura
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   81409
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   201070634
-	school_type:   
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   PAS
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2009
-	year_out:   2010
-	 printing grades --- 
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2009, 1], [147389, 'portugues instrumental 1', 'SR', 2009, 2]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2009, 1], [194221, 'organizacao da educacao brasileira', 'SR', 2009, 2]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'MI', 2009, 1], [116793, 'introducao a microinformatica', 'SR', 2009, 2]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'MI', 2009, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   23
-	course:   cic_licenciatura
-	credit_rate:   ['not know', 'not know']
-	drop_rate:   [0.0, 0.0]
-	fail_rate:   [1.0, 1.0]
-	hard_rate:   ['not know', 'not know']
-	id_num:   120580
-	improvement_rate:   ['not know', 'not know']
-	in_condition:   ['not know', 'not know']
-	ira:   ['not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know']
-	pass_rate:   [0.0, 0.0]
-	position:   ['not know', 'not know']
-	quota:   universal
-	race:   nao dispoe de informacao
-	reg:   201136512
-	school_type:   particular
-	sem_in:   2
-	sem_out:   1
-	sex:   masculino
-	way_in:   ENEM
-	way_out:   Desligamento - Abandono
-	year_in:   2012
-	year_out:   2013
-	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2012, 2], [145971, 'inglês instrumental 1', 'SR', 2013, 1]]
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2012, 2]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2012, 2]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2012, 2], [116793, 'introducao a microinformatica', 'SR', 2013, 1]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2012, 2], [117366, 'lógica computacional 1', 'SR', 2013, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   29
-	course:   cic_licenciatura
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   54538
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   200677787
-	school_type:   nao declarado
-	sem_in:   2
-	sem_out:   2
-	sex:   feminino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2006
-	year_out:   2007
-	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2006, 2]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'MI', 2006, 2], [116793, 'introducao a microinformatica', 'SR', 2007, 1]]
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2006, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2007, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2007, 1]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2006, 2], [117366, 'lógica computacional 1', 'SR', 2007, 1]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2006, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   19
-	course:   engenharia_computacao
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   93061
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   branca
-	reg:   201087496
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   PAS
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2010
-	year_out:   2011
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'SR', 2010, 1], [118001, 'fisica 1', 'MI', 2010, 2]]
-		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2010, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2010, 1], [113034, 'calculo 1', 'MI', 2010, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'II', 2010, 1], [116301, 'computacao basica', 'MI', 2010, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2010, 1], [118010, 'fisica 1 experimental', 'SR', 2010, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   24
-	course:   engenharia_redes
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   110772
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   negro
-	race:   000
-	reg:   201113432
-	school_type:   particular
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2011
-	year_out:   2012
-	 printing grades --- 
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2011, 2], [167959, 'fundamentos de redes', 'SR', 2012, 2]]
-		fisica 1:   [[118001, 'fisica 1', 'SR', 2011, 2], [118001, 'fisica 1', 'II', 2012, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2011, 2]]
-		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2012, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2011, 2], [113093, 'introducao a algebra linear', 'SR', 2012, 2]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   19
-	course:   engenharia_redes
-	credit_rate:   ['not know', 'not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know', 'not know']
-	id_num:   105027
-	improvement_rate:   ['not know', 'not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know', 'not know']
-	quota:   universal
-	race:   branca
-	reg:   201102461
-	school_type:   publica
-	sem_in:   1
-	sem_out:   2
-	sex:   feminino
-	way_in:   PAS
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2011
-	year_out:   2012
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2011, 1], [118001, 'fisica 1', 'II', 2012, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2011, 1], [113034, 'calculo 1', 'II', 2012, 1], [113034, 'calculo 1', 'SR', 2012, 2]]
-		prática desportiva 1:   [[175013, 'prática desportiva 1', 'SR', 2011, 2]]
-		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'II', 2011, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2011, 2], [113093, 'introducao a algebra linear', 'II', 2012, 1], [113093, 'introducao a algebra linear', 'II', 2012, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2011, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'MI', 2011, 2], [167959, 'fundamentos de redes', 'II', 2012, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'II', 2012, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   19
-	course:   cic_bacharelado
-	credit_rate:   ['not know', 'not know']
-	drop_rate:   [0.0, 0.0]
-	fail_rate:   [1.0, 1.0]
-	hard_rate:   ['not know', 'not know']
-	id_num:   81326
-	improvement_rate:   ['not know', 'not know']
-	in_condition:   ['not know', 'not know']
-	ira:   ['not know', 'not know']
-	local:   indisponível
-	mand_credit_rate:   ['not know', 'not know']
-	pass_rate:   [0.0, 0.0]
-	position:   ['not know', 'not know']
-	quota:   universal
-	race:   preta 
-	reg:   201071225
-	school_type:   nao declarado
-	sem_in:   1
-	sem_out:   2
-	sex:   masculino
-	way_in:   Matricula Cortesia
-	way_out:   Desligamento Voluntario
-	year_in:   2009
-	year_out:   2009
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'SR', 2009, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2009, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2009, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2009, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   21
-	course:   cic_licenciatura
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   104835
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   201104164
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2011
-	year_out:   2012
-	 printing grades --- 
-		administracao de recursos humanos:   [[181081, 'administracao de recursos humanos', 'SR', 2011, 2]]
-		estruturas de dados:   [[116319, 'estruturas de dados', 'II', 2011, 1]]
-		fisica 2 experimental:   [[118036, 'fisica 2 experimental', 'SR', 2011, 1]]
-		calculo 2:   [[113042, 'calculo 2', 'SR', 2011, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   46
-	course:   cic_licenciatura
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   110933
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   negro
-	race:   preta 
-	reg:   201112403
-	school_type:   publica
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2011
-	year_out:   2012
-	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2011, 2], [145971, 'inglês instrumental 1', 'SR', 2012, 1]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2011, 2], [116793, 'introducao a microinformatica', 'SR', 2012, 1]]
-		psicologia da educação:   [[191027, 'psicologia da educação', 'SR', 2012, 1]]
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'MI', 2011, 2], [147389, 'portugues instrumental 1', 'SR', 2012, 1]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2011, 2], [117366, 'lógica computacional 1', 'SR', 2012, 1]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2011, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   19
-	course:   engenharia_computacao
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.1111111111111111, 0.1111111111111111, 0.1111111111111111]
-	fail_rate:   [0.8888888888888888, 0.8888888888888888, 0.8888888888888888]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   104805
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   outros
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   negro
-	race:   preta 
-	reg:   201104468
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2011
-	year_out:   2012
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2011, 1]]
-		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2011, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2011, 2]]
-		introdução a economia:   [[132012, 'introdução a economia', 'II', 2011, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2011, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 1], [113034, 'calculo 1', 'MI', 2011, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'II', 2011, 1], [116301, 'computacao basica', 'SR', 2011, 2]]
+		projeto de licenciatura 2:   [[116904, 'projeto de licenciatura 2', 'MI', 2013, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -2494,23 +972,60 @@ student info
 	year_in:   2003
 	year_out:   2004
 	 printing grades --- 
-		introducao a ciencia da computacao:   [[113913, 'introducao a ciencia da computacao', 'SR', 2003, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2003, 2]]
 		fisica 1:   [[118001, 'fisica 1', 'SR', 2003, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2003, 2]]
+		introducao a ciencia da computacao:   [[113913, 'introducao a ciencia da computacao', 'SR', 2003, 2]]
 		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2003, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2003, 2]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2003, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2003, 2]]
 	 ------------------ 
 ------------
 ------------
 student info
-	age:   27
-	course:   engenharia_mecatronica
+	age:   19
+	course:   cic_bacharelado
 	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.21052631578947367, 0.21052631578947367, 0.21052631578947367]
-	fail_rate:   [0.7894736842105263, 0.7894736842105263, 0.7894736842105263]
+	drop_rate:   [0.16666666666666666, 0.16666666666666666, 0.16666666666666666]
+	fail_rate:   [0.8333333333333334, 0.8333333333333334, 0.8333333333333334]
 	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   104758
+	id_num:   133317
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   negro
+	race:   parda
+	reg:   201165755
+	school_type:   particular
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   SISU
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2014
+	year_out:   2015
+	 printing grades --- 
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2014, 1], [113034, 'calculo 1', 'TR', 2014, 2], [113034, 'calculo 1', 'SR', 2015, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1], [118001, 'fisica 1', 'TR', 2014, 2], [118001, 'fisica 1', 'SR', 2015, 1]]
+		quimica geral teorica:   [[114626, 'quimica geral teorica', 'SR', 2015, 1]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2014, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2014, 1]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2014, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2014, 1], [118010, 'fisica 1 experimental', 'SR', 2015, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   22
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   65794
 	improvement_rate:   ['not know', 'not know', 'not know']
 	in_condition:   ['not know', 'not know', 'not know']
 	ira:   ['not know', 'not know', 'not know']
@@ -2520,72 +1035,132 @@ student info
 	position:   ['not know', 'not know', 'not know']
 	quota:   universal
 	race:   000
-	reg:   201104697
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2011
-	year_out:   2012
-	 printing grades --- 
-		dispositivos e circuitos eletrônicos:   [[170321, 'dispositivos e circuitos eletrônicos', 'SR', 2011, 1], [170321, 'dispositivos e circuitos eletrônicos', 'II', 2011, 2], [170321, 'dispositivos e circuitos eletrônicos', 'SR', 2012, 1]]
-		princípios de visão computacional:   [[117595, 'princípios de visão computacional', 'II', 2011, 1]]
-		programacao avancada:   [[117234, 'programacao avancada', 'MI', 2011, 1]]
-		programacao orientada a objetos:   [[116785, 'programacao orientada a objetos', 'TR', 2012, 1]]
-		análise dinâmica  linear:   [[160041, 'análise dinâmica  linear', 'SR', 2011, 1], [160041, 'análise dinâmica  linear', 'SR', 2011, 2], [160041, 'análise dinâmica  linear', 'SR', 2012, 1]]
-		organizacao e arquitetura de computadores:   [[116394, 'organizacao e arquitetura de computadores', 'SR', 2011, 1], [116394, 'organizacao e arquitetura de computadores', 'SR', 2011, 2], [116394, 'organizacao e arquitetura de computadores', 'TR', 2012, 1]]
-		ciencias do ambiente:   [[122408, 'ciencias do ambiente', 'MI', 2011, 1]]
-		sistemas de medicao:   [[168742, 'sistemas de medicao', 'SR', 2011, 1], [168742, 'sistemas de medicao', 'SR', 2011, 2], [168742, 'sistemas de medicao', 'TR', 2012, 1]]
-		tecnologias de comando numerico:   [[164399, 'tecnologias de comando numerico', 'SR', 2011, 1], [164399, 'tecnologias de comando numerico', 'SR', 2011, 2], [164399, 'tecnologias de comando numerico', 'TR', 2012, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   24
-	course:   engenharia_software
-	credit_rate:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
-	id_num:   87517
-	improvement_rate:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
-	quota:   negro
-	race:   preta 
-	reg:   201080253
-	school_type:   particular
+	reg:   200819883
+	school_type:   nao declarado
 	sem_in:   2
 	sem_out:   2
 	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Rep 3 vezes na mesma Disc Obrig
-	year_in:   2009
-	year_out:   2012
+	way_in:   Transferencia Obrigatoria
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2007
+	year_out:   2008
 	 printing grades --- 
-		introducao a ciencia da computacao:   [[113913, 'introducao a ciencia da computacao', 'SR', 2009, 2], [113913, 'introducao a ciencia da computacao', 'SR', 2010, 1], [113913, 'introducao a ciencia da computacao', 'SR', 2010, 2], [113913, 'introducao a ciencia da computacao', 'SR', 2012, 2]]
-		quimica geral:   [[114014, 'quimica geral', 'SR', 2009, 2]]
-		introdução à engenharia:   [[198013, 'introdução à engenharia', 'MI', 2009, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2009, 2], [113093, 'introducao a algebra linear', 'SR', 2010, 1], [113093, 'introducao a algebra linear', 'SR', 2010, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2009, 2], [113034, 'calculo 1', 'II', 2010, 1], [113034, 'calculo 1', 'SR', 2010, 2], [113034, 'calculo 1', 'SR', 2012, 2]]
-		engenharia e ambiente:   [[198005, 'engenharia e ambiente', 'SR', 2009, 2], [198005, 'engenharia e ambiente', 'SR', 2012, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'MI', 2007, 2], [116301, 'computacao basica', 'SR', 2008, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2007, 2]]
 	 ------------------ 
 ------------
 ------------
 student info
-	age:   21
+	age:   28
 	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know']
+	drop_rate:   [0.0, 0.0]
+	fail_rate:   [1.0, 1.0]
+	hard_rate:   ['not know', 'not know']
+	id_num:   6298
+	improvement_rate:   ['not know', 'not know']
+	in_condition:   ['not know', 'not know']
+	ira:   ['not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know']
+	pass_rate:   [0.0, 0.0]
+	position:   ['not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   200191698
+	school_type:   nao declarado
+	sem_in:   2
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Desligamento - Abandono
+	year_in:   2001
+	year_out:   2002
+	 printing grades --- 
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2001, 2]]
+		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2001, 2]]
+		lógica 1:   [[137481, 'lógica 1', 'SR', 2001, 2]]
+		introducao a educacao:   [[191019, 'introducao a educacao', 'SR', 2001, 2]]
+	 ------------------ 
+------------
+student 201125171 has not coursed any subject in pos: 0
+------------
+student info
+	age:   22
+	course:   engenharia_mecatronica
 	credit_rate:   ['not know', 'not know', 'not know']
 	drop_rate:   [0.0, 0.0, 0.0]
 	fail_rate:   [1.0, 1.0, 1.0]
 	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   110841
+	id_num:   120720
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   201133890
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   feminino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2012
+	year_out:   2013
+	 printing grades --- 
+		calculo 3:   [[113051, 'calculo 3', 'SR', 2013, 1], [113051, 'calculo 3', 'SR', 2013, 2]]
+		fisica 2:   [[118028, 'fisica 2', 'II', 2012, 2], [118028, 'fisica 2', 'SR', 2013, 1], [118028, 'fisica 2', 'SR', 2013, 2]]
+		mecanica 1:   [[168769, 'mecanica 1', 'SR', 2012, 2], [168769, 'mecanica 1', 'SR', 2013, 1], [168769, 'mecanica 1', 'MI', 2013, 2]]
+		equacoes diferenciais 1:   [[113301, 'equacoes diferenciais 1', 'SR', 2012, 2], [113301, 'equacoes diferenciais 1', 'SR', 2013, 1], [113301, 'equacoes diferenciais 1', 'SR', 2013, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   36
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know']
+	drop_rate:   [0.0, 0.0]
+	fail_rate:   [1.0, 1.0]
+	hard_rate:   ['not know', 'not know']
+	id_num:   54353
+	improvement_rate:   ['not know', 'not know']
+	in_condition:   ['not know', 'not know']
+	ira:   ['not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know']
+	pass_rate:   [0.0, 0.0]
+	position:   ['not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   200683361
+	school_type:   nao declarado
+	sem_in:   2
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Desligamento - Abandono
+	year_in:   2006
+	year_out:   2007
+	 printing grades --- 
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2006, 2]]
+		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2006, 2]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2006, 2]]
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2006, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   28
+	course:   engenharia_redes
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   115742
 	improvement_rate:   ['not know', 'not know', 'not know']
 	in_condition:   ['not know', 'not know', 'not know']
 	ira:   ['not know', 'not know', 'not know']
@@ -2594,33 +1169,34 @@ student info
 	pass_rate:   [0.0, 0.0, 0.0]
 	position:   ['not know', 'not know', 'not know']
 	quota:   universal
-	race:   parda
-	reg:   201113113
+	race:   branca
+	reg:   201125751
 	school_type:   particular
-	sem_in:   2
-	sem_out:   2
+	sem_in:   1
+	sem_out:   1
 	sex:   masculino
-	way_in:   Vestibular
+	way_in:   Portador Diploma Curso Superior
 	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2011
-	year_out:   2012
+	year_in:   2012
+	year_out:   2013
 	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'II', 2011, 2], [145971, 'inglês instrumental 1', 'MI', 2012, 1], [145971, 'inglês instrumental 1', 'SR', 2012, 2]]
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'MI', 2011, 2], [147389, 'portugues instrumental 1', 'SR', 2012, 1], [147389, 'portugues instrumental 1', 'SR', 2012, 2]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2011, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 1], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 2]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2011, 2], [116793, 'introducao a microinformatica', 'SR', 2012, 1], [116793, 'introducao a microinformatica', 'SR', 2012, 2]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'MI', 2011, 2], [117366, 'lógica computacional 1', 'SR', 2012, 2]]
+		sistemas de programacao:   [[169749, 'sistemas de programacao', 'II', 2012, 2]]
+		ciencias do ambiente:   [[122408, 'ciencias do ambiente', 'MI', 2012, 1]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2012, 1], [167959, 'fundamentos de redes', 'MI', 2012, 2]]
+		noções de direito:   [[184802, 'noções de direito', 'SR', 2012, 1]]
+		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'II', 2012, 1], [115045, 'probabilidade e estatistica', 'SR', 2012, 2]]
+		introdução a economia:   [[132012, 'introdução a economia', 'SR', 2012, 1]]
 	 ------------------ 
 ------------
 ------------
 student info
-	age:   19
-	course:   cic_bacharelado
+	age:   18
+	course:   engenharia_redes
 	credit_rate:   ['not know', 'not know', 'not know']
 	drop_rate:   [0.0, 0.0, 0.0]
 	fail_rate:   [1.0, 1.0, 1.0]
 	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   129673
+	id_num:   136490
 	improvement_rate:   ['not know', 'not know', 'not know']
 	in_condition:   ['not know', 'not know', 'not know']
 	ira:   ['not know', 'not know', 'not know']
@@ -2628,9 +1204,190 @@ student info
 	mand_credit_rate:   ['not know', 'not know', 'not know']
 	pass_rate:   [0.0, 0.0, 0.0]
 	position:   ['not know', 'not know', 'not know']
-	quota:   negro
+	quota:   escola publica alta renda-nao ppi
 	race:   parda
-	reg:   201151763
+	reg:   201174353
+	school_type:   publica
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2014
+	year_out:   2015
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 2], [118001, 'fisica 1', 'II', 2015, 1]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'MI', 2014, 2], [167959, 'fundamentos de redes', 'II', 2015, 1], [167959, 'fundamentos de redes', 'II', 2015, 2]]
+		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2015, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2014, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2014, 2], [118010, 'fisica 1 experimental', 'II', 2015, 1], [118010, 'fisica 1 experimental', 'SR', 2015, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2014, 2], [113093, 'introducao a algebra linear', 'MI', 2015, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   23
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.125, 0.125, 0.125]
+	fail_rate:   [0.875, 0.875, 0.875]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   48228
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   200634557
+	school_type:   nao declarado
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2006
+	year_out:   2007
+	 printing grades --- 
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2006, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2006, 1], [116301, 'computacao basica', 'SR', 2007, 1]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2006, 1], [145971, 'inglês instrumental 1', 'SR', 2007, 1]]
+		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'SR', 2006, 1]]
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'TR', 2006, 1], [117366, 'lógica computacional 1', 'SR', 2006, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   18
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   81409
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   201070634
+	school_type:   
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   PAS
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2009
+	year_out:   2010
+	 printing grades --- 
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'MI', 2009, 1], [116793, 'introducao a microinformatica', 'SR', 2009, 2]]
+		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2009, 1], [147389, 'portugues instrumental 1', 'SR', 2009, 2]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2009, 1], [194221, 'organizacao da educacao brasileira', 'SR', 2009, 2]]
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'MI', 2009, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   20
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
+	drop_rate:   [0.3076923076923077, 0.29411764705882354, 0.29411764705882354, 0.29411764705882354, 0.29411764705882354]
+	fail_rate:   [0.6923076923076923, 0.7058823529411765, 0.7058823529411765, 0.7058823529411765, 0.7058823529411765]
+	hard_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
+	id_num:   129774
+	improvement_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know', 'not know', 'not know']
+	quota:   negro
+	race:   preta 
+	reg:   201150885
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2013
+	year_out:   2015
+	 printing grades --- 
+		introducao a atividade empresarial:   [[170054, 'introducao a atividade empresarial', 'TR', 2014, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2], [118001, 'fisica 1', 'TR', 2014, 2], [118001, 'fisica 1', 'II', 2015, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'MI', 2013, 2], [140481, 'leitura e produção de textos', 'SR', 2015, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 2], [116301, 'computacao basica', 'SR', 2014, 2], [116301, 'computacao basica', 'TR', 2015, 1]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2013, 2], [145971, 'inglês instrumental 1', 'SR', 2015, 1], [145971, 'inglês instrumental 1', 'SR', 2015, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2], [118010, 'fisica 1 experimental', 'TR', 2014, 2], [118010, 'fisica 1 experimental', 'SR', 2015, 1]]
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'TR', 2014, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   20
+	course:   engenharia_mecatronica
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   133650
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   escola publica alta renda-ppi
+	race:   parda
+	reg:   201159088
+	school_type:   publica
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   PAS
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2014
+	year_out:   2015
+	 printing grades --- 
+		introducao a engenharia mecatronica:   [[168891, 'introducao a engenharia mecatronica', 'SR', 2014, 1]]
+		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2015, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1], [118001, 'fisica 1', 'SR', 2014, 2], [118001, 'fisica 1', 'SR', 2015, 1]]
+		quimica geral teorica:   [[114626, 'quimica geral teorica', 'II', 2014, 1], [114626, 'quimica geral teorica', 'SR', 2015, 1]]
+		quimica geral experimental:   [[114634, 'quimica geral experimental', 'II', 2014, 1], [114634, 'quimica geral experimental', 'SR', 2014, 2], [114634, 'quimica geral experimental', 'SR', 2015, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'II', 2014, 1], [116301, 'computacao basica', 'SR', 2014, 2], [116301, 'computacao basica', 'SR', 2015, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2014, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2014, 1], [118010, 'fisica 1 experimental', 'SR', 2014, 2], [118010, 'fisica 1 experimental', 'SR', 2015, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   24
+	course:   engenharia_redes
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.5, 0.5]
+	fail_rate:   [1.0, 0.5, 0.5]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   129756
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   branca
+	reg:   201150993
 	school_type:   particular
 	sem_in:   2
 	sem_out:   2
@@ -2641,22 +1398,22 @@ student info
 	year_out:   2014
 	 printing grades --- 
 		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2013, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2013, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2013, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'II', 2013, 2]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2013, 2], [167959, 'fundamentos de redes', 'TR', 2014, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2014, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2], [113034, 'calculo 1', 'TR', 2014, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2013, 2]]
+		introdução a economia:   [[132012, 'introdução a economia', 'TR', 2014, 1]]
 	 ------------------ 
 ------------
 ------------
 student info
-	age:   50
+	age:   18
 	course:   engenharia_redes
 	credit_rate:   ['not know', 'not know', 'not know']
 	drop_rate:   [0.0, 0.0, 0.0]
 	fail_rate:   [1.0, 1.0, 1.0]
 	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   92829
+	id_num:   43069
 	improvement_rate:   ['not know', 'not know', 'not know']
 	in_condition:   ['not know', 'not know', 'not know']
 	ira:   ['not know', 'not know', 'not know']
@@ -2666,56 +1423,91 @@ student info
 	position:   ['not know', 'not know', 'not know']
 	quota:   universal
 	race:   000
-	reg:   201088651
-	school_type:   particular
-	sem_in:   1
-	sem_out:   1
+	reg:   200585793
+	school_type:   nao declarado
+	sem_in:   2
+	sem_out:   2
 	sex:   masculino
 	way_in:   Vestibular
 	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2010
-	year_out:   2011
+	year_in:   2005
+	year_out:   2006
 	 printing grades --- 
-		projeto final de graduação 2:   [[170399, 'projeto final de graduação 2', 'SR', 2010, 1], [170399, 'projeto final de graduação 2', 'SR', 2011, 1]]
-		redes de telecomunicações 2:   [[160075, 'redes de telecomunicações 2', 'II', 2010, 2]]
-		comunicações móveis:   [[170801, 'comunicações móveis', 'II', 2010, 2]]
-		topicos especiais em processamento de sinais:   [[169935, 'topicos especiais em processamento de sinais', 'MI', 2010, 2]]
-		variavel complexa 1:   [[113069, 'variavel complexa 1', 'II', 2010, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'MI', 2005, 2]]
+		introducao a ciencia da computacao:   [[113913, 'introducao a ciencia da computacao', 'SR', 2005, 2]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2005, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2005, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2005, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2005, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   33
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know']
+	drop_rate:   [0.0, 0.0]
+	fail_rate:   [1.0, 1.0]
+	hard_rate:   ['not know', 'not know']
+	id_num:   16651
+	improvement_rate:   ['not know', 'not know']
+	in_condition:   ['not know', 'not know']
+	ira:   ['not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know']
+	pass_rate:   [0.0, 0.0]
+	position:   ['not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   200340065
+	school_type:   nao declarado
+	sem_in:   1
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Desligamento - Abandono
+	year_in:   2003
+	year_out:   2003
+	 printing grades --- 
+		aprendizagem no ensino:   [[125172, 'aprendizagem no ensino', 'SR', 2003, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2003, 1], [116301, 'computacao basica', 'SR', 2003, 2]]
+		linguagens de programacao:   [[116343, 'linguagens de programacao', 'SR', 2003, 1], [116343, 'linguagens de programacao', 'SR', 2003, 2]]
+		informatica e sociedade:   [[116726, 'informatica e sociedade', 'SR', 2003, 1], [116726, 'informatica e sociedade', 'SR', 2003, 2]]
 	 ------------------ 
 ------------
 ------------
 student info
 	age:   18
 	course:   engenharia_redes
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.2222222222222222, 0.2222222222222222, 0.2222222222222222]
-	fail_rate:   [0.7777777777777778, 0.7777777777777778, 0.7777777777777778]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   115876
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
+	credit_rate:   ['not know']
+	drop_rate:   [0.2]
+	fail_rate:   [0.8]
+	hard_rate:   ['not know']
+	id_num:   133622
+	improvement_rate:   ['not know']
+	in_condition:   ['not know']
+	ira:   ['not know']
 	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   negro
-	race:   parda
-	reg:   201123940
-	school_type:   particular
+	mand_credit_rate:   ['not know']
+	pass_rate:   [0.0]
+	position:   ['not know']
+	quota:   escola publica alta renda-ppi
+	race:   preta 
+	reg:   201159334
+	school_type:   publica
 	sem_in:   1
 	sem_out:   1
 	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2012
-	year_out:   2013
+	way_in:   PAS
+	way_out:   Novo Vestibular
+	year_in:   2014
+	year_out:   2014
 	 printing grades --- 
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2012, 1]]
-		fisica 1:   [[118001, 'fisica 1', 'II', 2012, 1], [118001, 'fisica 1', 'TR', 2012, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 1], [113034, 'calculo 1', 'TR', 2012, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2012, 1], [113093, 'introducao a algebra linear', 'SR', 2012, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2014, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2014, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2014, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2014, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -2751,6 +1543,1188 @@ student info
 ------------
 ------------
 student info
+	age:   16
+	course:   engenharia_computacao
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   120967
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   preta 
+	reg:   201132163
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Desligamento Voluntario
+	year_in:   2012
+	year_out:   2013
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'MI', 2012, 2], [118001, 'fisica 1', 'SR', 2013, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2012, 2], [116301, 'computacao basica', 'SR', 2013, 1]]
+		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'II', 2012, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2012, 2], [118010, 'fisica 1 experimental', 'SR', 2013, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2012, 2], [113093, 'introducao a algebra linear', 'SR', 2013, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   20
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.125, 0.125, 0.125]
+	fail_rate:   [0.875, 0.875, 0.875]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   125506
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   branca
+	reg:   201143098
+	school_type:   particular
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2013
+	year_out:   2014
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2013, 1]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'MI', 2013, 1]]
+		psicologia da educação:   [[191027, 'psicologia da educação', 'TR', 2013, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2]]
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2013, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   22
+	course:   engenharia_computacao
+	credit_rate:   ['not know', 'not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know', 'not know']
+	id_num:   136726
+	improvement_rate:   ['not know', 'not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   201167697
+	school_type:   publica
+	sem_in:   1
+	sem_out:   2
+	sex:   masculino
+	way_in:   Transferencia Obrigatoria
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2014
+	year_out:   2015
+	 printing grades --- 
+		fisica 2:   [[118028, 'fisica 2', 'II', 2014, 2]]
+		estruturas de dados:   [[116319, 'estruturas de dados', 'SR', 2014, 2]]
+		fisica 2 experimental:   [[118036, 'fisica 2 experimental', 'MI', 2014, 2]]
+		calculo 2:   [[113042, 'calculo 2', 'MI', 2014, 2]]
+		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'SR', 2014, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   49
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.25, 0.16666666666666666, 0.16666666666666666]
+	fail_rate:   [0.75, 0.8333333333333334, 0.8333333333333334]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   22031
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   200332178
+	school_type:   nao declarado
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Desligamento Voluntario
+	year_in:   2003
+	year_out:   2004
+	 printing grades --- 
+		calculo 2:   [[113042, 'calculo 2', 'SR', 2004, 2]]
+		lógica 1:   [[137481, 'lógica 1', 'MI', 2003, 2]]
+		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'MI', 2004, 1], [115045, 'probabilidade e estatistica', 'II', 2004, 2]]
+		algebra 1:   [[113107, 'algebra 1', 'TR', 2003, 2], [113107, 'algebra 1', 'SR', 2004, 1]]
+	 ------------------ 
+------------
+student 201069598 has not coursed any subject in pos: 0
+student 201069648 has not coursed any subject in pos: 0
+------------
+student info
+	age:   29
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   54318
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   200684635
+	school_type:   nao declarado
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2006
+	year_out:   2007
+	 printing grades --- 
+		trabalho de graduacao:   [[116475, 'trabalho de graduacao', 'MI', 2006, 2]]
+		processamento em tempo real:   [[116599, 'processamento em tempo real', 'MI', 2006, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   30
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know']
+	drop_rate:   [0.0, 0.0]
+	fail_rate:   [1.0, 1.0]
+	hard_rate:   ['not know', 'not know']
+	id_num:   139094
+	improvement_rate:   ['not know', 'not know']
+	in_condition:   ['not know', 'not know']
+	ira:   ['not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know']
+	pass_rate:   [0.0, 0.0]
+	position:   ['not know', 'not know']
+	quota:   escola publica alta renda-ppi
+	race:   parda
+	reg:   201185475
+	school_type:   publica
+	sem_in:   1
+	sem_out:   2
+	sex:   masculino
+	way_in:   SISU
+	way_out:   Novo Vestibular
+	year_in:   2015
+	year_out:   2015
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'II', 2015, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2015, 1], [113034, 'calculo 1', 'MI', 2015, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2015, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'MI', 2015, 1]]
+		algoritmos e programação de computadores:   [[113476, 'algoritmos e programação de computadores', 'MI', 2015, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2015, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2015, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   19
+	course:   engenharia_computacao
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.4, 0.4]
+	fail_rate:   [1.0, 0.6, 0.6]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   120636
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   branca
+	reg:   201135308
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2012
+	year_out:   2013
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'II', 2012, 2], [118001, 'fisica 1', 'TR', 2013, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2012, 2], [116301, 'computacao basica', 'TR', 2013, 1]]
+		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2012, 2], [117528, 'introdução à engenharia de computação', 'TR', 2013, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 2], [118010, 'fisica 1 experimental', 'TR', 2013, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2012, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   18
+	course:   engenharia_redes
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   120631
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   branca
+	reg:   201135340
+	school_type:   publica
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2012
+	year_out:   2013
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'II', 2012, 2], [118001, 'fisica 1', 'II', 2013, 1]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2012, 2], [167959, 'fundamentos de redes', 'II', 2013, 1], [167959, 'fundamentos de redes', 'MI', 2013, 2]]
+		desenho tecnico:   [[162019, 'desenho tecnico', 'SR', 2013, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 1], [113034, 'calculo 1', 'SR', 2013, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2012, 2], [118010, 'fisica 1 experimental', 'MI', 2013, 1], [118010, 'fisica 1 experimental', 'MI', 2013, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2012, 2], [113093, 'introducao a algebra linear', 'II', 2013, 1], [113093, 'introducao a algebra linear', 'SR', 2013, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   22
+	course:   engenharia_mecatronica
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.1, 0.1, 0.1]
+	fail_rate:   [0.9, 0.9, 0.9]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   115764
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   201125445
+	school_type:   particular
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2012
+	year_out:   2013
+	 printing grades --- 
+		mecanica 2:   [[168777, 'mecanica 2', 'TJ', 2012, 1], [168777, 'mecanica 2', 'II', 2012, 2], [168777, 'mecanica 2', 'SR', 2013, 1]]
+		introducao ciencia dos materiais:   [[168823, 'introducao ciencia dos materiais', 'MI', 2012, 2]]
+		circuitos eletricos 1:   [[167011, 'circuitos eletricos 1', 'SR', 2012, 1], [167011, 'circuitos eletricos 1', 'SR', 2012, 2], [167011, 'circuitos eletricos 1', 'SR', 2013, 1]]
+		variavel complexa 1:   [[113069, 'variavel complexa 1', 'SR', 2012, 1], [113069, 'variavel complexa 1', 'SR', 2012, 2], [113069, 'variavel complexa 1', 'SR', 2013, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   17
+	course:   engenharia_computacao
+	credit_rate:   ['not know']
+	drop_rate:   [0.0]
+	fail_rate:   [1.0]
+	hard_rate:   ['not know']
+	id_num:   129662
+	improvement_rate:   ['not know']
+	in_condition:   ['not know']
+	ira:   ['not know']
+	local:   df
+	mand_credit_rate:   ['not know']
+	pass_rate:   [0.0]
+	position:   ['not know']
+	quota:   escola publica alta renda-ppi
+	race:   parda
+	reg:   201151952
+	school_type:   publica
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Novo Vestibular
+	year_in:   2013
+	year_out:   2013
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 2]]
+		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2013, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2013, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   19
+	course:   engenharia_redes
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   115608
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   parda
+	reg:   201127446
+	school_type:   publica
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2012
+	year_out:   2013
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'MI', 2012, 1], [118001, 'fisica 1', 'II', 2012, 2], [118001, 'fisica 1', 'II', 2013, 1]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2012, 1], [167959, 'fundamentos de redes', 'SR', 2012, 2]]
+		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2013, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2012, 1], [113034, 'calculo 1', 'SR', 2012, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2], [118010, 'fisica 1 experimental', 'MI', 2013, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2012, 1], [113093, 'introducao a algebra linear', 'SR', 2012, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   22
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.2, 0.2, 0.2]
+	fail_rate:   [0.8, 0.8, 0.8]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   2486
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   200035939
+	school_type:   nao declarado
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Transferencia Obrigatoria
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2000
+	year_out:   2001
+	 printing grades --- 
+		computacao basica:   [[116301, 'computacao basica', 'II', 2000, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'TR', 2000, 2]]
+		evolucao do pensamento filosofico e cientifico:   [[137413, 'evolucao do pensamento filosofico e cientifico', 'MI', 2000, 2]]
+		lógica 1:   [[137481, 'lógica 1', 'II', 2000, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2000, 2]]
+	 ------------------ 
+------------
+student 201070189 has not coursed any subject in pos: 0
+------------
+student info
+	age:   19
+	course:   engenharia_software
+	credit_rate:   ['not know', 'not know', 'not know', 'not know']
+	drop_rate:   ['not know', 0.0, 0.0, 0.0]
+	fail_rate:   [0.0, 1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know', 'not know']
+	id_num:   101523
+	improvement_rate:   ['not know', 'not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   201070189
+	school_type:   
+	sem_in:   1
+	sem_out:   2
+	sex:   masculino
+	way_in:   PAS
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2009
+	year_out:   2010
+	 printing grades --- 
+		calculo 1:   [[113034, 'calculo 1', 'II', 2010, 2]]
+		engenharia de segurança do trabalho:   [[193712, 'engenharia de segurança do trabalho', 'SR', 2010, 2]]
+		desenho industrial assistido por computador:   [[199176, 'desenho industrial assistido por computador', 'II', 2010, 2]]
+		fontes de energia e tecnologias de conversão:   [[199184, 'fontes de energia e tecnologias de conversão', 'SR', 2010, 2]]
+		engenharia econômica:   [[193321, 'engenharia econômica', 'II', 2010, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   18
+	course:   engenharia_computacao
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   129611
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   parda
+	reg:   201152183
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2013
+	year_out:   2014
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 2]]
+		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2013, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2013, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2013, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   24
+	course:   engenharia_computacao
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   98920
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   negro
+	race:   000
+	reg:   201095024
+	school_type:   publica
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2010
+	year_out:   2011
+	 printing grades --- 
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2010, 2], [116301, 'computacao basica', 'SR', 2011, 1], [116301, 'computacao basica', 'SR', 2011, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'SR', 2010, 2], [118001, 'fisica 1', 'SR', 2011, 1], [118001, 'fisica 1', 'SR', 2011, 2]]
+		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2010, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2010, 2], [113034, 'calculo 1', 'SR', 2011, 1], [113034, 'calculo 1', 'SR', 2011, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2010, 2], [118010, 'fisica 1 experimental', 'SR', 2011, 1], [118010, 'fisica 1 experimental', 'MI', 2011, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   19
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   17379
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   200316814
+	school_type:   nao declarado
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2003
+	year_out:   2004
+	 printing grades --- 
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'MI', 2003, 1], [140481, 'leitura e produção de textos', 'SR', 2003, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'SR', 2003, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2003, 2]]
+		prática desportiva 1:   [[175013, 'prática desportiva 1', 'SR', 2003, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'II', 2003, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2003, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2003, 2]]
+	 ------------------ 
+------------
+student 201087044 has not coursed any subject in pos: 0
+student 201070772 has not coursed any subject in pos: 0
+------------
+student info
+	age:   23
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know']
+	drop_rate:   [0.0, 0.0]
+	fail_rate:   [1.0, 1.0]
+	hard_rate:   ['not know', 'not know']
+	id_num:   120580
+	improvement_rate:   ['not know', 'not know']
+	in_condition:   ['not know', 'not know']
+	ira:   ['not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know']
+	pass_rate:   [0.0, 0.0]
+	position:   ['not know', 'not know']
+	quota:   universal
+	race:   nao dispoe de informacao
+	reg:   201136512
+	school_type:   particular
+	sem_in:   2
+	sem_out:   1
+	sex:   masculino
+	way_in:   ENEM
+	way_out:   Desligamento - Abandono
+	year_in:   2012
+	year_out:   2013
+	 printing grades --- 
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2012, 2], [145971, 'inglês instrumental 1', 'SR', 2013, 1]]
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2012, 2], [116793, 'introducao a microinformatica', 'SR', 2013, 1]]
+		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2012, 2]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2012, 2]]
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2012, 2], [117366, 'lógica computacional 1', 'SR', 2013, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   29
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   54538
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   200677787
+	school_type:   nao declarado
+	sem_in:   2
+	sem_out:   2
+	sex:   feminino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2006
+	year_out:   2007
+	 printing grades --- 
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2007, 1]]
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'MI', 2006, 2], [116793, 'introducao a microinformatica', 'SR', 2007, 1]]
+		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2006, 2]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2006, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2007, 1]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2006, 2]]
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2006, 2], [117366, 'lógica computacional 1', 'SR', 2007, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   19
+	course:   engenharia_computacao
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   93061
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   branca
+	reg:   201087496
+	school_type:   particular
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   PAS
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2010
+	year_out:   2011
+	 printing grades --- 
+		computacao basica:   [[116301, 'computacao basica', 'II', 2010, 1], [116301, 'computacao basica', 'MI', 2010, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'SR', 2010, 1], [118001, 'fisica 1', 'MI', 2010, 2]]
+		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2010, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2010, 1], [113034, 'calculo 1', 'MI', 2010, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2010, 1], [118010, 'fisica 1 experimental', 'SR', 2010, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   19
+	course:   engenharia_redes
+	credit_rate:   ['not know', 'not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know', 'not know']
+	id_num:   105027
+	improvement_rate:   ['not know', 'not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know', 'not know']
+	quota:   universal
+	race:   branca
+	reg:   201102461
+	school_type:   publica
+	sem_in:   1
+	sem_out:   2
+	sex:   feminino
+	way_in:   PAS
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2011
+	year_out:   2012
+	 printing grades --- 
+		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'II', 2011, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2011, 1], [118001, 'fisica 1', 'II', 2012, 2]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'MI', 2011, 2], [167959, 'fundamentos de redes', 'II', 2012, 1]]
+		prática desportiva 1:   [[175013, 'prática desportiva 1', 'SR', 2011, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'II', 2012, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2011, 1], [113034, 'calculo 1', 'II', 2012, 1], [113034, 'calculo 1', 'SR', 2012, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2011, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2011, 2], [113093, 'introducao a algebra linear', 'II', 2012, 1], [113093, 'introducao a algebra linear', 'II', 2012, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   19
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know']
+	drop_rate:   [0.0, 0.0]
+	fail_rate:   [1.0, 1.0]
+	hard_rate:   ['not know', 'not know']
+	id_num:   81326
+	improvement_rate:   ['not know', 'not know']
+	in_condition:   ['not know', 'not know']
+	ira:   ['not know', 'not know']
+	local:   indisponível
+	mand_credit_rate:   ['not know', 'not know']
+	pass_rate:   [0.0, 0.0]
+	position:   ['not know', 'not know']
+	quota:   universal
+	race:   preta 
+	reg:   201071225
+	school_type:   nao declarado
+	sem_in:   1
+	sem_out:   2
+	sex:   masculino
+	way_in:   Matricula Cortesia
+	way_out:   Desligamento Voluntario
+	year_in:   2009
+	year_out:   2009
+	 printing grades --- 
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2009, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'SR', 2009, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2009, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2009, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   21
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   104835
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   201104164
+	school_type:   particular
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2011
+	year_out:   2012
+	 printing grades --- 
+		estruturas de dados:   [[116319, 'estruturas de dados', 'II', 2011, 1]]
+		fisica 2 experimental:   [[118036, 'fisica 2 experimental', 'SR', 2011, 1]]
+		calculo 2:   [[113042, 'calculo 2', 'SR', 2011, 1]]
+		administracao de recursos humanos:   [[181081, 'administracao de recursos humanos', 'SR', 2011, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   46
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   110933
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   negro
+	race:   preta 
+	reg:   201112403
+	school_type:   publica
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2011
+	year_out:   2012
+	 printing grades --- 
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2011, 2], [116793, 'introducao a microinformatica', 'SR', 2012, 1]]
+		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'MI', 2011, 2], [147389, 'portugues instrumental 1', 'SR', 2012, 1]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2011, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 1]]
+		psicologia da educação:   [[191027, 'psicologia da educação', 'SR', 2012, 1]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2011, 2], [145971, 'inglês instrumental 1', 'SR', 2012, 1]]
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2011, 2], [117366, 'lógica computacional 1', 'SR', 2012, 1]]
+	 ------------------ 
+------------
+student 201112507 has not coursed any subject in pos: 0
+------------
+student info
+	age:   19
+	course:   engenharia_computacao
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.1111111111111111, 0.1111111111111111, 0.1111111111111111]
+	fail_rate:   [0.8888888888888888, 0.8888888888888888, 0.8888888888888888]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   104805
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   negro
+	race:   preta 
+	reg:   201104468
+	school_type:   particular
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2011
+	year_out:   2012
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'II', 2011, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'II', 2011, 1], [116301, 'computacao basica', 'SR', 2011, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2011, 2]]
+		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2011, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 1], [113034, 'calculo 1', 'MI', 2011, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2011, 1]]
+		introdução a economia:   [[132012, 'introdução a economia', 'II', 2011, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   27
+	course:   engenharia_mecatronica
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.21052631578947367, 0.21052631578947367, 0.21052631578947367]
+	fail_rate:   [0.7894736842105263, 0.7894736842105263, 0.7894736842105263]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   104758
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   201104697
+	school_type:   particular
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2011
+	year_out:   2012
+	 printing grades --- 
+		tecnologias de comando numerico:   [[164399, 'tecnologias de comando numerico', 'SR', 2011, 1], [164399, 'tecnologias de comando numerico', 'SR', 2011, 2], [164399, 'tecnologias de comando numerico', 'TR', 2012, 1]]
+		análise dinâmica  linear:   [[160041, 'análise dinâmica  linear', 'SR', 2011, 1], [160041, 'análise dinâmica  linear', 'SR', 2011, 2], [160041, 'análise dinâmica  linear', 'SR', 2012, 1]]
+		sistemas de medicao:   [[168742, 'sistemas de medicao', 'SR', 2011, 1], [168742, 'sistemas de medicao', 'SR', 2011, 2], [168742, 'sistemas de medicao', 'TR', 2012, 1]]
+		princípios de visão computacional:   [[117595, 'princípios de visão computacional', 'II', 2011, 1]]
+		ciencias do ambiente:   [[122408, 'ciencias do ambiente', 'MI', 2011, 1]]
+		dispositivos e circuitos eletrônicos:   [[170321, 'dispositivos e circuitos eletrônicos', 'SR', 2011, 1], [170321, 'dispositivos e circuitos eletrônicos', 'II', 2011, 2], [170321, 'dispositivos e circuitos eletrônicos', 'SR', 2012, 1]]
+		organizacao e arquitetura de computadores:   [[116394, 'organizacao e arquitetura de computadores', 'SR', 2011, 1], [116394, 'organizacao e arquitetura de computadores', 'SR', 2011, 2], [116394, 'organizacao e arquitetura de computadores', 'TR', 2012, 1]]
+		programacao orientada a objetos:   [[116785, 'programacao orientada a objetos', 'TR', 2012, 1]]
+		programacao avancada:   [[117234, 'programacao avancada', 'MI', 2011, 1]]
+	 ------------------ 
+------------
+student 201080249 has not coursed any subject in pos: 0
+------------
+student info
+	age:   24
+	course:   engenharia_software
+	credit_rate:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
+	id_num:   87517
+	improvement_rate:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know', 'not know', 'not know', 'not know', 'not know']
+	quota:   negro
+	race:   preta 
+	reg:   201080253
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Rep 3 vezes na mesma Disc Obrig
+	year_in:   2009
+	year_out:   2012
+	 printing grades --- 
+		engenharia e ambiente:   [[198005, 'engenharia e ambiente', 'SR', 2009, 2], [198005, 'engenharia e ambiente', 'SR', 2012, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2009, 2], [113034, 'calculo 1', 'II', 2010, 1], [113034, 'calculo 1', 'SR', 2010, 2], [113034, 'calculo 1', 'SR', 2012, 2]]
+		introducao a ciencia da computacao:   [[113913, 'introducao a ciencia da computacao', 'SR', 2009, 2], [113913, 'introducao a ciencia da computacao', 'SR', 2010, 1], [113913, 'introducao a ciencia da computacao', 'SR', 2010, 2], [113913, 'introducao a ciencia da computacao', 'SR', 2012, 2]]
+		introdução à engenharia:   [[198013, 'introdução à engenharia', 'MI', 2009, 2]]
+		quimica geral:   [[114014, 'quimica geral', 'SR', 2009, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2009, 2], [113093, 'introducao a algebra linear', 'SR', 2010, 1], [113093, 'introducao a algebra linear', 'SR', 2010, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   41
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know']
+	drop_rate:   [0.0, 0.0]
+	fail_rate:   [1.0, 1.0]
+	hard_rate:   ['not know', 'not know']
+	id_num:   104773
+	improvement_rate:   ['not know', 'not know']
+	in_condition:   ['not know', 'not know']
+	ira:   ['not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know']
+	pass_rate:   [0.0, 0.0]
+	position:   ['not know', 'not know']
+	quota:   universal
+	race:   branca
+	reg:   201104654
+	school_type:   publica
+	sem_in:   1
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Desligamento - Abandono
+	year_in:   2011
+	year_out:   2011
+	 printing grades --- 
+		projeto de licenciatura 2:   [[116904, 'projeto de licenciatura 2', 'SR', 2011, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   21
+	course:   cic_licenciatura
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   110841
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   parda
+	reg:   201113113
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2011
+	year_out:   2012
+	 printing grades --- 
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'II', 2011, 2], [145971, 'inglês instrumental 1', 'MI', 2012, 1], [145971, 'inglês instrumental 1', 'SR', 2012, 2]]
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2011, 2], [116793, 'introducao a microinformatica', 'SR', 2012, 1], [116793, 'introducao a microinformatica', 'SR', 2012, 2]]
+		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'MI', 2011, 2], [147389, 'portugues instrumental 1', 'SR', 2012, 1], [147389, 'portugues instrumental 1', 'SR', 2012, 2]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2011, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 1], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 2]]
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'MI', 2011, 2], [117366, 'lógica computacional 1', 'SR', 2012, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   19
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   129673
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   negro
+	race:   parda
+	reg:   201151763
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2013
+	year_out:   2014
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2013, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'II', 2013, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2013, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2013, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   50
+	course:   engenharia_redes
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   92829
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   201088651
+	school_type:   particular
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2010
+	year_out:   2011
+	 printing grades --- 
+		topicos especiais em processamento de sinais:   [[169935, 'topicos especiais em processamento de sinais', 'MI', 2010, 2]]
+		projeto final de graduação 2:   [[170399, 'projeto final de graduação 2', 'SR', 2010, 1], [170399, 'projeto final de graduação 2', 'SR', 2011, 1]]
+		comunicações móveis:   [[170801, 'comunicações móveis', 'II', 2010, 2]]
+		redes de telecomunicações 2:   [[160075, 'redes de telecomunicações 2', 'II', 2010, 2]]
+		variavel complexa 1:   [[113069, 'variavel complexa 1', 'II', 2010, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   18
+	course:   engenharia_redes
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.2222222222222222, 0.2222222222222222, 0.2222222222222222]
+	fail_rate:   [0.7777777777777778, 0.7777777777777778, 0.7777777777777778]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   115876
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   negro
+	race:   parda
+	reg:   201123940
+	school_type:   particular
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2012
+	year_out:   2013
+	 printing grades --- 
+		fisica 1:   [[118001, 'fisica 1', 'II', 2012, 1], [118001, 'fisica 1', 'TR', 2012, 2]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2012, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 1], [113034, 'calculo 1', 'TR', 2012, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2012, 1], [113093, 'introducao a algebra linear', 'SR', 2012, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   24
+	course:   engenharia_redes
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   110772
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   negro
+	race:   000
+	reg:   201113432
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2011
+	year_out:   2012
+	 printing grades --- 
+		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2012, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'SR', 2011, 2], [118001, 'fisica 1', 'II', 2012, 2]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2011, 2], [167959, 'fundamentos de redes', 'SR', 2012, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2011, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2011, 2], [113093, 'introducao a algebra linear', 'SR', 2012, 2]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   23
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.25, 0.25, 0.25]
+	fail_rate:   [0.75, 0.75, 0.75]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   125449
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   branca
+	reg:   201143617
+	school_type:   particular
+	sem_in:   1
+	sem_out:   1
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2013
+	year_out:   2014
+	 printing grades --- 
+		calculo 3:   [[113051, 'calculo 3', 'SR', 2013, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2013, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 1], [118001, 'fisica 1', 'SR', 2013, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2013, 1]]
+		topicos avancados em computadores:   [[116297, 'topicos avancados em computadores', 'SR', 2014, 1]]
+		prática desportiva 1:   [[175013, 'prática desportiva 1', 'SR', 2013, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'TR', 2013, 1], [116301, 'computacao basica', 'SR', 2014, 1]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2013, 1]]
+		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'SR', 2013, 2], [115045, 'probabilidade e estatistica', 'SR', 2014, 1]]
+	 ------------------ 
+------------
+------------
+student info
 	age:   18
 	course:   engenharia_computacao
 	credit_rate:   ['not know', 'not know', 'not know']
@@ -2778,10 +2752,10 @@ student info
 	year_out:   2011
 	 printing grades --- 
 		fisica 1:   [[118001, 'fisica 1', 'SR', 2010, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2010, 2]]
 		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2010, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2010, 2]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2010, 2]]
 		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2010, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2010, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2010, 2]]
 	 ------------------ 
 ------------

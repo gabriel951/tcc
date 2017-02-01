@@ -1,0 +1,4 @@
+could not load student info, so will build structure from database
+finished loading the students dictionary
+finished handling outliers
+finished filling grades

@@ -3,6 +3,34 @@
 from students import *
 from outliers import *
 
+def check_missing_values(stu_info, feature):
+    """
+    reports whether there are students with missing values for a given feature
+    receives: 
+        1. a dictionary containing the students
+        2. the feature we are concerned
+    returns:
+        nothing
+    log: 
+        log problematic students on file 'missing_values.txt'
+    """
+    # file pointer, register problematic students
+    fp = open('../logs/missing_values.txt', 'w')
+
+    ## iterate through student, check if any student has ANY missing value
+    # ira
+    if feature == 'ira': 
+        for key, stu in stu_info.items():
+            miss_values = 0 
+            for pos in range(len(stu.ira)):
+                if stu.ira[pos] == NOT_KNOWN:
+                    miss_values += 1
+                    stu.log_info(fp)
+                    break
+        fp.write("%d students with missing values problems in ira" % (miss_values))
+
+    fp.close()
+
 def fill_credit_rate(stu_info):
     """
     receives a dictionary containing all student information
@@ -21,12 +49,11 @@ def fill_condition(stu_info):
     for key, stu in stu_info: 
         num_semesters = stu.get_num_semesters()
         for i in range(num_semesters):
-            pass
+            i = i + 1
             #stu.in_condition_sem(i):
 
         # TODO: handle list transformation
-
-def fill_drop_pass_fail_rate_sem(stu, pos, mode):
+def fill_drop_pass_fail_rate_sem(stu, pos, mode, fp):
     """
     fill the drop/pass/fail rate for a given student, for the semester passed
     receives: 
@@ -34,8 +61,12 @@ def fill_drop_pass_fail_rate_sem(stu, pos, mode):
         2. the position for which we want to know the rate
         3. mode informing whether we want the pass rate, the fail rate or the drop
         rate. Should be 'drop', 'pass' or 'fail'
+        4. a file pointer, to write case of students that did not course any subject
     returns: 
         nothing
+    writes:
+        it may write in a file students that haven't coursed any subject until
+        pos
     """
     # obtain function to apply and variable of interes
     if mode == 'drop':
@@ -57,7 +88,11 @@ def fill_drop_pass_fail_rate_sem(stu, pos, mode):
             (code, name, grade, year, sem) = stu.get_sub_info(sub_name, index, 'all')
             cur_pos = stu.yearsem_2_pos(year, sem)
             if cur_pos > pos: 
-                pass
+                continue
+
+            # skip DP 
+            if grade.lower() == 'dp':
+                continue
 
             # compute statistics
             sub_coursed += 1
@@ -65,7 +100,14 @@ def fill_drop_pass_fail_rate_sem(stu, pos, mode):
                 sub_ok += 1
              
     # set attribute correctly 
-    var_interest[pos] = float(sub_ok) / sub_coursed
+    try: 
+        var_interest[pos] = float(sub_ok) / sub_coursed
+    except ZeroDivisionError: 
+        var_interest[pos] = 0.0
+        print('\t\t\tstudent %d has not coursed any subject in pos: %d' % (stu.reg, pos))
+        fp.write('student %d has not coursed any subject in pos: %d\n' % (stu.reg, pos))
+        # no need to log cases, have analysed this already
+        #stu.log_info(fp)
 
 def fill_drop_pass_fail_rate(stu_info, mode): 
     """
@@ -94,7 +136,7 @@ def fill_drop_pass_fail_rate(stu_info, mode):
         # for all positions the student is in 
         num_semesters = stu.get_num_semesters()
         for pos in range(num_semesters):
-            fill_drop_pass_fail_rate_sem(stu, pos, mode) 
+            fill_drop_pass_fail_rate_sem(stu, pos, mode, fp) 
 
 
         # TODO: if rate is problematic (when the student left), 
@@ -135,11 +177,14 @@ def fill_empty_iras(stu_info):
 
 def fill_grades(stu_info, mode = 'normal'):
     """
-    receives a student info dictionary 
-    mode is an optional parameter that can be normal or quick 
-        if normal, fill grades of all years from 2000 to 2015.
-        if quick, fill grades of year 2000, semester 1
     query database and add grades of the student to the student dictionary
+    receives:
+        1. a student info dictionary 
+        2. (optional) mode - parameter that can be normal or quick if normal, fill
+        grades of all years from 2000 to 2015.  if quick, fill grades of year 2000,
+        semester 1
+    returns: 
+        nothing
     """
     # check if there's any restriction
     if mode == 'normal':
@@ -173,7 +218,6 @@ def fill_grades(stu_info, mode = 'normal'):
             student.set_grades(row)
         except KeyError:
             pass
-
 
     print('finished filling grades')
 
@@ -219,12 +263,15 @@ def fill_impr_rate(stu_info):
 
 def fill_ira(stu_info, mode = 'normal'):
     """
-    receives a dictionary containing all students. 
     read the csv file for the student IRA and put the student IRA as an information
+    receives:
+        1. a dictionary containing all students. 
+    returns:
+        nothing
     """
     # get all years and semesters to be considered
     if mode == 'quick': 
-        fill_ira_year_semester(stu_info, 2008, 1)
+        fill_ira_year_semester(stu_info, 2000, 1)
     elif mode == 'normal': 
         # fill ira correctly
         print('\tstarting insertion')
@@ -236,7 +283,7 @@ def fill_ira(stu_info, mode = 'normal'):
         print('will start filling info for iras that are not known')
         # TODO: can't handle missing iras because i don't have information 
         # regarding the credit 
-        handle_miss_ira(stu_info)
+        #handle_miss_ira(stu_info)
         print('finished filling missing iras')
     else:
         exit('mode option incorrect')
@@ -246,8 +293,11 @@ def fill_ira(stu_info, mode = 'normal'):
 
 def fill_ira_year_semester(stu_info, year, semester):
     """
-    receives a dictionary containing all students. 
     read the csv file for the student IRA and put the student IRA as an information
+    receives:
+        1. a dictionary containing all students. 
+    returns: 
+        nothing
     """
     global ira_filled
     file_name = CSV_PATH + FILE_NAME + str(year) + str(semester) + EXTENSION
@@ -333,7 +383,7 @@ def fill_position(stu_info):
         for key, stu in stu_info.items():
             sem_in_unb = stu.get_num_semesters()
             if cur_sem > sem_in_unb: 
-                pass
+                continue
 
             perf_lst = perf[(stu.course, stu.year_in, stu.sem_in)]
             position = NOT_FOUND 
@@ -385,20 +435,20 @@ def get_database_info():
                 #stu_info[key].set_attrib(row)
 
 
-        # handle cases of students that left by ways unrelated to grades
-        #handle_special_stu(stu_info)
-        
         print('finished loading the students dictionary')
         return stu_info
 
 def get_derived_info(stu_info):
     """
-    receives a dictionary containing student info
     iterates over the csv files, filling information relative to student derived
-    attributes   
+    attributes    
+    receives:
+        1. a dictionary containing student info
+    returns:
+        nothing
     """
     # fill student grades
-    #fill_grades(stu_info)
+    fill_grades(stu_info)
 
     # calculate student ira for the semesters - TODO: handle case of empty iras
     #fill_ira(stu_info)
@@ -406,13 +456,9 @@ def get_derived_info(stu_info):
     # calculate improvement rate - TODO: handle case of improvement rate
     #fill_impr_rate(stu_info)
 
-    # calculate fail rate - ok
-    #fill_drop_pass_fail_rate(stu_info, 'fail')
-
-    # calculate pass rate - ok
+    # calculate fail rate, pass rate and drop rate
+    fill_drop_pass_fail_rate(stu_info, 'fail')
     fill_drop_pass_fail_rate(stu_info, 'pass')
-
-    # calculate drop rate - ok
     fill_drop_pass_fail_rate(stu_info, 'drop')
 
     # calculate credit rate and mandatory rate - TODO: need the credit amount for the
@@ -456,26 +502,7 @@ def get_students_info():
     save_students(NAME_STU_STRUCTURE, stu_dict)
 
     # TODO: check missing values
-    #check_missing_values(stu_dict)
-
-def handle_special_stu(stu_info):
-    """
-    eliminate from the dictionary the students that left unb by non-academic reasons
-    """
-    # number of special cases
-    #spc_cases = 0
-
-    #for key in stu_info: 
-    #    stu = stu_info[key]
-    #    if stu.lower() == '': 
-    #        spc_cases += 1
-    #        del stu_info[key]
-    #    elif:
-
-    #    else: 
-    #        pass
-
-    #print('eliminated %d special cases students' % (spc_cases))
+    check_missing_values(stu_dict, 'ira')
 
 def handle_miss_ira(stu_info):
     """
