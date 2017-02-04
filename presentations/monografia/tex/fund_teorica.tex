@@ -1,0 +1,51 @@
+% TODO: falar do modelo crips-dm, se quiser encher linguiça
+Neste capítulo, descreve-se a fundamentação teórica necessária para compreender a
+pesquisa. Assim, nas seções explica-se a problemática da evasão nas universidades
+públicas, a abordagem da UnB para tal situação e como estatística descritiva e o
+método de Kendall podem ser usados em mineração de dados. 
+
+\section{Evasão nas Universidades} 
+A evasão nas universidades nacionais é um problema que traz desperdícios acadêmicos,
+sociais e econômicos, tendo sida estudada por diversos autores. Apesar disso, o
+conceito de evasão pode variar \cite{mec_conceito_evasao} de acordo com a pesquisa,
+já que pode-se considerar evasão do curso, evasão da instituição ou evasão do
+sistema educacional. 
+
+\section{Abordagem da UnB frente à Evasão}
+\par Os critérios para que um aluno seja desligado na UnB são mostrados na Figura
+\ref{desligamento}. 
+\begin{figure}[!ht]
+    \caption{Critérios Para Desligamento na UnB}
+    \centering
+    \includegraphics[width = 18cm]{desligamento.png}
+\end{figure}
+ 
+A abordagem da UnB para evitar desligamento consiste de separar os alunos em dois
+grupos (alunos em condição e alunos que não estão em condição) e ter os alunos em
+condição orientados. Os critérios para que um aluno esteja em condição são
+\cite{manual_calouro}: 
+\begin{itemize}
+    \item Ter duas reprovações na mesma disciplina obrigatória
+    \item Não ser aprovado em quatro disciplinas do curso em dois períodos regulares
+        consecutivos
+    \item Chegar ao último período letivo do curso sem a possibilidade de concluir
+\end{itemize}
+
+\section{Estatística Descritiva} 
+A utilização de estatística descritiva é comumente usada em pesquisas de mineração de
+dados, na fase de análise exploratória dos dados. A estatística descritiva permite
+identificar problemas de qualidade nos dados, como por exemplo a identificação de
+valores de atributos faltantes ou a identificação de outliers ou a identificação de
+atributos com cardinalidade irregular \cite{ml_book}. Técnicas comuns de estatística
+descritiva incluem histogramas, gráficos de barra e \textit{boxplots}. 
+
+\section{O Coeficiente de Correlação de Kendall}
+Quando se trabalha com modelos de aprendizagem de máquina com muitas variáveis, é
+desejável saber o grau de correlação entre as variáveis. Caso a correlação entre
+algum par de variáveis seja muito alta, a eliminação de uma delas pode acarretar em
+um modelo mais simples de ser compreendido e possivelmente com melhor desempenho.
+\par Assim, pode-se usar um coeficiente de correlação para medir o grau de dependência
+entre atributos e decidir pela eventual eliminação de algum. Existem vários testes
+para se medir a correlação entre variáveis, como o coeficiente de Spearman e o
+coeficiente de correlação de Kendall \cite{kendall}. 
+

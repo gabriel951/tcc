@@ -54,7 +54,7 @@ def generate_graphs():
     stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
 
     ## primitive features
-    #get_graph('sex', stu_info)
+    get_graph('sex', stu_info, False, data_type = 'discrete', index = LAST_ELEM)
     #get_graph('age', stu_info)
     #get_graph('local', stu_info)
     #get_graph('quota', stu_info)
@@ -69,7 +69,7 @@ def generate_graphs():
     #get_graph('ira', stu_info, True, data_type = 'continuous')
     #get_graph('improvement_rate', stu_info, data_type = 'continuous')
     #get_graph('pass_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
-    get_graph('pass_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
+    #get_graph('pass_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
     #get_graph('fail_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
     ##get_graph('fail_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
     #get_graph('drop_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
