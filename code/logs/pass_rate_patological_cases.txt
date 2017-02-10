@@ -27,14 +27,45 @@ student info
 	year_in:   2013
 	year_out:   2014
 	 printing grades --- 
+		introdução a economia:   [[132012, 'introdução a economia', 'SR', 2014, 1]]
+		teoria dos numeros:   [[113115, 'teoria dos numeros', 'SR', 2014, 1]]
 		fisica 1:   [[118001, 'fisica 1', 'SR', 2013, 2], [118001, 'fisica 1', 'SR', 2014, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2013, 2], [113093, 'introducao a algebra linear', 'SR', 2014, 1]]
+		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2014, 1]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2], [118010, 'fisica 1 experimental', 'SR', 2014, 1]]
 		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2013, 2], [167959, 'fundamentos de redes', 'SR', 2014, 1]]
-		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2014, 1]]
-		introdução a economia:   [[132012, 'introdução a economia', 'SR', 2014, 1]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
-		teoria dos numeros:   [[113115, 'teoria dos numeros', 'SR', 2014, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2013, 2], [113093, 'introducao a algebra linear', 'SR', 2014, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   24
+	course:   engenharia_redes
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   110678
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   000
+	reg:   201113857
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Deslig - Nao Cumpriu condicao
+	year_in:   2011
+	year_out:   2012
+	 printing grades --- 
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2011, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -65,10 +96,10 @@ student info
 	year_in:   2011
 	year_out:   2012
 	 printing grades --- 
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2011, 2]]
 		fisica 1:   [[118001, 'fisica 1', 'II', 2011, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 2]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2011, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2011, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -99,12 +130,12 @@ student info
 	year_in:   2006
 	year_out:   2007
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2006, 1], [118001, 'fisica 1', 'SR', 2006, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2006, 1], [113034, 'calculo 1', 'SR', 2006, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2006, 1], [140481, 'leitura e produção de textos', 'SR', 2006, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'MI', 2006, 1], [116301, 'computacao basica', 'SR', 2006, 2]]
 		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2006, 1], [145971, 'inglês instrumental 1', 'SR', 2006, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2006, 1], [140481, 'leitura e produção de textos', 'SR', 2006, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2006, 1], [118001, 'fisica 1', 'SR', 2006, 2]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2006, 1], [118010, 'fisica 1 experimental', 'II', 2006, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'MI', 2006, 1], [116301, 'computacao basica', 'SR', 2006, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2006, 1], [113034, 'calculo 1', 'SR', 2006, 2]]
 	 ------------------ 
 ------------
 student 200318141 has not coursed any subject in pos: 0
@@ -136,9 +167,9 @@ student info
 	year_in:   2014
 	year_out:   2015
 	 printing grades --- 
-		organizacao de arquivos:   [[116327, 'organizacao de arquivos', 'II', 2014, 2], [116327, 'organizacao de arquivos', 'SR', 2015, 1]]
 		linguagens de programacao:   [[116343, 'linguagens de programacao', 'II', 2014, 2], [116343, 'linguagens de programacao', 'SR', 2015, 1]]
 		algebra 1:   [[113107, 'algebra 1', 'SR', 2014, 2], [113107, 'algebra 1', 'SR', 2015, 1]]
+		organizacao de arquivos:   [[116327, 'organizacao de arquivos', 'II', 2014, 2], [116327, 'organizacao de arquivos', 'SR', 2015, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -169,10 +200,10 @@ student info
 	year_in:   2011
 	year_out:   2012
 	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2011, 2], [145971, 'inglês instrumental 1', 'SR', 2012, 2]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2011, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 2]]
 		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2011, 2], [116793, 'introducao a microinformatica', 'SR', 2012, 2]]
 		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'MI', 2011, 2], [147389, 'portugues instrumental 1', 'SR', 2012, 2]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2011, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2011, 2], [145971, 'inglês instrumental 1', 'SR', 2012, 2]]
 		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2011, 2], [117366, 'lógica computacional 1', 'SR', 2012, 2]]
 	 ------------------ 
 ------------
@@ -205,10 +236,10 @@ student info
 	year_out:   2011
 	 printing grades --- 
 		fisica 1:   [[118001, 'fisica 1', 'MI', 2010, 1], [118001, 'fisica 1', 'SR', 2010, 2], [118001, 'fisica 1', 'II', 2011, 1]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2010, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2010, 1], [113034, 'calculo 1', 'MI', 2010, 2], [113034, 'calculo 1', 'SR', 2011, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2010, 1], [118010, 'fisica 1 experimental', 'II', 2011, 1]]
 		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2010, 1], [113093, 'introducao a algebra linear', 'II', 2010, 2], [113093, 'introducao a algebra linear', 'II', 2011, 1]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2010, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2010, 1], [118010, 'fisica 1 experimental', 'II', 2011, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2010, 1], [113034, 'calculo 1', 'MI', 2010, 2], [113034, 'calculo 1', 'SR', 2011, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -271,43 +302,12 @@ student info
 	year_in:   2013
 	year_out:   2014
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 1], [118001, 'fisica 1', 'SR', 2013, 2], [118001, 'fisica 1', 'SR', 2014, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2013, 1], [113093, 'introducao a algebra linear', 'SR', 2013, 2], [113093, 'introducao a algebra linear', 'SR', 2014, 1]]
 		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 1], [116301, 'computacao basica', 'SR', 2013, 2], [116301, 'computacao basica', 'SR', 2014, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 1], [118001, 'fisica 1', 'SR', 2013, 2], [118001, 'fisica 1', 'SR', 2014, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2013, 1], [118010, 'fisica 1 experimental', 'II', 2013, 2], [118010, 'fisica 1 experimental', 'SR', 2014, 1]]
 		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2013, 1], [117528, 'introdução à engenharia de computação', 'SR', 2013, 2], [117528, 'introdução à engenharia de computação', 'SR', 2014, 1]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 1], [113034, 'calculo 1', 'SR', 2013, 2], [113034, 'calculo 1', 'SR', 2014, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2013, 1], [118010, 'fisica 1 experimental', 'II', 2013, 2], [118010, 'fisica 1 experimental', 'SR', 2014, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2013, 1], [113093, 'introducao a algebra linear', 'SR', 2013, 2], [113093, 'introducao a algebra linear', 'SR', 2014, 1]]
-	 ------------------ 
-------------
-------------
-student info
-	age:   24
-	course:   engenharia_redes
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   110678
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   000
-	reg:   201113857
-	school_type:   particular
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Deslig - Nao Cumpriu condicao
-	year_in:   2011
-	year_out:   2012
-	 printing grades --- 
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2011, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -338,10 +338,10 @@ student info
 	year_in:   2009
 	year_out:   2010
 	 printing grades --- 
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'MI', 2009, 1]]
 		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'MI', 2009, 1], [116793, 'introducao a microinformatica', 'SR', 2009, 2], [116793, 'introducao a microinformatica', 'SR', 2010, 1]]
 		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2009, 1], [147389, 'portugues instrumental 1', 'SR', 2009, 2], [147389, 'portugues instrumental 1', 'SR', 2010, 1]]
 		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2009, 1], [194221, 'organizacao da educacao brasileira', 'SR', 2009, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2010, 1]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'MI', 2009, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -372,10 +372,10 @@ student info
 	year_in:   2006
 	year_out:   2007
 	 printing grades --- 
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2007, 1]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2006, 2]]
 		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2006, 2], [116793, 'introducao a microinformatica', 'SR', 2007, 1]]
 		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2006, 2]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2006, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2007, 1]]
 		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2006, 2]]
 	 ------------------ 
 ------------
@@ -407,12 +407,12 @@ student info
 	year_in:   2012
 	year_out:   2013
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'SR', 2012, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2012, 2]]
 		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2012, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'SR', 2012, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2012, 2]]
 		computacao basica:   [[116301, 'computacao basica', 'II', 2012, 2]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2012, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2012, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -443,12 +443,12 @@ student info
 	year_in:   2006
 	year_out:   2006
 	 printing grades --- 
-		algebra 1:   [[113107, 'algebra 1', 'TR', 2006, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2006, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'TR', 2006, 2]]
 		sistemas de informacao:   [[116416, 'sistemas de informacao', 'TR', 2006, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2006, 2]]
 		linguagens de programacao:   [[116343, 'linguagens de programacao', 'TR', 2006, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2006, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2006, 2]]
+		algebra 1:   [[113107, 'algebra 1', 'TR', 2006, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'TR', 2006, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -479,13 +479,13 @@ student info
 	year_in:   2010
 	year_out:   2011
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'SR', 2010, 2]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2010, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2010, 2]]
-		introdução à ciência política:   [[185035, 'introdução à ciência política', 'SR', 2011, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2010, 2], [113034, 'calculo 1', 'SR', 2011, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2010, 2]]
 		introdução a economia:   [[132012, 'introdução a economia', 'II', 2011, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'SR', 2010, 2]]
+		introdução à ciência política:   [[185035, 'introdução à ciência política', 'SR', 2011, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2010, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2010, 2]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2010, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2010, 2], [113034, 'calculo 1', 'SR', 2011, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -516,8 +516,8 @@ student info
 	year_in:   2008
 	year_out:   2009
 	 printing grades --- 
-		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'MI', 2008, 2]]
 		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2008, 2]]
+		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'MI', 2008, 2]]
 	 ------------------ 
 ------------
 student 201090968 has not coursed any subject in pos: 0
@@ -550,10 +550,46 @@ student info
 	year_out:   2014
 	 printing grades --- 
 		fisica 1:   [[118001, 'fisica 1', 'MI', 2013, 1]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'MI', 2013, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'MI', 2013, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'TR', 2013, 1]]
 		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2013, 1]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'MI', 2013, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'TR', 2013, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'MI', 2013, 1]]
+	 ------------------ 
+------------
+------------
+student info
+	age:   16
+	course:   engenharia_computacao
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [0.0, 0.0, 0.0]
+	fail_rate:   [1.0, 1.0, 1.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   120967
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   df
+	mand_credit_rate:   ['not know', 'not know', 'not know']
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   universal
+	race:   preta 
+	reg:   201132163
+	school_type:   particular
+	sem_in:   2
+	sem_out:   2
+	sex:   masculino
+	way_in:   Vestibular
+	way_out:   Desligamento Voluntario
+	year_in:   2012
+	year_out:   2013
+	 printing grades --- 
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2012, 2], [113093, 'introducao a algebra linear', 'SR', 2013, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2012, 2], [116301, 'computacao basica', 'SR', 2013, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'MI', 2012, 2], [118001, 'fisica 1', 'SR', 2013, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2012, 2], [118010, 'fisica 1 experimental', 'SR', 2013, 1]]
+		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'II', 2012, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -584,12 +620,12 @@ student info
 	year_in:   2012
 	year_out:   2013
 	 printing grades --- 
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2012, 2], [113093, 'introducao a algebra linear', 'II', 2013, 1]]
 		fisica 1:   [[118001, 'fisica 1', 'II', 2012, 2]]
 		introdução a psicologia:   [[124010, 'introdução a psicologia', 'SR', 2013, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 2]]
 		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2012, 2], [167959, 'fundamentos de redes', 'TR', 2013, 1]]
 		calculo 1:   [[113034, 'calculo 1', 'II', 2012, 2], [113034, 'calculo 1', 'MI', 2013, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2012, 2], [113093, 'introducao a algebra linear', 'II', 2013, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -620,11 +656,11 @@ student info
 	year_in:   2004
 	year_out:   2005
 	 printing grades --- 
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2004, 2]]
+		lógica 1:   [[137481, 'lógica 1', 'SR', 2004, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2004, 2]]
 		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2004, 2]]
 		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2004, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2004, 2]]
-		lógica 1:   [[137481, 'lógica 1', 'SR', 2004, 2]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2004, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -655,9 +691,9 @@ student info
 	year_in:   2013
 	year_out:   2014
 	 printing grades --- 
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
 		introducao a administracao:   [[181013, 'introducao a administracao', 'MI', 2013, 2]]
 		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2013, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -688,12 +724,12 @@ student info
 	year_in:   2012
 	year_out:   2013
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'TJ', 2012, 1], [118001, 'fisica 1', 'SR', 2012, 2], [118001, 'fisica 1', 'SR', 2013, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2012, 1], [113093, 'introducao a algebra linear', 'SR', 2012, 2], [113093, 'introducao a algebra linear', 'SR', 2013, 1]]
 		computacao basica:   [[116301, 'computacao basica', 'TJ', 2012, 1], [116301, 'computacao basica', 'SR', 2012, 2], [116301, 'computacao basica', 'SR', 2013, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'TJ', 2012, 1], [118001, 'fisica 1', 'SR', 2012, 2], [118001, 'fisica 1', 'SR', 2013, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2], [118010, 'fisica 1 experimental', 'SR', 2013, 1]]
 		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2012, 1], [117528, 'introdução à engenharia de computação', 'SR', 2013, 1]]
 		calculo 1:   [[113034, 'calculo 1', 'MI', 2012, 1], [113034, 'calculo 1', 'SR', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2], [118010, 'fisica 1 experimental', 'SR', 2013, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2012, 1], [113093, 'introducao a algebra linear', 'SR', 2012, 2], [113093, 'introducao a algebra linear', 'SR', 2013, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -724,13 +760,13 @@ student info
 	year_in:   2014
 	year_out:   2014
 	 printing grades --- 
-		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'II', 2014, 2]]
-		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2014, 1]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2014, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2014, 1], [116301, 'computacao basica', 'SR', 2014, 2]]
 		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2014, 1], [145971, 'inglês instrumental 1', 'SR', 2014, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2014, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1]]
+		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'II', 2014, 2]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2014, 1], [118010, 'fisica 1 experimental', 'SR', 2014, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2014, 1], [116301, 'computacao basica', 'SR', 2014, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2014, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -761,12 +797,12 @@ student info
 	year_in:   2012
 	year_out:   2014
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'TR', 2012, 2], [118001, 'fisica 1', 'SR', 2013, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2013, 2]]
 		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2013, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'TR', 2012, 2], [118001, 'fisica 1', 'SR', 2013, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 2], [118010, 'fisica 1 experimental', 'SR', 2013, 2]]
 		computacao basica:   [[116301, 'computacao basica', 'II', 2012, 2], [116301, 'computacao basica', 'SR', 2013, 2]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 2], [118010, 'fisica 1 experimental', 'SR', 2013, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2013, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -797,13 +833,13 @@ student info
 	year_in:   2011
 	year_out:   2013
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'SR', 2011, 2]]
+		introdução a economia:   [[132012, 'introdução a economia', 'II', 2012, 1]]
 		computacao basica:   [[116301, 'computacao basica', 'SR', 2011, 2], [116301, 'computacao basica', 'TJ', 2012, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'SR', 2011, 2]]
 		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2011, 2], [113093, 'introducao a algebra linear', 'SR', 2012, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2011, 2], [118010, 'fisica 1 experimental', 'II', 2012, 1]]
 		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2011, 2]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 2], [113034, 'calculo 1', 'SR', 2013, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2011, 2], [118010, 'fisica 1 experimental', 'II', 2012, 1]]
-		introdução a economia:   [[132012, 'introdução a economia', 'II', 2012, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -834,10 +870,10 @@ student info
 	year_in:   2005
 	year_out:   2007
 	 printing grades --- 
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2006, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2006, 2]]
 		fisica 1:   [[118001, 'fisica 1', 'II', 2006, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2006, 2]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2006, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2006, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -869,13 +905,13 @@ student info
 	year_out:   2015
 	 printing grades --- 
 		introducao a atividade empresarial:   [[170054, 'introducao a atividade empresarial', 'SR', 2015, 1]]
-		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1], [118001, 'fisica 1', 'SR', 2014, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2014, 1], [113093, 'introducao a algebra linear', 'SR', 2014, 2], [113093, 'introducao a algebra linear', 'SR', 2015, 1]]
 		computacao basica:   [[116301, 'computacao basica', 'SR', 2014, 1], [116301, 'computacao basica', 'SR', 2014, 2], [116301, 'computacao basica', 'SR', 2015, 1]]
 		noções de direito:   [[184802, 'noções de direito', 'SR', 2014, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1], [118001, 'fisica 1', 'SR', 2014, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2014, 1]]
 		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2014, 1], [117528, 'introdução à engenharia de computação', 'SR', 2015, 1]]
 		calculo 1:   [[113034, 'calculo 1', 'II', 2014, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2014, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2014, 1], [113093, 'introducao a algebra linear', 'SR', 2014, 2], [113093, 'introducao a algebra linear', 'SR', 2015, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -906,11 +942,11 @@ student info
 	year_in:   2011
 	year_out:   2011
 	 printing grades --- 
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2011, 1]]
 		fisica 1:   [[118001, 'fisica 1', 'SR', 2011, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2011, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2011, 1]]
 		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2011, 1]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2011, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -972,12 +1008,12 @@ student info
 	year_in:   2003
 	year_out:   2004
 	 printing grades --- 
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2003, 2]]
 		fisica 1:   [[118001, 'fisica 1', 'SR', 2003, 2]]
 		introducao a ciencia da computacao:   [[113913, 'introducao a ciencia da computacao', 'SR', 2003, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2003, 2]]
 		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2003, 2]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2003, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2003, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2003, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1008,13 +1044,13 @@ student info
 	year_in:   2014
 	year_out:   2015
 	 printing grades --- 
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2014, 1], [113034, 'calculo 1', 'TR', 2014, 2], [113034, 'calculo 1', 'SR', 2015, 1]]
-		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1], [118001, 'fisica 1', 'TR', 2014, 2], [118001, 'fisica 1', 'SR', 2015, 1]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2014, 1]]
 		quimica geral teorica:   [[114626, 'quimica geral teorica', 'SR', 2015, 1]]
 		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2014, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2014, 1]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2014, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1], [118001, 'fisica 1', 'TR', 2014, 2], [118001, 'fisica 1', 'SR', 2015, 1]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2014, 1], [118010, 'fisica 1 experimental', 'SR', 2015, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2014, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2014, 1], [113034, 'calculo 1', 'TR', 2014, 2], [113034, 'calculo 1', 'SR', 2015, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -1077,10 +1113,10 @@ student info
 	year_in:   2001
 	year_out:   2002
 	 printing grades --- 
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2001, 2]]
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2001, 2]]
 		lógica 1:   [[137481, 'lógica 1', 'SR', 2001, 2]]
 		introducao a educacao:   [[191019, 'introducao a educacao', 'SR', 2001, 2]]
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2001, 2]]
+		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2001, 2]]
 	 ------------------ 
 ------------
 student 201125171 has not coursed any subject in pos: 0
@@ -1112,10 +1148,10 @@ student info
 	year_in:   2012
 	year_out:   2013
 	 printing grades --- 
-		calculo 3:   [[113051, 'calculo 3', 'SR', 2013, 1], [113051, 'calculo 3', 'SR', 2013, 2]]
-		fisica 2:   [[118028, 'fisica 2', 'II', 2012, 2], [118028, 'fisica 2', 'SR', 2013, 1], [118028, 'fisica 2', 'SR', 2013, 2]]
 		mecanica 1:   [[168769, 'mecanica 1', 'SR', 2012, 2], [168769, 'mecanica 1', 'SR', 2013, 1], [168769, 'mecanica 1', 'MI', 2013, 2]]
+		fisica 2:   [[118028, 'fisica 2', 'II', 2012, 2], [118028, 'fisica 2', 'SR', 2013, 1], [118028, 'fisica 2', 'SR', 2013, 2]]
 		equacoes diferenciais 1:   [[113301, 'equacoes diferenciais 1', 'SR', 2012, 2], [113301, 'equacoes diferenciais 1', 'SR', 2013, 1], [113301, 'equacoes diferenciais 1', 'SR', 2013, 2]]
+		calculo 3:   [[113051, 'calculo 3', 'SR', 2013, 1], [113051, 'calculo 3', 'SR', 2013, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1146,10 +1182,10 @@ student info
 	year_in:   2006
 	year_out:   2007
 	 printing grades --- 
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2006, 2]]
 		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2006, 2]]
 		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2006, 2]]
 		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2006, 2]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2006, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1181,11 +1217,11 @@ student info
 	year_out:   2013
 	 printing grades --- 
 		sistemas de programacao:   [[169749, 'sistemas de programacao', 'II', 2012, 2]]
+		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'II', 2012, 1], [115045, 'probabilidade e estatistica', 'SR', 2012, 2]]
+		noções de direito:   [[184802, 'noções de direito', 'SR', 2012, 1]]
+		introdução a economia:   [[132012, 'introdução a economia', 'SR', 2012, 1]]
 		ciencias do ambiente:   [[122408, 'ciencias do ambiente', 'MI', 2012, 1]]
 		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2012, 1], [167959, 'fundamentos de redes', 'MI', 2012, 2]]
-		noções de direito:   [[184802, 'noções de direito', 'SR', 2012, 1]]
-		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'II', 2012, 1], [115045, 'probabilidade e estatistica', 'SR', 2012, 2]]
-		introdução a economia:   [[132012, 'introdução a economia', 'SR', 2012, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -1216,12 +1252,12 @@ student info
 	year_in:   2014
 	year_out:   2015
 	 printing grades --- 
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2014, 2], [113093, 'introducao a algebra linear', 'MI', 2015, 1]]
 		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 2], [118001, 'fisica 1', 'II', 2015, 1]]
 		fundamentos de redes:   [[167959, 'fundamentos de redes', 'MI', 2014, 2], [167959, 'fundamentos de redes', 'II', 2015, 1], [167959, 'fundamentos de redes', 'II', 2015, 2]]
 		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2015, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2014, 2]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2014, 2], [118010, 'fisica 1 experimental', 'II', 2015, 1], [118010, 'fisica 1 experimental', 'SR', 2015, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2014, 2], [113093, 'introducao a algebra linear', 'MI', 2015, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2014, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1252,11 +1288,11 @@ student info
 	year_in:   2006
 	year_out:   2007
 	 printing grades --- 
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2006, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2006, 1], [116301, 'computacao basica', 'SR', 2007, 1]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2006, 1], [145971, 'inglês instrumental 1', 'SR', 2007, 1]]
-		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'SR', 2006, 1]]
 		lógica computacional 1:   [[117366, 'lógica computacional 1', 'TR', 2006, 1], [117366, 'lógica computacional 1', 'SR', 2006, 2]]
+		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'SR', 2006, 1]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2006, 1], [145971, 'inglês instrumental 1', 'SR', 2007, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2006, 1], [116301, 'computacao basica', 'SR', 2007, 1]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2006, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -1287,10 +1323,10 @@ student info
 	year_in:   2009
 	year_out:   2010
 	 printing grades --- 
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'MI', 2009, 1]]
 		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'MI', 2009, 1], [116793, 'introducao a microinformatica', 'SR', 2009, 2]]
 		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2009, 1], [147389, 'portugues instrumental 1', 'SR', 2009, 2]]
 		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2009, 1], [194221, 'organizacao da educacao brasileira', 'SR', 2009, 2]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'MI', 2009, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -1321,14 +1357,14 @@ student info
 	year_in:   2013
 	year_out:   2015
 	 printing grades --- 
-		introducao a atividade empresarial:   [[170054, 'introducao a atividade empresarial', 'TR', 2014, 2]]
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2], [118001, 'fisica 1', 'TR', 2014, 2], [118001, 'fisica 1', 'II', 2015, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'MI', 2013, 2], [140481, 'leitura e produção de textos', 'SR', 2015, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 2], [116301, 'computacao basica', 'SR', 2014, 2], [116301, 'computacao basica', 'TR', 2015, 1]]
 		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2013, 2], [145971, 'inglês instrumental 1', 'SR', 2015, 1], [145971, 'inglês instrumental 1', 'SR', 2015, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2], [118010, 'fisica 1 experimental', 'TR', 2014, 2], [118010, 'fisica 1 experimental', 'SR', 2015, 1]]
+		introducao a atividade empresarial:   [[170054, 'introducao a atividade empresarial', 'TR', 2014, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'MI', 2013, 2], [140481, 'leitura e produção de textos', 'SR', 2015, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2], [118001, 'fisica 1', 'TR', 2014, 2], [118001, 'fisica 1', 'II', 2015, 1]]
 		lógica computacional 1:   [[117366, 'lógica computacional 1', 'TR', 2014, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2], [118010, 'fisica 1 experimental', 'TR', 2014, 2], [118010, 'fisica 1 experimental', 'SR', 2015, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 2], [116301, 'computacao basica', 'SR', 2014, 2], [116301, 'computacao basica', 'TR', 2015, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1359,14 +1395,14 @@ student info
 	year_in:   2014
 	year_out:   2015
 	 printing grades --- 
-		introducao a engenharia mecatronica:   [[168891, 'introducao a engenharia mecatronica', 'SR', 2014, 1]]
-		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2015, 1]]
 		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1], [118001, 'fisica 1', 'SR', 2014, 2], [118001, 'fisica 1', 'SR', 2015, 1]]
 		quimica geral teorica:   [[114626, 'quimica geral teorica', 'II', 2014, 1], [114626, 'quimica geral teorica', 'SR', 2015, 1]]
+		introducao a engenharia mecatronica:   [[168891, 'introducao a engenharia mecatronica', 'SR', 2014, 1]]
 		quimica geral experimental:   [[114634, 'quimica geral experimental', 'II', 2014, 1], [114634, 'quimica geral experimental', 'SR', 2014, 2], [114634, 'quimica geral experimental', 'SR', 2015, 1]]
+		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2015, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2014, 1], [118010, 'fisica 1 experimental', 'SR', 2014, 2], [118010, 'fisica 1 experimental', 'SR', 2015, 1]]
 		computacao basica:   [[116301, 'computacao basica', 'II', 2014, 1], [116301, 'computacao basica', 'SR', 2014, 2], [116301, 'computacao basica', 'SR', 2015, 1]]
 		calculo 1:   [[113034, 'calculo 1', 'II', 2014, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2014, 1], [118010, 'fisica 1 experimental', 'SR', 2014, 2], [118010, 'fisica 1 experimental', 'SR', 2015, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -1397,12 +1433,12 @@ student info
 	year_in:   2013
 	year_out:   2014
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2013, 2], [167959, 'fundamentos de redes', 'TR', 2014, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2014, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2], [113034, 'calculo 1', 'TR', 2014, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2013, 2]]
 		introdução a economia:   [[132012, 'introdução a economia', 'TR', 2014, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2014, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2013, 2]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2013, 2], [167959, 'fundamentos de redes', 'TR', 2014, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2], [113034, 'calculo 1', 'TR', 2014, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -1433,12 +1469,12 @@ student info
 	year_in:   2005
 	year_out:   2006
 	 printing grades --- 
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2005, 2]]
 		fisica 1:   [[118001, 'fisica 1', 'MI', 2005, 2]]
 		introducao a ciencia da computacao:   [[113913, 'introducao a ciencia da computacao', 'SR', 2005, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2005, 2]]
 		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2005, 2]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2005, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2005, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2005, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1469,10 +1505,10 @@ student info
 	year_in:   2003
 	year_out:   2003
 	 printing grades --- 
-		aprendizagem no ensino:   [[125172, 'aprendizagem no ensino', 'SR', 2003, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2003, 1], [116301, 'computacao basica', 'SR', 2003, 2]]
 		linguagens de programacao:   [[116343, 'linguagens de programacao', 'SR', 2003, 1], [116343, 'linguagens de programacao', 'SR', 2003, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2003, 1], [116301, 'computacao basica', 'SR', 2003, 2]]
 		informatica e sociedade:   [[116726, 'informatica e sociedade', 'SR', 2003, 1], [116726, 'informatica e sociedade', 'SR', 2003, 2]]
+		aprendizagem no ensino:   [[125172, 'aprendizagem no ensino', 'SR', 2003, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1504,10 +1540,10 @@ student info
 	year_out:   2014
 	 printing grades --- 
 		fisica 1:   [[118001, 'fisica 1', 'II', 2014, 1]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2014, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2014, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2014, 1]]
 		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2014, 1]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2014, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2014, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2014, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -1543,42 +1579,6 @@ student info
 ------------
 ------------
 student info
-	age:   16
-	course:   engenharia_computacao
-	credit_rate:   ['not know', 'not know', 'not know']
-	drop_rate:   [0.0, 0.0, 0.0]
-	fail_rate:   [1.0, 1.0, 1.0]
-	hard_rate:   ['not know', 'not know', 'not know']
-	id_num:   120967
-	improvement_rate:   ['not know', 'not know', 'not know']
-	in_condition:   ['not know', 'not know', 'not know']
-	ira:   ['not know', 'not know', 'not know']
-	local:   df
-	mand_credit_rate:   ['not know', 'not know', 'not know']
-	pass_rate:   [0.0, 0.0, 0.0]
-	position:   ['not know', 'not know', 'not know']
-	quota:   universal
-	race:   preta 
-	reg:   201132163
-	school_type:   particular
-	sem_in:   2
-	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Desligamento Voluntario
-	year_in:   2012
-	year_out:   2013
-	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'MI', 2012, 2], [118001, 'fisica 1', 'SR', 2013, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2012, 2], [116301, 'computacao basica', 'SR', 2013, 1]]
-		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'II', 2012, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 1]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2012, 2], [118010, 'fisica 1 experimental', 'SR', 2013, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2012, 2], [113093, 'introducao a algebra linear', 'SR', 2013, 1]]
-	 ------------------ 
-------------
-------------
-student info
 	age:   20
 	course:   cic_licenciatura
 	credit_rate:   ['not know', 'not know', 'not know']
@@ -1605,14 +1605,14 @@ student info
 	year_in:   2013
 	year_out:   2014
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
+		psicologia da educação:   [[191027, 'psicologia da educação', 'TR', 2013, 2]]
 		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2013, 1]]
 		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'MI', 2013, 1]]
-		psicologia da educação:   [[191027, 'psicologia da educação', 'TR', 2013, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2013, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2]]
 		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 2]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2]]
-		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2013, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -1644,10 +1644,10 @@ student info
 	year_out:   2015
 	 printing grades --- 
 		fisica 2:   [[118028, 'fisica 2', 'II', 2014, 2]]
+		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'SR', 2014, 2]]
+		calculo 2:   [[113042, 'calculo 2', 'MI', 2014, 2]]
 		estruturas de dados:   [[116319, 'estruturas de dados', 'SR', 2014, 2]]
 		fisica 2 experimental:   [[118036, 'fisica 2 experimental', 'MI', 2014, 2]]
-		calculo 2:   [[113042, 'calculo 2', 'MI', 2014, 2]]
-		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'SR', 2014, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1678,10 +1678,10 @@ student info
 	year_in:   2003
 	year_out:   2004
 	 printing grades --- 
-		calculo 2:   [[113042, 'calculo 2', 'SR', 2004, 2]]
 		lógica 1:   [[137481, 'lógica 1', 'MI', 2003, 2]]
 		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'MI', 2004, 1], [115045, 'probabilidade e estatistica', 'II', 2004, 2]]
 		algebra 1:   [[113107, 'algebra 1', 'TR', 2003, 2], [113107, 'algebra 1', 'SR', 2004, 1]]
+		calculo 2:   [[113042, 'calculo 2', 'SR', 2004, 2]]
 	 ------------------ 
 ------------
 student 201069598 has not coursed any subject in pos: 0
@@ -1714,8 +1714,8 @@ student info
 	year_in:   2006
 	year_out:   2007
 	 printing grades --- 
-		trabalho de graduacao:   [[116475, 'trabalho de graduacao', 'MI', 2006, 2]]
 		processamento em tempo real:   [[116599, 'processamento em tempo real', 'MI', 2006, 2]]
+		trabalho de graduacao:   [[116475, 'trabalho de graduacao', 'MI', 2006, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1746,13 +1746,13 @@ student info
 	year_in:   2015
 	year_out:   2015
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2015, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2015, 1], [113034, 'calculo 1', 'MI', 2015, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2015, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'MI', 2015, 1]]
-		algoritmos e programação de computadores:   [[113476, 'algoritmos e programação de computadores', 'MI', 2015, 2]]
 		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2015, 1]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2015, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2015, 1]]
+		algoritmos e programação de computadores:   [[113476, 'algoritmos e programação de computadores', 'MI', 2015, 2]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2015, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'MI', 2015, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2015, 1], [113034, 'calculo 1', 'MI', 2015, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1783,12 +1783,12 @@ student info
 	year_in:   2012
 	year_out:   2013
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2012, 2], [118001, 'fisica 1', 'TR', 2013, 1]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2012, 2]]
 		computacao basica:   [[116301, 'computacao basica', 'SR', 2012, 2], [116301, 'computacao basica', 'TR', 2013, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2012, 2], [118001, 'fisica 1', 'TR', 2013, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 2], [118010, 'fisica 1 experimental', 'TR', 2013, 1]]
 		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2012, 2], [117528, 'introdução à engenharia de computação', 'TR', 2013, 1]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 2], [118010, 'fisica 1 experimental', 'TR', 2013, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2012, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1820,11 +1820,11 @@ student info
 	year_out:   2013
 	 printing grades --- 
 		fisica 1:   [[118001, 'fisica 1', 'II', 2012, 2], [118001, 'fisica 1', 'II', 2013, 1]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2012, 2], [167959, 'fundamentos de redes', 'II', 2013, 1], [167959, 'fundamentos de redes', 'MI', 2013, 2]]
 		desenho tecnico:   [[162019, 'desenho tecnico', 'SR', 2013, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 1], [113034, 'calculo 1', 'SR', 2013, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2012, 2], [118010, 'fisica 1 experimental', 'MI', 2013, 1], [118010, 'fisica 1 experimental', 'MI', 2013, 2]]
 		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2012, 2], [113093, 'introducao a algebra linear', 'II', 2013, 1], [113093, 'introducao a algebra linear', 'SR', 2013, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2012, 2], [118010, 'fisica 1 experimental', 'MI', 2013, 1], [118010, 'fisica 1 experimental', 'MI', 2013, 2]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2012, 2], [167959, 'fundamentos de redes', 'II', 2013, 1], [167959, 'fundamentos de redes', 'MI', 2013, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2012, 2], [113034, 'calculo 1', 'SR', 2013, 1], [113034, 'calculo 1', 'SR', 2013, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1855,10 +1855,10 @@ student info
 	year_in:   2012
 	year_out:   2013
 	 printing grades --- 
-		mecanica 2:   [[168777, 'mecanica 2', 'TJ', 2012, 1], [168777, 'mecanica 2', 'II', 2012, 2], [168777, 'mecanica 2', 'SR', 2013, 1]]
 		introducao ciencia dos materiais:   [[168823, 'introducao ciencia dos materiais', 'MI', 2012, 2]]
-		circuitos eletricos 1:   [[167011, 'circuitos eletricos 1', 'SR', 2012, 1], [167011, 'circuitos eletricos 1', 'SR', 2012, 2], [167011, 'circuitos eletricos 1', 'SR', 2013, 1]]
+		mecanica 2:   [[168777, 'mecanica 2', 'TJ', 2012, 1], [168777, 'mecanica 2', 'II', 2012, 2], [168777, 'mecanica 2', 'SR', 2013, 1]]
 		variavel complexa 1:   [[113069, 'variavel complexa 1', 'SR', 2012, 1], [113069, 'variavel complexa 1', 'SR', 2012, 2], [113069, 'variavel complexa 1', 'SR', 2013, 1]]
+		circuitos eletricos 1:   [[167011, 'circuitos eletricos 1', 'SR', 2012, 1], [167011, 'circuitos eletricos 1', 'SR', 2012, 2], [167011, 'circuitos eletricos 1', 'SR', 2013, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -1889,12 +1889,12 @@ student info
 	year_in:   2013
 	year_out:   2013
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2013, 2]]
 		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2]]
 		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2013, 2]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2013, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1925,12 +1925,12 @@ student info
 	year_in:   2012
 	year_out:   2013
 	 printing grades --- 
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2012, 1], [113093, 'introducao a algebra linear', 'SR', 2012, 2]]
 		fisica 1:   [[118001, 'fisica 1', 'MI', 2012, 1], [118001, 'fisica 1', 'II', 2012, 2], [118001, 'fisica 1', 'II', 2013, 1]]
 		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2012, 1], [167959, 'fundamentos de redes', 'SR', 2012, 2]]
 		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2013, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2012, 1], [113034, 'calculo 1', 'SR', 2012, 2]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2], [118010, 'fisica 1 experimental', 'MI', 2013, 1]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2012, 1], [113093, 'introducao a algebra linear', 'SR', 2012, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2012, 1], [113034, 'calculo 1', 'SR', 2012, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -1961,11 +1961,11 @@ student info
 	year_in:   2000
 	year_out:   2001
 	 printing grades --- 
-		computacao basica:   [[116301, 'computacao basica', 'II', 2000, 2]]
-		fisica 1:   [[118001, 'fisica 1', 'TR', 2000, 2]]
-		evolucao do pensamento filosofico e cientifico:   [[137413, 'evolucao do pensamento filosofico e cientifico', 'MI', 2000, 2]]
 		lógica 1:   [[137481, 'lógica 1', 'II', 2000, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'TR', 2000, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'II', 2000, 2]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2000, 2]]
+		evolucao do pensamento filosofico e cientifico:   [[137413, 'evolucao do pensamento filosofico e cientifico', 'MI', 2000, 2]]
 	 ------------------ 
 ------------
 student 201070189 has not coursed any subject in pos: 0
@@ -1974,7 +1974,7 @@ student info
 	age:   19
 	course:   engenharia_software
 	credit_rate:   ['not know', 'not know', 'not know', 'not know']
-	drop_rate:   ['not know', 0.0, 0.0, 0.0]
+	drop_rate:   [0.0, 0.0, 0.0, 0.0]
 	fail_rate:   [0.0, 1.0, 1.0, 1.0]
 	hard_rate:   ['not know', 'not know', 'not know', 'not know']
 	id_num:   101523
@@ -1997,11 +1997,11 @@ student info
 	year_in:   2009
 	year_out:   2010
 	 printing grades --- 
-		calculo 1:   [[113034, 'calculo 1', 'II', 2010, 2]]
-		engenharia de segurança do trabalho:   [[193712, 'engenharia de segurança do trabalho', 'SR', 2010, 2]]
 		desenho industrial assistido por computador:   [[199176, 'desenho industrial assistido por computador', 'II', 2010, 2]]
 		fontes de energia e tecnologias de conversão:   [[199184, 'fontes de energia e tecnologias de conversão', 'SR', 2010, 2]]
 		engenharia econômica:   [[193321, 'engenharia econômica', 'II', 2010, 2]]
+		engenharia de segurança do trabalho:   [[193712, 'engenharia de segurança do trabalho', 'SR', 2010, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2010, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -2032,12 +2032,12 @@ student info
 	year_in:   2013
 	year_out:   2014
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2013, 2]]
 		computacao basica:   [[116301, 'computacao basica', 'SR', 2013, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2]]
 		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2013, 2]]
 		calculo 1:   [[113034, 'calculo 1', 'II', 2013, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2013, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2013, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -2068,11 +2068,11 @@ student info
 	year_in:   2010
 	year_out:   2011
 	 printing grades --- 
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2010, 2], [116301, 'computacao basica', 'SR', 2011, 1], [116301, 'computacao basica', 'SR', 2011, 2]]
 		fisica 1:   [[118001, 'fisica 1', 'SR', 2010, 2], [118001, 'fisica 1', 'SR', 2011, 1], [118001, 'fisica 1', 'SR', 2011, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2010, 2], [116301, 'computacao basica', 'SR', 2011, 1], [116301, 'computacao basica', 'SR', 2011, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2010, 2], [118010, 'fisica 1 experimental', 'SR', 2011, 1], [118010, 'fisica 1 experimental', 'MI', 2011, 2]]
 		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2010, 2]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2010, 2], [113034, 'calculo 1', 'SR', 2011, 1], [113034, 'calculo 1', 'SR', 2011, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2010, 2], [118010, 'fisica 1 experimental', 'SR', 2011, 1], [118010, 'fisica 1 experimental', 'MI', 2011, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -2103,13 +2103,13 @@ student info
 	year_in:   2003
 	year_out:   2004
 	 printing grades --- 
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2003, 2]]
 		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'MI', 2003, 1], [140481, 'leitura e produção de textos', 'SR', 2003, 2]]
 		fisica 1:   [[118001, 'fisica 1', 'SR', 2003, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2003, 2]]
 		prática desportiva 1:   [[175013, 'prática desportiva 1', 'SR', 2003, 1]]
-		computacao basica:   [[116301, 'computacao basica', 'II', 2003, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2003, 2]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2003, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'II', 2003, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2003, 2]]
 	 ------------------ 
 ------------
 student 201087044 has not coursed any subject in pos: 0
@@ -2142,10 +2142,10 @@ student info
 	year_in:   2012
 	year_out:   2013
 	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2012, 2], [145971, 'inglês instrumental 1', 'SR', 2013, 1]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2012, 2]]
 		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2012, 2], [116793, 'introducao a microinformatica', 'SR', 2013, 1]]
 		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2012, 2]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2012, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2012, 2], [145971, 'inglês instrumental 1', 'SR', 2013, 1]]
 		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2012, 2], [117366, 'lógica computacional 1', 'SR', 2013, 1]]
 	 ------------------ 
 ------------
@@ -2177,13 +2177,13 @@ student info
 	year_in:   2006
 	year_out:   2007
 	 printing grades --- 
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2007, 1]]
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'MI', 2006, 2], [116793, 'introducao a microinformatica', 'SR', 2007, 1]]
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2006, 2]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2006, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2007, 1]]
 		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2006, 2]]
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'MI', 2006, 2], [116793, 'introducao a microinformatica', 'SR', 2007, 1]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2006, 2]]
+		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'SR', 2006, 2]]
 		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2006, 2], [117366, 'lógica computacional 1', 'SR', 2007, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2007, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2007, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -2214,11 +2214,11 @@ student info
 	year_in:   2010
 	year_out:   2011
 	 printing grades --- 
-		computacao basica:   [[116301, 'computacao basica', 'II', 2010, 1], [116301, 'computacao basica', 'MI', 2010, 2]]
 		fisica 1:   [[118001, 'fisica 1', 'SR', 2010, 1], [118001, 'fisica 1', 'MI', 2010, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'II', 2010, 1], [116301, 'computacao basica', 'MI', 2010, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2010, 1], [118010, 'fisica 1 experimental', 'SR', 2010, 2]]
 		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'SR', 2010, 1]]
 		calculo 1:   [[113034, 'calculo 1', 'II', 2010, 1], [113034, 'calculo 1', 'MI', 2010, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2010, 1], [118010, 'fisica 1 experimental', 'SR', 2010, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -2249,14 +2249,14 @@ student info
 	year_in:   2011
 	year_out:   2012
 	 printing grades --- 
-		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'II', 2011, 2]]
-		fisica 1:   [[118001, 'fisica 1', 'II', 2011, 1], [118001, 'fisica 1', 'II', 2012, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2011, 2], [113093, 'introducao a algebra linear', 'II', 2012, 1], [113093, 'introducao a algebra linear', 'II', 2012, 2]]
 		fundamentos de redes:   [[167959, 'fundamentos de redes', 'MI', 2011, 2], [167959, 'fundamentos de redes', 'II', 2012, 1]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2011, 1], [118001, 'fisica 1', 'II', 2012, 2]]
 		prática desportiva 1:   [[175013, 'prática desportiva 1', 'SR', 2011, 2]]
+		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'II', 2011, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2011, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2]]
 		computacao basica:   [[116301, 'computacao basica', 'II', 2012, 1]]
 		calculo 1:   [[113034, 'calculo 1', 'II', 2011, 1], [113034, 'calculo 1', 'II', 2012, 1], [113034, 'calculo 1', 'SR', 2012, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2011, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2011, 2], [113093, 'introducao a algebra linear', 'II', 2012, 1], [113093, 'introducao a algebra linear', 'II', 2012, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -2287,10 +2287,10 @@ student info
 	year_in:   2009
 	year_out:   2009
 	 printing grades --- 
-		computacao basica:   [[116301, 'computacao basica', 'SR', 2009, 1]]
 		fisica 1:   [[118001, 'fisica 1', 'SR', 2009, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'II', 2009, 1]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2009, 1]]
+		computacao basica:   [[116301, 'computacao basica', 'SR', 2009, 1]]
+		calculo 1:   [[113034, 'calculo 1', 'II', 2009, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -2322,9 +2322,9 @@ student info
 	year_out:   2012
 	 printing grades --- 
 		estruturas de dados:   [[116319, 'estruturas de dados', 'II', 2011, 1]]
-		fisica 2 experimental:   [[118036, 'fisica 2 experimental', 'SR', 2011, 1]]
 		calculo 2:   [[113042, 'calculo 2', 'SR', 2011, 1]]
 		administracao de recursos humanos:   [[181081, 'administracao de recursos humanos', 'SR', 2011, 2]]
+		fisica 2 experimental:   [[118036, 'fisica 2 experimental', 'SR', 2011, 1]]
 	 ------------------ 
 ------------
 ------------
@@ -2355,11 +2355,11 @@ student info
 	year_in:   2011
 	year_out:   2012
 	 printing grades --- 
-		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2011, 2], [116793, 'introducao a microinformatica', 'SR', 2012, 1]]
-		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'MI', 2011, 2], [147389, 'portugues instrumental 1', 'SR', 2012, 1]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2011, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 1]]
-		psicologia da educação:   [[191027, 'psicologia da educação', 'SR', 2012, 1]]
 		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2011, 2], [145971, 'inglês instrumental 1', 'SR', 2012, 1]]
+		psicologia da educação:   [[191027, 'psicologia da educação', 'SR', 2012, 1]]
+		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2011, 2], [116793, 'introducao a microinformatica', 'SR', 2012, 1]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2011, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 1]]
+		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'MI', 2011, 2], [147389, 'portugues instrumental 1', 'SR', 2012, 1]]
 		lógica computacional 1:   [[117366, 'lógica computacional 1', 'SR', 2011, 2], [117366, 'lógica computacional 1', 'SR', 2012, 1]]
 	 ------------------ 
 ------------
@@ -2392,13 +2392,13 @@ student info
 	year_in:   2011
 	year_out:   2012
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2011, 1]]
+		introdução a economia:   [[132012, 'introdução a economia', 'II', 2011, 2]]
 		computacao basica:   [[116301, 'computacao basica', 'II', 2011, 1], [116301, 'computacao basica', 'SR', 2011, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2011, 1]]
 		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'TR', 2011, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2011, 1]]
 		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2011, 1]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2011, 1], [113034, 'calculo 1', 'MI', 2011, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2011, 1]]
-		introdução a economia:   [[132012, 'introdução a economia', 'II', 2011, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -2429,15 +2429,15 @@ student info
 	year_in:   2011
 	year_out:   2012
 	 printing grades --- 
-		tecnologias de comando numerico:   [[164399, 'tecnologias de comando numerico', 'SR', 2011, 1], [164399, 'tecnologias de comando numerico', 'SR', 2011, 2], [164399, 'tecnologias de comando numerico', 'TR', 2012, 1]]
-		análise dinâmica  linear:   [[160041, 'análise dinâmica  linear', 'SR', 2011, 1], [160041, 'análise dinâmica  linear', 'SR', 2011, 2], [160041, 'análise dinâmica  linear', 'SR', 2012, 1]]
-		sistemas de medicao:   [[168742, 'sistemas de medicao', 'SR', 2011, 1], [168742, 'sistemas de medicao', 'SR', 2011, 2], [168742, 'sistemas de medicao', 'TR', 2012, 1]]
-		princípios de visão computacional:   [[117595, 'princípios de visão computacional', 'II', 2011, 1]]
-		ciencias do ambiente:   [[122408, 'ciencias do ambiente', 'MI', 2011, 1]]
-		dispositivos e circuitos eletrônicos:   [[170321, 'dispositivos e circuitos eletrônicos', 'SR', 2011, 1], [170321, 'dispositivos e circuitos eletrônicos', 'II', 2011, 2], [170321, 'dispositivos e circuitos eletrônicos', 'SR', 2012, 1]]
-		organizacao e arquitetura de computadores:   [[116394, 'organizacao e arquitetura de computadores', 'SR', 2011, 1], [116394, 'organizacao e arquitetura de computadores', 'SR', 2011, 2], [116394, 'organizacao e arquitetura de computadores', 'TR', 2012, 1]]
 		programacao orientada a objetos:   [[116785, 'programacao orientada a objetos', 'TR', 2012, 1]]
+		dispositivos e circuitos eletrônicos:   [[170321, 'dispositivos e circuitos eletrônicos', 'SR', 2011, 1], [170321, 'dispositivos e circuitos eletrônicos', 'II', 2011, 2], [170321, 'dispositivos e circuitos eletrônicos', 'SR', 2012, 1]]
 		programacao avancada:   [[117234, 'programacao avancada', 'MI', 2011, 1]]
+		princípios de visão computacional:   [[117595, 'princípios de visão computacional', 'II', 2011, 1]]
+		tecnologias de comando numerico:   [[164399, 'tecnologias de comando numerico', 'SR', 2011, 1], [164399, 'tecnologias de comando numerico', 'SR', 2011, 2], [164399, 'tecnologias de comando numerico', 'TR', 2012, 1]]
+		organizacao e arquitetura de computadores:   [[116394, 'organizacao e arquitetura de computadores', 'SR', 2011, 1], [116394, 'organizacao e arquitetura de computadores', 'SR', 2011, 2], [116394, 'organizacao e arquitetura de computadores', 'TR', 2012, 1]]
+		sistemas de medicao:   [[168742, 'sistemas de medicao', 'SR', 2011, 1], [168742, 'sistemas de medicao', 'SR', 2011, 2], [168742, 'sistemas de medicao', 'TR', 2012, 1]]
+		ciencias do ambiente:   [[122408, 'ciencias do ambiente', 'MI', 2011, 1]]
+		análise dinâmica  linear:   [[160041, 'análise dinâmica  linear', 'SR', 2011, 1], [160041, 'análise dinâmica  linear', 'SR', 2011, 2], [160041, 'análise dinâmica  linear', 'SR', 2012, 1]]
 	 ------------------ 
 ------------
 student 201080249 has not coursed any subject in pos: 0
@@ -2470,11 +2470,11 @@ student info
 	year_out:   2012
 	 printing grades --- 
 		engenharia e ambiente:   [[198005, 'engenharia e ambiente', 'SR', 2009, 2], [198005, 'engenharia e ambiente', 'SR', 2012, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2009, 2], [113034, 'calculo 1', 'II', 2010, 1], [113034, 'calculo 1', 'SR', 2010, 2], [113034, 'calculo 1', 'SR', 2012, 2]]
-		introducao a ciencia da computacao:   [[113913, 'introducao a ciencia da computacao', 'SR', 2009, 2], [113913, 'introducao a ciencia da computacao', 'SR', 2010, 1], [113913, 'introducao a ciencia da computacao', 'SR', 2010, 2], [113913, 'introducao a ciencia da computacao', 'SR', 2012, 2]]
 		introdução à engenharia:   [[198013, 'introdução à engenharia', 'MI', 2009, 2]]
-		quimica geral:   [[114014, 'quimica geral', 'SR', 2009, 2]]
 		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'SR', 2009, 2], [113093, 'introducao a algebra linear', 'SR', 2010, 1], [113093, 'introducao a algebra linear', 'SR', 2010, 2]]
+		introducao a ciencia da computacao:   [[113913, 'introducao a ciencia da computacao', 'SR', 2009, 2], [113913, 'introducao a ciencia da computacao', 'SR', 2010, 1], [113913, 'introducao a ciencia da computacao', 'SR', 2010, 2], [113913, 'introducao a ciencia da computacao', 'SR', 2012, 2]]
+		quimica geral:   [[114014, 'quimica geral', 'SR', 2009, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2009, 2], [113034, 'calculo 1', 'II', 2010, 1], [113034, 'calculo 1', 'SR', 2010, 2], [113034, 'calculo 1', 'SR', 2012, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -2536,10 +2536,10 @@ student info
 	year_in:   2011
 	year_out:   2012
 	 printing grades --- 
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'II', 2011, 2], [145971, 'inglês instrumental 1', 'MI', 2012, 1], [145971, 'inglês instrumental 1', 'SR', 2012, 2]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2011, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 1], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 2]]
 		introducao a microinformatica:   [[116793, 'introducao a microinformatica', 'SR', 2011, 2], [116793, 'introducao a microinformatica', 'SR', 2012, 1], [116793, 'introducao a microinformatica', 'SR', 2012, 2]]
 		portugues instrumental 1:   [[147389, 'portugues instrumental 1', 'MI', 2011, 2], [147389, 'portugues instrumental 1', 'SR', 2012, 1], [147389, 'portugues instrumental 1', 'SR', 2012, 2]]
-		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'SR', 2011, 2], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 1], [194221, 'organizacao da educacao brasileira', 'SR', 2012, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'II', 2011, 2], [145971, 'inglês instrumental 1', 'MI', 2012, 1], [145971, 'inglês instrumental 1', 'SR', 2012, 2]]
 		lógica computacional 1:   [[117366, 'lógica computacional 1', 'MI', 2011, 2], [117366, 'lógica computacional 1', 'SR', 2012, 2]]
 	 ------------------ 
 ------------
@@ -2571,12 +2571,12 @@ student info
 	year_in:   2013
 	year_out:   2014
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2013, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'II', 2013, 2]]
 		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'SR', 2013, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'SR', 2013, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 2]]
 		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2013, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'II', 2013, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2013, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -2607,11 +2607,11 @@ student info
 	year_in:   2010
 	year_out:   2011
 	 printing grades --- 
-		topicos especiais em processamento de sinais:   [[169935, 'topicos especiais em processamento de sinais', 'MI', 2010, 2]]
 		projeto final de graduação 2:   [[170399, 'projeto final de graduação 2', 'SR', 2010, 1], [170399, 'projeto final de graduação 2', 'SR', 2011, 1]]
-		comunicações móveis:   [[170801, 'comunicações móveis', 'II', 2010, 2]]
+		topicos especiais em processamento de sinais:   [[169935, 'topicos especiais em processamento de sinais', 'MI', 2010, 2]]
 		redes de telecomunicações 2:   [[160075, 'redes de telecomunicações 2', 'II', 2010, 2]]
 		variavel complexa 1:   [[113069, 'variavel complexa 1', 'II', 2010, 2]]
+		comunicações móveis:   [[170801, 'comunicações móveis', 'II', 2010, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -2643,10 +2643,10 @@ student info
 	year_out:   2013
 	 printing grades --- 
 		fisica 1:   [[118001, 'fisica 1', 'II', 2012, 1], [118001, 'fisica 1', 'TR', 2012, 2]]
-		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2012, 1]]
-		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 1], [113034, 'calculo 1', 'TR', 2012, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2]]
 		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'II', 2012, 1], [113093, 'introducao a algebra linear', 'SR', 2012, 2]]
+		fundamentos de redes:   [[167959, 'fundamentos de redes', 'SR', 2012, 1]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'MI', 2012, 1], [118010, 'fisica 1 experimental', 'SR', 2012, 2]]
+		calculo 1:   [[113034, 'calculo 1', 'SR', 2012, 1], [113034, 'calculo 1', 'TR', 2012, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -2677,11 +2677,11 @@ student info
 	year_in:   2011
 	year_out:   2012
 	 printing grades --- 
-		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2012, 2]]
 		fisica 1:   [[118001, 'fisica 1', 'SR', 2011, 2], [118001, 'fisica 1', 'II', 2012, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2011, 2], [113093, 'introducao a algebra linear', 'SR', 2012, 2]]
+		cálculo 1 - semi - presencial:   [[200107, 'cálculo 1 - semi - presencial', 'SR', 2012, 2]]
 		fundamentos de redes:   [[167959, 'fundamentos de redes', 'II', 2011, 2], [167959, 'fundamentos de redes', 'SR', 2012, 2]]
 		calculo 1:   [[113034, 'calculo 1', 'II', 2011, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2011, 2], [113093, 'introducao a algebra linear', 'SR', 2012, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -2712,15 +2712,15 @@ student info
 	year_in:   2013
 	year_out:   2014
 	 printing grades --- 
-		calculo 3:   [[113051, 'calculo 3', 'SR', 2013, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2013, 1]]
 		fisica 1:   [[118001, 'fisica 1', 'II', 2013, 1], [118001, 'fisica 1', 'SR', 2013, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2013, 1]]
+		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'SR', 2013, 2], [115045, 'probabilidade e estatistica', 'SR', 2014, 1]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2013, 1]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2013, 1]]
 		topicos avancados em computadores:   [[116297, 'topicos avancados em computadores', 'SR', 2014, 1]]
 		prática desportiva 1:   [[175013, 'prática desportiva 1', 'SR', 2013, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'II', 2013, 1]]
 		computacao basica:   [[116301, 'computacao basica', 'TR', 2013, 1], [116301, 'computacao basica', 'SR', 2014, 1]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2013, 1]]
-		probabilidade e estatistica:   [[115045, 'probabilidade e estatistica', 'SR', 2013, 2], [115045, 'probabilidade e estatistica', 'SR', 2014, 1]]
+		calculo 3:   [[113051, 'calculo 3', 'SR', 2013, 2]]
 	 ------------------ 
 ------------
 ------------
@@ -2751,11 +2751,11 @@ student info
 	year_in:   2010
 	year_out:   2011
 	 printing grades --- 
-		fisica 1:   [[118001, 'fisica 1', 'SR', 2010, 2]]
+		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2010, 2]]
 		computacao basica:   [[116301, 'computacao basica', 'SR', 2010, 2]]
+		fisica 1:   [[118001, 'fisica 1', 'SR', 2010, 2]]
+		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2010, 2]]
 		introdução à engenharia de computação:   [[117528, 'introdução à engenharia de computação', 'MI', 2010, 2]]
 		calculo 1:   [[113034, 'calculo 1', 'SR', 2010, 2]]
-		fisica 1 experimental:   [[118010, 'fisica 1 experimental', 'SR', 2010, 2]]
-		introducao a algebra linear:   [[113093, 'introducao a algebra linear', 'MI', 2010, 2]]
 	 ------------------ 
 ------------

@@ -69,6 +69,9 @@ COURSES_OFF_NAME.append(NETWORK_ENGINEERING)
 # path for serialized objects
 PATH = 'data/'
 
+# avoid magic number - last element on a list
+LAST_ELEM = -1
+
 def close_conn(conn):
     """
     close connection from database

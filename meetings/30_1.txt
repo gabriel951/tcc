@@ -23,3 +23,4 @@ Pensei em estimar o IRA (considerando cada matéria como sendo 4 créditos).
     1. Testei o script em R para o teste de Kendall, acho que vai dar certo
 
 # depois
+* Considerar como outlier que ficou só um semestre

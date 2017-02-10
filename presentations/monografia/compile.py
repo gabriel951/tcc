@@ -11,4 +11,4 @@ if len(sys.argv) > 1:
     call('makeglossaries ' + arquivo, shell = True)
     call('pdflatex ' + arquivo, shell = True) 
 
-call('qpdfview ' + arquivo + '.pdf', shell = True)
+call('okular ' + arquivo + '.pdf', shell = True)

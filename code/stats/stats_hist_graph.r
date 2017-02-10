@@ -13,8 +13,9 @@ data <- read.table("temp.txt", sep = ",")
 names(data) <- c("valores")
 
 # my plot
-my_plot <-  ggplot(data, aes(valores)) + 
-            geom_histogram(binwidth = 0.05, fill = "darkblue") + 
+my_plot <-  ggplot(data, aes(x = valores)) + 
+            geom_histogram(aes(y = (..count..) / sum(..count..)), 
+                               binwidth = 0.05, fill = "darkblue") + 
             scale_y_continuous(labels = percent) + 
             ylab("quantidade") + 
             theme_bw()

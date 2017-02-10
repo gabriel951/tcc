@@ -28,12 +28,12 @@ student info
 	year_in:   2006
 	year_out:   2006
 	 printing grades --- 
-		algebra 1:   [[113107, 'algebra 1', 'TR', 2006, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2006, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'TR', 2006, 2]]
 		sistemas de informacao:   [[116416, 'sistemas de informacao', 'TR', 2006, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2006, 2]]
 		linguagens de programacao:   [[116343, 'linguagens de programacao', 'TR', 2006, 2]]
+		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2006, 2]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2006, 2]]
+		algebra 1:   [[113107, 'algebra 1', 'TR', 2006, 2]]
+		computacao basica:   [[116301, 'computacao basica', 'TR', 2006, 2]]
 	 ------------------ 
 ------------
 student 201090968 has not coursed any subject in pos: 0

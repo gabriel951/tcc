@@ -15,6 +15,10 @@ from students_methods import *
 def apply_kendall():
     """
     apply the kendall test for all the students we got 
+    receives: 
+        nothing
+    returns: 
+        nothing
     """
     # file pointer
     FILE_NAME = '../logs/kendall.txt'
@@ -28,15 +32,12 @@ def apply_kendall():
          social = '%d,%s,%d,%s,%s,%s,%s,%s,' \
                  % (stu.reg, stu.sex, stu.age, stu.quota, stu.school_type, \
                  stu.course, stu.local, stu.way_in)
-    #     perf = '%f\t%f\t%f\t%f\t%f\t%f\t%f\t%f\t%f\t%d\t' \
-    #             % (stu.ira, stu.improvement_rate, stu.fail_rate, stu.pass_rate, \
-    #             stu.drop_rate, stu.credit_rate, stu.mand_credit_rate, stu.hard_rate, \
-    #                stu.in_condition, stu.position)
+         perf = '%f,%f,%f,' \
+                 % (stu.fail_rate[LAST_ELEM], stu.pass_rate[LAST_ELEM],\
+                         stu.drop_rate[LAST_ELEM]) 
          way_out = '%s\n' % (stu.way_out)
         
-         #fp.write(social + perf + way_out)
-         # TODO: code above should be the one
-         fp.write(social + way_out)
+         fp.write(social + perf + way_out)
 
     fp.close()
 
@@ -47,34 +48,32 @@ def generate_graphs():
     """
     generate the graphs for the primitive and derived attributes
     """
-    # avoid magic number - last element on a list
-    LAST_ELEM = -1
 
     # load student info
     stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
 
     ## primitive features
-    get_graph('sex', stu_info, False, data_type = 'discrete', index = LAST_ELEM)
-    #get_graph('age', stu_info)
-    #get_graph('local', stu_info)
-    #get_graph('quota', stu_info)
-    #get_graph('school_type', stu_info)
-    #get_graph('race', stu_info)
-    #get_graph('course', stu_info)
-    #get_graph('way_in', stu_info)
-    #get_graph('grades', stu_info)
-    #get_graph('way_out', stu_info)
+    #get_graph('sex', stu_info, False, data_type = 'discrete')
+    #get_graph('age', stu_info, False, data_type = 'discrete')
+    #get_graph('local', stu_info, False, data_type = 'discrete')
+    #get_graph('quota', stu_info, False, data_type = 'discrete')
+    #get_graph('school_type', stu_info, False, data_type = 'discrete')
+    #get_graph('course', stu_info, False, data_type = 'discrete')
+    #get_graph('race', stu_info, False, data_type = 'discrete')
+    #get_graph('way_in', stu_info, False, data_type = 'discrete')
+    #get_graph('way_out', stu_info, False, data_type = 'discrete')
+    #get_graph('grades', stu_info, False, data_type = 'discrete')
 
     ## derived features
     #get_graph('ira', stu_info, True, data_type = 'continuous')
     #get_graph('improvement_rate', stu_info, data_type = 'continuous')
-    #get_graph('pass_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
-    #get_graph('pass_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
-    #get_graph('fail_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
-    ##get_graph('fail_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
-    #get_graph('drop_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
-    #get_graph('drop_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
-    #get_graph('mand_rate', stu_info, data_type = 'continuous')
+    get_graph('pass_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
+    get_graph('pass_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
+    get_graph('fail_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
+    get_graph('fail_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
+    get_graph('drop_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
+    get_graph('drop_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
+    get_graph('mand_rate', stu_info, data_type = 'continuous')
 
 def get_graph(feature, stu_info, sep_course, data_type = 'discrete', index = None):
     """
@@ -182,6 +181,8 @@ def handle_feature(stu_info, rows_list, feature):
         rows_list = [row.replace('0', '000') for row in rows_list] 
         rows_list = [row.replace('nao cadastrada', '000') for row in rows_list] 
         rows_list = [row.replace('nao dispoe de informacao', '000') for row in rows_list] 
+        rows_list = [row.replace('000000000', '000') for row in rows_list] 
+        rows_list = [row.replace('000', 'indisponivel') for row in rows_list] 
         return rows_list
     elif feature == 'course':
         rows_list = [row.replace(CIC_BACHELOR, 'cic_b') \
@@ -241,6 +242,15 @@ def handle_feature(stu_info, rows_list, feature):
         return rows_list
     elif feature == 'grades':
         rows_list = handle_grade(stu_info)
+        return rows_list
+    elif feature == 'school_type':
+        new_row_lst = []
+        for row in rows_list:
+            if row == '':
+                new_row_lst.append('nao declarado')
+            else: 
+                new_row_lst.append(row)
+        return new_row_lst
     else:
         return rows_list
 
@@ -306,6 +316,7 @@ def write_execute_delete(rows, function, *args):
     # exclude temp file - useful as log
     #call('rm temp.txt', shell = True)
 
-generate_graphs()
+if __name__ == "__main__":
+    generate_graphs()
 
-#apply_kendall()
+    #apply_kendall()

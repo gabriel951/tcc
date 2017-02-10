@@ -1,0 +1,16 @@
+# antes
+    1. Mandei o email pedindo os dados que necessito. 
+    2. Falta pouco para terminar a terceira fase do CRISP-dm. Comecei a olhar o
+material necessário para a quarta fase: Modelagem. 
+    3. Modelagem: ladeira falou de usar redes neurais. Além disso, resta uma técnica
+a ser estudada. Pensei em usar um modelo mais simples: regressão linear
+multivariável. Tudo bem? 
+    4. Acerca de Redes Neurais: 
+        -> Posso usar framework da scikit-learn? - ok
+    5. Descartar feature <taxa de reprovação> já que está relacionado demais ao
+feature <taxa de aprovação> (0.89) - > ok
+
+# depois
+-> Estudar SVR's tb
+-> Modelo por curso tb
+->
