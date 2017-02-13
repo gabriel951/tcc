@@ -1,7 +1,7 @@
-Nesta capítulo, descreve-se a metodologia utilizada na pesquisa até aqui e a
-metodologia a ser usada nas próximas etapas. Detalha-se como foi feito o levantamento
+Neste capítulo, descreve-se a metodologia utilizada na pesquisa até aqui. 
+Detalha-se como foi feito o levantamento
 do estado da arte, a obtenção dos dados e utilização dos dados, a seleção de
-atributos, a eliminação de outliers e a análise preliminar por meio de estatística
+atributos, a eliminação de \textit{outliers} e a análise preliminar por meio de estatística
 descritiva. 
 
 \section{Levantamento do Estado da Arte}
@@ -17,7 +17,7 @@ e como pesquisas passadas trabalharam com os dados da UnB
 Obtiveram-se informações descaracterizadas relativas aos dados sociais e ao
 desempenho acadêmico de alunos da UnB. Todos os dados utilizados vieram de uma só
 fonte, de modo que o comum problema encontrado na área de mineração de dados de
-garantir a consistência dos dados entre as várias fontes não foi enfrentado. 
+garantir a consistência dos dados entre várias fontes não foi enfrentado. 
 \par Optou-se por restringir a pesquisa apenas aos alunos que entraram a partir de
 2000 e saíram até 2015. Para simplificar a análise, e trabalhar apenas com uma área
 específica, apenas os seguintes cursos foram considerados: 
@@ -25,8 +25,8 @@ específica, apenas os seguintes cursos foram considerados:
     \item Ciência da Computação (Bacharelado)
     \item Ciência da Computação (Licenciatura)
     \item Engenharia da Computação 
-    \item Engenharia de Software
     \item Engenharia de Redes
+    \item Engenharia de Software
     \item Engenharia Mecatrônica
 \end{itemize}
 
@@ -39,17 +39,17 @@ desligado. Assim sendo, lista-se a seguir os atributos sociais considerados:
 \begin{itemize}
         \item Sexo
         \item Idade
-        \item Residente no local 
-        \item Cotista 
+        \item Estado de Origem
+        \item Cotista ou não (e tipo da cota)
         \item Tipo da Escola 
         \item Raça
         \item Forma de Ingresso
+        \item Curso
 \end{itemize}
 
-Além de dados sociais, utilizou-se os seguintes atributos (relativos ao desempenho
+Além de dados sociais, utilizaram-se os seguintes atributos (relativos ao desempenho
 acadêmico): 
 \begin{itemize}
-    \item Curso
     \item IRA
     \item Coeficiente de Melhora Acadêmica (razão entre notas do último semestre e
         notas do penúltimo semestre)
@@ -75,13 +75,14 @@ aqueles que entraram no mesmo curso do estudante, no mesmo ano e no mesmo semest
 \section{Eliminação de Outliers}
 Decidiu-se não trabalhar com casos de alunos que após ingressar na universidade não
 demonstraram interesse em cursar matérias (por exemplo, aqueles que reprovaram em
-todas as disciplinas com SR). Tais casos foram tratados como outliers.
-Foi feita a eliminação de outliers do espaço amostral, após a análise individual de
-cada caso. 
+todas as disciplinas com SR). Tais casos foram tratados como \textit{outliers}.
+Após a análise individual de cada caso, os \textit{outliers} foram eliminados do espaço
+amostral.
 
 \section{Análise Preliminar por meio de Estatística Descritiva}
 Foi feita uma análise preliminar por meio de estatística descritiva. Para cada 
-atributo que apresentava uma distribuição contínua fez-se o seu histograma.
+atributo que apresentava uma distribuição contínua fez-se o histograma correspondente.
 Já para atributos categóricos, fez-se o gráfico de barras. Depois disso, avaliou-se o
 grau de relacionamento entre os diversos atributos que compunham o modelo por meio do
-coeficiente de correlação de Kendall. 
+coeficiente de correlação de Kendall. Optou-se por eliminar uma variável de cada par
+que apresentasse mais de 80\% de correlação.

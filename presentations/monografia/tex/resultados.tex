@@ -1,11 +1,11 @@
 Neste capítulo apresentam-se e analisam-se os resultados obtidos após se ter seguido a
 metodologia explicada no capítulo anterior. Descreve-se os resultados após a
-eliminação de Outliers, mostram-se os histogramas e gráficos de barra obtidos para
+eliminação de \textit{outliers}, mostram-se os histogramas e gráficos de barra obtidos para
 cada um dos atributos e os resultados do coeficiente de correlação de Kendall para a
 relação entre variáveis. 
 
 \section{Eliminação de Outliers}
-Conforme dito anteriormente, a análise de quais alunos são outliers foi feita
+Conforme dito anteriormente, a análise de quais alunos são \textit{outliers} foi feita
 estudando caso a caso os alunos que não conseguiram passar em nenhuma disciplina.
 Eliminaram-se 203 estudantes do espaço amostral dessa maneira, ficando-se assim com
 3751 amostras. 
@@ -20,14 +20,14 @@ atributos são descritos mais adiante, na seção \ref{atributos_problematicos}.
 \subsection{Gráfico de Barra para Atributo Sexo}
 A figura \ref{atr_sex} mostra o gráfico de barra para o atributo sexo. O gráfico
 está de acordo com o esperado, quando se leva em conta que a presença de mulheres em
-curso de ciência da computação ainda é, lamentavelmente, restrita. 
+curso de exatas ainda é, lamentavelmente, restrita. 
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Sexo}
     \centering
     \includegraphics[width = 15cm]{sex.png}
     \label{atr_sex}
 \end{figure}
-
+\clearpage
 
 \subsection{Gráfico de Barra para Atributo Idade}
 A figura \ref{atr_age} mostra o gráfico de barra para o atributo idade. O gráfico
@@ -38,6 +38,7 @@ mostra que os ingressantes na UnB costumam ter idade em torno dos 18/19 anos.
     \includegraphics[width = 15cm]{age.png}
     \label{atr_age}
 \end{figure}
+\clearpage
 
 \subsection{Gráfico de Barra para Atributo Residência}
 A figura \ref{atr_res} mostra o gráfico de barra para o atributo residência. Pode-se
@@ -49,6 +50,7 @@ notar que nesse caso a quantidade de valores faltantes (barra com nome
     \includegraphics[width = 15cm]{local.png}
     \label{atr_res}
 \end{figure}
+\clearpage
 
 \subsection{Gráfico de Barra para Atributo Cota}
 A figura \ref{atr_quota} mostra o gráfico de barra para o atributo cota. 
@@ -62,17 +64,18 @@ A figura \ref{atr_quota} mostra o gráfico de barra para o atributo cota.
 Por questões de legibilidade, a legenda no gráfico foi encurtada. Seu significado é
 apresentado a seguir: 
 \begin{itemize}
-    \item \texttt{Negro}: Detentor de cotas para Negros.
+    \item \texttt{negro}: Detentor de cotas para negros.
     \item \texttt{p\_alta\_nppi}: Detentor de cotas para alunos de escola pública de
-        alta renda que não é preto pardo ou indígena.
+        alta renda que não é preto, pardo ou indígena.
     \item \texttt{p\_alta\_ppi}: Detentor de cotas para alunos de escola pública de
-        alta renda que é preto pardo ou indígena.
+        alta renda que é preto, pardo ou indígena.
     \item \texttt{p\_baixa\_ppi}: Detentor de cotas para alunos de escola pública de
-        baixa renda que é preto pardo ou indígena.
+        baixa renda que é preto, pardo ou indígena.
     \item \texttt{p\_baixa\_nppi}: Detentor de cotas para alunos de escola pública de
-        baixa renda que não é preto pardo ou indígena.
+        baixa renda que não é preto, pardo ou indígena.
     \item \texttt{universal}: Não detém cotas.
 \end{itemize}
+\clearpage
 
 \subsection{Gráfico de Barra para Atributo Tipo da Escola}
 A figura \ref{atr_school} mostra o gráfico de barra para o atributo tipo da escola.
@@ -84,9 +87,18 @@ decidiu-se manter esse atributo em nosso estudo.
     \includegraphics[width = 15cm]{school_type.png}
     \label{atr_school}
 \end{figure}
+\clearpage
 
 \subsection{Gráfico de Barra para Atributo Curso}
 A figura \ref{atr_course} mostra o gráfico de barra para o atributo curso. 
+
+\begin{figure}[!ht]
+    \caption{Gráfico de Barra para Atributo Curso}
+    \centering
+    \includegraphics[width = 15cm]{course.png}
+    \label{atr_course}
+\end{figure}
+
 Por questões de legibilidade, a legenda no gráfico foi encurtada. Seu significado é
 apresentado a seguir: 
 \begin{itemize}
@@ -98,17 +110,12 @@ apresentado a seguir:
     \item \texttt{eng\_softw}: Alunos de Engenharia de Software
 \end{itemize}
 
-\begin{figure}[!ht]
-    \caption{Gráfico de Barra para Atributo Curso}
-    \centering
-    \includegraphics[width = 15cm]{course.png}
-\end{figure}
-
 %TODO: se quiser encher linguiça, falar tb que redes e mecatrônica são mais recentes
 %tb. 
 Pode-se notar que os cursos de engenharia da computação e engenharia de software
 apresentam muito menos alunos que os demais. Isso se deve ao fato de tais cursos
 terem tido início após o período considerado na pesquisa. 
+\clearpage
 
 \subsection{Gráfico de Barra para Atributo Raça}
 A figura \ref{atr_race} mostra o gráfico de barra para o atributo raça. 
@@ -120,9 +127,10 @@ A figura \ref{atr_race} mostra o gráfico de barra para o atributo raça.
 \end{figure}
 Pode-se observar que há uma grande quantidade de valores faltantes, de modo que
 optou-se por tirar esse atributo de análises posteriores. 
+\clearpage
 
 \subsection{Gráfico de Barra para Atributo Forma de Ingresso}
-A figura \ref{atr_way_in} mostra o gráfico de barra para o atributo raça. 
+A figura \ref{atr_way_in} mostra o gráfico de barra para o atributo forma de ingresso. 
 Por questões de legibilidade, a legenda no gráfico foi encurtada. Seu significado é
 apresentado a seguir: 
 \begin{itemize}
@@ -145,6 +153,7 @@ apresentado a seguir:
     \includegraphics[width = 15cm]{way_in.png}
     \label{atr_way_in}
 \end{figure}
+\clearpage
 
 \subsection{Gráfico de Barra para Atributo Forma de Saída}
 A figura \ref{atr_way_out} mostra o gráfico de barra para o atributo forma de saída. 
@@ -152,7 +161,7 @@ Por questões de legibilidade, a legenda no gráfico foi encurtada. Seu signific
 apresentado a seguir: 
 \begin{itemize}
     \item \texttt{dec}: Ex-Aluno pelo Decreto 477
-    \item \texttt{deslg}: Saída por Desligamento
+    \item \texttt{deslg}: Saída por desligamento
     \item \texttt{form}: Saída pois conseguiu formar
     \item \texttt{mrr}: Saída por falecimento
     \item \texttt{null}: Saída por anulação de registro
@@ -172,6 +181,7 @@ apresentado a seguir:
 Após a construção desse gráfico de barra decidiu-se eliminar do espaço amostral os
 alunos que saíram da universidade devido ao decreto 477, ao falecimento e à anulação
 de registro. 
+\clearpage
 
 \subsection{Gráfico de Barra para as Menções em Disciplinas}
 A figura \ref{avg_grades} mostra a média de menções em disciplinas de todos os
@@ -186,12 +196,13 @@ rendimento acadêmico do aluno.
     \includegraphics[width = 15cm]{grades.png}
     \label{avg_grades}
 \end{figure}
+\clearpage
 
 \subsection{Histogramas Mostrando as Taxas de Aprovação}
 A figura \ref{pass_rate_all} mostra a taxa de aprovação para todos os cursos
 considerados. 
 % TODO: explicar (se quiser) 
-Pode-se perceber que embora o histograma considerando todos os alunos apresente uma
+Pode-se perceber que, embora o histograma considerando todos os alunos apresente uma
 curva visualmente ``bem comportada'', o mesmo não pode ser dito dos histogramas
 quando se faz a separação por curso.  
 
@@ -309,8 +320,9 @@ Já as Figuras \ref{fail_rate_cic_b}, \ref{fail_rate_cic_lic},
     \label{fail_rate_eng_soft}
 \end{figure}
 
-Pode-se perceber que embora o histograma considerando todos os alunos apresente uma
+Pode-se perceber que, embora o histograma considerando todos os alunos apresente uma
 curva visualmente ``bem comportada'', o mesmo não pode ser dito dos histogramas
+obtidos
 quando se faz a separação por curso.  
 
 \clearpage
@@ -372,11 +384,9 @@ Já as Figuras \ref{drop_rate_cic_b}, \ref{drop_rate_cic_lic},
     \label{drop_rate_eng_soft}
 \end{figure}
 
-Pode-se perceber que embora o histograma considerando todos os alunos apresente uma
-curva visualmente ``bem comportada'', o mesmo não pode ser dito dos histogramas
-quando se faz a separação por curso.  
-
-\clearpage
+Pode-se perceber que o histograma considerando todos os alunos apresente uma
+curva visualmente ``bem comportada'', assim como os histogramas obtidos quando se considera a
+separação por curso. \clearpage
 
 \subsection{Atributos que não Puderam ser Calculados} \label{atributos_problematicos}
 Infelizmente, alguns atributos relativos ao desempenho acadêmico não puderam ser
@@ -398,7 +408,7 @@ calculados são:
 %TODO: se quiser tornar mais fru fru, colocar com magnitude 
 O resultado do coeficiente de correlação de Kendall é apresentado a seguir (como
 valor absoluto). Pode-se observar que a taxa de aprovação e a taxa de reprovação
-foram atributos muito correlacionados, de modo que optou-se por eliminar a taxa de
+foram atributos muito correlacionados (89\%), de modo que optou-se por eliminar a taxa de
 reprovação de análises posteriores. 
 
 \subsection{Correlação de Kendal para Atributo Sexo}

@@ -67,13 +67,13 @@ def generate_graphs():
     ## derived features
     #get_graph('ira', stu_info, True, data_type = 'continuous')
     #get_graph('improvement_rate', stu_info, data_type = 'continuous')
-    get_graph('pass_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
-    get_graph('pass_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
-    get_graph('fail_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
-    get_graph('fail_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
-    get_graph('drop_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
-    get_graph('drop_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
-    get_graph('mand_rate', stu_info, data_type = 'continuous')
+    #get_graph('pass_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
+    #get_graph('pass_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
+    #get_graph('fail_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
+    #get_graph('fail_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
+    #get_graph('drop_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
+    #get_graph('drop_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
+    #get_graph('mand_rate', stu_info, data_type = 'continuous')
 
 def get_graph(feature, stu_info, sep_course, data_type = 'discrete', index = None):
     """
