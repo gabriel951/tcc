@@ -66,6 +66,23 @@ COURSES_OFF_NAME.append(SOFTWARE_ENGINEERING)
 COURSES_OFF_NAME.append(MECHATRONICS_ENGINEERING)
 COURSES_OFF_NAME.append(NETWORK_ENGINEERING)
 
+# all the way out considered in this research
+WAY_OUT_CONSIDERED = []
+WAY_OUT_CONSIDERED.append('Desligamento - Abandono')
+WAY_OUT_CONSIDERED.append('Deslig - Nao Cumpriu condicao')
+WAY_OUT_CONSIDERED.append('Rep 3 vezes na mesma Disc Obrig')
+WAY_OUT_CONSIDERED.append('Novo Vestibular')
+WAY_OUT_CONSIDERED.append('Vestibular p/outra Habilitacao')
+WAY_OUT_CONSIDERED.append('Desligamento Forca de Convenio')
+WAY_OUT_CONSIDERED.append('Desligamento Voluntario')
+WAY_OUT_CONSIDERED.append('Desligamento Falta Documentacao')
+WAY_OUT_CONSIDERED.append('Desligamento Decisao Judicial')
+WAY_OUT_CONSIDERED.append('Anulacao de Registro')
+WAY_OUT_CONSIDERED.append('Ex-Aluno (Decreto 477)')
+WAY_OUT_CONSIDERED.append('Transferencia')
+WAY_OUT_CONSIDERED.append('Formatura')
+WAY_OUT_CONSIDERED.append('Falecimento')
+
 # path for serialized objects
 PATH = 'data/'
 

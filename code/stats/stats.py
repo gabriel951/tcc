@@ -47,6 +47,11 @@ def apply_kendall():
 def generate_graphs():
     """
     generate the graphs for the primitive and derived attributes
+    saves the graph as .png files in the folder we are in
+    receives: 
+        nothing
+    returns: 
+        nothing
     """
 
     # load student info
@@ -136,6 +141,12 @@ def handle_feature(stu_info, rows_list, feature):
     """
     if the data of a given feature need to be shortened, this function
     does that, according to the feature
+    receives: 
+        1. dictionary containing all student information
+        2. list containing the data that may need to be shortened
+        3. feature name we are interested
+    returns: 
+        1. the row list, with information shortened
     """
     if feature == 'quota':
         rows_list = [row.replace('escola publica alta renda-ppi', 'p_alta_ppi') \
@@ -293,6 +304,160 @@ def r_get_hist_graph(name):
     call("Rscript stats_hist_graph.r", shell = True)
     call("mv temp.png " + name, shell = True)
 
+def study_attr():
+    """
+    divides each student according to some atributes of interest. 
+    for each atribute there will be some categories. For each category, print the
+    amount of students in each, how many of them were able to graduate and the
+    percentage this represents
+    * attributes analysed: 
+        1. quota
+        2. way_in
+    receives:
+        nothing
+    returns: 
+        nothing
+    """
+    # load student dictionary
+    stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
+
+    # attributes that we'll be analysed
+    analysed_attributes = ['way_in', 'quota']
+
+    # dictionary containing info for attribute being analysed- initially empty
+    # key: way in 
+    # value: list [<num_students>, <num_students on training sample>, 
+    #               <num_students_test_sample>, <num_students_able_graduate>]
+    NUM_STU_IND = 0
+    NUM_TRA_IND = 1
+    NUM_TEST_IND = 2
+    GRA_STU_IND = 3
+
+    # iterate through attributes
+    for cur_atr in analysed_attributes: 
+        atr_info = record_stats_atr(stu_info, cur_atr)
+        show_stats_atr(stu_info, cur_atr, atr_info)
+
+def study_train_test_division():
+    """
+    shows the proportion of students in each category (train vs test)
+    according to the year we decide to split.
+    receives: 
+        nothing
+    returns:
+        nothing
+    """
+    # load students
+    stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
+
+    # iterate through years
+    for year_split in range(YEAR_START, YEAR_END):
+        print('\n\nstarting analysis for year split: %d' % (year_split))
+        print('this means the last year for training was: %d' % (year_split))
+
+        # analyse ratio of train and test and number of approvations in each
+        train_inst = 0
+        train_grad_stu = 0
+        train_drop_stu = 0
+        test_inst = 0
+        test_grad_stu = 0
+        test_drop_stu = 0
+        for key, stu in stu_info.items():
+            if stu.year_in <= year_split:
+                train_inst += 1
+                if stu.way_out == 'Formatura':
+                   train_grad_stu += 1 
+                else:
+                    train_drop_stu += 1
+            else:
+                test_inst += 1
+                if stu.way_out == 'Formatura':
+                   test_grad_stu += 1 
+                else:
+                    test_drop_stu += 1
+
+        print('training instances: %d' % (train_inst))
+        print('test instances: %d' % (test_inst))
+        ratio = train_inst / float(train_inst + test_inst)
+        print('train ratio: %f' % (ratio))
+
+        scs_rate_train = train_grad_stu / float(train_grad_stu + train_drop_stu)
+        print('students able to graduate on training set: %f' % (scs_rate_train))
+
+        scs_rate_test = test_grad_stu / float(test_grad_stu + test_drop_stu)
+        print('students able to graduate on test set: %f' % (scs_rate_test))
+        
+def record_stats_atr(stu_info, atr):
+    """
+    put in student attribute dictionary statistics related to a given attribute
+    receives:
+        1. student dictionary
+        2. atribute name 
+    returns:
+        nothing
+    """
+    print('starting analysis for attribute %s' % (atr))
+    NUM_STU_IND = 0
+    NUM_TRA_IND = 1
+    NUM_TEST_IND = 2
+    GRA_STU_IND = 3
+
+    # empty dictionary
+    atr_info = {}
+
+    # iterate through each student 
+    for key, stu in stu_info.items():
+
+        # find attribute we care about 
+        for stu_atr_name, stu_atr_value in stu.__dict__.items():
+            if stu_atr_name != atr:
+                continue
+            
+            # if the attribute is not on dictionary, add it
+            if not (stu_atr_value in atr_info):
+                atr_info[stu_atr_value] = [0, 0, 0, 0]
+
+
+            # update the count
+            data = atr_info[stu_atr_value]
+            data[NUM_STU_IND] = data[NUM_STU_IND] + 1
+            if stu.year_in < YEAR_START_TRA or stu.year_in > YEAR_END_TRA:
+                data[NUM_TRA_IND] = data[NUM_TRA_IND] + 1
+            if stu.year_in < YEAR_START_TEST or stu.year_in > YEAR_END_TEST:
+                data[NUM_TEST_IND] = data[NUM_TEST_IND] + 1
+            if stu.way_out == 'Formatura':
+                data[GRA_STU_IND] = data[GRA_STU_IND] + 1
+
+            # since we found attribute, no reason to keep on loop
+            break
+    
+    return atr_info
+
+def show_stats_atr(stu_info, atr, atr_info):
+    """
+    print stats related to a given student attribute
+    receives:
+        1. student dictionary
+        2. atribute name 
+        3. atribute dictionary, where stats will be saved
+    returns:
+        nothing
+    """
+    NUM_STU_IND = 0
+    NUM_TRA_IND = 1
+    NUM_TEST_IND = 2
+    GRA_STU_IND = 3
+
+    for atr_name, data in atr_info.items():
+        print('information regarding atribute: %s' % (atr_name))
+        print('\t amount of students: %d' % (data[NUM_STU_IND]))
+        print('\t amount of students in training: %d' % (data[NUM_TRA_IND]))
+        print('\t amount of students in test: %d' % (data[NUM_TEST_IND]))
+        print('\t amount of students able to graduate: %d' % (data[GRA_STU_IND]))
+
+        percentage = float(data[GRA_STU_IND]) / data[NUM_STU_IND]
+        print('\t percentage: %f' % (percentage))
+
 def write_execute_delete(rows, function, *args):
     """
     write each entry of the row on a temporary file, execute function given (for all
@@ -317,6 +482,7 @@ def write_execute_delete(rows, function, *args):
     #call('rm temp.txt', shell = True)
 
 if __name__ == "__main__":
-    generate_graphs()
-
+    #generate_graphs()
     #apply_kendall()
+    #study_attr()
+    study_train_test_division()

@@ -1,12 +1,14 @@
 # python file that contain the function to remove from the code the outliers
 
-def handle_outliers(stu_info):
+def eliminate_low_pass_rate(stu_info):
     """
-    receives a student dictionary
-    eliminate from this dictionary the outliers
-    all cases were analysed manually, that's why this function is so messy and big
+    eliminates student that were not interessed in coursing any subject in unb 
+    receives: 
+        student dictionary 
+    returns: 
+        nothing
+    * all cases were analysed manually, that's why this function is so messy and big
     """
-    # manual deletions - patological pass rates cases
     try:
         del stu_info[201072660]
         del stu_info[201113651]
@@ -214,5 +216,19 @@ def handle_outliers(stu_info):
     except KeyError: 
         print('Outliers Already Handled')
 
+def handle_outliers(stu_info):
+    """
+    eliminates students outliers
+    receives: 
+        1. student dictionary
+    returns: 
+        nothing
+    """
+    # manual deletions - really low pass rates cases
+    eliminate_low_pass_rate(stu_info)
 
+    # TODO: eliminate students that left because they died
+    for key, stu in stu_info.items():
+        if stu.way_out == 'Falecimento':
+            del stu_info[key]
 

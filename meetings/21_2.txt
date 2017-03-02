@@ -1,2 +1,12 @@
 # antes
+    -> Fiz resumo teórico falando das fases do CRISP-DM
+    -> fiz a tabela para as diferentes formas de ingresso. Estava pensando em agrupar
+os dados em 3 categorias: vestibular, pas e outros.
+    -> Acho que a divisão em seções na parte de resultados torna o documento mais
+organizado e fácil de ler. Realmente tem que tirar?
+    -> Decidi que vou usar a scikit para construir a svr e as redes neurais. Já rodei
+um primeiro caso! Discutir como avaliar o modelo
+
 # depois
+    -> Entrar com pedido para revisão de menção
+    -> 

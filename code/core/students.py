@@ -33,7 +33,6 @@ class Student():
     """
     class that represents the student
     """
-
     def __init__(self, id_num, row): 
         """
         receives a row containing student info
@@ -90,8 +89,8 @@ class Student():
         # the course
         self.credit_rate = lst_unknown[:]
         # reason between credits in mandatory disciplines per semester and number of
-        # credits in the course
-        self.mand_credit_rate = lst_unknown[:]
+        # credits in the course - deprecated attribute!!
+        #self.mand_credit_rate = lst_unknown[:]
         # rate of approvation in the most hard disciplines of the semester
         self.hard_rate = lst_unknown[:]
         # boolean that indicates whether a student is in condition or not
@@ -413,8 +412,11 @@ class Student():
 
     def set_attrib(self, tup):
         """
-        receives a tuple containing student information (no derived attributes)
-        set the attributes correctly
+        set the attributes of student contained in the database correctly 
+        receives: 
+            1. tuple containing student information (no derived attributes)
+        returns:
+            nothing
         """
         ## the magic numbers are the position in the row
         # set attributes

@@ -7,8 +7,10 @@ relação entre variáveis.
 \section{Eliminação de Outliers}
 Conforme dito anteriormente, a análise de quais alunos são \textit{outliers} foi feita
 estudando caso a caso os alunos que não conseguiram passar em nenhuma disciplina.
-Eliminaram-se 203 estudantes do espaço amostral dessa maneira, ficando-se assim com
-3751 amostras. 
+Caso se constatasse que o aluno não tinha conseguido passar por ter abandonado a
+universidade, o aluno era tratado como outlier e seus dados eram removidos do espaço
+amostral. Eliminaram-se 203 estudantes do espaço amostral dessa maneira, ficando-se
+assim com 3751 amostras. 
 
 \section{Histogramas e Gráficos de Barra Para Atributos}
 Apresentam-se a seguir os histograms e gráficos de barra para os atributos que puderam
@@ -18,46 +20,44 @@ pesquisa, não foi possível gerar a estatística descritiva para tais atributos
 atributos são descritos mais adiante, na seção \ref{atributos_problematicos}.
 
 \subsection{Gráfico de Barra para Atributo Sexo}
-A figura \ref{atr_sex} mostra o gráfico de barra para o atributo sexo. O gráfico
+A Figura \ref{atr_sex} mostra o gráfico de barra para o atributo sexo. O gráfico
 está de acordo com o esperado, quando se leva em conta que a presença de mulheres em
 curso de exatas ainda é, lamentavelmente, restrita. 
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Sexo}
     \centering
-    \includegraphics[width = 15cm]{sex.png}
+    \includegraphics[width = 10cm]{sex.png}
     \label{atr_sex}
 \end{figure}
-\clearpage
 
 \subsection{Gráfico de Barra para Atributo Idade}
-A figura \ref{atr_age} mostra o gráfico de barra para o atributo idade. O gráfico
-mostra que os ingressantes na UnB costumam ter idade em torno dos 18/19 anos. 
+A Figura \ref{atr_age} mostra o gráfico de barra para o atributo idade. O gráfico
+mostra que os ingressantes na UnB têm idade em torno dos 18/19 anos. 
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Idade}
     \centering
-    \includegraphics[width = 15cm]{age.png}
+    \includegraphics[width = 10cm]{age.png}
     \label{atr_age}
 \end{figure}
-\clearpage
 
 \subsection{Gráfico de Barra para Atributo Residência}
-A figura \ref{atr_res} mostra o gráfico de barra para o atributo residência. Pode-se
+A Figura \ref{atr_res} mostra o gráfico de barra para o atributo residência. Pode-se
 notar que nesse caso a quantidade de valores faltantes (barra com nome
 \texttt{indisponível} é pequena). 
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Residência}
     \centering
-    \includegraphics[width = 15cm]{local.png}
+    \includegraphics[width = 10cm]{local.png}
     \label{atr_res}
 \end{figure}
 \clearpage
 
 \subsection{Gráfico de Barra para Atributo Cota}
-A figura \ref{atr_quota} mostra o gráfico de barra para o atributo cota. 
+A Figura \ref{atr_quota} mostra o gráfico de barra para o atributo cota. 
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Cota}
     \centering
-    \includegraphics[width = 15cm]{quota.png}
+    \includegraphics[width = 10cm]{quota.png}
     \label{atr_quota}
 \end{figure}
 
@@ -75,27 +75,25 @@ apresentado a seguir:
         baixa renda que não é preto, pardo ou indígena.
     \item \texttt{universal}: Não detém cotas.
 \end{itemize}
-\clearpage
 
 \subsection{Gráfico de Barra para Atributo Tipo da Escola}
-A figura \ref{atr_school} mostra o gráfico de barra para o atributo tipo da escola.
+A Figura \ref{atr_school} mostra o gráfico de barra para o atributo tipo da escola.
 Pode-se notar que a presença de valores faltantes é significativa. Apesar disso,
 decidiu-se manter esse atributo em nosso estudo. 
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Tipo da Escola}
     \centering
-    \includegraphics[width = 15cm]{school_type.png}
+    \includegraphics[width = 10cm]{school_type.png}
     \label{atr_school}
 \end{figure}
-\clearpage
 
 \subsection{Gráfico de Barra para Atributo Curso}
-A figura \ref{atr_course} mostra o gráfico de barra para o atributo curso. 
+A Figura \ref{atr_course} mostra o gráfico de barra para o atributo curso. 
 
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Curso}
     \centering
-    \includegraphics[width = 15cm]{course.png}
+    \includegraphics[width = 10cm]{course.png}
     \label{atr_course}
 \end{figure}
 
@@ -118,19 +116,18 @@ terem tido início após o período considerado na pesquisa.
 \clearpage
 
 \subsection{Gráfico de Barra para Atributo Raça}
-A figura \ref{atr_race} mostra o gráfico de barra para o atributo raça. 
+A Figura \ref{atr_race} mostra o gráfico de barra para o atributo raça. 
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Raça}
     \centering
-    \includegraphics[width = 15cm]{race.png}
+    \includegraphics[width = 10cm]{race.png}
     \label{atr_race}
 \end{figure}
 Pode-se observar que há uma grande quantidade de valores faltantes, de modo que
 optou-se por tirar esse atributo de análises posteriores. 
-\clearpage
 
-\subsection{Gráfico de Barra para Atributo Forma de Ingresso}
-A figura \ref{atr_way_in} mostra o gráfico de barra para o atributo forma de ingresso. 
+\subsection{Análise para Atributo Forma de Ingresso}
+A Figura \ref{atr_way_in} mostra o gráfico de barra para o atributo forma de ingresso. 
 Por questões de legibilidade, a legenda no gráfico foi encurtada. Seu significado é
 apresentado a seguir: 
 \begin{itemize}
@@ -150,13 +147,56 @@ apresentado a seguir:
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Forma de Ingresso}
     \centering
-    \includegraphics[width = 15cm]{way_in.png}
+    \includegraphics[width = 10cm]{way_in.png}
     \label{atr_way_in}
 \end{figure}
-\clearpage
 
+Seguindo a isso, fez-se a análise da quantidade de alunos em cada categoria. Os
+valores são mostrados na Tabela \ref{tab_way_in}.
+
+% todo: por tabela
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c | c | c |}
+    \hline
+    Forma de Ingresso & Total de Alunos & Alunos Formados & Porcentagem \\
+    \hline
+    Vestibular & 2695 & 1176 & 44\% \\
+    \hline
+    Convênio Andifes & 7 & 0 & 0\% \\
+    \hline
+    Acordo Cultural-PEC & 8 & 4 & 50\% \\
+    \hline
+    Portador de Diploma de Curso Superior & 17 & 0 & 0\% \\
+    \hline
+    Transferência Facultativa & 40 & 16 & 40\% \\
+    \hline
+    Matrícula Cortesia & 35 & 4 & 11\% \\
+    \hline
+    Convênio Int & 17 & 0 & 0\% \\
+    \hline
+    SISU & 25 & 0 & 0\% \\
+    \hline
+    Transferência Obrigatória & 104 & 23 & 22\% \\
+    \hline
+    PAS & 794 & 392 & 49\% \\
+    \hline
+    Vestibular para Mesmo Curso & 1 & 0 & 0\% \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{Para cada forma de ingresso mostram-se o número de alunos que
+entraram, a quantidade que foi capaz de se formar e a qual a porcentagem representada
+por estes.}
+\label{tab_way_in}
+\end{table}
+
+Os resultados mostram que alguns poucos alunos entraram por algumas formas de
+ingresso. Diante disso, optou-se por trabalhar com o atributo categórico forma de
+ingresso considerando apenas as opções: PAS, Vestibular, Transferência e Outros. 
+ 
 \subsection{Gráfico de Barra para Atributo Forma de Saída}
-A figura \ref{atr_way_out} mostra o gráfico de barra para o atributo forma de saída. 
+A Figura \ref{atr_way_out} mostra o gráfico de barra para o atributo forma de saída. 
 Por questões de legibilidade, a legenda no gráfico foi encurtada. Seu significado é
 apresentado a seguir: 
 \begin{itemize}
@@ -172,7 +212,7 @@ apresentado a seguir:
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Forma de Saída}
     \centering
-    \includegraphics[width = 15cm]{way_out.png}
+    \includegraphics[width = 10cm]{way_out.png}
     \label{atr_way_out}
 \end{figure}
 
@@ -181,10 +221,9 @@ apresentado a seguir:
 Após a construção desse gráfico de barra decidiu-se eliminar do espaço amostral os
 alunos que saíram da universidade devido ao decreto 477, ao falecimento e à anulação
 de registro. 
-\clearpage
 
 \subsection{Gráfico de Barra para as Menções em Disciplinas}
-A figura \ref{avg_grades} mostra a média de menções em disciplinas de todos os
+A Figura \ref{avg_grades} mostra a média de menções em disciplinas de todos os
 estudantes. A menção AP corresponde a Aprovado, enquanto que a menção DP corresponde
 à dispensado. Devido a isso, matérias cuja menção é DP não são consideradas na hora
 de se computar a taxa de aprovação/reprovação/trancamento ou na hora de se computar o
@@ -193,13 +232,13 @@ rendimento acadêmico do aluno.
 \begin{figure}[!ht]
     \caption{Gráfico de Barra Mostrando as Menções em Disciplinas}
     \centering
-    \includegraphics[width = 15cm]{grades.png}
+    \includegraphics[width = 10cm]{grades.png}
     \label{avg_grades}
 \end{figure}
 \clearpage
 
 \subsection{Histogramas Mostrando as Taxas de Aprovação}
-A figura \ref{pass_rate_all} mostra a taxa de aprovação para todos os cursos
+A Figura \ref{pass_rate_all} mostra a taxa de aprovação para todos os cursos
 considerados. 
 % TODO: explicar (se quiser) 
 Pode-se perceber que, embora o histograma considerando todos os alunos apresente uma
@@ -209,7 +248,7 @@ quando se faz a separação por curso.
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Aprovação}
     \centering
-    \includegraphics[width = 15cm]{pass_rate.png}
+    \includegraphics[width = 10cm]{pass_rate.png}
     \label{pass_rate_all}
 \end{figure}
 
@@ -220,7 +259,7 @@ Já as Figuras \ref{pass_rate_cic_b}, \ref{pass_rate_cic_lic},
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Aprovação para Ciência da Computação - Bacharelado}
     \centering
-    \includegraphics[width = 15cm]{pass_rate_cic_bacharelado.png}
+    \includegraphics[width = 10cm]{pass_rate_cic_bacharelado.png}
     \label{pass_rate_cic_b}
 \end{figure}
 
@@ -228,42 +267,42 @@ Já as Figuras \ref{pass_rate_cic_b}, \ref{pass_rate_cic_lic},
     \caption{Histograma da Taxa de Aprovação para Ciência da Computação -
     Licenciatura}
     \centering
-    \includegraphics[width = 15cm]{pass_rate_cic_licenciatura.png}
+    \includegraphics[width = 10cm]{pass_rate_cic_licenciatura.png}
     \label{pass_rate_cic_lic}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Aprovação para Engenharia da Computação}
     \centering
-    \includegraphics[width = 15cm]{pass_rate_engenharia_computacao.png}
+    \includegraphics[width = 10cm]{pass_rate_engenharia_computacao.png}
     \label{pass_rate_eng_comp}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Aprovação para Engenharia Mecatrônica}
     \centering
-    \includegraphics[width = 15cm]{pass_rate_engenharia_mecatronica.png}
+    \includegraphics[width = 10cm]{pass_rate_engenharia_mecatronica.png}
     \label{pass_rate_eng_mectr}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Aprovação para Engenharia de Redes}
     \centering
-    \includegraphics[width = 15cm]{pass_rate_engenharia_redes.png}
+    \includegraphics[width = 10cm]{pass_rate_engenharia_redes.png}
     \label{pass_rate_eng_redes}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Aprovação para Engenharia de Software}
     \centering
-    \includegraphics[width = 15cm]{pass_rate_engenharia_software.png}
+    \includegraphics[width = 10cm]{pass_rate_engenharia_software.png}
     \label{pass_rate_eng_soft}
 \end{figure}
 
 \clearpage
 
 \subsection{Histogramas Mostrando as Taxas de Reprovação}
-A figura \ref{fail_rate_all} mostra a taxa de reprovação para todos os cursos
+A Figura \ref{fail_rate_all} mostra a taxa de reprovação para todos os cursos
 considerados. 
 Já as Figuras \ref{fail_rate_cic_b}, \ref{fail_rate_cic_lic},
 \ref{fail_rate_eng_comp}, \ref{fail_rate_eng_mectr}, \ref{fail_rate_eng_redes},
@@ -273,14 +312,14 @@ Já as Figuras \ref{fail_rate_cic_b}, \ref{fail_rate_cic_lic},
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Reprovação}
     \centering
-    \includegraphics[width = 15cm]{fail_rate.png}
+    \includegraphics[width = 10cm]{fail_rate.png}
     \label{fail_rate_all}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Reprovação para Ciência da Computação - Bacharelado}
     \centering
-    \includegraphics[width = 15cm]{fail_rate_cic_bacharelado.png}
+    \includegraphics[width = 10cm]{fail_rate_cic_bacharelado.png}
     \label{fail_rate_cic_b}
 \end{figure}
 
@@ -288,35 +327,35 @@ Já as Figuras \ref{fail_rate_cic_b}, \ref{fail_rate_cic_lic},
     \caption{Histograma da Taxa de Reprovação para Ciência da Computação -
     Licenciatura}
     \centering
-    \includegraphics[width = 15cm]{fail_rate_cic_licenciatura.png}
+    \includegraphics[width = 10cm]{fail_rate_cic_licenciatura.png}
     \label{fail_rate_cic_lic}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Reprovação para Engenharia da Computação}
     \centering
-    \includegraphics[width = 15cm]{fail_rate_engenharia_computacao.png}
+    \includegraphics[width = 10cm]{fail_rate_engenharia_computacao.png}
     \label{fail_rate_eng_comp}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Reprovação para Engenharia Mecatrônica}
     \centering
-    \includegraphics[width = 15cm]{fail_rate_engenharia_mecatronica.png}
+    \includegraphics[width = 10cm]{fail_rate_engenharia_mecatronica.png}
     \label{fail_rate_eng_mectr}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Reprovação para Engenharia de Redes}
     \centering
-    \includegraphics[width = 15cm]{fail_rate_engenharia_redes.png}
+    \includegraphics[width = 10cm]{fail_rate_engenharia_redes.png}
     \label{fail_rate_eng_redes}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Reprovação para Engenharia de Software}
     \centering
-    \includegraphics[width = 15cm]{fail_rate_engenharia_software.png}
+    \includegraphics[width = 10cm]{fail_rate_engenharia_software.png}
     \label{fail_rate_eng_soft}
 \end{figure}
 
@@ -328,7 +367,7 @@ quando se faz a separação por curso.
 \clearpage
 
 \subsection{Histogramas Mostrando as Taxas de Trancamento}
-A figura \ref{drop_rate_all} mostra a taxa de trancamento para todos os cursos
+A Figura \ref{drop_rate_all} mostra a taxa de trancamento para todos os cursos
 considerados. 
 Já as Figuras \ref{drop_rate_cic_b}, \ref{drop_rate_cic_lic},
 \ref{drop_rate_eng_comp}, \ref{drop_rate_eng_mectr}, \ref{drop_rate_eng_redes},
@@ -337,14 +376,14 @@ Já as Figuras \ref{drop_rate_cic_b}, \ref{drop_rate_cic_lic},
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Trancamento}
     \centering
-    \includegraphics[width = 15cm]{drop_rate.png}
+    \includegraphics[width = 10cm]{drop_rate.png}
     \label{drop_rate_all}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Trancamento para Ciência da Computação - Bacharelado}
     \centering
-    \includegraphics[width = 15cm]{drop_rate_cic_bacharelado.png}
+    \includegraphics[width = 10cm]{drop_rate_cic_bacharelado.png}
     \label{drop_rate_cic_b}
 \end{figure}
 
@@ -352,35 +391,35 @@ Já as Figuras \ref{drop_rate_cic_b}, \ref{drop_rate_cic_lic},
     \caption{Histograma da Taxa de Trancamento para Ciência da Computação -
     Licenciatura}
     \centering
-    \includegraphics[width = 15cm]{drop_rate_cic_licenciatura.png}
+    \includegraphics[width = 10cm]{drop_rate_cic_licenciatura.png}
     \label{drop_rate_cic_lic}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Trancamento para Engenharia da Computação}
     \centering
-    \includegraphics[width = 15cm]{drop_rate_engenharia_computacao.png}
+    \includegraphics[width = 10cm]{drop_rate_engenharia_computacao.png}
     \label{drop_rate_eng_comp}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Trancamento para Engenharia Mecatrônica}
     \centering
-    \includegraphics[width = 15cm]{drop_rate_engenharia_mecatronica.png}
+    \includegraphics[width = 10cm]{drop_rate_engenharia_mecatronica.png}
     \label{drop_rate_eng_mectr}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Trancamento para Engenharia de Redes}
     \centering
-    \includegraphics[width = 15cm]{drop_rate_engenharia_redes.png}
+    \includegraphics[width = 10cm]{drop_rate_engenharia_redes.png}
     \label{drop_rate_eng_redes}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Trancamento para Engenharia de Software}
     \centering
-    \includegraphics[width = 15cm]{drop_rate_engenharia_software.png}
+    \includegraphics[width = 10cm]{drop_rate_engenharia_software.png}
     \label{drop_rate_eng_soft}
 \end{figure}
 

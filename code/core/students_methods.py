@@ -217,15 +217,19 @@ def fill_grades(stu_info, mode = 'normal'):
             student = stu_info[student_id]
             student.set_grades(row)
         except KeyError:
+            # TODO: check if it really was deleted as an outlier
             pass
 
     print('finished filling grades')
 
 def fill_hard_rate(stu_info):
     """
-    receives the student dictionary, 
-    fills every student hard rate - the ration of approvation in the most difficult
+    fills every student hard rate - the ratio of approvation in the most difficult
     subject the student has coursed 
+    receives:
+        1. student dictionary, 
+    return:
+        nothing
     """
     # pointer to register patological cases
     fp = open('../logs/hard_rate_patological_cases.txt', 'w')
@@ -434,7 +438,6 @@ def get_database_info():
                 stu_info[key] = Student(student_id, row)
                 #stu_info[key].set_attrib(row)
 
-
         print('finished loading the students dictionary')
         return stu_info
 
@@ -464,9 +467,6 @@ def get_derived_info(stu_info):
     # calculate credit rate and mandatory rate - TODO: need the credit amount for the
     # disciplines
     #fill_credit_rate(stu_info)
-
-    # calculate mandatory rate
-    #fill_mand_rate(stu_info)
 
     # calculate hard rate - need to check the code later
     #fill_hard_rate(stu_info)

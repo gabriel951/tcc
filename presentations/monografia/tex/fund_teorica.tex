@@ -1,8 +1,8 @@
 % TODO: falar do modelo crips-dm, se quiser encher linguiça
 Neste capítulo, descreve-se a fundamentação teórica necessária para compreender a
 pesquisa. Assim, nas seções seguintes explica-se a problemática da evasão nas universidades
-públicas, a abordagem da UnB para tal situação e como estatística descritiva e o
-método de Kendall podem ser usados em mineração de dados. 
+públicas, o procedimento da UnB para evitar tal situação e o modelo de processos
+CRISP-DM. 
 
 \section{Evasão nas Universidades} 
 A evasão nas universidades nacionais é um problema que traz desperdícios acadêmicos,
@@ -11,7 +11,7 @@ conceito de evasão pode variar \cite{mec_conceito_evasao} de acordo com a pesqu
 já que pode-se considerar evasão do curso, evasão da instituição ou evasão do
 sistema educacional. 
 
-\section{Abordagem da UnB frente à Evasão}
+\section{Procedimentos da UnB Para Alunos com Risco de Evadir}
 \par Os critérios para que um aluno seja desligado na UnB são mostrados na Figura
 \ref{desligamento}. 
 \begin{figure}[!ht]
@@ -32,22 +32,66 @@ condição orientados. Os critérios para que um aluno esteja em condição são
     \item Chegar ao último período letivo do curso sem a possibilidade de concluir
 \end{itemize}
 
-\section{Estatística Descritiva} 
-Estatística descritiva é comumente usada em pesquisas de mineração de
-dados, na fase de análise exploratória dos dados. A estatística descritiva permite
-identificar problemas de qualidade nos dados, como por exemplo a identificação de
-valores de atributos faltantes ou a identificação de \textit{outliers} ou a identificação de
-atributos com cardinalidade irregular \cite{ml_book}. Técnicas comuns de estatística
-descritiva incluem histogramas, gráficos de barra e \textit{boxplots}. 
+\section{CRISP-DM}
+O CRISP-DM (do inglês \textit{CRoss-Industry Standard Process for Data Mining}) é um
+modelo de processos para mineração de dados que se divide em 6 fases principais
+\cite{crispdm}:
+\begin{enumerate}
+    \item Entendimento do negógio
+    \item Entendimento dos dados
+    \item Preparação dos Dados
+    \item Modelagem
+    \item Avaliação
+    \item Implantação
+\end{enumerate}
 
-\section{O Coeficiente de Correlação de Kendall}
-%TODO: escrever mais um pouco aqui caso deseje
-Quando se trabalha com modelos de aprendizagem de máquina com muitas variáveis, é
-desejável saber o grau de correlação entre as variáveis. Caso a correlação entre
-algum par de variáveis seja muito alta, a eliminação de uma delas pode acarretar em
-um modelo mais simples de ser compreendido (sem prejudicar o desempenho).
+Cada uma dessas fases é explicada a seguir.
+
+\subsection{Entendimento do Negócio}
+Nesta etapa determinam-se os objetivos do negócio (entendimento do que o cliente
+almeja), avalia-se a situação atual, determinam-se os objetivos da mineração de dados
+e produz-se um planejamento do projeto \cite{crispdm}. Uma importante tarefa dentro
+dessa fase do CRISP-DM é o levantamento do estado da arte. 
+
+\subsection{Entendimento dos Dados}
+Essa fase é composta pelas tarefas de: coleta inicial dos dados, descrição dos dados,
+exploração dos dados e verificação da qualidade dos dados \cite{crispdm}.
+Na fase de entendimento dos dados, juntamente com a fase de preparação dos dados, 
+é comum a utilização de estatística descritiva. A
+estatística descritiva permite identificar problemas de qualidade nos dados, como por
+exemplo a identificação de valores de atributos faltantes ou a identificação de
+\textit{outliers} ou a identificação de atributos com cardinalidade irregular
+\cite{ml_book}. Técnicas comuns de estatística descritiva incluem histogramas,
+gráficos de barra e \textit{boxplots}. 
+
+\subsection{Preparação dos Dados}
+Essa fase é composta pelas tarefas de: seleção dos dados, limpeza dos dados, construção
+dos dados, integração dos dados e formatação dos dados \cite{crispdm}. Para a tarefa
+de seleção dos dados, é útil ter uma noção do grau de correlação entre as variáveis. 
+Caso a correlação entre algum par de variável seja muito alta, a eliminação de uma
+delas pode acarretar em um modelo mais simples de ser compreendido (sem prejudicar o
+desempenho).
 \par Assim, pode-se usar um coeficiente de correlação para medir o grau de dependência
 entre atributos e decidir pela eventual eliminação de algum. Existem vários testes
 para se medir a correlação entre variáveis, como o coeficiente de Spearman e o
 coeficiente de correlação de Kendall \cite{kendall}. 
+%TODO: escrever mais um pouco aqui caso deseje
+
+\subsection{Modelagem} 
+Essa fase é composta pelas tarefas de: seleção da técnica de modelagem, geração dos
+casos de teste, construção do modelo e avaliação do modelo \cite{crispdm}. É nessa
+fase que utlizam-se os algoritmos de aprendizagem de máquina como árvores de decisão,
+redes neurais e SVM's. 
+
+\subsection{Avaliação} 
+Enquanto a tarefa de avaliação da fase de modelagem tem como objetivo lidar como
+fatores como a precisão e a generalidade do modelo, essa fase tem como objetivo
+averiguar o quanto o modelo cumpre com os objetivos de negócio \cite{crispdm}. São
+tarefas dessa fase: avaliação de resultados, revisão de processos e decisão de quais
+serão os próximos passos. 
+
+\subsection{Implantação} 
+A fase final do CRISP-DM é a implantação. Nessa fase, são realizadas as tarefas de:
+planejar a implantação, planejar monitoramento e manutenção, produzir relatório final
+e revisar o projeto \cite{crispdm}.
 
