@@ -9,6 +9,9 @@ def eliminate_low_pass_rate(stu_info):
         nothing
     * all cases were analysed manually, that's why this function is so messy and big
     """
+    # TODO:
+    outliers_lst = []
+    outliers_lst.append()
     try:
         del stu_info[201072660]
         del stu_info[201113651]

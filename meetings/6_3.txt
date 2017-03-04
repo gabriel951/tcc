@@ -1,0 +1,8 @@
+# antes
+    -> Descobri erros na hora de calcular o desempenho da minha rede neural e na hora
+do cálculo dos atributos de um determinado aluno (função yearsem_2_pos)
+    -> Tenho que codificar/rodar/testar funções que calculam os novos atributos
+derivados
+    -> Preciso fazer nova eliminação de outliers (trabalhando nisso atualmente)
+
+# depois

@@ -25,6 +25,7 @@ NAME_STU_STRUCTURE = 'students_info'
 
 # value to indicate we haven't filled a given field yet
 NOT_KNOWN = 'not know'
+ERROR = -20 # if it was a low value like -1 i could access a value on the list
 
 # global variables
 ira_filled = 0 # number of students with ira calculated
@@ -88,9 +89,6 @@ class Student():
         # reason between credits in disciplines per semester and number of credits in
         # the course
         self.credit_rate = lst_unknown[:]
-        # reason between credits in mandatory disciplines per semester and number of
-        # credits in the course - deprecated attribute!!
-        #self.mand_credit_rate = lst_unknown[:]
         # rate of approvation in the most hard disciplines of the semester
         self.hard_rate = lst_unknown[:]
         # boolean that indicates whether a student is in condition or not
@@ -183,8 +181,8 @@ class Student():
         receives: 
             1. a key to access a given subject
             2. the position in the list of information for that subject
-            3. a string describing the info we want - 'code', 'name', 'grade', 'sem'
-            or 'all'
+            3. a string describing the info we want - 'code', 'name', 'grade', 'year,
+            'sem', 'credits' or 'all'
         return: 
             the information we want
         """
@@ -198,6 +196,8 @@ class Student():
             return self.grades[key][pos][3] # year is the fourth information
         elif info == 'sem':
             return self.grades[key][pos][4] # semester is the fifth information
+        elif info == 'credits':
+            return self.grades[key][pos][5] # credit is the sixth information
         elif info == 'all':
             tup = tuple(self.grades[key][pos])
             return tup # tuple returned in the same order
@@ -398,6 +398,8 @@ class Student():
 
         * pos = 0 means the year and semester the student got in unb
         """
+        assert (pos >= 0)
+
         if pos == 0:
             return (year, sem)
         else:
@@ -447,26 +449,33 @@ class Student():
         # if name is in the official name list, nothing to do 
         if self.course in COURSES_OFF_NAME:
             return
-        elif self.course.lower() in ['ciência da computação']: 
+        elif 'ciência da computação' in self.course.lower(): 
             self.course = CIC_BACHELOR
-        elif self.course.lower() in ['computação']:
+        elif 'computação' in self.course.lower() or \
+                'informática' in self.course.lower():
             self.course = CIC_NON_BACHELOR
-        elif self.course.lower() in ['engenharia de computação']:
+        elif 'engenharia de computação' in self.course.lower():
             self.course = COMPUTER_ENGINEERING
-        elif self.course.lower() in ['engenharia de software']:
+        elif 'engenharia de software' in self.course.lower():
             self.course = SOFTWARE_ENGINEERING
-        elif self.course.lower() in ['engenharia de redes de comunicação']:
+        elif 'engenharia de redes de comunicação' in self.course.lower():
             self.course = NETWORK_ENGINEERING
-        elif self.course.lower() in ['engenharia mecatrônica']:
+        elif 'engenharia mecatrônica' in self.course.lower():
             self.course = MECHATRONICS_ENGINEERING
         else: 
-            print('case not handled. Course: %s' % (self.course))
+            print('case not handled. Course: %s||' % (self.course))
             exit()
 
     def set_grades(self, row):
         """
-        receives a row of the csv file containing student info
-        extracts the grades of the student and put it in the 
+        extracts the grades of the student and put it in the student grade attribute
+        receives:
+            1. a row of the csv file containing student info
+        returns:
+            nothing
+
+        ** the same discipline may be coursed by one student more than one time, case
+        he has failed it
         """
         # rows indices - RIND
         CODE_SUB_RIND = 1
@@ -474,6 +483,7 @@ class Student():
         YEAR_RIND = 3
         GRADE_RIND = 4 
         NAME_RIND = 5
+        CREDITS_RIND = 6
 
         # get subject name, grade, year and semester coursed
         data = []
@@ -482,6 +492,7 @@ class Student():
         data.append(row[GRADE_RIND])
         data.append(row[YEAR_RIND])
         data.append(row[SEMESTER_RIND])
+        data.append(row[CREDITS_RIND])
 
         ## add grade of student to the dictionary
         # if it's the first time the student coursed subject
@@ -520,6 +531,10 @@ class Student():
 
                 # need to obtain the index on the list to perform comparison
                 index = self.yearsem_2_pos(year_sub, sem_sub)
+
+                # don't account for subjects that were coursed before
+                if index == ERROR: 
+                    continue
 
                 if perf_hard[index] == NOT_KNOWN or \
                     appr_rate < perf_hard[index][APPR_RATE_IND]:
@@ -602,10 +617,14 @@ class Student():
         
     def set_ira(self, ira, year, semester):
         """
+        ** DEPRECATED - 
         receives a tuple containing student information (no derived attributes) and
         the year and semester of the information. 
         insert in the student the IRA correctly
         """
+        # since it's deprecated, exit with error if called
+        exit('called deprecated function')
+
         # does not consider summer school
         if semester == 0: 
             return
@@ -708,19 +727,32 @@ class Student():
         * pos = 0 means the year and semester the student got in unb. 
         * pos = 1 means the semester just after pos = 0, and so on
         """
+        # summer counts as in the first semester of the same year
+        if sem == 0:
+            sem = 1
+
         pos = 0 
         cur_year = self.year_in 
         cur_sem = self.sem_in 
 
-        while cur_year != year and cur_sem != sem: 
+        # return 
+        if self.year_in > year or (self.year_in == year and cur_sem > sem):
+            # verbose option
+            #print('warning: function yearsem_2_pos called with parameters:')
+            #print('year: %d, semester: %d' % (year, sem))
+            #print('but student entered in year: %d and semester: %d'\
+            #        % (self.year_in, self.sem_in))
+            return ERROR
+
+        while cur_year != year or cur_sem != sem: 
             pos += 1
-            if cur_sem == 1:
+            if cur_sem == 1 or cur_sem == 0:
                 cur_sem += 1
             else: 
                 cur_sem = 1
                 cur_year += 1
 
-        # a student should not be 20 semesters or more in unb
-        assert (pos <= 20)
-        return pos
 
+        # a student should not be 30 semesters or more in unb
+        assert (pos <= 30)
+        return pos

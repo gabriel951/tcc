@@ -1,22 +1,39 @@
 # auxiliar file for handling the database.
+import sys
+sys.path.append('..')
+from basic import *
 from basic import *
 
 def get_age(birth_date, year):
     """ 
-    receives a string containing the date in the format dd/mm/yyyy
-    returns the age of the person in the year he/she begginned math
+    get age of the person in the year he/she begginned the course
+    receives:
+        1. string containing the date in the format yyyy-mm-dd
+        2. year student begginned the course
+    returns:
+        age of the person in the year he/she begginned the course
     """
     # get year born
-    dates = birth_date.split('/') # take off " "
-    year_born = int(dates[2])
+    dates = birth_date.split('-') 
+    year_born = int(dates[0])
 
     # calculate and assert age
     age = year - year_born
 
     # assert 
     assert (age > 0 and age < 100)
-
     return age
+
+def get_code(code_str):
+    """
+    parse and return the code for a given student
+    receives: 
+        1. string containing the code, in the format 'ALUNO xxxxx'
+    returns:
+        integer correspondent to the student code
+    """
+    contents = code_str.split(' ')
+    return int(contents[1])
 
 def get_course(std_inf):
     """
@@ -38,6 +55,21 @@ def get_course(std_inf):
     else:
         print(std_inf, course)
         exit('course not identified')
+
+def get_local(uf):
+    """ 
+    get whether the person is from DF or from another region
+    receives:
+        1. a string containing the uf of the person
+    returns: 
+        a string regarding the locality of the student 
+    """
+    if uf == "df":
+        return "df"
+    elif len(uf) >= 1:
+        return "outros"
+    else:
+        return "indisponível"
 
 def get_race(std_inf):
     """
@@ -62,19 +94,6 @@ def get_race(std_inf):
         print(race)
         exit('race not identified')
 
-def get_local(uf):
-    """ 
-    receives a string containing the uf of the person
-    returns a code depending if the guy is local, or comes from another region or 
-    there is a missing value
-    """
-    if uf == "df":
-        return "df"
-    elif len(uf) >= 1:
-        return "outros"
-    else:
-        return "indisponível"
-
 def get_time_periods():
     """ 
     return list of time periods we're considering
@@ -84,3 +103,19 @@ def get_time_periods():
         time_periods.append((year, 1))
         time_periods.append((year, 2))
     return time_periods
+
+def get_year_sem(year_sem_string, check_consistency):
+    """
+    get year and semester of a given student
+    receives:
+        1. string containing the information
+        2. boolean to indicate if we should check check_consistency
+    returns:
+        tuple on the format (year, sem)
+    """
+    year = int(year_sem_string[:-1])
+    sem = int(year_sem_string[-1])
+    if check_consistency:
+        assert (year >= YEAR_START and year <= YEAR_END)
+        assert (sem == 0 or sem == 1 or sem == 2)
+    return (year, sem)

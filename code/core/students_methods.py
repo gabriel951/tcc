@@ -1,5 +1,6 @@
 #!/usr/bin/python3.4
 # this file contain the methods mainly related to the students
+import statistics
 from students import *
 from outliers import *
 
@@ -53,6 +54,7 @@ def fill_condition(stu_info):
             #stu.in_condition_sem(i):
 
         # TODO: handle list transformation
+
 def fill_drop_pass_fail_rate_sem(stu, pos, mode, fp):
     """
     fill the drop/pass/fail rate for a given student, for the semester passed
@@ -85,9 +87,9 @@ def fill_drop_pass_fail_rate_sem(stu, pos, mode, fp):
     for sub_name, info_list in stu.grades.items():
         for index in range(len(info_list)):
             # make sure the subject was coursed in the period we are considering
-            (code, name, grade, year, sem) = stu.get_sub_info(sub_name, index, 'all')
+            (code, name, grade, year, sem, credits) = stu.get_sub_info(sub_name, index, 'all')
             cur_pos = stu.yearsem_2_pos(year, sem)
-            if cur_pos > pos: 
+            if cur_pos > pos or cur_pos == ERROR: 
                 continue
 
             # skip DP 
@@ -104,18 +106,21 @@ def fill_drop_pass_fail_rate_sem(stu, pos, mode, fp):
         var_interest[pos] = float(sub_ok) / sub_coursed
     except ZeroDivisionError: 
         var_interest[pos] = 0.0
-        print('\t\t\tstudent %d has not coursed any subject in pos: %d' % (stu.reg, pos))
-        fp.write('student %d has not coursed any subject in pos: %d\n' % (stu.reg, pos))
+        print('\t\t\tstudent %d has not coursed any subject until pos: %d' % (stu.reg, pos))
+        fp.write('student %d has not coursed any subject until pos: %d\n' % (stu.reg, pos))
         # no need to log cases, have analysed this already
         #stu.log_info(fp)
+   
 
-def fill_drop_pass_fail_rate(stu_info, mode): 
+def fill_drop_pass_fail_rate(stu_info, mode, do_quick): 
     """
     set correctly the drop_rate or fail_rate or pass_rate for every student
     receives: 
         1. a dictionary containing all student information
         2. mode informing whether we want the pass rate, the fail rate or the drop
         rate. Should be 'drop', 'pass' or 'fail'
+        3. a boolean indicates whether we should focus only on the last semester or
+        in all semesters 
     returns: 
         nothing
     """
@@ -130,17 +135,20 @@ def fill_drop_pass_fail_rate(stu_info, mode):
         exit('function fill_drop_pass_fail_rate called with wrong arguments')
 
     for key, stu in stu_info.items(): 
+
         # get current student grades
         cur_stu_grades = stu.grades
 
         # for all positions the student is in 
         num_semesters = stu.get_num_semesters()
-        for pos in range(num_semesters):
-            fill_drop_pass_fail_rate_sem(stu, pos, mode, fp) 
+        if not do_quick:
+            for pos in range(num_semesters):
+                fill_drop_pass_fail_rate_sem(stu, pos, mode, fp) 
+        else:
+            fill_drop_pass_fail_rate_sem(stu, num_semesters - 1, mode, fp)
 
 
-        # TODO: if rate is problematic (when the student left), 
-        # register patological case
+        # if it's a patological case, register it
         LAST_ELEM = -1 
         if mode == 'drop' and stu.drop_rate[LAST_ELEM] > 0.99: 
             stu.log_info(fp)
@@ -197,7 +205,7 @@ def fill_grades(stu_info, mode = 'normal'):
     # query database in order to obtain student code, subject name and subject grade
     conn = get_conn()
     cur = conn.cursor()
-    query = 'select code_stu, code_sub, semester, year, grade, name \
+    query = 'select code_stu, code_sub, semester, year, grade, name, credits \
                 from %s.student_subject inner join %s.subject \
                 on %s.student_subject.code_sub = %s.subject.code' \
                 % (MY_DATABASE, MY_DATABASE, MY_DATABASE, MY_DATABASE)
@@ -213,12 +221,8 @@ def fill_grades(stu_info, mode = 'normal'):
         # get student id and corresponding student - it may have been deleted as an
         # outlier, so watch key error
         student_id = row[CODE_STU_RIND]
-        try: 
-            student = stu_info[student_id]
-            student.set_grades(row)
-        except KeyError:
-            # TODO: check if it really was deleted as an outlier
-            pass
+        student = stu_info[student_id]
+        student.set_grades(row)
 
     print('finished filling grades')
 
@@ -265,7 +269,7 @@ def fill_impr_rate(stu_info):
 
     print('finished_calculating improvement rate')
 
-def fill_ira(stu_info, mode = 'normal'):
+def fill_ira(stu_info):
     """
     read the csv file for the student IRA and put the student IRA as an information
     receives:
@@ -273,48 +277,24 @@ def fill_ira(stu_info, mode = 'normal'):
     returns:
         nothing
     """
-    # get all years and semesters to be considered
-    if mode == 'quick': 
-        fill_ira_year_semester(stu_info, 2000, 1)
-    elif mode == 'normal': 
-        # fill ira correctly
-        print('\tstarting insertion')
-        time_periods = get_time_periods()
-        for (year, semester) in time_periods:
-            print('\tstarting for (%d %d)' % (year, semester))
-            fill_ira_year_semester(stu_info, year, semester)
-        print('ending insertion')
-        print('will start filling info for iras that are not known')
-        # TODO: can't handle missing iras because i don't have information 
-        # regarding the credit 
-        #handle_miss_ira(stu_info)
-        print('finished filling missing iras')
-    else:
-        exit('mode option incorrect')
-
-    
-    print('finished filling ira')
-
-def fill_ira_year_semester(stu_info, year, semester):
-    """
-    read the csv file for the student IRA and put the student IRA as an information
-    receives:
-        1. a dictionary containing all students. 
-    returns: 
-        nothing
-    """
     global ira_filled
-    file_name = CSV_PATH + FILE_NAME + str(year) + str(semester) + EXTENSION
+    file_name = CSV_PATH + FILE_NAME + EXTENSION
 
     # read line by line, parsing the results and putting on database
     with open(file_name, newline = '', encoding = ENCODING) as fp:
         reader = csv.reader(fp)
 
+        # skip first line
+        next(reader, None)
+
         # iterate through the rows, inserting in the table
         for row in reader:
-            parse_insert_ira(stu_info, row, year, semester)
+            parse_insert_ira(stu_info, row)
             
     print("\tnumber of iras added: %s" % (ira_filled))
+
+    # handle missing iras
+    handle_miss_ira(stu_info)
 
 def fill_mand_rate(stu_info):
     """
@@ -401,9 +381,11 @@ def fill_position(stu_info):
 
 def get_database_info():
     """
-    receives nothing
     query the database to obtain student info that can be obtained
-    returns a dictionary containing student info
+    receives:
+        nothing
+    returns
+        a dictionary containing student info
     """
     # try to load student from pickle object
     try: 
@@ -436,7 +418,6 @@ def get_database_info():
                 # add student, case the registration is a new one
                 student_id = row[STU_ID_IND]
                 stu_info[key] = Student(student_id, row)
-                #stu_info[key].set_attrib(row)
 
         print('finished loading the students dictionary')
         return stu_info
@@ -454,17 +435,17 @@ def get_derived_info(stu_info):
     fill_grades(stu_info)
 
     # calculate student ira for the semesters - TODO: handle case of empty iras
-    #fill_ira(stu_info)
+    fill_ira(stu_info)
 
     # calculate improvement rate - TODO: handle case of improvement rate
     #fill_impr_rate(stu_info)
 
     # calculate fail rate, pass rate and drop rate
-    fill_drop_pass_fail_rate(stu_info, 'fail')
-    fill_drop_pass_fail_rate(stu_info, 'pass')
-    fill_drop_pass_fail_rate(stu_info, 'drop')
+    #fill_drop_pass_fail_rate(stu_info, 'fail', False)
+    #fill_drop_pass_fail_rate(stu_info, 'pass', False)
+    #fill_drop_pass_fail_rate(stu_info, 'drop', False)
 
-    # calculate credit rate and mandatory rate - TODO: need the credit amount for the
+    # calculate credit rate - TODO: need the credit amount for the
     # disciplines
     #fill_credit_rate(stu_info)
 
@@ -482,18 +463,24 @@ def get_derived_info(stu_info):
 
 def get_students_info(): 
     """
-    extracts from database all the students information
+    extracts from database all the students information. Calculates derived
+    attributes.
     saves the information as a dictionary of students and serializes it using
     pickle
 
     * the dictionary of students accept as a key the student cod_mat in database and has
     * as value the corresponding student object
+
+    receives:
+        nothing
+    returns:
+        nothing
     """
     # obtain info for the students contained in database
     stu_dict = get_database_info()
     
     # TODO: handle outliers
-    handle_outliers(stu_dict)
+    #handle_outliers(stu_dict)
 
     # construct info for the derived attributes of a student
     get_derived_info(stu_dict)
@@ -506,11 +493,30 @@ def get_students_info():
 
 def handle_miss_ira(stu_info):
     """
-    receives the student dictionary
-    fills the missing iras
+    fills the missing iras for the student
+    receives:
+        1. student dictionary
+    returns:
+        nothing
     """
+    # get average ira for first semester
+    iras = []
     for key, stu in stu_info.items():
-        stu.set_miss_iras()
+        if stu.ira[pos] != NOT_KNOWN:
+            iras.append(stu.ira[pos])
+    average_ira = statistics.mean(iras)
+
+    for key, stu in stu_info.items():
+        num_sem = stu.get_num_semesters()
+        for pos in range(num_sem):
+            if stu.ira[pos] == NOT_KNOWN:
+                # case the first ira is not know, put value equal to average
+                if pos == 0:
+                    stu.ira[pos] = average_ira
+            
+                # use imputation case student ira is missing
+                else:
+                    stu.ira[pos] = stu.ira[pos]
 
 def load_students(name, path = PATH): 
     """
@@ -520,10 +526,12 @@ def load_students(name, path = PATH):
     stu_info = pickle.load(open(path + name, 'rb'))
     return stu_info
 
-def parse_insert_ira(stu_info, row, year, semester): 
+def parse_insert_ira(stu_info, row): 
     """
-    receives a row, containing the ira information. 
-    put that info in the student ira
+    put info of a row of the csv file in the student ira
+    receives:
+        1. student dictionary 
+        2. a row, containing the ira information. 
     """
     global ira_filled
 
@@ -539,25 +547,23 @@ def parse_insert_ira(stu_info, row, year, semester):
     # split content in list 
     info = content.split(';')
 
-    # skip if not from graduation 
-    # you dont need to understand this, but this code fragment is essential because
-    # the first line of the csv file is a header information, that must be skipped
-    info[DEGREE_IND] = info[DEGREE_IND][1:-1]
-    if info[DEGREE_IND].lower() != "graduacao":
-        return
-
-    # get student code and return case not a student of interest
-    code = int(info[CODE_IND])
+    # get student code and return case not a student of interest - it may be an
+    # outlier or a student that has not graduated yet
+    code = get_code(info[CODE_IND])
     if code not in stu_info: 
         return
 
-    # get ira information - in the csv file, the ira is between 0 and 50 000
-    ira = int(info[IRA_IND])
-    ira = ira / float(10000)
+    # get ira information
+    ira = float(info[IRA_IND]) 
     assert (ira >= 0 and ira <= 5.0)
 
     # put ira in the student info
-    stu_info[code].set_ira(ira, year, semester)
+    cur_stu = stu_info[code]
+    (year, sem) = get_year_sem(info[YEAR_SEM_SUB_IND], True)
+    pos = cur_stu.yearsem_2_pos(year, sem)
+    if pos == ERROR: 
+        return
+    cur_stu.ira[pos] = ira
 
     # increment the number of ira filleds
     ira_filled += 1

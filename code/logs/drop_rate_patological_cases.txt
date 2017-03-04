@@ -1,5 +1,131 @@
-student 201088187 has not coursed any subject in pos: 0
-student 200318141 has not coursed any subject in pos: 0
+student 172072 has not coursed any subject until pos: 0
+student 122957 has not coursed any subject until pos: 0
+student 90197 has not coursed any subject until pos: 0
+student 90318 has not coursed any subject until pos: 0
+------------
+student info
+	age:   26
+	course:   cic_bacharelado
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [1.0, 1.0, 1.0]
+	fail_rate:   [0.0, 0.0, 0.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   101143
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   não
+	race:   não informado
+	reg:   217136
+	school_type:   particular
+	sem_in:   1
+	sem_out:   1
+	sex:   m
+	way_in:   Portador Diplom Curso Superior
+	way_out:   Deslig - não cumpriu condição 
+	year_in:   2014
+	year_out:   2015
+	 printing grades --- 
+		introducao a algebra linear :   [[113093, 'introducao a algebra linear ', 'TR', 2014, 1, 4]]
+		fisica 2 experimental :   [[118036, 'fisica 2 experimental ', 'TR', 2014, 1, 4]]
+		computacao basica  :   [[116301, 'computacao basica  ', 'TR', 2014, 1, 6]]
+		fisica 2  :   [[118028, 'fisica 2  ', 'TR', 2014, 1, 4]]
+	 ------------------ 
+------------
+student 156126 has not coursed any subject until pos: 0
+student 132122 has not coursed any subject until pos: 0
+student 117605 has not coursed any subject until pos: 0
+student 140439 has not coursed any subject until pos: 0
+student 140439 has not coursed any subject until pos: 1
+student 140739 has not coursed any subject until pos: 0
+student 173609 has not coursed any subject until pos: 0
+student 83536 has not coursed any subject until pos: 0
+------------
+student info
+	age:   42
+	course:   cic_licenciatura
+	credit_rate:   ['not know']
+	drop_rate:   [1.0]
+	fail_rate:   [0.0]
+	hard_rate:   ['not know']
+	id_num:   100894
+	improvement_rate:   ['not know']
+	in_condition:   ['not know']
+	ira:   ['not know']
+	local:   outros
+	pass_rate:   [0.0]
+	position:   ['not know']
+	quota:   não
+	race:   branca                        
+	reg:   214964
+	school_type:   pública
+	sem_in:   1
+	sem_out:   1
+	sex:   m
+	way_in:   Sisu-Sistema de Seleção Unificada
+	way_out:   Novo Vestibular               
+	year_in:   2014
+	year_out:   2014
+	 printing grades --- 
+		algebra 1 :   [[113107, 'algebra 1 ', 'TR', 2014, 1, 6]]
+	 ------------------ 
+------------
+student 116688 has not coursed any subject until pos: 0
+student 116688 has not coursed any subject until pos: 1
+student 165861 has not coursed any subject until pos: 0
+student 108677 has not coursed any subject until pos: 0
+student 157896 has not coursed any subject until pos: 0
+student 84386 has not coursed any subject until pos: 0
+student 207168 has not coursed any subject until pos: 0
+------------
+student info
+	age:   18
+	course:   engenharia_mecatronica
+	credit_rate:   ['not know', 'not know']
+	drop_rate:   [1.0, 1.0]
+	fail_rate:   [0.0, 0.0]
+	hard_rate:   ['not know', 'not know']
+	id_num:   51194
+	improvement_rate:   ['not know', 'not know']
+	in_condition:   ['not know', 'not know']
+	ira:   ['not know', 'not know']
+	local:   outros
+	pass_rate:   [0.0, 0.0]
+	position:   ['not know', 'not know']
+	quota:   não
+	race:   não informado
+	reg:   142712
+	school_type:   não informada
+	sem_in:   2
+	sem_out:   1
+	sex:   m
+	way_in:   Vestibular                    
+	way_out:   Desligamento Voluntário       
+	year_in:   2008
+	year_out:   2009
+	 printing grades --- 
+		fisica 1  :   [[118001, 'fisica 1  ', 'TR', 2008, 2, 4]]
+		quimica geral teorica :   [[114626, 'quimica geral teorica ', 'TR', 2008, 2, 4]]
+		fisica 1 experimental :   [[118010, 'fisica 1 experimental ', 'TR', 2008, 2, 2]]
+		quimica geral experimental  :   [[114634, 'quimica geral experimental  ', 'TR', 2008, 2, 2]]
+		calculo 1 :   [[113034, 'calculo 1 ', 'TR', 2008, 2, 6]]
+		introducao a engenharia mecatronica  :   [[168891, 'introducao a engenharia mecatronica  ', 'TR', 2008, 2, 2]]
+	 ------------------ 
+------------
+student 93774 has not coursed any subject until pos: 0
+student 192126 has not coursed any subject until pos: 0
+student 179351 has not coursed any subject until pos: 0
+student 192512 has not coursed any subject until pos: 0
+student 209016 has not coursed any subject until pos: 0
+student 192984 has not coursed any subject until pos: 0
+student 94788 has not coursed any subject until pos: 0
+student 86685 has not coursed any subject until pos: 0
+student 86685 has not coursed any subject until pos: 1
+student 193238 has not coursed any subject until pos: 0
+student 70474 has not coursed any subject until pos: 0
 ------------
 student info
 	age:   29
@@ -8,40 +134,150 @@ student info
 	drop_rate:   [1.0]
 	fail_rate:   [0.0]
 	hard_rate:   ['not know']
-	id_num:   53935
+	id_num:   33829
 	improvement_rate:   ['not know']
 	in_condition:   ['not know']
 	ira:   ['not know']
 	local:   outros
-	mand_credit_rate:   ['not know']
 	pass_rate:   [0.0]
 	position:   ['not know']
-	quota:   universal
-	race:   000
-	reg:   200697346
-	school_type:   nao declarado
+	quota:   não
+	race:   não informado
+	reg:   123791
+	school_type:   não informada
 	sem_in:   2
 	sem_out:   2
-	sex:   masculino
-	way_in:   Vestibular
-	way_out:   Desligamento Voluntario
+	sex:   m
+	way_in:   Vestibular                    
+	way_out:   Desligamento Voluntário       
 	year_in:   2006
 	year_out:   2006
 	 printing grades --- 
-		sistemas de informacao:   [[116416, 'sistemas de informacao', 'TR', 2006, 2]]
-		linguagens de programacao:   [[116343, 'linguagens de programacao', 'TR', 2006, 2]]
-		inglês instrumental 1:   [[145971, 'inglês instrumental 1', 'TR', 2006, 2]]
-		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2006, 2]]
-		algebra 1:   [[113107, 'algebra 1', 'TR', 2006, 2]]
-		computacao basica:   [[116301, 'computacao basica', 'TR', 2006, 2]]
+		linguagens de programacao:   [[116343, 'linguagens de programacao', 'TR', 2006, 2, 4]]
+		leitura e produção de textos:   [[140481, 'leitura e produção de textos', 'TR', 2006, 2, 4]]
+		inglês instrumental 1 :   [[145971, 'inglês instrumental 1 ', 'TR', 2006, 2, 4]]
+		sistemas de informacao:   [[116416, 'sistemas de informacao', 'TR', 2006, 2, 4]]
+		computacao basica  :   [[116301, 'computacao basica  ', 'TR', 2006, 2, 6]]
+		algebra 1 :   [[113107, 'algebra 1 ', 'TR', 2006, 2, 6]]
 	 ------------------ 
 ------------
-student 201090968 has not coursed any subject in pos: 0
-student 201125171 has not coursed any subject in pos: 0
-student 201069598 has not coursed any subject in pos: 0
-student 201069648 has not coursed any subject in pos: 0
-student 201070189 has not coursed any subject in pos: 0
-student 201087044 has not coursed any subject in pos: 0
-student 201070772 has not coursed any subject in pos: 0
-student 201112507 has not coursed any subject in pos: 0
-student 201080249 has not coursed any subject in pos: 0
+student 71106 has not coursed any subject until pos: 0
+student 95684 has not coursed any subject until pos: 0
+student 194132 has not coursed any subject until pos: 0
+student 70592 has not coursed any subject until pos: 0
+student 227185 has not coursed any subject until pos: 0
+student 88052 has not coursed any subject until pos: 0
+student 88052 has not coursed any subject until pos: 1
+student 219138 has not coursed any subject until pos: 0
+student 194631 has not coursed any subject until pos: 0
+student 153858 has not coursed any subject until pos: 0
+student 85754 has not coursed any subject until pos: 0
+------------
+student info
+	age:   24
+	course:   cic_licenciatura
+	credit_rate:   ['not know']
+	drop_rate:   [1.0]
+	fail_rate:   [0.0]
+	hard_rate:   ['not know']
+	id_num:   98799
+	improvement_rate:   ['not know']
+	in_condition:   ['not know']
+	ira:   ['not know']
+	local:   df
+	pass_rate:   [0.0]
+	position:   ['not know']
+	quota:   não
+	race:   parda                         
+	reg:   203264
+	school_type:   particular
+	sem_in:   1
+	sem_out:   1
+	sex:   m
+	way_in:   Enem                          
+	way_out:   Novo Vestibular               
+	year_in:   2013
+	year_out:   2013
+	 printing grades --- 
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'TR', 2013, 1, 4]]
+		calculo 1 :   [[113034, 'calculo 1 ', 'TR', 2013, 1, 6]]
+		introducao a microinformatica  :   [[116793, 'introducao a microinformatica  ', 'TR', 2013, 1, 4]]
+		algebra 1 :   [[113107, 'algebra 1 ', 'TR', 2013, 1, 6]]
+	 ------------------ 
+------------
+student 99788 has not coursed any subject until pos: 0
+student 99788 has not coursed any subject until pos: 1
+student 99788 has not coursed any subject until pos: 2
+student 99788 has not coursed any subject until pos: 3
+student 70604 has not coursed any subject until pos: 0
+student 154414 has not coursed any subject until pos: 0
+student 121791 has not coursed any subject until pos: 0
+------------
+student info
+	age:   24
+	course:   engenharia_redes
+	credit_rate:   ['not know', 'not know', 'not know']
+	drop_rate:   [1.0, 1.0, 1.0]
+	fail_rate:   [0.0, 0.0, 0.0]
+	hard_rate:   ['not know', 'not know', 'not know']
+	id_num:   100951
+	improvement_rate:   ['not know', 'not know', 'not know']
+	in_condition:   ['not know', 'not know', 'not know']
+	ira:   ['not know', 'not know', 'not know']
+	local:   outros
+	pass_rate:   [0.0, 0.0, 0.0]
+	position:   ['not know', 'not know', 'not know']
+	quota:   não
+	race:   não dispõe da informação      
+	reg:   215735
+	school_type:   particular
+	sem_in:   1
+	sem_out:   1
+	sex:   m
+	way_in:   Sisu-Sistema de Seleção Unificada
+	way_out:   Deslig - não cumpriu condição 
+	year_in:   2014
+	year_out:   2015
+	 printing grades --- 
+		teoria das estruturas 1  :   [[166049, 'teoria das estruturas 1  ', 'TR', 2014, 1, 4]]
+		eletricidade básica:   [[100986, 'eletricidade básica', 'TR', 2014, 2, 4]]
+		projeto de estradas:   [[166723, 'projeto de estradas', 'TR', 2014, 1, 4]]
+	 ------------------ 
+------------
+student 188239 has not coursed any subject until pos: 0
+student 106323 has not coursed any subject until pos: 0
+------------
+student info
+	age:   18
+	course:   cic_licenciatura
+	credit_rate:   ['not know']
+	drop_rate:   [1.0]
+	fail_rate:   [0.0]
+	hard_rate:   ['not know']
+	id_num:   92773
+	improvement_rate:   ['not know']
+	in_condition:   ['not know']
+	ira:   ['not know']
+	local:   outros
+	pass_rate:   [0.0]
+	position:   ['not know']
+	quota:   não
+	race:   branca                        
+	reg:   187588
+	school_type:   pública
+	sem_in:   1
+	sem_out:   1
+	sex:   m
+	way_in:   Vestibular                    
+	way_out:   Novo Vestibular               
+	year_in:   2012
+	year_out:   2012
+	 printing grades --- 
+		lógica computacional 1:   [[117366, 'lógica computacional 1', 'TR', 2012, 1, 4]]
+		introducao a microinformatica  :   [[116793, 'introducao a microinformatica  ', 'TR', 2012, 1, 4]]
+		organizacao da educacao brasileira:   [[194221, 'organizacao da educacao brasileira', 'TR', 2012, 1, 4]]
+		português instrumental 1 :   [[147389, 'português instrumental 1 ', 'TR', 2012, 1, 4]]
+		inglês instrumental 1 :   [[145971, 'inglês instrumental 1 ', 'TR', 2012, 1, 4]]
+	 ------------------ 
+------------
+student 187930 has not coursed any subject until pos: 0

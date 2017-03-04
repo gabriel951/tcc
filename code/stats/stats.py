@@ -158,6 +158,10 @@ def handle_feature(stu_info, rows_list, feature):
         rows_list = [row.replace('escola publica baixa renda-nao ppi', 'p_baixa_nppi') \
                 for row in rows_list] 
         return rows_list
+    elif feature == 'sex':
+        rows_list = [row.replace('m', 'masculino') for row in rows_list]
+        rows_list = [row.replace('f', 'feminino') for row in rows_list]
+        return rows_list
     elif feature == 'way_out':
         rows_list = [row.replace('Desligamento - Abandono', 'deslg') \
                 for row in rows_list] 
@@ -482,7 +486,7 @@ def write_execute_delete(rows, function, *args):
     #call('rm temp.txt', shell = True)
 
 if __name__ == "__main__":
-    #generate_graphs()
+    generate_graphs()
     #apply_kendall()
     #study_attr()
-    study_train_test_division()
+    #study_train_test_division()

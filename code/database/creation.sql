@@ -28,7 +28,7 @@ CREATE TABLE BD_UNB.SUBJECT
     ID              SERIAL,
     CODE            INT                 NOT NULL    UNIQUE,
     NAME            VARCHAR(100)        NOT NULL, 
-    -- CREDITS         INT                 NOT NULL,
+    CREDITS         INT                 NOT NULL,
 PRIMARY KEY(ID)); 
 
 -- RELANTIONSHIP BETWEEN STUDENT AND SUBJECT
