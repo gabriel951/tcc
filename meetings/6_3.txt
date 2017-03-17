@@ -2,7 +2,23 @@
     -> Descobri erros na hora de calcular o desempenho da minha rede neural e na hora
 do cálculo dos atributos de um determinado aluno (função yearsem_2_pos)
     -> Tenho que codificar/rodar/testar funções que calculam os novos atributos
-derivados
-    -> Preciso fazer nova eliminação de outliers (trabalhando nisso atualmente)
+derivados (ainda faltam 3 atributos)
+    -> Preciso fazer nova eliminação de outliers (trabalhando nisso atualmente) para
+refazer os histogramas/gráficos de barra. 
+    -> Problema no processo do PIBIC?
+    -> Respondi o questionário
+    -> Na hora de calcular se o aluno está em condição ou não: 
+            1. duas reprovações na mesma disciplina obrigatória -> modelo não considera
+disciplinas obrigatórias
+            2. não ser aprovado em quatro disciplinas do curso em dois períodos regulares
+consecutivos -> modelo não considera "disciplinas do curso"
+            3. Chegar ao último período letivo do curso sem a possibilidade de concluir
+-> acho que está ok. 
+            ** minha sugestão: em vez de não considerar esse atributo, tentar estimar
+se o aluno está ou não em condição, desconsiderando se uma disciplina é obrigatória
+ou se a disciplina é do curso.  
+    -> Já é bom discutir como será feita a medição do modelo? Por exemplo, 
 
 # depois
+
+OBS: Não houve reunião!

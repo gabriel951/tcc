@@ -2,7 +2,7 @@
 library (ggplot2)
 library (png)
 
-cat("entered r program to plot stats\n")
+cat("entered r program to plot bar graph\n")
 
 # get command line arguments
 args <- commandArgs(trailingOnly = TRUE)

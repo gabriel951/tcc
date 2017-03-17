@@ -9,17 +9,16 @@ sys.path.append('..')
 from basic import *
 
 # valid values for some attributes
-VALID_SEX_VALUES = ['masculino', 'feminino']
+VALID_SEX_VALUES = ['m', 'f']
 VALID_LOCAL_VALUES = ['df', 'outros', 'indisponível']
-VALID_QUOTA_VALUES = ['escola publica alta renda-ppi', 'escola publica baixa renda-ppi', 
-        'escola publica alta renda-nao ppi', 'escola publica baixa renda-nao ppi', 
-        'negro', 'universal']
-VALID_SCHOOL_TYPE_VALUES = ['', 'nao declarado', 'particular', 'publica']
+VALID_QUOTA_VALUES = ['sim', 'não']
+VALID_SCHOOL_TYPE_VALUES = ['não informada', 'particular', 'pública']
 VALID_COURSE_VALUES = COURSES_OFF_NAME
-VALID_WAY_IN_VALUES = ['Vestibular', 'Convenio-Int', 'Transferencia Obrigatoria', 
-        'Acordo Cultural-PEC',  'Convenio Andifes', 'Matricula Cortesia', 'SISU',
-        'Transferencia Facultativa', 'PEC-G Peppfol', 'Portador Diploma Curso Superior', 
-        'Vestibular para mesmo Curso', 'PAS', 'ENEM']
+VALID_WAY_IN_VALUES = ['Vestibular', 'Convênio-Int', 'Transferência Obrigatória', 
+        'Acordo Cultural-PEC-G',  'Convênio - Andifes', 'Matrícula Cortesia', 
+        'Sisu-Sistema de Seleção Unificada', 'Transferência Facultativa', 
+        'Portador Diplom Curso Superior', 'PEC-Peppfol-Graduação', 
+        'Vestibular para mesmo Curso', 'Programa de Avaliação Seriada', 'Enem']
     
 def add_feature_sex(stu, stu_features):
     """
@@ -32,9 +31,9 @@ def add_feature_sex(stu, stu_features):
     """
     # assert value is as expected
     assert(stu.sex in VALID_SEX_VALUES)
-    if stu.sex == 'masculino':
+    if stu.sex == 'm':
         stu_features.append(0)
-    elif stu.sex == 'feminino':
+    elif stu.sex == 'f':
         stu_features.append(1)
     else:
         exit('error on add feature sex function')
@@ -63,6 +62,94 @@ def add_feature_course(stu, stu_features):
     """
     # use dummy list
     put_dummy_variables(stu.course, VALID_COURSE_VALUES, stu_features) 
+
+def add_feature_credit_rate_acc(stu, stu_features, semester):
+    """
+    append feature credit_rate_acc to the student feature list
+    receives:
+        1. a student
+        2. a list containing all the student features
+        3. the semester we are interested. 
+    returns:
+        nothing 
+    """
+    # if student has already graduate, put last value in the list
+    if stu.get_num_semesters() < semester: 
+        assert(stu.credit_rate_acc[-1] >= 0)
+        stu_features.append(stu.credit_rate_acc[-1])
+    else:
+        assert(stu.credit_rate_acc[semester - 1] >= 0)
+        stu_features.append(stu.credit_rate_acc[semester - 1])
+
+def add_feature_hard_rate(stu, stu_features, semester):
+    """
+    append feature hard_rate to the student feature list
+    receives:
+        1. a student
+        2. a list containing all the student features
+        3. the semester we are interested. 
+    returns:
+        nothing 
+    """
+    # if student has already graduate, put last value in the list
+    if stu.get_num_semesters() < semester: 
+        assert(stu.hard_rate[-1] >= 0 and stu.hard_rate[-1] <= 1.0)
+        stu_features.append(stu.hard_rate[-1])
+    else:
+        assert(stu.hard_rate[semester - 1] >= 0 and stu.hard_rate[semester - 1] <= 1.0)
+        stu_features.append(stu.hard_rate[semester - 1])
+
+def add_feature_drop_rate(stu, stu_features, semester):
+    """
+    append feature drop_rate to the student feature list
+    receives:
+        1. a student
+        2. a list containing all the student features
+        3. the semester we are interested. 
+    returns:
+        nothing 
+    """
+    # if student has already graduate, put last value in the list
+    if stu.get_num_semesters() < semester: 
+        assert(stu.drop_rate[-1] >= -1 and stu.drop_rate[-1] <= 2)
+        stu_features.append(stu.drop_rate[-1])
+    else:
+        assert(stu.drop_rate[semester - 1] >= -1 and stu.drop_rate[semester - 1] <= 2)
+        stu_features.append(stu.drop_rate[semester - 1])
+
+def add_feature_impr_rate(stu, stu_features, semester):
+    """
+    append feature improvement_rate to the student feature list
+    receives:
+        1. a student
+        2. a list containing all the student features
+        3. the semester we are interested. 
+    returns:
+        nothing 
+    """
+    # if student has already graduate, put last value in the list
+    if stu.get_num_semesters() < semester: 
+        stu_features.append(stu.improvement_rate[-1])
+    else:
+        stu_features.append(stu.improvement_rate[semester - 1])
+
+def add_feature_ira(stu, stu_features, semester):
+    """
+    append feature ira to the student feature list
+    receives:
+        1. a student
+        2. a list containing all the student features
+        3. the semester we are interested. 
+    returns:
+        nothing 
+    """
+    # if student has already graduate, put last value in the list
+    if stu.get_num_semesters() < semester: 
+        assert(stu.ira[-1] >= 0.0 and stu.ira[-1] <= 5.0)
+        stu_features.append(stu.ira[-1])
+    else:
+        assert(stu.ira[semester - 1] >= 0.0 and stu.ira[semester - 1] <= 5.0)
+        stu_features.append(stu.ira[semester - 1])
 
 def add_feature_local(stu, stu_features):
     """
@@ -129,6 +216,24 @@ def add_feature_pass_rate(stu, stu_features, semester):
         assert(stu.pass_rate[semester - 1] >= -1 and stu.pass_rate[semester - 1] <= 2)
         stu_features.append(stu.pass_rate[semester - 1])
 
+def add_feature_position(stu, stu_features, semester):
+    """
+    append feature position to the student feature list
+    receives:
+        1. a student
+        2. a list containing all the student features
+        3. the semester we are interested. 
+    returns:
+        nothing 
+    """
+    # if student has already graduate, put last value in the list
+    if stu.get_num_semesters() < semester: 
+        assert(stu.position[-1] >= 0)
+        stu_features.append(stu.position[-1])
+    else:
+        assert(stu.position[semester - 1] >= -1)
+        stu_features.append(stu.position[semester - 1])
+
 def add_feature_school_type(stu, stu_features):
     """
     append feature school_type to the student feature list
@@ -157,7 +262,6 @@ def add_feature_way_in_enh(stu, stu_features):
         assert (stu.way_in in VALID_WAY_IN_VALUES)
     except:
         print(stu.way_in)
-        exit()
     if stu.way_in == 'PAS':
         enh_way_in = stu.way_in
     elif stu.way_in == 'Vestibular':
@@ -180,12 +284,19 @@ def add_outcome(stu, target_lst):
     returns: 
         nothing
     """
+    GRADUATED = 0
+    NOT_GRADUATED = 1
+
     # assert value is as expected
-    assert (stu.way_out in WAY_OUT_CONSIDERED)
+    try:
+        assert (stu.way_out in WAY_OUT_CONSIDERED)
+    except:
+        print(stu.way_out)
+        return
     if stu.way_out == 'Formatura':
-        target_lst.append(0)
+        target_lst.append(GRADUATED)
     else:
-        target_lst.append(1)
+        target_lst.append(NOT_GRADUATED)
 
 def put_dummy_variables(atr_value, lst_values, stu_features):
     """
@@ -215,4 +326,3 @@ def put_dummy_variables(atr_value, lst_values, stu_features):
     # append to student features list
     for elem in dummy_lst:
         stu_features.append(elem)
-

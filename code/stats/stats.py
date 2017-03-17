@@ -70,8 +70,10 @@ def generate_graphs():
     #get_graph('grades', stu_info, False, data_type = 'discrete')
 
     ## derived features
-    #get_graph('ira', stu_info, True, data_type = 'continuous')
-    #get_graph('improvement_rate', stu_info, data_type = 'continuous')
+    #get_graph('ira', stu_info, False, data_type = 'continuous', index = LAST_ELEM, 
+    #        binwidth = 0.2)
+    #get_graph('improvement_rate', stu_info, False, data_type = 'continuous', 
+    #        index = LAST_ELEM, binwidth = 0.2)
     #get_graph('pass_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
     #get_graph('pass_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
     #get_graph('fail_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
@@ -79,8 +81,16 @@ def generate_graphs():
     #get_graph('drop_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
     #get_graph('drop_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
     #get_graph('mand_rate', stu_info, data_type = 'continuous')
+    #get_graph('credit_rate_acc', stu_info, False, data_type = 'continuous', index = 0, 
+    #        binwidth = 2)
+    #get_graph('hard_rate', stu_info, False, data_type = 'continuous', index =
+    #        LAST_ELEM)
+    # TODO: 
+    #get_graph('in_condition', stu_info, False, data_type = 'continuous', index =
+    #        LAST_ELEM)
+    #get_graph('position', stu_info, False, data_type = 'discrete', index = LAST_ELEM)
 
-def get_graph(feature, stu_info, sep_course, data_type = 'discrete', index = None):
+def get_graph(feature, stu_info, sep_course, data_type, index = None, binwidth = 0.05):
     """
     generate a bar graph (discrete data) or a histogram graph (continuous data) for 
     the feature distribution. No separation by course
@@ -88,9 +98,10 @@ def get_graph(feature, stu_info, sep_course, data_type = 'discrete', index = Non
         1. a feature name
         2. a dictionary of students. 
         3. a boolean to indicate if we need to separate the courses or not
-        3. (optional) whether the datatype is discrete or continuous.
+        3. whether the datatype is discrete or continuous.
         4. (optional) an index. If passed its because the feature is a list (one for
         each semester) and its the position for the list
+        5. (optional) the binwidth, case the feature is continuous 
     returns: 
         nothing
     """
@@ -129,7 +140,7 @@ def get_graph(feature, stu_info, sep_course, data_type = 'discrete', index = Non
         if data_type == 'discrete':
             write_execute_delete(rows_list, r_get_bar_graph, name)
         elif data_type == 'continuous':
-            write_execute_delete(rows_list, r_get_hist_graph, name)
+            write_execute_delete(rows_list, r_get_hist_graph, name, binwidth)
         else:
             exit("misinformed value")
 
@@ -297,15 +308,16 @@ def r_get_bar_graph(name):
     call("Rscript stats_bar_graph.r", shell = True)
     call("mv temp.png " + name, shell = True)
 
-def r_get_hist_graph(name):
+def r_get_hist_graph(name, binwidth):
     """
     call r program to plot a histogram graph
     receives: 
         1. the name for the graph
+        2. the binwidth for the histogram graph
     returns: 
         nothing
     """
-    call("Rscript stats_hist_graph.r", shell = True)
+    call("Rscript stats_hist_graph.r " + str(binwidth), shell = True)
     call("mv temp.png " + name, shell = True)
 
 def study_attr():
@@ -369,13 +381,13 @@ def study_train_test_division():
         for key, stu in stu_info.items():
             if stu.year_in <= year_split:
                 train_inst += 1
-                if stu.way_out == 'Formatura':
+                if 'Formatura' in stu.way_out:
                    train_grad_stu += 1 
                 else:
                     train_drop_stu += 1
             else:
                 test_inst += 1
-                if stu.way_out == 'Formatura':
+                if 'Formatura' in stu.way_out:
                    test_grad_stu += 1 
                 else:
                     test_drop_stu += 1

@@ -3,7 +3,7 @@
 import csv
 import psycopg2 
 
-# import basic and aux
+# import basic and aux import sys
 import sys
 sys.path.append('..')
 from basic import *
@@ -102,25 +102,45 @@ def insert_student(info, cur, conn):
     """
     global insertions
 
-    # get year and semester student entered - will be needed for the age
+    # get year and semester student entered - will be needed for the some other
+    # attributes, that's why outside order
     # that's why outside order
     (year_in, sem_in) = get_year_sem(info[YEAR_SEM_IN_OPT_IND], True)
 
     # get student information #[1:-1] may be needed to remove quotes
-    code = get_code(info[CODE_IND])
+    # in the code variable, we put not only the code but also the year and semester
+    code = get_code(info)
+
     sex = info[SEX_IND].lower()
+    sex = sex.rstrip()
+
     age = get_age(info[BDAY_IND], year_in)
+
     local = get_local(info[LOCAL_IND].lower())
+    local = local.rstrip()
+
     quota = info[QUOTA_IND].lower()
+    quota = quota.rstrip()
+
     school_type = info[SCHOOL_IND].lower()
+    school_type = school_type.rstrip()
+
     race = info[RACE_IND].lower()
+    race = race.rstrip()
+
     course = info[COURSE_IND].lower()
+    course = course.rstrip()
+
     # year in and semester in were already calculated
     #year_in
     #sem_in
     (year_end, sem_end) = get_year_sem(info[YEAR_SEM_END_IND], True)
+
     way_in = info[WAY_IN_IND]
+    way_in = way_in.rstrip()
+
     way_out = info[WAY_OUT_IND]
+    way_out = way_out.rstrip()
 
     # insert in the database, in case not present
     query = "insert into %s.student (cod_mat, sex, age, quota, school_type, race, \
@@ -146,11 +166,11 @@ def insert_subject(info, cur, conn):
     # get subject information #[1:-1] may be needed to remove quotes
     code = int(info[SUB_CODE_IND])
     name = info[SUB_NAME_IND].lower()
+    name.rstrip()
     credits = int(info[SUB_CREDITS_IND])
 
     # fix in case name has the ' or a lot of spaces that we don't need
     name = name.replace("'", "") 
-    name = name.replace("   ", "")
 
     # insert in the database, in case not present
     query = "insert into %s.subject (code, name, credits) values (%d, '%s', %d)" \
@@ -172,9 +192,11 @@ def insert_subject_student(info, cur, conn):
 
     # get student and subject information #[1:-1] to remove quotes
     (year, sem) = get_year_sem(info[YEAR_SEM_SUB_IND], True)
-    code_stu = get_code(info[CODE_IND])
+    code_stu = get_code(info)
     code_sub = int(info[SUB_CODE_IND])
+
     grade = info[SUB_GRADE_IND]
+    grade.rstrip()
 
     # insert in the database, in case not present
     query = "insert into %s.student_subject (code_stu, code_sub, grade, semester, \

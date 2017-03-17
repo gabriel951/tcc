@@ -24,16 +24,27 @@ def get_age(birth_date, year):
     assert (age > 0 and age < 100)
     return age
 
-def get_code(code_str):
+def get_code(info):
     """
     parse and return the code for a given student
     receives: 
         1. string containing the code, in the format 'ALUNO xxxxx'
+        2. the year the student got in unb
+        3. the semester the student got in unb
     returns:
         integer correspondent to the student code
     """
+    # get year and semester student entered
+    (year_in, sem_in) = get_year_sem(info[YEAR_SEM_IN_OPT_IND], False)
+
+    # get original code, in the csv file
+    code_str = info[CODE_IND]
     contents = code_str.split(' ')
-    return int(contents[1])
+    original_code = contents[1]
+
+    # calculate and return code
+    code = int(str(original_code) + str(year_in) + str(sem_in))
+    return code
 
 def get_course(std_inf):
     """

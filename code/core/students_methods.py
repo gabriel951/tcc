@@ -1,6 +1,7 @@
 #!/usr/bin/python3.4
 # this file contain the methods mainly related to the students
 import statistics
+import subjects as sub
 from students import *
 from outliers import *
 
@@ -34,26 +35,67 @@ def check_missing_values(stu_info, feature):
 
 def fill_credit_rate(stu_info):
     """
-    receives a dictionary containing all student information
-    set correctly the credit rate of every student
-
-    * credit rate is the number of credits a student took each semester
+    set correctly the credit rate and the accumulated credit rate of every student
+    receives:
+        1. dictionary containing all student information
+    returns:
+        nothing
+    * credit rate is the number of credits a student took so far
+    TODO (maybe later): I could use the credit rate divided by the number of credits expected by a
+    course
     """
-    # TODO: I cant fill the credit rate unless i know how many credits each subject
-    # has
+    # number of credit rate
+    global credit_rate
+    credit_rate = 0
+
+    file_name = CSV_PATH + FILE_NAME + EXTENSION
+
+    # read line by line, parsing the results and putting on database
+    with open(file_name, newline = '', encoding = ENCODING) as fp:
+        reader = csv.reader(fp)
+
+        # skip first line
+        next(reader, None)
+
+        # iterate through the rows, inserting in the table
+        for row in reader:
+            parse_insert_credit_rate(stu_info, row)
+            
+    print("\tnumber of credit rate added: %s" % (credit_rate))
+
+    # handle missing iras
+    handle_miss_credit_rate(stu_info)
+
+    # get accumulated number of credits info
+    for key, stu in stu_info.items():
+        num_semesters = stu.get_num_semesters()
+        acc_credits = 0 
+        for pos in range(num_semesters):
+            acc_credits += stu.credit_rate[pos]
+            stu.credit_rate_acc[pos] = acc_credits
 
 def fill_condition(stu_info):
     """
-    receives a dictionary containing the student information
     fills the condition list for every student
+    receives: 
+        1. dictionary containing the student information
+    returns: 
+        nothing
     """
-    for key, stu in stu_info: 
-        num_semesters = stu.get_num_semesters()
-        for i in range(num_semesters):
-            i = i + 1
-            #stu.in_condition_sem(i):
+    # just to keep track how we are going
+    students_done = 0
 
-        # TODO: handle list transformation
+    for key, stu in stu_info.items(): 
+        num_semesters = stu.get_num_semesters()
+        for pos in range(num_semesters):
+            stu.in_condition_sem(pos)
+        
+        # keep track how we are going
+        students_done += 1
+        if students_done % 100 == 0: 
+            print('\t finished filling condition for 100 more students')
+        
+    print('finished filling condition for all students')
 
 def fill_drop_pass_fail_rate_sem(stu, pos, mode, fp):
     """
@@ -110,7 +152,6 @@ def fill_drop_pass_fail_rate_sem(stu, pos, mode, fp):
         fp.write('student %d has not coursed any subject until pos: %d\n' % (stu.reg, pos))
         # no need to log cases, have analysed this already
         #stu.log_info(fp)
-   
 
 def fill_drop_pass_fail_rate(stu_info, mode, do_quick): 
     """
@@ -163,14 +204,13 @@ def fill_drop_pass_fail_rate(stu_info, mode, do_quick):
 
 def fill_empty_iras(stu_info):
     """
+    DEPRECATED
     receives the dictionary of students. Search every student list of iras, and
     fill the ira for the semester that we didnt have the information in the database
     """
     # number of student with missing iras
     miss_ira = 0 
-
     for key, stu in stu_info.items():
-
         # whether current student has one or more ira missed
         missed_ira = 0
 
@@ -194,6 +234,8 @@ def fill_grades(stu_info, mode = 'normal'):
     returns: 
         nothing
     """
+    global outliers_dict
+
     # check if there's any restriction
     if mode == 'normal':
         restriction = ''
@@ -221,8 +263,10 @@ def fill_grades(stu_info, mode = 'normal'):
         # get student id and corresponding student - it may have been deleted as an
         # outlier, so watch key error
         student_id = row[CODE_STU_RIND]
-        student = stu_info[student_id]
-        student.set_grades(row)
+        if not (student_id in outliers_dict): 
+            student = stu_info[student_id]
+            student.set_grades(row)
+            
 
     print('finished filling grades')
 
@@ -245,12 +289,19 @@ def fill_hard_rate(stu_info):
     for key, stu in stu_info.items():
         stu.set_hard_rate(subj_dic)
     
+    # handle missing values
+    handle_miss_hard_rate(stu_info)
     fp.close()
+
+    print('finished filling hard rate')
 
 def fill_impr_rate(stu_info):
     """
-    receives a dictionary containing all students. 
     fill the student objects with information regarding the improvement rate
+    receives:
+        1. a dictionary containing all students. 
+    returns: 
+        nothing
     """
     # file logger
     fp = open('../logs/impr_rate_patological_cases.txt', 'w')
@@ -266,6 +317,7 @@ def fill_impr_rate(stu_info):
     fp.close()
 
     # TODO: update values that could not be calculated - use imputation
+    handle_miss_impr_rate(stu_info)
 
     print('finished_calculating improvement rate')
 
@@ -319,11 +371,14 @@ def fill_mand_rate(stu_info):
 
 def fill_position(stu_info):
     """
-    receives a student dictionary
-    put the information regarding the position the student is in (compared to every
+    fill information regarding the position the student is in (compared to every
     other student on the same course and semester) 
+    receives: 
+        1. a student dictionary
+    returns: 
+        nothing
     """
-    # avoid magic ;)
+    # avoid magic numbers ;)
     NOT_FOUND = -1 
     IRA_POS = 0 
     REG_POS = 1
@@ -349,10 +404,12 @@ def fill_position(stu_info):
 
             # case the student has already graduated, ira is the one for the last
             # semester
-            if cur_sem > sem_in_unb:
-                ira = stu.ira[sem_in_unb]
+            if cur_sem >= sem_in_unb:
+                ira = stu.ira[sem_in_unb - 1]
             else: 
                 ira = stu.ira[cur_sem]
+            # assert we know the ira
+            assert(ira != NOT_KNOWN)
 
             # add to dict
             if not ((stu.course, stu.year_in, stu.sem_in) in perf):
@@ -360,13 +417,16 @@ def fill_position(stu_info):
             perf[(stu.course, stu.year_in, stu.sem_in)].append((ira, stu.reg))
 
         # sort every list in dictionary - by first element
-        for key, val in perf.items(): 
+        for key_dict, val in perf.items(): 
             val.sort(key = lambda tup: tup[IRA_POS])
 
         # for every student, fill his position on the list
         for key, stu in stu_info.items():
             sem_in_unb = stu.get_num_semesters()
-            if cur_sem > sem_in_unb: 
+
+            # skip if student graduated before the current semester
+            # the = in the comparison is because indexing in python starts at 0
+            if cur_sem >= sem_in_unb: 
                 continue
 
             perf_lst = perf[(stu.course, stu.year_in, stu.sem_in)]
@@ -378,6 +438,7 @@ def fill_position(stu_info):
             assert (position != NOT_FOUND)
 
             stu.position[cur_sem] = position
+    print('finished filling position')
 
 def get_database_info():
     """
@@ -399,8 +460,7 @@ def get_database_info():
         TABLE = 'student'
 
         # constants
-        STU_ID_IND = 0
-        STU_CODE_IND = 1
+        STU_CODE_IND = 0
 
         # query database
         query = 'select * from %s.%s ' % (MY_DATABASE, TABLE)
@@ -416,7 +476,7 @@ def get_database_info():
             # in case this student is a new one 
             if not key in stu_info: 
                 # add student, case the registration is a new one
-                student_id = row[STU_ID_IND]
+                student_id = row[STU_CODE_IND]
                 stu_info[key] = Student(student_id, row)
 
         print('finished loading the students dictionary')
@@ -434,32 +494,30 @@ def get_derived_info(stu_info):
     # fill student grades
     fill_grades(stu_info)
 
-    # calculate student ira for the semesters - TODO: handle case of empty iras
+    # calculate student ira for the semesters 
     fill_ira(stu_info)
 
-    # calculate improvement rate - TODO: handle case of improvement rate
-    #fill_impr_rate(stu_info)
+    # calculate improvement rate 
+    fill_impr_rate(stu_info)
 
     # calculate fail rate, pass rate and drop rate
-    #fill_drop_pass_fail_rate(stu_info, 'fail', False)
-    #fill_drop_pass_fail_rate(stu_info, 'pass', False)
-    #fill_drop_pass_fail_rate(stu_info, 'drop', False)
+    fill_drop_pass_fail_rate(stu_info, 'fail', False)
+    fill_drop_pass_fail_rate(stu_info, 'pass', False)
+    fill_drop_pass_fail_rate(stu_info, 'drop', False)
 
-    # calculate credit rate - TODO: need the credit amount for the
-    # disciplines
-    #fill_credit_rate(stu_info)
+    # calculate credit rate 
+    fill_credit_rate(stu_info)
 
     # calculate hard rate - need to check the code later
-    #fill_hard_rate(stu_info)
+    fill_hard_rate(stu_info)
 
-    # calculate if student is in condition - TODO (can be done)
+    # calculate if student is in condition 
     #fill_condition(stu_info)
 
     # calculate position of the student for the semester he is in 
-    #- TODO (can be done)
-    #fill_position(stu_info)
+    fill_position(stu_info)
 
-    print('\nfinished constructing derived info\n\n')
+    #print('\nfinished constructing derived info\n\n')
 
 def get_students_info(): 
     """
@@ -479,8 +537,8 @@ def get_students_info():
     # obtain info for the students contained in database
     stu_dict = get_database_info()
     
-    # TODO: handle outliers
-    #handle_outliers(stu_dict)
+    # handle outliers
+    handle_outliers(stu_dict)
 
     # construct info for the derived attributes of a student
     get_derived_info(stu_dict)
@@ -491,6 +549,84 @@ def get_students_info():
     # TODO: check missing values
     check_missing_values(stu_dict, 'ira')
 
+def handle_miss_credit_rate(stu_info):
+    """
+    handle missing credit rate of students by imputation
+    if we have a missing value, assume the student didn't course any credits that
+    semester
+    receives:
+        1. student dictionary, containing all student information
+    returns: 
+        nothing
+    """
+    # account for the number of missing credit rate
+    miss_credit_rate = 0
+
+    # iterate through every student, and every semester. If there's a missing value,
+    # the imputation value is 0 (student didn't course subject after all)
+    for key, stu in stu_info.items():
+        for pos in range(stu.get_num_semesters()):
+            if stu.credit_rate[pos] == NOT_KNOWN:
+                stu.credit_rate[pos] = 0
+                miss_credit_rate += 1
+
+    print('There were %d missing credit rate' % (miss_credit_rate))
+
+def handle_miss_hard_rate(stu_info):
+    """
+    fills the missing hard rates for the student
+    receives:
+        1. student dictionary
+    returns:
+        nothing
+    """
+    # account for the number of missing rates
+    missing_hard_rates = 0 
+
+    # get average hard rate for first semester
+    hard_rates = []
+    for key, stu in stu_info.items():
+        if stu.hard_rate[0] != NOT_KNOWN:
+            hard_rates.append(stu.hard_rate[0])
+    average_hard_rate = statistics.mean(hard_rates)
+
+    for key, stu in stu_info.items():
+        num_sem = stu.get_num_semesters()
+        for pos in range(num_sem):
+            if stu.hard_rate[pos] == NOT_KNOWN:
+                missing_hard_rates += 1
+
+                # case the first hard rate is not know, put value equal to average
+                if pos == 0:
+                    stu.hard_rate[pos] = average_hard_rate
+            
+                # use imputation case student hard rate is missing
+                else:
+                    stu.hard_rate[pos] = stu.hard_rate[pos - 1]
+
+    print('There were %d missing hard rates' % (missing_hard_rates))
+
+def handle_miss_impr_rate(stu_info):
+    """
+    fills improvement rate that are still missing values
+    receives:
+        1. dictionary containing all student info
+    returns:
+        nothing
+    """
+    # account for the number of missing improvement rate
+    miss_impr_rate = 0
+
+    # iterate through every student, and every semester. If there's a missing value,
+    # the imputation value becomes 1.0
+    for key, stu in stu_info.items():
+        for pos in range(stu.get_num_semesters()):
+            if stu.improvement_rate[pos] == NOT_KNOWN:
+                stu.improvement_rate[pos] = 1.0
+                miss_impr_rate += 1
+
+    print('There were %d missing improvement rate' % (miss_impr_rate))
+
 def handle_miss_ira(stu_info):
     """
     fills the missing iras for the student
@@ -499,24 +635,30 @@ def handle_miss_ira(stu_info):
     returns:
         nothing
     """
+    # account for the number of missing iras
+    missing_iras = 0 
+
     # get average ira for first semester
     iras = []
     for key, stu in stu_info.items():
-        if stu.ira[pos] != NOT_KNOWN:
-            iras.append(stu.ira[pos])
+        if stu.ira[0] != NOT_KNOWN:
+            iras.append(stu.ira[0])
     average_ira = statistics.mean(iras)
 
     for key, stu in stu_info.items():
         num_sem = stu.get_num_semesters()
         for pos in range(num_sem):
             if stu.ira[pos] == NOT_KNOWN:
+                missing_iras += 1
+
                 # case the first ira is not know, put value equal to average
                 if pos == 0:
                     stu.ira[pos] = average_ira
             
                 # use imputation case student ira is missing
                 else:
-                    stu.ira[pos] = stu.ira[pos]
+                    stu.ira[pos] = stu.ira[pos - 1]
+    print('There were %d missing iras' % (missing_iras))
 
 def load_students(name, path = PATH): 
     """
@@ -549,7 +691,7 @@ def parse_insert_ira(stu_info, row):
 
     # get student code and return case not a student of interest - it may be an
     # outlier or a student that has not graduated yet
-    code = get_code(info[CODE_IND])
+    code = get_code(info)
     if code not in stu_info: 
         return
 
@@ -567,6 +709,50 @@ def parse_insert_ira(stu_info, row):
 
     # increment the number of ira filleds
     ira_filled += 1
+
+def parse_insert_credit_rate(stu_info, row): 
+    """
+    put info of a row of the csv file in the student credit rate - the info is the
+    number of credits a given student coursed in a given semester
+    receives:
+        1. student dictionary 
+        2. a row, containing the ira information. 
+    returns:
+        nothing
+    """
+    global credit_rate
+
+    # return case of empty row
+    if len(row) == 0:
+        return 
+
+    # get row content - the row is a list with only one entry
+    content = row[0]
+    for i in range(1, len(row)):
+        content += row[i]
+
+    # split content in list 
+    info = content.split(';')
+
+    # get student code and return case not a student of interest - it may be an
+    # outlier or a student that has not graduated yet
+    code = get_code(info)
+    if code not in stu_info: 
+        return
+
+    # get credit rate information
+    credit = int(info[CREDITS_APPROVED_SEM_IND])
+
+    # put credit rate in the student info
+    cur_stu = stu_info[code]
+    (year, sem) = get_year_sem(info[YEAR_SEM_SUB_IND], True)
+    pos = cur_stu.yearsem_2_pos(year, sem)
+    if pos == ERROR: 
+        return
+    cur_stu.credit_rate[pos] = credit
+
+    # increment the number of credits filleds
+    credit_rate += 1
 
 def save_students(name, stu_info, path = PATH): 
     """

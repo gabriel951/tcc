@@ -2,14 +2,7 @@
 import pickle
 import csv
 
-# TODO: does my database contain students who have not graduated yet? 
-# TODO: fix code to take into account the subjectives that are elective
-# TODO: in the IRA case, i can fill every subject, one by one
-# TODO: update drop_rate, pass_rate and fail_rate to be lists, so we can take it by
-# semester
-# TODO: there appears to be iras missing. And the iras i have are only for the last
-# year
-# TODO: check students that passed in everything
+# TODO: in my report, describe how imputation happenned for each feature
 
 import sys
 sys.path.append('..')
@@ -86,9 +79,10 @@ class Student():
         self.pass_rate = lst_unknown[:] 
         # reason between subjects coursed and subjects dropped
         self.drop_rate = lst_unknown[:] 
-        # reason between credits in disciplines per semester and number of credits in
-        # the course
+        # number of credits coursed in a semester with approvation
         self.credit_rate = lst_unknown[:]
+        # number of credits "accumulated": coursed in all semesters before with approvation
+        self.credit_rate_acc = lst_unknown[:]
         # rate of approvation in the most hard disciplines of the semester
         self.hard_rate = lst_unknown[:]
         # boolean that indicates whether a student is in condition or not
@@ -98,6 +92,7 @@ class Student():
 
     def calculate_ira_yearsem(self, year, sem):
         """
+        DEPRECATED 
         receives an year and a semester, calculates the ira the student will have in
         the passed ira and semester
 
@@ -144,19 +139,22 @@ class Student():
 
     def check_2repr(self, pos):
         """
-        receives a position
-        returns true case the student has two reprovations in a given subject for 
-        all the semesters he has already coursed
-        
+        check whether the student has two reprovations in a given subject for 
+        a given position
+        receives: 
+            1. position of the student were are interested
+        returns:
+            boolean indicating if student has 2 reprovations. 
+
         * pos = 0 means the year and semester the student got in unb 
         """
         (cur_year, cur_sem) = self.pos_2_yearsem(pos, self.year_in, self.sem_in)
     
-        for key_grd, grd_lst in self.grades: 
+        for key_grd, grd_lst in self.grades.items(): 
             num_fails = 0 
             for pos in range(len(grd_lst)):
-                (code, name, grade, year, sem) = self.get_sub_info(key_grd, pos, 'all') 
-                if student_dropped(grade):
+                (code, name, grade, year, sem, credits) = self.get_sub_info(key_grd, pos, 'all') 
+                if student_failed(grade):
                     if year < cur_year or (year == cur_year and sem <= cur_sem):
                         num_fails += 1
             if num_fails >= 2: 
@@ -166,14 +164,18 @@ class Student():
 
     def get_course(self, course_lst):
         """
-        receives a course list
-        returns the course with curriculum the student is in
+        DEPRECATED
+        get the course student is in 
+        receives:
+            1. course list
+        returns:
+            the course with curriculum the student is in
         """
         for course in course_lst:
             if course.is_valid(self.course, self.year_in, self.sem_in):
                 return course
-        exit('could not load course %s for the year %d and semester %d' % (course_name,
-            year, sem))
+        exit('could not load course %s for the year %d and semester %d' %
+                (self.course, self.year_in, self.sem_in))
 
     def get_sub_info(self, key, pos, info):
         """
@@ -290,10 +292,11 @@ class Student():
             print(grade_factor)
             print(ira_semester)
     
-    def in_condition_sem(self, sem):
+    def in_condition_sem(self, pos):
         """
-        receives a semester
         returns whether the student is in condition for that semester or not
+        receives: 
+            1. the position to calculate 
         also, fills the list with right information
 
         * semester count start at zero
@@ -302,7 +305,7 @@ class Student():
             TWICE_FAIL - case the student is in condition because of twice failing in the same
             subject
             FEW_PASS - case the student is in condition because of not being approved in
-            four disciplines of the course for the two periods
+            four disciplines for the two periods
         """
         # avoid magic numbers ;)
         NO_CONDITION = 0
@@ -310,43 +313,41 @@ class Student():
         FEW_PASS = 2
         
         # no student at the end of the first semester is in condition
-        if sem == 0: 
-            self.in_condition[sem] = NO_CONDITION
+        if pos == 0: 
+            self.in_condition[pos] = NO_CONDITION
             return NO_CONDITION
 
         # return if student that is in condition for twice failing a subject is not
         # better
-        if self.in_condition_sem(sem - 1) == TWO_FAIL_COND:
+        if self.in_condition_sem(pos - 1) == TWICE_FAIL:
             # check if there's any reprovation in two subjects 
-            if self.check_2repr(sem):
-                self.in_condition[sem] = TWO_FAIL_COND
-                return TWO_FAIL_COND
+            if self.check_2repr(pos):
+                self.in_condition[pos] = TWICE_FAIL
+                return TWICE_FAIL
 
         # check if student that was in condition for few approvations is now better
         # this problem can't happen if student is in the first semester 
-        if self.is_condition_sem(sem - 1) == FEW_PASS:
-            if not self.min_pass(sem):
-                self.in_condition[sem] = FEW_PASS
+        if self.in_condition_sem(pos - 1) == FEW_PASS:
+            if not self.min_pass(pos):
+                self.in_condition[pos] = FEW_PASS
                 return FEW_PASS
 
         # we need to check if student has two reprovations in the same subject
-        if self.check_2repr(sem):
-            self.in_condition[sem] = TWO_FAIL_COND
-            return TWO_FAIL_COND
+        if self.check_2repr(pos):
+            self.in_condition[pos] = TWICE_FAIL
+            return TWICE_FAIL
 
         # check if student has not been approved in four disciplines of the course
         # for the past 2 semesters
-        if self.few_pass(sem):
-            self.in_condition[sem] = FEW_PASS
+        if self.few_pass(pos):
+            self.in_condition[pos] = FEW_PASS
             return FEW_PASS
 
         # TODO: evaluate whether the student is in the last semester of the course
         # and has the possibility to conclude seems rather hard 
-        # TODO: evaluate whether the student has fullfilled his student plan that
-        # was approved by the CAO is impossible!
 
         # else, student not in condition
-        self.in_condition[sem] = NO_CONDITION
+        self.in_condition[pos] = NO_CONDITION
         return NO_CONDITION
 
     def log_info(self, fp):
@@ -385,11 +386,18 @@ class Student():
 
     def min_pass(self, pos):
         """
-        returns True case in the given semester and the previous one the student 
-        was approved in the minimum amount of credits for the course
+        checks if student was approved in the given semester and in the previous one 
+        in the minimum amount of credits for the course
+        receives:
+            1. the position we are interested
+        returns: 
+            boolean, indicating student situation
         """
-        # TODO: need to know the amount of credit each subject take
-        # TODO: need to know the minimum number of credits per subject
+        assert (pos > 0)
+        credits_cur_semester = self.get_credit_appr(pos)
+        credits_last_semester = self.get_credit_appr(pos - 1)
+
+        # TODO: need to know the minimum number of credits for each course
         
     def pos_2_yearsem(self, pos, year, sem):
         """
@@ -422,21 +430,20 @@ class Student():
         """
         ## the magic numbers are the position in the row
         # set attributes
-        self.id_num = tup[0]
-        self.reg = tup[1]
-        self.sex = tup[2]
-        self.age = tup[3]
-        self.quota = tup[4]
-        self.school_type = tup[5]
-        self.race = tup[6]
-        self.local = tup[7]
-        self.course = tup[8]
-        self.year_in = tup[9]
-        self.sem_in = tup[10]
-        self.year_out = tup[11]
-        self.sem_out = tup[12]
-        self.way_in = tup[13]
-        self.way_out = tup[14]
+        self.reg = tup[0]
+        self.sex = tup[1]
+        self.age = tup[2]
+        self.quota = tup[3]
+        self.school_type = tup[4]
+        self.race = tup[5]
+        self.local = tup[6]
+        self.course = tup[7]
+        self.year_in = tup[8]
+        self.sem_in = tup[9]
+        self.year_out = tup[10]
+        self.sem_out = tup[11]
+        self.way_in = tup[12]
+        self.way_out = tup[13]
 
         # for code consistency reasons, change the name of the courses
         self.set_course_name()
@@ -445,17 +452,24 @@ class Student():
         """
         the course name the student has may be a variation of the standard one 
         this function ensure that we don't have this distortion
+        receives:
+            nothing
+        returns: 
+            nothing
         """
         # if name is in the official name list, nothing to do 
         if self.course in COURSES_OFF_NAME:
             return
         elif 'ciência da computação' in self.course.lower(): 
             self.course = CIC_BACHELOR
+        elif 'engenharia de computação' in self.course.lower():
+            self.course = COMPUTER_ENGINEERING
+        # the other 'computação' is cic non bachelor course. So this code fragment
+        # should come after we handle the bachelors of cic and the computer
+        # engineering students
         elif 'computação' in self.course.lower() or \
                 'informática' in self.course.lower():
             self.course = CIC_NON_BACHELOR
-        elif 'engenharia de computação' in self.course.lower():
-            self.course = COMPUTER_ENGINEERING
         elif 'engenharia de software' in self.course.lower():
             self.course = SOFTWARE_ENGINEERING
         elif 'engenharia de redes de comunicação' in self.course.lower():
@@ -507,71 +521,74 @@ class Student():
         
     def set_hard_rate(self, subj_dic):
         """
-        receives a subject dic
         set the hard rate for the given student, by consulting the subject list
+        receives:
+            1. subject dict
+        returns: 
+            nothing
         """
         # obtain list of tuples of the form: 
-        # [(code, grade, appr_rate), ...]
+        # [(grade, appr_rate), ...]
         # this list measure the performance on hard disciplines
-        CODE_POS_IND = 0
-        GRADE_POS_IND = 1
-        APPR_RATE_IND = 2
+        GRADE_POS_IND = 0
+        APPR_RATE_IND = 1
 
-        # initially, list is just a copy of the hard rate list
-        perf_hard = self.hard_rate[:]
+        # initially, perf_hard is an empty list with the same length of the hard rate
+        # list
+        perf_hard = []
+        perf_hard_len = len(self.hard_rate)
+        for i in range(perf_hard_len):
+            perf_hard.append(NOT_KNOWN)
 
-        for key_grades, grades_lst in self.grades: 
-            for pos in grades_lst:
+        for key_grades, grades_lst in self.grades.items(): 
+            for pos in range(len(grades_lst)):
                 # get student information
                 code_sub = self.get_sub_info(key_grades, pos, 'code')
                 grade_sub = self.get_sub_info(key_grades, pos, 'grade')
                 year_sub = self.get_sub_info(key_grades, pos, 'year')
                 sem_sub = self.get_sub_info(key_grades, pos, 'sem')
-                appr_rate = subj_dic[code].get_appr_rate()
+                appr_rate = subj_dic[code_sub].get_appr_rate()
 
                 # need to obtain the index on the list to perform comparison
                 index = self.yearsem_2_pos(year_sub, sem_sub)
 
-                # don't account for subjects that were coursed before
+                # don't account for subjects that were coursed before student entered
+                # in his option
                 if index == ERROR: 
                     continue
-
-                if perf_hard[index] == NOT_KNOWN or \
-                    appr_rate < perf_hard[index][APPR_RATE_IND]:
-                    perf_hard[index] = (code_sub, grade_sub, appr_rate) 
                 
-
-        # TODO: should consider only subjects that have been coursed for more than 5
-        # students
+                if (perf_hard[index] == NOT_KNOWN or \
+                    appr_rate < perf_hard[index][APPR_RATE_IND]):
+                    perf_hard[index] = (grade_sub, appr_rate) 
 
         # get hard rate
-        hard_coursed = 0.0
-        hard_apprv = 0.0
+        hard_coursed = 0
+        hard_apprv = 0
 
         for sem in range(len(self.hard_rate)):
-            # to check if its still not know
-            if type(perf_hard[index]) == tuple:
+            # check hard rate for a given subject was indeed calculated
+            if type(perf_hard[sem]) == tuple:
                 hard_coursed += 1
-            if student_passed(perf_hard[sem][GRADE_IND]):
+            if student_passed(perf_hard[sem][GRADE_POS_IND]):
                 hard_apprv += 1 
-            self.hard_rate[sem] = hard_coursed / hard_apprv
-            assert (self.hard_rate[sem] < 1.1)
+             
+            # if it's not possible to calculate hard rate, put as missing value
+            # value
+            if hard_coursed == 0: 
+                self.hard_rate[sem] = NOT_KNOWN
+            else:
+                self.hard_rate[sem] =  hard_apprv / float(hard_coursed)
+                assert (self.hard_rate[sem] < 1.1)
 
     def set_improvement_rate(self, fp, course_lst):
         """
         calculates the improvement rate for every student
         """
-        # get student course
-        course = self.get_course(course_lst)
-
-        
         # iterate through every year, setting position
         cur_year = self.year_in
         cur_semester = self.sem_in
-        for pos in range(num_semesters):
-            self.set_improvement_rate_semester(cur_year, cur_semester, pos, fp,\
-                    course)
-
+        for pos in range(self.get_num_semesters()):
+            self.set_improvement_rate_semester(cur_year, cur_semester, pos, fp)
             # update current year/semester
             if cur_semester == 1: 
                 cur_semester = 2 
@@ -579,41 +596,36 @@ class Student():
                 cur_year += 1
                 cur_semester = 1
 
-    def set_improvement_rate_semester(self, year, semester, pos, fp, course):
+    def set_improvement_rate_semester(self, year, semester, pos, fp):
         """
-        receives a year, a semester, the position to insert in a list and a file
-        pointer
         calculates the improvement rate for a given year and semester
-        insert in the list self.improvement_rate, in the position indicated
+        receives:
+            1. year,
+            2. semester, 
+            3. position to insert in a list 
+            4. file pointer
+        returns:
+            nothing
+        * if it's the first semester, put a missing value. Should be handled later
         """
         # if position equals 0, missing value
         if pos == 0:
-            self.improvement_rate[pos] = 'first_semester, no improvement_rate'
+            self.improvement_rate[pos] = NOT_KNOWN
             return
         
-        # get year and semester of the past semester
-        if semester == 2: 
-            past_semester = 1
-            past_year = year
-        else: 
-            past_semester = 2
-            past_year = year - 1
-
-        # calculates grade for past semester and for current semester
-        past_sem_grade = self.get_sem_grade(past_year, past_semester, course, fp)
-        cur_sem_grade = self.get_sem_grade(year, semester, course, fp)
+        # get grades for past semester and for current semester
+        past_sem_grade = self.ira[pos - 1]
+        cur_sem_grade = self.ira[pos]
 
         # handle cases where we don't know the grades by imputation 
         if past_sem_grade == NOT_KNOWN or cur_sem_grade == NOT_KNOWN:
-            # TODO: use imputation and set it equal to one
-            self.improvement_rate[pos] = NOT_KNOWN
+            self.improvement_rate[pos] = 1.0
         else:
             try:
                 self.improvement_rate[pos] = cur_sem_grade / past_sem_grade
             except ZeroDivisionError:
                 self.log_info(fp)
-                # TODO: use imputation and set it equal to one
-                self.improvement_rate[pos] = NOT_KNOWN
+                self.improvement_rate[pos] = 1.0
         
     def set_ira(self, ira, year, semester):
         """
@@ -640,6 +652,7 @@ class Student():
 
     def set_mand_rate(self, course_lst):
         """
+        DEPRECATED
         receives the course list
         set the mandatory rate for a given student
         """
@@ -726,10 +739,13 @@ class Student():
             the position the student is in 
         * pos = 0 means the year and semester the student got in unb. 
         * pos = 1 means the semester just after pos = 0, and so on
+        * if the subject was coursed before student got in the option, an ERROR is
+            returned. 
         """
-        # summer counts as in the first semester of the same year
+        # summer counts as last semester of the previous year
         if sem == 0:
-            sem = 1
+            sem = 2
+            year -= 1
 
         pos = 0 
         cur_year = self.year_in 

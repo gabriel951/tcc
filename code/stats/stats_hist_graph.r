@@ -1,21 +1,25 @@
-# r program to draw a pie chart in the screen
+# r program to draw a histogram chart in the screen
 library (ggplot2)
 library(scales)
 library (png)
 
-cat("entered r program to plot stats\n")
+cat("entered r program to plot histogram\n")
 
 # get command line arguments
 args <- commandArgs(trailingOnly = TRUE)
+bin_size <- as.numeric(args)
+print("bin size: ")
+print(bin_size)
 
 # get data and name the column
 data <- read.table("temp.txt", sep = ",")
-names(data) <- c("valores")
+names(data) <- c("values")
 
 # my plot
-my_plot <-  ggplot(data, aes(x = valores)) + 
+my_plot <-  ggplot(data, aes(x = values)) + 
             geom_histogram(aes(y = (..count..) / sum(..count..)), 
-                               binwidth = 0.05, fill = "darkblue") + 
+                               binwidth = bin_size, fill = "darkblue") + 
+            #geom_histogram(binwidth = bin_size) + 
             scale_y_continuous(labels = percent) + 
             ylab("quantidade") + 
             theme_bw()
