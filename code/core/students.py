@@ -68,8 +68,10 @@ class Student():
         for i in range(num_semesters):
             lst_unknown.append(NOT_KNOWN)
 
-        # ira of the student - 
+        # ira of the student in a given semester
         self.ira = lst_unknown[:] 
+        # ira of the student in all his semesters in unb
+        self.ira_acc = lst_unknown[:]
 
         # reason between grades of current semester and last semester
         self.improvement_rate = lst_unknown[:]
@@ -130,6 +132,32 @@ class Student():
         #            if is_mand_sub(code_sub, self.course, self.year_in, self.sem_in):
         pass
 
+    def can_finish(self, pos):
+        """
+        checks if a student in a given position is in the last semester of the course
+        and if the student can complete 
+        receives: 
+            1. position of the student we are considering. This count start at 0.
+        returns: 
+            True case the student is not in the last semester or if the student can
+            complete the course. False otherwise. 
+        """
+        # checks if student is in last semester of course, return True case he isnt
+        course = load_course(self.course, self.year_in, self.sem_in)
+        if pos < (course.max_sem - 1): 
+            return True
+
+        # get how many credits the student has and how many the course demand to
+        # graduate
+        credits_student_has = self.credit_rate_acc[pos]
+        credits_to_graduate = course.credits_graduate
+
+        # decide if student can graduate, based on the number of credits left
+        if (credits_graduate - credits_student_has) > course.max_credits_sem:
+            return False
+        else: 
+            return True
+        
     def few_pass(self, pos):
         """
         returns True case for the semester with position pos and the previous one 
@@ -208,9 +236,12 @@ class Student():
 
     def get_num_semesters(self):
         """
-        receives a student with correct information regarding the year and semester
-        the student left.
-        Returns the number of semesters the student was in the university
+        get the number of semesters a student was in unb 
+        receives: 
+            1. a student with correct information regarding the year and semester
+                the student left.
+        Returns: 
+            number of semesters the student was in the university
         """
         num_semesters = (self.year_out - self.year_in) * 2 + \
                 (self.sem_out - self.sem_in)
@@ -292,64 +323,6 @@ class Student():
             print(grade_factor)
             print(ira_semester)
     
-    def in_condition_sem(self, pos):
-        """
-        returns whether the student is in condition for that semester or not
-        receives: 
-            1. the position to calculate 
-        also, fills the list with right information
-
-        * semester count start at zero
-        return: 
-            NO_CONDITION - case the student is not in condition
-            TWICE_FAIL - case the student is in condition because of twice failing in the same
-            subject
-            FEW_PASS - case the student is in condition because of not being approved in
-            four disciplines for the two periods
-        """
-        # avoid magic numbers ;)
-        NO_CONDITION = 0
-        TWICE_FAIL = 1
-        FEW_PASS = 2
-        
-        # no student at the end of the first semester is in condition
-        if pos == 0: 
-            self.in_condition[pos] = NO_CONDITION
-            return NO_CONDITION
-
-        # return if student that is in condition for twice failing a subject is not
-        # better
-        if self.in_condition_sem(pos - 1) == TWICE_FAIL:
-            # check if there's any reprovation in two subjects 
-            if self.check_2repr(pos):
-                self.in_condition[pos] = TWICE_FAIL
-                return TWICE_FAIL
-
-        # check if student that was in condition for few approvations is now better
-        # this problem can't happen if student is in the first semester 
-        if self.in_condition_sem(pos - 1) == FEW_PASS:
-            if not self.min_pass(pos):
-                self.in_condition[pos] = FEW_PASS
-                return FEW_PASS
-
-        # we need to check if student has two reprovations in the same subject
-        if self.check_2repr(pos):
-            self.in_condition[pos] = TWICE_FAIL
-            return TWICE_FAIL
-
-        # check if student has not been approved in four disciplines of the course
-        # for the past 2 semesters
-        if self.few_pass(pos):
-            self.in_condition[pos] = FEW_PASS
-            return FEW_PASS
-
-        # TODO: evaluate whether the student is in the last semester of the course
-        # and has the possibility to conclude seems rather hard 
-
-        # else, student not in condition
-        self.in_condition[pos] = NO_CONDITION
-        return NO_CONDITION
-
     def log_info(self, fp):
         """
         receives a file object
@@ -447,6 +420,68 @@ class Student():
 
         # for code consistency reasons, change the name of the courses
         self.set_course_name()
+
+    def set_condition(self):
+        """
+        fills whether the student is in condition for that semester or not
+        receives: 
+            nothing
+        returns: 
+            nothing
+        also, fills the list with right information
+
+        fills: 
+            NO_CONDITION - case the student is not in condition
+            TWICE_FAIL - case the student is in condition because of twice failing in the same
+            subject
+            FEW_PASS - case the student is in condition because of not being approved in
+            four disciplines for the two periods
+            CANT_COMPLETE - case the student is in the last semester without
+            condition to complete the course
+        """
+        # avoid magic numbers ;)
+        NO_CONDITION = 0
+        TWICE_FAIL = 1
+        FEW_PASS = 2
+        CANT_COMPLETE = 3
+        
+        # iterate through the semesters, filling whether he is in position or not
+        for pos in range(self.get_num_semesters()):
+
+            # no student at the end of the first semester is in condition
+            if pos == 0: 
+                self.in_condition[pos] = NO_CONDITION
+
+            # if student that is in condition for twice failing a subject is not
+            # better
+            elif self.in_condition[pos - 1] == TWICE_FAIL:
+                # check if there's any reprovation in two subjects 
+                if self.check_2repr(pos):
+                    self.in_condition[pos] = TWICE_FAIL
+
+            # check if student that was in condition for few approvations is now better
+            # this problem can't happen if student is in the first semester 
+            elif self.in_condition[pos - 1] == FEW_PASS:
+                if not self.min_pass(pos):
+                    self.in_condition[pos] = FEW_PASS
+
+            # we need to check if student has two reprovations in the same subject
+            elif self.check_2repr(pos):
+                self.in_condition[pos] = TWICE_FAIL
+
+            # check if student has not been approved in four disciplines of the course
+            # for the past 2 semesters
+            elif self.few_pass(pos):
+                self.in_condition[pos] = FEW_PASS
+
+            # TODO: evaluate whether the student is in the last semester of the course
+            # and has the possibility to finish seems rather hard 
+            #elif not self.can_finish(pos):
+            #    self.in_condition[pos] = CANT_COMPLETE
+
+            # else, student not in condition
+            else: 
+                self.in_condition[pos] = NO_CONDITION
 
     def set_course_name(self):
         """
@@ -614,19 +649,30 @@ class Student():
             return
         
         # get grades for past semester and for current semester
-        past_sem_grade = self.ira[pos - 1]
-        cur_sem_grade = self.ira[pos]
+        past_sem_grade = self.ira_acc[pos - 1]
+        cur_sem_grade = self.ira_acc[pos]
 
         # handle cases where we don't know the grades by imputation 
         if past_sem_grade == NOT_KNOWN or cur_sem_grade == NOT_KNOWN:
             self.improvement_rate[pos] = 1.0
         else:
-            try:
+            # avoid division by zero
+            if past_sem_grade > 0.001:
                 self.improvement_rate[pos] = cur_sem_grade / past_sem_grade
-            except ZeroDivisionError:
-                self.log_info(fp)
+
+                # log pathological cases
+                if self.improvement_rate[pos] > 5:
+                    fp.write('---- imprv rate strange value ----\n')
+                    fp.write('(pos, cur_sem_grade, past_sem_grade): ' +\
+                            '(%d, %f, %f)\n' % (pos, cur_sem_grade, past_sem_grade))
+                    fp.write('(registration, impr_rate): ' +
+                            '(%d, %f)\n' % (self.reg, self.improvement_rate[pos]))
+                    fp.write('\n\n')
+            # handle division by zero
+            else:
+                #self.log_info(fp)
                 self.improvement_rate[pos] = 1.0
-        
+            
     def set_ira(self, ira, year, semester):
         """
         ** DEPRECATED - 

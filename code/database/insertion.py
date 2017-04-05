@@ -228,15 +228,20 @@ def parse_insert(row, cur, conn):
         content += row[i]
 
     # split content in list 
-    info = content.split(';')
+    info = content.split(SEP_CSV_FILE)
 
     # skip if not in the time period we're considering
+    #TODO: try: 
     (year_in, sem_in) = get_year_sem(info[YEAR_SEM_IN_OPT_IND], False)
     (year_end, sem_end) = get_year_sem(info[YEAR_SEM_END_IND], False)
     if year_in < YEAR_START or year_in > YEAR_END: 
         return
     if year_end < YEAR_START or year_end > YEAR_END: 
         return
+    #except: 
+    #    print(info)
+    #    exit()
+        
 
     insert_student(info, cur, conn)
     insert_subject(info, cur, conn)

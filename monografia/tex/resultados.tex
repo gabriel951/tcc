@@ -12,6 +12,45 @@ universidade, o aluno era tratado como outlier e seus dados eram removidos do es
 amostral. Eliminaram-se 203 estudantes do espaço amostral dessa maneira, ficando-se
 assim com 3751 amostras. 
 
+\section{Tabelas de Contingência para Atributos}
+A fazer
+
+\section{Coeficiente de Variação Para Atributos}
+
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c |}
+        \hline
+        \textbf{Atributos} & \textbf{Coeficiente de Variação} \\
+        \hline
+        Sexo & 16.7 \\
+        \hline
+        Idade & 25.0 \\
+        \hline
+        Cota & 29.3 \\
+        \hline
+        Cota & 29.3 \\
+        \hline
+        Tipo da Escola & 44.1 \\
+        \hline
+        Curso & 54.2 \\
+        \hline
+        Forma de Entrada & 25.6 \\
+        \hline
+        Forma de Saída & 91.8 \\
+        \hline
+        Ira & 65.3 \\
+        \hline
+        Coeficiente de Melhora Acadêmica & 25.4 \\
+        \hline
+        Coeficiente de Melhora Acadêmica & 25.4 \\
+        \hline
+\end{tabular}
+\end{center}
+\caption{Coeficiente de Variação Para Atributos}
+\end{table}
+
+
 \section{Histogramas e Gráficos de Barra Para Atributos}
 Apresentam-se a seguir os histograms e gráficos de barra para os atributos que puderam
 ser calculados. Como alguns atributos dependiam de informação acerca da quantidade de
@@ -426,6 +465,127 @@ Já as Figuras \ref{drop_rate_cic_b}, \ref{drop_rate_cic_lic},
 Pode-se perceber que o histograma considerando todos os alunos apresente uma
 curva visualmente ``bem comportada'', assim como os histogramas obtidos quando se considera a
 separação por curso. \clearpage
+
+\subsection{Comparativo entre as Taxas de Aprovação, Falha e Trancamento por Curso}
+O resultado está sumarizado na seguinte tabela: 
+
+% aprovação
+\begin{table}
+\begin{center}
+        \begin{tabular}{|p{2cm}| p{1cm}| p{1cm}| p{1cm} | p{1cm} | p{1cm}| p{1cm}
+                |p{1cm} | p{1cm} | p{1cm} | p{1cm}|}
+
+        \hline
+        \textbf{Curso} & \textbf{0.1} & \textbf{0.2} & \textbf{0.3} & 
+        \textbf{0.4} & \textbf{0.5} & \textbf{0.6} & \textbf{0.7} & \textbf{0.8} &
+        \textbf{0.9} & \textbf{1.0} \\
+        \hline
+        \hline
+        CB & 3\% & 5\% & 7\% & 5\% & 6\% &
+        11\% & 10\% & 10\% & 15\% & 27\% \\
+        \hline
+        \hline
+        CL & 4\% & 3\% & 6\% & 6\% & 9\% &
+        16\% & 14\% & 14\% & 16\% & 11\% \\
+        \hline
+        \hline
+        EC & 7\% & 6\% & 10\% & 13\% & 9\% &
+        12\% & 7\% & 7\% & 13\% & 16\% \\
+        \hline
+        \hline
+        ES & 0\% & 1\% & 2\% & 7\% & 13\% &
+        11\% & 9\% & 10\% & 20\% & 23\% \\
+        \hline
+        \hline
+        EM & 2\% & 2\% & 3\% & 3\% & 5\% &
+        8\% & 7\% & 10\% & 13\% & 47\% \\
+        \hline
+        \hline
+        ER & 3\% & 4\% & 5\% & 3\% & 5\% &
+        8\% & 8\% & 10\% & 15\% & 49\% \\
+        \hline
+\end{tabular}
+\end{center}
+\caption{Tabela Comparativa Entre as Taxas de Aprovação}
+\end{table}
+
+% reprovação
+\begin{table}
+\begin{center}
+        \begin{tabular}{|p{2cm}| p{1cm}| p{1cm}| p{1cm} | p{1cm} | p{1cm}| p{1cm}
+                |p{1cm} | p{1cm} | p{1cm} | p{1cm}|}
+        \hline
+        \textbf{Curso} & \textbf{0.1} & \textbf{0.2} & \textbf{0.3} & 
+        \textbf{0.4} & \textbf{0.5} & \textbf{0.6} & \textbf{0.7} & \textbf{0.8} &
+        \textbf{0.9} & \textbf{1.0} \\
+        \hline
+        \hline
+        CB & 31\% & 16\% & 9\% & 11\% & 8\% &
+        9\% & 4\% & 4\% & 4\% & 2\% \\
+        \hline
+        \hline
+        CL & 16\% & 16\% & 18\% & 14\% & 10\% &
+        10\% & 5\% & 2\% & 3\% & 3\% \\
+        \hline
+        \hline
+        EC & 26\% & 10\% & 8\% & 8\% & 8\% &
+        15\% & 9\% & 5\% & 4\% & 5\% \\
+        \hline
+        \hline
+        ES & 32\% & 20\% & 11\% & 12\% & 8\% &
+        10\% & 3\% & 1\% & 1\% & 0\% \\
+        \hline
+        \hline
+        EM & 51\% & 11\% & 8\% & 10\% & 5\% &
+        5\% & 2\% & 2\% & 2\% & 1\% \\
+        \hline
+        \hline
+        ER & 42\% & 14\% & 10\% & 8\% & 6\% &
+        6\% & 3\% & 2\% & 3\% & 2\% \\
+        \hline
+\end{tabular}
+\end{center}
+\caption{Tabela Comparativa Entre as Taxas de Reprovação}
+\end{table}
+
+% trancamento
+\begin{table}
+\begin{center}
+        \begin{tabular}{|p{2cm}| p{1cm}| p{1cm}| p{1cm} | p{1cm} | p{1cm}| p{1cm}
+                |p{1cm} | p{1cm} | p{1cm} | p{1cm}|}
+        \hline
+        \textbf{Curso} & \textbf{0.1} & \textbf{0.2} & \textbf{0.3} & 
+        \textbf{0.4} & \textbf{0.5} & \textbf{0.6} & \textbf{0.7} & \textbf{0.8} &
+        \textbf{0.9} & \textbf{1.0} \\
+        \hline
+        \hline
+        CB & 90\% & 7\% & 2\% & 0\% & 0\% &
+        0\% & 0\% & 0\% & 0\% & 0\% \\
+        \hline
+        \hline
+        CL & 84\% & 10\% & 5\% & 0\% & 0\% &
+        0\% & 0\% & 0\% & 0\% & 0\% \\
+        \hline
+        \hline
+        EC & 70\% & 22\% & 5\% & 0\% & 1\% &
+        0\% & 0\% & 0\% & 0\% & 0\% \\
+        \hline
+        \hline
+        ES & 82\% & 15\% & 2\% & 0\% & 0\% &
+        0\% & 0\% & 0\% & 0\% & 0\% \\
+        \hline
+        \hline
+        EM & 94\% & 4\% & 1\% & 0\% & 0\% &
+        0\% & 0\% & 0\% & 0\% & 0\% \\
+        \hline
+        \hline
+        ER & 90\% & 7\% & 2\% & 0\% & 1\% &
+        0\% & 0\% & 0\% & 0\% & 0\% \\
+        \hline
+\end{tabular}
+\end{center}
+\caption{Tabela Comparativa Entre as Taxas de Trancamento}
+\end{table}
 
 \subsection{Atributos que não Puderam ser Calculados} \label{atributos_problematicos}
 Infelizmente, alguns atributos relativos ao desempenho acadêmico não puderam ser

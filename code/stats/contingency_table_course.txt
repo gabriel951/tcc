@@ -1,0 +1,9 @@
+way_out    desligamento  formatura   All
+course                                  
+cic_b               624        458  1082
+cic_lic             828        315  1143
+eng_comp            239         59   298
+eng_mec             441        412   853
+eng_redes           463        452   915
+eng_softw           133        120   253
+All                2728       1816  4544

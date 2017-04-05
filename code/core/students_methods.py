@@ -7,6 +7,7 @@ from outliers import *
 
 def check_missing_values(stu_info, feature):
     """
+    TODO: deprecated
     reports whether there are students with missing values for a given feature
     receives: 
         1. a dictionary containing the students
@@ -86,14 +87,12 @@ def fill_condition(stu_info):
     students_done = 0
 
     for key, stu in stu_info.items(): 
-        num_semesters = stu.get_num_semesters()
-        for pos in range(num_semesters):
-            stu.in_condition_sem(pos)
+        stu.set_condition()
         
         # keep track how we are going
-        students_done += 1
-        if students_done % 100 == 0: 
-            print('\t finished filling condition for 100 more students')
+        #students_done += 1
+        #if students_done % 100 == 0: 
+        #    print('\t finished filling condition for 100 more students')
         
     print('finished filling condition for all students')
 
@@ -348,6 +347,29 @@ def fill_ira(stu_info):
     # handle missing iras
     handle_miss_ira(stu_info)
 
+    # fill ira accumulated
+    fill_ira_acc(stu_info)
+
+def fill_ira_acc(stu_info):
+    """
+    fill the ira accumulated atribute for every student, based on the iras
+    receives: 
+        1. dictionary containing student info
+    returns: 
+        nothing
+    """
+    # iterate through every student
+    for key, stu in stu_info.items():
+        # iterate through student semester 
+        for sem in range(1, stu.get_num_semesters() + 1):
+            # calculate ira accumulated
+            total = 0.0
+            for pos in range(sem): 
+                weight = pos + 1 # since the pos counting start at 0 
+                total += stu.ira[pos] * weight
+            total /= sum(range(1, sem + 1)) # divide by sum of weights
+            stu.ira_acc[sem - 1] = total
+
 def fill_mand_rate(stu_info):
     """
     receives dictionary containing student info
@@ -394,7 +416,7 @@ def fill_position(stu_info):
     # determine position for every semester
     for cur_sem in range(max_sem):
         # dictionary contain as key a tuple: (code_key, year_in, sem_in)
-        # and as value a list of tuples: [(ira, registration), ...] 
+        # and as value a list of tuples: [(ira_acc, registration), ...] 
         # dictionary of performance for students
         perf = {}
 
@@ -402,13 +424,12 @@ def fill_position(stu_info):
         for key, stu in stu_info.items():
             sem_in_unb = stu.get_num_semesters()
 
-            # case the student has already graduated, ira is the one for the last
-            # semester
+            # case the student has already graduated, skip this student
             if cur_sem >= sem_in_unb:
-                ira = stu.ira[sem_in_unb - 1]
-            else: 
-                ira = stu.ira[cur_sem]
-            # assert we know the ira
+                continue
+
+            # get student ira
+            ira = stu.ira_acc[cur_sem]
             assert(ira != NOT_KNOWN)
 
             # add to dict
@@ -418,7 +439,7 @@ def fill_position(stu_info):
 
         # sort every list in dictionary - by first element
         for key_dict, val in perf.items(): 
-            val.sort(key = lambda tup: tup[IRA_POS])
+            val.sort(key = lambda tup: tup[IRA_POS], reverse = True)
 
         # for every student, fill his position on the list
         for key, stu in stu_info.items():
@@ -429,6 +450,7 @@ def fill_position(stu_info):
             if cur_sem >= sem_in_unb: 
                 continue
 
+            # fill position
             perf_lst = perf[(stu.course, stu.year_in, stu.sem_in)]
             position = NOT_FOUND 
             for i in range(len(perf_lst)):
@@ -436,8 +458,8 @@ def fill_position(stu_info):
                     position = i 
                     break
             assert (position != NOT_FOUND)
-
             stu.position[cur_sem] = position
+
     print('finished filling position')
 
 def get_database_info():
@@ -492,24 +514,24 @@ def get_derived_info(stu_info):
         nothing
     """
     # fill student grades
-    fill_grades(stu_info)
+    #fill_grades(stu_info)
 
     # calculate student ira for the semesters 
-    fill_ira(stu_info)
+    #fill_ira(stu_info)
 
     # calculate improvement rate 
     fill_impr_rate(stu_info)
 
     # calculate fail rate, pass rate and drop rate
-    fill_drop_pass_fail_rate(stu_info, 'fail', False)
-    fill_drop_pass_fail_rate(stu_info, 'pass', False)
-    fill_drop_pass_fail_rate(stu_info, 'drop', False)
+    #fill_drop_pass_fail_rate(stu_info, 'fail', False)
+    #fill_drop_pass_fail_rate(stu_info, 'pass', False)
+    #fill_drop_pass_fail_rate(stu_info, 'drop', False)
 
     # calculate credit rate 
-    fill_credit_rate(stu_info)
+    #fill_credit_rate(stu_info)
 
     # calculate hard rate - need to check the code later
-    fill_hard_rate(stu_info)
+    #fill_hard_rate(stu_info)
 
     # calculate if student is in condition 
     #fill_condition(stu_info)
@@ -545,9 +567,6 @@ def get_students_info():
 
     # saves object
     save_students(NAME_STU_STRUCTURE, stu_dict)
-
-    # TODO: check missing values
-    check_missing_values(stu_dict, 'ira')
 
 def handle_miss_credit_rate(stu_info):
     """
@@ -687,7 +706,7 @@ def parse_insert_ira(stu_info, row):
         content += row[i]
 
     # split content in list 
-    info = content.split(';')
+    info = content.split(SEP_CSV_FILE)
 
     # get student code and return case not a student of interest - it may be an
     # outlier or a student that has not graduated yet
@@ -732,7 +751,7 @@ def parse_insert_credit_rate(stu_info, row):
         content += row[i]
 
     # split content in list 
-    info = content.split(';')
+    info = content.split(SEP_CSV_FILE)
 
     # get student code and return case not a student of interest - it may be an
     # outlier or a student that has not graduated yet
@@ -756,8 +775,13 @@ def parse_insert_credit_rate(stu_info, row):
 
 def save_students(name, stu_info, path = PATH): 
     """
-    receives a name and a dictionary containing student info. 
     saves the student dictionary as a pickle object with a given name
+    receives:
+        1. name to save 
+        2. dictionary containing student info. 
+        3. (optional) path to save the students
+    returns: 
+        nothing
     """
     file_target = open(path + name, 'wb')
     pickle.dump(stu_info, file_target)
@@ -766,7 +790,7 @@ def save_students(name, stu_info, path = PATH):
 
 if __name__ == "__main__":
     # get all student relevant information and saves it as an object
-    get_students_info()
+    #get_students_info()
 
     # load student info, just a test
     #load_students('NAME_STU_STRUCTURE')

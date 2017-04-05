@@ -1,0 +1,63 @@
+
+starting printing info for tup:   ('drop', 'cic_bacharelado')
+75   20   5   0   3   0   0   0   0   935   total: 1038
+
+starting printing info for tup:   ('drop', 'cic_licenciatura')
+101   56   6   5   3   0   0   0   0   868   total: 1039
+
+starting printing info for tup:   ('drop', 'engenharia_computacao')
+63   14   0   3   0   2   0   0   0   197   total: 279
+
+starting printing info for tup:   ('drop', 'engenharia_software')
+37   7   0   0   0   0   0   0   0   206   total: 250
+
+starting printing info for tup:   ('drop', 'engenharia_mecatronica')
+36   7   4   1   0   0   0   0   0   788   total: 836
+
+starting printing info for tup:   ('drop', 'engenharia_redes')
+60   18   4   5   2   2   0   0   0   796   total: 887
+
+starting printing info for tup:   ('drop', 'all_courses')
+372   122   19   14   8   4   0   0   0   3790   total: 4329
+
+starting printing info for tup:   ('pass', 'cic_bacharelado')
+44   78   50   59   117   106   104   166   210   104   total: 1038
+
+starting printing info for tup:   ('pass', 'cic_licenciatura')
+28   66   62   95   168   142   149   171   82   76   total: 1039
+
+starting printing info for tup:   ('pass', 'engenharia_computacao')
+18   27   36   24   34   20   19   36   29   36   total: 279
+
+starting printing info for tup:   ('pass', 'engenharia_software')
+3   7   18   34   28   23   25   52   48   12   total: 250
+
+starting printing info for tup:   ('pass', 'engenharia_mecatronica')
+15   24   25   41   68   62   80   108   258   155   total: 836
+
+starting printing info for tup:   ('pass', 'engenharia_redes')
+35   41   31   47   69   73   90   130   240   131   total: 887
+
+starting printing info for tup:   ('pass', 'all_courses')
+143   243   222   300   484   426   467   663   867   514   total: 4329
+
+starting printing info for tup:   ('fail', 'cic_bacharelado')
+167   102   111   80   93   43   47   42   13   340   total: 1038
+
+starting printing info for tup:   ('fail', 'cic_licenciatura')
+170   188   149   111   105   57   23   34   6   196   total: 1039
+
+starting printing info for tup:   ('fail', 'engenharia_computacao')
+29   23   23   22   43   25   15   11   5   83   total: 279
+
+starting printing info for tup:   ('fail', 'engenharia_software')
+49   27   30   21   26   9   3   3   0   82   total: 250
+
+starting printing info for tup:   ('fail', 'engenharia_mecatronica')
+98   67   80   41   42   22   21   17   9   439   total: 836
+
+starting printing info for tup:   ('fail', 'engenharia_redes')
+126   93   77   54   56   30   21   33   5   392   total: 887
+
+starting printing info for tup:   ('fail', 'all_courses')
+639   500   470   329   365   186   130   140   38   1532   total: 4329

@@ -1,0 +1,85 @@
+10
+
+starting printing info for tup:   ('drop', 'cic_bacharelado')
+935   75   20   5   0   3   0   0   0   0   total: 1038
+0.900771   0.072254   0.019268   0.004817   0.000000   0.002890   0.000000   0.000000   0.000000   0.000000   
+
+starting printing info for tup:   ('drop', 'cic_licenciatura')
+868   101   56   6   5   3   0   0   0   0   total: 1039
+0.835419   0.097209   0.053898   0.005775   0.004812   0.002887   0.000000   0.000000   0.000000   0.000000   
+
+starting printing info for tup:   ('drop', 'engenharia_computacao')
+197   63   14   0   3   0   2   0   0   0   total: 279
+0.706093   0.225806   0.050179   0.000000   0.010753   0.000000   0.007168   0.000000   0.000000   0.000000   
+
+starting printing info for tup:   ('drop', 'engenharia_software')
+206   37   7   0   0   0   0   0   0   0   total: 250
+0.824000   0.148000   0.028000   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000   
+
+starting printing info for tup:   ('drop', 'engenharia_mecatronica')
+788   36   7   4   1   0   0   0   0   0   total: 836
+0.942584   0.043062   0.008373   0.004785   0.001196   0.000000   0.000000   0.000000   0.000000   0.000000   
+
+starting printing info for tup:   ('drop', 'engenharia_redes')
+796   60   18   4   5   2   2   0   0   0   total: 887
+0.897407   0.067644   0.020293   0.004510   0.005637   0.002255   0.002255   0.000000   0.000000   0.000000   
+
+starting printing info for tup:   ('drop', 'all_courses')
+3790   372   122   19   14   8   4   0   0   0   total: 4329
+0.875491   0.085932   0.028182   0.004389   0.003234   0.001848   0.000924   0.000000   0.000000   0.000000   
+
+starting printing info for tup:   ('pass', 'cic_bacharelado')
+31   44   78   50   59   117   106   104   166   283   total: 1038
+0.029865   0.042389   0.075145   0.048170   0.056840   0.112717   0.102119   0.100193   0.159923   0.272640   
+
+starting printing info for tup:   ('pass', 'cic_licenciatura')
+40   28   66   62   95   168   142   149   171   118   total: 1039
+0.038499   0.026949   0.063523   0.059673   0.091434   0.161694   0.136670   0.143407   0.164581   0.113571   
+
+starting printing info for tup:   ('pass', 'engenharia_computacao')
+20   18   27   36   24   34   20   19   36   45   total: 279
+0.071685   0.064516   0.096774   0.129032   0.086022   0.121864   0.071685   0.068100   0.129032   0.161290   
+
+starting printing info for tup:   ('pass', 'engenharia_software')
+2   3   7   18   34   28   23   25   52   58   total: 250
+0.008000   0.012000   0.028000   0.072000   0.136000   0.112000   0.092000   0.100000   0.208000   0.232000   
+
+starting printing info for tup:   ('pass', 'engenharia_mecatronica')
+21   15   24   25   41   68   62   80   108   392   total: 836
+0.025120   0.017943   0.028708   0.029904   0.049043   0.081340   0.074163   0.095694   0.129187   0.468900   
+
+starting printing info for tup:   ('pass', 'engenharia_redes')
+28   35   41   31   47   69   73   90   130   343   total: 887
+0.031567   0.039459   0.046223   0.034949   0.052988   0.077790   0.082300   0.101466   0.146561   0.386697   
+
+starting printing info for tup:   ('pass', 'all_courses')
+142   143   243   222   300   484   426   467   663   1239   total: 4329
+0.032802   0.033033   0.056133   0.051282   0.069300   0.111804   0.098406   0.107877   0.153153   0.286209   
+
+starting printing info for tup:   ('fail', 'cic_bacharelado')
+327   167   102   111   80   93   43   47   42   26   total: 1038
+0.315029   0.160886   0.098266   0.106936   0.077071   0.089595   0.041426   0.045279   0.040462   0.025048   
+
+starting printing info for tup:   ('fail', 'cic_licenciatura')
+171   170   188   149   111   105   57   23   34   31   total: 1039
+0.164581   0.163619   0.180943   0.143407   0.106833   0.101059   0.054860   0.022137   0.032724   0.029836   
+
+starting printing info for tup:   ('fail', 'engenharia_computacao')
+72   29   23   23   22   43   25   15   11   16   total: 279
+0.258065   0.103943   0.082437   0.082437   0.078853   0.154122   0.089606   0.053763   0.039427   0.057348   
+
+starting printing info for tup:   ('fail', 'engenharia_software')
+80   49   27   30   21   26   9   3   3   2   total: 250
+0.320000   0.196000   0.108000   0.120000   0.084000   0.104000   0.036000   0.012000   0.012000   0.008000   
+
+starting printing info for tup:   ('fail', 'engenharia_mecatronica')
+434   98   67   80   41   42   22   21   17   14   total: 836
+0.519139   0.117225   0.080144   0.095694   0.049043   0.050239   0.026316   0.025120   0.020335   0.016746   
+
+starting printing info for tup:   ('fail', 'engenharia_redes')
+379   126   93   77   54   56   30   21   33   18   total: 887
+0.427283   0.142052   0.104848   0.086809   0.060879   0.063134   0.033822   0.023675   0.037204   0.020293   
+
+starting printing info for tup:   ('fail', 'all_courses')
+1463   639   500   470   329   365   186   130   140   107   total: 4329
+0.337953   0.147609   0.115500   0.108570   0.075999   0.084315   0.042966   0.030030   0.032340   0.024717   

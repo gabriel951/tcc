@@ -1,0 +1,47 @@
+feature sex, all courses.
+coefficient of correlation:  16.72302
+
+feature age, all courses.
+coefficient of correlation:  24.98842
+
+feature quota, all courses.
+coefficient of correlation:  29.30122
+
+feature school_type, all courses.
+coefficient of correlation:  44.06176
+
+feature course, all courses.
+coefficient of correlation:  54.21501
+
+feature way_in, all courses.
+coefficient of correlation:  25.56917
+
+feature way_out, all courses.
+coefficient of correlation:  91.77866
+
+feature ira, all courses.
+coefficient of correlation:  65.28254
+
+feature improvement_rate, all courses.
+coefficient of correlation:  25.41993
+
+feature pass_rate, all courses.
+coefficient of correlation:  46.6498
+
+feature fail_rate, all courses.
+coefficient of correlation:  94.83017
+
+feature drop_rate, all courses.
+coefficient of correlation:  198.3494
+
+feature credit_rate_acc, all courses.
+coefficient of correlation:  84.68368
+
+feature hard_rate, all courses.
+coefficient of correlation:  65.95634
+
+feature in_condition, all courses.
+coefficient of correlation:  32.74185
+
+feature position, all courses.
+coefficient of correlation:  99.57997

@@ -1,8 +1,0 @@
-starting study for semester: 1
-started getting data necessary for training and test
-started training ANN
-started training SVR
-started evaluating performance of ANN
-the model was right in 0.281744 of the cases
-started evaluating performance of SVR
-the model was right in 0.312066 of the cases

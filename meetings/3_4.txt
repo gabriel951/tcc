@@ -1,0 +1,5 @@
+# antes
+    -> Rodei de novo os dados. Essa etapa foi fácil, pq os dados estavam muito
+parecidos com o formato anterior e não foi necessário eliminar novamente os outliers. 
+
+# depois

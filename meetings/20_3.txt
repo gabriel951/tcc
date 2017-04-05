@@ -1,0 +1,27 @@
+# Reunião do dia 20/3
+    -> Menção foi revisada
+    -> Terminei os histogramas - para os features que fiz que dependem do semestre
+plotei apenas para o ultimo semestre
+        * Pequeno problema na hora de calcular se o aluno está em condição ou não:
+não tenho como saber se um aluno chegou ao último semestre do curso em condição de
+concluí-lo para os currículos que não se encontram no MW (seria apenas computação
+licenciatura para alguns anos). Poderia tratar isso da seguinte maneira...
+    -> Teste de Kendall - deve ser feito para cada um dos semestres? 
+    -> Acrescentei o modelo de regressor linear. Estou fazendo oversampling de modo
+que a proporção de alunos (capazes de formar) nos casos de treino e de teste fiquem
+iguais (55%, quantidade original no caso de treino).  
+    -> Falta só testar se utilizo modelos com cauda ou sem cauda e terei modelagem
+pronta. O que fazer a seguir? Testes preliminares indicaram que só 2 features já são
+bons o suficiente para prever performance!
+    -> Se rodo meu modelo para o quinto semestre, devo considerar alunos que saíram
+antes do quinto. Não, né? 
+
+# depois 
+    -> Ler artigos da Maristela - ok
+    -> mostrar no grafo da idade a chance de ser jubilado - ok
+    -> Dar uma olhada no improvement rate - ok
+    -> Olhar histograma para o feature position - ok
+    -> Traçar grafo de em condição por curso.  
+    -> Fazer tabela mostrando para cada curso os valores da taxa de trancamento, taxa
+de aprovação e taxa de falhas com a separação por curso. 
+    -> Tirar atributo local - coloquei um TODO!

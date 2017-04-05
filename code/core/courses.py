@@ -18,8 +18,15 @@ class Course():
     """
     def __init__(self, name, year_start, sem_start, year_end, sem_end):
         """
-        receives the name of the course and the time the current curriculum is valid
-        if the course has no year_end or no semester_end then the values passed
+        initializes a new course
+        receives:
+            1. name of the course 
+            2. year the curriculum started 
+            3. semester the curriculum started 
+            4. year the curriculum ended 
+            5. semester the curriculum ended 
+        
+        * if the course has no year_end or no semester_end then the values passed
         should be infinite
         """
         path = 'curriculum/'
@@ -31,12 +38,12 @@ class Course():
         self.year_end = year_end
         self.sem_end = sem_end 
         
-        # dictionary of mandatory subjects
-        self.mand_sub = {}
+        # dictionary of mandatory subjects - TODO: deprecated
+        #self.mand_sub = {}
         
-        # add disciplines to the course
-        self.add_subjects(path + name + '_' + str(year_start) + '_' + \
-                str(sem_start) + '.txt')
+        # add disciplines to the course - TODO: deprecated
+        #self.add_subjects(path + name + '_' + str(year_start) + '_' + \
+        #        str(sem_start) + '.txt')
         
         print('added course %s that started on year %d and semester %d' % \
                 (self.name, self.year_start, self.sem_start))

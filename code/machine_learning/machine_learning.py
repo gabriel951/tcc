@@ -45,42 +45,46 @@ def apply_oversampling(test_feature, test_result):
     GRADUATED = 0
     NOT_GRADUATED = 1
 
+    # copy features to the oversample list
+    oversample_result = test_result[:]
+    oversample_feature = test_feature[:]
+
     # training data proportion of students able to graduate 
     TRAIN_PROP_STU_GRA = 0.55
-    TEST_PROP_STU_GRA = 0.18
+    TRAIN_PROP_STU_NOT_GRA = 1 - TRAIN_PROP_STU_GRA
+    #TEST_PROP_STU_GRA = 0.18 # wont be used, put here just if u want to know
 
-    # get amount of students on test feature able to graduate and amount that was not
-    # able to graduate
-    stu_able_grad = 0
+    # get amount of students on test feature not able to graduate and able to
+    # graduate
+    stu_not_able_grad = 0
     for i in range(len(test_result)):
-        if test_result[i] == GRADUATED: 
-            stu_able_grad += 1
+        if test_result[i] != GRADUATED: 
+            stu_not_able_grad += 1
+    stu_able_grad = len(test_result) - stu_not_able_grad
 
     # calculate number of test features to be oversampled so that the proportion can be
     # equal to the training proportion
-    features_graduate = round(len(test_result) * (1 - TRAIN_PROP_STU_GRA))
-    oversamples = features_graduate - stu_able_grad
+    features_graduate = round(stu_not_able_grad * 
+                        (TRAIN_PROP_STU_GRA / TRAIN_PROP_STU_NOT_GRA))
+    num_oversamples = features_graduate - stu_able_grad
 
-    # list of indexes to add 
-    samples_to_add = []
-
-    # add samples to the test feature and test result list
-    while len(samples_to_add) < oversamples:
+    # add samples to the oversample feature and oversample result list
+    added_samples = 0
+    while added_samples < num_oversamples:
 
         # get random sample 
         ind = random.randrange(len(test_feature))
 
         # be sure sample is of a student that graduated and add it 
         if test_result[ind] == GRADUATED: 
-            samples_to_add.append(ind)
+            oversample_feature.append(test_feature[ind])
+            oversample_result.append(test_result[ind])
+            added_samples += 1
 
-    # append the samples to add
-    for i in samples_to_add:
-        test_feature.append(test_feature[i])
-        test_result.append(test_result[i])
-
-    print('new test size: %d' % (len(test_result)))
+    print('new test size: %d' % (len(oversample_result)))
     print('finished oversampling')
+
+    return (oversample_feature, oversample_result)
 
 def build_run_models():
     """
@@ -94,11 +98,11 @@ def build_run_models():
     stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
 
     # list of semesters being studied
-    sem_lst = [1]
+    sem_lst = [1, 2, 3]
 
     # iterate through the semesters
     for semester in sem_lst:
-        print('starting study for semester: %d' % (semester))
+        print('\n\nstarting study for semester: %d' % (semester))
         print('started getting data necessary for training and test')
 
         # get training data in the correct form to work with 
@@ -126,11 +130,13 @@ def build_run_models():
         print('started training linear regressor')
         linear_regressor.fit(training_feature, training_result)
 
-        evaluate_performance(test_feature, test_result, regressor, 'ANN')
-        evaluate_performance(test_feature, test_result, svr, 'SVR')
-        evaluate_performance(test_feature, test_result, svr, 'Linear Regressor')
+        # evaluate performance of the models
+        oversample = True
+        evaluate_performance(test_feature, test_result, regressor, 'ANN', oversample)
+        evaluate_performance(test_feature, test_result, svr, 'SVR', oversample)
+        evaluate_performance(test_feature, test_result, svr, 'L. Regressor', oversample)
 
-def evaluate_performance(test_feature, test_result, model, model_desc):
+def evaluate_performance(test_feature, test_result, model, model_desc, oversample):
     """
     evaluates the performance of a model, by showing how many test instances the
     model was able to get right
@@ -139,36 +145,62 @@ def evaluate_performance(test_feature, test_result, model, model_desc):
         2. list containing the test results
         3. model to apply
         4. a description of the model 
+        5. boolean to indicate if we should oversample
     returns:
         nothing
     """
     # predict
     print('\nstarted evaluating performance of %s' % (model_desc))
 
-    # apply oversampling 
-    (oversampled_feature, oversample_result) = apply_oversampling(test_feature, test_result)
+    # apply oversampling if we should
+    if oversample: 
+        (final_test_feature, final_test_result) = apply_oversampling(test_feature, test_result)
+    else: 
+        (final_test_feature, final_test_result) = (test_feature, test_result)
 
-    prediction_lst = model.predict(test_feature)
-    assert(len(prediction_lst) == len(test_result))
+    prediction_lst = model.predict(final_test_feature)
+    assert(len(prediction_lst) == len(final_test_result))
 
-    # evaluate performance
-    num_misses = 0
-    num_rights = 0
+    # discretize prediction
+    disc_prediction_lst = []
     for i in range(len(prediction_lst)):
-        # discretize prediction
         if prediction_lst[i] < 0.5: 
-            prediction = 0
+            disc_prediction_lst.append(0)
         else:
-            prediction = 1
+            disc_prediction_lst.append(1)
 
+    # show stats of how many evasions for the test result and the prediction list
+    print('test result: ')
+    print('\t will evade instances: %d, will not evade: %d' \
+            % (final_test_result.count(1), final_test_result.count(0)))
+    print('discrete prediction result: ')
+    print('\t will evade instances: %d, will not evade: %d' \
+            % (disc_prediction_lst.count(1), disc_prediction_lst.count(0)))
+    
+    # evaluate performance - positive for "will evade"
+    true_pos = 0
+    true_neg = 0
+    false_pos = 0
+    false_neg = 0
+
+    for i in range(len(disc_prediction_lst)): 
         # evaluate performance
-        if prediction == test_result[i]:
-            num_rights += 1
+        if disc_prediction_lst[i] == 0 and final_test_result[i] == 0:
+            true_neg += 1
+        elif disc_prediction_lst[i] == 1 and final_test_result[i] == 1:
+            true_pos += 1
+        elif disc_prediction_lst[i] == 0 and final_test_result[i] == 1:
+            false_neg += 1
+        elif disc_prediction_lst[i] == 1 and final_test_result[i] == 0: 
+            false_pos += 1
         else:
-            num_misses += 1
+            print('error')
+            exit()
 
     # show performance
-    rate = num_rights / float((num_rights + num_misses))
+    print('(true_neg, true_pos, false_neg, false_pos): (%d, %d, %d, %d)' 
+            % (true_neg, true_pos, false_neg, false_pos))
+    rate = (true_neg + true_pos) / float(true_neg + true_pos + false_neg + false_pos)
     print('the model was right in %f of the cases' % (rate))   
 
 def get_data(stu_info, year_inf, year_sup, semester, enh = False):
@@ -202,21 +234,22 @@ def get_data(stu_info, year_inf, year_sup, semester, enh = False):
 
         # build student features list and append to student features list
         stu_features = []
-        #add_feature_sex(stu, stu_features)
-        #add_feature_age(stu, stu_features)
-        #add_feature_local(stu, stu_features)
-        #add_feature_quota(stu, stu_features)
-        #add_feature_school_type(stu, stu_features)
-        #add_feature_course(stu, stu_features)
-        #add_feature_way_in_enh(stu, stu_features)
-        #add_feature_pass_rate(stu, stu_features, semester)
-        #add_feature_drop_rate(stu, stu_features, semester)
-        #add_feature_ira(stu, stu_features, semester)
-        #add_feature_impr_rate(stu, stu_features, semester)
+        add_feature_sex(stu, stu_features)
+        add_feature_age(stu, stu_features)
+        add_feature_local(stu, stu_features)
+        add_feature_quota(stu, stu_features)
+        add_feature_school_type(stu, stu_features)
+        add_feature_course(stu, stu_features)
+        add_feature_way_in_enh(stu, stu_features)
+
+        add_feature_pass_rate(stu, stu_features, semester)
+        add_feature_drop_rate(stu, stu_features, semester)
+        add_feature_ira(stu, stu_features, semester)
+        add_feature_impr_rate(stu, stu_features, semester)
         add_feature_credit_rate_acc(stu, stu_features, semester)
-        #add_feature_hard_rate(stu, stu_features, semester)
+        add_feature_hard_rate(stu, stu_features, semester)
         #add_feature_condition(stu, stu_features, semester)
-        #add_feature_position(stu, stu_features, semester)
+        add_feature_position(stu, stu_features, semester)
         features_lst.append(stu_features)
 
         # add outcome

@@ -1,0 +1,31 @@
+# antes
+    -> Dei uma olhada por alto no artigo da Maristela sobre o projeto Meninas na
+Computação. A iniciativa me pareceu bem legal mesmo, mas não vejo muito como tal
+informação seria útil na minha pesquisa. O segundo artigo me pareceu mais próximo ao
+que vou fazer, porém o foco deles é diferente do meu. Eles objetivam estudar como o
+fator sexo influiria na vida acadêmica de um aluno da UnB, enquanto o meu não é isso.
+Eu já fiz o teste de Kendall para analisar a correlação entre sexo e forma de saída
+(que é minha variável alvo) e conclui que sexo está bem pouco relacionado ao fato do
+aluno sair ou não da UnB. 
+    -> Refiz gráfico da idade, mostrando quais saíram e quais alunos ficaram 
+    -> Chequei se as anomalias no gráfico do improvement rate seriam frutos de algum
+erro. Não eram. Realmente teve alunos que saíram de um IRA de 0.2 para um IRA de 4.0
+(melhora de 20 vezes). 
+    -> Olhei o histograma da posição. Tinha um erro na hora de calcular o atributo
+(estava levando em consideração a média do período, e não o IRA), mas fora isso não
+há a exigência de que o gráfico seja estritamente decrescente. 
+        ** pois o último semestre varia para cada aluno. 
+    -> Separei os histogramas de em condição por curso
+    -> Fiz as tabelas
+
+# depois
+    -> Fazer tabela de idade, mostrando o quantitativo e também a percentagem
+daqueles que são capazes de formar. 
+    -> Problema das tabelas para taxa de aprovação, reprovação e trancamento era na
+base. 
+    -> Mudar forma de cálculo do improvement rate para levar em consideração o ira
+acumulado. -- ok
+    -> Mudar posição, de modo a desconsiderar alunos que já sairam na hora de fazer
+cálculo. -- ok
+    -> Fazer tabela de contingência para Curso e se o aluno conseguiu formar ou não.
+    -> Para todas as variáveis, calcular coeficiente de variação. 

@@ -16,6 +16,7 @@ CSV_PATH = '../mencoes/'
 ENCODING = 'latin'
 DATABASE_NAME = 'postgres'
 MY_DATABASE = 'bd_unb'
+SEP_CSV_FILE = '\t'
 
 # database connection
 USER = 'postgres'

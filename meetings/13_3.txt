@@ -20,3 +20,7 @@ posso usar?
     -> Estou fazendo a parte de estatística descritiva de novo. Quer ver?
 
 # depois
+    -> Estudar oversampling e undersampling
+    -> Tratar modelos com cauda e sem cauda
+    -> Usar janela deslizante de 1 ano
+    -> "Recomeçar a partir da fase de entendimento dos dados"

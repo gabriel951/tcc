@@ -124,6 +124,13 @@ def get_year_sem(year_sem_string, check_consistency):
     returns:
         tuple on the format (year, sem)
     """
+    # handle case of entrie equal to 0, which is used in the csv file to explain a
+    # student has not graduated yet. 
+    if year_sem_string == '0': 
+        return (9999, 1) # return a year bigger than the one we are considering, so 
+                         # student will not get included in database
+
+
     year = int(year_sem_string[:-1])
     sem = int(year_sem_string[-1])
     if check_consistency:
