@@ -6,9 +6,16 @@
 import statistics as stat
 import random
 
+# regressors
 from sklearn.neural_network import *
 from sklearn.svm import SVR
 from sklearn import linear_model
+
+# decision tree related
+from sklearn import tree 
+import pydotplus 
+import graphviz
+import os # TODO
 
 import sys
 sys.path.append('..')
@@ -114,21 +121,32 @@ def build_run_models():
 
         print('(train_size, test_size): (%d, %d)' \
                 % (len(training_result), len(test_result)))
+        print('number of features: %d', len(training_feature[0]))
 
+        # decision tree
+        dc_tree = tree.DecisionTreeRegressor()
+        dc_tree.fit(training_feature, training_result)
+        # show
+        dot_data = tree.export_graphviz(dc_tree, out_file=None) 
+        graph = pydotplus.graph_from_dot_data(dot_data) 
+        graph.write_pdf("iris.pdf") 
+        #with open("iris.dot", 'w') as f:
+        #    f = tree.export_graphviz(dc_tree, out_file=f)
+        exit()
         # train multilayer perceptron model 
-        regressor = MLPRegressor()
-        print('started training ANN')
-        regressor.fit(training_feature, training_result)
+        #regressor = MLPRegressor()
+        #print('started training ANN')
+        #regressor.fit(training_feature, training_result)
 
-        # train svr
-        svr = SVR()
-        print('started training SVR')
-        svr.fit(training_feature, training_result)
+        ## train svr
+        #svr = SVR()
+        #print('started training SVR')
+        #svr.fit(training_feature, training_result)
 
-        # train linear model 
-        linear_regressor = linear_model.LinearRegression()
-        print('started training linear regressor')
-        linear_regressor.fit(training_feature, training_result)
+        ## train linear model 
+        #linear_regressor = linear_model.LinearRegression()
+        #print('started training linear regressor')
+        #linear_regressor.fit(training_feature, training_result)
 
         # evaluate performance of the models
         oversample = True

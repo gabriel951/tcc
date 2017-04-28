@@ -242,7 +242,7 @@ def register_outliers_low_pass_rate(stu_info):
 
 def register_outliers_death(stu_info):
     """
-    registers student that were not interessed in coursing any subject in unb 
+    registers student that died
     receives: 
         student dictionary 
     returns: 
@@ -251,12 +251,12 @@ def register_outliers_death(stu_info):
     global outliers_dict
 
     # outliers
-    outliers_dict[23137920151] = 23137920151
-    outliers_dict[20948520132] = 20948520132
-    outliers_dict[16526420102] = 16526420102
-    outliers_dict[12233620062] = 12233620062
-    outliers_dict[10832220042] = 10832220042
-    outliers_dict[20686020132] = 20686020132
+    outliers_dict[20948320132] = 20948320132
+    outliers_dict[10832120042] = 10832120042
+    outliers_dict[12233520062] = 12233520062
+    outliers_dict[16526220102] = 16526220102
+    outliers_dict[23137120151] = 23137120151
+    outliers_dict[20685820132] = 20685820132
 
 def handle_outliers(stu_info):
     """

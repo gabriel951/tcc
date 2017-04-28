@@ -1,5 +1,14 @@
 # antes
     -> Rodei de novo os dados. Essa etapa foi fácil, pq os dados estavam muito
 parecidos com o formato anterior e não foi necessário eliminar novamente os outliers. 
+        ** diferentemente da outra vez
+    -> Mudei forma de calcular improvement rate
+    -> Fiz tabela de contingência para curso e para Idade 
+    -> Calculei coeficiente de variação
 
 # depois
+    -> Fazer dois modelos, considerando idade
+    -> Refazer coeficiente de variação conforme idade
+    -> Investigar o que o R fez para coeficiente de variação - ok
+    -> Fazer tabela de contingência para cursos, de modo a realizar um teste de
+chi-quadrado - ok

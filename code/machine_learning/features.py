@@ -293,7 +293,7 @@ def add_outcome(stu, target_lst):
     except:
         print(stu.way_out)
         return
-    if stu.way_out == 'Formatura':
+    if stu.able_to_grad():
         target_lst.append(GRADUATED)
     else:
         target_lst.append(NOT_GRADUATED)

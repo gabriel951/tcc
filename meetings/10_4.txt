@@ -1,3 +1,16 @@
 # antes
+    -> Descobri o que o R tinha feito para calcular o CV de atributos categóricos.
+Ele transforma os atributos categóricos em atributos numéricos. 
+    -> Refiz o CV conforme idade. 
+    -> Fiz teste de chi-quadrado, que mostra que há diferença entre os cursos. 
+        ** terei então 10 modelos? afinal são 5 cursos e 2 categorias de idade? 
+    -> O teste de kendall para decidir atributos será feito somente uma vez para os
+10 modelos? ou para cada modelo será feito um teste de Kendall
+
 
 # depois
+    -> Refazer toda a parte de estatística descritiva para idade 
+    -> Procurar teste de normalidade para aplicar aos atributos - precisa mesmo?
+tipo, kendall não é normal?
+    -> Adicionar modelo regressão com árvore de decisão 
+    -> Fazer teste de chi-quadrado para ver se posso agrupar ou não os modelos - ok

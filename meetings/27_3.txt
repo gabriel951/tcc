@@ -20,12 +20,13 @@ há a exigência de que o gráfico seja estritamente decrescente.
 
 # depois
     -> Fazer tabela de idade, mostrando o quantitativo e também a percentagem
-daqueles que são capazes de formar. 
+daqueles que são capazes de formar.  - ok
     -> Problema das tabelas para taxa de aprovação, reprovação e trancamento era na
 base. 
     -> Mudar forma de cálculo do improvement rate para levar em consideração o ira
 acumulado. -- ok
     -> Mudar posição, de modo a desconsiderar alunos que já sairam na hora de fazer
 cálculo. -- ok
-    -> Fazer tabela de contingência para Curso e se o aluno conseguiu formar ou não.
+    -> Fazer tabela de contingência para Curso e se o aluno conseguiu formar ou não
+- ok
     -> Para todas as variáveis, calcular coeficiente de variação. 

@@ -1,0 +1,196 @@
+starting for model all_students
+feature age, all courses.
+
+coefficient of correlation:  24.98842
+feature ira, all courses.
+
+coefficient of correlation:  65.28254
+feature improvement_rate, all courses.
+
+coefficient of correlation:  25.41993
+feature pass_rate, all courses.
+
+coefficient of correlation:  46.6498
+feature fail_rate, all courses.
+
+coefficient of correlation:  94.83017
+feature drop_rate, all courses.
+
+coefficient of correlation:  198.3494
+feature credit_rate_acc, all courses.
+
+coefficient of correlation:  84.68368
+feature hard_rate, all courses.
+
+coefficient of correlation:  65.95634
+feature position, all courses.
+
+coefficient of correlation:  99.57997
+starting for model young_students_from_ft_courses
+feature age, all courses.
+
+coefficient of correlation:  11.16028
+feature ira, all courses.
+
+coefficient of correlation:  52.32692
+feature improvement_rate, all courses.
+
+coefficient of correlation:  20.44968
+feature pass_rate, all courses.
+
+coefficient of correlation:  39.18292
+feature fail_rate, all courses.
+
+coefficient of correlation:  115.0163
+feature drop_rate, all courses.
+
+coefficient of correlation:  235.942
+feature credit_rate_acc, all courses.
+
+coefficient of correlation:  66.97687
+feature hard_rate, all courses.
+
+coefficient of correlation:  49.65083
+feature position, all courses.
+
+coefficient of correlation:  105.5426
+starting for model old_students_from_ft_courses
+feature age, all courses.
+
+coefficient of correlation:  20.54015
+feature ira, all courses.
+
+coefficient of correlation:  91.29089
+feature improvement_rate, all courses.
+
+coefficient of correlation:  32.25611
+feature pass_rate, all courses.
+
+coefficient of correlation:  96.13162
+feature fail_rate, all courses.
+
+coefficient of correlation:  54.71533
+feature drop_rate, all courses.
+
+coefficient of correlation:  174.6014
+feature credit_rate_acc, all courses.
+
+coefficient of correlation:  102.9164
+feature hard_rate, all courses.
+
+coefficient of correlation:  129.4822
+feature position, all courses.
+
+coefficient of correlation:  64.16314
+starting for model young_students_from_night_courses
+feature age, all courses.
+
+coefficient of correlation:  15.80207
+feature ira, all courses.
+
+coefficient of correlation:  80.39997
+feature improvement_rate, all courses.
+
+coefficient of correlation:  28.17555
+feature pass_rate, all courses.
+
+coefficient of correlation:  48.93748
+feature fail_rate, all courses.
+
+coefficient of correlation:  76.25285
+feature drop_rate, all courses.
+
+coefficient of correlation:  186.9636
+feature credit_rate_acc, all courses.
+
+coefficient of correlation:  93.20928
+feature hard_rate, all courses.
+
+coefficient of correlation:  84.46531
+feature position, all courses.
+
+coefficient of correlation:  89.7707
+starting for model old_students_from_night_courses
+feature age, all courses.
+
+coefficient of correlation:  17.23359
+feature ira, all courses.
+
+coefficient of correlation:  121.8978
+feature improvement_rate, all courses.
+
+coefficient of correlation:  26.14809
+feature pass_rate, all courses.
+
+coefficient of correlation:  74.17462
+feature fail_rate, all courses.
+
+coefficient of correlation:  68.63509
+feature drop_rate, all courses.
+
+coefficient of correlation:  174.885
+feature credit_rate_acc, all courses.
+
+coefficient of correlation:  132.9642
+feature hard_rate, all courses.
+
+coefficient of correlation:  113.607
+feature position, all courses.
+
+coefficient of correlation:  72.20798
+starting for model young_students_from_normal_courses
+feature age, all courses.
+
+coefficient of correlation:  13.16849
+feature ira, all courses.
+
+coefficient of correlation:  63.62844
+feature improvement_rate, all courses.
+
+coefficient of correlation:  28.20448
+feature pass_rate, all courses.
+
+coefficient of correlation:  46.87903
+feature fail_rate, all courses.
+
+coefficient of correlation:  90.09011
+feature drop_rate, all courses.
+
+coefficient of correlation:  162.2218
+feature credit_rate_acc, all courses.
+
+coefficient of correlation:  83.6713
+feature hard_rate, all courses.
+
+coefficient of correlation:  65.15912
+feature position, all courses.
+
+coefficient of correlation:  101.0314
+starting for model old_students_from_normal_courses
+feature age, all courses.
+
+coefficient of correlation:  13.13791
+feature ira, all courses.
+
+coefficient of correlation:  103.7137
+feature improvement_rate, all courses.
+
+coefficient of correlation:  22.46967
+feature pass_rate, all courses.
+
+coefficient of correlation:  67.38456
+feature fail_rate, all courses.
+
+coefficient of correlation:  75.10704
+feature drop_rate, all courses.
+
+coefficient of correlation:  195.4457
+feature credit_rate_acc, all courses.
+
+coefficient of correlation:  130.6553
+feature hard_rate, all courses.
+
+coefficient of correlation:  89.54207
+feature position, all courses.
+
+coefficient of correlation:  86.50715

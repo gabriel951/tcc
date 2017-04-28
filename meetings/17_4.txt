@@ -1,3 +1,13 @@
 # antes
+    -> Fiz teste de chi-quadrado para averiguar se poderia juntar os grupos, mas a
+resposta foi negativa. Logo, devo trabalhar com 6 bases de dados. 
+    -> Refiz parte de estatística descritiva
 
 # depois
+    -> Mudar nome dos cursos: TI, Licenciatura e Computação
+    -> Tirar pessoal que morreu dos modelos. O que é Outros?
+        ** possivelmente eliminar modelo que só continha pessoas que não conseguiram
+formar. 
+    -> Descobrir como árvores de decisão podem ser utilizadas para selecionar quais
+atributos são importantes. 
+    -> Colocar histogramas lado a lado. 

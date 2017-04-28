@@ -1,3 +1,33 @@
 # antes
+    -> Refiz histogramas
+    -> usar árvore de decisão para fazer a seleção de atributos
+        1. Tentei rodar um modelo de árvore de decisão da scikit, mas ele não
+seleciona automaticamente quais features são relevantes e quais não são. O que
+acontece é que ele atribui um fator de importância a cada atributo. Isso permitiria
+eu fazer uma seleção desde que estabelecesse um threshold (minha sugestão). 
+        2. Fazer pruning na árvore de decisão não seria útil: pruning poderia indicar
+que um determinado atributo não é útil em um caminho da árvore, mas útil para outro
+caminho. Nesse caso ele deveria ser eliminado? 
+        3. Usar Recursive Feature Elimination, da Scikit. 
+    -> Mudei os nomes dos grupos: TI, LIC, COMP. 
+    -> O modelo de alunos velhos da TI não tem alunos que se graduaram. Tal modelo
+pode ser eliminado?
+    -> Não tinha eliminado os alunos que saíram por falecimento. Agora eu eliminei.
+Há um aluno cuja forma de saída foi "outros". Elimino ele?
+    
+    -> Imagine que estou rodando o modelo para prever desempenho de alunos no 12
+semestre. Devo considerar alunos que já saíram da UnB antes do 12 semestre? 
+        1. Se não considerar, para semestres como o 12 minha base de dados pode ficar
+pequena demais. 
+        2. Poderia tentar prever, considerando os dados que tenho para o último
+semestre em questão. 
+        ** Minha sugestão: considerar o último semestre. 
+    -> Até que semestre tentar fazer a previsão?
 
 # depois
+    -> Deletar de uma vez por todas as pessoas que morreram
+    -> Mandar email para o professor com a pessoa do Outros 
+    -> Rodar o modelo até o último semestre do curso 
+    -> Ficar com 4 modelos no fim das contas: Sêniors e 3 Jovens
+    -> Decidir por meio de árvores de decisão, mas usar o recursive feature
+elimination da scikit tb 

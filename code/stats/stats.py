@@ -4,6 +4,7 @@
 import itertools
 import math
 import pandas
+from scipy import stats
 
 # import basic
 import sys
@@ -26,116 +27,164 @@ def apply_kendall():
     returns: 
         nothing
     """
-    # file pointer
-    FILE_NAME = '../logs/kendall.txt'
-    fp = open(FILE_NAME, 'w')
 
-    # load student info 
-    stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
+    # get all models list
+    models_lst = get_model_info()
+    
+    # iterate over all models
+    for (model, model_desc) in models_lst: 
+        print("starting for model %s" % (model_desc))
 
-    # write student info
-    for key, stu in stu_info.items():
-         social = '%d,%s,%d,%s,%s,%s,%s,%s,' \
-                 % (stu.reg, stu.sex, stu.age, stu.quota, stu.school_type, \
-                 stu.course, stu.local, stu.way_in)
-         perf = '%f,%f,%f,%f,%f,%f,%f,%f,%f,' \
-             % (stu.fail_rate[LAST_ELEM], stu.pass_rate[LAST_ELEM],\
-                 stu.drop_rate[LAST_ELEM], stu.ira[LAST_ELEM], \
-                 stu.improvement_rate[LAST_ELEM], stu.credit_rate_acc[LAST_ELEM], \
-                 stu.hard_rate[LAST_ELEM], stu.in_condition[LAST_ELEM], \
-                 stu.position[LAST_ELEM]) 
+        # file pointer
+        FILE_NAME = '../logs/kendall.txt'
+        fp = open(FILE_NAME, 'w')
 
-         way_out = '%s\n' % (stu.way_out)
-        
-         fp.write(social + perf + way_out)
+        # write student info
+        for key, stu in model.items():
+             social = '%d,%s,%d,%s,%s,%s,%s,%s,' \
+                     % (stu.reg, stu.sex, stu.age, stu.quota, stu.school_type, \
+                     stu.course, stu.local, stu.way_in)
+             perf = '%f,%f,%f,%f,%f,%f,%f,%f,%f,' \
+                 % (stu.fail_rate[LAST_ELEM], stu.pass_rate[LAST_ELEM],\
+                     stu.drop_rate[LAST_ELEM], stu.ira[LAST_ELEM], \
+                     stu.improvement_rate[LAST_ELEM], stu.credit_rate_acc[LAST_ELEM], \
+                     stu.hard_rate[LAST_ELEM], stu.in_condition[LAST_ELEM], \
+                     stu.position[LAST_ELEM]) 
 
-    fp.close()
+             way_out = '%s\n' % (stu.way_out)
+            
+             fp.write(social + perf + way_out)
 
-    # apply kendal tao test 
-    call("Rscript kendall.r " + FILE_NAME, shell = True)
+        fp.close()
 
-def generate_graphs():
+        # apply kendal tao test 
+        call("Rscript kendall.r " + FILE_NAME, shell = True)
+
+def get_chi_square_courses_grouped():
     """
-    generate the graphs for the primitive and derived attributes
-    saves the graph as .png files in the folder we are in
+    get chi square test for the course atribute
+    consider the courses grouped as follow: 
+        group 1 - mechatronics and network engineering
+        group 2 - non bachelor in computer science
+        group 3 - cs bachelor, software engineering, computer engineering
     receives: 
         nothing
     returns: 
         nothing
     """
-
-    # load student info
+    # load student dictionary 
     stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
+    
+    # expected frequency list and observed frequency list
+    obs_freq = []
+    exp_freq = []
 
-    ## primitive features
-    #TODO: deprecated! 
-    #get_graph('local', stu_info, False, data_type = 'discrete')
-    #get_graph('sex', stu_info, False, data_type = 'discrete')
-    #get_graph('age', stu_info, False, data_type = 'discrete')
-    #get_graph('quota', stu_info, False, data_type = 'discrete')
-    #get_graph('school_type', stu_info, False, data_type = 'discrete')
-    #get_graph('course', stu_info, False, data_type = 'discrete')
-    #get_graph('race', stu_info, False, data_type = 'discrete')
-    #get_graph('way_in', stu_info, False, data_type = 'discrete')
-    #get_graph('way_out', stu_info, False, data_type = 'discrete')
-    #get_graph('grades', stu_info, False, data_type = 'discrete')
+    # info for all courses
+    (amount_all, proportion_all) = get_grad_info(stu_info, lambda stu: True)
 
-    ## derived features
-    #get_graph('ira', stu_info, False, data_type = 'continuous', index = LAST_ELEM, 
-    #        binwidth = 0.2)
-    get_graph('improvement_rate', stu_info, False, data_type = 'continuous', 
-            index = LAST_ELEM, binwidth = 0.2)
-    #get_graph('pass_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
-    #get_graph('pass_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
-    #get_graph('fail_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
-    #get_graph('fail_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
-    #get_graph('drop_rate', stu_info, True, data_type = 'continuous', index = LAST_ELEM)
-    #get_graph('drop_rate', stu_info, False, data_type = 'continuous', index = LAST_ELEM)
-    #get_graph('credit_rate_acc', stu_info, False, data_type = 'continuous', index = 0, 
-    #        binwidth = 2)
-    #get_graph('hard_rate', stu_info, False, data_type = 'continuous', index =
-    #        LAST_ELEM)
-    # TODO: 
-    #get_graph('in_condition', stu_info, False, data_type = 'discrete', index =
-    #        LAST_ELEM)
-    #get_graph('in_condition', stu_info, True, data_type = 'discrete', index =
-    #        LAST_ELEM)
-    get_graph('position', stu_info, False, data_type = 'discrete', index = LAST_ELEM)
+    # function that return true for only one group
+    func_lst = []
+    func_lst.append(lambda stu: stu.course in TI_COURSES) 
+    func_lst.append(lambda stu: stu.course in LIC_COURSES) 
+    func_lst.append(lambda stu: stu.course in COMP_COURSES)
+
+    for func in func_lst: 
+        # info for the course
+        (amount_course, proportion_course) = get_grad_info(stu_info, func)
+
+        # observed frequency 
+        cur_obs_freq = round(amount_course * proportion_course)
+        obs_freq.append(cur_obs_freq)
+
+        # expected frequency
+        cur_exp_freq = round(amount_course * proportion_all)
+        exp_freq.append(cur_exp_freq)
+           
+
+    # calculate chi-square
+    print('courses separated: observed and expected frequency list')
+    print(obs_freq, exp_freq)
+    (chi_sqr, p_value) = stats.chisquare(obs_freq, exp_freq)
+    print('p-value: %f' % (p_value))
+
+def get_chi_square_courses_separated():
+    """
+    get chi square test for the course atribute
+    consider the courses separated
+    receives: 
+        nothing
+    returns: 
+        nothing
+    """
+    # load student dictionary 
+    stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
+    
+    # expected frequency list and observed frequency list
+    obs_freq = []
+    exp_freq = []
+
+    # info for all courses
+    (amount_all, proportion_all) = get_grad_info(stu_info, lambda stu: True)
+
+    for course in COURSES_OFF_NAME: 
+        # info for the course
+        (amount_course, proportion_course) = get_grad_info(stu_info, \
+                 lambda stu: stu.course == course)
+
+        # observed frequency 
+        cur_obs_freq = round(amount_course * proportion_course)
+        obs_freq.append(cur_obs_freq)
+
+        # expected frequency
+        cur_exp_freq = round(amount_course * proportion_all)
+        exp_freq.append(cur_exp_freq)
+           
+
+    # calculate chi-square
+    print('no separation: observed and expected frequency list')
+    print(obs_freq, exp_freq)
+    (chi_sqr, p_value) = stats.chisquare(obs_freq, exp_freq)
+    print('p-value: %f' % (p_value))
+
+def get_chi_square():
+    """
+    get chi square test for the course atribute
+    consider both the courses separated and the courses as the model
+    receives: 
+        nothing
+    returns: 
+        nothing
+    """
+    # get chi square information for the courses separated
+    get_chi_square_courses_separated()
+
+    # get chi square information for courses grouped 
+    #get_chi_square_courses_grouped()
 
 def get_coef_cor():
     """
     get the coefficient of correlation for the relevant atributes
-    * print info 
+    ** filter by student group
     receives: 
         nothing
     returns: 
         nothing
     """
-    # load student info
-    stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
+    # get all models
+    models_lst = get_model_info()
 
-    # features that we decided not to include
-    # get_coef_cor_atr('local', stu_info, False)
-    # get_coef_cor_atr('race', stu_info, False)
+    # iterate over all models
+    for (model, model_desc) in models_lst: 
+        print ('starting for model %s' % (model_desc))
 
-    # primitive features
-    get_coef_cor_atr('sex', stu_info, False)
-    get_coef_cor_atr('age', stu_info, False)
-    get_coef_cor_atr('quota', stu_info, False)
-    get_coef_cor_atr('school_type', stu_info, False)
-    get_coef_cor_atr('course', stu_info, False)
-    get_coef_cor_atr('way_in', stu_info, False)
-    get_coef_cor_atr('way_out', stu_info, False)
+        # age is the only primitive feature that is numerical
+        get_coef_cor_atr('age', model, False, index = None)
 
-    get_coef_cor_atr('ira', stu_info, False, index = LAST_ELEM)
-    get_coef_cor_atr('improvement_rate', stu_info, False, index = LAST_ELEM)
-    get_coef_cor_atr('pass_rate', stu_info, False, index = LAST_ELEM)
-    get_coef_cor_atr('fail_rate', stu_info, False, index = LAST_ELEM)
-    get_coef_cor_atr('drop_rate', stu_info, False, index = LAST_ELEM)
-    get_coef_cor_atr('credit_rate_acc', stu_info, False, index = LAST_ELEM)
-    get_coef_cor_atr('hard_rate', stu_info, False, index = LAST_ELEM)
-    get_coef_cor_atr('in_condition', stu_info, False, index = LAST_ELEM)
-    get_coef_cor_atr('position', stu_info, False, index = LAST_ELEM)
+        # derived features - skip in condition. 
+        der_feat_lst = ['ira', 'improvement_rate', 'pass_rate', 'fail_rate',\
+                'drop_rate', 'credit_rate_acc', 'hard_rate', 'position']
+        for der_feat in der_feat_lst: 
+            get_coef_cor_atr(der_feat, model, False, index = LAST_ELEM)
 
 def get_coef_cor_atr(feature, stu_info, sep_course, index = None):
     """
@@ -178,30 +227,48 @@ def get_contigency_table():
         nothing
     returns: 
         nothing
+
+    * contigency table = crosstab
     """
     # load student information
     stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
     
-    # get crosstab for the age
+
+    # get contingency table for the feature age and feature courses (according to the
+    # way_out
     sep_course = False
     index = None
-    (age, way_out) = get_feature_val('age', stu_info, sep_course, index, course =
-    'all')
-    age_table = pandas.crosstab([age], [way_out], rownames = ['age'], 
+
+    #get_contingency_table_feature('age', stu_info, sep_course, index, course = 'all')
+    get_contingency_table_feature('course', stu_info, sep_course, index, \
+            course = 'all')
+    
+def get_contingency_table_feature(feature, stu_info, sep_course, index,\
+        course):
+    """
+    get contingency table for a features vs the way out, print it in the screen
+    receives: 
+        1. the feature on the row
+        3. student information dictionary
+        4. boolean that indicates whether we should separate courses
+        5. index - None if the atribute is not in a list. the index in this list
+        otherwise
+        6. string indicating what course we should consider
+    returns: 
+        nothing
+    """
+    # get list of feature 1 and way_out lst
+    (feature_lst, way_out_lst) = get_feature_val(feature, stu_info, sep_course,\
+            index, course)
+
+    # get pandas table
+    table = pandas.crosstab([feature_lst], [way_out_lst], rownames = [feature], 
             colnames = ['way_out'], margins = True)
-    print(age_table)
+    print(table)
+
+    # percentage table - optional
     #percentage_age_table = age_table.apply(lambda x: x/x.sum(), axis = 1)
     #print(percentage_age_table)
-
-    # get crosstab for the course
-    #sep_course = False
-    #index = None
-    #(course, way_out) = get_feature_val('course', stu_info, sep_course, index, course =
-    #'all')
-    #course_table = pandas.crosstab([course], [way_out], rownames = ['course'], 
-    #        colnames = ['way_out'], margins = True)
-    #print(course_table)
-    
 
 def get_feature_val(feature, stu_info, sep_course, index, course = 'all'):
     """
@@ -248,50 +315,6 @@ def get_feature_val(feature, stu_info, sep_course, index, course = 'all'):
     # return correct value
     return (atr_values, way_out)
 
-def get_graph(feature, stu_info, sep_course, data_type, index = None, binwidth =
-        0.05):
-    """
-    generate a bar graph (discrete data) or a histogram graph (continuous data) for 
-    the feature distribution. No separation by course
-    receives:
-        1. a feature name
-        2. a dictionary of students. 
-        3. a boolean to indicate if we need to separate the courses or not
-        4. whether the datatype is discrete or continuous.
-        5. (optional) an index. If passed its because the feature is a list (one for
-        each semester) and its the position for the list
-        6. (optional) the binwidth, case the feature is continuous 
-    returns: 
-        nothing
-    """
-    assert (sep_course == True or sep_course == False)
-
-    # iterate through every course of interest
-    for course in COURSES_OFF_NAME:
-        # inform user whats going on and set name of graph
-        if sep_course == False:
-            print('getting graph for feature %s' % (feature))
-            name = feature + '.png'
-        else:
-            print('getting graph for feature %s and course %s' % (feature, course))
-            name = feature + '_' + course + '.png'
-
-        # get feature values
-        (atr_values, way_out) = get_feature_val(feature, \
-                stu_info, sep_course, index, course = course)
-
-        # write query in file, call r program to plot chart 
-        if data_type == 'discrete':
-            write_execute(atr_values, way_out, r_get_bar_graph, name)
-        elif data_type == 'continuous':
-            write_execute(atr_values, way_out, r_get_hist_graph, name, binwidth)
-        else:
-            exit("misinformed value")
-
-        # if we don't want to separate course, end function
-        if sep_course == False: 
-            return
-
 def handle_feature(stu_info, rows_list, feature):
     """
     if the data of a given feature need to be shortened, this function
@@ -318,6 +341,9 @@ def handle_feature(stu_info, rows_list, feature):
         rows_list = [row.replace('f', 'feminino') for row in rows_list]
         return rows_list
     elif feature == 'way_out':
+        # people that died are considered outliers
+        for row in rows_list:
+            assert(row != 'Falecimento')
         rows_list = [row.replace('Desligamento - Abandono', 'deslg') \
                 for row in rows_list] 
         rows_list = [row.replace('Mudança de Curso', 'mdc') \
@@ -536,17 +562,6 @@ def record_stats_atr(stu_info, atr):
     
     return atr_info
 
-def r_get_bar_graph(name):
-    """
-    call r program to plot a bar graph
-    receives: 
-        1. the name for the graph
-    returns:
-        nothing
-    """
-    call("Rscript stats_bar_graph.r", shell = True)
-    call("mv temp.png " + name, shell = True)
-
 def r_get_coef_cor():
     """
     call R program that calculates the coefficient of correlation
@@ -556,18 +571,6 @@ def r_get_coef_cor():
         nothing
     """
     call("Rscript r_get_coef_cor.r", shell = True)
-
-def r_get_hist_graph(name, binwidth):
-    """
-    call r program to plot a histogram graph
-    receives: 
-        1. the name for the graph
-        2. the binwidth for the histogram graph
-    returns: 
-        nothing
-    """
-    call("Rscript stats_hist_graph.r " + str(binwidth), shell = True)
-    call("mv temp.png " + name, shell = True)
 
 def study_attr():
     """
@@ -779,17 +782,15 @@ def write_execute(feat_lst, target_lst, function, *args):
     # execute function
     function(*args)
 
-
 if __name__ == "__main__":
+    print('statistics module')
 
-    # histograms
-    #generate_graphs()
-
-    # contingency table 
+    # contingency table and chi-square test
     #get_contigency_table()
+    #get_chi_square()
 
     # kendall and coefficient of correlation
-    apply_kendall()
+    #apply_kendall()
     #get_coef_cor()
 
     # particular atributes

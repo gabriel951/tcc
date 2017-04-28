@@ -92,6 +92,18 @@ class Student():
         # position of the student relative to the semester he is in 
         self.position = lst_unknown[:]
 
+    def able_to_grad(self): 
+        """
+        indicates if student was able to form
+        receives: 
+            1. nothing
+        returns: 
+            True, case student was able to form. False otherwise
+        """
+        if self.way_out.lower() == 'formatura': 
+            return True
+        return False
+
     def calculate_ira_yearsem(self, year, sem):
         """
         DEPRECATED 

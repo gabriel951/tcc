@@ -422,9 +422,9 @@ def fill_position(stu_info):
 
         # add every student IRA to the performance dict
         for key, stu in stu_info.items():
-            sem_in_unb = stu.get_num_semesters()
 
             # case the student has already graduated, skip this student
+            sem_in_unb = stu.get_num_semesters()
             if cur_sem >= sem_in_unb:
                 continue
 
@@ -461,6 +461,59 @@ def fill_position(stu_info):
             stu.position[cur_sem] = position
 
     print('finished filling position')
+
+def filter_dict_by(function, dic): 
+    """
+    filter entries from the dictionary, according to the value returned by the
+    function passed
+    receives: 
+        1. function to apply
+        2. dictionary to iterate
+    returns: 
+        new dictionary, with entries filtered
+    """
+    filtered_dic = {}
+    for key, val in dic.items(): 
+        if function(val):
+            filtered_dic[key] = val
+    return filtered_dic
+
+def get_derived_info(stu_info):
+    """
+    iterates over the csv files, filling information relative to student derived
+    attributes    
+    receives:
+        1. a dictionary containing student info
+    returns:
+        nothing
+    """
+    # fill student grades
+    #fill_grades(stu_info)
+
+    # calculate student ira for the semesters 
+    #fill_ira(stu_info)
+
+    # calculate improvement rate 
+    fill_impr_rate(stu_info)
+
+    # calculate fail rate, pass rate and drop rate
+    #fill_drop_pass_fail_rate(stu_info, 'fail', False)
+    #fill_drop_pass_fail_rate(stu_info, 'pass', False)
+    #fill_drop_pass_fail_rate(stu_info, 'drop', False)
+
+    # calculate credit rate 
+    #fill_credit_rate(stu_info)
+
+    # calculate hard rate - need to check the code later
+    #fill_hard_rate(stu_info)
+
+    # calculate if student is in condition 
+    #fill_condition(stu_info)
+
+    # calculate position of the student for the semester he is in 
+    fill_position(stu_info)
+
+    #print('\nfinished constructing derived info\n\n')
 
 def get_database_info():
     """
@@ -504,42 +557,86 @@ def get_database_info():
         print('finished loading the students dictionary')
         return stu_info
 
-def get_derived_info(stu_info):
+def get_grad_info(stu_info, func_filter): 
     """
-    iterates over the csv files, filling information relative to student derived
-    attributes    
-    receives:
-        1. a dictionary containing student info
-    returns:
-        nothing
+    get the amount of students in a course and the proportion that graduated, for
+    that course
+    receives: 
+        1. student dictionary
+        2. a function to filter the students that will be selected
+    returns: 
+        tuple of the form (<amount of students in the course> , <proportion that
+        graduated>). 
+        ** the amount returned correspond to all students, including those that did
+        not graduate
     """
-    # fill student grades
-    #fill_grades(stu_info)
 
-    # calculate student ira for the semesters 
-    #fill_ira(stu_info)
+    tot_amount = 0
+    grad_amount = 0
+    for key, stu in stu_info.items(): 
+        if func_filter(stu): 
+            tot_amount += 1
+            if stu.able_to_grad(): 
+                grad_amount += 1
+    
+    proportion = float(grad_amount) / tot_amount
 
-    # calculate improvement rate 
-    fill_impr_rate(stu_info)
+    return (tot_amount, proportion)
 
-    # calculate fail rate, pass rate and drop rate
-    #fill_drop_pass_fail_rate(stu_info, 'fail', False)
-    #fill_drop_pass_fail_rate(stu_info, 'pass', False)
-    #fill_drop_pass_fail_rate(stu_info, 'drop', False)
+def get_model_info():
+    """
+    get a list containing a model data and a description of the model 
+    the models studied are 2 * 3 = 6. 2 because we divide by age between young people
+    and old people. 3 because we divide by 3 groups of course. 
+    receives: 
+        1. nothing
+    returns: 
+        list where each entrie is of the form: <model_data, brief_model_description>
+    """
+    # load student info 
+    stu_info = load_students(NAME_STU_STRUCTURE, path = '../core/data/')
 
-    # calculate credit rate 
-    #fill_credit_rate(stu_info)
+    # list of models
+    models_lst = []
+    models_lst.append((stu_info, 'all_students'))
 
-    # calculate hard rate - need to check the code later
-    #fill_hard_rate(stu_info)
+    # young students from ti courses
+    filtered_data = filter_dict_by(lambda stu: stu.age <= AGE_THRESHOLD and \
+            stu.course in TI_COURSES, stu_info)
+    models_lst.append((filtered_data, 'young_students_ti_courses'))
+    #print(len(filtered_data))
 
-    # calculate if student is in condition 
-    #fill_condition(stu_info)
+    # old students from ti courses
+    filtered_data = filter_dict_by(lambda stu: stu.age > AGE_THRESHOLD and \
+            stu.course in TI_COURSES, stu_info)
+    models_lst.append((filtered_data, 'old_students_ti_courses'))
+    #print(len(filtered_data))
 
-    # calculate position of the student for the semester he is in 
-    fill_position(stu_info)
+    # young students from lic courses
+    filtered_data = filter_dict_by(lambda stu: stu.age <= AGE_THRESHOLD and \
+            stu.course in LIC_COURSES, stu_info)
+    models_lst.append((filtered_data, 'young_students_lic_courses'))
+    #print(len(filtered_data))
 
-    #print('\nfinished constructing derived info\n\n')
+    # old students from lic courses
+    filtered_data = filter_dict_by(lambda stu: stu.age > AGE_THRESHOLD and \
+            stu.course in LIC_COURSES, stu_info)
+    models_lst.append((filtered_data, 'old_students_lic_courses'))
+    #print(len(filtered_data))
+
+    # young students from comp courses
+    filtered_data = filter_dict_by(lambda stu: stu.age <= AGE_THRESHOLD and \
+            stu.course in COMP_COURSES, stu_info)
+    models_lst.append((filtered_data, 'young_students_comp_courses'))
+    #print(len(filtered_data))
+
+    # old students from comp courses
+    filtered_data = filter_dict_by(lambda stu: stu.age > AGE_THRESHOLD and \
+            stu.course in COMP_COURSES, stu_info)
+    models_lst.append((filtered_data, 'old_students_comp_courses'))
+    #print(len(filtered_data))
+
+    return models_lst;
 
 def get_students_info(): 
     """
@@ -563,7 +660,7 @@ def get_students_info():
     handle_outliers(stu_dict)
 
     # construct info for the derived attributes of a student
-    get_derived_info(stu_dict)
+    #get_derived_info(stu_dict)
 
     # saves object
     save_students(NAME_STU_STRUCTURE, stu_dict)
@@ -790,7 +887,7 @@ def save_students(name, stu_info, path = PATH):
 
 if __name__ == "__main__":
     # get all student relevant information and saves it as an object
-    #get_students_info()
+    get_students_info()
 
     # load student info, just a test
     #load_students('NAME_STU_STRUCTURE')

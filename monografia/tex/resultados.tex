@@ -1,3 +1,25 @@
+% atribute list to check - social
+% 1. age 
+% 2. course
+% 3. grades?
+% 4. race 
+% 5. sex
+% 6. quota
+% 7. school type 
+% 8. way in 
+% 9. way out
+
+% atribute list to check - derived
+% 10. credit rate acc
+% 11. in condition
+% 12. drop rate
+% 13. fail rate
+% 14. hard rate 
+% 15. improvement rate
+% 16. ira
+% 17. pass rate
+% 18. position
+
 Neste capítulo apresentam-se e analisam-se os resultados obtidos após se ter seguido a
 metodologia explicada no capítulo anterior. Descreve-se os resultados após a
 eliminação de \textit{outliers}, mostram-se os histogramas e gráficos de barra obtidos para
@@ -12,43 +34,831 @@ universidade, o aluno era tratado como outlier e seus dados eram removidos do es
 amostral. Eliminaram-se 203 estudantes do espaço amostral dessa maneira, ficando-se
 assim com 3751 amostras. 
 
-\section{Tabelas de Contingência para Atributos}
-A fazer
+%\section{Tabelas de Contingência para Atributos}
+%A fazer
 
-\section{Coeficiente de Variação Para Atributos}
+%\section{Coeficiente de Variação Para Atributos}
+%A fazer
+\section{Tabela Comparativa Entre Histogramas}
 
-\begin{table}
-\begin{center}
-\begin{tabular}[c]{| c | c |}
-        \hline
-        \textbf{Atributos} & \textbf{Coeficiente de Variação} \\
-        \hline
-        Sexo & 16.7 \\
-        \hline
-        Idade & 25.0 \\
-        \hline
-        Cota & 29.3 \\
-        \hline
-        Cota & 29.3 \\
-        \hline
-        Tipo da Escola & 44.1 \\
-        \hline
-        Curso & 54.2 \\
-        \hline
-        Forma de Entrada & 25.6 \\
-        \hline
-        Forma de Saída & 91.8 \\
-        \hline
-        Ira & 65.3 \\
-        \hline
-        Coeficiente de Melhora Acadêmica & 25.4 \\
-        \hline
-        Coeficiente de Melhora Acadêmica & 25.4 \\
-        \hline
-\end{tabular}
-\end{center}
-\caption{Coeficiente de Variação Para Atributos}
-\end{table}
+% 1. age
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/age.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/age.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/age.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/age.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/age.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/age.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo Idade, conforme os diferentes modelos}
+\end{figure}
+
+% 2. course
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/course.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/course.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/course.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/course.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/course.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/course.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo Curso, conforme os diferentes modelos}
+\end{figure}
+
+% 5. sex
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/sex.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/sex.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/sex.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/sex.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/sex.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/sex.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo Sexo, conforme os diferentes modelos}
+\end{figure}
+
+% 6. quota
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/quota.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/quota.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/quota.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/quota.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/quota.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/quota.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo cota, conforme os diferentes modelos}
+\end{figure}
+
+% 7. school_type
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/school_type.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/school_type.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/school_type.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/school_type.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/school_type.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/school_type.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo Tipo da Escola, conforme os diferentes modelos}
+\end{figure}
+
+% 8. way_in
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/way_in.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/way_in.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/way_in.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/way_in.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/way_in.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/way_in.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo Forma de Entrada, conforme os diferentes modelos}
+\end{figure}
+
+% 9. way_out
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/way_out.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/way_out.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/way_out.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/way_out.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/way_out.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/way_out.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo Forma de Saída, conforme os diferentes modelos}
+\end{figure}
+
+% 10. credit rate acc
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/credit_rate_acc.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/credit_rate_acc.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/credit_rate_acc.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/credit_rate_acc.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/credit_rate_acc.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/credit_rate_acc.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo Quantidade de Créditos, conforme os diferentes modelos}
+\end{figure}
+
+% 11. in condition
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/in_condition.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/in_condition.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/in_condition.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/in_condition.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/in_condition.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/in_condition.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo Em Condição, conforme os diferentes modelos}
+\end{figure}
+
+% 12. drop rate
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/drop_rate.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/drop_rate.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/drop_rate.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/drop_rate.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/drop_rate.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/drop_rate.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo Taxa de Trancamento, conforme os diferentes modelos}
+\end{figure}
+
+% 13. fail rate
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/fail_rate.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/fail_rate.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/fail_rate.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/fail_rate.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/fail_rate.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/fail_rate.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo Taxa de Falhas, conforme os diferentes modelos}
+\end{figure}
+
+% 14. hard rate 
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/hard_rate.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/hard_rate.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/hard_rate.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/hard_rate.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/hard_rate.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/hard_rate.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo taxa de aprovação em disciplinas difíceis, conforme os 
+    diferentes modelos}
+\end{figure}
+
+% 15. improvement rate
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/improvement_rate.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/improvement_rate.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/improvement_rate.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/improvement_rate.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/improvement_rate.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/improvement_rate.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo Taxa de Melhora Acadêmica, conforme os diferentes modelos}
+\end{figure}
+
+% 16. ira
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/ira.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/ira.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/ira.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/ira.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/ira.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/ira.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo IRA, conforme os diferentes modelos}
+\end{figure}
+
+% 17. pass rate
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/pass_rate.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/pass_rate.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/pass_rate.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/pass_rate.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/pass_rate.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/pass_rate.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo Taxa de Aprovação, conforme os diferentes modelos}
+\end{figure}
+
+% 18. position
+\clearpage
+\begin{figure}[!ht]
+    \centering
+    % figura 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height = 7cm]{old_ti/position.png}
+        \caption{Alunos Seniors da FT}
+    \end{subfigure}
+    ~
+    % figura 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_ti/position.png}
+        \caption{Alunos Jovens da FT}
+    \end{subfigure}
+
+    % figura 3
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_lic/position.png}
+        \caption{Alunos Seniors da Licenciatura}
+    \end{subfigure}
+    ~
+    % figura 4
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_lic/position.png}
+        \caption{Alunos Jovens da Licenciatura}
+    \end{subfigure}
+
+    % figura 5
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{old_comp/position.png}
+        \caption{Alunos Seniors da Computação}
+    \end{subfigure}
+    ~
+    % figura 6
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width = 8cm, height=7cm]{yng_comp/position.png}
+        \caption{Alunos Jovens da Computação}
+    \end{subfigure}
+    \caption{Atributo Posição, conforme os diferentes modelos}
+\end{figure}
+
+%\begin{table}
+%\begin{center}
+%\begin{tabular}[ht]{| c | c |}
+%    \hline
+%    6:00 - 7:00 & Livre \\
+%    \hline
+%    \parbox[c]{1cm}{\includegraphics[width=4cm]{sex.png}}
+%    & 
+%    oi \\
+%    \hline
+%\end{tabular}
+%\end{center}
+%\caption{Tabela Comparativa entre Histogramas}
+%\end{table}
+
+\clearpage
+
+%\begin{table}
+%\begin{center}
+%\begin{tabular}[c]{| c | c |}
+%        \hline
+%        \textbf{Atributos} & \textbf{Coeficiente de Variação} \\
+%        \hline
+%        Sexo & 16.7 \\
+%        \hline
+%        Idade & 25.0 \\
+%        \hline
+%        Cota & 29.3 \\
+%        \hline
+%        Cota & 29.3 \\
+%        \hline
+%        Tipo da Escola & 44.1 \\
+%        \hline
+%        Curso & 54.2 \\
+%        \hline
+%        Forma de Entrada & 25.6 \\
+%        \hline
+%        Forma de Saída & 91.8 \\
+%        \hline
+%        Ira & 65.3 \\
+%        \hline
+%        Coeficiente de Melhora Acadêmica & 25.4 \\
+%        \hline
+%        Coeficiente de Melhora Acadêmica & 25.4 \\
+%        \hline
+%\end{tabular}
+%\end{center}
+%\caption{Coeficiente de Variação Para Atributos}
+%\end{table}
 
 
 \section{Histogramas e Gráficos de Barra Para Atributos}
@@ -65,7 +875,7 @@ curso de exatas ainda é, lamentavelmente, restrita.
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Sexo}
     \centering
-    \includegraphics[width = 10cm]{sex.png}
+    \includegraphics[width = 10cm]{all_students/sex.png}
     \label{atr_sex}
 \end{figure}
 
@@ -75,7 +885,7 @@ mostra que os ingressantes na UnB têm idade em torno dos 18/19 anos.
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Idade}
     \centering
-    \includegraphics[width = 10cm]{age.png}
+    \includegraphics[width = 10cm]{all_students/age.png}
     \label{atr_age}
 \end{figure}
 
@@ -83,20 +893,20 @@ mostra que os ingressantes na UnB têm idade em torno dos 18/19 anos.
 A Figura \ref{atr_res} mostra o gráfico de barra para o atributo residência. Pode-se
 notar que nesse caso a quantidade de valores faltantes (barra com nome
 \texttt{indisponível} é pequena). 
-\begin{figure}[!ht]
-    \caption{Gráfico de Barra para Atributo Residência}
-    \centering
-    \includegraphics[width = 10cm]{local.png}
-    \label{atr_res}
-\end{figure}
-\clearpage
+%\begin{figure}[!ht]
+%    \caption{Gráfico de Barra para Atributo Residência}
+%    \centering
+%    \includegraphics[width = 10cm]{all_students/local.png}
+%    \label{atr_res}
+%\end{figure}
+%\clearpage
 
 \subsection{Gráfico de Barra para Atributo Cota}
 A Figura \ref{atr_quota} mostra o gráfico de barra para o atributo cota. 
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Cota}
     \centering
-    \includegraphics[width = 10cm]{quota.png}
+    \includegraphics[width = 10cm]{all_students/quota.png}
     \label{atr_quota}
 \end{figure}
 
@@ -122,7 +932,7 @@ decidiu-se manter esse atributo em nosso estudo.
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Tipo da Escola}
     \centering
-    \includegraphics[width = 10cm]{school_type.png}
+    \includegraphics[width = 10cm]{all_students/school_type.png}
     \label{atr_school}
 \end{figure}
 
@@ -132,7 +942,7 @@ A Figura \ref{atr_course} mostra o gráfico de barra para o atributo curso.
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Curso}
     \centering
-    \includegraphics[width = 10cm]{course.png}
+    \includegraphics[width = 10cm]{all_students/course.png}
     \label{atr_course}
 \end{figure}
 
@@ -159,7 +969,7 @@ A Figura \ref{atr_race} mostra o gráfico de barra para o atributo raça.
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Raça}
     \centering
-    \includegraphics[width = 10cm]{race.png}
+    \includegraphics[width = 10cm]{all_students/race.png}
     \label{atr_race}
 \end{figure}
 Pode-se observar que há uma grande quantidade de valores faltantes, de modo que
@@ -186,7 +996,7 @@ apresentado a seguir:
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Forma de Ingresso}
     \centering
-    \includegraphics[width = 10cm]{way_in.png}
+    \includegraphics[width = 10cm]{all_students/way_in.png}
     \label{atr_way_in}
 \end{figure}
 
@@ -251,7 +1061,7 @@ apresentado a seguir:
 \begin{figure}[!ht]
     \caption{Gráfico de Barra para Atributo Forma de Saída}
     \centering
-    \includegraphics[width = 10cm]{way_out.png}
+    \includegraphics[width = 10cm]{all_students/way_out.png}
     \label{atr_way_out}
 \end{figure}
 
@@ -271,7 +1081,7 @@ rendimento acadêmico do aluno.
 \begin{figure}[!ht]
     \caption{Gráfico de Barra Mostrando as Menções em Disciplinas}
     \centering
-    \includegraphics[width = 10cm]{grades.png}
+    \includegraphics[width = 10cm]{all_students/grades.png}
     \label{avg_grades}
 \end{figure}
 \clearpage
@@ -287,7 +1097,7 @@ quando se faz a separação por curso.
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Aprovação}
     \centering
-    \includegraphics[width = 10cm]{pass_rate.png}
+    \includegraphics[width = 10cm]{all_students/pass_rate.png}
     \label{pass_rate_all}
 \end{figure}
 
@@ -298,7 +1108,7 @@ Já as Figuras \ref{pass_rate_cic_b}, \ref{pass_rate_cic_lic},
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Aprovação para Ciência da Computação - Bacharelado}
     \centering
-    \includegraphics[width = 10cm]{pass_rate_cic_bacharelado.png}
+    \includegraphics[width = 10cm]{all_students/pass_rate_cic_bacharelado.png}
     \label{pass_rate_cic_b}
 \end{figure}
 
@@ -306,35 +1116,35 @@ Já as Figuras \ref{pass_rate_cic_b}, \ref{pass_rate_cic_lic},
     \caption{Histograma da Taxa de Aprovação para Ciência da Computação -
     Licenciatura}
     \centering
-    \includegraphics[width = 10cm]{pass_rate_cic_licenciatura.png}
+    \includegraphics[width = 10cm]{all_students/pass_rate_cic_licenciatura.png}
     \label{pass_rate_cic_lic}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Aprovação para Engenharia da Computação}
     \centering
-    \includegraphics[width = 10cm]{pass_rate_engenharia_computacao.png}
+    \includegraphics[width = 10cm]{all_students/pass_rate_engenharia_computacao.png}
     \label{pass_rate_eng_comp}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Aprovação para Engenharia Mecatrônica}
     \centering
-    \includegraphics[width = 10cm]{pass_rate_engenharia_mecatronica.png}
+    \includegraphics[width = 10cm]{all_students/pass_rate_engenharia_mecatronica.png}
     \label{pass_rate_eng_mectr}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Aprovação para Engenharia de Redes}
     \centering
-    \includegraphics[width = 10cm]{pass_rate_engenharia_redes.png}
+    \includegraphics[width = 10cm]{all_students/pass_rate_engenharia_redes.png}
     \label{pass_rate_eng_redes}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Aprovação para Engenharia de Software}
     \centering
-    \includegraphics[width = 10cm]{pass_rate_engenharia_software.png}
+    \includegraphics[width = 10cm]{all_students/pass_rate_engenharia_software.png}
     \label{pass_rate_eng_soft}
 \end{figure}
 
@@ -351,14 +1161,14 @@ Já as Figuras \ref{fail_rate_cic_b}, \ref{fail_rate_cic_lic},
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Reprovação}
     \centering
-    \includegraphics[width = 10cm]{fail_rate.png}
+    \includegraphics[width = 10cm]{all_students/fail_rate.png}
     \label{fail_rate_all}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Reprovação para Ciência da Computação - Bacharelado}
     \centering
-    \includegraphics[width = 10cm]{fail_rate_cic_bacharelado.png}
+    \includegraphics[width = 10cm]{all_students/fail_rate_cic_bacharelado.png}
     \label{fail_rate_cic_b}
 \end{figure}
 
@@ -366,35 +1176,35 @@ Já as Figuras \ref{fail_rate_cic_b}, \ref{fail_rate_cic_lic},
     \caption{Histograma da Taxa de Reprovação para Ciência da Computação -
     Licenciatura}
     \centering
-    \includegraphics[width = 10cm]{fail_rate_cic_licenciatura.png}
+    \includegraphics[width = 10cm]{all_students/fail_rate_cic_licenciatura.png}
     \label{fail_rate_cic_lic}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Reprovação para Engenharia da Computação}
     \centering
-    \includegraphics[width = 10cm]{fail_rate_engenharia_computacao.png}
+    \includegraphics[width = 10cm]{all_students/fail_rate_engenharia_computacao.png}
     \label{fail_rate_eng_comp}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Reprovação para Engenharia Mecatrônica}
     \centering
-    \includegraphics[width = 10cm]{fail_rate_engenharia_mecatronica.png}
+    \includegraphics[width = 10cm]{all_students/fail_rate_engenharia_mecatronica.png}
     \label{fail_rate_eng_mectr}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Reprovação para Engenharia de Redes}
     \centering
-    \includegraphics[width = 10cm]{fail_rate_engenharia_redes.png}
+    \includegraphics[width = 10cm]{all_students/fail_rate_engenharia_redes.png}
     \label{fail_rate_eng_redes}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Reprovação para Engenharia de Software}
     \centering
-    \includegraphics[width = 10cm]{fail_rate_engenharia_software.png}
+    \includegraphics[width = 10cm]{all_students/fail_rate_engenharia_software.png}
     \label{fail_rate_eng_soft}
 \end{figure}
 
@@ -415,14 +1225,14 @@ Já as Figuras \ref{drop_rate_cic_b}, \ref{drop_rate_cic_lic},
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Trancamento}
     \centering
-    \includegraphics[width = 10cm]{drop_rate.png}
+    \includegraphics[width = 10cm]{all_students/drop_rate.png}
     \label{drop_rate_all}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Trancamento para Ciência da Computação - Bacharelado}
     \centering
-    \includegraphics[width = 10cm]{drop_rate_cic_bacharelado.png}
+    \includegraphics[width = 10cm]{all_students/drop_rate_cic_bacharelado.png}
     \label{drop_rate_cic_b}
 \end{figure}
 
@@ -430,35 +1240,35 @@ Já as Figuras \ref{drop_rate_cic_b}, \ref{drop_rate_cic_lic},
     \caption{Histograma da Taxa de Trancamento para Ciência da Computação -
     Licenciatura}
     \centering
-    \includegraphics[width = 10cm]{drop_rate_cic_licenciatura.png}
+    \includegraphics[width = 10cm]{all_students/drop_rate_cic_licenciatura.png}
     \label{drop_rate_cic_lic}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Trancamento para Engenharia da Computação}
     \centering
-    \includegraphics[width = 10cm]{drop_rate_engenharia_computacao.png}
+    \includegraphics[width = 10cm]{all_students/drop_rate_engenharia_computacao.png}
     \label{drop_rate_eng_comp}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Trancamento para Engenharia Mecatrônica}
     \centering
-    \includegraphics[width = 10cm]{drop_rate_engenharia_mecatronica.png}
+    \includegraphics[width = 10cm]{all_students/drop_rate_engenharia_mecatronica.png}
     \label{drop_rate_eng_mectr}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Trancamento para Engenharia de Redes}
     \centering
-    \includegraphics[width = 10cm]{drop_rate_engenharia_redes.png}
+    \includegraphics[width = 10cm]{all_students/drop_rate_engenharia_redes.png}
     \label{drop_rate_eng_redes}
 \end{figure}
 
 \begin{figure}[!ht]
     \caption{Histograma da Taxa de Trancamento para Engenharia de Software}
     \centering
-    \includegraphics[width = 10cm]{drop_rate_engenharia_software.png}
+    \includegraphics[width = 10cm]{all_students/drop_rate_engenharia_software.png}
     \label{drop_rate_eng_soft}
 \end{figure}
 

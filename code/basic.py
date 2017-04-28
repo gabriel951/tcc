@@ -9,6 +9,10 @@ YEAR_END_TRA = 2009
 YEAR_START_TEST = 2010
 YEAR_END_TEST = 2016
 
+# age threshold decided in order to split students 
+# young students are up to age threshold INCLUSIVELY
+AGE_THRESHOLD = 30 
+
 # file extension
 FILE_NAME = 'novos_dados'
 EXTENSION = '.csv'
@@ -63,6 +67,11 @@ COMPUTER_ENGINEERING = 'engenharia_computacao'
 SOFTWARE_ENGINEERING = 'engenharia_software'
 MECHATRONICS_ENGINEERING = 'engenharia_mecatronica'
 NETWORK_ENGINEERING = 'engenharia_redes'
+
+# group of courses been considered
+TI_COURSES = [MECHATRONICS_ENGINEERING, NETWORK_ENGINEERING]
+LIC_COURSES = [CIC_NON_BACHELOR]
+COMP_COURSES = [CIC_BACHELOR, SOFTWARE_ENGINEERING, COMPUTER_ENGINEERING]
 
 # courses official name list
 COURSES_OFF_NAME = [] 
