@@ -1,0 +1,199 @@
+Usando o modelo LaTeX "corretamente", texto escrito "adequadamente".
+
+======
+Siglas CIC e UnB não são usadas no texto - USO NO APENDICE
+
+Usa termos em português! Um trabalho tão longo (em termos de tempo de desenvolvimento) já deveria contar com a terminologia correta (em Português): mainshock (evento principal), aftershock (evento secundário), GA (algoritmo genético), clusters (grupos), fitness (aptidão), crossover (recombinação), etc.
+
+A referência 13 é "excessivamente" útil... - SIM É VERDADE
+
+"Emprestou" a Figura 2.2 sem permissão! (http://neo.lcc.uma.es/cEA-web/GA.htm) - CORRIGI
+
+Senti falta de referências a trabalhos correlatos usando algoritmos de otimização a agrupamento (como é o GADec, que *não* é algo novo).
+Senti falta de apresentação de outras formas de crossover, mutação, etc. - OK, PRÓXIMA VEZ EU PONHO
+
+Não apresentou o GAModel, nem as noções de "custo computacional"  - GAModel foi apresentado
+
+As seções 2.2.1, 2.2.2 e 2.4/2.5 apresentam os algoritmos que serão  comparados, deveriam estar juntas.
+
+"esse documento não ficasse tão longo" - primeiro busque a clareza do texto, só depois se preocupe com a brevidade. Rever o posicionamento de figuras e tabelas no texto, para que fiquem próximas aos seus detalhamentos.
+
+Apenas a inclusão de Tabelas/Figuras não apresenta o resultado, é preciso discutir cada um.
+
+Há dados de 2000 até 2012, mas só usam de 2005 a 2010?
+
+As discussões dos resultados precisam ser mais aprofundadas. Atualmente há mais apresentação de resultados que análise destes.
+
+======
+
+Cap. 1
+======
+
+Seção 1.1 não deveria ser uma seção, apenas o parágrafo introdutório do capítulo.
+
+"Tal processo ... e recebe o nome de declustering [13]". -> Não é exclusivo para terremotos
+
+Não está clara a justificativa. Quer separar os dados para quê? Como usar esta informação?
+
+Se o objetivo é melhorar o DESEMPENHO (palavra mais adequada que performance) do GAModel, apresente-o antes.
+
+Os objetivos estão confusos.
+1) Aplicar declustering para verificar se os mainshocks seguem a teoria?
+2) verificar se declustering melhora o desempenho do GAModel?
+3) Aplicar AG para declustering para avaliar o GAModel?
+
+Cap 2
+=====
+Revisar o texto por erros (ex: "é definida a tarefa de clustering e de declustering", "sejam o mais similar", "os autores propõe", "é conhecida sua latitude, longitude,")
+
+Inserir parágrafo introdutório entre 2.1 e 2.1.1
+
+A fundamentação teórica deveria apresentar mais informações sobre aprendizagem de máquina antes de conteúdo específico sobre clustering.
+
+Declustering não é exclusivo para terremotos, nem serve "para separarmos os mainshocks dos aftershocks" e "removermos os aftershocks". O último parágrafo da seção 2.1 está confuso.
+
+t(M) e d(M)  -> $t(M)$ e $d(M)$
+
+Como assim "usualmente não são obtidos a partir de um processo de otimização"?
+
+Tirar as unidades de medida das equações (definir no texto).
+
+"O método Single Link Clustering é um método" -> repetitivo
+
+"seja igual a 1 o algoritmo termina." -> "seja igual a 1, o algoritmo termina."
+
+kilometro -> quilômetro
+
+km ∗ dia^−1  -> km/dia
+
+"basta selecionar de cada cluster o terremoto mais representativo"? Declustering é para encontrar os principais? Então seleciona-se os mais representativos e os demais são excluídos? Ou é para separar os secundários (removendo os mais representativos)?
+
+"Escolheu-se selecionar aquele mais próximo do centróide do cluster." -> Por quê?
+
+"pode-se avaliar a qualidade dos resultados ... geofísica"  nesta aplicação! Referência para esta afirmação?
+
+O que é uma distribuição de Poisson? Reescrever a seção 2.3 com mais detalhes, está muito incompleta.
+
+"pode ser uma boa medida"? Argumento fraco...
+
+2.4 Algoritmos genéticos -> 2.4 Algoritmos Genéticos
+
+"algoritmos genéticos são um campo de estudos da área de inteligência artificial,"  campo de estudo de quê?!
+
+"uma melhor solução para o problema em questão é encontrada." Esta afirmação está incorreta. E o que é um "método de busca heurística"?
+
+O que é fitness?
+
+Seção 2.4.1 está confusa. Melhor explicar AGs de outra forma
+
+"O operador de crossover gera dois novos indivíduos a partir de dois indivíduos" esta é uma possibilidade, existem outras.
+
+O que é "no espaço de busca"?
+
+"algoritmos genéticos devem valorizar e combinar as melhores soluções já encontradas," referência?
+
+O que são "ótimos locais"?
+
+2.4.3 Funcionamento de um GA -> deveria ser substituída por um algoritmo.
+
+2.5 Se é a sua proposta, deveria ser em outro capítulo.
+
+"representado como um array... 0 ou 1" isso não foi definido como uma "string de bits"?
+
+"custo computacional" -> o que é isso? Qual a relevância? E qual o custo?
+
+2.5.2 -> quais são os "métodos anteriores"?
+
+Definir "Dinter" como distância intracluster soa estranho junto a definição de "Dintra"
+
+Qual o valor de k? E porque w é 1/2? Se é o valor constante, sugiro tirar w da equação e defini-la com o valor, "conforme [12]".
+
+2.5.4 O que é "elitismo"? Deveria ser descrito antes. Não há qualquer justificativa para os valores utilizados!
+
+Cap. 3
+======
+Referência para (dados da) JMA?
+
+Começa a comparar com o GAModel, sem apresentá-lo!
+
+Ajustar os números "220 195" -> 220.195 ou 220195 (etc.)
+
+"a viabilidade computacional e" Como assim? Por quê?
+
+A Figura 3.1 não indica as regiões, as demais não facilitam o entendimento. Indicar as áreas em uma figura só.
+
+Cap. 4
+======
+
+"fórmula 2.3" -> Equação 2.3 - OK
+
+"pois tal escolha já havia sido feita em estudos anteriores [3]." - não é exatamente um argumento...
+
+"a grande maioria das regiões estudadas," quantas? quais? "tamanho razoável"? o que isso quer dizer?  "apenas para a região de Kansai." Por que esta?
+
+"(devido ao fato do GADec ser estocástico, deve-se executá-lo mais de uma vez)" -> quem disse?
+
+"50 indivíduos por população e 100 gerações" -> por que?
+
+"análise da convergência" -> o que? e como?
+
+"resultados preliminares ruins" -> o que isso quer dizer?
+
+"não foram feitas as imagens dos clusters para tal método, os testes de Poisson e os testes de Kruskal-Wallis." - não entendi o significado disso. E quais são os testes? Por que são úteis?
+
+"terrremotos"
+
+"para que esse documento não ficasse tão longo" - seria *muito* melhor que tivesse feito...
+
+ONDE ESTÃO AS IMAGENS????
+
+"H0 =" retirar isso
+
+"10 simulações ... maior do que 3.0 ... menor que 25km." -> por que estes valores?
+
+"2. Foram executadas ...  3. Compara-se" -> manter um padrão de estilo.
+
+Cap. 5
+======
+
+"p-value" -> $p$-value
+
+a Figura 5.1 só mostra que a implementação do GA foi "correta", não acrescenta ao texto. Onde está a análise da convergência?
+
+5.2 Qual a utilidade de saber a quantidade de clusters?
+
+A seção 5.3 precisa ser mais elaborada
+
+"nas tabelas: Tabela 5.4, Tabela 5.5, Tabela 5.6, Tabela 5.7." -> nas Tabelas 5.4 a 5.7
+
+A seção 5.4 precisa ser mais elaborada, texto e figuras devem ser claros e utilizados em conjunto para esclarecer as ideias.
+
+5.5 Apenas a inclusão de Tabelas não apresenta o resultado, é preciso explicá-los no texto.
+
+Cap. 6
+======
+
+Inserir parágrafo entre 6.1 e 6.1.1. Começar um capítulo discutindo figuras do capítulo anterior não é uma boa ideia.
+
+"a melhora na fitness foi muito baixa (menor que 3%)." - esperava quanto? "baixa" é relativo.
+
+"são mais comuns clusters esféricos," -> e o que isso indica?
+
+"sem a aplicação de nenhum" -> dupla negação
+
+Conclusões não procedem, não sei o que é GAModel, nem convergência, nem tamanho razoável.
+
+Referências
+===========
+Ajustar algumas entradas. ex: Charu C Aggarwal -> Charu C. Aggarwal, "O’Reilly Media, Inc." -> O’Reilly Media, Inc.
+
+
+Apresentação
+============
+
+tecnicas de clustering ou declustering?
+
+Claus tb é professor.
+
+Muito texto nos slides, ficou lendo, não soube "resumir/acelerar" a apresentação
+

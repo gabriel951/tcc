@@ -33,6 +33,8 @@ def generate_graphs():
  
     # for every model info, make the graph
     for (model, model_desc) in models_lst: 
+        if model_desc != 'old_students':
+            continue
         print('starting for %s' % (model_desc))
 
         # deprecated features: local and race
@@ -41,8 +43,7 @@ def generate_graphs():
                 'race', 'way_in', 'way_out', 'grades']
         sep_course = False
         for prim_feat in prim_feat_lst: 
-            get_graph(model_desc, 'way_out', model, sep_course, data_type = 'discrete')
-            exit()
+            get_graph(model_desc, prim_feat, model, sep_course, data_type = 'discrete')
 
         ## derived features - continuous
         # list of tuples of the form: [(<attr_name, sep_course, index, binwidth>)]

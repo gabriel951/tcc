@@ -4,7 +4,7 @@ resposta foi negativa. Logo, devo trabalhar com 6 bases de dados.
     -> Refiz parte de estatística descritiva
 
 # depois
-    -> Mudar nome dos cursos: TI, Licenciatura e Computação
+    -> Mudar nome dos cursos: TI, Licenciatura e Computação - ok
     -> Tirar pessoal que morreu dos modelos. O que é Outros?
         ** possivelmente eliminar modelo que só continha pessoas que não conseguiram
 formar. 

@@ -1,0 +1,26 @@
+# antes: 
+    CRONOGRAMA
+    -> contando com essa reunião, são 9 reuniões para terminar o semestre. 
+    falta: 
+        * escrever monografia
+        * chamar professores para banca
+        * testar modelos, segundo métricas. 
+    e isso considerando que o semestre daqui em diante só aperta!
+    
+    TÉCNICAS DE REGRESSÃO
+    -> olhei os pacotes necessários para fazer as regressões. Minhas considerações:  
+        * pacote do r exige que todas as variáveis sejam discretas. Não é o caso do
+          meu modelo. Acho que compensa
+          mais usar a scikit-learn, que fornece o naive bayes, sem exigir que as
+          variáveis sejam discretas. 
+        * o naive bayes é o único modelo probabilístico. Para o problema de negócio
+          que estou tentando resolver, acho que o modelo probabilístico é o único que
+          me serve (quero que a UnB possa agir de modo flexível de acordo com o risco
+          apresentado por cada aluno). Um classificador não seria adequado a esse
+          propósito. Um regressor poderia ser adaptado! Em vez de retornar um valor
+          entre 0 e 1, ele poderia retornar (x, y, z).  
+        *
+    
+    MONOGRAFIA
+    -> comecei a atualizar a monografia, para ver se ganho algum tempo. Quer que vá
+te mandando as versões preliminares. 

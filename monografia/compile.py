@@ -3,12 +3,14 @@ from subprocess import call
 import sys
 
 arquivo = 'monografia'
+viewer = 'qpdfview'
 
-call('pdflatex ' + arquivo, shell = True) 
+result = call('pdflatex ' + arquivo, shell = True) 
 
 if len(sys.argv) > 1: 
     call('bibtex ' + arquivo, shell = True)
     call('makeglossaries ' + arquivo, shell = True)
     call('pdflatex ' + arquivo, shell = True) 
 
-call('okular ' + arquivo + '.pdf', shell = True)
+if result == 0:
+    call(viewer + ' ' + arquivo + '.pdf', shell = True)

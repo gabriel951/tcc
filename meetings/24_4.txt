@@ -25,9 +25,10 @@ semestre em questão.
     -> Até que semestre tentar fazer a previsão?
 
 # depois
-    -> Deletar de uma vez por todas as pessoas que morreram
     -> Mandar email para o professor com a pessoa do Outros 
-    -> Rodar o modelo até o último semestre do curso 
+    -> Deletar de uma vez por todas as pessoas que morreram
+    -> Refazer histogramas para os 4 modelos
     -> Ficar com 4 modelos no fim das contas: Sêniors e 3 Jovens
+    -> Rodar o modelo até o último semestre do curso 
     -> Decidir por meio de árvores de decisão, mas usar o recursive feature
 elimination da scikit tb 

@@ -18,6 +18,7 @@ sys.path.append('../core/')
 from students_methods import *
 
 # TODO: eliminate local attribute from the analysis
+# TODO: eliminate school type from analysis
 
 def apply_kendall():
     """
@@ -27,7 +28,6 @@ def apply_kendall():
     returns: 
         nothing
     """
-
     # get all models list
     models_lst = get_model_info()
     
@@ -51,7 +51,14 @@ def apply_kendall():
                      stu.hard_rate[LAST_ELEM], stu.in_condition[LAST_ELEM], \
                      stu.position[LAST_ELEM]) 
 
-             way_out = '%s\n' % (stu.way_out)
+             # get way out according to the new model 
+             assert(stu.graduated() or stu.migrated() or stu.evaded())
+             if stu.graduated(): 
+                 way_out = 'graduated\n'
+             elif stu.migrated():
+                 way_out = 'migrated\n' 
+             else:
+                 way_out = 'evaded\n'
             
              fp.write(social + perf + way_out)
 
@@ -364,7 +371,7 @@ def handle_feature(stu_info, rows_list, feature):
                 for row in rows_list] 
         rows_list = [row.replace('Desligamento Falt Documentação', 'deslg') \
                 for row in rows_list] 
-        rows_list = [row.replace('Desligamento Decisão  Judicial', 'deslg') \
+        rows_list = [row.replace('Desligamento Decisão Judicial', 'deslg') \
                 for row in rows_list] 
         rows_list = [row.replace('Desligamento Jubilamento', 'deslg') \
                 for row in rows_list] 
@@ -790,7 +797,7 @@ if __name__ == "__main__":
     #get_chi_square()
 
     # kendall and coefficient of correlation
-    #apply_kendall()
+    apply_kendall()
     #get_coef_cor()
 
     # particular atributes

@@ -91,18 +91,9 @@ class Student():
         self.in_condition = lst_unknown[:]
         # position of the student relative to the semester he is in 
         self.position = lst_unknown[:]
-
-    def able_to_grad(self): 
-        """
-        indicates if student was able to form
-        receives: 
-            1. nothing
-        returns: 
-            True, case student was able to form. False otherwise
-        """
-        if self.way_out.lower() == 'formatura': 
-            return True
-        return False
+        # previous chance of the student evading university, calculated by the
+        # model
+        self.evasion_chance = lst_unknown[:]
 
     def calculate_ira_yearsem(self, year, sem):
         """
@@ -170,13 +161,6 @@ class Student():
         else: 
             return True
         
-    def few_pass(self, pos):
-        """
-        returns True case for the semester with position pos and the previous one 
-        the student didnt pass in four disciplines of the course
-        """
-        # TODO: can't know what are the disciplines of the course
-
     def check_2repr(self, pos):
         """
         check whether the student has two reprovations in a given subject for 
@@ -201,6 +185,25 @@ class Student():
                 return True
 
         return False
+
+    def evaded(self): 
+        """
+        indicates if student evaded from university, because of academic reasons
+        receives: 
+            1. nothing
+        returns: 
+            True, case student evaded. False otherwise
+        """
+        if self.way_out in EVASION_WAY_OUT: 
+            return True
+        return False
+
+    def few_pass(self, pos):
+        """
+        returns True case for the semester with position pos and the previous one 
+        the student didnt pass in four disciplines of the course
+        """
+        # TODO: can't know what are the disciplines of the course
 
     def get_course(self, course_lst):
         """
@@ -335,6 +338,18 @@ class Student():
             print(grade_factor)
             print(ira_semester)
     
+    def graduated(self): 
+        """
+        indicates if student was able to graduate
+        receives: 
+            1. nothing
+        returns: 
+            True, case student was able to form. False otherwise
+        """
+        if self.way_out.lower() == 'formatura': 
+            return True
+        return False
+
     def log_info(self, fp):
         """
         receives a file object
@@ -368,6 +383,18 @@ class Student():
         fp.write('\t ------------------ \n')
 
         fp.write("------------\n")
+
+    def migrated(self): 
+        """
+        indicates if student migrated from the course he was in 
+        receives: 
+            1. nothing
+        returns: 
+            True, case student did migrate. False otherwise
+        """
+        if self.way_out in MIGRATION_WAY_OUT: 
+            return True
+        return False
 
     def min_pass(self, pos):
         """

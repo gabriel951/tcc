@@ -1,0 +1,64 @@
+Gabriel
+
+- usar termos em Português ---> colocarei os termos num determinado estilo. Você, o Claus e o Ladeira não se entenderam quanto a isso  
+- atenção a conjugação ---> tudo bem :) 
+- manter um padrão  (ex: se string é em itélico, apresentar *sempre* em itálico) ---> esse erro eu já corrigi 
+
+
+- abstract não é tradução literal do resumo  --> mudei um pouquinho o abstract 
+
+1)
+- faltam referências ---> acrescentei mais duas
+- "Dependendo dos resultados ...  será analisada." ??? não vai analisar de qualquer forma?  ---> não é garantido que eu serei capaz de desenvolver um método de declustering. Talvez nem seja interessante, de modo que prefiro deixar isso em aberto! 
+
+2)
+- faltam referências ---> estou colocando mais 
+- "O conteúdo dessa seção se encontram com mais detalhes no livro do Goldberg [4]." Não é assim que se apresenta ideias (o mesmo para declustering) ---> certo, já corrigi
+- "ideias proveniente" ---> ok
+- "aquele com maior fitness." o que é fitness? ---> ok
+- "crossover" é cruzamento em portugues. ---> o termo em inglês é mais aceito
+- "indivíduos são representados como strings" -> explicação insuficiente ---> strings de bits, aumentei um pouco a explicação
+- Origem da Figura 2.1? o que é offspring? ---> mudei
+- "mais bem" ? ---> mudei 
+- "Lei de Darwin"???? ---> vou tirar isso 
+- "Tal operador deve selecionar os indivíduos de acordo com a sua fitness," isso depende, há diversos outros operadores. ---> coloquei algo mais insípido: "costuma selecionar"
+- teoria insuficiente sobre operadores ---> foi o que deu para fazer 
+- Figura 2.2 - gerar sua própria imagem, descrever a imagem no texto ---> descrevi agora
+- "mainshocks e aftershocks" -> terminologia em Portugues  ---> estilo de escrita 
+- "removermos estes e usarmos apenas aqueles" -> o que? ---> que eu me lembre isso é válido na lingua portuguesa e até desejável para evitar repetição de sinônimos
+- "vistoss."  ---> mudei 
+- "do barulho que os dados podem eventualmente conter" ---> ruído, ok
+- "o modelo realmente aprendeu ou se apenas memorizou."  memorizou? --> fácil compreensão 
+- "k grupos. k-1 grupos" -> $k$ grupos. $k-1$ grupos  ---> ok
+- "Para a maioria das aplicações," - e para a sua? ---> ainda não rodei nada, não tenho como garantir! O k-fold é mais aceito, então vou usar k-fold mesmo 
+
+3)
+- qual a relação entre "Para o estudo de GA" e "um algoritmo que utilizava conceitos desta área para fazer o agrupamento de dados foi implementado e seu desempenho foi comparado ao k-means." ? ---> eu implementei na prática um algoritmo de GA
+- qual a relação entre "Para estudar clustering" e "foi implementado o algoritmo do k-means"? ---> o k-means é um algoritmo de clustering
+- qual a relação entre "para o estudo de cross-validation" e "estudou-se como duas separações diferentes.."? ---> isso vem da definição de cross-validation, o que eu fiz foi um exercício prático de cross-validation
+- teoria sobre k-means deveria estar no capítulo anterior ---> não é um fundamento teórico central,
+- 3 simulações são suficientes? 1 experimento para cada simulação? Onde está a análise numérica dos resultados?  ---> foi feito um estudo preliminar 
+- Ajustar a tabela 3.1, # da simulação não deve ser repetido ---> ok
+- fala que a modelagem do GA é de um jeito e implementa de outro ---> sim, foi um caso particular 
+- teoria sobre GA deveria estar no capítulo anterior ---> não é teoria sobre GA, foi uma implementação alternativa de GA
+- 3.2.1 é um parágrafo só? --> ok
+- "o mesmo desempenho," mas 0.000248 != 0.000240 ---> esse resultado é para a segunda simulação, não para a primeira
+- se esta comparando os 2, por que a tabela 3.1 não mostra o "score"- trocar score por um termo em Portugues ---> a tabela 3.1 não é sobre esse experimento
+- "teste da scikit." o que é scikit? ---> defino logo depois
+- "classificacao" -> classificação ---> ok, falha minha
+- "próprio para inteligência artificial," o que isso quer dizer? ---> já mudei 
+- "Os resultados mostram como a separação em dados de treino e dados de teste pode afetar como avaliamos a performance de sistemas classificadores." e o que fazer com essa informação? ---> fazer divisão sistemática em treino e teste
+
+4)
+- "traça as próximas etapas para o primeiro semestre de 2016." onde? ---> versão antiga
+
+
+========================
+"tem por objetivo analisar a aplicabilidade dos métodos tradicionais de declustering" -> como? o texto apresenta apenas clustering ---> declustering faz um agrupamento de dados, e desses dados fica com apenas o aftershock  ---> coloquei isso! 
+
+GA é competitivo. é mais rápido? ---> não, qual a vantagem? ---> a princípio, nenhuma. Vou colocar que foi um estudo preliminar!
+
+
+avaliar a performance implica em testes experimentais para significânica estatística. Não há previsão disso.
+
+quais são os dados a serem trabalhados? ---> detalhei 

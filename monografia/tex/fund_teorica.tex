@@ -32,6 +32,10 @@ condição orientados. Os critérios para que um aluno esteja em condição são
     \item Chegar ao último período letivo do curso sem a possibilidade de concluir
 \end{itemize}
 
+% TODO: explicar como é calculado o IRA
+\section{O Índice de Rendimento Acadêmico}
+
+
 \section{CRISP-DM}
 O CRISP-DM (do inglês \textit{CRoss-Industry Standard Process for Data Mining}) é um
 modelo de processos para mineração de dados que se divide em 6 fases principais
@@ -44,7 +48,6 @@ modelo de processos para mineração de dados que se divide em 6 fases principai
     \item Avaliação
     \item Implantação
 \end{enumerate}
-
 Cada uma dessas fases é explicada a seguir.
 
 \subsection{Entendimento do Negócio}
@@ -75,13 +78,13 @@ desempenho).
 entre atributos e decidir pela eventual eliminação de algum. Existem vários testes
 para se medir a correlação entre variáveis, como o coeficiente de Spearman e o
 coeficiente de correlação de Kendall \cite{kendall}. 
-%TODO: escrever mais um pouco aqui caso deseje
+%TODO: escrever mais um pouco aqui caso deseje, sobre Kendall
 
 \subsection{Modelagem} 
 Essa fase é composta pelas tarefas de: seleção da técnica de modelagem, geração dos
 casos de teste, construção do modelo e avaliação do modelo \cite{crispdm}. É nessa
-fase que utlizam-se os algoritmos de aprendizagem de máquina como árvores de decisão,
-redes neurais e SVM's. 
+fase que utilizam-se os algoritmos de aprendizagem de máquina como árvores de decisão,
+redes neurais e SVM's \cite{ml_second_book}. 
 
 \subsection{Avaliação} 
 Enquanto a tarefa de avaliação da fase de modelagem tem como objetivo lidar como
@@ -95,3 +98,4 @@ A fase final do CRISP-DM é a implantação. Nessa fase, são realizadas as tare
 planejar a implantação, planejar monitoramento e manutenção, produzir relatório final
 e revisar o projeto \cite{crispdm}.
 
+% TODO: incluo mais sobre a modelagem?

@@ -104,6 +104,31 @@ WAY_OUT_CONSIDERED.append('Transferência')
 WAY_OUT_CONSIDERED.append('Formatura')
 WAY_OUT_CONSIDERED.append('Falecimento')
 
+# way out that were considered migration
+MIGRATION_WAY_OUT = []
+# TODO: Outros should be migration?
+MIGRATION_WAY_OUT.append('Outros')
+MIGRATION_WAY_OUT.append('Mudança de Curso')
+MIGRATION_WAY_OUT.append('Mudança de Turno')
+MIGRATION_WAY_OUT.append('Novo Vestibular')
+MIGRATION_WAY_OUT.append('Vestibular p/outra Habilitação')
+MIGRATION_WAY_OUT.append('Transferência')
+
+# way out that were considered evasion
+EVASION_WAY_OUT = []
+EVASION_WAY_OUT.append('Desligamento - Abandono')
+EVASION_WAY_OUT.append('Desligamento Decisão  Judicial')
+EVASION_WAY_OUT.append('Desligamento Jubilamento')
+EVASION_WAY_OUT.append('Deslig - não cumpriu condição')
+EVASION_WAY_OUT.append('Repr 3 vezes na mesma disc obr')
+EVASION_WAY_OUT.append('Desligamento-Força de Convênio')
+EVASION_WAY_OUT.append('Desligamento Voluntário')
+EVASION_WAY_OUT.append('Desligamento Falt Documentação')
+EVASION_WAY_OUT.append('Desligamento por Força de Intercãmbio')
+EVASION_WAY_OUT.append('Anulação de Registro')
+EVASION_WAY_OUT.append('Ex-Aluno (Decreto 477)')
+
+
 # path for serialized objects
 PATH = 'data/'
 

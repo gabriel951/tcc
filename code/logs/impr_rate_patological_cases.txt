@@ -1,11 +1,26 @@
 ---- imprv rate strange value ----
-(pos, cur_sem_grade, past_sem_grade): (1, 3.100000, 0.500000)
-(registration, impr_rate): (19982820131, 6.200000)
+(pos, cur_sem_grade, past_sem_grade): (1, 2.200000, 0.400000)
+(registration, impr_rate): (9098120061, 5.500000)
 
 
 ---- imprv rate strange value ----
-(pos, cur_sem_grade, past_sem_grade): (2, 2.150000, 0.300000)
-(registration, impr_rate): (8411520012, 7.166667)
+(pos, cur_sem_grade, past_sem_grade): (2, 1.833333, 0.266667)
+(registration, impr_rate): (12722620071, 6.875000)
+
+
+---- imprv rate strange value ----
+(pos, cur_sem_grade, past_sem_grade): (7, 0.183333, 0.035714)
+(registration, impr_rate): (20181320131, 5.133333)
+
+
+---- imprv rate strange value ----
+(pos, cur_sem_grade, past_sem_grade): (2, 1.266667, 0.233333)
+(registration, impr_rate): (11848920061, 5.428571)
+
+
+---- imprv rate strange value ----
+(pos, cur_sem_grade, past_sem_grade): (1, 2.100000, 0.300000)
+(registration, impr_rate): (8309120012, 7.000000)
 
 
 ---- imprv rate strange value ----
@@ -19,23 +34,13 @@
 
 
 ---- imprv rate strange value ----
-(pos, cur_sem_grade, past_sem_grade): (7, 0.183333, 0.035714)
-(registration, impr_rate): (20181320131, 5.133333)
-
-
----- imprv rate strange value ----
 (pos, cur_sem_grade, past_sem_grade): (1, 1.100000, 0.100000)
 (registration, impr_rate): (7061220002, 11.000000)
 
 
 ---- imprv rate strange value ----
-(pos, cur_sem_grade, past_sem_grade): (1, 2.200000, 0.400000)
-(registration, impr_rate): (9098120061, 5.500000)
-
-
----- imprv rate strange value ----
-(pos, cur_sem_grade, past_sem_grade): (2, 1.266667, 0.233333)
-(registration, impr_rate): (11848920061, 5.428571)
+(pos, cur_sem_grade, past_sem_grade): (1, 2.700000, 0.500000)
+(registration, impr_rate): (11140020051, 5.400000)
 
 
 ---- imprv rate strange value ----
@@ -49,23 +54,33 @@
 
 
 ---- imprv rate strange value ----
-(pos, cur_sem_grade, past_sem_grade): (1, 2.066667, 0.400000)
-(registration, impr_rate): (9495220032, 5.166667)
-
-
----- imprv rate strange value ----
-(pos, cur_sem_grade, past_sem_grade): (2, 1.833333, 0.266667)
-(registration, impr_rate): (12722620071, 6.875000)
-
-
----- imprv rate strange value ----
 (pos, cur_sem_grade, past_sem_grade): (2, 1.200000, 0.100000)
 (registration, impr_rate): (13235720072, 12.000000)
 
 
 ---- imprv rate strange value ----
+(pos, cur_sem_grade, past_sem_grade): (1, 3.100000, 0.500000)
+(registration, impr_rate): (19982820131, 6.200000)
+
+
+---- imprv rate strange value ----
 (pos, cur_sem_grade, past_sem_grade): (1, 1.200000, 0.200000)
 (registration, impr_rate): (19281720122, 6.000000)
+
+
+---- imprv rate strange value ----
+(pos, cur_sem_grade, past_sem_grade): (1, 1.900000, 0.300000)
+(registration, impr_rate): (20886820132, 6.333333)
+
+
+---- imprv rate strange value ----
+(pos, cur_sem_grade, past_sem_grade): (1, 2.066667, 0.400000)
+(registration, impr_rate): (9495220032, 5.166667)
+
+
+---- imprv rate strange value ----
+(pos, cur_sem_grade, past_sem_grade): (2, 1.783333, 0.266667)
+(registration, impr_rate): (11429820052, 6.687500)
 
 
 ---- imprv rate strange value ----
@@ -79,18 +94,8 @@
 
 
 ---- imprv rate strange value ----
-(pos, cur_sem_grade, past_sem_grade): (1, 1.900000, 0.300000)
-(registration, impr_rate): (20886820132, 6.333333)
-
-
----- imprv rate strange value ----
-(pos, cur_sem_grade, past_sem_grade): (2, 1.783333, 0.266667)
-(registration, impr_rate): (11429820052, 6.687500)
-
-
----- imprv rate strange value ----
-(pos, cur_sem_grade, past_sem_grade): (1, 2.700000, 0.500000)
-(registration, impr_rate): (11140020051, 5.400000)
+(pos, cur_sem_grade, past_sem_grade): (1, 3.000000, 0.200000)
+(registration, impr_rate): (9138020022, 15.000000)
 
 
 ---- imprv rate strange value ----
@@ -109,8 +114,13 @@
 
 
 ---- imprv rate strange value ----
-(pos, cur_sem_grade, past_sem_grade): (1, 2.100000, 0.300000)
-(registration, impr_rate): (8309120012, 7.000000)
+(pos, cur_sem_grade, past_sem_grade): (2, 2.150000, 0.300000)
+(registration, impr_rate): (8411520012, 7.166667)
+
+
+---- imprv rate strange value ----
+(pos, cur_sem_grade, past_sem_grade): (1, 1.333333, 0.200000)
+(registration, impr_rate): (13266720072, 6.666667)
 
 
 ---- imprv rate strange value ----
@@ -119,17 +129,7 @@
 
 
 ---- imprv rate strange value ----
-(pos, cur_sem_grade, past_sem_grade): (1, 3.000000, 0.200000)
-(registration, impr_rate): (9138020022, 15.000000)
-
-
----- imprv rate strange value ----
 (pos, cur_sem_grade, past_sem_grade): (1, 2.000000, 0.200000)
 (registration, impr_rate): (20874420132, 10.000000)
-
-
----- imprv rate strange value ----
-(pos, cur_sem_grade, past_sem_grade): (1, 1.333333, 0.200000)
-(registration, impr_rate): (13266720072, 6.666667)
 
 

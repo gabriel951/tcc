@@ -1,17 +1,17 @@
-Neste capítulo, descreve-se a metodologia utilizada na pesquisa até aqui. 
+Neste capítulo, descreve-se a metodologia usada na pesquisa. 
 Detalha-se como foi feito o levantamento
-do estado da arte, a obtenção dos dados e utilização dos dados, a seleção de
-atributos, a eliminação de \textit{outliers} e a análise preliminar por meio de estatística
-descritiva. 
+do estado da arte, a obtenção e utilização dos dados, a seleção de
+atributos, a eliminação de \textit{outliers}, a análise preliminar por meio de estatística
+descritiva a escolha dos modelos e a forma de avaliar o desempenho destes.  
 
 \section{Levantamento do Estado da Arte}
 Foi feito o levantamento do estado da arte através da leitura de diversos artigos, de
 modo a entender quais fatores são importantes para a evasão \cite{adeodato}
 \cite{hoed_fatores} \cite{dropout_finland}, como técnicas de
 aprendizagem de máquina podem ser utilizadas para resolver o problema \cite{adeodato}
- \cite{data_mining_retention}.
-e como pesquisas passadas trabalharam com os dados da UnB
-\cite{manual_calouro} \cite{hoed_sobrevivencia}. 
+ \cite{data_mining_retention} 
+e como trabalhar especificamente com os dados da UnB \cite{manual_calouro} 
+\cite{hoed_sobrevivencia}. 
 
 \section{Obtenção e Utilização dos Dados}
 Obtiveram-se informações descaracterizadas relativas aos dados sociais e ao
@@ -19,11 +19,12 @@ desempenho acadêmico de alunos da UnB. Todos os dados utilizados vieram de uma 
 fonte, de modo que o comum problema encontrado na área de mineração de dados de
 garantir a consistência dos dados entre várias fontes não foi enfrentado. 
 \par Optou-se por restringir a pesquisa apenas aos alunos que entraram a partir de
-2000 e saíram até 2015. Para simplificar a análise, e trabalhar apenas com uma área
-específica, apenas os seguintes cursos foram considerados: 
+2000 e saíram até 2016, de modo a trabalhar com dados mais recentes. 
+Para simplificar a análise, decidiu-se trabalhar apenas com uma área
+específica (computação), de modo que apenas os seguintes cursos foram considerados: 
 \begin{itemize}
     \item Ciência da Computação (Bacharelado)
-    \item Ciência da Computação (Licenciatura)
+    \item Computação (Licenciatura)
     \item Engenharia da Computação 
     \item Engenharia de Redes
     \item Engenharia de Software
@@ -33,47 +34,70 @@ específica, apenas os seguintes cursos foram considerados:
 usados como dados de treino, enquanto que os dados de alunos que tivessem entrado de
 2010 até 2016 seriam usados como dados de teste.
 
-\section{Seleção de Atributos}
-% TODO: falar que obrigatoriedade entre disciplinas poderia ficar para uma proxima
-% fase do trabalho
+\section{Seleção Preliminar de Atributos}
 Com base no levantamento do estado da arte feito, selecionou-se quais atributos
 teriam melhor condição de serem significativos para que um aluno fosse ou não
-desligado. Assim sendo, lista-se a seguir os atributos sociais considerados:
+desligado. Assim sendo, lista-se a seguir os atributos sociais considerados em uma análise
+inicial:
 \begin{itemize}
-        \item Sexo
-        \item Idade
-        \item Estado de Origem
-        \item Cotista ou não (e tipo da cota)
-        \item Tipo da Escola 
-        \item Raça
-        \item Forma de Ingresso
+        \item Cotista ou não
         \item Curso
+        \item Forma de Ingresso
+        \item Idade
+        \item Raça
+        \item Sexo
+        \item Tipo da Escola 
 \end{itemize}
 
 Além de dados sociais, utilizaram-se os seguintes atributos (relativos ao desempenho
 acadêmico): 
 \begin{itemize}
-    \item IRA
-    \item Coeficiente de Melhora Acadêmica (razão entre notas do último semestre e
-        notas do penúltimo semestre)
+    \item Coeficiente de Melhora Acadêmica
+    \item Indicador de Aluno em Condição
+    \item Média do Período
+    \item Posição em relação ao semestre que ingressou
+    \item Quantidade de créditos já integralizados
     \item Taxa de Aprovação, Taxa de Reprovação e Taxa de Trancamento
-    \item Razão entre créditos integralizados por semestre e quantidade de créditos
-        do curso
     \item Taxa de aprovação na disciplina mais difícil de cada semestre
-    \item Booleano para indicar se aluno está ou não em condição
-    \item Posição em relação ao semestre
 \end{itemize}
-%TODO: se quiser encher linguiça, explicar o que são a taxa de aprovação, reprovação
-%e trancamento
-%TODO: se quiser encher linguiça, falar sobre o sistema de menções da unb
-A posição em relação ao semestre $P$ para um determinado aluno é definida como sendo:
-\begin{equation}
-    P = \frac{N_m}{N_a}
-\end{equation}
-onde $N_m$ é o número de alunos com IRA menor que o do estudante em questão
+
+\par O coeficiente de melhora acadêmica é definido como sendo a razão entre o IRA do
+aluno em um semestre pelo IRA do aluno no semestre anterior. Dessa maneira, o
+coeficiente de melhora acadêmica mostra se o desempenho do aluno está
+melhorando, piorando ou se encontra estável.  
+\par A média do período é calculada da mesma forma que o IRA, mas considerando apenas
+as menções obtidas em um determinado semestre. Assim como o IRA, a média do período
+varia entre 0 e 5.
+\par A posição em relação ao semestre $P$ para um determinado aluno é definida como sendo:
+o número de alunos com IRA maior que o do estudante em questão
 (considerando apenas aqueles que entraram no mesmo curso do estudante, no mesmo ano e
-no mesmo semestre) e $N_a$ é o número de alunos (novamente considerando apenas
-aqueles que entraram no mesmo curso do estudante, no mesmo ano e no mesmo semestre). 
+no mesmo semestre). Assim, um aluno com posição $P = 0$ é aquele que tem o maior
+IRA em relação a seus colegas que entraram no mesmo curso durante o mesmo ano e
+semeste.  
+\par Como todos os cursos da UnB requerem uma quantidade de créditos mínima para
+graduação, incluiu-se o atributos quantidade de créditos já integralizados. 
+\par A taxa de aprovação é definida como a razão entre o número de matérias cursadas
+pelo aluno com aprovação pelo número de matérias cursadas pelo aluno. Analogamente, a
+taxa de reprovação é definida como a razão entre o número de matérias cursadas pelo
+aluno com reprovação pelo número de matérias cursadas pelo aluno. Deve-se dizer
+incluir a taxa de aprovação e a de reprovação não é, a priori, redundante, já que
+além de ser aprovado ou reprovado em uma matéria, outra possibilidade é o aluno
+realizar o trancamento.  Pensando nisso, definiu-se a taxa de trancamento como sendo
+a razão entre o número de matérias trancadas pelo aluno pelo o número de matérias
+cursadas pelo aluno.
+\par Por fim, a taxa de aprovação na disciplina mais difícil do semestre é definido
+como sendo a razão entre o número de aprovações na disciplina mais difícil do
+semestre pelo número de semestres na UnB. A disciplina considerada como a mais
+difícil do semestre é aquela com a maior taxa de reprovação. 
+\par Deve-se destacar que, para um mesmo aluno, os atributos relacionados ao
+desempenho variam conforme o semestre considerado. O mesmo não ocorre para os
+atributos sociais. 
+
+\section{Eliminação de Atributos devido a Missing Values}
+Optou-se por eliminar atributos cuja quantidade de entradas com \textit{missing
+values} fosse superior à 40\%. Assim, eliminaram-se os atributos raça e tipo da
+escola. Os gráficos de barra para tais atributos se encontram em
+\ref{graf_miss_value}.
 
 \section{Eliminação de Outliers}
 Decidiu-se não trabalhar com casos de alunos que após ingressar na universidade não
@@ -82,21 +106,73 @@ todas as disciplinas com SR). Tais casos foram tratados como \textit{outliers}.
 Após a análise individual de cada caso, os \textit{outliers} foram eliminados do espaço
 amostral.
 
-\section{Análise Preliminar por meio de Estatística Descritiva}
-Foi feita uma análise preliminar por meio de estatística descritiva. Para cada 
-atributo que apresentava uma distribuição contínua fez-se o histograma correspondente.
-Já para atributos categóricos, fez-se o gráfico de barras. 
-\par Para atributos relacionados ao desempenho acadêmico, a parte de estatística
-descritiva foi também feita separando os alunos de acordo com seus respectivos
-cursos. Optou-se por tal abordagem pois cada curso tem currículo diferente dos
-demais, alguns cursos são de instituições diferentes (FT ou CIC, por exemplo) e os
-cursos possuem ``maturidade'' diferentes (devido à data início de cada curso ser
-diferente). 
+\section{Estatística Descritiva}
+Foi feita uma análise preliminar por meio de estatística descritiva. As subseções
+seguintes apresentam a mudança na base de dados realizada, a mudança nos valores de
+alguns atributos e os gráficos de barra e histogramas finais. 
+% TODO:
+% falar da divisão por idade e curso, que fez com que eu tivesse de estudar 4 modelos
+% falar como essa divisão foi motivada! 
+%   -> curso: mostrar a taxa de aprovação, taxa de reprovação e a taxa de
+%   trancamento para os diferentes cursos
+%    -> idade: mostrar a quantidade de alunos que é capaz de formar acima de 30 anos
+%    ou não
+\subsection{Mudança na Base de Dados}
+\par Foi possível observar que os atributos variavam significativamente de acordo com
+o curso. Isso se deve ao fato de cada curso ter currículo diferente dos
+demais, alguns cursos serem de instituições diferentes (FT ou IE, por exemplo) e os
+% TODO: colocar sigla da FT e do IE, ver se já coloquei sigla do IRA 
+cursos possuírem ``maturidade'' diferentes (devido à data início de cada curso ser
+diferente). Outra observação preliminar possível foi a de que a proporção de alunos
+com idade avançada que se forma é menor do que a de alunos mais jovens. Essas
+observações levaram a partição da base de dados original em 4 bases de dados: 
+\begin{itemize}[itemsep=3ex]
+    \item Alunos Sêniors: contém todos os alunos com mais de 30 anos
+    \item Alunos Jovens de Licenciatura: contém todos os alunos com 30 anos ou menos
+        que cursam licenciatura em Computação. O curso de licenciatura tem a
+        peculiaridade de ser o único noturno. 
+    \item Alunos Jovens de Computação: contém todos os alunos com 30 anos ou menos
+        que cursam Ciência da Computação, Engenharia da Computação ou Engenharia de
+        Software. 
+    \item Alunos Jovens de Tecnologia da Informação: contém todos os alunos com 30
+        anos ou menos que cursam Engenharia de Redes ou Engenharia Mecatrônica. Tais
+        cursos tem a peculiaridade de estarem associados à FT (Faculdade de
+        Tecnologia), diferentemente de todos os demais.  
+\end{itemize}
+Devido à baixa quantidade de alunos sêniors, não se separou tal categoria em grupos.
+A evidência fornecida pela estatística descritiva para essa separação
+encontra-se na seção \ref{justificativa_4_base_dados}.
 
-\par Decidiu-se avaliar também se a forma de ingresso estaria relacionada com a
-capacidade de um aluno completar ou não o curso. Para isso, analisou-se a relação
-entre a quantidade e a quantidade de alunos que conseguiur formar.
+\subsection{Mudança nos Valores de Atributos}
+\par Dois atributos tiveram seus alguns de seus valores agrupados em categorias para
+facilitar o posterior tratamento dos dados. Tais atributos são a forma de entrada e a
+forma de saída. A distribuição original de tais atributos pode ser vista na seção 
+\ref{just_mud_atr}. 
+\par No atributo forma de entrada, de modo a eliminar os vários valores com poucas
+instâncias na base de dados, criou-se a categoria ``outros''. Assim, apenas três 
+categorias foram consideradas: vestibular, PAS e outros. 
+\par Decidiu-se trabalhar com apenas três valores de forma de saída: graduou, evadiu
+e migrou. Essa última categoria foi criada para agrupar os casos de transferência,
+mudança de curso, mudança de turno e realização de um novo vestibular. 
+
+\subsection{Gráficos de Barra e Histogramas}
+Após as modificações descritas nas subseções anteriores, fez-se o gráfico de barra
+para os atributos discretos e os histogramas para os atributos contínuos. Tais
+resultados encontram-se na seção \ref{graf_bar_hist}.
+
+% eliminação de variáveis
+\section{Eliminação de Atributos Relacionados ou Irrelevantes}
+% TODO: escrever uma motivação, dizendo a necessidade de se fazer se fazer essa
+% etapa. 
 
 \par Depois disso, avaliou-se o grau de relacionamento entre os diversos atributos
 que compunham o modelo por meio do coeficiente de correlação de Kendall. Optou-se por
-eliminar uma variável de cada par que apresentasse mais de 80\% de correlação.
+eliminar uma variável de cada par que apresentasse mais de 80\% de correlação. 
+
+\par 
+
+% TODO: explicar o que fiz na fase de modelagem
+% TODO: falar da desproporção entre dados de treino e de teste quando?
+\section{Modelagem}
+    % TODO: oversampling
+    % TODO: modelo funciona para vários semestres. 

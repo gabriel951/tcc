@@ -488,32 +488,32 @@ def get_derived_info(stu_info):
         nothing
     """
     # fill student grades
-    #fill_grades(stu_info)
+    fill_grades(stu_info)
 
     # calculate student ira for the semesters 
-    #fill_ira(stu_info)
+    fill_ira(stu_info)
 
     # calculate improvement rate 
     fill_impr_rate(stu_info)
 
     # calculate fail rate, pass rate and drop rate
-    #fill_drop_pass_fail_rate(stu_info, 'fail', False)
-    #fill_drop_pass_fail_rate(stu_info, 'pass', False)
-    #fill_drop_pass_fail_rate(stu_info, 'drop', False)
+    fill_drop_pass_fail_rate(stu_info, 'fail', False)
+    fill_drop_pass_fail_rate(stu_info, 'pass', False)
+    fill_drop_pass_fail_rate(stu_info, 'drop', False)
 
     # calculate credit rate 
-    #fill_credit_rate(stu_info)
+    fill_credit_rate(stu_info)
 
-    # calculate hard rate - need to check the code later
-    #fill_hard_rate(stu_info)
+    # calculate hard rate - 
+    fill_hard_rate(stu_info)
 
     # calculate if student is in condition 
-    #fill_condition(stu_info)
+    fill_condition(stu_info)
 
     # calculate position of the student for the semester he is in 
     fill_position(stu_info)
 
-    #print('\nfinished constructing derived info\n\n')
+    print('\nfinished constructing derived info\n\n')
 
 def get_database_info():
     """
@@ -576,7 +576,7 @@ def get_grad_info(stu_info, func_filter):
     for key, stu in stu_info.items(): 
         if func_filter(stu): 
             tot_amount += 1
-            if stu.able_to_grad(): 
+            if stu.graduated(): 
                 grad_amount += 1
     
     proportion = float(grad_amount) / tot_amount
@@ -606,22 +606,10 @@ def get_model_info():
     models_lst.append((filtered_data, 'young_students_ti_courses'))
     #print(len(filtered_data))
 
-    # old students from ti courses
-    filtered_data = filter_dict_by(lambda stu: stu.age > AGE_THRESHOLD and \
-            stu.course in TI_COURSES, stu_info)
-    models_lst.append((filtered_data, 'old_students_ti_courses'))
-    #print(len(filtered_data))
-
     # young students from lic courses
     filtered_data = filter_dict_by(lambda stu: stu.age <= AGE_THRESHOLD and \
             stu.course in LIC_COURSES, stu_info)
     models_lst.append((filtered_data, 'young_students_lic_courses'))
-    #print(len(filtered_data))
-
-    # old students from lic courses
-    filtered_data = filter_dict_by(lambda stu: stu.age > AGE_THRESHOLD and \
-            stu.course in LIC_COURSES, stu_info)
-    models_lst.append((filtered_data, 'old_students_lic_courses'))
     #print(len(filtered_data))
 
     # young students from comp courses
@@ -630,10 +618,27 @@ def get_model_info():
     models_lst.append((filtered_data, 'young_students_comp_courses'))
     #print(len(filtered_data))
 
-    # old students from comp courses
-    filtered_data = filter_dict_by(lambda stu: stu.age > AGE_THRESHOLD and \
-            stu.course in COMP_COURSES, stu_info)
-    models_lst.append((filtered_data, 'old_students_comp_courses'))
+    # old students 
+    filtered_data = filter_dict_by(lambda stu: stu.age > AGE_THRESHOLD, stu_info) 
+    models_lst.append((filtered_data, 'old_students'))
+    #print(len(filtered_data))
+
+    # old students from ti courses - DEPRECATED
+    #filtered_data = filter_dict_by(lambda stu: stu.age > AGE_THRESHOLD and \
+    #        stu.course in TI_COURSES, stu_info)
+    #models_lst.append((filtered_data, 'old_students_ti_courses'))
+    #print(len(filtered_data))
+
+    # old students from lic courses - DEPRECATED
+    #filtered_data = filter_dict_by(lambda stu: stu.age > AGE_THRESHOLD and \
+    #        stu.course in LIC_COURSES, stu_info)
+    #models_lst.append((filtered_data, 'old_students_lic_courses'))
+    #print(len(filtered_data))
+
+    # old students from comp courses - DEPRECATED
+    #filtered_data = filter_dict_by(lambda stu: stu.age > AGE_THRESHOLD and \
+    #        stu.course in COMP_COURSES, stu_info)
+    #models_lst.append((filtered_data, 'old_students_comp_courses'))
     #print(len(filtered_data))
 
     return models_lst;
@@ -660,7 +665,7 @@ def get_students_info():
     handle_outliers(stu_dict)
 
     # construct info for the derived attributes of a student
-    #get_derived_info(stu_dict)
+    get_derived_info(stu_dict)
 
     # saves object
     save_students(NAME_STU_STRUCTURE, stu_dict)
