@@ -5,6 +5,8 @@ import sys
 sys.path.append('..')
 from basic import *
 
+#TODO: simplify the 3 lines of code that append to the feat name list
+
 # valid values for some attributes
 VALID_SEX_VALUES = ['m', 'f']
 VALID_LOCAL_VALUES = ['df', 'outros', 'indisponível']
@@ -21,6 +23,7 @@ VALID_WAY_IN_VALUES = ['Vestibular', 'Convênio-Int', 'Transferência Obrigatór
 GRADUATED = [1, 0, 0]
 EVADED = [0, 1, 0]
 MIGRATED = [0, 0, 1]
+
 
 # code for people that didn't graduate - migration or evasion
 NOT_GRADUATED = -1
@@ -67,6 +70,28 @@ def add_feature_age(stu, stu_features, feat_name_lst):
     # assert value is as expected
     assert(stu.age > 0 and stu.age < 100)
     stu_features.append(stu.age)
+
+def add_feature_condition(stu, stu_features, semester, feat_name_lst):
+    """
+    append feature condition to the student feature list
+    append atribute to the name list, if not already in there
+    receives:
+        1. a student
+        2. a list containing all the student features
+        3. the semester we are interested. 
+        4. list with the name of the features considered so far
+    returns:
+        nothing 
+    """
+    name_feature = 'condition'
+    if not (name_feature in feat_name_lst):
+        feat_name_lst.append(name_feature)
+
+    assert(type(stu.in_condition[semester - 1]) == int)
+    if stu.in_condition[semester - 1] == 0: 
+        stu_features.append(0)
+    else: 
+        stu_features.append(1)
 
 def add_feature_course(stu, stu_features, feat_name_lst):
     """
@@ -143,30 +168,6 @@ def add_feature_drop_rate(stu, stu_features, semester, feat_name_lst):
     assert(stu.drop_rate[semester - 1] >= -1 and stu.drop_rate[semester - 1] <= 2)
     stu_features.append(stu.drop_rate[semester - 1])
 
-def add_feature_evasion_chance(stu, stu_features, semester, feat_name_lst):
-    """
-    append feature evasion chance to the student feature list
-    append atribute to the name list, if not already in there
-    receives:
-        1. a student
-        2. a list containing all the student features
-        3. the semester we are interested. 
-        4. list with the name of the features considered so far
-    returns:
-        nothing 
-    """
-    name_feature = 'evasion_chance'
-    if not (name_feature in feat_name_lst):
-        feat_name_lst.append(name_feature)
-
-    # students in first semester don't have previous evasion chance
-    if semester == 1: 
-        return
-    assert(type(stu.evasion_chance) != str)
-    assert(stu.evasion_chance < 2 and stu.evasion_chance > -1)
-    # last semester data
-    stu_features.append(stu.evasion_chance[semester - 2])
-
 def add_feature_impr_rate(stu, stu_features, semester, feat_name_lst):
     """
     append feature improvement_rate to the student feature list
@@ -208,6 +209,7 @@ def add_feature_ira(stu, stu_features, semester, feat_name_lst):
 
 def add_feature_local(stu, stu_features, feat_name_lst):
     """
+    NOTE: this function should not be used anymore
     append feature local to the student feature list
     append atribute to the name list, if not already in there
     receives:
@@ -217,10 +219,11 @@ def add_feature_local(stu, stu_features, feat_name_lst):
     returns:
         nothing 
     """
+    exit('add feature local is not to be used')
     # use dummy list
-    name_feature = 'local'
-    put_dummy_variables(stu.local, VALID_LOCAL_VALUES, stu_features, name_feature,
-            feat_name_lst) 
+    #name_feature = 'local'
+    #put_dummy_variables(stu.local, VALID_LOCAL_VALUES, stu_features, name_feature,
+    #        feat_name_lst) 
 
 def add_feature_quota(stu, stu_features, feat_name_lst):
     """
@@ -326,7 +329,7 @@ def add_feature_school_type(stu, stu_features, feat_name_lst):
     put_dummy_variables(stu.school_type, VALID_SCHOOL_TYPE_VALUES, stu_features,
             name_feature, feat_name_lst) 
 
-def add_feature_way_in_enh(stu, stu_features, feat_name_lst):
+def add_feature_way_in(stu, stu_features, feat_name_lst):
     """
     append feature way in enhance to the student feature list
     append atribute to the name list, if not already in there

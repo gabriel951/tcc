@@ -1,0 +1,41 @@
+# antes
+    -> Não fiz muita coisa, tinha prova de gd semana passada e mais três provas essa
+semana... 
+    -> Implementei alguns modelos da scikit e tenho os resultados, tanto com cauda
+quanto sem cauda. 
+        * modelos não melhoraram muito a previsão conforme o passar dos semestres
+        * regressor linear teve o melhor desempenho
+        * desempenho dos modelos não foi satisfatório
+        * desempenho dos modelos foi melhor do que simplesmente escolher a classe
+          mais comum 
+    -> Sem contar essa reunião, faltam 6/7 reuniões para escrever monografia, chamar
+banca, preparar apresentação... Vai dar tempo? 
+
+# depois
+    # ajustes
+    -> Ver versão da scikit-learn
+    -> Ter duas maneiras de decidir, um que escolhe o valor mais próximo de 1 (como era
+minha ideia) e o outro que escolhe o maior valor entre as razões observado/esperado.  
+    * ideia: criar classe para o dataset, encapsulando assim conceitos!
+
+    # medida de desempenho
+    -> Medida de performance do modelo: F-measure (1 por classe)
+    -> Fazer gráficos mostrando a performance dos vários modelos com o passar dos
+semestres
+    -> Montar a matriz de confusão (tentar usar scikit-learn), que mostra a
+quantidade de certos e de errados para cada modelo. 
+
+    # mexer com modelos
+    -> ANN - usar algoritmo lbfgs
+    -> ANN - tentar quantidade de hidden layers como sendo 12, 24, 36, 100
+    -> ANN - após selecionar a quantidade ótima de hidden layers, variar simultaneamente o
+valor do momentum (de 0.1 a 0.9, incrementando de 0.1 a 0.1) e o valor da taxa de
+aprendizagem (de 0.1 a 0.9, incrementando de 0.1 a 0.1)
+
+    -> SVR - tentar todos os tipos de Kernel
+    -> SVR - não se chegou a um consenso sobre como variar o parâmetro da penalidade
+    
+    -> Random Forest - Não precisa 
+    
+    -> Naive Bayes - verificar distribuição normal. Se for normal, usar Gauss. Se não
+for, usar multinomial e bernoulli e ver qual que funciona melhor. 

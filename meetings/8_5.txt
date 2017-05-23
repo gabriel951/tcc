@@ -11,7 +11,7 @@ taxa de aprovação),
 # depois
     -> modelos a serem estudados incluem: árvore de regressão, NB, TAN, 
     -> Rodar Kendall de novo
-    -> Rodar Árvore de Decisão novamente (considerando os 5 atributos) 
+    -> Rodar Árvore de Decisão novamente (considerando os novos modelos) 
     -> Tirar tipo da escola (histograma) por conta de missing values
         ** ok, falta colocar na monografia
     -> Considerar apenas PAS, Vestibular e outros no atributo forma de entrada. 
@@ -20,4 +20,5 @@ taxa de aprovação),
     -> Fazer modelo considerando 3 categorias: desligado, diplomado ou migrou de
 curso. 
         ** acho que está ok
+   
 

@@ -4,7 +4,7 @@
 
 --select * from bd_unb.student where course like '%engenharia de compu%' limit 10;
 
-select cod_mat from bd_unb.student where way_out like '%utros';
-
+--select cod_mat from bd_unb.student where way_out like '%utros';
+--select * from bd_unb.student where cod_mat = 9883820032;
 --select way_out from bd_unb.student where (course like '%engenharia mec%' or course like '%engenharia de re%') 
 --and (age > 30) limit 30;

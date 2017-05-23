@@ -92,8 +92,8 @@ class Student():
         # position of the student relative to the semester he is in 
         self.position = lst_unknown[:]
         # previous chance of the student evading university, calculated by the
-        # model
-        self.evasion_chance = lst_unknown[:]
+        # model 
+        self.evasion_chance = {}
 
     def calculate_ira_yearsem(self, year, sem):
         """
@@ -220,34 +220,11 @@ class Student():
         exit('could not load course %s for the year %d and semester %d' %
                 (self.course, self.year_in, self.sem_in))
 
-    def get_sub_info(self, key, pos, info):
-        """
-        obtain information of a given student in a given subject
-        receives: 
-            1. a key to access a given subject
-            2. the position in the list of information for that subject
-            3. a string describing the info we want - 'code', 'name', 'grade', 'year,
-            'sem', 'credits' or 'all'
-        return: 
-            the information we want
-        """
-        if info == 'code':
-            return self.grades[key][pos][0] # code is the first information
-        elif info == 'name':
-            return self.grades[key][pos][1] # name is the second information
-        elif info == 'grade':
-            return self.grades[key][pos][2] # grade is the third information
-        elif info == 'year':
-            return self.grades[key][pos][3] # year is the fourth information
-        elif info == 'sem':
-            return self.grades[key][pos][4] # semester is the fifth information
-        elif info == 'credits':
-            return self.grades[key][pos][5] # credit is the sixth information
-        elif info == 'all':
-            tup = tuple(self.grades[key][pos])
-            return tup # tuple returned in the same order
-        else:
-            exit('value passed to get_sub_info not valid')
+    # TODO
+    def get_imprv_way_in(self): 
+        pass
+    def get_imprv_way_out(self): 
+        pass
 
     def get_num_semesters(self):
         """
@@ -338,6 +315,35 @@ class Student():
             print(grade_factor)
             print(ira_semester)
     
+    def get_sub_info(self, key, pos, info):
+        """
+        obtain information of a given student in a given subject
+        receives: 
+            1. a key to access a given subject
+            2. the position in the list of information for that subject
+            3. a string describing the info we want - 'code', 'name', 'grade', 'year,
+            'sem', 'credits' or 'all'
+        return: 
+            the information we want
+        """
+        if info == 'code':
+            return self.grades[key][pos][0] # code is the first information
+        elif info == 'name':
+            return self.grades[key][pos][1] # name is the second information
+        elif info == 'grade':
+            return self.grades[key][pos][2] # grade is the third information
+        elif info == 'year':
+            return self.grades[key][pos][3] # year is the fourth information
+        elif info == 'sem':
+            return self.grades[key][pos][4] # semester is the fifth information
+        elif info == 'credits':
+            return self.grades[key][pos][5] # credit is the sixth information
+        elif info == 'all':
+            tup = tuple(self.grades[key][pos])
+            return tup # tuple returned in the same order
+        else:
+            exit('value passed to get_sub_info not valid')
+
     def graduated(self): 
         """
         indicates if student was able to graduate
@@ -810,9 +816,9 @@ class Student():
         returns nothing
         """
         print('\tstudent %d arrived in year: %d and semester: %d' \
-                % (self.id_num, self.year_in, self.sem_in))
+                % (self.reg, self.year_in, self.sem_in))
         print('\tstudent  %d left in year: %d and semester: %d' \
-                % (self.id_num, self.year_out, self.sem_out))
+                % (self.reg, self.year_out, self.sem_out))
 
     def yearsem_2_pos(self, year, sem):
         """

@@ -1,18 +1,16 @@
 #!/usr/bin/python3.4
 
+# TODO: add way to pick the target variable to my code
+
 # this file contain the machine learning algorithms code
 
 # imports
 import statistics as stat
 import random
+import itertools
 
 # multioutput
 from sklearn.multioutput import *
-
-# regressors
-from sklearn.neural_network import *
-from sklearn.svm import SVR
-from sklearn import linear_model
 
 # decision tree related
 from sklearn import tree 
@@ -25,12 +23,57 @@ sys.path.append('..')
 from basic import *
 
 from features import *
+from ml_models import *
 
 sys.path.append('../core/')
 from students_methods import *
 
-# verbose flag
-VERB = 1
+
+
+def add_student_features(stu, semester, feat_name_lst, data_desc, filter_data):
+    """
+    add the relevant student features to a list
+    receives: 
+        1. student database 
+        2. semester which we are trying to predict
+        3. list with name of the features
+        4. description of the data 
+        6. boolean indicating whether we should select the features based on the
+        data description
+    returns: 
+        list containing the student features
+    """
+    # get list of the functions that the given model excludes
+    funcs_excl_model = get_exclude_func_lst(data_desc)
+    
+    stu_features = []
+
+    # apply functions that don't need the semester
+    func_apply_nosemester = [add_feature_sex]
+    func_apply_nosemester.append(add_feature_age)
+    func_apply_nosemester.append(add_feature_quota)
+    func_apply_nosemester.append(add_feature_course)
+    func_apply_nosemester.append(add_feature_way_in)
+    for cur_func in func_apply_nosemester: 
+        if filter_data and cur_func in funcs_excl_model:
+            continue
+        cur_func(stu, stu_features, feat_name_lst)
+
+    # apply functions that need the semester
+    func_apply_semester = [add_feature_pass_rate]
+    func_apply_semester.append(add_feature_drop_rate)
+    func_apply_semester.append(add_feature_ira)
+    func_apply_semester.append(add_feature_impr_rate)
+    func_apply_semester.append(add_feature_credit_rate_acc)
+    func_apply_semester.append(add_feature_hard_rate)
+    func_apply_semester.append(add_feature_condition)
+    func_apply_semester.append(add_feature_position)
+    for cur_func in func_apply_semester:
+        if filter_data and cur_func in funcs_excl_model:
+            continue
+        cur_func(stu, stu_features, semester, feat_name_lst)
+
+    return stu_features
 
 def analyse_decision_tree():
     """
@@ -44,11 +87,12 @@ def analyse_decision_tree():
     # obtain data collections
     data_coll = get_model_info()
 
-    # for each model, print decision tree for a given semester
+    # for each model, print decision tree for the last semester
     for (data, data_desc) in data_coll: 
         print('starting for data %s' %(data_desc))
         (feat_name, feature_lst, result_lst, key_lst) = \
-                get_data(data, YEAR_START, YEAR_END, 1, last_sem = True)
+                get_data(data, data_desc, YEAR_START, YEAR_END, 1, last_sem = True, 
+                        filter_model = False)
 
         # decision tree
         dc_tree = tree.DecisionTreeRegressor()
@@ -138,7 +182,7 @@ def apply_oversampling(test_feature, test_result, model):
 
     return (oversample_feature, oversample_result)
 
-def build_run_models():
+def build_run_ml_models_wrapper():
     """
     builds ml models using sklearn and then run it to evaluate performance
     receives: 
@@ -146,84 +190,90 @@ def build_run_models():
     returns: 
         nothing
     """
+    # we'll change the global variable to indicate if the model should use
+    # retroalimentation or not
+    global USE_TAIL, WAY_MODEL_TGT
+
     # get data collection along with the descriptions
     data_coll = get_model_info()
 
     # list of semesters being studied
     # it should start with 1, dumbass! 0 we'll get you to the last element of the
     # list
-    sem_lst = [1, 2, 3, 4]
+    MAX_NUM_SEM = 20
+    sem_lst = [sem for sem in range(1, MAX_NUM_SEM)]
 
-    # iterate through the semesters
-    for semester in sem_lst:
-        print('\n\n**starting study for semester: %d' % (semester))
+    # we should use model with tail or not
+    use_tail_lst = [True, False]
 
-        # iterate through the data collection
-        for (data, data_desc) in data_coll: 
-            print('\n**starting for the data %s' % (data_desc))
+    # ways model can choose the target variable
+    way_model_tgt_lst = ['absolute', 'relative']
 
-            if VERB:
-                print('**started getting data necessary for training and test')
+    # iterate through the options of semester and data collection and to whether model
+    # should use retroalimentation or not
+    for (sem, cur_data) in itertools.product(sem_lst, data_coll):
 
-            # get training data in the correct form to work with 
-            (feat_name, training_feature, training_result, key_train) = \
-                    get_data(data, YEAR_START_TRA, YEAR_END_TRA, semester)
-            # get test data
-            (feat_name, test_feature, test_result, key_test) = \
-                    get_data(data, YEAR_START_TEST, YEAR_END_TEST, semester)
+        (data, data_desc) = cur_data
 
-            if VERB: 
-                print('**(train_size, test_size): (%d, %d)' \
-                    % (len(training_result), len(test_result)))
-                show_class_proportion(training_result, 'training result:')
-                #print('**number of features: %d' %(len(training_feature[0])))
+        #if data_desc != 'young_students_lic_courses': 
+        #    continue
 
-            # train multilayer perceptron model 
-            #regressor = MLPRegressor()
-            #if VERB:
-            #    print('**started training ANN')
-            #multiregressor = MultiOutputRegressor(regressor)
-            #multiregressor.fit(training_feature, training_result)
+        print('\nstarting study for:')
+        print('(sem, data): %d %s ' % (sem, data_desc))
 
-            ## train svr
-            #svr = SVR()
-            #if VERB:
-            #    print('**started training SVR')
-            #svr.fit(training_feature, training_result)
+        # iterate through options of using retroalimentation and the way the model
+        # picks the target variable
+        for (use_tail, way_model_tgt) in 
+            itertools.product(use_tail_lst, way_model_tgt_lst):
 
-            ## train linear model 
-            linear_regressor = linear_model.LinearRegression()
-            if VERB:
-                print('**started training linear regressor')
-            linear_regressor.fit(training_feature, training_result)
-            multi_linear_regressor = MultiOutputRegressor(linear_regressor)
-            multi_linear_regressor.fit(training_feature, training_result)
-            assert(len(feat_name) == len(training_feature[0]))
-            print(feat_name)
-            #exit()
+                # regulate global boolean variables 
+                USE_TAIL = use_tail
+                WAY_MODEL_TGT = way_model_tgt
 
-            # evaluate performance of the ml techniques
-            oversample = True
-            #evaluate_performance(data, semester, test_feature, test_result,\
-            #        regressor, 'ANN', oversample, key_test)
-            #evaluate_performance(data, semester, test_feature, test_result,\
-            #        svr, 'SVR', oversample, key_test)
-            evaluate_performance(data, semester, test_feature, test_result, \
-                    linear_regressor, 'L. Regressor', oversample, key_test)
+                # build and run models
+                build_run_ml_models(sem, data, data_desc)
 
-            #print('\n\n\n####### WARNING - training start ######')
-            #oversample = False
-            #evaluate_performance(data, semester, training_feature, training_result,\
-            #        regressor, 'ANN', oversample, key_train)
-            #evaluate_performance(data, semester, training_feature, training_result,\
-            #        svr, 'SVR', oversample, key_train)
-            #evaluate_performance(data, semester, training_feature, training_result, \
-            #        linear_regressor, 'L. Regressor', oversample, key_train)
-            #print('####### WARNING - training end ######\n\n\n')
+def build_run_ml_models(sem, data, data_desc):
+    """
+    build and run ml models for a specific semester, data and data description
+    receives: 
+        1. semester we are in 
+        2. data we have
+        3. description of the data
+    returns:
+        nothing
+    * prints the performance for each model
+    """
+    if VERB:
+        print('**started getting data necessary for training and test')
 
+    # get training data in the correct form to work with 
+    (feat_name, training_feature, training_result, key_train) = \
+            get_data(data, data_desc, YEAR_START_TRA, YEAR_END_TRA, sem)
 
-            # TODO - just analyse all students
-            break
+    # get test data
+    (feat_name, test_feature, test_result, key_test) = \
+            get_data(data, data_desc, YEAR_START_TEST, YEAR_END_TEST, sem)
+
+    # train models
+    ml_models = get_ml_models(sem, data, training_feature, training_result, 
+            key_train)
+
+    if VERB: 
+        print('**(train_size, test_size): (%d, %d)' \
+                % (len(training_result), len(test_result)))
+        show_class_proportion(training_result, 'training result:')
+        #print('**number of features: %d' %(len(training_feature[0])))
+
+    set_evasion_chance(ml_models, key_train, data, training_feature, sem)
+    set_evasion_chance(ml_models, key_test, data, test_feature, sem)
+
+    # evaluate performance of the ml techniques - test
+    oversample = True
+    for (model, model_desc) in ml_models: 
+        result = evaluate_performance(data, sem, test_feature, test_result,
+                model, model_desc, oversample, key_test)
+        print('performance %s: %f' % (model_desc, result))
 
 def evaluate_performance(data, cur_sem, test_feature, test_result, model, \
         model_desc, oversample, key_lst):
@@ -240,10 +290,10 @@ def evaluate_performance(data, cur_sem, test_feature, test_result, model, \
         7. boolean to indicate if we should oversample
         8. list of the keys of the students on the test set passed
     returns:
-        nothing
+        percentage the model got right
     """
-    # predict
-    print('\n\nstarted evaluating performance of %s' % (model_desc))
+    # semester count should start at 1
+    assert(cur_sem >= 1)
 
     # apply oversampling if we should
     if oversample: 
@@ -253,15 +303,13 @@ def evaluate_performance(data, cur_sem, test_feature, test_result, model, \
         (final_test_feature, final_test_result) = \
                 (test_feature, test_result)
 
+    # predict
+    if VERB: 
+        print('\nstarted evaluating performance of %s' % (model_desc))
     prediction_lst = model.predict(final_test_feature)
-
-    # set the evasion chance for the model
-    for ind in range(len(key_lst)): 
-        key = key_lst[ind]
-        cur_stu = data[key]
-        if cur_sem < cur_stu.get_num_semesters(): # needed because student may have
-                                                    #left
-            cur_stu.evasion_chance[cur_sem] = prediction_lst[ind]
+    #print(prediction_lst[0])
+    #print(final_test_result[0])
+    #exit()
 
     assert(len(prediction_lst) == len(final_test_result))
 
@@ -272,21 +320,28 @@ def evaluate_performance(data, cur_sem, test_feature, test_result, model, \
     show_class_proportion(final_test_result, 'final test result: ')
     show_class_proportion(disc_prediction_lst, 'discrete prediction result: ')
     
-    # evaluate performance 
-    show_model_perf(final_test_result, disc_prediction_lst)
+    # evaluate performance and get percentage of rights 
+    right_pct = show_model_perf(final_test_result, disc_prediction_lst)
+    
+    # return percentage of rights the model got
+    return right_pct
 
-def get_data(model, year_inf, year_sup, semester, enh = False, last_sem = False):
+def get_data(data, data_desc, year_inf, year_sup, semester, enh = False, 
+        last_sem = False, filter_data = True):
     """
     organizes student information in order to feed machine learning model of scikit
     receives:
         1. Student dictionary containing student info
-        2. Inferior limit for the year student entered university
-        3. Superior limit for the year student entered university
-        4. Semester the student is in 
-        5. (optional) boolean to indicate whether we should use the enhanced
+        2. Description of the data we are working with
+        3. Inferior limit for the year student entered university
+        4. Superior limit for the year student entered university
+        5. Semester the student is in 
+        6. (optional) boolean to indicate whether we should use the enhanced
         functions or not
-        6. (optional) boolean to indicate if we should get the last semester (instead
+        7. (optional) boolean to indicate if we should get the last semester (instead
         of the semester passed as a parameter) or not
+        8. (optional) boolean that indicates if we should filter the attributes
+        according to the data we are passing
     returns:
         tuple containing:
             first entrie - feature name
@@ -302,10 +357,10 @@ def get_data(model, year_inf, year_sup, semester, enh = False, last_sem = False)
 
     # TODO: could be helpful if we normalize it?
     #if enh: 
-    #    normalize_values(model, semester)
+    #    normalize_values(data, semester)
 
     # iterate through every student
-    for key, stu in model.items():
+    for key, stu in data.items():
         # if student entered in a year we're not interessed, skip
         if stu.year_in < year_inf or stu.year_in > year_sup: 
             continue
@@ -316,22 +371,8 @@ def get_data(model, year_inf, year_sup, semester, enh = False, last_sem = False)
             semester = stu.get_num_semesters()
 
         # build student features list and append to student features list
-        stu_features = []
-        add_feature_sex(stu, stu_features, feat_name_lst)
-        add_feature_age(stu, stu_features, feat_name_lst)
-        add_feature_local(stu, stu_features, feat_name_lst)
-        add_feature_quota(stu, stu_features, feat_name_lst)
-        add_feature_course(stu, stu_features, feat_name_lst)
-        add_feature_way_in(stu, stu_features, feat_name_lst)
-        add_feature_pass_rate(stu, stu_features, semester, feat_name_lst)
-        add_feature_drop_rate(stu, stu_features, semester, feat_name_lst)
-        add_feature_ira(stu, stu_features, semester, feat_name_lst)
-        add_feature_impr_rate(stu, stu_features, semester, feat_name_lst)
-        add_feature_credit_rate_acc(stu, stu_features, semester, feat_name_lst)
-        add_feature_hard_rate(stu, stu_features, semester, feat_name_lst)
-        #add_feature_condition(stu, stu_features, semester, feat_name_lst)
-        add_feature_position(stu, stu_features, semester, feat_name_lst)
-        #add_feature_evasion_chance(stu, stu_features, semester, feat_name_lst)
+        stu_features = add_student_features(stu, semester, feat_name_lst, 
+                data_desc, filter_data)
         features_lst.append(stu_features)
 
         # add outcome
@@ -345,6 +386,33 @@ def get_data(model, year_inf, year_sup, semester, enh = False, last_sem = False)
 
     # return 
     return (feat_name_lst, features_lst, target_lst, key_lst)
+
+def get_ml_models(sem, data, training_feature, training_result, key_train_lst): 
+    """
+    get a list of the ml models we'll be using. All of them already trained
+    receives: 
+        1. semester we are interested in 
+        2. dictionary containing the student information
+        3. list of training features
+        4. list of training results
+        5. list with the keys of the students in the training features
+    returns: 
+        list of tuples containing the model and a description of the model. List is
+        of the form: [(model, model_description)]
+    """
+    model_lst = []
+
+    # train models
+    get_trained_linear_regressor(model_lst, sem, data, training_feature, training_result,
+            key_train_lst)
+    get_trained_ann(model_lst, sem, data, training_feature, training_result, 
+            key_train_lst)
+    get_trained_svr(model_lst, sem, data, training_feature, training_result, 
+            key_train_lst)
+    #get_trained_random_forest(model_lst, training_feature, training_result)
+    #get_trained_naive_bayes(model_lst, training_feature, training_result)
+
+    return model_lst
 
 def get_num_non_grad(result_lst):
     """
@@ -381,6 +449,32 @@ def get_discrete_prediction(prediction_lst):
             exit('error')
     return disc_prediction_lst
 
+def get_exclude_func_lst(data_desc):
+    """
+    get the functions that add features function should not consider 
+    receives: 
+        1. data description we are working with
+    returns: 
+        list containing the data we are working with 
+    """
+    POSSIBLE_MODEL_DESC = ['all_students', 'young_students_ti_courses', 
+            'young_students_lic_courses', 'young_students_comp_courses', 
+            'old_students']
+    assert(data_desc in POSSIBLE_MODEL_DESC)
+
+    if data_desc == 'all_students':
+        return []
+    elif data_desc == 'young_students_ti_courses':
+        return []
+    elif data_desc == 'young_students_lic_courses':
+        return [add_feature_course]
+    elif data_desc == 'young_students_comp_courses':
+        return []
+    elif data_desc == 'old_students':
+        return [add_feature_quota, add_feature_course, add_feature_drop_rate]
+    else: 
+        exit("error on get exclude func lst")
+
 def normalize_values(stu_info, semester):
     """
     not being used
@@ -401,6 +495,32 @@ def normalize_values(stu_info, semester):
     for key, stu in stu_info.items():
         stu.pass_rate[semester - 1] = stu.pass_rate[semester - 1] - mean
 
+def set_evasion_chance(ml_models, key_lst, data, features_lst, sem):
+    """
+    set the evasion chance for the students on the prediction list
+    receives: 
+        1. list of tuples containing ml model and description [(ml_model, model_desc)]
+        2. list with the key to access the student we are in 
+        3. data we currently have 
+        4. list of features 
+        5. semester we are considering 
+    returns: 
+        nothing
+    """
+    # iterate through models
+    for (ml_model, model_desc) in ml_models: 
+
+        # get prediction list
+        prediction_lst = ml_model.predict(features_lst)
+
+        # set evasion chance
+        for ind in range(len(key_lst)): 
+            key = key_lst[ind]
+            cur_stu = data[key]
+            if sem < cur_stu.get_num_semesters(): # needed because student may have
+                                                        #left
+                cur_stu.evasion_chance[(sem, model_desc)] = prediction_lst[ind]
+
 def show_class_proportion(result_lst, description): 
     """
     reports the amount and the proportion of students that graduated, evaded or
@@ -412,8 +532,9 @@ def show_class_proportion(result_lst, description):
         nothing
     * print on the screen 
     """
-    print('\t' + description)
-    print('\t\t graduate amount: %d, evade amount: %d, migrate amount: %d' %
+    if VERB: 
+        print('\t' + description)
+        print('\t\t graduate amount: %d, evade amount: %d, migrate amount: %d' %
         (result_lst.count(GRADUATED), result_lst.count(EVADED), 
             result_lst.count(MIGRATED)))
 
@@ -424,7 +545,7 @@ def show_model_perf(correct_lst, model_lst):
         1. list of correct results
         2. list of results predicted by the model
     returns: 
-        nothing
+        percentage of rights the model got
     """
     assert(len(correct_lst) == len(model_lst))
     
@@ -436,8 +557,23 @@ def show_model_perf(correct_lst, model_lst):
             falses += 1
     total = trues + falses
 
-    print('right predictions: %d, wrong predictions: %d', trues, falses)
-    print('right percentage: %f, wrong percentage: %f', trues/total, falses/total)
+    if VERB: 
+        print('right predictions: %d, wrong predictions: %d' % (trues, falses))
+        print('right percentage: %f, wrong percentage: %f' % (trues/total, falses/total))
+
+    return trues/total
+
+def report_best_model_conf():
+    """
+    report which configuration is better for every model
+    receives: 
+        nothing
+    returns: 
+        nothing
+    """
+    report_best_conf_ann()
+    report_best_conf_svr()
+    report_best_conf_nb()
 
 # execute case this is the main file
 if __name__ == "__main__":
@@ -446,4 +582,7 @@ if __name__ == "__main__":
     #analyse_decision_tree()
 
     # build and run machine learning models
-    build_run_models()
+    #build_run_ml_models_wrapper()
+
+    # get report on which parametrization is better for each model 
+    #report_best_model_conf()

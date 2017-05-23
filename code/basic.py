@@ -128,12 +128,21 @@ EVASION_WAY_OUT.append('Desligamento por Força de Intercãmbio')
 EVASION_WAY_OUT.append('Anulação de Registro')
 EVASION_WAY_OUT.append('Ex-Aluno (Decreto 477)')
 
-
 # path for serialized objects
 PATH = 'data/'
 
 # avoid magic number - last element on a list
 LAST_ELEM = -1
+
+## ml module
+# should we be verbose?
+VERB = 1
+
+# tail flag, indicating if model should use retroalimentation or not
+USE_TAIL = False
+
+# way the ml model pick the target variable: can be absolute or relative
+WAY_MODEL_TGT = 'absolute'
 
 def close_conn(conn):
     """

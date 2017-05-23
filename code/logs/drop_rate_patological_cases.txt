@@ -9,7 +9,7 @@ student info
 	credit_rate:   ['not know', 'not know']
 	credit_rate_acc:   ['not know', 'not know']
 	drop_rate:   [1.0, 1.0]
-	evasion_chance:   ['not know', 'not know']
+	evasion_chance:   {}
 	fail_rate:   [0.0, 0.0]
 	hard_rate:   ['not know', 'not know']
 	id_num:   14271120082
@@ -32,12 +32,12 @@ student info
 	year_in:   2008
 	year_out:   2009
 	 printing grades --- 
+		fisica 1 experimental                                                 :   [[118010, 'fisica 1 experimental                                                 ', 'TR', 2008, 2, 2]]
 		fisica 1                                                              :   [[118001, 'fisica 1                                                              ', 'TR', 2008, 2, 4]]
 		quimica geral teorica                                                 :   [[114626, 'quimica geral teorica                                                 ', 'TR', 2008, 2, 4]]
 		introducao a engenharia mecatronica                                   :   [[168891, 'introducao a engenharia mecatronica                                   ', 'TR', 2008, 2, 2]]
 		quimica geral experimental                                            :   [[114634, 'quimica geral experimental                                            ', 'TR', 2008, 2, 2]]
 		calculo 1                                                             :   [[113034, 'calculo 1                                                             ', 'TR', 2008, 2, 6]]
-		fisica 1 experimental                                                 :   [[118010, 'fisica 1 experimental                                                 ', 'TR', 2008, 2, 2]]
 	 ------------------ 
 ------------
 student 19462920121 has not coursed any subject until pos: 0
@@ -57,7 +57,7 @@ student info
 	credit_rate:   ['not know']
 	credit_rate_acc:   ['not know']
 	drop_rate:   [1.0]
-	evasion_chance:   ['not know']
+	evasion_chance:   {}
 	fail_rate:   [0.0]
 	hard_rate:   ['not know']
 	id_num:   20326220131
@@ -80,10 +80,10 @@ student info
 	year_in:   2013
 	year_out:   2013
 	 printing grades --- 
-		algebra 1                                                             :   [[113107, 'algebra 1                                                             ', 'TR', 2013, 1, 4]]
-		introducao a microinformatica                                         :   [[116793, 'introducao a microinformatica                                         ', 'TR', 2013, 1, 4]]
 		lógica computacional 1                                                :   [[117366, 'lógica computacional 1                                                ', 'TR', 2013, 1, 4]]
 		calculo 1                                                             :   [[113034, 'calculo 1                                                             ', 'TR', 2013, 1, 6]]
+		algebra 1                                                             :   [[113107, 'algebra 1                                                             ', 'TR', 2013, 1, 4]]
+		introducao a microinformatica                                         :   [[116793, 'introducao a microinformatica                                         ', 'TR', 2013, 1, 4]]
 	 ------------------ 
 ------------
 ------------
@@ -93,7 +93,7 @@ student info
 	credit_rate:   ['not know', 'not know', 'not know']
 	credit_rate_acc:   ['not know', 'not know', 'not know']
 	drop_rate:   [1.0, 1.0, 1.0]
-	evasion_chance:   ['not know', 'not know', 'not know']
+	evasion_chance:   {}
 	fail_rate:   [0.0, 0.0, 0.0]
 	hard_rate:   ['not know', 'not know', 'not know']
 	id_num:   20348520131
@@ -116,12 +116,12 @@ student info
 	year_in:   2013
 	year_out:   2014
 	 printing grades --- 
-		fundamentos de redes                                                  :   [[167959, 'fundamentos de redes                                                  ', 'TR', 2013, 1, 4]]
 		eletromagnetismo 1                                                    :   [[167037, 'eletromagnetismo 1                                                    ', 'TR', 2013, 1, 6]]
-		noções de direito                                                     :   [[184802, 'noções de direito                                                     ', 'TR', 2013, 1, 4]]
-		princípios de comunicação                                             :   [[169188, 'princípios de comunicação                                             ', 'TR', 2013, 1, 4]]
 		higiene e seguranca do trabalho                                       :   [[168921, 'higiene e seguranca do trabalho                                       ', 'TR', 2013, 1, 2]]
+		princípios de comunicação                                             :   [[169188, 'princípios de comunicação                                             ', 'TR', 2013, 1, 4]]
 		laboratório de princípios de comunicação                              :   [[169111, 'laboratório de princípios de comunicação                              ', 'TR', 2013, 1, 2]]
+		fundamentos de redes                                                  :   [[167959, 'fundamentos de redes                                                  ', 'TR', 2013, 1, 4]]
+		noções de direito                                                     :   [[184802, 'noções de direito                                                     ', 'TR', 2013, 1, 4]]
 	 ------------------ 
 ------------
 student 11668720052 has not coursed any subject until pos: 0
@@ -148,7 +148,7 @@ student info
 	credit_rate:   ['not know', 'not know', 'not know']
 	credit_rate_acc:   ['not know', 'not know', 'not know']
 	drop_rate:   [1.0, 1.0, 1.0]
-	evasion_chance:   ['not know', 'not know', 'not know']
+	evasion_chance:   {}
 	fail_rate:   [0.0, 0.0, 0.0]
 	hard_rate:   ['not know', 'not know', 'not know']
 	id_num:   23905620152
@@ -172,8 +172,8 @@ student info
 	year_out:   2016
 	 printing grades --- 
 		organizacao da educacao brasileira                                    :   [[194221, 'organizacao da educacao brasileira                                    ', 'TR', 2015, 2, 4]]
-		lógica computacional 1                                                :   [[117366, 'lógica computacional 1                                                ', 'TR', 2015, 2, 4]]
 		formação docente em computação                                        :   [[113492, 'formação docente em computação                                        ', 'TR', 2015, 2, 4]]
+		lógica computacional 1                                                :   [[117366, 'lógica computacional 1                                                ', 'TR', 2015, 2, 4]]
 	 ------------------ 
 ------------
 student 10632220042 has not coursed any subject until pos: 0
@@ -186,7 +186,7 @@ student info
 	credit_rate:   ['not know', 'not know', 'not know']
 	credit_rate_acc:   ['not know', 'not know', 'not know']
 	drop_rate:   [1.0, 1.0, 1.0]
-	evasion_chance:   ['not know', 'not know', 'not know']
+	evasion_chance:   {}
 	fail_rate:   [0.0, 0.0, 0.0]
 	hard_rate:   ['not know', 'not know', 'not know']
 	id_num:   23167120151
@@ -209,8 +209,8 @@ student info
 	year_in:   2015
 	year_out:   2016
 	 printing grades --- 
-		lógica computacional 1                                                :   [[117366, 'lógica computacional 1                                                ', 'TR', 2015, 1, 4]]
 		computacao basica                                                     :   [[116301, 'computacao basica                                                     ', 'TR', 2015, 1, 6]]
+		lógica computacional 1                                                :   [[117366, 'lógica computacional 1                                                ', 'TR', 2015, 1, 4]]
 	 ------------------ 
 ------------
 student 14073820081 has not coursed any subject until pos: 0
@@ -223,7 +223,7 @@ student info
 	credit_rate:   ['not know']
 	credit_rate_acc:   ['not know']
 	drop_rate:   [1.0]
-	evasion_chance:   ['not know']
+	evasion_chance:   {}
 	fail_rate:   [0.0]
 	hard_rate:   ['not know']
 	id_num:   18758620121
@@ -246,11 +246,11 @@ student info
 	year_in:   2012
 	year_out:   2012
 	 printing grades --- 
+		inglês instrumental 1                                                 :   [[145971, 'inglês instrumental 1                                                 ', 'TR', 2012, 1, 4]]
+		português instrumental 1                                              :   [[147389, 'português instrumental 1                                              ', 'TR', 2012, 1, 4]]
 		organizacao da educacao brasileira                                    :   [[194221, 'organizacao da educacao brasileira                                    ', 'TR', 2012, 1, 4]]
 		introducao a microinformatica                                         :   [[116793, 'introducao a microinformatica                                         ', 'TR', 2012, 1, 4]]
 		lógica computacional 1                                                :   [[117366, 'lógica computacional 1                                                ', 'TR', 2012, 1, 4]]
-		inglês instrumental 1                                                 :   [[145971, 'inglês instrumental 1                                                 ', 'TR', 2012, 1, 4]]
-		português instrumental 1                                              :   [[147389, 'português instrumental 1                                              ', 'TR', 2012, 1, 4]]
 	 ------------------ 
 ------------
 student 13212120082 has not coursed any subject until pos: 0
@@ -287,7 +287,7 @@ student info
 	credit_rate:   ['not know']
 	credit_rate_acc:   ['not know']
 	drop_rate:   [1.0]
-	evasion_chance:   ['not know']
+	evasion_chance:   {}
 	fail_rate:   [0.0]
 	hard_rate:   ['not know']
 	id_num:   12379020062
@@ -311,11 +311,11 @@ student info
 	year_out:   2006
 	 printing grades --- 
 		inglês instrumental 1                                                 :   [[145971, 'inglês instrumental 1                                                 ', 'TR', 2006, 2, 4]]
-		leitura e produção de textos                                          :   [[140481, 'leitura e produção de textos                                          ', 'TR', 2006, 2, 4]]
-		linguagens de programacao                                             :   [[116343, 'linguagens de programacao                                             ', 'TR', 2006, 2, 4]]
-		algebra 1                                                             :   [[113107, 'algebra 1                                                             ', 'TR', 2006, 2, 4]]
-		computacao basica                                                     :   [[116301, 'computacao basica                                                     ', 'TR', 2006, 2, 6]]
 		sistemas de informacao                                                :   [[116416, 'sistemas de informacao                                                ', 'TR', 2006, 2, 4]]
+		leitura e produção de textos                                          :   [[140481, 'leitura e produção de textos                                          ', 'TR', 2006, 2, 4]]
+		computacao basica                                                     :   [[116301, 'computacao basica                                                     ', 'TR', 2006, 2, 6]]
+		algebra 1                                                             :   [[113107, 'algebra 1                                                             ', 'TR', 2006, 2, 4]]
+		linguagens de programacao                                             :   [[116343, 'linguagens de programacao                                             ', 'TR', 2006, 2, 4]]
 	 ------------------ 
 ------------
 student 17934920112 has not coursed any subject until pos: 0
@@ -328,7 +328,7 @@ student info
 	credit_rate:   ['not know', 'not know', 'not know']
 	credit_rate_acc:   ['not know', 'not know', 'not know']
 	drop_rate:   [1.0, 1.0, 1.0]
-	evasion_chance:   ['not know', 'not know', 'not know']
+	evasion_chance:   {}
 	fail_rate:   [0.0, 0.0, 0.0]
 	hard_rate:   ['not know', 'not know', 'not know']
 	id_num:   21573320141
@@ -351,9 +351,9 @@ student info
 	year_in:   2014
 	year_out:   2015
 	 printing grades --- 
+		projeto de estradas                                                   :   [[166723, 'projeto de estradas                                                   ', 'TR', 2014, 1, 4]]
 		eletricidade básica                                                   :   [[100986, 'eletricidade básica                                                   ', 'TR', 2014, 2, 4]]
 		teoria das estruturas 1                                               :   [[166049, 'teoria das estruturas 1                                               ', 'TR', 2014, 1, 4]]
-		projeto de estradas                                                   :   [[166723, 'projeto de estradas                                                   ', 'TR', 2014, 1, 4]]
 	 ------------------ 
 ------------
 ------------
@@ -363,7 +363,7 @@ student info
 	credit_rate:   ['not know', 'not know', 'not know']
 	credit_rate_acc:   ['not know', 'not know', 'not know']
 	drop_rate:   [1.0, 1.0, 1.0]
-	evasion_chance:   ['not know', 'not know', 'not know']
+	evasion_chance:   {}
 	fail_rate:   [0.0, 0.0, 0.0]
 	hard_rate:   ['not know', 'not know', 'not know']
 	id_num:   21712920141
@@ -386,10 +386,10 @@ student info
 	year_in:   2014
 	year_out:   2015
 	 printing grades --- 
-		fisica 2 experimental                                                 :   [[118036, 'fisica 2 experimental                                                 ', 'TR', 2014, 1, 4]]
-		fisica 2                                                              :   [[118028, 'fisica 2                                                              ', 'TR', 2014, 1, 4]]
 		introducao a algebra linear                                           :   [[113093, 'introducao a algebra linear                                           ', 'TR', 2014, 1, 4]]
 		computacao basica                                                     :   [[116301, 'computacao basica                                                     ', 'TR', 2014, 1, 6]]
+		fisica 2                                                              :   [[118028, 'fisica 2                                                              ', 'TR', 2014, 1, 4]]
+		fisica 2 experimental                                                 :   [[118036, 'fisica 2 experimental                                                 ', 'TR', 2014, 1, 4]]
 	 ------------------ 
 ------------
 student 9031720021 has not coursed any subject until pos: 0
