@@ -557,29 +557,40 @@ def get_database_info():
         print('finished loading the students dictionary')
         return stu_info
 
-def get_grad_info(stu_info, func_filter): 
+def get_grad_evd_migr_info(stu_info, func_filter, info = 'grad'): 
     """
-    get the amount of students in a course and the proportion that graduated, for
-    that course
+    get the amount of students in a course and the proportion that graduated,
+    evaded or migrated from a course. 
     receives: 
         1. student dictionary
         2. a function to filter the students that will be selected
+        3. information we want. If u want proportion that graduate, put 'grad'. If u
+        want the proportion that evaded, put 'evade'. If u want proportion that
+        migrated, put 'migr'. 
     returns: 
         tuple of the form (<amount of students in the course> , <proportion that
-        graduated>). 
+        graduated/evaded/migrated>). 
         ** the amount returned correspond to all students, including those that did
         not graduate
     """
+    assert(info == 'grad' or info == 'evade' or info == 'migr')
 
+    # total amount and amount we are interested - initially zero
     tot_amount = 0
-    grad_amount = 0
+    interested_amount = 0
+
+    # iterate through students, counting
     for key, stu in stu_info.items(): 
         if func_filter(stu): 
             tot_amount += 1
-            if stu.graduated(): 
-                grad_amount += 1
+            if info == 'grad' and stu.graduated(): 
+                interested_amount += 1
+            elif info == 'evade' and stu.evaded(): 
+                interested_amount += 1
+            elif info == 'migr' and stu.migrated(): 
+                interested_amount += 1
     
-    proportion = float(grad_amount) / tot_amount
+    proportion = float(interested_amount) / tot_amount
 
     return (tot_amount, proportion)
 

@@ -1,0 +1,10 @@
+# antes
+    -> estou usando métrica f1 
+    -> montei a matriz de confusão. Arquivo txt com a matriz de confusão e a
+        fmeasure.
+    -> gráficos de desempenho foram montados
+    -> não terminei de fazer a otimização dos modelos. 
+        * SVR: vou só variar os vários tipos de Kernel
+        * naive bayes: como decido se uso gauss ou não? mais da metade das variáveis
+          ser normal?
+    -> fiz as duas métricas, mas a métrica de valor absoluto é melhor.

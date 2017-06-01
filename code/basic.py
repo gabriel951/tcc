@@ -134,16 +134,6 @@ PATH = 'data/'
 # avoid magic number - last element on a list
 LAST_ELEM = -1
 
-## ml module
-# should we be verbose?
-VERB = 1
-
-# tail flag, indicating if model should use retroalimentation or not
-USE_TAIL = False
-
-# way the ml model pick the target variable: can be absolute or relative
-WAY_MODEL_TGT = 'absolute'
-
 def close_conn(conn):
     """
     close connection from database

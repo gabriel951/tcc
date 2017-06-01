@@ -356,6 +356,16 @@ class Student():
             return True
         return False
 
+    def is_train_inst(self):
+        """
+        indicates if a student is in the training instance
+        receives: 
+            nothing
+        returns: 
+            True, case student is on the training set. False otherwise
+        """
+        return self.year_in >= YEAR_START_TRA and self.year_in <= YEAR_END_TRA
+
     def log_info(self, fp):
         """
         receives a file object

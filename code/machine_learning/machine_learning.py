@@ -1,6 +1,11 @@
 #!/usr/bin/python3.4
 
-# TODO: add way to pick the target variable to my code
+
+# TODO: feature list is one for every model 
+# TODO: test features list should have same length as train feature list, even when
+# TODO: apply oversampling should be in the models wrapper
+
+# use tail is set to true
 
 # this file contain the machine learning algorithms code
 
@@ -8,6 +13,7 @@
 import statistics as stat
 import random
 import itertools
+import pickle
 
 # multioutput
 from sklearn.multioutput import *
@@ -18,17 +24,21 @@ import pydotplus
 import graphviz
 import os 
 
+# evaluation using sklearn
+from sklearn.metrics import confusion_matrix, f1_score
+
 import sys
 sys.path.append('..')
 from basic import *
 
+import global_ml as gml
+from basic_ml import *
 from features import *
 from ml_models import *
+from ml_plot import *
 
 sys.path.append('../core/')
 from students_methods import *
-
-
 
 def add_student_features(stu, semester, feat_name_lst, data_desc, filter_data):
     """
@@ -189,11 +199,8 @@ def build_run_ml_models_wrapper():
         nothing
     returns: 
         nothing
+    * saves results on a dictionary, that is pickled.
     """
-    # we'll change the global variable to indicate if the model should use
-    # retroalimentation or not
-    global USE_TAIL, WAY_MODEL_TGT
-
     # get data collection along with the descriptions
     data_coll = get_model_info()
 
@@ -202,6 +209,9 @@ def build_run_ml_models_wrapper():
     # list
     MAX_NUM_SEM = 20
     sem_lst = [sem for sem in range(1, MAX_NUM_SEM)]
+
+    # dictionary of performance for each ml model for each semester
+    perf_ml_model = {}
 
     # we should use model with tail or not
     use_tail_lst = [True, False]
@@ -215,31 +225,37 @@ def build_run_ml_models_wrapper():
 
         (data, data_desc) = cur_data
 
-        #if data_desc != 'young_students_lic_courses': 
+        #if data_desc != 'old_students': 
         #    continue
 
-        print('\nstarting study for:')
+        print('\n\n\nstarting study for:')
         print('(sem, data): %d %s ' % (sem, data_desc))
 
         # iterate through options of using retroalimentation and the way the model
         # picks the target variable
-        for (use_tail, way_model_tgt) in 
+        for (use_tail, way_model_tgt) in \
             itertools.product(use_tail_lst, way_model_tgt_lst):
 
                 # regulate global boolean variables 
-                USE_TAIL = use_tail
-                WAY_MODEL_TGT = way_model_tgt
+                gml.USE_TAIL = use_tail
+                gml.WAY_MODEL_TGT = way_model_tgt
 
                 # build and run models
-                build_run_ml_models(sem, data, data_desc)
+                build_run_ml_models(sem, data, data_desc, perf_ml_model)
 
-def build_run_ml_models(sem, data, data_desc):
+    # save pickle object
+    file_target = open(PCK_ML_MODEL, 'wb')
+    pickle.dump(perf_ml_model, file_target)
+
+def build_run_ml_models(sem, data, data_desc, perf_ml_model):
     """
     build and run ml models for a specific semester, data and data description
     receives: 
         1. semester we are in 
         2. data we have
         3. description of the data
+        4. dictionary to contain the performance for every ml model, considering
+        semester and data. 
     returns:
         nothing
     * prints the performance for each model
@@ -255,9 +271,15 @@ def build_run_ml_models(sem, data, data_desc):
     (feat_name, test_feature, test_result, key_test) = \
             get_data(data, data_desc, YEAR_START_TEST, YEAR_END_TEST, sem)
 
-    # train models
-    ml_models = get_ml_models(sem, data, training_feature, training_result, 
-            key_train)
+    # get ml models
+    ml_models = get_untrained_ml_models(training_feature, test_feature)
+
+    # add evasion chance to all models - if its to use tail
+    if gml.USE_TAIL:
+        add_evasion_chance_all_models(ml_models, sem, data, key_train, key_test)
+
+    # train all models
+    train_ml_models(ml_models, training_result)
 
     if VERB: 
         print('**(train_size, test_size): (%d, %d)' \
@@ -265,18 +287,36 @@ def build_run_ml_models(sem, data, data_desc):
         show_class_proportion(training_result, 'training result:')
         #print('**number of features: %d' %(len(training_feature[0])))
 
+    # set evasion chance for every student, according to the model
     set_evasion_chance(ml_models, key_train, data, training_feature, sem)
     set_evasion_chance(ml_models, key_test, data, test_feature, sem)
 
-    # evaluate performance of the ml techniques - test
+    # apply oversampling
     oversample = True
-    for (model, model_desc) in ml_models: 
-        result = evaluate_performance(data, sem, test_feature, test_result,
-                model, model_desc, oversample, key_test)
-        print('performance %s: %f' % (model_desc, result))
+    if oversample: 
+        (final_test_feature, final_test_result) = apply_oversampling(test_feature, 
+                                                            test_result, data)
+    else:
+        (final_test_feature, final_test_result) = (test_feature, test_result)
+
+    # evaluate performance of the ml techniques - test
+    for [model_desc, ml_model, model_train_feat, model_test_feat] in ml_models: 
+
+        # get stats
+        (f_measure, conf_matrix) = evaluate_performance(data, sem, final_test_feature, 
+                final_test_result, ml_model, model_desc, key_test)
+
+        # show stats to user
+        print('f-measure for model %s: %f' % (model_desc, f_measure))
+        print('confusion matrix: ')
+        print(conf_matrix)
+        print('')
+
+        # register in the performance for the ml_model dictionary
+        perf_ml_model[(sem, data_desc, model_desc)] = f_measure
 
 def evaluate_performance(data, cur_sem, test_feature, test_result, model, \
-        model_desc, oversample, key_lst):
+        model_desc, key_lst):
     """
     evaluates the performance of a model, by showing how many test instances the
     model was able to get right
@@ -287,44 +327,45 @@ def evaluate_performance(data, cur_sem, test_feature, test_result, model, \
         4. list containing the test results
         5. model to apply
         6. a description of the model 
-        7. boolean to indicate if we should oversample
-        8. list of the keys of the students on the test set passed
+        7. list of the keys of the students on the test set passed
     returns:
-        percentage the model got right
+        tuple containing f-measure and the confusion matrix
     """
     # semester count should start at 1
     assert(cur_sem >= 1)
 
-    # apply oversampling if we should
-    if oversample: 
-        (final_test_feature, final_test_result) = \
-                apply_oversampling(test_feature, test_result, data)
-    else: 
-        (final_test_feature, final_test_result) = \
-                (test_feature, test_result)
-
     # predict
     if VERB: 
         print('\nstarted evaluating performance of %s' % (model_desc))
-    prediction_lst = model.predict(final_test_feature)
-    #print(prediction_lst[0])
-    #print(final_test_result[0])
-    #exit()
+    prediction_lst = model.predict(test_feature)
 
-    assert(len(prediction_lst) == len(final_test_result))
+    assert(len(prediction_lst) == len(test_result))
 
     # discretize prediction 
-    disc_prediction_lst = get_discrete_prediction(prediction_lst)
+    disc_prediction_lst = get_discrete_prediction(data, prediction_lst)
 
     # show stats of how many evasions for the test result and the prediction list
-    show_class_proportion(final_test_result, 'final test result: ')
+    show_class_proportion(test_result, 'test result: ')
     show_class_proportion(disc_prediction_lst, 'discrete prediction result: ')
     
     # evaluate performance and get percentage of rights 
-    right_pct = show_model_perf(final_test_result, disc_prediction_lst)
+    #right_pct = show_model_perf(test_result, disc_prediction_lst)
     
-    # return percentage of rights the model got
-    return right_pct
+    # evaluate performance using f-measure
+    true_val_lst = get_flat_res_lst(test_result)
+    pred_val_lst = get_flat_res_lst(disc_prediction_lst)
+    fmeasure = f1_score(true_val_lst, pred_val_lst, average = 'micro')
+
+    # get confusion matrix
+    conf_matrix = confusion_matrix(true_val_lst, pred_val_lst)
+
+    # return f measure the model got
+    return (fmeasure, conf_matrix)
+
+def get_best_parameters():
+    """
+    shows which combination of parameters for each ml model gets the best result 
+    """
 
 def get_data(data, data_desc, year_inf, year_sup, semester, enh = False, 
         last_sem = False, filter_data = True):
@@ -387,66 +428,46 @@ def get_data(data, data_desc, year_inf, year_sup, semester, enh = False,
     # return 
     return (feat_name_lst, features_lst, target_lst, key_lst)
 
-def get_ml_models(sem, data, training_feature, training_result, key_train_lst): 
-    """
-    get a list of the ml models we'll be using. All of them already trained
-    receives: 
-        1. semester we are interested in 
-        2. dictionary containing the student information
-        3. list of training features
-        4. list of training results
-        5. list with the keys of the students in the training features
-    returns: 
-        list of tuples containing the model and a description of the model. List is
-        of the form: [(model, model_description)]
-    """
-    model_lst = []
-
-    # train models
-    get_trained_linear_regressor(model_lst, sem, data, training_feature, training_result,
-            key_train_lst)
-    get_trained_ann(model_lst, sem, data, training_feature, training_result, 
-            key_train_lst)
-    get_trained_svr(model_lst, sem, data, training_feature, training_result, 
-            key_train_lst)
-    #get_trained_random_forest(model_lst, training_feature, training_result)
-    #get_trained_naive_bayes(model_lst, training_feature, training_result)
-
-    return model_lst
-
-def get_num_non_grad(result_lst):
-    """
-    calculates the number of students that didn't graduate, in a list of students
-    output (so, values on the list should be GRADUATED, EVADED, MIGRATED)
-    receives:   
-        1. result list
-    returns: 
-        number of students that didn't graduate
-    """
-    return result_lst.count(EVADED) + result_lst.count(MIGRATED)
-
-def get_discrete_prediction(prediction_lst):
+def get_discrete_prediction(data, prediction_lst):
     """
     build and return a list of what will be the way out of the student, from the 
     prediction list of continuous variables
     receives: 
-        1. list of continuous variables, representing the prediction given by some
+        1. data we are working with
+        2. list of continuous variables, representing the prediction given by some
         model to some student
     returns: 
         discrete prediction list
     """
     disc_prediction_lst = []
+
+    # if it's a relative prediction, get data information
+    assert(gml.WAY_MODEL_TGT == 'absolute' or gml.WAY_MODEL_TGT == 'relative')
+    if gml.WAY_MODEL_TGT == 'relative':
+        (amount, grad_base_val, evade_base_val, migr_base_val) = \
+            get_tot_grad_evd_migr(data)
+
     for pred in prediction_lst:
-        max_value = max(pred)
-        max_index = list(pred).index(max_value)
-        if max_index == 0: 
-            disc_prediction_lst.append(GRADUATED)
-        elif max_index == 1:
-            disc_prediction_lst.append(EVADED)
-        elif max_index == 2: 
-            disc_prediction_lst.append(MIGRATED)
+        assert(len(pred) == 3)
+
+        # calculate value according to the way model pick target value
+        if gml.WAY_MODEL_TGT == 'absolute': 
+            grad_score = pred[GRAD_IND]
+            evade_score = pred[EVADE_IND]
+            migr_score = pred[MIGR_IND]
         else: 
-            exit('error')
+            grad_score = pred[GRAD_IND] / grad_base_val
+            evade_score = pred[EVADE_IND] / evade_base_val
+            migr_score = pred[MIGR_IND] / migr_base_val
+
+        # put correct value on discrete prediction list
+        if grad_score > evade_score and grad_score > migr_score: 
+            disc_prediction_lst.append(GRADUATED)
+        elif evade_score >= grad_score and evade_score > migr_score:
+            disc_prediction_lst.append(EVADED)
+        else: 
+            disc_prediction_lst.append(MIGRATED)
+
     return disc_prediction_lst
 
 def get_exclude_func_lst(data_desc):
@@ -475,25 +496,38 @@ def get_exclude_func_lst(data_desc):
     else: 
         exit("error on get exclude func lst")
 
-def normalize_values(stu_info, semester):
+def get_flat_res_lst(result_lst):
     """
-    not being used
-    normalize the pass rate of students
-    receive: 
-        1. a student dictionary containing all relevant information
-        2. a given semester that we should normalize
-    returns:
-        nothing
+    the original list of results is a list in which each entrie is itself a list 
+    (GRADUATED or EVADED or MIGRATED). This function 'flattens' the list, by
+    assigning to each of this lists the values 0, 1 and 2 (in this order)
+    Receives: 
+        1. original list of results
+    Returns: 
+        flattened list 
     """
-    # list of values to normalize
-    values_normalize = []
-    for key, stu in stu_info.items():
-        values_normalize.append(stu.pass_rate[semester - 1])
+    flat_list = []
+    for elem in result_lst: 
+        if elem == GRADUATED: 
+            flat_list.append(GRAD_IND)
+        elif elem == EVADED: 
+            flat_list.append(EVADE_IND)
+        elif elem == MIGRATED:
+            flat_list.append(MIGR_IND)
+        else:
+            exit('error on get_flat_res_lst')
+    return flat_list
 
-    # normalize
-    mean = stat.mean(values_normalize)
-    for key, stu in stu_info.items():
-        stu.pass_rate[semester - 1] = stu.pass_rate[semester - 1] - mean
+def get_num_non_grad(result_lst):
+    """
+    calculates the number of students that didn't graduate, in a list of students
+    output (so, values on the list should be GRADUATED, EVADED, MIGRATED)
+    receives:   
+        1. result list
+    returns: 
+        number of students that didn't graduate
+    """
+    return result_lst.count(EVADED) + result_lst.count(MIGRATED)
 
 def set_evasion_chance(ml_models, key_lst, data, features_lst, sem):
     """
@@ -508,7 +542,7 @@ def set_evasion_chance(ml_models, key_lst, data, features_lst, sem):
         nothing
     """
     # iterate through models
-    for (ml_model, model_desc) in ml_models: 
+    for [model_desc, ml_model, model_train_feat, model_test_feat] in ml_models: 
 
         # get prediction list
         prediction_lst = ml_model.predict(features_lst)
@@ -519,7 +553,7 @@ def set_evasion_chance(ml_models, key_lst, data, features_lst, sem):
             cur_stu = data[key]
             if sem < cur_stu.get_num_semesters(): # needed because student may have
                                                         #left
-                cur_stu.evasion_chance[(sem, model_desc)] = prediction_lst[ind]
+                cur_stu.evasion_chance[(sem, model_desc)] = list(prediction_lst[ind])
 
 def show_class_proportion(result_lst, description): 
     """
@@ -571,6 +605,7 @@ def report_best_model_conf():
     returns: 
         nothing
     """
+    # TODO
     report_best_conf_ann()
     report_best_conf_svr()
     report_best_conf_nb()
@@ -581,8 +616,14 @@ if __name__ == "__main__":
     # get decision tree information
     #analyse_decision_tree()
 
+    # get the best parameters for every model
+    #get_best_parameters()
+    
     # build and run machine learning models
     #build_run_ml_models_wrapper()
+
+    # plot ml graph
+    #plot_ml_model_perf()
 
     # get report on which parametrization is better for each model 
     #report_best_model_conf()

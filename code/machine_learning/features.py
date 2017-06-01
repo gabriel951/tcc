@@ -1,6 +1,8 @@
 # this file contain features function that we'll be used to put features in the right
 # format for the machine learning algorithms to work
 
+from basic_ml import *
+
 import sys
 sys.path.append('..')
 from basic import *
@@ -19,14 +21,6 @@ VALID_WAY_IN_VALUES = ['Vestibular', 'Convênio-Int', 'Transferência Obrigatór
         'Portador Diplom Curso Superior', 'PEC-Peppfol-Graduação', 
         'Vestibular para mesmo Curso', 'Programa de Avaliação Seriada', 'Enem']
     
-# lists of the form (<graduation risk>, <evasion_risk>, <migration_risk>)
-GRADUATED = [1, 0, 0]
-EVADED = [0, 1, 0]
-MIGRATED = [0, 0, 1]
-
-
-# code for people that didn't graduate - migration or evasion
-NOT_GRADUATED = -1
 
 def add_feature_sex(stu, stu_features, feat_name_lst):
     """

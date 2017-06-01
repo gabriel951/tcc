@@ -87,7 +87,7 @@ def get_chi_square_courses_grouped():
     exp_freq = []
 
     # info for all courses
-    (amount_all, proportion_all) = get_grad_info(stu_info, lambda stu: True)
+    (amount_all, proportion_all) = get_grad_evd_migr_info(stu_info, lambda stu: True)
 
     # function that return true for only one group
     func_lst = []
@@ -97,7 +97,7 @@ def get_chi_square_courses_grouped():
 
     for func in func_lst: 
         # info for the course
-        (amount_course, proportion_course) = get_grad_info(stu_info, func)
+        (amount_course, proportion_course) = get_grad_evd_migr_info(stu_info, func)
 
         # observed frequency 
         cur_obs_freq = round(amount_course * proportion_course)
@@ -131,11 +131,11 @@ def get_chi_square_courses_separated():
     exp_freq = []
 
     # info for all courses
-    (amount_all, proportion_all) = get_grad_info(stu_info, lambda stu: True)
+    (amount_all, proportion_all) = get_grad_evd_migr_info(stu_info, lambda stu: True)
 
     for course in COURSES_OFF_NAME: 
         # info for the course
-        (amount_course, proportion_course) = get_grad_info(stu_info, \
+        (amount_course, proportion_course) = get_grad_evd_migr_info(stu_info, \
                  lambda stu: stu.course == course)
 
         # observed frequency 
