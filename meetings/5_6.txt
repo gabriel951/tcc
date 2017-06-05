@@ -1,0 +1,37 @@
+# antes
+    -> Obg pela carta de recomendação no mestrado! Se conseguir me formar esse
+semestre... Valeu Ladeira. 
+    -> não fiz o teste de normalidade para o naive bayes. Considerando que algumas
+variáveis podem ter distribuição normal e outras não, achei que seria melhor tentar
+ambos os parâmetros para Naive Bayes. Afinal, esta fase que estamos é para
+experimentar! Daí eu fiz isso. 
+    -> Inicialmente, tentei rodar os modelos com os diferentes parâmetros nos dados
+de teste, para ver qual é o melhor. Entretanto, por não estar fazendo
+cross-validation, isso poderia significar escolher o modelo errado por conta de
+overfitting. Tentei então usar cross-validation, usando as funções da scikit-learn para
+isso.  
+    -> Para métrica de cross-validation adotada, usei a 'neg_mean_absolute_error'.
+Não poderia usar a f1 pois estou trabalhando com regressores e a scikit não suporta
+uma métrica de classificação para regressores. 
+    -> Tive uma outra ideia para mostrar a performance dos modelos. Seria uma tabela
+mostrando a performance dos vários modelos (após determinarmos a configuração ótima) 
+conforme o passar dos semestres. 
+    -> Código demorou 22 000 segundos = 6 horas para rodar para a ANN(considerando 4 tipos
+diferentes de layers). Se eu for considerar os 10 x 10 valores, vai demorar demais!
+Posso considerar 5 x 5 valores? Deve demorar mais de um dia. 
+    -> Para a SVR, alguns kernels demoraram demais a convergir: por exemplo o
+polinomial (que estava demorando mais de 5 minutos apenas para um semestre dos alunos
+velhos - que é um grupo bem pequeno). Sugiro retirarmos esse.  Kernel "pré-calculado"
+deu erro. Acho que isso pode ser em decorrência do fato da regressão ser multioutput,
+mas não consegui consertar esse erro até agora.  Kernel linear demorou mais de 7
+minutos para um semestre do grupo dos alunos de ti). Sugiro retirarmos este. 
+Rodei então apenas para os kernels rbf e sigmoid.
+    -> Calendário: sem contar essa reunião, faltam 5 reuniões para escrever uma
+monografia, chamar a banca, escrever resumo do PIBIC, preparar apresentação. O
+semestre não está um mar de rosas por conta de geometria diferencial! 
+        * vou viajar
+        * não tenho problema em trabalhar nas férias, desde que não seja na data da
+          viagem. 
+        * resumo PIBIC
+
+# depois

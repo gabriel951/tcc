@@ -8,3 +8,6 @@
         * naive bayes: como decido se uso gauss ou não? mais da metade das variáveis
           ser normal?
     -> fiz as duas métricas, mas a métrica de valor absoluto é melhor.
+
+# depois
+    -> dar uma olhada se em algum dos grupos ninguém migrou

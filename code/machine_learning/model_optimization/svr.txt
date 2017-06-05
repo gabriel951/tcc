@@ -1,0 +1,24 @@
+performance - ml model: SVR - data: young_students_ti_courses
+	SVR_no_tail_absolute_r_b_f: -0.261114515426
+	SVR_use_tail_absolute_r_b_f: -0.263260706033
+	SVR_no_tail_absolute_s_i_g_m_o_i_d: -0.302688702275
+	SVR_use_tail_absolute_s_i_g_m_o_i_d: -0.302688702297
+
+performance - ml model: SVR - data: young_students_lic_courses
+	SVR_no_tail_absolute_r_b_f: -0.31001293929
+	SVR_use_tail_absolute_r_b_f: -0.314829337552
+	SVR_no_tail_absolute_s_i_g_m_o_i_d: -0.343539573418
+	SVR_use_tail_absolute_s_i_g_m_o_i_d: -0.343539573418
+
+performance - ml model: SVR - data: young_students_comp_courses
+	SVR_no_tail_absolute_r_b_f: -0.257725714238
+	SVR_use_tail_absolute_r_b_f: -0.259375467566
+	SVR_no_tail_absolute_s_i_g_m_o_i_d: -0.326696545238
+	SVR_use_tail_absolute_s_i_g_m_o_i_d: -0.326696545285
+
+performance - ml model: SVR - data: old_students
+	SVR_no_tail_absolute_s_i_g_m_o_i_d: -0.194476190476
+	SVR_use_tail_absolute_s_i_g_m_o_i_d: -0.194476190476
+	SVR_no_tail_absolute_r_b_f: -0.251920644092
+	SVR_use_tail_absolute_r_b_f: -0.258511738848
+

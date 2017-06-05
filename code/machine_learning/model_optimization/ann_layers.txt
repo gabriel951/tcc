@@ -1,0 +1,40 @@
+performance - ml model: ANN - data: young_students_ti_courses
+	ANN_use_tail_absolute_24_0.9_0.001: -0.29306540903
+	ANN_no_tail_absolute_100_0.9_0.001: -0.293214453645
+	ANN_no_tail_absolute_24_0.9_0.001: -0.293263126862
+	ANN_use_tail_absolute_12_0.9_0.001: -0.29525721236
+	ANN_no_tail_absolute_12_0.9_0.001: -0.295365090046
+	ANN_no_tail_absolute_36_0.9_0.001: -0.29576891266
+	ANN_use_tail_absolute_100_0.9_0.001: -0.29586552415
+	ANN_use_tail_absolute_36_0.9_0.001: -0.296846393734
+
+performance - ml model: ANN - data: young_students_lic_courses
+	ANN_no_tail_absolute_12_0.9_0.001: -0.317776841599
+	ANN_no_tail_absolute_36_0.9_0.001: -0.319092447553
+	ANN_no_tail_absolute_24_0.9_0.001: -0.322870442603
+	ANN_use_tail_absolute_24_0.9_0.001: -0.324285603273
+	ANN_no_tail_absolute_100_0.9_0.001: -0.324891600388
+	ANN_use_tail_absolute_36_0.9_0.001: -0.325658675514
+	ANN_use_tail_absolute_100_0.9_0.001: -0.328696391986
+	ANN_use_tail_absolute_12_0.9_0.001: -1.60051592059
+
+performance - ml model: ANN - data: young_students_comp_courses
+	ANN_no_tail_absolute_12_0.9_0.001: -0.277024513108
+	ANN_no_tail_absolute_36_0.9_0.001: -0.27838157974
+	ANN_use_tail_absolute_24_0.9_0.001: -0.278735960827
+	ANN_use_tail_absolute_36_0.9_0.001: -0.278877812302
+	ANN_no_tail_absolute_24_0.9_0.001: -0.27923103987
+	ANN_use_tail_absolute_12_0.9_0.001: -0.279698087539
+	ANN_no_tail_absolute_100_0.9_0.001: -0.279845718246
+	ANN_use_tail_absolute_100_0.9_0.001: -0.281109345502
+
+performance - ml model: ANN - data: old_students
+	ANN_no_tail_absolute_12_0.9_0.001: -0.240466001868
+	ANN_no_tail_absolute_24_0.9_0.001: -0.245567025572
+	ANN_use_tail_absolute_12_0.9_0.001: -0.2464626635
+	ANN_no_tail_absolute_36_0.9_0.001: -0.253291668041
+	ANN_use_tail_absolute_24_0.9_0.001: -0.256025566882
+	ANN_use_tail_absolute_36_0.9_0.001: -0.25632614435
+	ANN_no_tail_absolute_100_0.9_0.001: -0.260792565637
+	ANN_use_tail_absolute_100_0.9_0.001: -0.26362826149
+

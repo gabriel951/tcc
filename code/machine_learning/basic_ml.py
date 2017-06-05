@@ -19,3 +19,9 @@ NOT_GRADUATED = -1
 
 # path and name of the pickle object consisting of the ml model
 PCK_ML_MODEL = './data/perf_ml_model'
+
+# path and name of the pickle object consisting of all models
+OPT_PCK_ML_MODEL = './data/all_conf_ml_models'
+
+# number of k fold for cross validation
+NUM_KFOLD = 10
