@@ -1,0 +1,18 @@
+# antes
+    -> tinha um bug grave no código, que a informação para o semestre do aluno estava
+saindo errada.
+        * erro ao acessar a entrada da lista. A variável semestre estava sendo
+          modificada dentro da função, o que não deveria estar ocorrendo. 
+    -> não estou mais usando oversampling
+    -> fiz o resumo do PIBIC 
+    -> rodei os modelos com as melhores configurações. Resultados estão em uma
+tabela. Melhor modelo foi o regressor linear. 
+
+# depois 
+    -> testei para os primeiros alunos. 
+        * ti: aluno migra, modelo diz que vai graduar/evadir
+        * lic: aluno evade, modelo diz que vai evadir (e acerta) - exceto 1 semestre
+        * computação: aluno migra, modelo diz q vai evadir, mas dá como alta a chance
+          de migrar
+        * velhos: aluno evade, modelo diz que vai evadir (e acerta) - exceto 1
+          semestre 

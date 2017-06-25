@@ -33,8 +33,6 @@ def generate_graphs():
  
     # for every model info, make the graph
     for (model, model_desc) in models_lst: 
-        if model_desc != 'old_students':
-            continue
         print('starting for %s' % (model_desc))
 
         # deprecated features: local and race
@@ -42,8 +40,10 @@ def generate_graphs():
         prim_feat_lst = ['sex', 'age', 'quota', 'school_type', 'course', \
                 'race', 'way_in', 'way_out', 'grades']
         sep_course = False
-        for prim_feat in prim_feat_lst: 
-            get_graph(model_desc, prim_feat, model, sep_course, data_type = 'discrete')
+        #for prim_feat in prim_feat_lst: 
+        #    get_graph(model_desc, prim_feat, model, sep_course, data_type = 'discrete')
+        get_graph(model_desc, 'way_out', model, sep_course, data_type = 'discrete')
+
 
         ## derived features - continuous
         # list of tuples of the form: [(<attr_name, sep_course, index, binwidth>)]
@@ -56,20 +56,20 @@ def generate_graphs():
         derv_feat_lst.append(('fail_rate', False, LAST_ELEM, 0.05))
         #derv_feat_lst.append(('drop_rate', True, LAST_ELEM, 0.05))
         derv_feat_lst.append(('drop_rate', False, LAST_ELEM, 0.05))
-        derv_feat_lst.append(('credit_rate_acc', False, 0, 2))
+        derv_feat_lst.append(('credit_rate_acc', False, LAST_ELEM, 2))
         derv_feat_lst.append(('hard_rate', False, LAST_ELEM, 0.05))
-        for (feat_name, sep_course, index, binwidth) in derv_feat_lst: 
-            get_graph(model_desc, feat_name, model, sep_course, \
-                    data_type = 'continuous', index = LAST_ELEM, binwidth = binwidth)
+        #for (feat_name, sep_course, index, binwidth) in derv_feat_lst: 
+        #    get_graph(model_desc, feat_name, model, sep_course, \
+        #            data_type = 'continuous', index = index, binwidth = binwidth)
 
         ## derived features - discrete
         derv_feat_lst = []
         derv_feat_lst.append(('in_condition', False, LAST_ELEM))
         #derv_feat_lst.append(('in_condition', True, LAST_ELEM))
         derv_feat_lst.append(('position', False, LAST_ELEM))
-        for (feat_name, sep_course, index) in derv_feat_lst: 
-            get_graph(model_desc, feat_name, model, sep_course, data_type = 'discrete', \
-                    index = LAST_ELEM)
+        #for (feat_name, sep_course, index) in derv_feat_lst: 
+        #    get_graph(model_desc, feat_name, model, sep_course, data_type = 'discrete', \
+        #            index = LAST_ELEM)
 
 def get_graph(model_desc, feature, stu_info, sep_course, data_type, index = None, binwidth =
         0.05):

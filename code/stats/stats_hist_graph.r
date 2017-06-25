@@ -30,6 +30,7 @@ if (to_split == 0)
                 #geom_histogram(binwidth = bin_size) + 
                 scale_y_continuous(labels = percent) + 
                 ylab("quantidade") + 
+                xlab("valores") +
                 theme_bw()
 } else
 {

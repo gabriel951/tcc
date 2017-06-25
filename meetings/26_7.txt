@@ -1,0 +1,38 @@
+# antes
+    -> Professor, você mandou o resumo do PIBIC?
+    -> Não fiz o artigo (nem consegui começar) pq estava estudando para as provas de
+geometria diferencial e demais. Desculpe, achei que estaria mais fácil esse fim de
+semestre! 
+
+    -> Dúvida Importante: Até que dia você tem para fazer a apresentação?
+            * 11/7: É esse dia? Pq se for precisamos pensar em um cronograma bem
+              enxuto. Aliás, eu nem sei se consigo. 
+            * 17/7: Estava contando que ia ser esse dia
+
+    -> Viajo no dia 15/7, de modo que preciso defender antes disso. Minha sugestão: 
+            * 5/7: te mando monografia com o principal já escrito. Você revisa e me
+              dá feedback do que preciso melhorar. 
+            * 10/7: pela manhã, te mando monografia. Você me retorna as últimas
+              correções que devem ser feitas. 
+            * 11/7: mando versão final da monografia para banca
+            * 14/7: apresentação para banca
+
+    -> Aqui a monografia como está agora: 
+            * Tem problema citar artigos do Hoed? 
+            * Fundamentação Teórica: 
+                -> Falta escrever sobre os métodos de aprendizagem de máquina
+                -> Falta definir f-measure
+            * Metodologia: 
+                -> Tirar seção de Oversampling, mas notar que os dados de treino e os
+                    dados de teste não são análogos. 
+                -> Explicar como validação foi usada para estimar parâmetros
+                -> Explicar que se escolheu f-measure para avaliar o desempenho
+                -> Explicar o funcionamento do modelo (divisão em treino e teste,
+                    divisão por semestre, eliminação de alunos que já saíram)
+            * Resultado:
+                -> Falar quais os parâmetros que foram escolhidos.
+                -> Analisar o desempenho dos modelos por semestre. 
+            * Conclusão: 
+                -> Falta escrever toda essa seção
+
+# depois

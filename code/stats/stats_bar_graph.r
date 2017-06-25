@@ -22,6 +22,7 @@ if (to_split == 0) {
     my_plot <-  ggplot(data, aes(values)) + 
                 geom_bar(fill = "darkblue") + 
                 ylab("quantidade") + 
+                xlab("valores") + 
                 theme_bw()
 } else {
     print("will split value according to the way out")

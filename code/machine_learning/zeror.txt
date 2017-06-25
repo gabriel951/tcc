@@ -1,0 +1,12 @@
+performance - ml model: zeroR - data: young_students_ti_courses
+	zeroR: 0.644410483619
+
+performance - ml model: zeroR - data: young_students_lic_courses
+	zeroR: 0.708775282534
+
+performance - ml model: zeroR - data: young_students_comp_courses
+	zeroR: 0.60288689867
+
+performance - ml model: zeroR - data: old_students
+	zeroR: 0.619115513869
+

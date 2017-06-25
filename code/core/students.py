@@ -198,13 +198,6 @@ class Student():
             return True
         return False
 
-    def few_pass(self, pos):
-        """
-        returns True case for the semester with position pos and the previous one 
-        the student didnt pass in four disciplines of the course
-        """
-        # TODO: can't know what are the disciplines of the course
-
     def get_course(self, course_lst):
         """
         DEPRECATED
@@ -220,11 +213,47 @@ class Student():
         exit('could not load course %s for the year %d and semester %d' %
                 (self.course, self.year_in, self.sem_in))
 
-    # TODO
-    def get_imprv_way_in(self): 
-        pass
-    def get_imprv_way_out(self): 
-        pass
+    def get_dic_coursed_sub_year_sem(self):
+        """
+        get dictionary containing as key (year, sem) and as value whether student
+        coursed any subject for that year and semester. Contain all keys 
+        receives: 
+            nothing
+        returns: 
+            dictionary built
+        """
+        # initially, empty dic
+        coursed_sub_year_sem = {}
+
+        # get list of all the semesters the student was in unb 
+        list_sem = self.get_lst_year_sem_in_unb()
+
+        # populate dictionary with the keys, using the list of all semesters
+        for (year, sem) in list_sem: 
+            coursed_sub_year_sem[(year, sem)] = False
+
+        # index indicates what each entrie in list represents 
+        code_pos = 0 
+        name_pos = 1 
+        grade_pos = 2 
+        year_pos = 3 
+        sem_pos = 4 
+
+        # iterate through students grades in a subject - and chance entries in dict
+        # corresponding to this values
+        for subject, data_list in self.grades.items(): 
+            for data in data_list: 
+
+                # get year and semester the data was coursed
+                year_coursed = data[year_pos]
+                sem_coursed = data[sem_pos]
+                
+                # entrie in dictionary for the year coursed and semester coursed must
+                # be True
+                coursed_sub_year_sem[(year_coursed, sem_coursed)] = True
+
+        # return dictionary
+        return coursed_sub_year_sem
 
     def get_num_semesters(self):
         """
@@ -241,11 +270,118 @@ class Student():
         num_semesters += 1
         return num_semesters
 
+    def get_num_effective_sem(self):
+        """
+        get the number of effective semesters the student stayed in UnB
+        receives: 
+            1. nothing
+        returns: 
+            nothing  
+        """
+
+        # obtain dictionary containing as key: (year, semester) and as value
+        # boolean indicating whether the student coursed any subject in that year and
+        # semester 
+        coursed_sub_year_sem = self.get_dic_coursed_sub_year_sem()
+
+        # get the number of semesters the student stayed in UnB
+        num_sem_in_unb = self.get_num_semesters()
+
+        # get how many semesters the student skipped - didn't course any subject
+        semesters_skipped = 0
+        for key, coursed_sub in coursed_sub_year_sem.items():
+            if not coursed_sub: 
+                semesters_skipped += 1
+
+        # return number of semesters the student was in unb
+        return num_sem_in_unb - semesters_skipped
+
+    def get_index_sem(self, semester): 
+        """
+        get the index on the attribute list of the semester we are interested
+        receives: 
+            1. semester we are interested
+        returns: 
+            the appropriate index to access the list in the correct position
+
+        * the index may not always be equal to semester because the student may have
+        dropped a semester 
+        """
+        # obtain dictionary containing as key: (year, semester) and as value
+        # boolean indicating whether the student coursed any subject in that year and
+        # semester 
+        coursed_sub_year_sem = self.get_dic_coursed_sub_year_sem()
+
+        # get list of the order of semesters the student stayed in UnB
+        lst_year_sem_in_unb = self.get_lst_year_sem_in_unb()
+
+        # obs: the right index is the total semester in unb until the semester coursed
+        # equal the semester we are interested
+        right_index = 0
+        sem_coursed = 0
+
+        # iterate through the semesters in the list and counts the semester the
+        # student coursed disciplines and the semester the student 
+        for (year, sem) in lst_year_sem_in_unb:
+            right_index += 1 
+            if coursed_sub_year_sem[(year, sem)]:
+                sem_coursed += 1
+
+            # iterate until the semester coursed is the same
+            # of the semester we are interested
+            if sem_coursed == semester: 
+                break
+
+        return right_index
+
+    def get_lst_year_sem_in_unb(self):
+        """
+        get a list of the year and semester the student was in UnB
+        receives: 
+            1. nothing
+        returns: 
+            list containing (in order) pairs (year, sem) that the student was in UnB
+        """
+        lst_year_sem_in_unb = []
+        
+        # get boundaries: year and semester the student entered and left
+        max_year, max_sem = self.year_out, self.sem_out
+        min_year, min_sem = self.year_in, self.sem_in
+
+        # if student left in the summer, correct the year and the semester
+        if max_sem == 0: 
+            max_year -= 1
+            max_sem = 2
+
+        assert(max_sem == 1 or max_sem == 2)
+        assert(min_sem == 1 or min_sem == 2)
+        
+        # iterate throught the semesters and add then to the list
+        cur_year, cur_sem = min_year, min_sem
+        while cur_year != max_year or cur_sem != max_sem: 
+            # add current year to the list and current semester
+            lst_year_sem_in_unb.append((cur_year, cur_sem))
+
+            # increment current year and current semester 
+            if cur_sem == 1: 
+                cur_sem = 2
+            else: 
+                cur_year += 1
+                cur_sem = 1
+
+        # add last semester to the list
+        lst_year_sem_in_unb.append((max_year, max_sem)) 
+
+
+        return lst_year_sem_in_unb
+
     def get_semester(self, year, semester):
         """
         receives a student, an year and a semester. 
         returns the semester the student is in.
 
+        * does NOT take into account if during a semester the student did not course
+        any subjects. The semester is counted anyway.
         * the count start in semester 0 
         """
         current_semester = (year - self.year_in) * 2 + (semester - self.sem_in)
@@ -424,9 +560,8 @@ class Student():
         assert (pos > 0)
         credits_cur_semester = self.get_credit_appr(pos)
         credits_last_semester = self.get_credit_appr(pos - 1)
+        exit('Not implemented yet')
 
-        # TODO: need to know the minimum number of credits for each course
-        
     def pos_2_yearsem(self, pos, year, sem):
         """
         receives a position the student is in, a year and a semester

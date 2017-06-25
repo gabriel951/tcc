@@ -247,8 +247,8 @@ def get_contigency_table():
     index = None
 
     #get_contingency_table_feature('age', stu_info, sep_course, index, course = 'all')
-    get_contingency_table_feature('course', stu_info, sep_course, index, \
-            course = 'all')
+    #get_contingency_table_feature('course', stu_info, sep_course, index, \
+    #        course = 'all')
     
 def get_contingency_table_feature(feature, stu_info, sep_course, index,\
         course):
@@ -274,8 +274,8 @@ def get_contingency_table_feature(feature, stu_info, sep_course, index,\
     print(table)
 
     # percentage table - optional
-    #percentage_age_table = age_table.apply(lambda x: x/x.sum(), axis = 1)
-    #print(percentage_age_table)
+    percentage_table = table.apply(lambda x: 2 * x/x.sum(), axis = 1)
+    print(percentage_table)
 
 def get_feature_val(feature, stu_info, sep_course, index, course = 'all'):
     """
@@ -351,42 +351,47 @@ def handle_feature(stu_info, rows_list, feature):
         # people that died are considered outliers
         for row in rows_list:
             assert(row != 'Falecimento')
-        rows_list = [row.replace('Desligamento - Abandono', 'deslg') \
+        rows_list = [row.replace('Desligamento - Abandono', 'evadiu') \
                 for row in rows_list] 
-        rows_list = [row.replace('Mudança de Curso', 'mdc') \
+        rows_list = [row.replace('Mudança de Curso', 'migrou') \
                 for row in rows_list] 
-        rows_list = [row.replace('Mudança de Turno', 'mdt') \
+        rows_list = [row.replace('Mudança de Turno', 'migrou') \
                 for row in rows_list] 
-        rows_list = [row.replace('Deslig - não cumpriu condição', 'deslg') \
+        rows_list = [row.replace('Deslig - não cumpriu condição', 'evadiu') \
                 for row in rows_list] 
-        rows_list = [row.replace('Repr 3 vezes na mesma disc obr', 'deslg') \
+        rows_list = [row.replace('Repr 3 vezes na mesma disc obr', 'evadiu') \
                 for row in rows_list] 
-        rows_list = [row.replace('Novo Vestibular', 'vest') \
+        rows_list = [row.replace('Novo Vestibular', 'migrou') \
                 for row in rows_list] 
-        rows_list = [row.replace('Vestibular p/outra Habilitação', 'vest') \
+        rows_list = [row.replace('Vestibular p/outra Habilitação', 'migrou') \
                 for row in rows_list] 
-        rows_list = [row.replace('Desligamento-Força de Convênio', 'deslg') \
+        rows_list = [row.replace('Desligamento-Força de Convênio', 'evadiu') \
                 for row in rows_list] 
-        rows_list = [row.replace('Desligamento Voluntário', 'deslg') \
+        rows_list = [row.replace('Desligamento Voluntário', 'evadiu') \
                 for row in rows_list] 
-        rows_list = [row.replace('Desligamento Falt Documentação', 'deslg') \
+        rows_list = [row.replace('Desligamento Falt Documentação', 'evadiu') \
                 for row in rows_list] 
-        rows_list = [row.replace('Desligamento Decisão Judicial', 'deslg') \
+        rows_list = [row.replace('Desligamento Decisão Judicial', 'evadiu') \
                 for row in rows_list] 
-        rows_list = [row.replace('Desligamento Jubilamento', 'deslg') \
+        rows_list = [row.replace('Desligamento Jubilamento', 'evadiu') \
                 for row in rows_list] 
-        rows_list = [row.replace('Desligamento por Força de Intercãmbio', 'deslg') \
+        rows_list = [row.replace('Desligamento por Força de Intercãmbio', 'evadiu') \
                 for row in rows_list] 
         rows_list = [row.replace('Anulação de Registro', 'null') \
                 for row in rows_list] 
         rows_list = [row.replace('Ex-Aluno (Decreto 477)', 'dec') \
                 for row in rows_list] 
-        rows_list = [row.replace('Transferência', 'trnsf') \
+        rows_list = [row.replace('Transferência', 'migrou') \
                 for row in rows_list] 
-        rows_list = [row.replace('Formatura', 'form') \
+        rows_list = [row.replace('Formatura', 'graduou') \
                 for row in rows_list] 
         rows_list = [row.replace('Falecimento', 'mrr') \
                 for row in rows_list] 
+        rows_list = [row.replace('Desligamento', 'evadiu') \
+                for row in rows_list] 
+        rows_list = [row.replace('Judicial', 'evadiu') \
+                for row in rows_list] 
+
         return rows_list
     elif feature == 'race':
         rows_list = [row.replace('0', '000') for row in rows_list] 
@@ -638,6 +643,51 @@ def show_stats_atr(stu_info, atr, atr_info):
         percentage = float(data[GRA_STU_IND]) / data[NUM_STU_IND]
         print('\t percentage: %f' % (percentage))
 
+def show_stu_remain_sem(): 
+    """
+    shows how many students remain as the semester passes. also, show students that
+    stayed for more than LIMIT_SEM 
+    receives: 
+        1. nothing
+    returns: 
+        nothing
+    """
+    LIMIT_SEM = 24
+
+    # get data collection along with the descriptions
+    data_coll = get_model_info()
+
+    # iterate through the data description
+    for (data, data_desc) in data_coll: 
+
+        print("\n\nstarting study for data: %s" % (data_desc))
+
+        # get how many students are in the data
+        amount = len(data)
+
+        # iterate through semester (1 to 25)
+        for cur_sem in range(1, 26): 
+
+            # count the students that remained in UnB until the semester we are in
+            remain_stu = 0
+            for key, stu in data.items(): 
+                if stu.get_num_semesters() >= cur_sem: 
+                    remain_stu += 1
+
+            # show proportion
+            print("\tproportions of students who remain after semester %d: %.2f"
+                    % (cur_sem, remain_stu/amount))
+            print("\tnumber of students who remain after semester %d: %d"
+                    % (cur_sem, remain_stu))
+
+
+    # show students that took long than expected
+    for (data, data_desc) in data_coll: 
+        # show students that took more than what was expected
+        for key, stu in data.items():
+            if stu.get_num_semesters() > 20: 
+                print("student stayed more thant 23 semesters: %d" % (key))
+
 def study_dist_dpf_rate():
     """
     study the distribution for the drop/pass/fail rate
@@ -797,13 +847,17 @@ if __name__ == "__main__":
     #get_chi_square()
 
     # kendall and coefficient of correlation
-    apply_kendall()
+    #apply_kendall()
     #get_coef_cor()
 
     # particular atributes
     #study_attr()
     #study_dist_dpf_rate()
 
-    # train and test division
+    # train and test division proportion
     #study_train_test_division()
+
+    # show how many students remain as the semester passes - also show students that
+    # took a lot of time in UnB
+    #show_stu_remain_sem()
 

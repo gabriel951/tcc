@@ -1,3 +1,25 @@
+% todo: por alunos seniors
+% atribute list to check 
+    % 1. age 
+    % 2. course
+    % 3. grades?
+    % 4. race?
+    % 5. sex
+    % 6. quota
+    % 7. school type 
+    % 8. way in 
+    % 9. way out
+
+    % 10. credit rate acc
+    % 11. in condition
+    % 12. drop rate
+    % 13. fail rate
+    % 14. hard rate 
+    % 15. improvement rate
+    % 16. ira
+    % 17. pass rate
+    % 18. position
+
 % 1. age
 \clearpage
 \begin{figure}[!ht]
@@ -79,6 +101,21 @@
     \end{subfigure}
     \caption{Atributo Curso, conforme os diferentes modelos}
 \end{figure}
+
+Por questões de legibilidade, a legenda no gráfico foi encurtada. Seu significado é
+apresentado a seguir: 
+\begin{itemize}
+    \item \texttt{cic\_b}: Alunos de Ciência da Computação (Bacharelado).
+    \item \texttt{cic\_lic}: Alunos de Computação (Licenciatura).
+    \item \texttt{eng\_comp}: Alunos de Engenharia da Computação.
+    \item \texttt{eng\_mec}: Alunos de Engenharia Mecatrônica.
+    \item \texttt{eng\_redes}: Alunos de Engenharia de Redes. 
+    \item \texttt{eng\_softw}: Alunos de Engenharia de Software
+\end{itemize}
+
+No imagem correspondente aos alunos jovens da licenciatura, o gráfico aparece de modo
+um pouco estranho. Isso ocorre porque há apenas um curso nessa categoria:
+licenciatura em computação. 
 
 % 5. sex
 \clearpage
@@ -244,7 +281,24 @@
     \caption{Atributo Forma de Entrada, conforme os diferentes modelos}
 \end{figure}
 
+Por questões de legibilidade, as legendas nos gráficos foram encurtadas. Seu significado é
+apresentado a seguir: 
+\begin{itemize}
+    \item \texttt{vest}: Ingresso via Vestibular
+    \item \texttt{ci}: Ingresso via Convênio-Int
+    \item \texttt{to}: Ingresso via Transferência Obrigatória
+    \item \texttt{to}: Ingresso via Transferência Obrigatória
+    \item \texttt{ac}: Ingresso via Acordo Cultural PEC
+    \item \texttt{ca}: Ingresso via Convênio Andifes
+    \item \texttt{mc}: Ingresso via Matrícula Cortesia
+    \item \texttt{tf}: Ingresso via Transferência Facultativa
+    \item \texttt{ppp}: Ingresso via PEC-G Peppfol
+    \item \texttt{pdcs}: Ingresso pois é portador de diploma de curso superior
+    \item \texttt{vmc}: Ingresso via Vestibular para Mesmo Curso
+\end{itemize}
+
 % 9. way out
+% todo: agrupar em apenas 3 valores: desligamento, formatura e transferência
 \clearpage
 \begin{figure}[!ht]
     \centering
@@ -323,7 +377,8 @@
         \includegraphics[width = 8cm, height=7cm]{all_students/credit_rate_acc.png}
         \caption{Todos os Alunos}
     \end{subfigure}
-    \caption{Atributo Quantidade de Créditos, conforme os diferentes modelos}
+    \caption{Atributo Quantidade de Créditos, conforme os diferentes modelos.
+    Considerando o último semestre de cada aluno na UnB.}
 \end{figure}
 
 % 11. in condition
@@ -364,7 +419,8 @@
         \includegraphics[width = 8cm, height=7cm]{all_students/in_condition.png}
         \caption{Todos os Alunos}
     \end{subfigure}
-    \caption{Atributo em condição, conforme os diferentes modelos}
+    \caption{Atributo em condição, conforme os diferentes modelos. Considerando o
+    último semestre de cada aluno na UnB.}
 \end{figure}
 
 % 12. drop rate
@@ -405,7 +461,8 @@
         \includegraphics[width = 8cm, height=7cm]{all_students/drop_rate.png}
         \caption{Todos os Alunos}
     \end{subfigure}
-    \caption{Atributo Taxa de Trancamento, conforme os diferentes modelos}
+    \caption{Atributo Taxa de Trancamento, conforme os diferentes modelos.
+    Considerando o último semestre de cada aluno na UnB.}
 \end{figure}
 
 % 13. fail rate
@@ -446,7 +503,8 @@
         \includegraphics[width = 8cm, height=7cm]{all_students/fail_rate.png}
         \caption{Todos os Alunos}
     \end{subfigure}
-    \caption{Atributo Taxa de Falhas, conforme os diferentes modelos}
+    \caption{Atributo Taxa de Falhas, conforme os diferentes modelos. Considerando o
+    último semestre de cada aluno na UnB.}
 \end{figure}
 
 % 14. hard rate
@@ -487,7 +545,8 @@
         \includegraphics[width = 8cm, height=7cm]{all_students/hard_rate.png}
         \caption{Todos os Alunos}
     \end{subfigure}
-    \caption{Atributo Taxa de Aprovação em Matérias Difíceis, conforme os diferentes modelos}
+    \caption{Atributo Taxa de Aprovação em Matérias Difíceis, conforme os diferentes
+    modelos. Considerando o último semestre do aluno na UnB.}
 \end{figure}
 
 % 15. improvement rate
@@ -528,7 +587,8 @@
         \includegraphics[width = 8cm, height=7cm]{all_students/improvement_rate.png}
         \caption{Todos os Alunos}
     \end{subfigure}
-    \caption{Atributo Taxa de Melhora, conforme os diferentes modelos}
+    \caption{Atributo Taxa de Melhora, conforme os diferentes modelos. Considerando o
+    último semestre de cada aluno na UnB.}
 \end{figure}
 
 % 16. ira
@@ -569,7 +629,8 @@
         \includegraphics[width = 8cm, height=7cm]{all_students/ira.png}
         \caption{Todos os Alunos}
     \end{subfigure}
-    \caption{Atributo IRA, conforme os diferentes modelos}
+    \caption{Atributo IRA, conforme os diferentes modelos. Considerando o último
+    semestre de cada aluno na UnB.}
 \end{figure}
 
 % 17. pass rate
@@ -610,7 +671,8 @@
         \includegraphics[width = 8cm, height=7cm]{all_students/pass_rate.png}
         \caption{Todos os Alunos}
     \end{subfigure}
-    \caption{Atributo Taxa de Aprovação, conforme os diferentes modelos}
+    \caption{Atributo Taxa de Aprovação, conforme os diferentes modelos. Considerando
+    o último semestre de cada aluno na UnB.}
 \end{figure}
 
 % 18. position
@@ -651,6 +713,7 @@
         \includegraphics[width = 8cm, height=7cm]{all_students/position.png}
         \caption{Todos os Alunos}
     \end{subfigure}
-    \caption{Atributo Posição, conforme os diferentes modelos}
+    \caption{Atributo Posição, conforme os diferentes modelos. Considerando o último
+    semestre de cada aluno na UnB.}
 \end{figure}
 

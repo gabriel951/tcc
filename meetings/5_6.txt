@@ -1,6 +1,6 @@
 # antes
     -> Obg pela carta de recomendação no mestrado! Se conseguir me formar esse
-semestre... Valeu Ladeira. 
+semestre... Valeu Ladeira! 
     -> não fiz o teste de normalidade para o naive bayes. Considerando que algumas
 variáveis podem ter distribuição normal e outras não, achei que seria melhor tentar
 ambos os parâmetros para Naive Bayes. Afinal, esta fase que estamos é para
@@ -35,3 +35,10 @@ semestre não está um mar de rosas por conta de geometria diferencial!
         * resumo PIBIC
 
 # depois
+    -> esqueci de comprar o doce para dar de presente
+    -> problema: fazer cross-validation para regressão. Faz sentido? Ladeira acha que
+não. Pediu pra eu pesquisar com calma. 
+        * O que posso fazer: usar validação (sem ser cross-validation) e aí rodar nos
+          dados de treino. Poderia usar a métrica f-measure, em vez de ser a métrica
+          da sklearn. Não seria tão complicado adaptar o código, eu acho. 
+    -> Me comprometi a escrever o tcc em paralelo com o código. 

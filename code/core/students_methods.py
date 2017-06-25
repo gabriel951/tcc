@@ -487,6 +487,7 @@ def get_derived_info(stu_info):
     returns:
         nothing
     """
+    exit('remove me later')
     # fill student grades
     fill_grades(stu_info)
 
@@ -679,7 +680,7 @@ def get_students_info():
     get_derived_info(stu_dict)
 
     # saves object
-    save_students(NAME_STU_STRUCTURE, stu_dict)
+    #save_students(NAME_STU_STRUCTURE, stu_dict)
 
 def handle_miss_credit_rate(stu_info):
     """

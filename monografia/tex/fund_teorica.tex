@@ -1,17 +1,22 @@
 % TODO: falar do modelo crips-dm, se quiser encher linguiça
+% TODO: falar da f-measure
 Neste capítulo, descreve-se a fundamentação teórica necessária para compreender a
 pesquisa. Assim, nas seções seguintes explica-se a problemática da evasão nas universidades
-públicas, o procedimento da UnB para evitar tal situação e o modelo de processos
-CRISP-DM. 
+públicas, as especifidades da UnB, o modelo de processos
+CRISP-DM e os modelos de aprendizagem de máquina adotados. 
 
 \section{Evasão nas Universidades} 
 A evasão nas universidades nacionais é um problema que traz desperdícios acadêmicos,
 sociais e econômicos, tendo sida estudada por diversos autores. Apesar disso, o
-conceito de evasão pode variar \cite{mec_conceito_evasao} de acordo com a pesquisa,
+conceito de evasão pode variar  de acordo com a pesquisa,
 já que pode-se considerar evasão do curso, evasão da instituição ou evasão do
-sistema educacional. 
+sistema educacional \cite{mec_conceito_evasao}. 
 
-\section{Procedimentos da UnB Para Alunos com Risco de Evadir}
+\section{Especificidades da UnB}
+A UnB possui algumas particularidades importantes tanto em relação às notas dos
+alunos quanto aos procedimentos adotados para alunos em risco de evadir. 
+
+\subsection{Procedimentos da UnB Para Alunos com Risco de Evadir}
 \par Os critérios para que um aluno seja desligado na UnB são mostrados na Figura
 \ref{desligamento}. 
 \begin{figure}[!ht]
@@ -32,9 +37,52 @@ condição orientados. Os critérios para que um aluno esteja em condição são
     \item Chegar ao último período letivo do curso sem a possibilidade de concluir
 \end{itemize}
 
-% TODO: explicar como é calculado o IRA
-\section{O Índice de Rendimento Acadêmico}
+\subsection{O Índice de Rendimento Acadêmico}
+Outra particularidade da UnB diz respeito às notas que seus alunos recebem. Para cada
+matéria, os alunos podem receber as seguintes menções \cite{manual_calouro}: 
 
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{|c|c|}
+    \hline
+    \textbf{Menção} & \textbf{Nota de 0 a 10} \\
+    \hline
+    SS & 9,0 a 10 \\
+    \hline
+    MS & 7,0 a 8,9 \\
+    \hline
+    MM & 5,0 a 6,9 \\
+    \hline
+    MI & 3,0 a 4,9 \\
+    \hline
+    II & 0,1 a 2,9 \\
+    \hline
+    SR & 0 \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{Equivalência entre menção obtida por um aluno e nota final na disciplina}
+\end{table}
+
+Cada aluno tem também um índice de rendimento acadêmico (IRA), um valor entre 0 e 5
+que sumariza as menções obtidas por um aluno, desde que entrou na UnB. Segundo
+\cite{manual_calouro}, 0 IRA é calculado da seguinte forma:  
+\begin{equation}
+    IRA = (1 - \frac{0,6 * DT_b + 0,4 * DT_p}{DC}) * 
+    (\frac{\sum_{i}P_i * CR_i * Pe_i}{\sum_{i} CR_i * Pe_i})
+\end{equation}
+
+em que os símbolos da fórmula são explicados a seguir: 
+\begin{itemize}
+    \item $DT_b$: Número de disciplincas obrigatórias trancadas
+    \item $DT_p$: Número de disciplinas optativas trancadas
+    \item $DC$: Número de disciplinas matriculadas (incluindo as trancadas)
+    \item $P_i$: Peso da menção, onde (SS = 5, MS = 4, MM = 3, MI = 2, II = 1, SR =
+        0)
+    \item $Pe_i$: Período em que uma dada disciplina foi cursada, obedecendo à
+        limitação min(6, Período). 
+    \item $CR_i$: Número de Créditos de uma disciplina
+\end{itemize}
 
 \section{CRISP-DM}
 O CRISP-DM (do inglês \textit{CRoss-Industry Standard Process for Data Mining}) é um
@@ -98,4 +146,19 @@ A fase final do CRISP-DM é a implantação. Nessa fase, são realizadas as tare
 planejar a implantação, planejar monitoramento e manutenção, produzir relatório final
 e revisar o projeto \cite{crispdm}.
 
-% TODO: incluo mais sobre a modelagem?
+% TODO: incluir mais sobre técnicas de ML
+% falar de como árvores de decisão podem ser usadas para selecionar atributos
+% relevantes. 
+\section{Técnicas de Aprendizagem de Máquina}
+Nesta seção faz-se breve explanações sobre as técnicas de aprendizagem de máquina
+usadas na pesquisa. Explica-se sobre as árvores de decisão, regressores lineares,
+SVR's, redes neurais e o modelo Naive Bayes.
+
+% árvores de decisão, random forest, regressor linear, redes neurais ...
+\subsection{Árvores de Decisão e Random Forest}
+\subsection{Regressão Linear}
+\subsection{SVR}
+\subsection{Redes Neurais}
+
+% TODO: falar da f-measure
+\section{}

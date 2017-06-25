@@ -99,6 +99,7 @@ def add_evasion_chance_all_models(ml_models, sem, data, key_train_lst, key_test_
 def do_cross_val(sem, data_desc, perf_ml_model, ml_model_desc, ml_model, train_feature,
         train_result):
     """
+    DEPRECATED - We are using the validation set
     apply cross validation and saves the result
     receives: 
         1. semester we are in 
@@ -114,6 +115,54 @@ def do_cross_val(sem, data_desc, perf_ml_model, ml_model_desc, ml_model, train_f
     if VERB: 
         print("model: %s - score: %f" % (ml_model_desc, statistics.mean(scores)))
     perf_ml_model[(sem, data_desc, ml_model_desc)] = statistics.mean(scores)
+
+def get_optimal_param(data_desc, ml_model_desc):
+    """
+    get the optimal parameters, according to the ml model passed and the data we are
+    working with
+    receives: 
+        1. description of the data we are working with
+        2. description of the model we are working with
+    returns: 
+        list containing the optimal parameters
+    """
+    if ml_model_desc == 'ANN': 
+        # return [<num_layers>, <momentum>, <learn rate>]
+        if data_desc == 'young_students_ti_courses':
+            return [100, 0.5, 0.001]
+        elif data_desc == 'young_students_lic_courses':
+            return [36, 0.9, 1.0]
+        elif data_desc == 'young_students_comp_courses':
+            return [36, 0.6, 0.001]
+        elif data_desc == 'old_students':
+            return [24, 0.5, 0.7]
+        else:
+            exit('can not get optimal parameters for the combination passed!')
+    elif ml_model_desc == 'naive_bayes':
+        if data_desc == 'young_students_ti_courses':
+            return [GaussianNB()]
+        elif data_desc == 'young_students_lic_courses':
+            return [BernoulliNB()]
+        elif data_desc == 'young_students_comp_courses':
+            return [MultinomialNB()]
+        elif data_desc == 'old_students':
+            return [GaussianNB()]
+        else:
+            exit('can not get optimal parameters for the combination passed!')
+    elif ml_model_desc == 'SVR': 
+        if data_desc == 'young_students_ti_courses':
+            return ['linear', 1.0]
+        elif data_desc == 'young_students_lic_courses':
+            return ['linear', 1.0]
+        elif data_desc == 'young_students_comp_courses':
+            return ['rbf', 1.0]
+        elif data_desc == 'old_students':
+            return ['linear', 1.0]
+        else:
+            exit('can not get optimal parameters for the combination passed!')
+        
+    else: 
+        exit('can not get optimal parameters for the combination passed!')
 
 def get_suffix_ml_model():
     """
@@ -177,20 +226,18 @@ def get_tot_grad_evd_migr(data):
     amount = len(data)
     return (amount, grad_base_val, evade_base_val, migr_base_val)
 
-def get_untrained_ann(bool_var, sem, data_desc, ml_models, train_feature, 
-        train_result, test_feature, perf_ml_model, option):
+def get_untrained_ann(bool_var, data_desc, ml_models, train_feature, train_result,
+        test_feature, option):
     """
     if bool_var is set to true, append to the model an untrained ann
     receives: 
         1. boolean variable indicating if we should append
-        2. semester we are interested in 
-        3. data description 
-        4. list of the models we are considering
-        5. training feature list
-        6. train result list
-        7. test feature list
-        8. performance dictionary for the ml model 
-        9. option - whether we are just looking for the right optimization parameters
+        2. data description we are working with
+        3. list of the models we are considering
+        4. training feature list
+        5. train result list
+        6. test feature list
+        7. option - whether we are just looking for the right optimization parameters
         or we are running the model for good
     returns: 
         nothing
@@ -201,24 +248,29 @@ def get_untrained_ann(bool_var, sem, data_desc, ml_models, train_feature,
     
     # if we want just an optimal configuration, append to it
     if option != 'optimization':
+        [num_layers, momentum, learn_rate] = get_optimal_param(data_desc, 'ANN')
         ann_name = 'ANN' + get_suffix_ml_model()
-        ann = MLPRegressor(hidden_layers_size = None, solver = 'lbgfs', momentum =
-                None, learning_rate_init = None)
+        ann = MLPRegressor(hidden_layer_sizes = num_layers, solver = 'lbfgs', momentum =
+                momentum, learning_rate_init = learn_rate)
         multi_ann = MultiOutputRegressor(ann)
         ml_models.append([ann_name, multi_ann, list(train_feature), 
             list(test_feature)]) # it should be copies of the lists, not the lists
                                  # itselves, because we'll add to this lists 
     
-    # try all configuratinos
+    # try all configurations
     else: 
         # list in which we'll try the configurations
-        num_layers_lst = [12, 24, 36, 100]
-        momentum_lst = [0.9]
-        learn_rate_lst = [0.001]
+        [num_layers, NOT_momentum, NOT_learn_rate] = \
+            get_optimal_param(data_desc, 'ANN')
+        #num_layers_lst = [12, 24, 36, 100]
+        #momentum = 0.9
+        #learn_rate = 0.001
+        momentum_lst = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+        learn_rate_lst = [0.001, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 
         # iterate through configurations
-        for (num_layers, momentum, learn_rate) in itertools.product(num_layers_lst, 
-                momentum_lst, learn_rate_lst): 
+        for (momentum, learn_rate) in itertools.product(momentum_lst,
+                learn_rate_lst):
 
             # get ann name  - consider parameters
             ann_name = 'ANN' + get_suffix_ml_model()
@@ -226,15 +278,12 @@ def get_untrained_ann(bool_var, sem, data_desc, ml_models, train_feature,
             
             # get model and append to the list
             ann = MLPRegressor(hidden_layer_sizes = num_layers, solver = 'lbfgs',
-                    momentum = momentum, learning_rate_init = learn_rate)
+                    momentum = momentum, learning_rate_init = learn_rate, max_iter =
+                    MAX_ITER)
             multi_ann = MultiOutputRegressor(ann)
             ml_models.append([ann_name, multi_ann, list(train_feature), 
                 list(test_feature)]) 
             
-            # do cross validation and record result on dictionary 
-            do_cross_val(sem, data_desc, perf_ml_model, ann_name, multi_ann, 
-                    train_feature, train_result)
-                                    
 def get_untrained_linear_regressor(bool_var, ml_models, training_feature, test_feature):
     """
     if bool_var is set to true, append to the model an untrained linear regressor
@@ -254,19 +303,17 @@ def get_untrained_linear_regressor(bool_var, ml_models, training_feature, test_f
         ml_models.append([lreg_name, multi_linear_regressor, lreg_train_feat,
             lreg_test_feat])
 
-def get_untrained_ml_models(sem, data_desc, train_feature, train_result, test_feature, 
-        perf_ml_model, option):
+def get_untrained_ml_models(data_desc, train_feature, train_result, test_feature, 
+        option):
     """
     get a list containing the untrained linear models, along with the description for
     each one and the training/test feature list for each one
     receives: 
-        1. semester we are considering
-        2. data description
-        3. training feature list
-        4. training result list
-        5. test feature list
-        6. dictionary of the performance of the model 
-        7. option - whether it's to do optimization or just run the models
+        1. data description that we are working with
+        2. training feature list
+        3. training result list
+        4. test feature list
+        5. option - whether it's to do optimization or just run the models
     returns: 
         a list of lists. Each nested list contain: 
         1. the model name 
@@ -286,25 +333,29 @@ def get_untrained_ml_models(sem, data_desc, train_feature, train_result, test_fe
     
     # get untrained models
     get_untrained_linear_regressor(use_lreg, ml_models, train_feature, test_feature)
-    get_untrained_ann(use_ann, sem, data_desc, ml_models, train_feature, train_result,
-            test_feature, perf_ml_model, option)
-    get_untrained_svr(use_svr, sem, data_desc, ml_models, train_feature,
-            train_result, test_feature, perf_ml_model, option)
-    #get_untrained_rand_for(use_rand_for, ml_models, train_feature, test_feature)
-    get_untrained_naive_bayes(use_nb, sem, data_desc, ml_models, train_feature,
-            train_result, test_feature, perf_ml_model, option)
+    get_untrained_ann(use_ann, data_desc, ml_models, train_feature, train_result, 
+            test_feature, option)
+    get_untrained_svr(use_svr, data_desc, ml_models, train_feature, train_result,
+            test_feature, option) 
+    get_untrained_rand_for(use_rand_for, ml_models, train_feature, test_feature)
+    get_untrained_naive_bayes(use_nb, data_desc, ml_models, train_feature,
+            train_result, test_feature, option)
 
     return ml_models
 
-# TODO: make this description right
-def get_untrained_naive_bayes(bool_var, sem, data_desc, ml_models, train_feature, 
-        train_result, test_feature, perf_ml_model, option):
+def get_untrained_naive_bayes(bool_var, data_desc, ml_models, train_feature, train_result, 
+        test_feature, option):
     """
-    if bool_var is set to true, append to the model an untrained naive bayes model
+    if bool_var is set to true, append to the model an untrained ann
     receives: 
-        1. list of the models we are considering
-        2. training feature list
-        3. test feature list
+        1. boolean variable indicating if we should append
+        2. data description 
+        4. list of the models we are considering
+        5. training feature list
+        6. train result list
+        7. test feature list
+        8. option - whether we are just looking for the right optimization parameters
+        or we are running the model for good
     returns: 
         nothing
     """
@@ -314,7 +365,7 @@ def get_untrained_naive_bayes(bool_var, sem, data_desc, ml_models, train_feature
 
     if option != 'optimization':
         nb_name = 'naive_bayes' + get_suffix_ml_model()
-        nb = None # put here whether Gaussian or binomial or ... 
+        [nb] = get_optimal_param(data_desc, 'naive_bayes') 
         multi_nb = MultiOutputRegressor(nb)
         nb_train_feat = list(train_feature)
         nb_test_feat = list(test_feature)
@@ -325,18 +376,13 @@ def get_untrained_naive_bayes(bool_var, sem, data_desc, ml_models, train_feature
         nb_name_lst = ['gaussian', 'multinomial', 'multi_bernoulli']
         nb_obj_lst = [GaussianNB(), MultinomialNB(), BernoulliNB()]
         for i in range(len(nb_name_lst)):
-            print(nb_name_lst[i])
             nb_name = 'naive_bayes' + get_suffix_ml_model()
-            nb_name += get_suffix_configuration((nb_name_lst[i]))
+            nb_name += get_suffix_configuration([nb_name_lst[i]])
             nb = nb_obj_lst[i]
             multi_nb = MultiOutputRegressor(nb)
             ml_models.append([nb_name, multi_nb, list(train_feature),
                 list(test_feature)])
 
-            # do cross validation and record result on dictionary
-            do_cross_val(sem, data_desc, perf_ml_model, nb_name, multi_nb, 
-                    train_feature, train_result)
-                                    
 def get_untrained_rand_for(bool_var, ml_models, training_feature, test_feature):
     """
     if bool_var is set to true, append to the model an untrained random forest
@@ -356,20 +402,18 @@ def get_untrained_rand_for(bool_var, ml_models, training_feature, test_feature):
         ml_models.append([rand_for_name, multi_rand_for, rand_for_train_feat,
             rand_for_test_feat])
 
-def get_untrained_svr(bool_var, sem, data_desc, ml_models, train_feature, 
-        train_result, test_feature, perf_ml_model, option):
+def get_untrained_svr(bool_var, data_desc, ml_models, train_feature, train_result, 
+        test_feature, option):
     """
     if bool_var is set to true, append to the model an untrained svr
     receives: 
         1. boolean variable indicating if we should append
-        2. semester we are interested in 
-        3. data description 
-        4. list of the models we are considering
-        5. training feature list
-        6. train result list
-        7. test feature list
-        8. performance dictionary for the ml model 
-        9. option - whether we are just looking for the right optimization parameters
+        2. data description that we are working with
+        3. list of the models we are considering
+        4. training feature list
+        5. train result list
+        6. test feature list
+        7. option - whether we are just looking for the right optimization parameters
         or we are running the model for good
     returns: 
         nothing
@@ -380,29 +424,25 @@ def get_untrained_svr(bool_var, sem, data_desc, ml_models, train_feature,
 
     # if we want just the optimal configuration, append
     if option != 'optimization':
+        [kernel, penalty_factor] = get_optimal_param(data_desc, 'SVR')
         svr_name = 'SVR' + get_suffix_ml_model()
-        svr = SVR(kernel = None)
+        svr = SVR(kernel = kernel, C = penalty_factor, max_iter = MAX_ITER * 1000)
         multi_svr = MultiOutputRegressor(svr)
-        ml_models.append([svr_name, multi_svr, list(training_feature), 
+        ml_models.append([svr_name, multi_svr, list(train_feature), 
             list(test_feature)]) # it should be copies of the lists, not the lists
 
     # try all configuration
     else:
-        # TODO: include poly on the list. Include linear. Include precomputed?
-        kernel_lst = ['rbf', 'sigmoid']
-        for kernel in kernel_lst:
-            #print(kernel)
+        [kernel, NOT_penalty_factor] = get_optimal_param(data_desc, 'SVR')
+        penalty_factor_lst = [0.5, 1.0, 2.0]
+        for penalty_factor in penalty_factor_lst:
             svr_name = 'SVR' + get_suffix_ml_model()
-            svr_name += get_suffix_configuration([kernel])
-            svr = SVR(kernel = kernel)
+            svr_name += get_suffix_configuration([kernel, penalty_factor])
+            svr = SVR(kernel = kernel, C = penalty_factor, max_iter = MAX_ITER * 1000)
             multi_svr = MultiOutputRegressor(svr)
             ml_models.append([svr_name, multi_svr, list(train_feature), 
                 list(test_feature)]) 
             
-            # do cross validation and record result on dictionary
-            do_cross_val(sem, data_desc, perf_ml_model, svr_name, multi_svr, 
-                    train_feature, train_result)
-                                    
 def train_ml_models(ml_models, train_result):
     """
     train ml models

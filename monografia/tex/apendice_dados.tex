@@ -1,4 +1,6 @@
 Neste apêndice, mostram-se os principais resultados da análise descritiva de dados. 
+Começa-se mostrando os gráficos de barra dos atributos eliminados devido a
+\textit{missing values}. 
 % TODO: colocar descrição do que é encontrado aqui
 
 \section{Atributos Eliminados devido a Missing Values} \label{graf_miss_value}
@@ -29,27 +31,53 @@ faltantes, de modo que tais atributos foram retirados de análises posteriores.
 de Dados} \label{justificativa_4_base_dados}
 Na análise preliminar por meio de estatística descritiva, analisou-se como a
 distribuição dos atributos era afetada pelo curso do aluno, tendo-se constatado que a
-influência do fator curso era bastante significativa. 
-%Percebe-se isso, por exemplo, na tabela \ref 
+influência do fator curso era bastante significativa. Isso pode ser visto na Tabela
+\ref{justificativa_4_curso}.
 
-% todo
-%\begin{table}
-%\begin{center}
-%\begin{tabular}[c]{| c | c |}
-%    \hline
-%    Curso & Percentagem capaz de Formar \\
-%    \hline
-%\end{tabular}
-%\end{center}
-%\caption{Percentagem de Alunos Capazes de Formar, de Acordo com o Respectivo
-%    Curso}
-%\end{table}
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c |}
+    \hline
+    \textbf{Curso} & \textbf{Percentagem capaz de Formar} \\
+    \hline
+    Ciência da Computação (Bacharelado) & 42\% \\
+    \hline
+    Computação (Licenciatura) & 27\% \\
+    \hline
+    Engenharia da Computação & 20\% \\
+    \hline
+    Engenharia de Redes & 48\% \\
+    \hline
+    Engenharia de Software & 49\% \\
+    \hline
+    Engenharia Mecatrônica & 47\% \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{Percentagem de Alunos Capazes de Formar, de Acordo com o Respectivo
+    Curso}
+\label{justificativa_4_curso}
+\end{table}
 
 \par Além do curso, a análise descritiva mostrou que a taxa de alunos que conseguem
-formar é consideravelmente menor para alunos mais velhos. 
-%A tabela \ref{} indica isso 
+formar é consideravelmente menor para estudantes mais velhos. Isso pode ser visto na
+Tabela \ref{justificativa_4_idade}.
 
-% todo: colocar tabela 
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c |}
+    \hline
+    \textbf{Idade} & \textbf{Percentagem capaz de Formar} \\
+    \hline
+    Estudantes que entraram com até 30 anos & 41\% \\
+    \hline
+    Estudantes que entraram com mais de 30 anos & 11\% \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{Percentagem de Alunos Capazes de Formar, de Acordo com a Idade}
+\label{justificativa_4_curso}
+\end{table}
 
 \section{Mudança de Valores de Atributos}
 Conforme mencionado, os atributos forma de entrada e forma de saída tiveram seus
@@ -89,7 +117,6 @@ apresentado a seguir:
     \item \texttt{dec}: Ex-Aluno pelo Decreto 477
     \item \texttt{deslg}: Saída por desligamento
     \item \texttt{form}: Saída pois conseguiu formar
-    \item \texttt{mrr}: Saída por falecimento
     \item \texttt{null}: Saída por anulação de registro
     \item \texttt{trnsf}: Saída devido à Transferência
     \item \texttt{vest}: Saída devido à novo vestibular
@@ -102,5 +129,11 @@ apresentado a seguir:
     \label{atr_way_out_org}
     \end{figure}
 
-\section{Gráficos de Barra e Histogramas} \label{graf_bar_hist}
+\section{Gráficos de Barra e Histogramas Para Atributos} \label{graf_bar_hist}
+Mostra-se a seguir a distribuição dos atributos por meio de gráficos de barra e
+histogramas. Essa parte de estatística descritiva levou em consideração a divisão dos
+dados nas 4 bases de dados. Para se ter uma ideia de como uma determinada base de
+dados se comportou em relação ao conjunto de todos os dados, fez-se também gráficos
+de barra e histogramas considerando todos os alunos das 4 bases de dados.  
 
+\input{./tex/tabela_histogramas.tex}

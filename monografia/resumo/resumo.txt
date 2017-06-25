@@ -1,0 +1,27 @@
+COLABORADORES:
+    Marcelo Ladeira 
+
+PALAVRAS CHAVES:
+    Aprendizagem de Máquina; Análise Preditiva; Alunos em Risco de Evasão; UnB; 
+
+INTRODUÇÃO: 
+A UnB, assim como outras universidades brasileiras, é afetada significativamente pela
+evasão de seus estudantes. A pesquisa aqui descrita propõe a utilização de dados
+passados de alunos da UnB para a criação de um sistema previsor que identifique
+alunos em risco de serem desligados. Desse modo, o sistema permitiria a UnB agir
+antes de um aluno entrar em condição e agir de acordo com o risco de evasão
+apresentado por cada aluno. Ou seja, a UnB poderia atuar com antecedência e
+flexibilidade. 
+
+METODOLOGIA: 
+A metodologia seguida no trabalho consistiu de utilizar dados descaracterizados de
+alunos da UnB para treinar modelos de aprendizagem de máquina e avaliar o desempenho
+destes na tarefa de análise preditiva. A performance dos modelos foi comparada à do
+ZeroR. 
+
+RESULTADOS: 
+Os modelos mostraram-se melhores do que o ZeroR. 
+
+DISCUSSÃO/CONCLUSÃO:
+Os resultados obtidos apontam a viabilidade da utilização de aprendizagem de máquina
+para análise preditiva de alunos em risco de evasão na UnB.

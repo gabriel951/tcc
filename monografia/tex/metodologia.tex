@@ -1,8 +1,8 @@
-Neste capítulo, descreve-se a metodologia usada na pesquisa. 
+Neste capítulo, descreve-se a metodologia usada em toda a pesquisa. 
 Detalha-se como foi feito o levantamento
 do estado da arte, a obtenção e utilização dos dados, a seleção de
 atributos, a eliminação de \textit{outliers}, a análise preliminar por meio de estatística
-descritiva a escolha dos modelos e a forma de avaliar o desempenho destes.  
+descritiva, a escolha dos modelos e a forma de avaliar o desempenho destes.  
 
 \section{Levantamento do Estado da Arte}
 Foi feito o levantamento do estado da arte através da leitura de diversos artigos, de
@@ -85,7 +85,7 @@ além de ser aprovado ou reprovado em uma matéria, outra possibilidade é o alu
 realizar o trancamento.  Pensando nisso, definiu-se a taxa de trancamento como sendo
 a razão entre o número de matérias trancadas pelo aluno pelo o número de matérias
 cursadas pelo aluno.
-\par Por fim, a taxa de aprovação na disciplina mais difícil do semestre é definido
+\par Por fim, a taxa de aprovação na disciplina mais difícil do semestre é definida
 como sendo a razão entre o número de aprovações na disciplina mais difícil do
 semestre pelo número de semestres na UnB. A disciplina considerada como a mais
 difícil do semestre é aquela com a maior taxa de reprovação. 
@@ -104,29 +104,24 @@ Decidiu-se não trabalhar com casos de alunos que após ingressar na universidad
 demonstraram interesse em cursar matérias (por exemplo, aqueles que reprovaram em
 todas as disciplinas com SR). Tais casos foram tratados como \textit{outliers}.
 Após a análise individual de cada caso, os \textit{outliers} foram eliminados do espaço
-amostral.
+amostral. Eliminaram-se 230 estudantes do espaço amostral dessa maneira, ficando-se
+assim com 4539 amostras.
 
 \section{Estatística Descritiva}
 Foi feita uma análise preliminar por meio de estatística descritiva. As subseções
-seguintes apresentam a mudança na base de dados realizada, a mudança nos valores de
-alguns atributos e os gráficos de barra e histogramas finais. 
-% TODO:
-% falar da divisão por idade e curso, que fez com que eu tivesse de estudar 4 modelos
-% falar como essa divisão foi motivada! 
-%   -> curso: mostrar a taxa de aprovação, taxa de reprovação e a taxa de
-%   trancamento para os diferentes cursos
-%    -> idade: mostrar a quantidade de alunos que é capaz de formar acima de 30 anos
-%    ou não
+seguintes explicam cada um dos procedimentos adotados. apresentam a mudança na base
+de dados realizada, a mudança nos valores de alguns atributos e os gráficos de barra
+e histogramas finais. 
+
 \subsection{Mudança na Base de Dados}
 \par Foi possível observar que os atributos variavam significativamente de acordo com
 o curso. Isso se deve ao fato de cada curso ter currículo diferente dos
 demais, alguns cursos serem de instituições diferentes (FT ou IE, por exemplo) e os
-% TODO: colocar sigla da FT e do IE, ver se já coloquei sigla do IRA 
 cursos possuírem ``maturidade'' diferentes (devido à data início de cada curso ser
 diferente). Outra observação preliminar possível foi a de que a proporção de alunos
 com idade avançada que se forma é menor do que a de alunos mais jovens. Essas
 observações levaram a partição da base de dados original em 4 bases de dados: 
-\begin{itemize}[itemsep=3ex]
+\begin{itemize}
     \item Alunos Sêniors: contém todos os alunos com mais de 30 anos
     \item Alunos Jovens de Licenciatura: contém todos os alunos com 30 anos ou menos
         que cursam licenciatura em Computação. O curso de licenciatura tem a
@@ -157,22 +152,66 @@ mudança de curso, mudança de turno e realização de um novo vestibular.
 
 \subsection{Gráficos de Barra e Histogramas}
 Após as modificações descritas nas subseções anteriores, fez-se o gráfico de barra
-para os atributos discretos e os histogramas para os atributos contínuos. Tais
+para os atributos discretos e os histogramas para os atributos contínuos.
+Considerou-se, para isso, a divisão dos dados nas 4 bases de dados descritas. Tais
 resultados encontram-se na seção \ref{graf_bar_hist}.
 
-% eliminação de variáveis
 \section{Eliminação de Atributos Relacionados ou Irrelevantes}
-% TODO: escrever uma motivação, dizendo a necessidade de se fazer se fazer essa
-% etapa. 
-
-\par Depois disso, avaliou-se o grau de relacionamento entre os diversos atributos
+\par Na área de aprendizagem de máquina, uma etapa fundamental é a da engenharia de
+atributos \cite{useful_ml}, em que garante-se que os modelos irão receber os
+atributos certos, para que sejam capazes de aprender. Assim sendo, deve-se realizar a
+eliminação de atributos que estejam muito relacionados entre si e também a eliminação
+de atributos irrelevantes. 
+ 
+\par Avaliou-se o grau de relacionamento entre os diversos atributos
 que compunham o modelo por meio do coeficiente de correlação de Kendall. Optou-se por
-eliminar uma variável de cada par que apresentasse mais de 80\% de correlação. 
+eliminar uma variável de cada par que apresentasse mais de 80\% de correlação. Os
+atributos taxa de aprovação e taxa de reprovação apresentaram, para todas as bases
+de dados, alto relacionamento. Assim sendo, eliminou-se o atributo taxa de reprovação
+de análises posteriores. 
 
-\par 
+\par Para descobrir os atributos irrelevantes, dentro daqueles originalmente
+pensados, utilizaram-se árvores de decisão: os atributos que não apareceram nas
+árvores de decisão foram eliminados das fases posteriores. Esse procedimento foi
+feito para cada uma das 4 bases de dados. Para os alunos jovens da licenciatura,
+obteve-se que o atributo curso não era relevante, o que era esperado já que todos os alunos
+desse grupo tem o mesmo curso). Para os alunos sêniors, obteve-se que os atributos
+curso, cota e taxa de trancamento são irrelevantes. Para os outros grupos, nenhum
+atributo foi classificado como irrelevante. 
 
-% TODO: explicar o que fiz na fase de modelagem
-% TODO: falar da desproporção entre dados de treino e de teste quando?
 \section{Modelagem}
-    % TODO: oversampling
-    % TODO: modelo funciona para vários semestres. 
+Explica-se nesta seção o que foi feito durante a fase de modelagem. Inicia-se
+explanando como foi feita a divisão entre treino e teste.Depois, aborda-se como o
+desbalanço entre os dados de treino e os dados de teste foi corrigido por meio de
+\textit{oversampling}.
+Em seguida, descreve-se como foi usado validação para estimar os melhores parâmetros
+de alguns modelos de aprendizagem de máquina. Finalmente, explica-se como avaliou-se
+o desempenho das várias técnicas implantadas.  
+
+\section{Divisão em Treino e Teste}
+Como tradicionalmente ocorre no domínio de análise preditiva, houve a separação dos
+dados entre dados de treino e dados de teste. Os dados abrangiam alunos que entraram
+no período de 2000 até 2016 e já saíram da universidade. Aqueles alunos que entraram
+antes de 2010 formaram o conjunto dos dados de treino, enquanto que os alunos que
+entraram de 2010 em diante formaram o conjunto dos dados de teste. 
+
+\section{Necessidade de Oversampling}
+Constatou-se uma grande diferença na proporção de alunos que se formava quando se
+comparava os dados de treino e os dados de teste. De fato, 53\% dos
+alunos dos dados de treino se mostrou capaz de conclui o curso, enquanto que apenas
+18\% dos alunos dos dados de teste.
+\par Para entender a explicação para esse fenômeno, considere, por exemplo, os alunos
+ingressantes na UnB no ano de 2014. Aqueles que irão se graduar, não o farão até 2016
+e, portanto, não aparecerão em nossa amostra. Por outro lado, alguns dos que irão
+evadir o farão até 2016, aparecendo assim em nossa amostra. Essa é a explicação para
+o desbalanceamento da proporção de alunos que graduaram nos dados de teste. 
+\par Para corrigir o problema, usou-se a técnica de \textit{oversampling}:
+adicionou-se aos dados de teste cópias idênticas de instâncias já presentes nestes
+dados, até que a proporção de graduandos no treino e no teste ficasse igual (no caso,
+53\% capazes de se graduar). 
+
+\section{Uso de Validação Para Estimativa de Parâmetros}
+
+\section{Avaliação de Desempenho}
+% TODO: modelo funciona para vários semestres. 
+% f-measure

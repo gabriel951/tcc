@@ -27,26 +27,31 @@ já ser tarde demais.
 A pesquisa aqui descrita justifica-se como uma tentativa de melhorar a abordagem
 atual da UnB para o problema da evasão. Propõe-se utilizar dados passados para
 a criação de um sistema previsor que seja capaz de identificar alunos em risco de
-serem desligados. O sistema previsor forneceria um valor entre 0 e 1, com valores
-mais próximos de 0 indicando um baixo risco do aluno ser desligado e valores pertos de
-1 indicando um risco maior. Para isso, diferentes modelos de aprendizagem de máquina
-serão estudados. 
-% Tirei
-%\par Os dados utilizados são dados descaracterizados de alunos de
-%graduação da UnB, contendo tanto informações de perfil quanto a forma de ingresso e
-%as menções nas matérias da UnB. 
-% TODO: explicar melhor pq isso é útil?
+serem desligados. O sistema previsor fornece 3 valores $v_1$, $v_2$, $v_3$ entre 0
+e 1, que indicam respectivamente a chance do aluno se graduar, ser desligado (evadir)
+e migrar de curso. 
+\par Valores mais próximos de 0 indicam um baixo risco do evento em
+questão acontecer, enquanto valores mais próximos de 1 indicam um alto risco. Por
+exemplo, um valor de $v1$ próximo de 1 indica que o aluno tem grande chance de se
+graduar, ao passo que um valor de $v3$ próximo de 0 indica que o aluno não tem 
+muito risco de migrar de curso. Para isso, diferentes modelos de aprendizagem de
+máquina serão estudados. 
+\par Os dados utilizados são dados descaracterizados de alunos de
+graduação da UnB, contendo tanto informações de perfil quanto a forma de ingresso e
+as menções nas matérias da UnB. 
 \par Caso bem sucedido, o sistema previsor permitiria a
 UnB agir antes de um aluno entrar em condição. Outra vantagem seria a possibilidade
-de agir com mais flexibilidade, de acordo com o risco de evasão apresentado por cada
-aluno. 
+de agir de acordo com o risco de evasão apresentado por cada
+aluno. Ou seja, a proposta de solução permitiria agir com antecedência e
+flexibilidade. 
 
 \section{Objetivos}
 São dois os objetivos deste trabalho: 
 \begin{itemize}
     \item Explicar as etapas realizadas para se desenvolver o sistema previsor de
         risco de evasão, justificando as escolhas realizadas.
-    \item Discutir o desempenho deste sistema, analisando assim sua viabilidade.
+    \item Discutir o desempenho deste sistema, analisando assim sua viabilidade e
+        apontando caminhos futuros de pesquisa nessa linha.
 \end{itemize}
 
 \section{Organização do Restante do Documento}
@@ -54,7 +59,9 @@ São dois os objetivos deste trabalho:
 \par Descreve-se a seguir a organização do restante do documento. 
 No capítulo 2 explica-se a fundamentação teórica necessária para a compreensão da
 pesquisa em questão. Já no capítulo 3, descreve-se a metodologia
-adotada para a pesquisa até aqui. No capítulo 4 apresentam-se e discutem-se os resultados
-obtidos. Finalmente, na seção 6, apresenta-se a conclusão e apontam-se sugestões para
-trabalhos futuros. A parte de estatística descritiva é encontrada no apêndice A. 
+adotada na pesquisa. No capítulo 4 apresentam-se e discutem-se os resultados
+obtidos. Finalmente, no capítulo 5, apresenta-se a conclusão e apontam-se sugestões para
+trabalhos futuros. Apresenta-se a parte de estatística descritiva separadamente no
+apêndice A. 
+
 % TODO: já coloquei esse apêndice? 

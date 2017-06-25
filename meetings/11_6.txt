@@ -1,0 +1,44 @@
+# antes
+    # código
+    -> não olhei se cross-validation pode ser aplicado para regressão ou não. Em vez
+disso, usei validação para selecionar os melhores parâmetros de cada modelo. 
+    -> rodei os modelos. Não houve uma configuração mais adequada para cada base de
+dado. 
+    -> Agora é só rodar nos testes e verificar resultado obtido, né? 
+        * Qual seria um bom valor de f-measure? 
+
+    # monografia
+    -> é problema referenciar artigos unpublished (tipo os do raphael) 
+    -> precisa descrever os modelos de aprendizagem de máquina usados? e a
+importância de cada parâmetro?
+    
+    # resumo pibic 
+    -> tenho que fechar a implementação essa semana, para escrever o resumo do PIBIC
+com os resultados que estou tendo. 
+    -> próxima reunião eu trago. 
+
+# depois
+    -> não decidimos nada. Reunião amanhã
+    -> na monografia, posso falar na parte da metodologia qual foram os modelos
+utilizados e os parâmetros passados. Preciso escrever na parte de fundamentação
+teórico sobre eles?
+
+    -> Não usar média de escore, usar intervalo de confiança.
+    -> Fazer tabela mostrando os alunos que evadiram. Isso para cada uma das 4 bases
+de dados. 
+    -> Ver alunos que ficaram mais do que o permitido na UnB
+    -> Qual valor de f-measure que é bom? Comparar com o zeroR
+    -> Rodar SVR para alguns parâmetros de C
+
+# antes (teve reunião no dia seguinte)
+    -> fiz tabela mostrando os alunos que evadiram conforme os semestres passam
+    -> achei o caso problemático do aluno que ficou por mais de 23 semestres. O que
+faço com ele? 
+    -> Consegui ordar para intervalo de confiança
+
+# depois
+    -> mudar a maneira como calcula o semestre efetivo 
+    -> Escolher o modelo de menor amplitude dentre os que tem overlapping
+    -> Rodar replicando vs não replicando, mas não usar replicando 
+    -> não aplicar oversampling
+    -> não considerar casos em que o conjunto de treino ou o de teste é vazio

@@ -1,0 +1,80 @@
+performance - ml model: linear_regressor - data: young_students_ti_courses
+	linear_regressor_use_tail_absolute: 0.801736005791
+	linear_regressor_no_tail_absolute: 0.801736005791
+
+performance - ml model: ANN - data: young_students_ti_courses
+	ANN_no_tail_absolute: 0.767580032329
+	ANN_use_tail_absolute: 0.765087035472
+
+performance - ml model: SVR - data: young_students_ti_courses
+	SVR_no_tail_absolute: 0.764456772366
+	SVR_use_tail_absolute: 0.764456772366
+
+performance - ml model: naive_bayes - data: young_students_ti_courses
+	naive_bayes_no_tail_absolute: 0.569431579385
+	naive_bayes_use_tail_absolute: 0.569431579385
+
+performance - ml model: random_forest - data: young_students_ti_courses
+	random_forest_no_tail_absolute: 0.740804556186
+	random_forest_use_tail_absolute: 0.734800303825
+
+performance - ml model: linear_regressor - data: young_students_lic_courses
+	linear_regressor_use_tail_absolute: 0.866225048123
+	linear_regressor_no_tail_absolute: 0.866225048123
+
+performance - ml model: ANN - data: young_students_lic_courses
+	ANN_no_tail_absolute: 0.850217670035
+	ANN_use_tail_absolute: 0.850695750965
+
+performance - ml model: SVR - data: young_students_lic_courses
+	SVR_no_tail_absolute: 0.822012718285
+	SVR_use_tail_absolute: 0.822012718285
+
+performance - ml model: naive_bayes - data: young_students_lic_courses
+	naive_bayes_no_tail_absolute: 0.764703915678
+	naive_bayes_use_tail_absolute: 0.764703915678
+
+performance - ml model: random_forest - data: young_students_lic_courses
+	random_forest_no_tail_absolute: 0.855356868218
+	random_forest_use_tail_absolute: 0.810164795755
+
+performance - ml model: linear_regressor - data: young_students_comp_courses
+	linear_regressor_no_tail_absolute: 0.774827252016
+	linear_regressor_use_tail_absolute: 0.774827252016
+
+performance - ml model: ANN - data: young_students_comp_courses
+	ANN_use_tail_absolute: 0.743365390711
+	ANN_no_tail_absolute: 0.677115536671
+
+performance - ml model: SVR - data: young_students_comp_courses
+	SVR_no_tail_absolute: 0.700859311896
+	SVR_use_tail_absolute: 0.700859311896
+
+performance - ml model: naive_bayes - data: young_students_comp_courses
+	naive_bayes_use_tail_absolute: 0.653195927701
+	naive_bayes_no_tail_absolute: 0.653195927701
+
+performance - ml model: random_forest - data: young_students_comp_courses
+	random_forest_no_tail_absolute: 0.766561059014
+	random_forest_use_tail_absolute: 0.745231258637
+
+performance - ml model: linear_regressor - data: old_students
+	linear_regressor_use_tail_absolute: 0.751490033197
+	linear_regressor_no_tail_absolute: 0.751490033197
+
+performance - ml model: ANN - data: old_students
+	ANN_no_tail_absolute: 0.627039359613
+	ANN_use_tail_absolute: 0.663719728213
+
+performance - ml model: SVR - data: old_students
+	SVR_use_tail_absolute: 0.798127859548
+	SVR_no_tail_absolute: 0.798127859548
+
+performance - ml model: naive_bayes - data: old_students
+	naive_bayes_use_tail_absolute: 0.28030351167
+	naive_bayes_no_tail_absolute: 0.28030351167
+
+performance - ml model: random_forest - data: old_students
+	random_forest_no_tail_absolute: 0.707352868499
+	random_forest_use_tail_absolute: 0.698390131458
+

@@ -1,6 +1,9 @@
+#!/usr/bin/python3.4
 # file containing functions to evaluate the performance of all ml models
 
 import pickle
+from scipy import stats
+import numpy as np
 import statistics
 
 from basic_ml import *
@@ -18,7 +21,6 @@ def get_all_data_desc():
     data_desc_lst = ["young_students_ti_courses", "young_students_lic_courses", \
             "young_students_comp_courses", "old_students"]
     return data_desc_lst
-    #return ["old_students"] # to facilitate test, only old students
 
 def plot_ml_model_perf():
     """
@@ -89,14 +91,20 @@ def report_best_model_conf(conf_path):
 
     # for every data desc, report best configuration
     for data_desc in data_desc_lst: 
+        if gml.USE_LREG:
+            report_best_conf_aux(perf_ml_model, data_desc, 'linear_regressor')
         if gml.USE_ANN:
-            report_best_conf_wrap(perf_ml_model, data_desc, 'ANN')
+            report_best_conf_aux(perf_ml_model, data_desc, 'ANN')
         if gml.USE_SVR: 
-            report_best_conf_wrap(perf_ml_model, data_desc, 'SVR')
+            report_best_conf_aux(perf_ml_model, data_desc, 'SVR')
         if gml.USE_NB:
-            report_best_conf_wrap(perf_ml_model, data_desc, 'naive_bayes')
+            report_best_conf_aux(perf_ml_model, data_desc, 'naive_bayes')
+        if gml.USE_RAND_FOR:
+            report_best_conf_aux(perf_ml_model, data_desc, 'random_forest')
+        if gml.USE_ZEROR:
+            report_best_conf_aux(perf_ml_model, data_desc, 'zeroR')
 
-def report_best_conf_wrap(ml_models, data_desc_2_consider, name_rest):
+def report_best_conf_aux(ml_models, data_desc_2_consider, name_rest):
     """
     report which configuration is better for every model
     receives: 
@@ -129,13 +137,32 @@ def report_best_conf_wrap(ml_models, data_desc_2_consider, name_rest):
         else: 
             score_per_model[ml_model_desc].append(score)
 
-    # make list of performance by models - and print the one with best performance
+    # make list of performance by models
     perf_model_lst = []
     for model, score_lst in score_per_model.items():
-        mean_perf = statistics.mean(score_lst)
-        perf_model_lst.append((model, mean_perf))
+
+        # calculate the confidence interval
+        mean = np.mean(score_lst)
+        sigma = np.std(score_lst)
+        conf_int = stats.t.interval(CONF_INT, len(score_lst) - 1, loc = mean, 
+                scale = sigma)
+
+        # append to the list of performance
+        perf_model_lst.append((model, conf_int, mean))
+
+    # sort list and print in performance order
     perf_model_lst.sort(key = lambda tup: tup[1], reverse = True)
     print("performance - ml model: %s - data: %s" % (name_rest, data_desc_2_consider))
-    for (model, mean_perf) in perf_model_lst:
-        print("\t" + model + ": " + str(mean_perf))
+    for (model, conf_int, mean) in perf_model_lst:
+        print("\t" + model + ": " + str(conf_int))
+        print("\t\t interval gap: %f" % (conf_int[1] - conf_int[0]))  
     print("")
+
+# execute case this is the main file
+if __name__ == "__main__":
+    #report_best_model_conf(PCK_ML_MODEL)
+    #report_best_model_conf('./data/zeroR')
+    #report_best_model_conf(OPT_PCK_ML_MODEL)
+    report_best_model_conf('./data/ann_params')
+    #report_best_model_conf('./data/svr_naive_bayes')
+    #report_best_model_conf('./data/svr_penalty')

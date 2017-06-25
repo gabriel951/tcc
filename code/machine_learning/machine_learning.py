@@ -1,15 +1,10 @@
 #!/usr/bin/python3.4
 
-# TODO: feature list is one for every model 
-# TODO: test features list should have same length as train feature list, even when
-# TODO: apply oversampling should be in the models wrapper
-
 # use tail is set to true
 
 # this file contain the machine learning algorithms code
 
 import cProfile
-import re
 
 # imports
 import statistics as stat
@@ -194,23 +189,24 @@ def apply_oversampling(test_feature, test_result, model):
 
     return (oversample_feature, oversample_result)
 
-def build_run_ml_models_wrapper(path_name, option = 'run_model'):
+def build_run_ml_models_wrapper(path_name, option, max_sem):
     """
     builds ml models using sklearn and then run it to evaluate performance
     receives: 
         1. path and name of the pickle object in which we should save our results 
         2. option - case the option is equal to optimization - we perform an
         optimization on the database
+        3. max_sem - the simulation goes from semester 1 to semester max_sem.
     returns: 
         nothing
     * saves results on a dictionary, that is pickled.
     """
     assert (option == 'run_model' or option == 'optimization')
 
-    # if the option is otimization, the value of the dictionary is the ml model
-    # performance in the cross validation. Else, the dictionary will contain the
-    # performance (f-measure) of every ml model. The key is always:
+    # dictionary containing performance of every ml model
+    # the key is always:
     # (sem, model_desc, data_desc)
+    # the value is the f-measure obtained by the model
     perf_ml_model = {}
 
     # get data collection along with the descriptions
@@ -219,7 +215,7 @@ def build_run_ml_models_wrapper(path_name, option = 'run_model'):
     # list of semesters being studied
     # it should start with 1, dumbass! 0 we'll get you to the last element of the
     # list
-    MAX_NUM_SEM = 20
+    MAX_NUM_SEM = max_sem
     sem_lst = [sem for sem in range(1, MAX_NUM_SEM + 1)]
 
     # we should use model with tail or not
@@ -238,21 +234,31 @@ def build_run_ml_models_wrapper(path_name, option = 'run_model'):
         if data_desc == 'all_students':
             continue
 
-        # skip if all students left before the semester we are considering
-        if get_max_semester(data) < sem: 
-            continue
+        # this should be commented out
+        if data_desc != 'young_students_lic_courses': continue
 
-        # temp: this should be commented out
-        #if data_desc != 'old_students': 
-        #    continue
+        # skip if this is a semester for which the data we are working does not
+        # encompass 
+        if get_max_semester(data_desc) < sem: 
+            continue
 
         print('\n\n\nstarting study for:')
         print('(sem, data): %d %s ' % (sem, data_desc))
 
-        # get train and test data, get oversample results too
+        # get train and test data - train/test set depend whether 
+        # we are doing model optimization or we are running the model for good 
         (train_feature, train_result, key_train, test_feature, test_result, key_test, \
             ovsmp_test_feature, ovsmp_test_result) = get_train_test_oversample_var(data,\
-                    data_desc, sem)
+                    data_desc, sem, option)
+
+        print("(train, test amount):  (%d, %d)" % (len(train_result),
+                len(test_result)))
+
+        # if one of the train features or test feature is empty, skip this semester
+        if len(train_result) == 0 or len(test_result) == 0: 
+            print('skiped semester %d for data %s' % (sem, data_desc))
+            continue
+
 
         # iterate through options of using retroalimentation and the way the model
         # picks the target variable
@@ -272,6 +278,7 @@ def build_run_ml_models_wrapper(path_name, option = 'run_model'):
     # save pickle object
     file_target = open(path_name, 'wb')
     pickle.dump(perf_ml_model, file_target)
+    print("everything finished nicely")
 
 def build_run_ml_models(sem, data, data_desc, perf_ml_model, train_feature,
         train_result, key_train, test_feature, test_result, key_test,
@@ -299,9 +306,9 @@ def build_run_ml_models(sem, data, data_desc, perf_ml_model, train_feature,
     if VERB:
         print('**started getting data necessary for training and test')
 
-    # get ml models
-    ml_models = get_untrained_ml_models(sem, data_desc, train_feature, train_result, 
-            test_feature, perf_ml_model, option)
+    # get ml models 
+    ml_models = get_untrained_ml_models(data_desc, train_feature, train_result, 
+            test_feature, option)
 
     # add evasion chance to all models - if its to use tail
     if gml.USE_TAIL:
@@ -319,28 +326,24 @@ def build_run_ml_models(sem, data, data_desc, perf_ml_model, train_feature,
     # set evasion chance for every student, according to the model
     set_evasion_chance(ml_models, key_train, data, train_feature, sem)
     set_evasion_chance(ml_models, key_test, data, test_feature, sem)
+    #print(test_feature[0])
+    #print(test_result[0])
+    print(key_test[0])
 
-    # if we are doing parameter optimization - no need to evaluate performance, so
-    # just return
-    if option == 'optimization':
-        return
-
-    # else we are running the model for good. So, 
-    # evaluate performance of the ml techniques - test
+    # evaluate performance of the ml techniques
     for [model_desc, ml_model, model_train_feat, model_test_feat] in ml_models: 
 
         # get stats
         (f_measure, conf_matrix) = evaluate_performance(data, sem, ovsmp_test_feature, 
                 ovsmp_test_result, ml_model, model_desc)
 
-        # show stats to user
-        #print('f-measure for model %s: %f' % (model_desc, f_measure))
-        #print('confusion matrix: ')
-        #print(conf_matrix)
-        #print('')
-
         # register in the performance for the ml_model dictionary
         perf_ml_model[(sem, data_desc, model_desc)] = f_measure
+
+    # get performance of zeroR 
+    get_zeroR_perf(perf_ml_model, data_desc, sem, train_result, ovsmp_test_result)
+    #print(perf_ml_model)
+
 
 def evaluate_performance(data, cur_sem, test_feature, test_result, model, \
         model_desc):
@@ -366,6 +369,8 @@ def evaluate_performance(data, cur_sem, test_feature, test_result, model, \
     prediction_lst = model.predict(test_feature)
 
     assert(len(prediction_lst) == len(test_result))
+    print(prediction_lst[0])
+    print(test_result[0])
 
     # discretize prediction 
     disc_prediction_lst = get_discrete_prediction(data, prediction_lst)
@@ -419,17 +424,24 @@ def get_data(data, data_desc, year_inf, year_sup, semester, enh = False,
 
     # iterate through every student
     for key, stu in data.items():
+
+        # TODO: outlier elimination
+        if stu.reg == 22717720150 or stu.reg == 22719920150 or stu.reg == 22717620150:
+            continue
+
         # if student entered in a year we're not interessed, skip
         if stu.year_in < year_inf or stu.year_in > year_sup: 
             continue
 
-        # if the student has already graduated, fill the data with the last semester
-        # information. If we should select the last semester, select it!
-        if last_sem or semester > stu.get_num_semesters():
-            semester = stu.get_num_semesters()
+        # if student has already graduated, skip. Else, get index on the list
+        # of the effective semester the student is in 
+        if stu.get_num_effective_sem() < semester:
+            continue
+        else: 
+            cur_stu_sem_ind = stu.get_index_sem(semester)
 
         # build student features list and append to student features list
-        stu_features = add_student_features(stu, semester, feat_name_lst, 
+        stu_features = add_student_features(stu, cur_stu_sem_ind, feat_name_lst, 
                 data_desc, filter_data)
         features_lst.append(stu_features)
 
@@ -535,21 +547,26 @@ def get_flat_res_lst(result_lst):
             exit('error on get_flat_res_lst')
     return flat_list
 
-def get_max_semester(data):
+def get_max_semester(data_desc):
     """
-    get the maximum number of semesters the students of the given data stayed in UnB
+    get the maximum number of semesters the students of a given data set are allowed
+    to stay in UnB
     receives: 
-        1. dictionary containing the number of semesters
+        1. data description we are working with 
     returns: 
-        nothing
+        maximum number of effective semesters for the students 
     """
-    max_val = -1
-    for key, stu in data.items():
-        if stu.get_num_semesters() > max_val: 
-            max_val = stu.get_num_semesters()
-    assert (max_val > 5 and max_val < 25)
-    return max_val
-    
+    if data_desc == 'old_students' or data_desc == 'all_students': 
+        return 20 
+    elif data_desc == 'young_students_ti_courses': 
+        return 20
+    elif data_desc == 'young_students_lic_courses': 
+        return 14
+    elif data_desc == 'young_students_comp_courses': 
+        return 18
+    else: 
+        exit('data description passed not recognized')
+
 def get_num_non_grad(result_lst):
     """
     calculates the number of students that didn't graduate, in a list of students
@@ -561,26 +578,43 @@ def get_num_non_grad(result_lst):
     """
     return result_lst.count(EVADED) + result_lst.count(MIGRATED)
 
-def get_train_test_oversample_var(data, data_desc, sem):
+def get_train_test_oversample_var(data, data_desc, sem, option):
     """
     get the following variables: (train_feat, train_result, key_train, test_feature,
     test_result, key_test, ovsmp_test_feature, ovsmp_test_result) 
     receives: 
         1. data we are working with
         2. description of the data we are working with
+        3. semester we are interested
+        4. option we are interested in 
     returns: 
         nothing
     """
-    # get training data in the correct form to work with 
-    (feat_name, train_feature, train_result, key_train) = \
-            get_data(data, data_desc, YEAR_START_TRA, YEAR_END_TRA, sem)
+    assert (option == 'optimization' or option == 'run_model')
 
-    # get test data
-    (feat_name, test_feature, test_result, key_test) = \
-            get_data(data, data_desc, YEAR_START_TEST, YEAR_END_TEST, sem)
+    # get train and test data, according to the option passed
+    if option == 'run_model':
+        # get training data 
+        (feat_name, train_feature, train_result, key_train) = \
+                get_data(data, data_desc, YEAR_START_TRA, YEAR_END_TRA, sem)
 
-    # apply oversampling
-    oversample = True
+        # get test data
+        (feat_name, test_feature, test_result, key_test) = \
+                get_data(data, data_desc, YEAR_START_TEST, YEAR_END_TEST, sem)
+
+    else: 
+        # get trainining data for 
+        (feat_name, train_feature, train_result, key_train) = \
+                get_data(data, data_desc, YEAR_START_TRA_VAL, YEAR_END_TRA_VAL, sem)
+
+        # get test data - this is the validation set!
+        (feat_name, test_feature, test_result, key_test) = \
+                get_data(data, data_desc, YEAR_START_VAL, YEAR_END_VAL, sem)
+
+    # select if we should oversample
+    # we are not oversampling anymore
+    oversample = False
+    # apply oversample, case we need
     if oversample: 
         (ovsmp_test_feature, ovsmp_test_result) = apply_oversampling(test_feature, 
                                                             test_result, data)
@@ -590,6 +624,44 @@ def get_train_test_oversample_var(data, data_desc, sem):
     # return
     return (train_feature, train_result, key_train, test_feature, test_result, 
             key_test, ovsmp_test_feature, ovsmp_test_result)
+
+def get_zeroR_perf(perf_ml_model, data_desc, sem, train_result, test_result):
+    """
+    get the performance of the zeroR model
+    receives: 
+        1. dictionary containing the performance for the model
+        2. data description we are working with 
+        3. semester we are working with 
+        4. train result - the model will pick the best 
+        5. test result 
+    returns: 
+        nothing
+    """
+    # get train most common result - put in variable result
+    n_graduated = train_result.count(GRADUATED)
+    n_evaded = train_result.count(EVADED)
+    n_migrated = train_result.count(MIGRATED)
+    if n_graduated > n_evaded and n_graduated > n_migrated:
+        result = GRADUATED
+    elif n_evaded > n_graduated and n_evaded > n_migrated: 
+        result = EVADED
+    else: 
+        result = MIGRATED
+
+    # make test list prediction
+    pred_lst = []
+    for i in range(len(test_result)): 
+        pred_lst.append(result)
+
+    # get lists in format that scikit function can handle
+    pred_val_lst = get_flat_res_lst(pred_lst)
+    true_val_lst = get_flat_res_lst(test_result)
+
+    # obtain f-measure 
+    fmeasure = f1_score(true_val_lst, pred_val_lst, average = 'micro')
+
+    # save results in dictionary
+    perf_ml_model[(sem, data_desc, 'zeroR')] = fmeasure
 
 def set_evasion_chance(ml_models, key_lst, data, features_lst, sem):
     """
@@ -666,16 +738,17 @@ if __name__ == "__main__":
     #analyse_decision_tree()
 
     # build and run machine learning models
-    #build_run_ml_models_wrapper(PCK_ML_MODEL, option = 'run_model')
+    build_run_ml_models_wrapper('./data/zeroR', 'run_model', 20)
 
     # apply optimization to sklearn 
-    #build_run_ml_models_wrapper(OPT_PCK_ML_MODEL, option = 'optimization')
-    #cProfile.run("build_run_ml_models_wrapper(OPT_PCK_ML_MODEL, option = 'optimization')")
+    #build_run_ml_models_wrapper(OPT_PCK_ML_MODEL, 'optimization', 20)
+    #cProfile.run("build_run_ml_models_wrapper(OPT_PCK_ML_MODEL, 'optimization', 1)")
 
     # plot ml graph
     #plot_ml_model_perf()
 
     # get report on which parametrization is better for each model 
+    #report_best_model_conf(OPT_PCK_ML_MODEL)
     #report_best_model_conf('./data/ann_ml_model_true')
     #report_best_model_conf('./data/svr_model')
-    report_best_model_conf('./data/naive_bayes_model')
+    #report_best_model_conf('./data/naive_bayes_model')
