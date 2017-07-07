@@ -1,11 +1,15 @@
 Neste apêndice, mostram-se os principais resultados da análise descritiva de dados. 
 Começa-se mostrando os gráficos de barra dos atributos eliminados devido a
-\textit{missing values}. 
+\textit{missing values}. Em seguida, as tabelas mostrando a diferença na capacidade
+de formar, de acordo com o curso e com a idade são apresentadas. Seguindo isso,
+mostram-se a mudança nos valores de alguns atributos. Por fim, apresentam-se os
+gráficos de barra e histogramas para os atributos. 
 % TODO: colocar descrição do que é encontrado aqui
 
 \section{Atributos Eliminados devido a Missing Values} \label{graf_miss_value}
-\par Eliminaram-se os atributos raça e tipo da escola, pela quantidade de missing
-values ser superior a 40\%.  A Figura \ref{atr_race} mostra o gráfico de barra para o
+\par Eliminaram-se os atributos raça e tipo da escola, pela quantidade de
+\textit{missing values}
+ser superior a 40\%.  A Figura \ref{atr_race} mostra o gráfico de barra para o
 atributo raça, enquanto que a Figura \ref{atr_school_type} mostra o gráfico de barra
 para o atributo tipo da escola.  
     % raça
@@ -21,7 +25,7 @@ para o atributo tipo da escola.
         \caption{Gráfico de Barra para Atributo Tipo da Escola}
         \centering
         \includegraphics[width = 10cm]{all_students/school_type.png}
-        \label{atr_school}
+        \label{atr_school_type}
     \end{figure}
 
 Conforme já dito, em ambos os casos, observam-se uma grande quantidade de valores
@@ -76,10 +80,10 @@ Tabela \ref{justificativa_4_idade}.
 \end{tabular}
 \end{center}
 \caption{Percentagem de Alunos Capazes de Formar, de Acordo com a Idade}
-\label{justificativa_4_curso}
+\label{justificativa_4_idade}
 \end{table}
 
-\section{Mudança de Valores de Atributos}
+\section{Mudança de Valores de Atributos} \label{just_mud_atr}
 Conforme mencionado, os atributos forma de entrada e forma de saída tiveram seus
 valores menos comuns agrupados em certas categorias. O gráfico de barra para o
 atributo forma de ingresso, com seus valores originais, é mostrado na Figura
@@ -90,7 +94,6 @@ apresentado a seguir:
     \begin{itemize}
     \item \texttt{vest}: Ingresso via Vestibular
     \item \texttt{ci}: Ingresso via Convênio-Int
-    \item \texttt{to}: Ingresso via Transferência Obrigatória
     \item \texttt{to}: Ingresso via Transferência Obrigatória
     \item \texttt{ac}: Ingresso via Acordo Cultural PEC
     \item \texttt{ca}: Ingresso via Convênio Andifes
@@ -128,6 +131,8 @@ apresentado a seguir:
     \includegraphics[width = 10cm]{all_students/way_out.png}
     \label{atr_way_out_org}
     \end{figure}
+
+\clearpage
 
 \section{Gráficos de Barra e Histogramas Para Atributos} \label{graf_bar_hist}
 Mostra-se a seguir a distribuição dos atributos por meio de gráficos de barra e

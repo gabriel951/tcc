@@ -620,7 +620,7 @@
 				\@nomecurso\ em \@nomeDoPrograma%
 			\else%
 				apresentada como requisito parcial\\
-				para conclus\~ao do \@nomecurso%
+				para conclusão da matéria Estudos em Sistemas de Computação%
 			\fi%
 			\vfill%
 			\@sexoorientador\\\@nomeorientador\\%
@@ -654,7 +654,7 @@
 				\@nomecurso\ em \@nomeDoPrograma%
 			\else%
 				apresentada como requisito parcial\\
-				para conclus\~ao do \@nomecurso%
+				para conclusão da matéria Estudos em Sistemas de Computação%
 			\fi%
 			\vfill%
 			\@nomeorientador\ (\@sexoorientador)\\

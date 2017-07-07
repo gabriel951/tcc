@@ -1,0 +1,22 @@
+# antes
+    -> não estudei o momentum (tal informação só é usada quando o resolvedor é o sgd)
+e eu tentei o lbfgs.  
+    
+
+# depois 
+    -> fazer monografia até quinta a noite, artigo até domingo a tarde
+
+# reunião do dia 7/6
+# antes
+    -> não estudei o momentum (tal informação só é usada quando o resolvedor é o sgd)
+e eu tentei o lbfgs. - ok
+    -> problema referenciar artigos unpublished? tipo os do raphael hoed... - ok
+    -> Quem vai ser minha banca? Preciso saber para escrever minha monografia.
+    -> Calendário: 
+        * que dia vamos treinar apresentação?
+        * quarta-feira a tarde posso não estar na UnB (semana q vem vai ser
+          mais tranquilo, né)?
+        * que horas vai ser minha banca? 
+
+# depois
+    -> 

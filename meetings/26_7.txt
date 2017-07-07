@@ -36,3 +36,4 @@ semestre!
                 -> Falta escrever toda essa seção
 
 # depois
+    -> ficou para o dia 14, mas tem que fazer o artigo também. 

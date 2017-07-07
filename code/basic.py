@@ -107,7 +107,7 @@ WAY_OUT_CONSIDERED.append('Falecimento')
 # way out that were considered migration
 MIGRATION_WAY_OUT = []
 # TODO: Outros should be migration?
-MIGRATION_WAY_OUT.append('Outros')
+#MIGRATION_WAY_OUT.append('Outros')
 MIGRATION_WAY_OUT.append('Mudança de Curso')
 MIGRATION_WAY_OUT.append('Mudança de Turno')
 MIGRATION_WAY_OUT.append('Novo Vestibular')

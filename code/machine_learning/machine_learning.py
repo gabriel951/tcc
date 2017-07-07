@@ -9,7 +9,7 @@ import cProfile
 # imports
 import statistics as stat
 import random
-import itertools
+import itertools 
 import pickle
 
 # multioutput
@@ -251,6 +251,9 @@ def build_run_ml_models_wrapper(path_name, option, max_sem):
             ovsmp_test_feature, ovsmp_test_result) = get_train_test_oversample_var(data,\
                     data_desc, sem, option)
 
+        print(train_feature[0])
+        exit()
+
         print("(train, test amount):  (%d, %d)" % (len(train_result),
                 len(test_result)))
 
@@ -343,7 +346,6 @@ def build_run_ml_models(sem, data, data_desc, perf_ml_model, train_feature,
     # get performance of zeroR 
     get_zeroR_perf(perf_ml_model, data_desc, sem, train_result, ovsmp_test_result)
     #print(perf_ml_model)
-
 
 def evaluate_performance(data, cur_sem, test_feature, test_result, model, \
         model_desc):
@@ -738,7 +740,7 @@ if __name__ == "__main__":
     #analyse_decision_tree()
 
     # build and run machine learning models
-    build_run_ml_models_wrapper('./data/zeroR', 'run_model', 20)
+    build_run_ml_models_wrapper('./data/trash', 'run_model', 20)
 
     # apply optimization to sklearn 
     #build_run_ml_models_wrapper(OPT_PCK_ML_MODEL, 'optimization', 20)

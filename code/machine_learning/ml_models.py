@@ -160,7 +160,6 @@ def get_optimal_param(data_desc, ml_model_desc):
             return ['linear', 1.0]
         else:
             exit('can not get optimal parameters for the combination passed!')
-        
     else: 
         exit('can not get optimal parameters for the combination passed!')
 

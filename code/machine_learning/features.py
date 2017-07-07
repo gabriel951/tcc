@@ -144,11 +144,7 @@ def add_feature_hard_rate(stu, stu_features, semester, feat_name_lst):
     stu_features.append(stu.hard_rate[semester - 1])
 
 def add_feature_drop_rate(stu, stu_features, semester, feat_name_lst):
-    """
-    append feature drop_rate to the student feature list
-    append atribute to the name list, if not already in there
-    receives:
-        1. a student
+    """ append feature drop_rate to the student feature list append atribute to the name list, if not already in there receives: 1. a student
         2. a list containing all the student features
         3. the semester we are interested. 
         4. list with the name of the features considered so far

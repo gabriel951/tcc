@@ -1,16 +1,12 @@
 Neste capítulo, descreve-se a metodologia usada em toda a pesquisa. 
 Detalha-se como foi feito o levantamento
 do estado da arte, a obtenção e utilização dos dados, a seleção de
-atributos, a eliminação de atributos devido à \textit{missing values}, a eliminação
-de \textit{outliers}, a análise preliminar por meio de estatística descritiva, a
-eliminação de atributos relacionados ou irrelevantes, as divisões em treino e teste e
-as divisões em semestre, a escolha dos modelos de aprendizagem de máquina, e a forma
-de avaliar o desempenho destes.  
+atributos, a eliminação de \textit{outliers}, a análise preliminar por meio de estatística
+descritiva, a escolha dos modelos e a forma de avaliar o desempenho destes.  
 
 \section{Levantamento do Estado da Arte}
-Foi feito o levantamento do estado da arte através da leitura de diversos artigos.
-Procurou-se assim compreender
-quais fatores são importantes para a evasão \cite{adeodato}
+Foi feito o levantamento do estado da arte através da leitura de diversos artigos, de
+modo a entender quais fatores são importantes para a evasão \cite{adeodato}
 \cite{hoed_fatores} \cite{dropout_finland}, como técnicas de
 aprendizagem de máquina podem ser utilizadas para resolver o problema \cite{adeodato}
  \cite{data_mining_retention} 
@@ -19,9 +15,9 @@ e como trabalhar especificamente com os dados da UnB \cite{manual_calouro}
 
 \section{Obtenção e Utilização dos Dados}
 Obtiveram-se informações descaracterizadas relativas aos dados sociais e ao
-desempenho acadêmico de alunos de graduação da UnB. Todos os dados utilizados vieram
-de uma só fonte, de modo que o comum problema encontrado na área de mineração de
-dados de garantir a consistência dos dados entre várias fontes não foi enfrentado. 
+desempenho acadêmico de alunos da UnB. Todos os dados utilizados vieram de uma só
+fonte, de modo que o comum problema encontrado na área de mineração de dados de
+garantir a consistência dos dados entre várias fontes não foi enfrentado. 
 \par Optou-se por restringir a pesquisa apenas aos alunos que entraram a partir de
 2000 e saíram até 2016, de modo a trabalhar com dados mais recentes. 
 Para simplificar a análise, decidiu-se trabalhar apenas com uma área
@@ -34,6 +30,9 @@ específica (computação), de modo que apenas os seguintes cursos foram conside
     \item Engenharia de Software
     \item Engenharia Mecatrônica
 \end{itemize}
+\par Decidiu-se que os dados de alunos que tivessem entrado entre 2000 e 2010 seriam
+usados como dados de treino, enquanto que os dados de alunos que tivessem entrado de
+2010 até 2016 seriam usados como dados de teste.
 
 \section{Seleção Preliminar de Atributos}
 Com base no levantamento do estado da arte feito, selecionou-se quais atributos
@@ -41,7 +40,7 @@ teriam melhor condição de serem significativos para que um aluno fosse ou não
 desligado. Assim sendo, lista-se a seguir os atributos sociais considerados em uma análise
 inicial:
 \begin{itemize}
-        \item Cotista (ou não)
+        \item Cotista ou não
         \item Curso
         \item Forma de Ingresso
         \item Idade
@@ -74,17 +73,17 @@ o número de alunos com IRA maior que o do estudante em questão
 (considerando apenas aqueles que entraram no mesmo curso do estudante, no mesmo ano e
 no mesmo semestre). Assim, um aluno com posição $P = 0$ é aquele que tem o maior
 IRA em relação a seus colegas que entraram no mesmo curso durante o mesmo ano e
-semestre.  
+semeste.  
 \par Como todos os cursos da UnB requerem uma quantidade de créditos mínima para
 graduação, incluiu-se o atributos quantidade de créditos já integralizados. 
 \par A taxa de aprovação é definida como a razão entre o número de matérias cursadas
 pelo aluno com aprovação pelo número de matérias cursadas pelo aluno. Analogamente, a
 taxa de reprovação é definida como a razão entre o número de matérias cursadas pelo
-aluno com reprovação pelo número de matérias cursadas pelo aluno. Deve-se dizer que 
+aluno com reprovação pelo número de matérias cursadas pelo aluno. Deve-se dizer
 incluir a taxa de aprovação e a de reprovação não é, a priori, redundante, já que
 além de ser aprovado ou reprovado em uma matéria, outra possibilidade é o aluno
 realizar o trancamento.  Pensando nisso, definiu-se a taxa de trancamento como sendo
-a razão entre o número de matérias trancadas pelo aluno pelo número de matérias
+a razão entre o número de matérias trancadas pelo aluno pelo o número de matérias
 cursadas pelo aluno.
 \par Por fim, a taxa de aprovação na disciplina mais difícil do semestre é definida
 como sendo a razão entre o número de aprovações na disciplina mais difícil do
@@ -94,7 +93,7 @@ difícil do semestre é aquela com a maior taxa de reprovação.
 desempenho variam conforme o semestre considerado. O mesmo não ocorre para os
 atributos sociais. 
 
-\section{Eliminação de Atributos Devido a Missing Values}
+\section{Eliminação de Atributos devido a Missing Values}
 Optou-se por eliminar atributos cuja quantidade de entradas com \textit{missing
 values} fosse superior à 40\%. Assim, eliminaram-se os atributos raça e tipo da
 escola. Os gráficos de barra para tais atributos se encontram em
@@ -105,12 +104,12 @@ Decidiu-se não trabalhar com casos de alunos que após ingressar na universidad
 demonstraram interesse em cursar matérias (por exemplo, aqueles que reprovaram em
 todas as disciplinas com SR). Tais casos foram tratados como \textit{outliers}.
 Após a análise individual de cada caso, os \textit{outliers} foram eliminados do espaço
-amostral. Eliminaram-se 233 estudantes do espaço amostral dessa maneira, ficando-se
-assim com 4536 amostras.
+amostral. Eliminaram-se 230 estudantes do espaço amostral dessa maneira, ficando-se
+assim com 4539 amostras.
 
 \section{Estatística Descritiva}
 Foi feita uma análise preliminar por meio de estatística descritiva. As subseções
-seguintes explicam cada um dos procedimentos adotados: a mudança na base
+seguintes explicam cada um dos procedimentos adotados. apresentam a mudança na base
 de dados realizada, a mudança nos valores de alguns atributos e os gráficos de barra
 e histogramas finais. 
 
@@ -121,27 +120,27 @@ demais, alguns cursos serem de instituições diferentes (\acrshort{FT} ou
 \acrshort{IE}, por exemplo) e os
 cursos possuírem ``maturidade'' diferentes (devido à data início de cada curso ser
 diferente). Outra observação preliminar possível foi a de que a proporção de alunos
-que ingressam com idade avançada que se forma é menor do que a de alunos mais jovens.
-Essas observações levaram a partição da base de dados original em 4 bases de dados: 
+com idade avançada que se forma é menor do que a de alunos mais jovens. Essas
+observações levaram a partição da base de dados original em 4 bases de dados: 
 \begin{itemize}
-    \item Alunos Jovens da FT: contém todos os alunos que ingressaram com 30
+    \item Alunos Sêniors: contém todos os alunos com mais de 30 anos
+    \item Alunos Jovens de Licenciatura: contém todos os alunos com 30 anos ou menos
+        que cursam licenciatura em Computação. O curso de licenciatura tem a
+        peculiaridade de ser o único noturno. 
+    \item Alunos Jovens de Computação: contém todos os alunos com 30 anos ou menos
+        que cursam Ciência da Computação, Engenharia da Computação ou Engenharia de
+        Software. 
+    \item Alunos Jovens de Tecnologia da Informação: contém todos os alunos com 30
         anos ou menos que cursam Engenharia de Redes ou Engenharia Mecatrônica. Tais
         cursos tem a peculiaridade de estarem associados à FT (Faculdade de
         Tecnologia), diferentemente de todos os demais.  
-    \item Alunos Jovens de Licenciatura: contém todos os alunos que ingressaram com
-        30 anos ou menos que cursam Computação (Licenciatura). O curso de
-        Licenciatura tem a peculiaridade de ser o único noturno. 
-    \item Alunos Jovens de Computação: contém todos os alunos que ingressaram com 30
-        anos ou menos que cursam Ciência da Computação, Engenharia da Computação ou
-        Engenharia de Software. 
-    \item Alunos Seniores: contém todos os alunos com mais de 30 anos.
 \end{itemize}
-Devido à baixa quantidade de alunos seniores, não se separou tal categoria em grupos.
+Devido à baixa quantidade de alunos sêniors, não se separou tal categoria em grupos.
 A evidência fornecida pela estatística descritiva para essa separação
 encontra-se na seção \ref{justificativa_4_base_dados}.
 
 \subsection{Mudança nos Valores de Atributos}
-\par Dois atributos tiveram alguns de seus valores agrupados em categorias para
+\par Dois atributos tiveram seus alguns de seus valores agrupados em categorias para
 facilitar o posterior tratamento dos dados. Tais atributos são a forma de entrada e a
 forma de saída. A distribuição original de tais atributos pode ser vista na seção 
 \ref{just_mud_atr}. 
@@ -176,29 +175,28 @@ de análises posteriores.
 pensados, utilizaram-se árvores de decisão: os atributos que não apareceram nas
 árvores de decisão foram eliminados das fases posteriores. Esse procedimento foi
 feito para cada uma das 4 bases de dados. Para os alunos jovens da licenciatura,
-obteve-se que o atributo curso não era relevante (o que era esperado já que todos os alunos
-desse grupo tem o mesmo curso). Para os alunos seniores, obteve-se que os atributos
-curso, cota e taxa de trancamento são irrelevantes. Para as outras bases de dados, nenhum
+obteve-se que o atributo curso não era relevante, o que era esperado já que todos os alunos
+desse grupo tem o mesmo curso). Para os alunos sêniors, obteve-se que os atributos
+curso, cota e taxa de trancamento são irrelevantes. Para os outros grupos, nenhum
 atributo foi classificado como irrelevante. 
 
-\section{Divisão em Treino e Teste}
+\section{Divisão em Treino e Teste e Desbalanceamento entre Treino e Teste}
 Como tradicionalmente ocorre no domínio de análise preditiva, houve a separação dos
 dados entre dados de treino e dados de teste. Os dados abrangiam alunos que entraram
 no período de 2000 até 2016 e já saíram da universidade. Aqueles alunos que entraram
 antes de 2010 formaram o conjunto dos dados de treino, enquanto que os alunos que
 entraram de 2010 em diante formaram o conjunto dos dados de teste. 
 
-% não quis incluir. Se incluir e quiser fazer bem feito, explicar pq não se corrigiu
-% tal desproporção
-%\par Constatou-se uma grande diferença na proporção de alunos que se formava quando se
-%comparava os dados de treino e os dados de teste. De fato, 53\% dos
-%alunos dos dados de treino se mostraram capaz de conclui o curso, enquanto que para
-%os dados de teste, a percentagem foi de 18\%. 
-%\par Para entender a explicação para esse fenômeno, considere, por exemplo, os alunos
-%ingressantes na UnB no ano de 2014. Aqueles que irão se graduar, não o farão até 2016
-%e, portanto, não aparecerão em nossa amostra. Por outro lado, alguns dos que irão
-%evadir o farão até 2016, aparecendo assim em nossa amostra. Essa é a explicação para
-%o desbalanceamento da proporção de alunos que graduaram nos dados de teste. 
+\par Constatou-se uma grande diferença na proporção de alunos que se formava quando se
+comparava os dados de treino e os dados de teste. De fato, 53\% dos
+alunos dos dados de treino se mostrou capaz de conclui o curso, enquanto que apenas
+18\% dos alunos dos dados de teste.
+\par Para entender a explicação para esse fenômeno, considere, por exemplo, os alunos
+ingressantes na UnB no ano de 2014. Aqueles que irão se graduar, não o farão até 2016
+e, portanto, não aparecerão em nossa amostra. Por outro lado, alguns dos que irão
+evadir o farão até 2016, aparecendo assim em nossa amostra. Essa é a explicação para
+o desbalanceamento da proporção de alunos que graduaram nos dados de teste. 
+% TODO: o que foi feito para corrigir o problema
 
 \section{A Divisão em Semestres}
 Para o problema de negócio considerado na pesquisa, é necessário que o sistema
@@ -218,24 +216,16 @@ do sistema previsor para alunos no 10º semestre e o aluno em questão saiu da U
 fim do 8º semestre) tal aluno não entra no conjunto de treino/teste para o semestre
 considerado.   
 
-\section{Técnicas de Aprendizagem de Máquina Estudadas e Retroalimentação} 
+\section{Técnicas de Aprendizagem de Máquina Estudadas} 
 As técnicas de aprendizagem de máquina utilizadas para a predição de alunos em risco
-de evasão foram: \textit{Naive Bayes}, \textit{random forests}, redes neurais, regressor linear e
-SVR's. Utilizou-se a biblioteca \texttt{scikit-learn} (versão 0.18.1) \cite{sklearn}, da
+de evasão foram: naive bayes, random forests, redes neurais, regressores lineares e
+SVR's. Utilizou-se a biblioteca scikit-learn (versão 0.18.1) \cite{sklearn}, da
 linguagem de programação Python.
-\par Para cada um dos modelos de aprendizagem de máquina adotado, estudou-se se
-utilizar retroalimentação poderia melhorar o desempenho. A retroalimentação
-funcionaria da seguinte forma: o modelo de aprendizagem de máquina, na hora de tentar
-prever o desempenho para um semestre $x$, receberia as chances do aluno
-graduar/evadir/formar calculada por esse mesmo modelo para o semestre $x-1$.
-Entretanto, a retroalimentação não forneceu ganhos ou perdas significativas, de modo
-que, para cada modelo estudado, analisou-se seu desempenho com e sem
-retroalimentação. 
 
 \section{Estimativa de Parâmetros}
 Estimou-se quais seriam os melhores parâmetros para os seguintes modelos de
-aprendizagem de máquina: \textit{Naive Bayes}, redes neurais e SVR's. Para os demais modelos,
-seguiu-se as configurações padrão da biblioteca \texttt{scikit-learn}.  
+aprendizagem de máquina: naive bayes, redes neurais e SVR's. Para os demais modelos,
+seguiu-se as configurações padrões da biblioteca usada.  
 Para isso, utilizou-se validação, como descrito a seguir. Inicialmente, dividiu-se o
 conjunto que não era de teste (consistindo dos alunos que entraram antes de 2010) em
 dois subconjuntos: o conjunto de treino (alunos que entraram antes de 2007) e o
@@ -252,24 +242,23 @@ confiança da configuração com melhor desempenho. Adotou-se um intervalo de co
 de 95\%.  As configurações obtidas para cada modelo são mostradas na seção
 \ref{conf_ml_models}.
 
+% todo:  colocar demais configurações
 \subsection{Estimativa de Parâmetros Para Redes Neurais}
-Estimou-se primeiramente a melhor quantidade de
+Estimou-se primeiramente a melhor configuração número de
 neurônios, testando o desempenho das \acrshort{ANN}'s com 12, 24, 36 e 100 neurônios.
-Em seguida, testou-se a taxa de aprendizagem para a rede neural, experimentando os
-valores 0.001 (padrão da biblioteca), 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 e
-1.0. 
+% colocar da taxa de aprendizagem e das redes neurais
 
 \subsection{Estimativa de Parâmetros Para SVR}
-Estimou-se primeiramente a melhor configuração para o tipo de \textit{kernel} da
-\acrshort{SVR}. Os tipos de \textit{kernel} analisados foram linear, polinomial e rbf. Em
+Estimou-se primeiramente a melhor configuração para o tipo de Núcleo da
+\acrshort{SVR}. Os tipos de núcleo analisados foram linear, polinomial e rbf. Em
 seguida, variou-se o parâmetro de penalização $C$ da SVR, analisando-se o desempenho da
 SVR quando $C$ era 0,5 1 e 2.
 
 \subsection{Estimativa de Parâmetros Para Naive Bayes}
-O único parâmetro estimado para a técnica de aprendizagem de máquina \textit{Naive Bayes} foi
+O único parâmetro estimado para a técnica de aprendizagem de máquina Naive Bayes foi
 o tipo de distribuição que os atributos seguiam. Testou-se o desempenho de tal modelo
 de aprendizagem de máquina assumindo-se que os atributos tinham as seguintes
-distribuições: gaussiana, multinomial e Bernoulli. 
+distribuições: gaussiana, multinomial e bernoulli. 
 
 \section{Avaliação de Desempenho}
 Após selecionar as melhores configurações para cada método de aprendizagem de
@@ -277,17 +266,7 @@ máquina, avaliou-se o desempenho de cada um dos métodos. Para isso, cada model
 aprendizagem de máquina treinou no conjunto de treino (composto por alunos que
 ingressaram antes de 2010) e teve seu desempenho avaliado no conjunto de teste
 (composto por alunos que ingressaram de 2010 em diante). Esse processo foi feito para
-cada um dos semestres estudados e funciona como explicado a seguir. 
-\par Cada método de aprendizagem de máquina gera, para cada aluno em cada semestre
-ativo, uma tripla que indica a possibilidade do aluno concluir, evadir ou migrar. O
-maior valor da tripla é usado como sendo a previsão do modelo. Tal previsão é
-então comparada com o que realmente aconteceu ao aluno. Se a previsão condiz com o
-real, o modelo acerta; caso contrário, o modelo erra. 
-\par A métrica utilizada para avaliar o desempenho dos
-modelos foi a \textit{F-measure}. Um determinado modelo tem, para uma determinada
-base de dados, vários valores de \textit{F-measure} calculados, um para cada semestre. Feito
-isso, para sumarizar o desempenho do modelo para uma base de dados, toma-se a média
-das \textit{F-measures} de cada semestre. Compararam-se os resultados dos modelos
-entre si, e também com o modelo ZeroR. Os resultados encontram-se na seção
-\ref{results_ml_models}.
+cada um dos semestres estudados. A métrica utilizada para avaliar o desempenho dos
+modelos foi a f-measure. Comparou-se os resultados dos modelos entre si, e também com
+o modelo ZeroR. Os resultados encontram-se na seção \ref{results_ml_models}.
 

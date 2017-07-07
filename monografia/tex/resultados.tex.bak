@@ -1,0 +1,98 @@
+Nesta capítulo, mostram-se os resultados obtidos para as diversas técnicas de
+aprendizagem de máquina consideradas. Em seguida, analisam-se os resultados obtidos. 
+
+\section{Resultados Obtidos}
+
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c |}
+    \hline
+    \textbf{Modelo} & \textbf{F-measure} \\
+    \hline
+    ANN              & 0.76 \\
+    \hline
+    Naive Bayes      & 0.56 \\
+    \hline
+    Random Forest    & 0.73 \\
+    \hline
+    Regressor Linear & 0.80 \\
+    \hline
+    SVR              & 0.76 \\
+    \hline
+    ZeroR            & 0.64 \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{F-measure por Modelo, para Alunos Jovens da FT}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c |}
+    \hline
+    \textbf{Modelo} & \textbf{F-measure} \\
+    \hline
+    ANN              & 0.85 \\
+    \hline
+    Naive Bayes      & 0.76 \\
+    \hline
+    Random Forest    & 0.85 \\
+    \hline
+    Regressor Linear & 0.86 \\
+    \hline
+    SVR              & 0.82 \\
+    \hline
+    ZeroR            & 0.70 \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{F-measure por Modelo, para Alunos Jovens de Licenciatura}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c |}
+    \hline
+    \textbf{Modelo} & \textbf{F-measure} \\
+    \hline
+    ANN              & 0.74 \\
+    \hline
+    Naive Bayes      & 0.65 \\
+    \hline
+    Random Forest    & 0.76 \\
+    \hline
+    Regressor Linear & 0.77 \\
+    \hline
+    SVR              & 0.70 \\
+    \hline
+    ZeroR            & 0.60 \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{F-measure por Modelo, para Alunos Jovens da Computação}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c |}
+    \hline
+    \textbf{Modelo} & \textbf{F-measure} \\
+    \hline
+    ANN              & 0.62 \\
+    \hline
+    Naive Bayes      & 0.28 \\
+    \hline
+    Random Forest    & 0.70 \\
+    \hline
+    Regressor Linear & 0.75 \\
+    \hline
+    SVR              & 0.79 \\
+    \hline
+    ZeroR            & 0.61 \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{F-measure por Modelo, para Alunos Seniors}
+\end{table}
+
+\section{Discussão dos Resultados}

@@ -1,0 +1,364 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+%black magic to break urls
+\usepackage{graphicx,url}
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+
+%\usepackage[brazil]{babel}   
+\usepackage[latin1]{inputenc}  
+     
+\sloppy
+
+\title{A Machine Learning Predictive System to Identify Students in Risk of Dropping
+Out of College}
+
+\author{Gabriel F. Silva\inst{1}, Marcelo Ladeira \inst{1}}
+
+\address{Departamento de Ciência da Computação -- Universidade de Brasília 
+\email{mladeira@unb.br, gabrieltiburciouaiso@gmail.com}
+}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+% problem definition and current approach
+The University of Brasília (UnB) suffers from a big problem of student drop out, which has
+academics, economics and social consequences. UnB's approach to the problem consist
+of separating it's students in two groups: those that are in risk of dropping out
+and those that aren't and counsel the students in the former group.  % my proposal
+This paper describes the development of a predictive system capable of indicating the
+risk of a student dropping out. This way, UnB could act before it's too late and
+also act according to the risk presented by a student. 
+
+% methodology - todo: put that students are from computation and are undergrad
+For the development of the predictive system, data of students that entered and left
+UnB from 2000 to 2016 was used. The data does not contain student identification.
+Machine learning (ML) models were trained and their performance was analysed on test
+data. ML models studied were Naive Bayes, ANN, SVR, Linear Regressor and Random
+Forests).
+
+% results/conclusion
+Machine Learning models got, in general, good performance. The best performance came
+from the linear regressor. Results obtained indicate potential in using machine
+learning to predict the risk of students dropping out of university. 
+\end{abstract}
+
+\section{Introduction}
+Student dropping out of brazilian universities are a significant problem, with
+academic, social and economic consequences. University of Brasilia (UnB) is no
+exception, being significantly affected by the problem \footnote{UnB had a money lost
+estimated in 96.5 millions, according to the brazilian press Correio Brasiliense
+\cite{correio}}.  
+\par This paper describes a possible approach for the problem: the development of a
+predictive analysis system that estimates the risk of a given student dropping
+out of college. In case of success, the system would allow the university to take
+measures with precedence (before it's too late) and with flexibility (according to
+the risk presented by a student). 
+\par The system outputs a triple $(v_1, v_2, v_3)$, with all values 
+between 0 and 1. The values indicate, in this order, the chance of the given student
+graduate, evade or migrate from the course he's in. 
+\par The rest of the article is organized in the following structure: in the next
+section, the methods used are thoroughly explained; after that, the good results
+obtained are presented and discussed; finally, conclusion is made and ideas for
+future work are exposed.  
+
+\section{Methods}
+In this section, the methodology used is discussed. First, the data obtained is
+described, along with the train and test division. After that, feature selection is
+explained. Next, the division by semester is motivated. Afterwards, the machine
+learning models used are listed, with their parameters configuration.  Finally, the
+performance measure used is described.
+
+\subsection{Data, Data Division and Train and Test Division}
+The data used is from undergraduate students that entered and left the university
+from 2000 to 2016. To simplify the analysis, only courses in areas related to
+computer science were considered. Accordingly, the courses considered were: computer
+science (bachelor degree), computing (teaching degree), computer engineering,
+mechatronics engineering, network engineering and software engineering. 
+\par In exploratory data analysis, it was possible to observe that the features
+varied significantly with the course of the student being considered. Another useful
+information obtained was that the proportion of students capable of graduating
+depends on the age the student enters university: students that enter older in
+university are less likely to graduate. These observations led to the decision of
+partitioning the data in four distinct databases:  
+
+\begin{itemize}
+    \item Seniors Students: All students with more than 30 years. 
+    \item Young Students from FT: Contain all students that entered in UnB with 30
+        years or less and course mechatronics engineering or network engineering.
+        This courses have the distinction of being associated with FT (Faculty of
+        Technology). 
+    \item Young Students from computing: Contain all students that entered in UnB
+        with 30 years or less and course computing. Computing is a teaching degree in
+        UnB, meaning that the students from the course are prepared to be teachers of
+        computer science. Another peculiarity is the fact that it's the only night
+        course from the ones we are consireing. 
+    \item Young Students from computer science: Contain all students that entered in
+        UnB with 30 years or less and course computer science (bachelor degree),
+        computer engineering or software engineering. 
+\end{itemize}
+
+\par In order to train the machine learning models, data was partitioned in the
+training set and the test set. As indicated in \cite{adeodato}, a realistic division
+of the data should be an ``Out of Sample'' division, in which the training set is
+composed by the firsts instances and the test set from the last ones. This way, we
+get a realistic scenario in which the ML models are trained to be applied in a future
+time. With this in mind, the training set was composed of students that ingressed in
+university from 2000 to 2009 while the test set was composed of students that
+ingressed in university from 2010 to 2016. 
+
+\subsection{Features and Feature Selection}
+After initial research (see \cite{adeodato} or \cite{dropout_finland}) on which
+features should be included for the ML models to train, the following social features were
+selected initially: 
+
+\begin{itemize}
+    \item Age
+    \item Course
+    \item Quota 
+    \item Race
+    \item Sex
+    \item Type of School 
+    \item Way In
+\end{itemize}
+
+In addition to social features, academic features were, obviously, also considered: 
+\begin{itemize}
+    \item Amount of Credits Done
+    \item Average Grades in a Semester
+    \item Pass rate on the hardest subject of a semester
+    \item Indicator of Condition: UnB classifies students as ``in condition'' or
+        not ``ìn condition'' and this classification (see \cite{manual_calouro}) is
+        related to the risk of students dropping out. This boolean variable indicates
+        if the student is ``in condition'' or not. 
+    \item Pass Rate, Fail Rate and Drop Rate: indicate, respectively, the percentage
+        of the subjects a given student pass, fails and drop. 
+    \item Position in relation to fellow students: for a given student $S$ indicates,
+        from all students of the same year, semester and course of $S$, how many have
+        higher grades than $S$.
+    \item Rate of Academic Improvement: reason between grades of a student in current
+        semester by the grades of a student in the previous one. 
+\end{itemize}
+
+Feature selection was done afterwards. To avoid redundancy, a Kendall test
+(see \cite{kendall}) was applied to check if any two of the attributes had very strong
+correlation. Because the test indicated that the fail rate and the pass rate were
+significantly related, a decision was made to consider only the pass rate (this
+strong correlation was verified for all 4 databases). 
+\par Moreover, to check if all the features were really necessary, decision trees
+were employed: features that didn't appear as part of a decision tree were not
+considered in further analysis. The results indicated that, for young students of
+computing the feature course was irrelevant (which makes sense, since all students
+from this group have the same courses). For seniors students, the features course,
+quota and drop rate were considered irrelevant. For the other 2 databases, no feature
+was considered irrelevant.
+
+\subsection{The Necessary Semester Division}
+The predictive system, for the business problem here considered, must be capable of
+calculating the risk of students evading for students in the beginning of the course
+and for students in the end of the course. In relation to that, students academic
+features change from semester to semester. 
+\par This points that a necessary semester division must be carried out. What happens
+is that the machine learning models are trained separately semester by semester.
+Initially, the ML models train on the train dataset containing features from the
+1º semester of the students and are tested on the test dataset containing features
+from the 1º semester of the students. Next, this procedure is repeated for the 2º
+semester and so it goes. 
+
+\subsection{Machine Learning Models}
+The machine learning models used in this research were: ANN, linear regressor, Naive
+Bayes, random forests, SVR. For more information on this models, we recommend the
+excellent books \cite{ml_book} and \cite{ml_second_book}. To establish a baseline,
+the ZeroR model was considered. The Python programming language was used, combined
+with the scikit-learn library \cite{sklearn}. 
+\par Preliminary studies were made to determine the best configurations for the ANN,
+the Naive Bayes and the SVR parameters. For the other machine learning models, the
+default configurations were used. The results varied according to the
+databases, and are shown on Tables \ref{ann_conf}, \ref{svr_conf}, \ref{nb_conf}. 
+
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c | c |}
+    \hline
+    \textbf{Database} & \textbf{Hidden Layer Size} & \textbf{Learning Rate} \\
+    \hline
+    Seniors Students & 24  & 0.7 \\
+    \hline
+    Young Students from FT & 100 & 0.001 \\
+    \hline
+    Young Students from Computing & 36 & 1.0 \\
+    \hline
+    Young Students from Computer Science & 36 & 0.001 \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{ANN's configuration, according to the database}
+\label{ann_conf}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c | c |}
+    \hline
+    \textbf{Database} & \textbf{Kernel Type} & \textbf{Penalty Parameter} \\
+    \hline
+    Seniors Students & linear & 1.0 \\
+    \hline
+    Young Students from FT & linear & 1.0 \\
+    \hline
+    Young Students from Computing & linear & 1.0 \\
+    \hline
+    Young Students from Computer Science & rbf & 1.0 \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{SVR's configuration, according to the database}
+\label{svr_conf}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c | c |}
+    \hline
+    \textbf{Database} & \textbf{Feature Distribution} \\
+    \hline
+    Seniors Students & Gaussian \\
+    \hline
+    Young Students from FT & Gaussian \\
+    \hline
+    Young Students from Computing & Bernoulli \\
+    \hline
+    Young Students from Computer Science & Multinomial \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{Naive Bayes configuration, according to the database}
+\label{nb_conf}
+\end{table}
+
+\subsection{Performance Measures}
+As is standard practice in machine learning, the ML models trained on the train dataset and
+had their perfomance measured in a test dataset, with unseen data. This process was
+done for each one of the semester studied and works as explained next. 
+\par Each machine learning model generates, for each student in each semester, a
+triple that indicates the assessed possibility of a student graduating, evading or
+migrating. The highest value of the triple is used as the model prediction. This
+prediction is then compared to what really happened to the student. 
+\par The metric used to evaluate the performance of the models was the F-measure. A
+given machine learning model has, for a given database, values of F-measure
+calculated, one for each semester. To summarize the performance of the model for a
+database, the mean of the F-measures was calculated. 
+
+\section{Results And Discussion}
+The results are shown on the tables 
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c |}
+    \hline
+    \textbf{Modelo} & \textbf{F-measure} \\
+    \hline
+    ANN              & 0.76 \\
+    \hline
+    Naive Bayes      & 0.56 \\
+    \hline
+    Random Forest    & 0.73 \\
+    \hline
+    Regressor Linear & 0.80 \\
+    \hline
+    SVR              & 0.76 \\
+    \hline
+    ZeroR            & 0.64 \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{F-measure Média por Modelo, para Alunos Jovens da FT}
+\label{fmeasure_ft}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c |}
+    \hline
+    \textbf{Modelo} & \textbf{F-measure} \\
+    \hline
+    ANN              & 0.85 \\
+    \hline
+    Naive Bayes      & 0.76 \\
+    \hline
+    Random Forest    & 0.85 \\
+    \hline
+    Regressor Linear & 0.86 \\
+    \hline
+    SVR              & 0.82 \\
+    \hline
+    ZeroR            & 0.70 \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{F-measure Média por Modelo, para Alunos Jovens de Licenciatura}
+\label{fmeasure_lic}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c |}
+    \hline
+    \textbf{Modelo} & \textbf{F-measure} \\
+    \hline
+    ANN              & 0.74 \\
+    \hline
+    Naive Bayes      & 0.65 \\
+    \hline
+    Random Forest    & 0.76 \\
+    \hline
+    Regressor Linear & 0.77 \\
+    \hline
+    SVR              & 0.70 \\
+    \hline
+    ZeroR            & 0.60 \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{F-measure Média por Modelo, para Alunos Jovens da Computação}
+\label{fmeasure_comp}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}[c]{| c | c |}
+    \hline
+    \textbf{Modelo} & \textbf{F-measure} \\
+    \hline
+    ANN              & 0.62 \\
+    \hline
+    Naive Bayes      & 0.28 \\
+    \hline
+    Random Forest    & 0.70 \\
+    \hline
+    Regressor Linear & 0.75 \\
+    \hline
+    SVR              & 0.79 \\
+    \hline
+    ZeroR            & 0.61 \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{F-measure Média por Modelo, para Alunos Seniores}
+\label{fmeasure_old}
+\end{table}
+
+
+\section{Conclusion}
+
+\bibliographystyle{sbc}
+\bibliography{article.bib}
+
+\end{document}

@@ -33,6 +33,10 @@ def generate_graphs():
  
     # for every model info, make the graph
     for (model, model_desc) in models_lst: 
+
+        if model_desc != 'all_students': 
+            continue
+
         print('starting for %s' % (model_desc))
 
         # deprecated features: local and race
@@ -127,7 +131,7 @@ def r_get_bar_graph(name, folder):
         nothing
     """
     call("Rscript stats_bar_graph.r", shell = True)
-    call("mv temp.png " + folder + "/" + name, shell = True)
+    #call("mv temp.png " + folder + "/" + name, shell = True)
 
 def r_get_hist_graph(name, folder, binwidth):
     """

@@ -351,6 +351,7 @@ def handle_feature(stu_info, rows_list, feature):
         # people that died are considered outliers
         for row in rows_list:
             assert(row != 'Falecimento')
+
         rows_list = [row.replace('Desligamento - Abandono', 'evadiu') \
                 for row in rows_list] 
         rows_list = [row.replace('Mudança de Curso', 'migrou') \
@@ -382,6 +383,8 @@ def handle_feature(stu_info, rows_list, feature):
         rows_list = [row.replace('Ex-Aluno (Decreto 477)', 'dec') \
                 for row in rows_list] 
         rows_list = [row.replace('Transferência', 'migrou') \
+                for row in rows_list] 
+        rows_list = [row.replace('Outros', 'migrou') \
                 for row in rows_list] 
         rows_list = [row.replace('Formatura', 'graduou') \
                 for row in rows_list] 
