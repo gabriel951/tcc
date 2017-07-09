@@ -1,0 +1,9 @@
+# antes
+    -> Não mudei termos como SVMs ou SVRs. Eu queria dizer o plural de SVM e SVR. 
+    -> Não conceituei classificação e regressão (básico demais e não daria tempo)
+    -> Não conceituei overfitting (básico demais e não daria tempo)
+    -> Não coloquei figura para Naive Bayes. (não há necessidade de saber detalhes de
+funcionamento interno para algoritmos de ML). 
+    -> Não reescrevi levantamento do estado da arte. 
+    -> Não concordo com a justificativa para o Naive Bayes. Escrevi a sua te dando um
+voto de confiança. 

@@ -4,7 +4,6 @@ Começa-se mostrando os gráficos de barra dos atributos eliminados devido a
 de formar, de acordo com o curso e com a idade são apresentadas. Seguindo isso,
 mostram-se a mudança nos valores de alguns atributos. Por fim, apresentam-se os
 gráficos de barra e histogramas para os atributos. 
-% TODO: colocar descrição do que é encontrado aqui
 
 \section{Atributos Eliminados devido a Missing Values} \label{graf_miss_value}
 \par Eliminaram-se os atributos raça e tipo da escola, pela quantidade de
@@ -14,31 +13,31 @@ atributo raça, enquanto que a Figura \ref{atr_school_type} mostra o gráfico de
 para o atributo tipo da escola.  
     % raça
     \begin{figure}[!ht]
-        \caption{Gráfico de Barra para Atributo Raça}
         \centering
         \includegraphics[width = 10cm]{all_students/race.png}
+        \caption{Gráfico de Barra para Atributo Raça}
         \label{atr_race}
     \end{figure}
 
     % tipo da escola
     \begin{figure}[!ht]
-        \caption{Gráfico de Barra para Atributo Tipo da Escola}
         \centering
         \includegraphics[width = 10cm]{all_students/school_type.png}
+        \caption{Gráfico de Barra para Atributo Tipo da Escola}
         \label{atr_school_type}
     \end{figure}
 
 Conforme já dito, em ambos os casos, observam-se uma grande quantidade de valores
 faltantes, de modo que tais atributos foram retirados de análises posteriores. 
 
-\section{Impacto do Curso e Idade na Separação de Variáveis: Surgimento das 4 Bases
-de Dados} \label{justificativa_4_base_dados}
+\section{Impacto do Curso e Idade na Separação de Variáveis} \label{justificativa_4_base_dados}
 Na análise preliminar por meio de estatística descritiva, analisou-se como a
 distribuição dos atributos era afetada pelo curso do aluno, tendo-se constatado que a
 influência do fator curso era bastante significativa. Isso pode ser visto na Tabela
 \ref{justificativa_4_curso}.
 
 \begin{table}
+\caption{Percentagem de Alunos Capazes de Formar por Curso}
 \begin{center}
 \begin{tabular}[c]{| c | c |}
     \hline
@@ -58,8 +57,6 @@ influência do fator curso era bastante significativa. Isso pode ser visto na Ta
     \hline
 \end{tabular}
 \end{center}
-\caption{Percentagem de Alunos Capazes de Formar, de Acordo com o Respectivo
-    Curso}
 \label{justificativa_4_curso}
 \end{table}
 
@@ -68,6 +65,7 @@ formar é consideravelmente menor para estudantes mais velhos. Isso pode ser vis
 Tabela \ref{justificativa_4_idade}.
 
 \begin{table}
+\caption{Percentagem de Alunos Capazes de Formar por Idade}
 \begin{center}
 \begin{tabular}[c]{| c | c |}
     \hline
@@ -79,7 +77,6 @@ Tabela \ref{justificativa_4_idade}.
     \hline
 \end{tabular}
 \end{center}
-\caption{Percentagem de Alunos Capazes de Formar, de Acordo com a Idade}
 \label{justificativa_4_idade}
 \end{table}
 
@@ -105,9 +102,9 @@ apresentado a seguir:
     \end{itemize}
 
     \begin{figure}[!ht]
-    \caption{Gráfico de Barra de Todos os Alunos, para o Atributo Forma de Ingresso}
     \centering
     \includegraphics[width = 10cm]{all_students/way_in.png}
+    \caption{Gráfico de Barra de Todos os Alunos, para o Atributo Forma de Ingresso}
     \label{atr_way_in_org}
     \end{figure}
 
@@ -126,13 +123,12 @@ apresentado a seguir:
     \end{itemize}
 
     \begin{figure}[!ht]
-    \caption{Gráfico de Barra para Atributo Forma de Saída}
     \centering
     \includegraphics[width = 10cm]{all_students/way_out.png}
+    \caption{Gráfico de Barra para Atributo Forma de Saída}
     \label{atr_way_out_org}
     \end{figure}
 
-\clearpage
 
 \section{Gráficos de Barra e Histogramas Para Atributos} \label{graf_bar_hist}
 Mostra-se a seguir a distribuição dos atributos por meio de gráficos de barra e

@@ -1,6 +1,5 @@
 # antes
-    -> não estudei o momentum (tal informação só é usada quando o resolvedor é o sgd)
-e eu tentei o lbfgs.  
+    -> não estudei o momentum (tal informação só é usada quando o resolvedor é o sgd) e eu tentei o lbfgs.  
     
 
 # depois 
@@ -16,7 +15,20 @@ e eu tentei o lbfgs. - ok
         * que dia vamos treinar apresentação?
         * quarta-feira a tarde posso não estar na UnB (semana q vem vai ser
           mais tranquilo, né)?
-        * que horas vai ser minha banca? 
+        * que horas vai ser minha banca?  - 14h
+    -> Quanto tempo para apresentação
 
 # depois
-    -> 
+    -> banca dia 14/7, as 14 horas. 
+    -> Falar com a secretaria para cartas, livro de defesa e se precisa de um
+suplente
+    -> Primeira prévia da apresentação - 14h30
+    -> Mudar título para ser o do PIBIC 
+    -> Nome deve vir por extenso - ok
+    -> Consertar data
+    -> Tirar números por extenso 
+    -> Consertar frase inicial 
+
+
+* OBS: Quanto tempo tenho de apresentação?
+    -> 30 minutos!

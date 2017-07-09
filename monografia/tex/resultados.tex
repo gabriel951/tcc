@@ -1,6 +1,3 @@
-% todo: naive bayes should be in italic?
-% todo: falar do ZeroR
-
 Nesta capítulo, mostram-se as melhores configurações para os modelos de aprendizagem
 de máquina estudados. Em seguida, apresentam-se os resultados obtidos para as
 diversas técnicas de aprendizagem de máquina consideradas. Por fim, analisam-se os
@@ -9,14 +6,16 @@ resultados obtidos.
 \section{Configurações Obtidas Para Modelos de Aprendizagem de Máquina}
 \label{conf_ml_models}
 Nesta seção, analisa-se quais foram as melhores configurações obtidas para os
-seguintes modelos de aprendizagem de máquina: ANN, SVR e Naive Bayes. 
+seguintes métodos de mineração de dados: ANN, SVR e \textit{Naive Bayes}. 
 
-\subsection{Configurações da ANN}
-Inicialmente, estudou-se qual seria a quantidade ótima de neurônios da rede neural.
+\subsection{Configurações da ANN} \label{ann_best_conf}
+Inicialmente, estudou-se qual seria a quantidade ótima de neurônios da camada
+escondida da rede neural.
 Depois, estudou-se qual seria o melhor valor para o parâmetro taxa de aprendizagem. 
 Os resultados estão disponíveis na Tabela \ref{conf_ann}. 
 
 \begin{table}
+\caption{Melhor Escolha de Parâmetros Para ANN}
 \begin{center}
 \begin{tabular}[c]{| c | c | c |}
     \hline
@@ -33,19 +32,19 @@ Os resultados estão disponíveis na Tabela \ref{conf_ann}.
     \hline
 \end{tabular}
 \end{center}
-\caption{Melhor Escolha de Parâmetros Para ANN Conforme a Base de Dados}
 \label{conf_ann}
 \end{table}
 
 Os resultados evidenciam que a melhor configuração, tanto para o número de neurônios
 quanto para a taxa de aprendizagem, varia conforme a base de dados em questão. 
 
-\subsection{Configurações da SVR}
+\subsection{Configurações da SVR} \label{svr_best_conf}
 Estudou-se como o tipo de \textit{kernel} e o parâmetro de penalização
 poderiam ser escolhidos de modo a obter uma boa configuração para a SVR. Os
 resultados são apresentados na Tabela \ref{svr_conf}. 
 
 \begin{table}
+\caption{Melhor Escolha de Parâmetros Para SVR}
 \begin{center}
 \begin{tabular}[c]{| c | c | c |}
     \hline
@@ -61,7 +60,6 @@ resultados são apresentados na Tabela \ref{svr_conf}.
     \hline
 \end{tabular}
 \end{center}
-\caption{Melhor Escolha de Parâmetros Para SVR Conforme a Base de Dados}
 \label{svr_conf}
 \end{table}
 
@@ -70,13 +68,14 @@ dados com a qual estamos trabalhando. Em três das quatro bases de dados, o tipo
 \textit{kernel} escolhido foi o linear. Em todas as bases de dados o valor para o
 parâmetro de penalização foi $C = 1.0$.   
 
-\subsection{Configuração do Naive Bayes}
+\subsection{Configuração do Naive Bayes} \label{nb_best_conf}
 Estudou-se como o tipo de distribuição assumida por cada atributo influenciou o
-desempenho no modelo Naive Bayes. Os resultados são mostrados na Tabela \ref{conf_nb} e
+desempenho no método \textit{Naive Bayes}. Os resultados são mostrados na Tabela \ref{conf_nb} e
 evidenciam que a melhor escolha para o tipo de distribuição é bastante dependente da
 base de dados com a qual estamos trabalhando. 
 
 \begin{table}
+\caption{Melhor Escolha de Parâmetros Para Naive Bayes}
 \begin{center}
 \begin{tabular}[c]{| c | c | c |}
     \hline
@@ -92,13 +91,12 @@ base de dados com a qual estamos trabalhando.
     \hline
 \end{tabular}
 \end{center}
-\caption{Melhor Escolha de Parâmetros Para Naive Bayes Conforme a Base de Dados}
 \label{conf_nb}
 \end{table}
 
 \section{Desempenho dos Modelos de Aprendizagem de Máquina} \label{results_ml_models}
-Apresenta-se nesta seção os desempenhos dos vários modelos de aprendizagem de
-máquina para, em seguida, discutir os resultados obtidos. Nas Tabelas
+Apresenta-se nesta seção os desempenhos dos vários modelos induzidos 
+para, em seguida, discutir os resultados obtidos. Nas Tabelas
 \ref{fmeasure_ft}, \ref{fmeasure_lic}, \ref{fmeasure_comp} e \ref{fmeasure_old} são 
 mostrados os desempenhos para as bases de dados dos alunos jovens da FT, alunos
 jovens da licenciatura, alunos jovens da computação e alunos seniores
@@ -106,6 +104,7 @@ respectivamente. O valor de \textit{F-measure} mostrado corresponde a média dos
 \textit{F-measure} obtidos semestre a semestre.  
 
 \begin{table}
+\caption{F-measure Média por Modelo, para Alunos Jovens da FT}
 \begin{center}
 \begin{tabular}[c]{| c | c |}
     \hline
@@ -125,11 +124,11 @@ respectivamente. O valor de \textit{F-measure} mostrado corresponde a média dos
     \hline
 \end{tabular}
 \end{center}
-\caption{F-measure Média por Modelo, para Alunos Jovens da FT}
 \label{fmeasure_ft}
 \end{table}
 
 \begin{table}
+\caption{F-measure Média por Modelo, para Alunos Jovens de Licenciatura}
 \begin{center}
 \begin{tabular}[c]{| c | c |}
     \hline
@@ -149,11 +148,11 @@ respectivamente. O valor de \textit{F-measure} mostrado corresponde a média dos
     \hline
 \end{tabular}
 \end{center}
-\caption{F-measure Média por Modelo, para Alunos Jovens de Licenciatura}
 \label{fmeasure_lic}
 \end{table}
 
 \begin{table}
+\caption{F-measure Média por Modelo, para Alunos Jovens da Computação}
 \begin{center}
 \begin{tabular}[c]{| c | c |}
     \hline
@@ -173,11 +172,11 @@ respectivamente. O valor de \textit{F-measure} mostrado corresponde a média dos
     \hline
 \end{tabular}
 \end{center}
-\caption{F-measure Média por Modelo, para Alunos Jovens da Computação}
 \label{fmeasure_comp}
 \end{table}
 
 \begin{table}
+\caption{F-measure Média por Modelo, para Alunos Seniores}
 \begin{center}
 \begin{tabular}[c]{| c | c |}
     \hline
@@ -197,16 +196,15 @@ respectivamente. O valor de \textit{F-measure} mostrado corresponde a média dos
     \hline
 \end{tabular}
 \end{center}
-\caption{F-measure Média por Modelo, para Alunos Seniores}
 \label{fmeasure_old}
 \end{table}
 
-\par Os resultados mostram que, de forma geral, os modelos de aprendizagem de máquina
-conseguem ter um resultado melhor que o ZeroR (à exceção do Naive Bayes). O melhor
+\par Os resultados mostram que, de forma geral, os algoritmos de aprendizagem de máquina
+conseguem ter um resultado melhor que o ZeroR (à exceção do \textit{Naive Bayes}). O melhor
 desempenho dos modelos em relação ao ZeroR era esperado, já que o ZeroR é bastante
-simples. Atribui-se o mau desempenho do Naive Bayes ao
-fato de que os atributos passados não seguem todos uma mesma distribuição (seja ela
-gaussiana, multinomial ou Bernoulli). 
+simples. Atribui-se o mau desempenho do \textit{Naive Bayes} ao
+fato de que os atributos passados não poderem ser considerados condicionalmente
+independentes, premissa admitida para o uso do algoritmo. 
 \par Por fim, deve-se ressaltar o bom desempenho obtido pelo regressor linear. Tal
 técnica obteve o melhor desempenho em três das quatro bases de dados (perdendo apenas
 para a SVR na base de dados dos alunos seniores) e obteve um valor de

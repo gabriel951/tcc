@@ -5,16 +5,21 @@ explica-se a estrutura geral do documento em questão.
 
 \section{Definição do Problema}
 % fala do problema
-A evasão nas universidades brasileiras já foi estudada por diversos autores,
-tratando-se de um problema que traz desperdícios acadêmicos, sociais e econômicos.
-A UnB (Universidade de Brasília) não é exceção, sendo afetada significativamente pelo
-problema \footnote{A UnB teve um prejuízo com evasão estimado em 96,5 milhões,
-segundo o Correio Brasiliense \cite{correio}}.
+A evasão de alunos de graduação nas universidades brasileiras já foi estudada por
+diversos autores, tratando-se de um problema que traz desperdícios acadêmicos,
+sociais e econômicos.
+A Universidade de Brasília (UnB) não é exceção, sendo afetada
+significativamente pelo problema \footnote{A UnB teve um prejuízo com evasão estimado
+em 95,6 milhões, segundo o Correio Brasiliense na reportagem do dia 10/10/2015 ``Evasões na
+Universidade de Brasília causam prejuízo de R\$ 95mi''\cite{correio}}.
 
 % o q a unb faz
 \par Atualmente a abordagem da UnB consiste de separar os seus alunos entre aqueles
-que estão em condição e aqueles que não estão e ter os alunos em condição orientados
-    \cite{manual_calouro}. Essa abordagem, entretanto, apresenta problemas:
+que estão em risco de serem desligados e precisam cumprir condição para evitar o
+desligamento (tais alunos são
+ditos alunos em condição) e aqueles que não estão, e ter os alunos em condição
+supervisionados por um orientador \cite{manual_calouro}. 
+Essa abordagem, entretanto, apresenta problemas:
     \begin{itemize}
         \item Os alunos (uma amostra muito diversificada) são classificados em apenas
     dois grupos.
@@ -27,39 +32,47 @@ que estão em condição e aqueles que não estão e ter os alunos em condição
     A pesquisa aqui descrita justifica-se como uma tentativa de melhorar a abordagem
     atual da UnB para o problema da evasão. Propõe-se utilizar dados passados para
     a criação de um sistema previsor que seja capaz de identificar alunos em risco de
-    serem desligados. O sistema previsor fornece 3 valores $v_1$, $v_2$, $v_3$ entre 0
-    e 1, que indicam respectivamente a chance do aluno se graduar, ser desligado (evadir)
-    e migrar de curso. 
+    serem desligados. O sistema previsor fornece 3 valores positivos $v_1$, $v_2$,
+    $v_3$ que somam 1 e indicam respectivamente a chance do aluno se graduar, ser
+    desligado (evadir) e migrar de curso. 
     \par Valores mais próximos de 0 indicam um baixo risco do evento em
     questão acontecer, enquanto valores mais próximos de 1 indicam um alto risco. Por
     exemplo, um valor de $v_1$ próximo de 1 indica que o aluno tem grande chance de se
     graduar, ao passo que um valor de $v_3$ próximo de 0 indica que o aluno não tem 
-    muito risco de migrar de curso. Para isso, diferentes modelos de aprendizagem de
-    máquina serão estudados. 
+    muito risco de migrar de curso. 
     \par Os dados utilizados são dados descaracterizados de alunos de
     graduação da UnB, contendo tanto informações de perfil quanto a forma de ingresso e
     as menções nas matérias da UnB. 
-    \par Caso bem sucedido, o sistema previsor permitirá a
+    \par Potencialmente, o sistema previsor permitirá a
     UnB agir antes de um aluno entrar em condição. Outra vantagem será a possibilidade
     de agir de acordo com o risco de evasão apresentado por cada
     aluno. Ou seja, a proposta de solução permitirá agir com antecedência e
     flexibilidade. 
 
 \section{Objetivos}
-    São dois os objetivos deste documento: 
-    \begin{itemize}
-    \item Explicar as etapas realizadas para se desenvolver o sistema previsor de
-        risco de evasão, justificando as escolhas realizadas.
-    \item Discutir o desempenho deste sistema, analisando assim sua viabilidade e
-        apontando caminhos futuros de pesquisa nessa linha.
-\end{itemize}
+O objetivo da pesquisa é investigar a aplicação de técnicas de mineração de dados
+para o desenvolvimento de modelos de predição da conclusão do curso por alunos de
+graduação da UnB. Os objetivos específicos são: 
+\begin{itemize}
+    \item Avaliar a viabilidade dessa abordagem para
+          uma área mais restrita do conhecimento para, em uma segunda fase, aplicar a
+          metodologia desenvolvida para os demais cursos de graduação ofertadas pela UnB.
+    \item Induzir modelos que indiquem a possibilidade do aluno concluir, evadir ou
+          migrar de curso. 
+\end{itemize}  
+
+Na presente etapa dessa pesquisa é investigada apenas a indução de modelos preditores
+para os cursos da área de computação ofertados pela UnB, ou seja: Ciência da
+Computação, Engenharia de Computação, Engenharia de Controle e Automação (também
+chamada Engenharia Mecatrônica), Engenharia de Software, Engenharia de Redes e
+Licenciatura em Computação. 
 
 \section{Organização do Restante do Documento}
 % organização do documento
 \par Descreve-se a seguir a organização do restante do documento. 
-No capítulo 2 explica-se a fundamentação teórica necessária para a compreensão da
-pesquisa em questão. Já no capítulo 3, descreve-se a metodologia
-adotada na pesquisa. No capítulo 4 apresentam-se e discutem-se os resultados
-obtidos. Finalmente, no capítulo 5, apresenta-se a conclusão e apontam-se sugestões para
+No Capítulo 2 explica-se a fundamentação teórica necessária para a compreensão da
+pesquisa em questão. Já no Capítulo 3, descreve-se a metodologia
+adotada na pesquisa. No Capítulo 4 apresentam-se e discutem-se os resultados
+obtidos. Finalmente, no Capítulo 5, apresenta-se a conclusão e apontam-se sugestões para
 trabalhos futuros. Apresenta-se a parte de estatística descritiva separadamente no
 apêndice A. 

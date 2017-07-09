@@ -1,8 +1,9 @@
 % definição do problema e abordagem atual
-A evasão na Universidade de Brasília (UnB) é um problema grande, com consequências
-acadêmicas, sociais e econômicas. A abordagem da UnB para resolução deste problema
-consiste em separar os alunos em dois grupos: aqueles que estão em condição e
-aqueles que não estão, e ter os alunos em condição orientados. 
+A evasão de alunos de graduação na Universidade de Brasília (UnB) traz consequências
+acadêmicas, sociais e econômicas negativas. A abordagem da UnB para resolução deste problema
+consiste em separar os alunos em dois grupos: aqueles que estão em risco de serem
+desligados e precisam cumprir condição para evitar o desligamento e
+aqueles que não estão, e ter os alunos em condição supervisionados por um orientador. 
 % proposta de solução
 Pensando em melhorar tal abordagem, a pesquisa em questão objetiva a concepção de um
 sistema previsor capaz de indicar quais alunos estão com maior risco de não
@@ -12,11 +13,13 @@ entrar em condição e agir de acordo com o risco de evasão apresentado por cad
 Para o desenvolvimento do sistema previsor, dados descaracterizados de alunos de
 graduação de cursos da área de computação que
 ingressaram de 2000 até 2016 e já saíram da universidade foram utilizados.
-Treinaram-se modelos de aprendizagem de máquina (\textit{Naive Bayes}, ANN, SVR, Regressor
-Linear e Random Forests) e o desempenho deles foi analisado nos dados de teste. 
+Algoritmos de aprendizagem de máquina foram usados (\textit{Naive Bayes}, ANN, SVR,
+Regressor Linear e Random Forests) para induzir modelos que tiveram seu desempenho
+analisado. 
 % resultados/conclusão
-Os modelos de aprendizagem de máquina testados tiveram, em geral, bom desempenho. O
-melhor desempenho foi o do regressor linear. Os resultados obtidos apontam a
-viabilidade da utilização de aprendizagem de máquina para análise preditiva de alunos
-em risco de evasão na UnB.
-
+Os modelos obtidos testados tiveram, em geral, bom desempenho. O
+melhor desempenho foi para modelos induzidos com regressão linear. Os resultados
+obtidos apontam a viabilidade da utilização de mineração de dados para análise
+preditiva de alunos em risco de evasão na UnB nos cursos da área de computação.
+Como a metodologia utilizada não empregou nenhum conceito específico dessa área do
+conhecimento, pode-se usá-la para outros cursos de graduação da UnB. 

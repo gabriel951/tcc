@@ -1,8 +1,8 @@
-% TODO: falar do modelo crips-dm, se quiser encher linguiça
-% TODO: falar da f-measure
 Neste capítulo, descreve-se a fundamentação teórica necessária para compreender a
 pesquisa. Assim, nas seções seguintes explica-se a problemática da evasão nas universidades
-públicas, as especifidades da \acrshort{UnB}, o modelo de processos CRISP-DM e os modelos de aprendizagem de máquina adotados. 
+públicas, as especifidades da \acrshort{UnB}, o modelo de referência para mineração
+de dados CRISP-DM, algoritmos de mineração de dados adotados e as medidas de
+desempenho para os modelos induzidos. 
 
 \section{Evasão nas Universidades} 
 A evasão nas universidades nacionais é um problema que traz desperdícios acadêmicos,
@@ -13,16 +13,17 @@ sistema educacional \cite{mec_conceito_evasao}.
 
 \section{Especificidades da UnB}
 A UnB possui algumas particularidades importantes tanto em relação às notas dos
-alunos quanto aos procedimentos adotados para alunos em risco de evadir. 
+alunos quanto aos procedimentos adotados para alunos em risco de evadir. Tais
+especificidades são apresentadas a seguir. 
 
 \subsection{Procedimentos da UnB Para Alunos com Risco de Evadir}
 \par Os critérios para que um aluno seja desligado na UnB são mostrados na Figura
 \ref{desligamento}. 
 \begin{figure}[!ht]
-    \caption{Critérios Para Desligamento na UnB}
     \centering
     \includegraphics[width = 18cm]{desligamento.png}
     \label{desligamento}
+    \caption{Critérios Para Desligamento na UnB}
 \end{figure}
  
 A abordagem da UnB para evitar desligamento consiste de separar os alunos em dois
@@ -38,9 +39,11 @@ condição orientados. Os critérios para que um aluno esteja em condição são
 
 \subsection{O Índice de Rendimento Acadêmico}
 Outra particularidade da UnB diz respeito às notas que seus alunos recebem. Para cada
-matéria, os alunos podem receber as seguintes menções \cite{manual_calouro}: 
+matéria, os alunos podem receber as menções disponíveis na Tabela \ref{mencao_unb} 
+\cite{manual_calouro}: 
 
 \begin{table}
+\caption{Equivalência entre Menção Obtida por um Aluno e Nota Final na Disciplina}
 \begin{center}
 \begin{tabular}[c]{|c|c|}
     \hline
@@ -60,12 +63,12 @@ matéria, os alunos podem receber as seguintes menções \cite{manual_calouro}:
     \hline
 \end{tabular}
 \end{center}
-\caption{Equivalência entre menção obtida por um aluno e nota final na disciplina}
+\label{mencao_unb}
 \end{table}
 
 Cada aluno tem também um índice de rendimento acadêmico (\acrshort{IRA}), um valor entre 0 e 5
 que sumariza as menções obtidas por um aluno, desde que entrou na UnB. Segundo
-\cite{manual_calouro}, 0 IRA é calculado da seguinte forma:  
+\cite{manual_calouro}, O IRA é calculado da seguinte forma:  
 \begin{equation}
     IRA = (1 - \frac{0,6 * DT_b + 0,4 * DT_p}{DC}) * 
     (\frac{\sum_{i}P_i * CR_i * Pe_i}{\sum_{i} CR_i * Pe_i})
@@ -73,22 +76,23 @@ que sumariza as menções obtidas por um aluno, desde que entrou na UnB. Segundo
 
 em que os símbolos da fórmula são explicados a seguir: 
 \begin{itemize}
-    \item $DT_b$: Número de disciplincas obrigatórias trancadas
+    \item $DT_b$: Número de disciplinas obrigatórias trancadas
     \item $DT_p$: Número de disciplinas optativas trancadas
     \item $DC$: Número de disciplinas matriculadas (incluindo as trancadas)
     \item $P_i$: Peso da menção, onde (SS = 5, MS = 4, MM = 3, MI = 2, II = 1, SR =
         0)
     \item $Pe_i$: Período em que uma dada disciplina foi cursada, obedecendo à
-        limitação min(6, Período). 
+        limitação min(6, Período). O período corresponde ao semestre em que o aluno
+        está em seu curso. 
     \item $CR_i$: Número de Créditos de uma disciplina
 \end{itemize}
 
 \section{CRISP-DM}
 O \acrshort{CRISP-DM}(do inglês \textit{CRoss-Industry Standard Process for Data Mining}) é um
-modelo de processos para mineração de dados que se divide em 6 fases principais
+modelo de referência para mineração de dados que se divide em seis fases principais
 \cite{crispdm}:
 \begin{enumerate}
-    \item Entendimento do negógio
+    \item Entendimento do negócio
     \item Entendimento dos dados
     \item Preparação dos Dados
     \item Modelagem
@@ -98,10 +102,10 @@ modelo de processos para mineração de dados que se divide em 6 fases principai
 Cada uma dessas fases é explicada a seguir.
 
 \subsection{Entendimento do Negócio}
-Nesta etapa determinam-se os objetivos do negócio (entendimento do que o cliente
+Nesta etapa determinam-se os objetivos do negócio (através do entendimento do que o cliente
 almeja), avalia-se a situação atual, determinam-se os objetivos da mineração de dados
-e produz-se um planejamento do projeto \cite{crispdm}. Uma importante tarefa dentro
-dessa fase do CRISP-DM é o levantamento do estado da arte. 
+e produz-se um planejamento para realização do projeto \cite{crispdm}. Uma importante
+tarefa dentro dessa fase do CRISP-DM é o levantamento das práticas atuais na área.  
 
 \subsection{Entendimento dos Dados}
 Essa fase é composta pelas tarefas de: coleta inicial dos dados, descrição dos dados,
@@ -125,7 +129,6 @@ desempenho).
 entre atributos e decidir pela eventual eliminação de algum. Existem vários testes
 para se medir a correlação entre variáveis, como o coeficiente de Spearman e o
 coeficiente de correlação de Kendall \cite{kendall}. 
-%TODO: escrever mais um pouco aqui caso deseje, sobre Kendall
 
 \subsection{Modelagem} 
 Essa fase é composta pelas tarefas de: seleção da técnica de modelagem, geração dos
@@ -145,20 +148,125 @@ A fase final do CRISP-DM é a implantação. Nessa fase, são realizadas as tare
 planejar a implantação, planejar monitoramento e manutenção, produzir relatório final
 e revisar o projeto \cite{crispdm}.
 
-% TODO: incluir mais sobre técnicas de ML
-% falar de como árvores de decisão podem ser usadas para selecionar atributos
-% relevantes. 
 \section{Técnicas de Aprendizagem de Máquina}
-Nesta seção faz-se breve explanações sobre as técnicas de aprendizagem de máquina
-usadas na pesquisa. Explica-se sobre as árvores de decisão e Random Forests,
-regressores lineares, SVR's, redes neurais e o modelo Naive Bayes.
+Nesta seção fazem-se breve explanações sobre as técnicas de aprendizagem de máquina
+usadas na pesquisa. Explica-se sobre as árvores de decisão e \textit{random forests},
+regressor linear, SVR's, redes neurais, \textit{Naive Bayes} e o ZeroR. 
 
 % árvores de decisão, random forest, regressor linear, redes neurais ...
 \subsection{Árvores de Decisão e Random Forest}
+Árvores de Decisão são uma técnica de aprendizagem de máquina bastante usada em
+pesquisas científicas, em uma variedade de contextos \cite{ml_mitchell}. O modelo
+adota uma representação em árvore, com cada vértice fazendo referência à um teste a ser
+feito para um atributo de uma instância e cada uma das arestas indicando um dos
+possíveis valores do atributo. A Figura \ref{dec_tree}, exemplo encontrado em
+\cite{ml_mitchell} mostra uma árvore de decisão para o problema de decidir se uma
+manhã de sol está adequada para a prática de jogar tênis. Note que as folhas das
+árvores correspondem à decisão à ser tomada. 
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width = 8cm]{dec_tree.png}
+    \label{dec_tree}
+    \caption{Árvore de Decisão Para a Prática de Tênis} 
+\end{figure}
+
+\par Por fim, \textit{Random Forests} é um método de aprendizagem de máquina (baseado nas
+árvores de decisão) adequado para as tarefas
+de classificação e regressão. \textit{Random Forests} operam construindo várias árvores de
+decisão durante o treino e fornecendo como saída a predição média (no caso de
+regressão) ou a moda das classes (no caso de classificação) \cite{random_forest}. 
+
 \subsection{Regressão Linear}
+O regressor linear é um abordagem linear que tenta prever a relação entre uma variável
+dependente $y$ em termos de uma ou mais variáveis independentes, denotadas por $X$.
+Se apenas uma variável independente é usada, a regressão linear é dita simples,
+enquanto que se mais de uma variável é utilizado, a regressão linear é dita
+múltipla. 
+\par Por fim, pode-se tentar prever múltiplas variáveis dependentes
+correlacionadas, caso no qual o modelo é dito regressor linear multivariado. Nessa
+pesquisa, fez-se regressão linear múltipla multivariada. 
+De modo geral, modelos lineares costumam não ser muito propensos à
+\textit{overfitting} e são boas alternativas iniciais para problemas de aprendizagem
+de máquina \cite{ml_book}. 
+
 \subsection{SVR}
-\subsection{Redes Neurais}
+SVM (do inglês \textit{Support Vector Machine}) é um classificador baseado em um hiperplano
+separador. Assim, após treinar, tal algoritmo fornece um hiperplano otimizado e, com
+base nele,
+categoriza novos exemplos. Por meio de seu \textit{kernel}, SVM's conseguem realizar
+transformações não lineares de alta dimensão \cite{ml_second_book}. Tal algoritmo de
+aprendizagem de máquina é fácil de usar e tem bom desempenho na prática, o que
+explica assim sua popularidade \cite{ml_second_book}. O método utilizado na SVM pode ser
+extendido para regressão. Nesse caso, o método é chamado SVR (do inglês
+\textit{Support Vector Machine for Regression}). 
+
+\subsection{ANN}
+ANN's (do inglês \textit{Artificial Neural Networks}) ou Redes Neurais são uma
+técnica de aprendizagem de máquina inspirado na biologia que tem bastante sucesso em
+aplicações de áreas diversas, indo de visão computacional
+\cite{ml_second_book} à estratégia de jogos como Go \cite{google_ann}. Entretanto, como
+redes neurais podem induzir modelos muito flexíveis e com grande poder de aproximação,
+é fácil incorrer em \textit{overfitting} ao se escolher tal técnica
+\cite{ml_second_book}. 
+\par ANN's são um conjunto de unidades conectadas, chamadas de neurônios (em
+analogia aos neurônios do cérebro humano). Se dois neurônios estão conectados (uma
+conexão é dita sinapse, outra analogia ao cérebro humano), um
+deles pode transmitir um sinal ao outro. As sinapses tem um peso, que varia conforme
+ocorre o aprendizado, que determina a intensidade na qual um sinal é propagado. 
+\par Os neurônios tipicamente são organizados em camadas, as quais realizam
+diferentes transformações nas entradas que recebem. Costuma-se diferenciar entre a
+camada de entrada, a camada escondida e a camada de saída, conforme pode ser visto na
+Figura \ref{ann_layers}. Assim, o funcionamento de uma rede neural ocorre, de modo bem
+superficial, da seguinte forma: uma nova instância é fornecida à rede
+neural (na camada de entrada), ativam-se determinados neurônios da rede neural (de
+acordo com os dados de entrada) e um determinado valor é fornecido na camada de
+saída, de acordo com os neurônios que foram ativados.  
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width = 8cm]{ann_layers.png}
+    \label{ann_layers}
+    \caption{Camadas de uma Rede Neural}
+\end{figure}
+
+\subsection{Naive Bayes}
+O \textit{Naive Bayes} é um classificador
+probabilístico baseado na aplicação do teorema de Bayes com a premissa de
+independência entre os atributos \cite{ml_book}. Um parâmetro importante para tal
+algoritmo é o tipo de distribuição que se assume que os atributos possuem. Alguns
+exemplos de distribuições são: Gaussiana, multinomial e Bernoulli. 
+
+\subsection{ZeroR}
+O ZeroR é um dos métodos de classificação mais simples. Tal método ignora os
+atributos e sempre prevê a classe majoritária. Embora não tenha um grande poder de
+predição, o ZeroR é útil para determinar um desempenho básico, que os algoritmos de
+aprendizagem de máquina devem ser capazes de superar. 
 
 \section{Métricas Para Avaliação de Desempenho em Aprendizagem de Máquina}
-% Falar da f-measure
-% todo: what is a good fmeasure score
+Existem várias métricas para a avaliação do desempenho de modelos de aprendizagem de
+máquina. Dentre as técnicas comuns para o problema de classificação supervisionado,
+pode-se citar a precisão, o \textit{recall} e a \textit{F-measure}.  
+
+\par A precisão é definida como sendo a razão entre a quantidade de verdadeiros
+positivos ($TP$) e a quantidade de positivos ($TP + FP$). Assim sendo, a precisão
+traduz o quão frequentemente o modelo acerta quando este faz uma previsão positiva.
+A fórmula para o cálculo da precisão é mostrada a seguir: 
+\begin{equation}
+    Precisão = \frac{TP}{TP + FP}
+\end{equation}
+
+Já o \textit{recall} é definido como a razão entre a quantidade de verdadeiros
+positivos pela soma de verdadeiros positivos com os falsos negativos. Desse modo,
+\textit{recall} traduz o quão confiante podemos estar que todas as instâncias
+positivas foram encontradas pelo modelo. A fórmula para o cálculo do \textit{recall} é
+mostrada a seguir: 
+\begin{equation}
+    Recall = \frac{TP}{TP + FN}
+\end{equation}
+
+\par Precisão e \textit{recall} fornecem diferentes informações, ambas 
+úteis. Desse modo, faz sentido definir uma métrica que leve em conta ambas as
+informações para avaliar o desempenho. A \textit{F-measure} é essa métrica, sendo
+definida como a média harmônica entre a precisão e o \textit{recall}. Precisão,
+\textit{recall} e \textit{F-measure} assumem valores de 0 a 1.

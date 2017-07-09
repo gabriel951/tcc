@@ -1,11 +1,23 @@
 Neste capítulo, descreve-se a metodologia usada em toda a pesquisa. 
+% minha escrita
 Detalha-se como foi feito o levantamento
 do estado da arte, a obtenção e utilização dos dados, a seleção de
 atributos, a eliminação de atributos devido à \textit{missing values}, a eliminação
 de \textit{outliers}, a análise preliminar por meio de estatística descritiva, a
 eliminação de atributos relacionados ou irrelevantes, as divisões em treino e teste e
-as divisões em semestre, a escolha dos modelos de aprendizagem de máquina, e a forma
+as divisões em semestre, a escolha dos algoritmos de aprendizagem de máquina, e a forma
 de avaliar o desempenho destes.  
+\par Faz-se nesse parágrafo um breve comentário acerca da metodologia usada. A
+metodologia de mineração de dados usada é baseada no modelo CRISP-DM. Foram
+utilizados dados reais descaracterizados de alunos da UnB e de seus desempenhos. Para
+induzir os modelos e avaliar o desempenho deles, os dados foram divididos em dados de
+treino, validação e teste, segundo a abordagem \textit{holdout}. Os dados dos cursos
+analisados foram agrupados nos grupos: licenciatura, FT e computação. Os modelos
+preditos foram induzidos com os algoritmos Naive Bayes, Random Forest, ANN, regressor
+linear e SVR, disponibilizados pela biblioteca \texttt{scikit-learn} (v. 0.18.1) da linguagem
+Python. A performance dos modelos foi mensurada com a métrica \textit{F-measure}, e
+comparada à obtida com o classificador ZeroR. 
+
 
 \section{Levantamento do Estado da Arte}
 Foi feito o levantamento do estado da arte através da leitura de diversos artigos.
@@ -19,7 +31,8 @@ e como trabalhar especificamente com os dados da UnB \cite{manual_calouro}
 
 \section{Obtenção e Utilização dos Dados}
 Obtiveram-se informações descaracterizadas relativas aos dados sociais e ao
-desempenho acadêmico de alunos de graduação da UnB. Todos os dados utilizados vieram
+desempenho acadêmico de alunos de graduação da UnB obtidos do \acrshort{SIGRA} -
+Sistema de Informação da Graduação. Todos os dados utilizados vieram
 de uma só fonte, de modo que o comum problema encontrado na área de mineração de
 dados de garantir a consistência dos dados entre várias fontes não foi enfrentado. 
 \par Optou-se por restringir a pesquisa apenas aos alunos que entraram a partir de
@@ -97,7 +110,7 @@ atributos sociais.
 \section{Eliminação de Atributos Devido a Missing Values}
 Optou-se por eliminar atributos cuja quantidade de entradas com \textit{missing
 values} fosse superior à 40\%. Assim, eliminaram-se os atributos raça e tipo da
-escola. Os gráficos de barra para tais atributos se encontram em
+escola. Os gráficos de barra para tais atributos se encontram no Apêndice
 \ref{graf_miss_value}.
 
 \section{Eliminação de Outliers}
@@ -106,7 +119,7 @@ demonstraram interesse em cursar matérias (por exemplo, aqueles que reprovaram 
 todas as disciplinas com SR). Tais casos foram tratados como \textit{outliers}.
 Após a análise individual de cada caso, os \textit{outliers} foram eliminados do espaço
 amostral. Eliminaram-se 233 estudantes do espaço amostral dessa maneira, ficando-se
-assim com 4536 amostras.
+assim com 4536 estudantes.
 
 \section{Estatística Descritiva}
 Foi feita uma análise preliminar por meio de estatística descritiva. As subseções
@@ -117,17 +130,19 @@ e histogramas finais.
 \subsection{Mudança na Base de Dados}
 \par Foi possível observar que os atributos variavam significativamente de acordo com
 o curso. Isso se deve ao fato de cada curso ter currículo diferente dos
-demais, alguns cursos serem de instituições diferentes (\acrshort{FT} ou
-\acrshort{IE}, por exemplo) e os
+demais, alguns cursos serem de instituições diferentes (Faculdade de Tecnlogia
+(\acrshort{FT}) ou Instituto de Ciências Exatas (\acrshort{IE}), por exemplo) e os
 cursos possuírem ``maturidade'' diferentes (devido à data início de cada curso ser
 diferente). Outra observação preliminar possível foi a de que a proporção de alunos
 que ingressam com idade avançada que se forma é menor do que a de alunos mais jovens.
-Essas observações levaram a partição da base de dados original em 4 bases de dados: 
+Após a aplicação da técnica de tabela de contingência, 
+essas observações levaram a partição da base de dados original em quatro bases de dados: 
+
 \begin{itemize}
     \item Alunos Jovens da FT: contém todos os alunos que ingressaram com 30
         anos ou menos que cursam Engenharia de Redes ou Engenharia Mecatrônica. Tais
-        cursos tem a peculiaridade de estarem associados à FT (Faculdade de
-        Tecnologia), diferentemente de todos os demais.  
+        cursos tem a peculiaridade de estarem associados à FT, 
+        diferentemente de todos os demais.  
     \item Alunos Jovens de Licenciatura: contém todos os alunos que ingressaram com
         30 anos ou menos que cursam Computação (Licenciatura). O curso de
         Licenciatura tem a peculiaridade de ser o único noturno. 
@@ -138,12 +153,12 @@ Essas observações levaram a partição da base de dados original em 4 bases de
 \end{itemize}
 Devido à baixa quantidade de alunos seniores, não se separou tal categoria em grupos.
 A evidência fornecida pela estatística descritiva para essa separação
-encontra-se na seção \ref{justificativa_4_base_dados}.
+encontra-se na Seção \ref{justificativa_4_base_dados}.
 
 \subsection{Mudança nos Valores de Atributos}
 \par Dois atributos tiveram alguns de seus valores agrupados em categorias para
 facilitar o posterior tratamento dos dados. Tais atributos são a forma de entrada e a
-forma de saída. A distribuição original de tais atributos pode ser vista na seção 
+forma de saída. A distribuição original de tais atributos pode ser vista na Seção 
 \ref{just_mud_atr}. 
 \par No atributo forma de entrada, de modo a eliminar os vários valores com poucas
 instâncias na base de dados, criou-se a categoria ``outros''. Assim, apenas três 
@@ -155,27 +170,25 @@ mudança de curso, mudança de turno e realização de um novo vestibular.
 \subsection{Gráficos de Barra e Histogramas}
 Após as modificações descritas nas subseções anteriores, fez-se o gráfico de barra
 para os atributos discretos e os histogramas para os atributos contínuos.
-Considerou-se, para isso, a divisão dos dados nas 4 bases de dados descritas. Tais
-resultados encontram-se na seção \ref{graf_bar_hist}.
+Considerou-se, para isso, a divisão dos dados nas quatro bases de dados descritas. Tais
+resultados encontram-se na Seção \ref{graf_bar_hist}.
 
 \section{Eliminação de Atributos Relacionados ou Irrelevantes}
-\par Na área de aprendizagem de máquina, uma etapa fundamental é a da engenharia de
-atributos \cite{useful_ml}, em que garante-se que os modelos irão receber os
-atributos certos, para que sejam capazes de aprender. Assim sendo, deve-se realizar a
+\par Na área de aprendizagem de máquina, uma etapa fundamental é a da seleção de
+atributos \cite{useful_ml}, onde deve-se realizar a
 eliminação de atributos que estejam muito relacionados entre si e também a eliminação
 de atributos irrelevantes. 
  
-\par Avaliou-se o grau de relacionamento entre os diversos atributos
-que compunham o modelo por meio do coeficiente de correlação de Kendall. Optou-se por
-eliminar uma variável de cada par que apresentasse mais de 80\% de correlação. Os
-atributos taxa de aprovação e taxa de reprovação apresentaram, para todas as bases
-de dados, alto relacionamento. Assim sendo, eliminou-se o atributo taxa de reprovação
-de análises posteriores. 
+\par Avaliou-se o grau de relacionamento entre os diversos atributos por meio do
+coeficiente de correlação de Kendall. Optou-se por eliminar uma variável de cada par
+que apresentasse mais de 80\% de correlação. Os atributos taxa de aprovação e taxa de
+reprovação apresentaram, para todas as bases de dados, alto relacionamento. Assim
+sendo, eliminou-se o atributo taxa de reprovação de análises posteriores. 
 
 \par Para descobrir os atributos irrelevantes, dentro daqueles originalmente
 pensados, utilizaram-se árvores de decisão: os atributos que não apareceram nas
 árvores de decisão foram eliminados das fases posteriores. Esse procedimento foi
-feito para cada uma das 4 bases de dados. Para os alunos jovens da licenciatura,
+feito para cada uma das quatro bases de dados. Para os alunos jovens da licenciatura,
 obteve-se que o atributo curso não era relevante (o que era esperado já que todos os alunos
 desse grupo tem o mesmo curso). Para os alunos seniores, obteve-se que os atributos
 curso, cota e taxa de trancamento são irrelevantes. Para as outras bases de dados, nenhum
@@ -206,8 +219,8 @@ previsor seja capaz de calcular o risco de alunos evadirem tanto para estudantes
 semestres iniciais do curso quanto para estudantes mais adiantados. Relacionado a
 isso, tem-se que alguns atributos dos alunos, como por exemplo a taxa de aprovação,
 mudam a cada semestre. Tal fato deve ser considerado na hora de treinar os modelos. 
-\par Pensando nisso, os modelos de aprendizagem de máquina são treinados
-separadamente para cada semestre. Assim, inicialmente os modelos são treinados com os
+\par Pensando nisso, os modelos de mineração de dados são induzidos
+separadamente para cada semestre. Assim, inicialmente os modelos são induzidos com os
 dados relativos ao 1º semestre de cada aluno do conjunto de treino e são
 testados com os dados relativos ao 1º semestre de cada aluno do conjunto de
 teste. Após isso, repete-se tal procedimento para os dados dos alunos relativos ao
@@ -218,76 +231,78 @@ do sistema previsor para alunos no 10º semestre e o aluno em questão saiu da U
 fim do 8º semestre) tal aluno não entra no conjunto de treino/teste para o semestre
 considerado.   
 
-\section{Técnicas de Aprendizagem de Máquina Estudadas e Retroalimentação} 
+\section{Algoritmos de Aprendizagem de Máquina Estudados e Retroalimentação} 
 As técnicas de aprendizagem de máquina utilizadas para a predição de alunos em risco
-de evasão foram: \textit{Naive Bayes}, \textit{random forests}, redes neurais, regressor linear e
-SVR's. Utilizou-se a biblioteca \texttt{scikit-learn} (versão 0.18.1) \cite{sklearn}, da
+de evasão foram: \textit{Naive Bayes}, \textit{random forests}, rede neural, regressor linear e
+SVR. Utilizou-se a biblioteca \texttt{scikit-learn} (versão 0.18.1) \cite{sklearn}, da
 linguagem de programação Python.
-\par Para cada um dos modelos de aprendizagem de máquina adotado, estudou-se se
+\par Para cada um desses algoritmos, estudou-se se
 utilizar retroalimentação poderia melhorar o desempenho. A retroalimentação
 funcionaria da seguinte forma: o modelo de aprendizagem de máquina, na hora de tentar
 prever o desempenho para um semestre $x$, receberia as chances do aluno
-graduar/evadir/formar calculada por esse mesmo modelo para o semestre $x-1$.
-Entretanto, a retroalimentação não forneceu ganhos ou perdas significativas, de modo
-que, para cada modelo estudado, analisou-se seu desempenho com e sem
+graduar/evadir/migrar calculada por esse mesmo modelo para o semestre $x-1$.
+Para cada modelo estudado, analisou-se seu desempenho com e sem
 retroalimentação. 
 
-\section{Estimativa de Parâmetros}
-Estimou-se quais seriam os melhores parâmetros para os seguintes modelos de
-aprendizagem de máquina: \textit{Naive Bayes}, redes neurais e SVR's. Para os demais modelos,
+\section{Ajuste de Parâmetros}
+Estimou-se quais seriam os melhores parâmetros para os seguintes algoritmos de
+aprendizagem de máquina: \textit{Naive Bayes}, rede neural e SVR. Para os demais,
 seguiu-se as configurações padrão da biblioteca \texttt{scikit-learn}.  
 Para isso, utilizou-se validação, como descrito a seguir. Inicialmente, dividiu-se o
 conjunto que não era de teste (consistindo dos alunos que entraram antes de 2010) em
 dois subconjuntos: o conjunto de treino (alunos que entraram antes de 2007) e o
 conjunto de validação (alunos que entraram de 2007 em diante). Depois, cada
-configuração de parâmetros de cada modelo treinava no conjunto de treino e tinha seu
+configuração de parâmetros de cada método treinava no conjunto de treino e tinha seu
 desempenho avaliado no conjunto de validação. 
 \par Por fim, para escolher a melhor configuração de cada modelo de aprendizagem de
 máquina, considerou-se, para cada configuração, o desempenho obtido semestre a
-semestre.  Assumindo uma distribuição normal (hipótese que não foi verificada),
+semestre.  Assumindo uma distribuição normal,
 obtinha-se o intervalo de confiança do desempenho do modelo sob à configuração sendo
 testada.  Para cada modelo, escolhia-se a configuração com menor intervalo de
 confiança, desde que tal intervalo tivesse intersecção não vazia com o intervalo de
 confiança da configuração com melhor desempenho. Adotou-se um intervalo de confiança
-de 95\%.  As configurações obtidas para cada modelo são mostradas na seção
+de 95\%.  As configurações obtidas para cada modelo são mostradas na Seção
 \ref{conf_ml_models}.
 
-\subsection{Estimativa de Parâmetros Para Redes Neurais}
-Estimou-se primeiramente a melhor quantidade de
-neurônios, testando o desempenho das \acrshort{ANN}'s com 12, 24, 36 e 100 neurônios.
+\subsection{Ajuste de Parâmetros Para Redes Neurais}
+Estimou-se primeiramente a quantidade de neurônios para a camada oculta, testando o
+desempenho das \acrshort{ANN}s com 12, 24, 36 e 100 neurônios.
 Em seguida, testou-se a taxa de aprendizagem para a rede neural, experimentando os
 valores 0.001 (padrão da biblioteca), 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 e
-1.0. 
+1.0. Os resultados são mostrados na Seção \ref{ann_best_conf}.
 
-\subsection{Estimativa de Parâmetros Para SVR}
+\subsection{Ajuste de Parâmetros Para SVR}
 Estimou-se primeiramente a melhor configuração para o tipo de \textit{kernel} da
-\acrshort{SVR}. Os tipos de \textit{kernel} analisados foram linear, polinomial e rbf. Em
+\acrshort{SVR}. Os tipos de \textit{kernel} analisados foram linear, polinomial e RBF. Em
 seguida, variou-se o parâmetro de penalização $C$ da SVR, analisando-se o desempenho da
-SVR quando $C$ era 0,5 1 e 2.
+SVR quando $C$ era 0,5 1 e 2. Os resultados são mostrados na Seção
+\ref{svr_best_conf}. 
 
 \subsection{Estimativa de Parâmetros Para Naive Bayes}
 O único parâmetro estimado para a técnica de aprendizagem de máquina \textit{Naive Bayes} foi
 o tipo de distribuição que os atributos seguiam. Testou-se o desempenho de tal modelo
 de aprendizagem de máquina assumindo-se que os atributos tinham as seguintes
-distribuições: gaussiana, multinomial e Bernoulli. 
+distribuições: gaussiana, multinomial e Bernoulli. Os resultados são mostrados na
+Seção \ref{nb_best_conf}. 
 
 \section{Avaliação de Desempenho}
-Após selecionar as melhores configurações para cada método de aprendizagem de
-máquina, avaliou-se o desempenho de cada um dos métodos. Para isso, cada modelo de
-aprendizagem de máquina treinou no conjunto de treino (composto por alunos que
-ingressaram antes de 2010) e teve seu desempenho avaliado no conjunto de teste
+Após selecionar as melhores configurações para cada algoritmo de aprendizagem de
+máquina, avaliou-se o desempenho de cada um dos modelos induzidos. Para isso, cada
+modelo foi induzido no conjunto de treino (composto por alunos
+que ingressaram antes de 2010) e teve seu desempenho avaliado no conjunto de teste
 (composto por alunos que ingressaram de 2010 em diante). Esse processo foi feito para
 cada um dos semestres estudados e funciona como explicado a seguir. 
-\par Cada método de aprendizagem de máquina gera, para cada aluno em cada semestre
-ativo, uma tripla que indica a possibilidade do aluno concluir, evadir ou migrar. O
+\par Cada modelo induzido pelo conjunto de treino de cada base de dados gera, para
+cada aluno em cada semestre ativo, uma tripla que indica a possibilidade do aluno
+concluir, evadir ou migrar. O
 maior valor da tripla é usado como sendo a previsão do modelo. Tal previsão é
 então comparada com o que realmente aconteceu ao aluno. Se a previsão condiz com o
 real, o modelo acerta; caso contrário, o modelo erra. 
 \par A métrica utilizada para avaliar o desempenho dos
 modelos foi a \textit{F-measure}. Um determinado modelo tem, para uma determinada
 base de dados, vários valores de \textit{F-measure} calculados, um para cada semestre. Feito
-isso, para sumarizar o desempenho do modelo para uma base de dados, toma-se a média
-das \textit{F-measures} de cada semestre. Compararam-se os resultados dos modelos
-entre si, e também com o modelo ZeroR. Os resultados encontram-se na seção
-\ref{results_ml_models}.
+isso, para sumarizar o desempenho do modelo para os alunos de teste de uma base de
+dados, toma-se a média das \textit{F-measures} de cada semestre. Compararam-se os
+resultados dos modelos entre si, e também com o modelo ZeroR. Os resultados
+encontram-se na Seção \ref{results_ml_models}.
 

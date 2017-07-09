@@ -1,0 +1,53 @@
+\section{Metodologia} 
+\subsection{Obtenção e Utilização dos Dados}
+\begin{frame}{Obtenção e Utilização dos Dados}
+    Informações descaracterizadas de alunos de graduação da UnB. Dados sociais e de
+    desempenho acadêmico. 
+
+    \vspace{0.5cm}
+
+    Considerou-se apenas alunos que ingressaram a partir de 2000 e saíram até 2016.
+\end{frame}
+
+\subsection{Seleção de Atributos}
+
+\begin{frame}{Seleção Preliminar de Atributos}
+    Atributos sociais considerados em uma análise inicial: 
+    \begin{itemize}
+        \item Cotista (ou não)
+        \item Curso 
+        \item Forma de Ingresso
+        \item Idade
+        \item Raça 
+        \item Sexo 
+        \item Tipo da Escola
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Seleção Preliminar de Atributos}
+    Atributos relativos ao desempenho acadêmico: 
+    \begin{itemize}
+        \item Coeficiente de Melhora Acadêmica
+        \item Indicador de Aluno em Condição
+        \item Média do Período
+        \item Posição em relação ao semestre que ingressou
+        \item Quantidade de créditos já integralizados
+        \item Taxa de Aprovação, Reprovação e Trancamento
+        \item Taxa de aprovação na disciplina mais difícil do semestre
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Eliminação de Atributos Devido a Missing Values}
+    Optou-se por eliminar atributos com percentagem de missing values maior que 40\%.
+        
+    \vspace{0.5cm}
+    
+    Assim, atributos raça e tipo da escola foram eliminados. 
+\end{frame}
+
+
+\subsection{Estatística Descritiva}
+\begin{frame}{Eliminação de Outliers}
+    Eliminaram-se outliers. 233 estudantes foram eliminados do espaço amostral,
+    ficando com 4536 estudantes.  
+\end{frame}
