@@ -1,9 +1,74 @@
-# antes
+# 10/7 - antes
+
+# Monografia 
+    # introdução
+    -> Esqueci a sigla do Instituto de Ciências Exatas. Vou mudar. 
+    -> Na monografia, falei na introdução que Engenharia de Controle e Automação
+também é chamado de Engenharia Mecatrônica. Logo, usei Engenharia Mecatrônica no
+restante do texto. Não precisa mudar, né?
+
+    # fundamentação teórica
     -> Não mudei termos como SVMs ou SVRs. Eu queria dizer o plural de SVM e SVR. 
-    -> Não conceituei classificação e regressão (básico demais e não daria tempo)
-    -> Não conceituei overfitting (básico demais e não daria tempo)
-    -> Não coloquei figura para Naive Bayes. (não há necessidade de saber detalhes de
-funcionamento interno para algoritmos de ML). 
-    -> Não reescrevi levantamento do estado da arte. 
+    -> Não conceituei classificação e regressão (básico demais e não daria tempo).
+Precisa?
+    -> Não conceituei overfitting (básico demais e não daria tempo). Precisa?
+    -> Não falei de métricas comuns no CRISP-DM, mas falo disso mais adiante. Não
+preciso falar disso duas vezes, né? 
+    -> Faltou citar quais fases a pesquisa cobre e qual não cobre. Vou fazer isso! 
+Não fiz por conta do tempo. 
+    -> Precisa falar que árvores de decisão são usadas para classificação? Quer
+dizer, elas podem ser usadas para regressão também. 
+    -> Posso tentar melhorar o texto da SVR. Mas minha ideia era dar apenas uma
+descrição geral desses modelos de aprendizagem de máquina. Assim, não acho que
+compense colocar uma figura para SVR ou uma figura para o Naive Bayes. 
+        * O texto já está muito longo para uma descrição detalhada de métodos que
+          foram usados quase que como uma " caixa preta" durante a pesquisa. Detalhar
+          os métodos só tornaria o texto mais enfadonho e menos objetivo.     
+        * a imagem da ANN está boa o suficiente para mim. 
+    -> a fórmula da F-measure foi comentada falando da média harmônica. Precisa
+explicitar a fórmula? Usei a F-measure da scikit chamada micro. Precisa detalhar
+isso? A monografia já está grande, 
+
+    # metodologia
+    -> Na parte introdutória da metodologia, coloquei o seu texto mas mantive o meu.
+O q havia de errado com o meu? 
+    -> Não reescrevi levantamento do estado da arte. Iria demorar muito tempo. Essa
+    parte era do semestre passado, você podia ter me avisado antes, mas tudo bem!
+Preciso comentar mesmo os artigos, a monografia já está muito grande...
+    -> A separação dos dados de treino para avaliação foi feita na parte do ajuste de
+parâmetros. Comentou-se sobre isso mais adiante. 
+    -> Qual o problema em se falar "técnica de aprendizagem de máquina" de vez em
+quando, no lugar de "algoritmo de aprendizagem de máquina"? 
+    -> Na parte de ajuste de parâmetros, os resultados foram mostrados na seção
+resultados. 
+    
+    # resultados 
+    -> O que tem de errado com o título. No capítulo eu não faço só a análise dos
+resultados, mas apresento eles também. 
+    -> Os resultados indicados são o mostrado na Tabela. Acho que o desempenho dos
+modelos é uma informação desnecessária aqui. Só contribuiria para tornar a monografia
+mais chata de ler. O que importa é como tais modelos foram escolhidos. 
+    -> Não foi feito intervalo de confiança para F-measure. A parte onde intervalo de
+confiança foi feito foi no ajuste de parâmetros. 
+        * Mesmo que eu o fizesse, isso não seria tão interessante para o texto. 
     -> Não concordo com a justificativa para o Naive Bayes. Escrevi a sua te dando um
-voto de confiança. 
+voto de confiança. Mas gostaria de saber pq minha explicação está errada. 
+    
+    # conclusão 
+    -> A parte que você mandou falar na conclusão tem sobre metodologia e resultados.
+Não coloquei pq não achei que era coerente com uma seção de conclusão. Não vou
+colocar, viu? 
+    -> Um estudo de perfil de quem forma, migra ou evade não foi feito em detalhes.
+Mas tem os histogramas no apêndice de dados.
+    
+    # referências 
+    -> vou tentar colocar data para os sites da Internet
+    -> os artigos que apareceram sem autores devem-se ao fato de que usei o formato
+relatório técnico. Vou ver se corrijo isso. 
+
+* Ver com o Ladeira da possibilidade de eu escrever uma monografia só pra ele. 
+# artigo 
+    -> qual o problema da construção dos 30 anos?
+
+# monografia - correções
+    -> Não consegui mudar a sigla do IE

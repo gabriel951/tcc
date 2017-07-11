@@ -1,5 +1,16 @@
 \section{Fundamentação Teórica}
 % todo: if i want put section with unb peculiarities
+\subsection{Especificidades da UnB}
+\begin{frame}{Alunos em Condição}
+    Critérios para um aluno estar em condição: 
+    \begin{itemize}
+        \item Duas reprovações na mesma disciplina obrigatória.
+        \item Não ser aprovado em 4 disciplinas do curso em 2 períodos regulares
+            consecutivos.
+        \item Chegar ao último período do curso sem a possibilidade de concluí-lo. 
+    \end{itemize}
+\end{frame}
+
 \subsection{Modelo de Referência CRISP-DM}
 \begin{frame}{Modelo de Referência CRISP-DM}
     Na pesquisa foi usado o modelo de referência CRISP-DM. 
@@ -23,8 +34,8 @@
     Os seguintes algoritmos de aprendizagem de máquina foram utilizados: 
     \begin{itemize}
         \item ANN
-        \item Naive Bayes
-        \item Random Forest
+        \item \textit{Naive Bayes}
+        \item \textit{Random Forest}
         \item Regressor Linear
         \item SVR
     \end{itemize}
@@ -33,7 +44,7 @@
 \subsection{Métricas para Avaliação dos Modelos}
 \begin{frame}{Métricas para Avaliação dos Modelos}
     Métricas comuns para o problema de classificação supervisionado incluem:
-    precisão, recall e F-measure. 
+    precisão, \textit{recall} e \textit{F-measure}.
 
 
     \begin{equation}
@@ -48,6 +59,18 @@
 
     \vspace{0.2cm}
 
-    F-measure é definida como sendo a média harmônica entre precisão e recall. 
+\end{frame}
+
+\begin{frame}{Métricas para Avaliação dos Modelos}
+    \textit{F-measure} é definida como sendo a média harmônica entre precisão e
+    \textit{recall.} 
+
+    \vspace{0.2cm}
+
+    \begin{equation}
+        \text{F-measure} = 2 * \frac{\text{Precisão} * \text{recall}}
+                                    {\text{Precisão} + \text{recall}}
+    \end{equation}
+    
 \end{frame}
 

@@ -1,0 +1,206 @@
+\section{Resultados}
+\subsection{Resultados dos Ajuste de Parâmetros}
+\begin{frame}{Resultados do Ajuste de Parâmetros para ANN}
+    Melhores configurações para ANN de acordo com a base de dados: 
+    \begin{table}
+    \begin{center}
+        \begin{tabular}[c]{| c | c | c |}
+        \hline
+        \textbf{Base de Dados} & \textbf{Neurônios} & \textbf{Aprendizagem} \\
+        \hline
+        Jovens - FT & 100 & 0.001 \\
+        \hline
+        Jovens - Licenciatura & 36 & 1.0 \\
+        \hline
+        Jovens - Computação & 36 & 0.001 \\
+        \hline
+        Seniores & 24  & 0.7 \\
+        \hline
+    \end{tabular}
+    \end{center}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Resultados do Ajuste de Parâmetros para SVR}
+    Melhores configurações para SVR de acordo com a base de dados: 
+    \begin{table}
+    \begin{center}
+    \begin{tabular}[c]{| c | c | c |}
+        \hline
+        \textbf{Base de Dados} & \textbf{Kernel} & \textbf{Penalização} \\
+        \hline
+        Jovens - FT & linear & 1.0 \\
+        \hline
+        Jovens - Licenciatura & linear & 1.0 \\
+        \hline
+        Jovens - Computação & rbf & 1.0 \\
+        \hline
+        Seniores & linear & 1.0 \\
+        \hline
+    \end{tabular}
+    \end{center}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Resultados do Ajuste de Parâmetros para Naive Bayes}
+    Melhores configurações para Naive Bayes de acordo com a base de dados: 
+    \begin{table}
+    \begin{center}
+    \begin{tabular}[c]{| c | c | c |}
+        \hline
+        \textbf{Base de Dados} & \textbf{Distribuição dos Atributos} \\
+        \hline
+        Jovens - FT & Gaussiana \\
+        \hline
+        Jovens - Licenciatura & Bernoulli \\
+        \hline
+        Jovens - Computação & Multinomial \\
+        \hline
+        Seniores & Gaussiana \\
+        \hline
+    \end{tabular}
+    \end{center}
+    \label{conf_nb}
+    \end{table}
+\end{frame}
+
+\subsection{F-measures Obtidos}
+\begin{frame}{Resultado - Alunos Jovens da FT}
+    \textit{F-measure} média para alunos jovens da FT: 
+    \begin{table}
+    \begin{center}
+    \begin{tabular}[c]{| c | c |}
+        \hline
+        \textbf{Modelo} & \textbf{F-measure} \\
+        \hline
+        ANN              & 0.76 \\
+        \hline
+        Naive Bayes      & 0.56 \\
+        \hline
+        Random Forest    & 0.73 \\
+        \hline
+        Regressor Linear & 0.80 \\
+        \hline
+        SVR              & 0.76 \\
+        \hline
+        ZeroR            & 0.64 \\
+        \hline
+    \end{tabular}
+    \end{center}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Resultado - Alunos Jovens da Licenciatura}
+    \textit{F-measure} média para alunos jovens da licenciatura: 
+    \begin{table}
+    \begin{center}
+    \begin{tabular}[c]{| c | c |}
+        \hline
+        \textbf{Modelo} & \textbf{F-measure} \\
+        \hline
+        ANN              & 0.85 \\
+        \hline
+        Naive Bayes      & 0.76 \\
+        \hline
+        Random Forest    & 0.85 \\
+        \hline
+        Regressor Linear & 0.86 \\
+        \hline
+        SVR              & 0.82 \\
+        \hline
+        ZeroR            & 0.70 \\
+        \hline
+    \end{tabular}
+    \end{center}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Resultado - Alunos Jovens da Computação}
+    \textit{F-measure} média para alunos jovens da computação: 
+    \begin{table}
+    \begin{center}
+    \begin{tabular}[c]{| c | c |}
+        \hline
+        \textbf{Modelo} & \textbf{F-measure} \\
+        \hline
+        ANN              & 0.74 \\
+        \hline
+        Naive Bayes      & 0.65 \\
+        \hline
+        Random Forest    & 0.76 \\
+        \hline
+        Regressor Linear & 0.77 \\
+        \hline
+        SVR              & 0.70 \\
+        \hline
+        ZeroR            & 0.60 \\
+        \hline
+    \end{tabular}
+    \end{center}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Resultado - Alunos Seniores}
+    \textit{F-measure} média para alunos seniores: 
+    \begin{table}
+    \begin{center}
+    \begin{tabular}[c]{| c | c |}
+        \hline
+        \textbf{Modelo} & \textbf{F-measure} \\
+        \hline
+        ANN              & 0.62 \\
+        \hline
+        Naive Bayes      & 0.28 \\
+        \hline
+        Random Forest    & 0.70 \\
+        \hline
+        Regressor Linear & 0.75 \\
+        \hline
+        SVR              & 0.79 \\
+        \hline
+        ZeroR            & 0.61 \\
+        \hline
+    \end{tabular}
+    \end{center}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Resultados - Síntese}
+    \textit{F-measure} dos modelos de acordo com a base de dados: 
+    \begin{table}
+    \begin{center}
+    \begin{tabular}[c]{| c | c | c | c | c |}
+        \hline
+        \textbf{Modelo} & \textbf{Sen} & \textbf{J - FT} & 
+        \textbf{J - Lic} & \textbf{J - Comp} \\
+        \hline
+        ANN              & 0.62 & 0.76 & 0.85 & 0.74 \\
+        \hline
+        Naive Bayes      & 0.28 & 0.56 & 0.76 & 0.65 \\
+        \hline
+        Random Forest    & 0.70 & 0.73 & 0.85 & 0.76 \\
+        \hline
+        Regressor Linear & 0.75 & 0.80 & 0.86 & 0.77 \\
+        \hline
+        SVR              & 0.79 & 0.76 & 0.82 & 0.70 \\
+        \hline
+        ZeroR            & 0.61 & 0.64 & 0.70 & 0.60 \\
+        \hline
+    \end{tabular}
+    \end{center}
+    \end{table}
+\end{frame}
+
+\subsection{Discussão dos Resultados}
+\begin{frame}{Mau Desempenho do Naive Bayes}
+    Mau desempenho do Naive Bayes justifica-se pelos atributos passados
+    não poderem ser considerados condicionalmente independentes. 
+\end{frame}
+
+\begin{frame}{Bom Desempenho dos Modelos, Especialmente o Regressor Linear}
+    De forma geral, algoritmos conseguiram ter melhor resultado que o ZeroR.  
+
+    \vspace{0.5cm}
+
+    Bom desempenho obtido pelo regressor linear: \textit{F-measure} em torno de 0.795. 
+\end{frame}

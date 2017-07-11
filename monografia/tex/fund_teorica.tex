@@ -139,7 +139,8 @@ casos de teste, construção do modelo e avaliação do modelo \cite{crispdm}. �
 fase que utilizam-se os algoritmos de aprendizagem de máquina como árvores de decisão,
 redes neurais e SVMs \cite{ml_second_book}. Nessa fase ocorre, comumente, a divisão
 dos dados em treino, validação e teste. Um cuidado comum a ser tomado nessa fase é a
-redução do \textit{overfitting}.
+redução do \textit{overfitting}. Métricas comuns para avaliar o desempenho dos
+modelos incluem a precisão, o \textit{recall} e a \textit{F-measure}.
 
 \subsection{Avaliação} 
 Enquanto a tarefa de avaliação da fase de modelagem tem como objetivo lidar como
@@ -158,13 +159,22 @@ Nesta seção fazem-se breve explanações sobre os algoritmos de aprendizagem d
 usadas na pesquisa. Explica-se sobre as árvores de decisão e \textit{random forests},
 regressor linear, SVRs, redes neurais, \textit{Naive Bayes} e o ZeroR. 
 Algoritmos de aprendizagem de máquina são utilizados para a indução de modelos em
-tarefas de mineração de dados. As principais tarefas são classificação e regressão
+tarefas de mineração de dados. 
+\par As principais tarefas de aprendizagem de máquina são classificação e regressão
+\cite{ml_second_book}. Na classificação, a variável de saída é classificada em
+valores discretos, enquanto que na regressão a variável de saída assume valores
+contínuos. 
+\par Outra questão importante em aprendizagem de máquina diz respeito à minimização
+de \textit{overfitting}. \textit{Overfitting} é o fenômeno no qual conseguir um
+ajustar os fatos observados (dados) bem não mais garante que teremos um bom
+desempenho fora da amostra, podendo ocorrer, na verdade, o efeito oposto
 \cite{ml_second_book}.
 
 % árvores de decisão, random forest, regressor linear, redes neurais ...
 \subsection{Árvores de Decisão e Random Forest}
 Árvore de Decisão é um algoritmo de aprendizagem de máquina bastante usada em
-pesquisas científicas, em uma variedade de contextos \cite{ml_mitchell}. O modelo
+pesquisas científicas, em uma variedade de contextos \cite{ml_mitchell}. Tal
+algoritmo pode ser usado tanto para classificação quanto para regressão. O modelo
 induzido adota uma representação em árvore, com cada vértice fazendo referência à um
 teste a ser feito para um atributo de uma instância e cada uma das arestas indicando
 um dos possíveis valores do atributo. A Figura \ref{dec_tree}, exemplo encontrado em
@@ -200,11 +210,28 @@ De modo geral, modelos lineares costumam não ser muito propensos à
 de máquina \cite{ml_book}. 
 
 \subsection{SVR}
-SVM (do inglês \textit{Support Vector Machine}) é um classificador que se baseiam em
-um hiperplano separador. Após treinar, tal algoritmo fornece um hiperplano
-otimizado e, com base nele,
-categoriza novos exemplos. Por meio de seu \textit{kernel}, SVMs conseguem realizar
-transformações não lineares de alta dimensão \cite{ml_second_book}. Tal algoritmo de
+SVM (do inglês \textit{Support Vector Machine}) são um conjunto de métodos de
+aprendizagem de máquina que podem ser usados para classificação, regressão e detecção
+de \textit{outliers}. Por meio de seu \textit{kernel}, SVMs conseguem realizar
+transformações não lineares de alta dimensão \cite{ml_second_book} e assim resolver
+problemas de domínios diferentes. As Figuras \ref{svm_kernel_linear} e 
+\ref{svm_kernel_rbf} mostram SVMs sendo
+usadas para tarefas de classificação com dois tipos de kernel diferentes: linear e
+RBF. 
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width = 8cm]{svm_kernel_linear.png}
+    \caption{Exemplo de SVM com Kernel Linear}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width = 8cm]{svm_kernel_rbf.png}
+    \caption{Exemplo de SVM com Kernel RBF}
+\end{figure}
+
+\par Tal algoritmo de
 aprendizagem de máquina é fácil de usar e tem bom desempenho na prática, o que
 explica assim sua popularidade \cite{ml_second_book}. O método utilizado na SVM pode ser
 estendido para regressão. Nesse caso, o método é chamado SVR (do inglês
@@ -235,7 +262,7 @@ saída, de acordo com os neurônios que foram ativados.
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width = 8cm]{ann_layers.png}
+    \includegraphics[width = 15cm]{ann_layers.png}
     \caption{Camadas de uma Rede Neural}
     \label{ann_layers}
 \end{figure}
@@ -246,6 +273,22 @@ probabilístico baseado na aplicação do teorema de Bayes com a premissa de
 independência entre os atributos \cite{ml_book}. Um parâmetro importante para tal
 algoritmo é o tipo de distribuição que se assume que os atributos possuem. Alguns
 exemplos de distribuições são: Gaussiana, multinomial e Bernoulli. 
+
+Seja $y$ a variável de saída e seja a entrada um vetor de atributos, de $x_1$ até
+$x_n$. A hipótese de independência entre atributos é descrita pela Fórmula \ref{nb_indep}.
+Por fim, o teorema de Bayes com a hipótese de independência é dado pela Fórmula
+\ref{nb_bayes}.  
+
+\begin{equation}
+    \label{nb_indep}
+    P(x_i |y, x_1, ..., x_{i-1}, x_{i+1}, ..., x_n) = P(x_i | y)
+\end{equation}
+
+\begin{equation}
+    \label{nb_bayes}
+    P(y | x_1, ..., x_n) = \frac{P(y)\prod_{1 \le i \le n} P(x_i|y)}{P(x_1, ..., x_n)}
+\end{equation}
+
 
 \subsection{ZeroR}
 O ZeroR é um dos métodos de classificação mais simples. Tal método ignora os

@@ -1,7 +1,7 @@
 \section{Metodologia} 
 \subsection{Obtenção e Utilização dos Dados}
 \begin{frame}{Obtenção e Utilização dos Dados}
-    Informações descaracterizadas de alunos de graduação da UnB. Dados sociais e de
+    Informações descaracterizadas de alunos de graduação da UnB. Dados pessoais e de
     desempenho acadêmico. 
 
     \vspace{0.5cm}
@@ -9,10 +9,9 @@
     Considerou-se apenas alunos que ingressaram a partir de 2000 e saíram até 2016.
 \end{frame}
 
-\subsection{Seleção de Atributos}
-
+\subsection{Seleção Preliminar de Atributos}
 \begin{frame}{Seleção Preliminar de Atributos}
-    Atributos sociais considerados em uma análise inicial: 
+    Atributos pessoais considerados em uma análise inicial: 
     \begin{itemize}
         \item Cotista (ou não)
         \item Curso 
@@ -38,16 +37,154 @@
 \end{frame}
 
 \begin{frame}{Eliminação de Atributos Devido a Missing Values}
-    Optou-se por eliminar atributos com percentagem de missing values maior que 40\%.
+    Optou-se por eliminar atributos com percentagem de \textit{missing values} maior que 40\%.
         
     \vspace{0.5cm}
     
     Assim, atributos raça e tipo da escola foram eliminados. 
 \end{frame}
 
-
 \subsection{Estatística Descritiva}
 \begin{frame}{Eliminação de Outliers}
-    Eliminaram-se outliers. 233 estudantes foram eliminados do espaço amostral,
-    ficando com 4536 estudantes.  
+    Eliminaram-se \textit{outliers}. 233 estudantes foram eliminados do espaço amostral,
+    que ficou com 4536 estudantes.  
 \end{frame}
+
+\begin{frame}{Mudança na Base de Dados}
+    Atributos variavam significativamente de acordo com: 
+    \begin{itemize}
+        \item Curso do Aluno
+        \item Idade do Aluno
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mudança na Base de Dados}
+    Decisão de particionar a base de dados original em quatro bases de dados:
+    \begin{itemize}
+        \item Alunos Jovens da FT
+        \item Alunos Jovens de Licenciatura
+        \item Alunos Jovens de Computação
+        \item Alunos Seniores
+    \end{itemize}
+\end{frame}
+
+\subsection{Redução de Atributos}
+\begin{frame}{Eliminação de Atributos Relacionados}
+    Utilizou-se o teste de Kendall para eliminar atributos que apresentassem mais de
+    80\% de correlação. 
+
+    \vspace{0.5cm}
+
+    Taxa de aprovação e taxa de reprovação estavam fortemente relacionados, de modo
+    que eliminou-se o atributo taxa de reprovação. 
+\end{frame}
+
+\begin{frame}{Eliminação de Atributos Irrelevantes}
+    Eliminação de atributos irrelevantes usando árvores de decisão: 
+    \begin{itemize}
+        \item Para alunos jovens da licenciatura, atributo curso não era relevante. 
+        \item Para alunos seniores, os atributos curso, cota e taxa de trancamento
+            não foram considerados relevantes. 
+        \item Para outras bases de dados, nenhum atributo foi classificado como
+            irrelevante. 
+    \end{itemize}
+\end{frame}
+
+\subsection{Aprendizagem de Máquina e Ajuste de Parâmetros}
+\begin{frame}{Algoritmos de Aprendizagem de Máquina Adotados}
+    Algoritmos utilizados: 
+    \begin{itemize}
+        \item ANN
+        \item Naive Bayes
+        \item Random Forest
+        \item Regressor Linear 
+        \item SVR
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ajuste de Parâmetros}
+    Fez-se ajuste de parâmetros para:
+    \begin{itemize}
+        \item ANN
+        \item Naive Bayes
+        \item SVR
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    Para os demais modelos, utilizou-se o \textit{default} da biblioteca
+    \texttt{scikit-learn}.
+\end{frame}
+
+\subsection{Divisão em Treino e Teste}
+\begin{frame}{Divisão em Treino e Teste}
+    Dados de Treino: Alunos que ingressaram de 2000 até 2009.
+
+    \vspace{0.5cm}
+
+    Dados de Teste: Alunos que ingressaram de 2010 até 2016.
+\end{frame}
+
+\subsection{Divisão em Semestres}
+\begin{frame}{Necessidade da Divisão em Semestres}
+    Para o problema de negócio considerado, sistema previsor deve ser capaz de
+    calcular o risco de alunos evadirem tanto para alunos no início do curso quanto
+    para estudantes mais adiantados. 
+
+    \vspace{0.5cm}
+
+    Alguns atributos dos alunos, como a taxa de aprovação, mudam a cada semestre.
+\end{frame}
+
+\begin{frame}{Funcionamento da Divisão em Semestres}
+    Modelos de mineração de dados são induzidos separadamente para cada
+    semestre: 
+    \begin{enumerate}
+        \item Inicialmente, modelos induzidos com dados do 1º semestre dos
+             aluno do conjunto de treino e avaliados com dados do 1º semestre do
+             conjunto de teste. 
+         \item Repete-se o procedimento para os dados do 2º semestre dos alunos e
+             assim por diante.
+    \end{enumerate}
+\end{frame}
+
+\subsection{Avaliação de Desempenho}
+\begin{frame}{Processo de Avaliação de Desempenho}
+    Processo: 
+    \begin{enumerate}
+        \item Cada modelo induzido gera, para cada aluno em cada semestre ativo, uma
+            tripla que indica a possibilidade do aluno concluir, evadir ou migrar. 
+        \item Maior valor da tripla é usado como sendo a previsão do modelo. 
+        \item Compara-se a previsão com o que realmente aconteceu com o aluno, de
+            modo a verificar se o modelo acertou ou errou. 
+    \end{enumerate}
+\end{frame}
+
+% criar um modelo gráfico
+\begin{frame}{Diagrama para Avaliação do Desempenho}
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width = 8cm]{images/fmeasure_diagram.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Avaliação do Desempenho}
+    Repete-se o processo descrito anteriormente para cada um dos semestres estudados.
+    Assim, um determinado modelo tem, para uma base de dados, vários valores de
+    \textit{F-measure} calculados, um para cada semestre. 
+
+    \vspace{0.5cm}
+
+    Para sumarizar o desempenho do modelo, calculou-se a média das
+    \textit{F-measures} de cada semestre. 
+\end{frame}
+
+\begin{frame}{Avaliação do Desempenho}
+    Modelos tem seu desempenho comparado entre si e com o ZeroR. 
+
+    \vspace{0.5cm}
+
+    ZeroR é um classificador simples que sempre prevê a classe majoritária. 
+\end{frame}
+
+

@@ -2,6 +2,7 @@
     1. Planejamento Geral
     2. Fala
     3. Possíveis Perguntas
+    4. Correções
 
 1. Planejamento Geral
     -> introdução: 3 minutos
@@ -12,5 +13,60 @@
     TOTAL: 20 minutos
 
 2. Fala
-    # Introdução 
-         
+    # Introdução: 
+        -> falar que a abordagem da UnB pode ser feita quando já é tarde demais, e
+não há tanta flexibilidade assim. 
+
+    # Fundamentação Teórica: 
+        -> Falar que mais informações sobre o CRISP-DM podem ser encontradas na minha
+monografia. O CRISP-DM não é o principal da minha pesquisa, de modo que a menção a ele
+será somente essa.  
+        -> O funcionamento interno em detalhes dos algoritmos de aprendizagem de
+máquina usados não é o principal da pesquisa. Assim, aqui eu vou citar os principais
+e na minha monografia eles recebem comentários superficiais.   
+        -> Falar do que mede a precisão, do que mede o recall e como a f-measure é
+uma combinação de ambos.  
+    
+    # metodologia 
+        -> explicar como ocorre a eliminação de atributos irrelevantes em árvores de
+decisão. 
+        -> Falar que a divisão em semestres é uma parte importante e que requer
+atenção. 
+        -> Deixar o meu agradecimento ao pessoal da scikit-learn. 
+        -> Falar que maiores informações sobre como foi feito o ajuste podem ser
+encontradas na minha monografia. 
+
+    # resultados
+        -> Falar os resultados, destacando a boa performance do regressor linear
+
+    # conclusão
+
+
+4. Correções
+    -> Aprender a montar o projetor!
+        * Controle 
+        * F4
+        * Cabo HDMI
+    -> Não falar com tanta empolgação. 
+    -> Mudar para dados pessoais. 
+    -> A disciplina mais difícil do semestre foi calculada supondo que os professores
+estejam capacitados e que os alunos estejam dispostos a aprender. Nessa situação,
+julgou-se que a disciplina mais difícil do semestre é aquela com o maior índice de
+reprovação. 
+    * Explicar bem o porquê de utilizar a como fazer a divisão em treino e teste.  
+    -> Como implementar na UnB? Falar que os dados podem ser calculados usando o
+SIGRA. Todas as informações a UnB possui. Essa pergunta é do slide 40. 
+    -> Tirar a parte que fala de aprendizagem de máquina. 
+
+
+    # correções - slide por slide!
+    -> slide 14: por fórmula para f-measure - ok
+    -> slide 16: colocar dados pessoais - ok
+    -> slide 18: por o que significa condição - ok
+    -> slide 25: critério para dividir a base em treinamento e teste (falar na
+apresntação)
+    -> slide 27: ajuste de parâmetros não foi citado. Colocar antes - ok
+    -> slides 30/31: criar um modelo gráfico. - ok
+    -> slide 33: explique o que é o ZeroR - ok
+    -> ícaro: explicar quais os critérios que foram usados para eliminar outliers
+    -> juntar resultados em uma tabela só. - ok

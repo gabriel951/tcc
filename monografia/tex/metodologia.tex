@@ -27,7 +27,28 @@ quais fatores são importantes para a evasão \cite{adeodato}
 aprendizagem de máquina podem ser utilizadas para resolver o problema \cite{adeodato}
  \cite{data_mining_retention} 
 e como trabalhar especificamente com os dados da UnB \cite{manual_calouro} 
-\cite{hoed_sobrevivencia}. 
+\cite{hoed_sobrevivencia}. Explica-se brevemente a seguir os artigos citados. 
+
+\par O excelente artigo \cite{adeodato} foi o mais útil para a pesquisa em questão.
+Neste artigo, utiliza-se mineração de dados para avaliar o risco de um aluno ficar na
+universidade mais tempo que o previsto. Os dados são da Universidade Federal de
+Pernambuco. De modo bastante interessante, avalia-se também a viabilidade econômica
+da implementação de um processo de aconselhamento. 
+\par \cite{dropout_finland} e \cite{hoed_fatores} analisam alguns fatores que podem
+vir a ser importantes para a evasão. Em \cite{dropout_finland}, os autores investigam
+razões para se abandonar a matéria introdutória de ciência da computação na
+universidade de Helsinki. Embora
+vários motivos tenham sido elencados, ressalta-se a falta de tempo e de motivação dos
+estudantes. Já em \cite{hoed_fatores}, estuda-se e constata-se que cursos que
+requerem maior abstração algorítmica e conhecimento matemático tem índices de evasão
+superiores. Além disso, em \cite{hoed_fatores}, constata-se que a relação candidato
+por vaga é inversamente proporcional à evasão.  
+\par No artigo \cite{data_mining_retention}, utiliza-se mineração de dados para
+identificar quais alunos tem maiores chances de retenção. As técnicas usadas incluem,
+árvores de classificação, ANNs e MARS.
+\par Por fim, no artigo \cite{hoed_sobrevivencia}, aplicam-se técnicas de análise de
+sobrevivência para estudantes de computação da Universidade de Brasília (assim como
+a pesquisa descrita nesta monografia). Os dados são de 2005 até 2015.  
 
 \section{Obtenção e Utilização dos Dados}
 Obtiveram-se informações descaracterizadas relativas aos dados sociais e ao
@@ -199,7 +220,9 @@ Como tradicionalmente ocorre no domínio de análise preditiva, houve a separaç
 dados entre dados de treino e dados de teste. Os dados abrangiam alunos que entraram
 no período de 2000 até 2016 e já saíram da universidade. Aqueles alunos que entraram
 antes de 2010 formaram o conjunto dos dados de treino, enquanto que os alunos que
-entraram de 2010 em diante formaram o conjunto dos dados de teste. 
+entraram de 2010 em diante formaram o conjunto dos dados de teste. A separação dos
+dados de parte dos dados de treino para validação ocorreu somente na etapa do ajuste
+de parâmetros, sendo descrita na Seção \ref{ajus_param}.
 
 % não quis incluir. Se incluir e quiser fazer bem feito, explicar pq não se corrigiu
 % tal desproporção
@@ -232,7 +255,7 @@ fim do 8º semestre) tal aluno não entra no conjunto de treino/teste para o sem
 considerado.   
 
 \section{Algoritmos de Aprendizagem de Máquina Estudados e Retroalimentação} 
-As técnicas de aprendizagem de máquina utilizadas para a predição de alunos em risco
+Os algoritmos de aprendizagem de máquina utilizadas para a predição de alunos em risco
 de evasão foram: \textit{Naive Bayes}, \textit{random forests}, rede neural, regressor linear e
 SVR. Utilizou-se a biblioteca \texttt{scikit-learn} (versão 0.18.1) \cite{sklearn}, da
 linguagem de programação Python.
@@ -244,7 +267,7 @@ graduar/evadir/migrar calculada por esse mesmo modelo para o semestre $x-1$.
 Para cada modelo estudado, analisou-se seu desempenho com e sem
 retroalimentação. 
 
-\section{Ajuste de Parâmetros}
+\section{Ajuste de Parâmetros}\label{ajus_param}
 Estimou-se quais seriam os melhores parâmetros para os seguintes algoritmos de
 aprendizagem de máquina: \textit{Naive Bayes}, rede neural e SVR. Para os demais,
 seguiu-se as configurações padrão da biblioteca \texttt{scikit-learn}.  
@@ -279,7 +302,7 @@ SVR quando $C$ era 0,5 1 e 2. Os resultados são mostrados na Seção
 \ref{svr_best_conf}. 
 
 \subsection{Estimativa de Parâmetros Para Naive Bayes}
-O único parâmetro estimado para a técnica de aprendizagem de máquina \textit{Naive Bayes} foi
+O único parâmetro estimado para o algoritmo de aprendizagem de máquina \textit{Naive Bayes} foi
 o tipo de distribuição que os atributos seguiam. Testou-se o desempenho de tal modelo
 de aprendizagem de máquina assumindo-se que os atributos tinham as seguintes
 distribuições: gaussiana, multinomial e Bernoulli. Os resultados são mostrados na
