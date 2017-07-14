@@ -1,0 +1,56 @@
+performance - ml model: naive_bayes - data: young_students_ti_courses
+	naive_bayes_no_tail_absolute_gaussian: (0.32261930005677497, 0.94396209394651831)
+		 interval gap: 0.621343
+	naive_bayes_use_tail_absolute_gaussian: (0.32261930005677486, 0.9439620939465182)
+		 interval gap: 0.621343
+	naive_bayes_use_tail_absolute_multinomial: (0.26058610928040987, 1.0990254929517214)
+		 interval gap: 0.838439
+	naive_bayes_no_tail_absolute_multinomial: (0.26058610928040987, 1.0990254929517214)
+		 interval gap: 0.838439
+	naive_bayes_no_tail_absolute_multi_bernoulli: (0.21842939169428188, 1.1437381174348571)
+		 interval gap: 0.925309
+	naive_bayes_use_tail_absolute_multi_bernoulli: (0.21842939169428188, 1.1437381174348571)
+		 interval gap: 0.925309
+
+performance - ml model: naive_bayes - data: young_students_lic_courses
+	naive_bayes_no_tail_absolute_multinomial: (0.47202627013066062, 1.0941499339489609)
+		 interval gap: 0.622124
+	naive_bayes_use_tail_absolute_multinomial: (0.4720262701306604, 1.0941499339489607)
+		 interval gap: 0.622124
+	naive_bayes_no_tail_absolute_multi_bernoulli: (0.47184712954963109, 1.127923555337357)
+		 interval gap: 0.656076
+	naive_bayes_use_tail_absolute_multi_bernoulli: (0.47184712954963109, 1.127923555337357)
+		 interval gap: 0.656076
+	naive_bayes_use_tail_absolute_gaussian: (0.057009736901108332, 0.85412999915873167)
+		 interval gap: 0.797120
+	naive_bayes_no_tail_absolute_gaussian: (0.057009736901108221, 0.85412999915873156)
+		 interval gap: 0.797120
+
+performance - ml model: naive_bayes - data: young_students_comp_courses
+	naive_bayes_no_tail_absolute_multinomial: (0.43043605154240899, 1.0204210669754306)
+		 interval gap: 0.589985
+	naive_bayes_use_tail_absolute_multinomial: (0.43043605154240883, 1.0204210669754306)
+		 interval gap: 0.589985
+	naive_bayes_no_tail_absolute_multi_bernoulli: (0.33608861788014627, 1.0762466226701268)
+		 interval gap: 0.740158
+	naive_bayes_use_tail_absolute_multi_bernoulli: (0.33608861788014616, 1.0762466226701268)
+		 interval gap: 0.740158
+	naive_bayes_use_tail_absolute_gaussian: (0.10704481114658804, 0.91428692758976826)
+		 interval gap: 0.807242
+	naive_bayes_no_tail_absolute_gaussian: (0.10704481114658793, 0.91428692758976815)
+		 interval gap: 0.807242
+
+performance - ml model: naive_bayes - data: old_students
+	naive_bayes_no_tail_absolute_gaussian: (0.12836572532330759, 1.1739787900646861)
+		 interval gap: 1.045613
+	naive_bayes_use_tail_absolute_gaussian: (0.12836572532330737, 1.1739787900646861)
+		 interval gap: 1.045613
+	naive_bayes_use_tail_absolute_multinomial: (-0.15418100042345462, 1.0070888413747738)
+		 interval gap: 1.161270
+	naive_bayes_no_tail_absolute_multinomial: (-0.15418100042345462, 1.0070888413747738)
+		 interval gap: 1.161270
+	naive_bayes_no_tail_absolute_multi_bernoulli: (-0.33579987835598091, 1.1512385459685617)
+		 interval gap: 1.487038
+	naive_bayes_use_tail_absolute_multi_bernoulli: (-0.33579987835598091, 1.1512385459685617)
+		 interval gap: 1.487038
+

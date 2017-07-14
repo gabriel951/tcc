@@ -1,19 +1,17 @@
 \section{Fundamentação Teórica}
-% todo: if i want put section with unb peculiarities
+
 \subsection{Especificidades da UnB}
-\begin{frame}{Alunos em Condição}
-    Critérios para um aluno estar em condição: 
-    \begin{itemize}
-        \item Duas reprovações na mesma disciplina obrigatória.
-        \item Não ser aprovado em 4 disciplinas do curso em 2 períodos regulares
-            consecutivos.
-        \item Chegar ao último período do curso sem a possibilidade de concluí-lo. 
-    \end{itemize}
+\begin{frame}{IRA}
+    Fórmula para cálculo do IRA, segundo \cite{manual_calouro}, é mostrada abaixo: 
+    \begin{equation}
+        IRA = (1 - \frac{0,6 * DT_b + 0,4 * DT_p}{DC}) * 
+        (\frac{\sum_{i}P_i * CR_i * Pe_i}{\sum_{i} CR_i * Pe_i})
+    \end{equation}
 \end{frame}
 
 \subsection{Modelo de Referência CRISP-DM}
 \begin{frame}{Modelo de Referência CRISP-DM}
-    Na pesquisa foi usado o modelo de referência CRISP-DM. 
+    Na pesquisa foi usado o modelo de referência CRISP-DM \cite{crispdm}. 
     
     \vspace{0.5cm}
 
@@ -31,7 +29,8 @@
 
 \subsection{Algoritmos de Aprendizagem de Máquina}
 \begin{frame}{Algoritmos de Aprendizagem de Máquina}
-    Os seguintes algoritmos de aprendizagem de máquina foram utilizados: 
+    Os seguintes algoritmos de aprendizagem de máquina (veja \cite{ml_book} ou
+    \cite{ml_second_book}) foram utilizados: 
     \begin{itemize}
         \item ANN
         \item \textit{Naive Bayes}
@@ -46,7 +45,6 @@
     Métricas comuns para o problema de classificação supervisionado incluem:
     precisão, \textit{recall} e \textit{F-measure}.
 
-
     \begin{equation}
         \text{Precisão} = \frac{TP}{TP + FP} 
     \end{equation}
@@ -58,19 +56,25 @@
     \end{equation}
 
     \vspace{0.2cm}
-
 \end{frame}
 
-\begin{frame}{Métricas para Avaliação dos Modelos}
-    \textit{F-measure} é definida como sendo a média harmônica entre precisão e
-    \textit{recall.} 
+\begin{frame}{F-measure}
+    \textit{F-measure} é definida como sendo a média harmônica ponderada entre
+    precisão e \textit{recall.} 
 
     \vspace{0.2cm}
 
     \begin{equation}
+        \text{F-measure} = (1 + \beta^2 ) * \frac{\text{precisão} * \text{recall}}
+                                             {\beta^2 * \text{precisão} + \text{recall}}
+    \end{equation}
+\end{frame}
+
+\begin{frame}{F-measure}
+    Quando a ponderação não privilegia precisão ou \textit{recall}: 
+    \begin{equation}
         \text{F-measure} = 2 * \frac{\text{Precisão} * \text{recall}}
                                     {\text{Precisão} + \text{recall}}
     \end{equation}
-    
 \end{frame}
 

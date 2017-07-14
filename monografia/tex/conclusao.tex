@@ -2,6 +2,22 @@ Neste capítulo, apresenta-se a conclusão do trabalho e apontam-se possíveis c
 pesquisa. 
 
 \section{Conclusão}
+Considerando a idade do aluno, os dados foram divididos em alunos jovens (ingressaram
+com até 30 anos) e alunos seniores (ingressaram com mais de 30 anos), resultando nas
+bases: alunos seniores, alunos jovens da FT, alunos jovens da licenciatura, alunos
+jovens da computação. As diferentes distribuições dos atributos nessas bases de dados
+foi estudada, incluindo a quantidade de alunos que forma, evade e migra. 
+\par Atributos considerados são: sexo, idade, cotista, curso, forma de ingresso, taxa
+de aprovação, taxa de trancamento, índice de rendimento acadêmico (IRA), taxa de
+melhora acadêmica, créditos integralizados, taxa de aprovação em disciplinas
+difíceis, estar em condição e posição no ranque. Também foram induzidos modelos com
+cauda que consideravam como atributo a estimativa do modelo no semestre anterior. Não
+houve diferença estatística significativa entre os modelos com e sem cauda. 
+\par Os melhores resultados foram obtidos com regressão linear multivariada: alunos
+jovens da FT (\textit{F-measure} de 0,8), alunos jovens da licenciatura (0,86), alunos jovens
+da computação (0,77) e alunos seniores (0,75). Nesse último caso, a SVR obteve
+\textit{F-measure} de 0,79. 
+
 O algoritmos de aprendizagem de máquina regressor linear obteve um bom desempenho na
 tarefa de prever quais alunos seriam capazes de se graduar, quais evadiriam e quais
 migrariam. Esse resultado aponta a viabilidade do uso de
@@ -20,7 +36,8 @@ sistema previsor. Para isso, uma opção é a inclusão de novos atributos, como
 exemplo a quantidade de disciplinas obrigatórias restantes ou a quantidade de
 créditos do curso do aluno.  Outra opção seria a avaliação do sistema previsor por
 outras métricas que não a \textit{F-measure}, de modo a verificar se o bom desempenho
-é consistente. 
+é consistente. Por fim, poderia-se estudar o intervalo de confiança da medida
+\textit{F-measure} através da utilização da distribuição $\beta$. 
 
 % outras informações, que não quero deletar por agora
 %\input{./tex/demais_info.tex}

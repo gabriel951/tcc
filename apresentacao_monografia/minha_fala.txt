@@ -1,72 +1,105 @@
 # Sumário: 
+    0. Obs
     1. Planejamento Geral
     2. Fala
     3. Possíveis Perguntas
     4. Correções
+    5. Possíveis
 
-1. Planejamento Geral
-    -> introdução: 3 minutos
-    -> fundamentação teórica: 4 minutos
-    -> metodologia: 7 minutos
-    -> resultados: 4 minutos
-    -> conclusão: 2 minutos
-    TOTAL: 20 minutos
-
-2. Fala
-    # Introdução: 
-        -> falar que a abordagem da UnB pode ser feita quando já é tarde demais, e
-não há tanta flexibilidade assim. 
-
-    # Fundamentação Teórica: 
-        -> Falar que mais informações sobre o CRISP-DM podem ser encontradas na minha
-monografia. O CRISP-DM não é o principal da minha pesquisa, de modo que a menção a ele
-será somente essa.  
-        -> O funcionamento interno em detalhes dos algoritmos de aprendizagem de
-máquina usados não é o principal da pesquisa. Assim, aqui eu vou citar os principais
-e na minha monografia eles recebem comentários superficiais.   
-        -> Falar do que mede a precisão, do que mede o recall e como a f-measure é
-uma combinação de ambos.  
-    
-    # metodologia 
-        -> explicar como ocorre a eliminação de atributos irrelevantes em árvores de
-decisão. 
-        -> Falar que a divisão em semestres é uma parte importante e que requer
-atenção. 
-        -> Deixar o meu agradecimento ao pessoal da scikit-learn. 
-        -> Falar que maiores informações sobre como foi feito o ajuste podem ser
-encontradas na minha monografia. 
-
-    # resultados
-        -> Falar os resultados, destacando a boa performance do regressor linear
-
-    # conclusão
-
-
-4. Correções
+0. Obs
     -> Aprender a montar o projetor!
         * Controle 
         * F4
         * Cabo HDMI
-    -> Não falar com tanta empolgação. 
-    -> Mudar para dados pessoais. 
-    -> A disciplina mais difícil do semestre foi calculada supondo que os professores
-estejam capacitados e que os alunos estejam dispostos a aprender. Nessa situação,
-julgou-se que a disciplina mais difícil do semestre é aquela com o maior índice de
-reprovação. 
-    * Explicar bem o porquê de utilizar a como fazer a divisão em treino e teste.  
-    -> Como implementar na UnB? Falar que os dados podem ser calculados usando o
-SIGRA. Todas as informações a UnB possui. Essa pergunta é do slide 40. 
-    -> Tirar a parte que fala de aprendizagem de máquina. 
+
+1. Planejamento Geral
+    -> introdução: 3 minutos
+    -> fundamentação teórica: 4 minutos
+    -> metodologia: 10 minutos
+    -> resultados: 4 minutos
+    -> conclusão: 1 minutos
+    TOTAL: 21 minutos
+
+    * slides complicados: 10, 11, 14, 16, 18, 21, 22, 
+
+2. Fala
+    # introdução: 
+        -> no slide da proposta de solução: "a minha proposta de solução é "
+        -> Falar que a supervisão pelo orientador inclui cumprir um plano de
+trabalho.
+        -> Na hora dos cursos, falar que a metodologia pode ser aplicada a outros
+cursos. E que eu tenho mais familiaridade com os cursos citados. 
+
+    # fundamentação teórica: 
+        -> tentar fazer apresentação mais conexa. 
+        -> Falar o que significa a sigla CRISP-DM e as siglas ANN e SVR
+        -> Falar do que mede a precisão, do que mede o recall e como a f-measure é
+    uma combinação de ambos. Não falar da quantidade de positivos. 
+        -> Falar que os algoritmos foram escolhidos de acordo com a tarefa de
+regressão.  
+        -> Falar que desempenho acadêmico depende do IRA. 
+
+    # metodologia 
+        -> Deixar o meu agradecimento ao pessoal da scikit-learn de passagem. Falar
+da excelente biblioteca scikit-learn. 
+        -> Falar da análise de contingência na hora dos cursos. 
+        -> A disciplina mais difícil do semestre foi calculada supondo que os
+professores estejam capacitados e que os alunos estejam dispostos a aprender. Nessa
+situação, julgou-se que a disciplina mais difícil do semestre é aquela com o maior
+índice de reprovação. 
+        -> Explicar bem o porquê de utilizar a como fazer a divisão em treino e
+teste. Falar que foi feito no artigo do adeodato e que contraria o que
+tradicionalmente é feito em aprendizagem de máquina. 
+        -> falar da função linear na hora da ANN. 
+
+    # resultados
+        -> Falar os resultados, destacando a boa performance do regressor linear só
+no último slide. 
+
+    # conclusão
 
 
-    # correções - slide por slide!
+3. Possíveis perguntas
+    -> como um aluno sai da condição?
+    -> quando um aluno é desligado?
+    -> Explique a fórmula do IRA?
+    -> Pq vc escolheu os seguintes algoritmos de aprendizagem de máquina?
+    -> O que foram as peculiaridades da UnB estudadas? 
+    -> Pq a divisão dos dados em treino e teste foi feita do modo que foi? 
+    -> Quais alunos estão no 1 semestre? E quantos estão no 2 semestre? O que
+acontece se um aluno já saiu do semestre? 
+    -> Quando o semestre para? 
+    -> O que é significam os parâmetros dos modelos de aprendizagem de máquina? 
+
+4. Correções
+
+    # apresentação 1 - correções - slide por slide! 
+    * mudar dados pessoais para dados sociais. 
     -> slide 14: por fórmula para f-measure - ok
     -> slide 16: colocar dados pessoais - ok
     -> slide 18: por o que significa condição - ok
     -> slide 25: critério para dividir a base em treinamento e teste (falar na
-apresntação)
+apresntação) - ok
     -> slide 27: ajuste de parâmetros não foi citado. Colocar antes - ok
     -> slides 30/31: criar um modelo gráfico. - ok
     -> slide 33: explique o que é o ZeroR - ok
     -> ícaro: explicar quais os critérios que foram usados para eliminar outliers
     -> juntar resultados em uma tabela só. - ok
+
+    # apresentação 2 - correções - slide por slide 
+    -> slide 19: falar da data de criação dos cursos. - ok
+    -> Melhorar diagrama, por divisão em semestres também. - ok 
+    -> Colocar quantos migram, formam e evadem. - ok
+    -> Incluir revisão do estado da arte. - ok
+    -> Falar das condições para cumprir condição. - ok
+    -> Substituir modelos por algoritmo nas tabelas. - ok
+    -> slide 10: tirar a parte da metodologia. - ok
+    -> slide 15: falar que os algoritmos são adequados para a tarefa de regressão e
+que o naive bayes fornecia uma probabilidade. - ok
+    -> slide 17: por fórmula de F-measure com o alfa e dizer que o alfa foi
+considerado igual a 1. - ok
+    -> slide 21: incluir fórmula do IRA, e depois falar como as notas de um período
+são calculadas. Falar que a disciplina mais difícil. - ok
+    -> slide 28: tirar - ok
+    -> slide 32: tirar um dos "induzidos". - ok
+    -> slide 38: por função de ativação da rede neural. - ok

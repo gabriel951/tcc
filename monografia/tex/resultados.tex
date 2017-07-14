@@ -12,82 +12,86 @@ seguintes métodos de mineração de dados: ANN, SVR e \textit{Naive Bayes}.
 Inicialmente, estudou-se qual seria a quantidade ótima de neurônios da camada
 escondida da rede neural.
 Depois, estudou-se qual seria o melhor valor para o parâmetro taxa de aprendizagem. 
+Mostrou-se também o desempenho do melhor modelo no conjunto de validação. 
 Os resultados estão disponíveis na Tabela \ref{conf_ann}. 
 
 \begin{table}
 \caption{Melhor Escolha de Parâmetros Para ANN}
 \begin{center}
-\begin{tabular}[c]{| c | c | c |}
+\begin{tabular}[c]{| c | c | c | c |}
     \hline
-    \textbf{Base de Dados} & \textbf{Número de Neurônios} & \textbf{Taxa de
-    Aprendizagem} \\
+    \textbf{Dados} & \textbf{Neurônios} & \textbf{Aprendizagem} 
+    & \textbf{Desempenho}\\
     \hline
-    Alunos Jovens da FT & 100 & 0.001 \\
+    Alunos Jovens da FT & 100 & 0.001 & 0.81 \\
     \hline
-    Alunos Jovens da Licenciatura & 36 & 1.0 \\
+    Alunos Jovens da Licenciatura & 36 & 1.0 & 0.79 \\
     \hline
-    Alunos Jovens da Computação & 36 & 0.001 \\
+    Alunos Jovens da Computação & 36 & 0.001 & 0.77 \\
     \hline
-    Alunos Seniores & 24  & 0.7 \\
+    Alunos Seniores & 24  & 0.7 & 0.77 \\
     \hline
 \end{tabular}
 \end{center}
 \label{conf_ann}
 \end{table}
 
-Os resultados evidenciam que a melhor configuração, tanto para o número de neurônios
-quanto para a taxa de aprendizagem, varia conforme a base de dados em questão. 
+Os resultados da Tabela \ref{conf_ann} evidenciam que a melhor configuração, tanto
+para o número de neurônios quanto para a taxa de aprendizagem, varia conforme a base
+de dados em questão. 
 
 \subsection{Configurações da SVR} \label{svr_best_conf}
 Estudou-se como o tipo de \textit{kernel} e o parâmetro de penalização
-poderiam ser escolhidos de modo a obter uma boa configuração para a SVR. Os
+poderiam ser escolhidos de modo a obter uma boa configuração para a SVR. Mostrou-se
+também o desempenho do melhor modelo no conjunto de validação. Os
 resultados são apresentados na Tabela \ref{svr_conf}. 
 
 \begin{table}
 \caption{Melhor Escolha de Parâmetros Para SVR}
 \begin{center}
-\begin{tabular}[c]{| c | c | c |}
+\begin{tabular}[c]{| c | c | c | c |}
     \hline
-    \textbf{Base de Dados} & \textbf{Tipo de Kernel} & \textbf{Penalização} \\
+    \textbf{Dados} & \textbf{Kernel} & \textbf{Penalização} & \textbf{Desempenho}\\
     \hline
-    Alunos Jovens da FT & linear & 1.0 \\
+    Alunos Jovens da FT & linear & 1.0 & 0.79 \\
     \hline
-    Alunos Jovens da Licenciatura & linear & 1.0 \\
+    Alunos Jovens da Licenciatura & linear & 1.0 & 0.81 \\
     \hline
-    Alunos Jovens da Computação & rbf & 1.0 \\
+    Alunos Jovens da Computação & rbf & 1.0 & 0.83 \\
     \hline
-    Alunos Seniores & linear & 1.0 \\
+    Alunos Seniores & linear & 1.0 & 0.67 \\
     \hline
 \end{tabular}
 \end{center}
 \label{svr_conf}
 \end{table}
 
-Os resultados mostram que as melhores configurações não dependem muito da base de
-dados com a qual estamos trabalhando. Em três das quatro bases de dados, o tipo de
-\textit{kernel} escolhido foi o linear. Em todas as bases de dados o valor para o
-parâmetro de penalização foi $C = 1.0$.   
+Os resultados da Tabela \ref{svr_conf} mostram que as melhores configurações não
+dependem muito da base de dados com a qual estamos trabalhando. Em três das quatro
+bases de dados, o tipo de \textit{kernel} escolhido foi o linear. Em todas as bases
+de dados o valor para o parâmetro de penalização foi $C = 1.0$.   
 
 \subsection{Configuração do Naive Bayes} \label{nb_best_conf}
 Estudou-se como o tipo de distribuição assumida por cada atributo influenciou o
-desempenho no método \textit{Naive Bayes}. Os resultados são mostrados na Tabela \ref{conf_nb} e
-evidenciam que a melhor escolha para o tipo de distribuição é bastante dependente da
-base de dados com a qual estamos trabalhando. 
+desempenho no método \textit{Naive Bayes}. Os resultados são mostrados na Tabela
+\ref{conf_nb} e evidenciam que a melhor escolha para o tipo de distribuição é
+bastante dependente da base de dados com a qual estamos trabalhando. Mostra-se também
+o desempenho do modelo induzido no conjunto de validação. 
 
 \begin{table}
 \caption{Melhor Escolha de Parâmetros Para Naive Bayes}
 \begin{center}
-\begin{tabular}[c]{| c | c | c |}
+\begin{tabular}[c]{| c | c | c | c |}
     \hline
-    \textbf{Base de Dados} & \textbf{Distribuição dos Atributos} \\
+    \textbf{Dados} & \textbf{Atributos} & \textbf{Desempenho} \\
     \hline
-    Alunos Jovens da FT & Gaussiana \\
+    Alunos Jovens da FT & Gaussiana & 0.63 \\
     \hline
-    Alunos Jovens da Licenciatura & Bernoulli \\
+    Alunos Jovens da Licenciatura & Bernoulli & 0.78 \\
     \hline
-    Alunos Jovens da Computação & Multinomial \\
+    Alunos Jovens da Computação & Multinomial & 0.72 \\
     \hline
-    Alunos Seniores & Gaussiana \\
+    Alunos Seniores & Gaussiana & 0.64 \\
     \hline
 \end{tabular}
 \end{center}

@@ -163,6 +163,6 @@ if __name__ == "__main__":
     #report_best_model_conf(PCK_ML_MODEL)
     #report_best_model_conf('./data/zeroR')
     #report_best_model_conf(OPT_PCK_ML_MODEL)
-    report_best_model_conf('./data/ann_params')
-    #report_best_model_conf('./data/svr_naive_bayes')
+    #report_best_model_conf('./data/ann_params')
+    report_best_model_conf('./data/svr_naive_bayes')
     #report_best_model_conf('./data/svr_penalty')

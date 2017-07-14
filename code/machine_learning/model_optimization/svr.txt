@@ -1,0 +1,56 @@
+performance - ml model: SVR - data: young_students_ti_courses
+	SVR_no_tail_absolute_linear_1.0: (0.53999571189060636, 1.0604469918868817)
+		 interval gap: 0.520451
+	SVR_use_tail_absolute_linear_1.0: (0.53999571189060636, 1.0604469918868817)
+		 interval gap: 0.520451
+	SVR_use_tail_absolute_linear_0.5: (0.52827927501407435, 1.0651907905228335)
+		 interval gap: 0.536912
+	SVR_no_tail_absolute_linear_0.5: (0.52827927501407423, 1.0651907905228333)
+		 interval gap: 0.536912
+	SVR_use_tail_absolute_linear_2.0: (0.52447473411805146, 1.0554019569840758)
+		 interval gap: 0.530927
+	SVR_no_tail_absolute_linear_2.0: (0.52447473411805134, 1.0554019569840756)
+		 interval gap: 0.530927
+
+performance - ml model: SVR - data: young_students_lic_courses
+	SVR_use_tail_absolute_linear_1.0: (0.50103236282826802, 1.1355073150379422)
+		 interval gap: 0.634475
+	SVR_no_tail_absolute_linear_1.0: (0.5010323628282678, 1.135507315037942)
+		 interval gap: 0.634475
+	SVR_use_tail_absolute_linear_2.0: (0.48658889281914797, 1.1007532804647857)
+		 interval gap: 0.614164
+	SVR_no_tail_absolute_linear_2.0: (0.48658889281914763, 1.1007532804647853)
+		 interval gap: 0.614164
+	SVR_no_tail_absolute_linear_0.5: (0.48485703877738745, 1.1330673072924859)
+		 interval gap: 0.648210
+	SVR_use_tail_absolute_linear_0.5: (0.48485703877738734, 1.1330673072924857)
+		 interval gap: 0.648210
+
+performance - ml model: SVR - data: young_students_comp_courses
+	SVR_use_tail_absolute_rbf_1.0: (0.64461540753115998, 1.0305840343020145)
+		 interval gap: 0.385969
+	SVR_no_tail_absolute_rbf_1.0: (0.64461540753115998, 1.0305840343020145)
+		 interval gap: 0.385969
+	SVR_no_tail_absolute_rbf_0.5: (0.64268047477573054, 1.0467255830385345)
+		 interval gap: 0.404045
+	SVR_use_tail_absolute_rbf_0.5: (0.64268047477573043, 1.0467255830385345)
+		 interval gap: 0.404045
+	SVR_use_tail_absolute_rbf_2.0: (0.50771586100627253, 1.0841232962830536)
+		 interval gap: 0.576407
+	SVR_no_tail_absolute_rbf_2.0: (0.50771586100627242, 1.0841232962830538)
+		 interval gap: 0.576407
+
+performance - ml model: SVR - data: old_students
+	SVR_use_tail_absolute_linear_0.5: (0.10451778664659306, 1.2442542142993211)
+		 interval gap: 1.139736
+	SVR_no_tail_absolute_linear_0.5: (0.10451778664659306, 1.2442542142993207)
+		 interval gap: 1.139736
+	SVR_no_tail_absolute_linear_1.0: (0.10451778664659306, 1.2442542142993207)
+		 interval gap: 1.139736
+	SVR_use_tail_absolute_linear_1.0: (0.10451778664659295, 1.2442542142993209)
+		 interval gap: 1.139736
+	SVR_no_tail_absolute_linear_2.0: (0.099014273317991286, 1.3053132831834782)
+		 interval gap: 1.206299
+	SVR_use_tail_absolute_linear_2.0: (0.099014273317991175, 1.3053132831834779)
+		 interval gap: 1.206299
+

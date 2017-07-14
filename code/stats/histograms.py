@@ -34,7 +34,7 @@ def generate_graphs():
     # for every model info, make the graph
     for (model, model_desc) in models_lst: 
 
-        if model_desc != 'all_students': 
+        if model_desc != 'young_students_comp_courses': 
             continue
 
         print('starting for %s' % (model_desc))

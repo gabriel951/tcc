@@ -1,4 +1,23 @@
 \section{Metodologia} 
+\subsection{Levantamento do Estado da Arte}
+\begin{frame}{Levantamento do Estado da Arte}
+    Levantamento do estado da arte, de modo a compreender: 
+    \begin{itemize}
+        \item Quais fatores considerar.
+        \item Como aplicar técnicas de aprendizagem de máquina.
+        \item Peculiaridades da UnB.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Artigo de Adeodato e Barros \cite{adeodato}}
+    Mineração de dados para avaliar risco do aluno ficar mais tempo que o previsto na
+    universidade.
+
+    \vspace{0.5cm}
+
+    Viabilidade econômica da implementação de um processo de aconselhamento. 
+\end{frame}
+
 \subsection{Obtenção e Utilização dos Dados}
 \begin{frame}{Obtenção e Utilização dos Dados}
     Informações descaracterizadas de alunos de graduação da UnB. Dados pessoais e de
@@ -68,6 +87,41 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Alunos - Forma de Saída}
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width = 7.5cm]{way_out_all.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Alunos Jovens da FT - Forma de Saída}
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width = 7.5cm]{way_out_yng_ti.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Alunos Jovens da Licenciatura - Forma de Saída}
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width = 7.5cm]{way_out_yng_lic.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Alunos Jovens da Computação - Forma de Saída}
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width = 7.5cm]{way_out_yng_comp.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Alunos Seniores - Forma de Saída}
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width = 7.5cm]{way_out_old.png}
+    \end{figure}
+\end{frame}
+
 \subsection{Redução de Atributos}
 \begin{frame}{Eliminação de Atributos Relacionados}
     Utilizou-se o teste de Kendall para eliminar atributos que apresentassem mais de
@@ -91,28 +145,17 @@
 \end{frame}
 
 \subsection{Aprendizagem de Máquina e Ajuste de Parâmetros}
-\begin{frame}{Algoritmos de Aprendizagem de Máquina Adotados}
-    Algoritmos utilizados: 
-    \begin{itemize}
-        \item ANN
-        \item Naive Bayes
-        \item Random Forest
-        \item Regressor Linear 
-        \item SVR
-    \end{itemize}
-\end{frame}
-
 \begin{frame}{Ajuste de Parâmetros}
     Fez-se ajuste de parâmetros para:
     \begin{itemize}
         \item ANN
-        \item Naive Bayes
+        \item \textit{Naive Bayes}
         \item SVR
     \end{itemize}
 
     \vspace{0.5cm}
 
-    Para os demais modelos, utilizou-se o \textit{default} da biblioteca
+    Para os demais algoritmos, utilizou-se o \textit{default} da biblioteca
     \texttt{scikit-learn}.
 \end{frame}
 
@@ -137,7 +180,7 @@
 \end{frame}
 
 \begin{frame}{Funcionamento da Divisão em Semestres}
-    Modelos de mineração de dados são induzidos separadamente para cada
+    Modelos são induzidos separadamente para cada
     semestre: 
     \begin{enumerate}
         \item Inicialmente, modelos induzidos com dados do 1º semestre dos
@@ -160,11 +203,10 @@
     \end{enumerate}
 \end{frame}
 
-% criar um modelo gráfico
 \begin{frame}{Diagrama para Avaliação do Desempenho}
     \begin{figure}[!ht]
         \centering
-        \includegraphics[width = 8cm]{images/fmeasure_diagram.png}
+        \includegraphics[width = 12cm]{images/fmeasure_new_diagram.png}
     \end{figure}
 \end{frame}
 
@@ -172,19 +214,22 @@
     Repete-se o processo descrito anteriormente para cada um dos semestres estudados.
     Assim, um determinado modelo tem, para uma base de dados, vários valores de
     \textit{F-measure} calculados, um para cada semestre. 
+\end{frame}
 
-    \vspace{0.5cm}
-
-    Para sumarizar o desempenho do modelo, calculou-se a média das
-    \textit{F-measures} de cada semestre. 
+\begin{frame}{Avaliação de Desempenho}
+    Para sumarizar o desempenho do algoritmo, calculou-se a média das
+    \textit{F-measures} de cada semestre: 
+    \begin{equation}
+        \text{F-measure média} = \frac{\sum\limits_{1 \le i \le n} \text{Fmeasure}_i}
+                                    {n}
+    \end{equation}
 \end{frame}
 
 \begin{frame}{Avaliação do Desempenho}
-    Modelos tem seu desempenho comparado entre si e com o ZeroR. 
+    Modelos tem desempenho comparado entre si e com o ZeroR. 
 
     \vspace{0.5cm}
 
     ZeroR é um classificador simples que sempre prevê a classe majoritária. 
 \end{frame}
-
 

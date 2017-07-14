@@ -7,9 +7,9 @@ USE_TAIL = False
 WAY_MODEL_TGT = 'absolute'
 
 # booleans indicate which model we should consider
-USE_LREG = True
+USE_LREG = False
 USE_ANN = False
 USE_SVR = False
 USE_RAND_FOR = False
-USE_NB = False
+USE_NB = True
 USE_ZEROR = False

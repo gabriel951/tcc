@@ -322,5 +322,18 @@ mostrada a seguir:
 \par Precisão e \textit{recall} fornecem diferentes informações, ambas 
 úteis. Desse modo, faz sentido definir uma métrica que leve em conta ambas as
 informações para avaliar o desempenho. A \textit{F-measure} é essa métrica, sendo
-definida como a média harmônica entre a precisão e o \textit{recall}. Precisão,
-\textit{recall} e \textit{F-measure} assumem valores de 0 a 1.
+definida como a média harmônica ponderada entre a precisão e o \textit{recall}. Precisão,
+\textit{recall} e \textit{F-measure} assumem valores de 0 a 1. A Fórmula
+\ref{fmeasure_geral} é geral. Note que a ponderação depende de um parâmetro $\beta$.
+Para o caso de precisão e \textit{recall} terem ponderações iguais, o cálculo se reduz à
+Fórmula \ref{fmeasure_common}.
+
+\begin{equation}
+    F-measure = (1 + \beta^2 ) * \frac{precisão * recall}{\beta^2 * precisão + recall}
+    \label{fmeasure_geral}
+\end{equation}
+
+\begin{equation}
+    F-measure = 2 * \frac{precisão * recall}{precisão + recall}
+    \label{fmeasure_common}
+\end{equation}
